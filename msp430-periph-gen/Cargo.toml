@@ -1,0 +1,9 @@
+[package]
+name = "msp430gen"
+version = "0.1.0"
+authors = ["kellda <damikefr@gmail.com>", "Vadzim Dambrouski <pftbest@gmail.com>"]
+edition = "2018"
+license = "MIT"
+
+[dependencies]
+xmltree = "0.10.0"
