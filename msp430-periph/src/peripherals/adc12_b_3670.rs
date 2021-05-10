@@ -6,28 +6,28 @@ utils::periph! {
     /// ADC12_B Control 0
     rw ADC12CTL0 @ 0x00: u16 = 0_0 {
         /// start conversion
-        ADC12SC: 0..0 = enum ADC12SC {
+        ADC12SC: 0 = enum ADC12SC {
             /// No sample-and-conversion-start
             ADC12SC_0 = 0b0,
             /// Start sample-and-conversion
             ADC12SC_1 = 0b1,
         }
         /// enable conversion
-        ADC12ENC: 1..1 = enum ADC12ENC {
+        ADC12ENC: 1 = enum ADC12ENC {
             /// ADC12_B disabled
             ADC12ENC_0 = 0b0,
             /// ADC12_B enabled
             ADC12ENC_1 = 0b1,
         }
         /// ADC on
-        ADC12ON: 4..4 = enum ADC12ON {
+        ADC12ON: 4 = enum ADC12ON {
             /// ADC12_B off
             ADC12ON_0 = 0b0,
             /// ADC12_B on
             ADC12ON_1 = 0b1,
         }
         /// sample-and-hold time.
-        ADC12MSC: 7..7 = enum ADC12MSC {
+        ADC12MSC: 7 = enum ADC12MSC {
             /// The sampling timer requires a rising edge of the SHI signal to trigger each sample-and-convert.
             ADC12MSC_0 = 0b0,
             /// The incidence of a positive(or for devices first rising edge of the) SHI signal triggers the sampling timer, but further sample-and-conversions are performed automatically as soon as the prior conversion is completed.
@@ -107,7 +107,7 @@ utils::periph! {
     /// ADC12_B Control 1
     rw ADC12CTL1 @ 0x02: u16 = 0_0 {
         /// ADC busy
-        ADC12BUSY: 0..0 = enum ADC12BUSY {
+        ADC12BUSY: 0 = enum ADC12BUSY {
             /// No operation is active.
             ADC12BUSY_0 = 0b0,
             /// A sequence, sample, or conversion is active.
@@ -155,14 +155,14 @@ utils::periph! {
             ADC12DIV_7 = 0b111,
         }
         /// invert signal sample-and-hold
-        ADC12ISSH: 8..8 = enum ADC12ISSH {
+        ADC12ISSH: 8 = enum ADC12ISSH {
             /// The sample-input signal is not inverted.
             ADC12ISSH_0 = 0b0,
             /// The sample-input signal is inverted.
             ADC12ISSH_1 = 0b1,
         }
         /// sample-and-hold pulse-mode select
-        ADC12SHP: 9..9 = enum ADC12SHP {
+        ADC12SHP: 9 = enum ADC12SHP {
             /// SAMPCON signal is sourced from the sample-input signal.
             ADC12SHP_0 = 0b0,
             /// SAMPCON signal is sourced from the sampling timer.
@@ -202,14 +202,14 @@ utils::periph! {
     /// ADC12_B Control 2
     rw ADC12CTL2 @ 0x04: u16 = 0_0 {
         /// low-power mode
-        ADC12PWRMD: 0..0 = enum ADC12PWRMD {
+        ADC12PWRMD: 0 = enum ADC12PWRMD {
             /// Regular power mode where sample rate is not restricted
             ADC12PWRMD_0 = 0b0,
             /// Low power mode enable, ADC12CLK can not be greater than 1/4 the device-specific data sheet specified maximum for ADC12PWRMD = 0
             ADC12PWRMD_1 = 0b1,
         }
         /// data read-back format
-        ADC12DF: 3..3 = enum ADC12DF {
+        ADC12DF: 3 = enum ADC12DF {
             /// Binary unsigned. Theoretically for ADC12DIF = 0 and 12-bit mode the analog input voltage  VREF results in 0000h, the analog input voltage + VREF results in 0FFFh.
             ADC12DF_0 = 0b0,
             /// Signed binary (2s complement), left aligned. Theoretically, for ADC12DIF = 0 and 12-bit mode, the analog input voltage  VREF results in 8000h, the analog input voltage + VREF results in 7FF0h.
@@ -297,42 +297,42 @@ utils::periph! {
             ADC12MEM31 = 0b11111,
         }
         /// 1/2 AVCC ADC input channel selection
-        ADC12BATMAP: 6..6 = enum ADC12BATMAP {
+        ADC12BATMAP: 6 = enum ADC12BATMAP {
             /// external pin is selected for ADC input channel A31
             ADC12BATMAP_0 = 0b0,
             /// ADC internal 1/2 x AVCC channel is selected for ADC input channel A31
             ADC12BATMAP_1 = 0b1,
         }
         /// temperature sensor ADC input channel selection
-        ADC12TCMAP: 7..7 = enum ADC12TCMAP {
+        ADC12TCMAP: 7 = enum ADC12TCMAP {
             /// external pin is selected for ADC input channel A30
             ADC12TCMAP_0 = 0b0,
             /// ADC internal temperature sensor channel is selected for ADC input channel A30
             ADC12TCMAP_1 = 0b1,
         }
         /// int ch 0 sel to ADC in ch A29
-        ADC12ICH0MAP: 8..8 = enum ADC12ICH0MAP {
+        ADC12ICH0MAP: 8 = enum ADC12ICH0MAP {
             /// external pin is selected for ADC input channel A29
             ADC12ICH0MAP_0 = 0b0,
             /// ADC input channel internal 0 is selected for ADC input channel A29, see device-specific data sheet for availability
             ADC12ICH0MAP_1 = 0b1,
         }
         /// int ch 1 sel to ADC in ch A28
-        ADC12ICH1MAP: 9..9 = enum ADC12ICH1MAP {
+        ADC12ICH1MAP: 9 = enum ADC12ICH1MAP {
             /// external pin is selected for ADC input channel A28
             ADC12ICH1MAP_0 = 0b0,
             /// ADC input channel internal 1 is selected for ADC input channel A28, see device-specific data sheet for availability
             ADC12ICH1MAP_1 = 0b1,
         }
         /// int ch 2 sel to ADC in ch A27
-        ADC12ICH2MAP: 10..10 = enum ADC12ICH2MAP {
+        ADC12ICH2MAP: 10 = enum ADC12ICH2MAP {
             /// external pin is selected for ADC input channel A27
             ADC12ICH2MAP_0 = 0b0,
             /// ADC input channel internal 2 is selected for ADC input channel A27, see device-specific data sheet for availability
             ADC12ICH2MAP_1 = 0b1,
         }
         /// int ch 3 sel to ADC in ch A26
-        ADC12ICH3MAP: 11..11 = enum ADC12ICH3MAP {
+        ADC12ICH3MAP: 11 = enum ADC12ICH3MAP {
             /// external pin is selected for ADC input channel A26
             ADC12ICH3MAP_0 = 0b0,
             /// ADC input channel internal 3 is selected for ADC input channel A26, see device-specific data sheet for availability
@@ -352,112 +352,112 @@ utils::periph! {
     /// ADC12_B Interrupt Flag 0
     rw ADC12IFGR0 @ 0x0c: u16 = 0_0 {
         /// ADC12MEM0 interrupt flag
-        ADC12IFG0: 0..0 = enum ADC12IFG0 {
+        ADC12IFG0: 0 = enum ADC12IFG0 {
             /// No interrupt pending
             ADC12IFG0_0 = 0b0,
             /// Interrupt pending
             ADC12IFG0_1 = 0b1,
         }
         /// ADC12MEM1 interrupt flag
-        ADC12IFG1: 1..1 = enum ADC12IFG1 {
+        ADC12IFG1: 1 = enum ADC12IFG1 {
             /// No interrupt pending
             ADC12IFG1_0 = 0b0,
             /// Interrupt pending
             ADC12IFG1_1 = 0b1,
         }
         /// ADC12MEM2 interrupt flag
-        ADC12IFG2: 2..2 = enum ADC12IFG2 {
+        ADC12IFG2: 2 = enum ADC12IFG2 {
             /// No interrupt pending
             ADC12IFG2_0 = 0b0,
             /// Interrupt pending
             ADC12IFG2_1 = 0b1,
         }
         /// ADC12MEM3 interrupt flag
-        ADC12IFG3: 3..3 = enum ADC12IFG3 {
+        ADC12IFG3: 3 = enum ADC12IFG3 {
             /// No interrupt pending
             ADC12IFG3_0 = 0b0,
             /// Interrupt pending
             ADC12IFG3_1 = 0b1,
         }
         /// ADC12MEM4 interrupt flag
-        ADC12IFG4: 4..4 = enum ADC12IFG4 {
+        ADC12IFG4: 4 = enum ADC12IFG4 {
             /// No interrupt pending
             ADC12IFG4_0 = 0b0,
             /// Interrupt pending
             ADC12IFG4_1 = 0b1,
         }
         /// ADC12MEM5 interrupt flag
-        ADC12IFG5: 5..5 = enum ADC12IFG5 {
+        ADC12IFG5: 5 = enum ADC12IFG5 {
             /// No interrupt pending
             ADC12IFG5_0 = 0b0,
             /// Interrupt pending
             ADC12IFG5_1 = 0b1,
         }
         /// ADC12MEM6 interrupt flag
-        ADC12IFG6: 6..6 = enum ADC12IFG6 {
+        ADC12IFG6: 6 = enum ADC12IFG6 {
             /// No interrupt pending
             ADC12IFG6_0 = 0b0,
             /// Interrupt pending
             ADC12IFG6_1 = 0b1,
         }
         /// ADC12MEM7 interrupt flag
-        ADC12IFG7: 7..7 = enum ADC12IFG7 {
+        ADC12IFG7: 7 = enum ADC12IFG7 {
             /// No interrupt pending
             ADC12IFG7_0 = 0b0,
             /// Interrupt pending
             ADC12IFG7_1 = 0b1,
         }
         /// ADC12MEM8 interrupt flag
-        ADC12IFG8: 8..8 = enum ADC12IFG8 {
+        ADC12IFG8: 8 = enum ADC12IFG8 {
             /// No interrupt pending
             ADC12IFG8_0 = 0b0,
             /// Interrupt pending
             ADC12IFG8_1 = 0b1,
         }
         /// ADC12MEM9 interrupt flag
-        ADC12IFG9: 9..9 = enum ADC12IFG9 {
+        ADC12IFG9: 9 = enum ADC12IFG9 {
             /// No interrupt pending
             ADC12IFG9_0 = 0b0,
             /// Interrupt pending
             ADC12IFG9_1 = 0b1,
         }
         /// ADC12MEM10 interrupt flag
-        ADC12IFG10: 10..10 = enum ADC12IFG10 {
+        ADC12IFG10: 10 = enum ADC12IFG10 {
             /// No interrupt pending
             ADC12IFG10_0 = 0b0,
             /// Interrupt pending
             ADC12IFG10_1 = 0b1,
         }
         /// ADC12MEM11 interrupt flag
-        ADC12IFG11: 11..11 = enum ADC12IFG11 {
+        ADC12IFG11: 11 = enum ADC12IFG11 {
             /// No interrupt pending
             ADC12IFG11_0 = 0b0,
             /// Interrupt pending
             ADC12IFG11_1 = 0b1,
         }
         /// ADC12MEM12 interrupt flag
-        ADC12IFG12: 12..12 = enum ADC12IFG12 {
+        ADC12IFG12: 12 = enum ADC12IFG12 {
             /// No interrupt pending
             ADC12IFG12_0 = 0b0,
             /// Interrupt pending
             ADC12IFG12_1 = 0b1,
         }
         /// ADC12MEM13 interrupt flag
-        ADC12IFG13: 13..13 = enum ADC12IFG13 {
+        ADC12IFG13: 13 = enum ADC12IFG13 {
             /// No interrupt pending
             ADC12IFG13_0 = 0b0,
             /// Interrupt pending
             ADC12IFG13_1 = 0b1,
         }
         /// ADC12MEM14 interrupt flag
-        ADC12IFG14: 14..14 = enum ADC12IFG14 {
+        ADC12IFG14: 14 = enum ADC12IFG14 {
             /// No interrupt pending
             ADC12IFG14_0 = 0b0,
             /// Interrupt pending
             ADC12IFG14_1 = 0b1,
         }
         /// ADC12MEM15 interrupt flag
-        ADC12IFG15: 15..15 = enum ADC12IFG15 {
+        ADC12IFG15: 15 = enum ADC12IFG15 {
             /// No interrupt pending
             ADC12IFG15_0 = 0b0,
             /// Interrupt pending
@@ -467,112 +467,112 @@ utils::periph! {
     /// ADC12_B Interrupt Flag 1
     rw ADC12IFGR1 @ 0x0e: u16 = 0_0 {
         /// ADC12MEM16 interrupt flag
-        ADC12IFG16: 0..0 = enum ADC12IFG16 {
+        ADC12IFG16: 0 = enum ADC12IFG16 {
             /// No interrupt pending
             ADC12IFG16_0 = 0b0,
             /// Interrupt pending
             ADC12IFG16_1 = 0b1,
         }
         /// ADC12MEM17 interrupt flag
-        ADC12IFG17: 1..1 = enum ADC12IFG17 {
+        ADC12IFG17: 1 = enum ADC12IFG17 {
             /// No interrupt pending
             ADC12IFG17_0 = 0b0,
             /// Interrupt pending
             ADC12IFG17_1 = 0b1,
         }
         /// ADC12MEM18 interrupt flag
-        ADC12IFG18: 2..2 = enum ADC12IFG18 {
+        ADC12IFG18: 2 = enum ADC12IFG18 {
             /// No interrupt pending
             ADC12IFG18_0 = 0b0,
             /// Interrupt pending
             ADC12IFG18_1 = 0b1,
         }
         /// ADC12MEM19 interrupt flag
-        ADC12IFG19: 3..3 = enum ADC12IFG19 {
+        ADC12IFG19: 3 = enum ADC12IFG19 {
             /// No interrupt pending
             ADC12IFG19_0 = 0b0,
             /// Interrupt pending
             ADC12IFG19_1 = 0b1,
         }
         /// ADC12MEM20 interrupt flag
-        ADC12IFG20: 4..4 = enum ADC12IFG20 {
+        ADC12IFG20: 4 = enum ADC12IFG20 {
             /// No interrupt pending
             ADC12IFG20_0 = 0b0,
             /// Interrupt pending
             ADC12IFG20_1 = 0b1,
         }
         /// ADC12MEM21 interrupt flag
-        ADC12IFG21: 5..5 = enum ADC12IFG21 {
+        ADC12IFG21: 5 = enum ADC12IFG21 {
             /// No interrupt pending
             ADC12IFG21_0 = 0b0,
             /// Interrupt pending
             ADC12IFG21_1 = 0b1,
         }
         /// ADC12MEM22 interrupt flag
-        ADC12IFG22: 6..6 = enum ADC12IFG22 {
+        ADC12IFG22: 6 = enum ADC12IFG22 {
             /// No interrupt pending
             ADC12IFG22_0 = 0b0,
             /// Interrupt pending
             ADC12IFG22_1 = 0b1,
         }
         /// ADC12MEM23 interrupt flag
-        ADC12IFG23: 7..7 = enum ADC12IFG23 {
+        ADC12IFG23: 7 = enum ADC12IFG23 {
             /// No interrupt pending
             ADC12IFG23_0 = 0b0,
             /// Interrupt pending
             ADC12IFG23_1 = 0b1,
         }
         /// ADC12MEM24 interrupt flag
-        ADC12IFG24: 8..8 = enum ADC12IFG24 {
+        ADC12IFG24: 8 = enum ADC12IFG24 {
             /// No interrupt pending
             ADC12IFG24_0 = 0b0,
             /// Interrupt pending
             ADC12IFG24_1 = 0b1,
         }
         /// ADC12MEM25 interrupt flag
-        ADC12IFG25: 9..9 = enum ADC12IFG25 {
+        ADC12IFG25: 9 = enum ADC12IFG25 {
             /// No interrupt pending
             ADC12IFG25_0 = 0b0,
             /// Interrupt pending
             ADC12IFG25_1 = 0b1,
         }
         /// ADC12MEM26 interrupt flag
-        ADC12IFG26: 10..10 = enum ADC12IFG26 {
+        ADC12IFG26: 10 = enum ADC12IFG26 {
             /// No interrupt pending
             ADC12IFG26_0 = 0b0,
             /// Interrupt pending
             ADC12IFG26_1 = 0b1,
         }
         /// ADC12MEM27 interrupt flag
-        ADC12IFG27: 11..11 = enum ADC12IFG27 {
+        ADC12IFG27: 11 = enum ADC12IFG27 {
             /// No interrupt pending
             ADC12IFG27_0 = 0b0,
             /// Interrupt pending
             ADC12IFG27_1 = 0b1,
         }
         /// ADC12MEM28 interrupt flag
-        ADC12IFG28: 12..12 = enum ADC12IFG28 {
+        ADC12IFG28: 12 = enum ADC12IFG28 {
             /// No interrupt pending
             ADC12IFG28_0 = 0b0,
             /// Interrupt pending
             ADC12IFG28_1 = 0b1,
         }
         /// ADC12MEM29 interrupt flag
-        ADC12IFG29: 13..13 = enum ADC12IFG29 {
+        ADC12IFG29: 13 = enum ADC12IFG29 {
             /// No interrupt pending
             ADC12IFG29_0 = 0b0,
             /// Interrupt pending
             ADC12IFG29_1 = 0b1,
         }
         /// ADC12MEM30 interrupt flag
-        ADC12IFG30: 14..14 = enum ADC12IFG30 {
+        ADC12IFG30: 14 = enum ADC12IFG30 {
             /// No interrupt pending
             ADC12IFG30_0 = 0b0,
             /// Interrupt pending
             ADC12IFG30_1 = 0b1,
         }
         /// ADC12MEM31 interrupt flag
-        ADC12IFG31: 15..15 = enum ADC12IFG31 {
+        ADC12IFG31: 15 = enum ADC12IFG31 {
             /// No interrupt pending
             ADC12IFG31_0 = 0b0,
             /// Interrupt pending
@@ -582,42 +582,42 @@ utils::periph! {
     /// ADC12_B Interrupt Flag 2
     rw ADC12IFGR2 @ 0x10: u16 = 0_0 {
         /// Interrupt flag for ADC12MEMx between ADC12HI and ADC12LO
-        ADC12INIFG: 1..1 = enum ADC12INIFG {
+        ADC12INIFG: 1 = enum ADC12INIFG {
             /// No interrupt pending
             ADC12INIFG_0 = 0b0,
             /// Interrupt pending
             ADC12INIFG_1 = 0b1,
         }
         /// Interrupt flag for ADC12MEMx ADC12LO
-        ADC12LOIFG: 2..2 = enum ADC12LOIFG {
+        ADC12LOIFG: 2 = enum ADC12LOIFG {
             /// No interrupt pending
             ADC12LOIFG_0 = 0b0,
             /// Interrupt pending
             ADC12LOIFG_1 = 0b1,
         }
         /// Interrupt flag for ADC12MEMx ADC12HI
-        ADC12HIIFG: 3..3 = enum ADC12HIIFG {
+        ADC12HIIFG: 3 = enum ADC12HIIFG {
             /// No interrupt pending
             ADC12HIIFG_0 = 0b0,
             /// Interrupt pending
             ADC12HIIFG_1 = 0b1,
         }
         /// ADC12MEMx overflow-interrupt flag.
-        ADC12OVIFG: 4..4 = enum ADC12OVIFG {
+        ADC12OVIFG: 4 = enum ADC12OVIFG {
             /// No interrupt pending
             ADC12OVIFG_0 = 0b0,
             /// Interrupt pending
             ADC12OVIFG_1 = 0b1,
         }
         /// conversion-time-overflow interrupt flag
-        ADC12TOVIFG: 5..5 = enum ADC12TOVIFG {
+        ADC12TOVIFG: 5 = enum ADC12TOVIFG {
             /// No interrupt pending
             ADC12TOVIFG_0 = 0b0,
             /// Interrupt pending
             ADC12TOVIFG_1 = 0b1,
         }
         /// reference buffer ready interrupt flag
-        ADC12RDYIFG: 6..6 = enum ADC12RDYIFG {
+        ADC12RDYIFG: 6 = enum ADC12RDYIFG {
             /// No interrupt pending
             ADC12RDYIFG_0 = 0b0,
             /// Interrupt pending
@@ -627,112 +627,112 @@ utils::periph! {
     /// ADC12_B Interrupt Enable 0
     rw ADC12IER0 @ 0x12: u16 = 0_0 {
         /// Interrupt enable 0
-        ADC12IE0: 0..0 = enum ADC12IE0 {
+        ADC12IE0: 0 = enum ADC12IE0 {
             /// Interrupt disabled
             ADC12IE0_0 = 0b0,
             /// Interrupt enabled
             ADC12IE0_1 = 0b1,
         }
         /// interrupt enable 1
-        ADC12IE1: 1..1 = enum ADC12IE1 {
+        ADC12IE1: 1 = enum ADC12IE1 {
             /// Interrupt disabled
             ADC12IE1_0 = 0b0,
             /// Interrupt enabled
             ADC12IE1_1 = 0b1,
         }
         /// interrupt enable 2
-        ADC12IE2: 2..2 = enum ADC12IE2 {
+        ADC12IE2: 2 = enum ADC12IE2 {
             /// Interrupt disabled
             ADC12IE2_0 = 0b0,
             /// Interrupt enabled
             ADC12IE2_1 = 0b1,
         }
         /// interrupt enable 3
-        ADC12IE3: 3..3 = enum ADC12IE3 {
+        ADC12IE3: 3 = enum ADC12IE3 {
             /// Interrupt disabled
             ADC12IE3_0 = 0b0,
             /// Interrupt enabled
             ADC12IE3_1 = 0b1,
         }
         /// interrupt enable 4
-        ADC12IE4: 4..4 = enum ADC12IE4 {
+        ADC12IE4: 4 = enum ADC12IE4 {
             /// Interrupt disabled
             ADC12IE4_0 = 0b0,
             /// Interrupt enabled
             ADC12IE4_1 = 0b1,
         }
         /// interrupt enable 5
-        ADC12IE5: 5..5 = enum ADC12IE5 {
+        ADC12IE5: 5 = enum ADC12IE5 {
             /// Interrupt disabled
             ADC12IE5_0 = 0b0,
             /// Interrupt enabled
             ADC12IE5_1 = 0b1,
         }
         /// interrupt enable 6
-        ADC12IE6: 6..6 = enum ADC12IE6 {
+        ADC12IE6: 6 = enum ADC12IE6 {
             /// Interrupt disabled
             ADC12IE6_0 = 0b0,
             /// Interrupt enabled
             ADC12IE6_1 = 0b1,
         }
         /// interrupt enable 7
-        ADC12IE7: 7..7 = enum ADC12IE7 {
+        ADC12IE7: 7 = enum ADC12IE7 {
             /// Interrupt disabled
             ADC12IE7_0 = 0b0,
             /// Interrupt enabled
             ADC12IE7_1 = 0b1,
         }
         /// interrupt enable 8
-        ADC12IE8: 8..8 = enum ADC12IE8 {
+        ADC12IE8: 8 = enum ADC12IE8 {
             /// Interrupt disabled
             ADC12IE8_0 = 0b0,
             /// Interrupt enabled
             ADC12IE8_1 = 0b1,
         }
         /// interrupt enable 9
-        ADC12IE9: 9..9 = enum ADC12IE9 {
+        ADC12IE9: 9 = enum ADC12IE9 {
             /// Interrupt disabled
             ADC12IE9_0 = 0b0,
             /// Interrupt enabled
             ADC12IE9_1 = 0b1,
         }
         /// interrupt enable 10
-        ADC12IE10: 10..10 = enum ADC12IE10 {
+        ADC12IE10: 10 = enum ADC12IE10 {
             /// Interrupt disabled
             ADC12IE10_0 = 0b0,
             /// Interrupt enabled
             ADC12IE10_1 = 0b1,
         }
         /// interrupt enable  11
-        ADC12IE11: 11..11 = enum ADC12IE11 {
+        ADC12IE11: 11 = enum ADC12IE11 {
             /// Interrupt disabled
             ADC12IE11_0 = 0b0,
             /// Interrupt enabled
             ADC12IE11_1 = 0b1,
         }
         /// interrupt enable 12
-        ADC12IE12: 12..12 = enum ADC12IE12 {
+        ADC12IE12: 12 = enum ADC12IE12 {
             /// Interrupt disabled
             ADC12IE12_0 = 0b0,
             /// Interrupt enabled
             ADC12IE12_1 = 0b1,
         }
         /// interrupt enable  13
-        ADC12IE13: 13..13 = enum ADC12IE13 {
+        ADC12IE13: 13 = enum ADC12IE13 {
             /// Interrupt disabled
             ADC12IE13_0 = 0b0,
             /// Interrupt enabled
             ADC12IE13_1 = 0b1,
         }
         /// interrupt enable 14
-        ADC12IE14: 14..14 = enum ADC12IE14 {
+        ADC12IE14: 14 = enum ADC12IE14 {
             /// Interrupt disabled
             ADC12IE14_0 = 0b0,
             /// Interrupt enabled
             ADC12IE14_1 = 0b1,
         }
         /// interrupt enable 15
-        ADC12IE15: 15..15 = enum ADC12IE15 {
+        ADC12IE15: 15 = enum ADC12IE15 {
             /// Interrupt disabled
             ADC12IE15_0 = 0b0,
             /// Interrupt enabled
@@ -742,112 +742,112 @@ utils::periph! {
     /// ADC12_B Interrupt Enable 1
     rw ADC12IER1 @ 0x14: u16 = 0_0 {
         /// interrupt enable 16
-        ADC12IE16: 0..0 = enum ADC12IE16 {
+        ADC12IE16: 0 = enum ADC12IE16 {
             /// Interrupt disabled
             ADC12IE16_0 = 0b0,
             /// Interrupt enabled
             ADC12IE16_1 = 0b1,
         }
         /// interrupt enable 17
-        ADC12IE17: 1..1 = enum ADC12IE17 {
+        ADC12IE17: 1 = enum ADC12IE17 {
             /// Interrupt disabled
             ADC12IE17_0 = 0b0,
             /// Interrupt enabled
             ADC12IE17_1 = 0b1,
         }
         /// interrupt enable 18
-        ADC12IE18: 2..2 = enum ADC12IE18 {
+        ADC12IE18: 2 = enum ADC12IE18 {
             /// Interrupt disabled
             ADC12IE18_0 = 0b0,
             /// Interrupt enabled
             ADC12IE18_1 = 0b1,
         }
         /// interrupt enable  19
-        ADC12IE19: 3..3 = enum ADC12IE19 {
+        ADC12IE19: 3 = enum ADC12IE19 {
             /// Interrupt disabled
             ADC12IE19_0 = 0b0,
             /// Interrupt enabled
             ADC12IE19_1 = 0b1,
         }
         /// interrupt enable 19
-        ADC12IE20: 4..4 = enum ADC12IE20 {
+        ADC12IE20: 4 = enum ADC12IE20 {
             /// Interrupt disabled
             ADC12IE20_0 = 0b0,
             /// Interrupt enabled
             ADC12IE20_1 = 0b1,
         }
         /// interrupt enable 21
-        ADC12IE21: 5..5 = enum ADC12IE21 {
+        ADC12IE21: 5 = enum ADC12IE21 {
             /// Interrupt disabled
             ADC12IE21_0 = 0b0,
             /// Interrupt enabled
             ADC12IE21_1 = 0b1,
         }
         /// interrupt enable 22
-        ADC12IE22: 6..6 = enum ADC12IE22 {
+        ADC12IE22: 6 = enum ADC12IE22 {
             /// Interrupt disabled
             ADC12IE22_0 = 0b0,
             /// Interrupt enabled
             ADC12IE22_1 = 0b1,
         }
         /// interrupt enable 23
-        ADC12IE23: 7..7 = enum ADC12IE23 {
+        ADC12IE23: 7 = enum ADC12IE23 {
             /// Interrupt disabled
             ADC12IE23_0 = 0b0,
             /// Interrupt enabled
             ADC12IE23_1 = 0b1,
         }
         /// interrupt enable 24
-        ADC12IE24: 8..8 = enum ADC12IE24 {
+        ADC12IE24: 8 = enum ADC12IE24 {
             /// Interrupt disabled
             ADC12IE24_0 = 0b0,
             /// Interrupt enabled
             ADC12IE24_1 = 0b1,
         }
         /// interrupt enable 25
-        ADC12IE25: 9..9 = enum ADC12IE25 {
+        ADC12IE25: 9 = enum ADC12IE25 {
             /// Interrupt disabled
             ADC12IE25_0 = 0b0,
             /// Interrupt enabled
             ADC12IE25_1 = 0b1,
         }
         /// interrupt enable 26
-        ADC12IE26: 10..10 = enum ADC12IE26 {
+        ADC12IE26: 10 = enum ADC12IE26 {
             /// Interrupt disabled
             ADC12IE26_0 = 0b0,
             /// Interrupt enabled
             ADC12IE26_1 = 0b1,
         }
         /// interrupt enable 27
-        ADC12IE27: 11..11 = enum ADC12IE27 {
+        ADC12IE27: 11 = enum ADC12IE27 {
             /// Interrupt disabled
             ADC12IE27_0 = 0b0,
             /// Interrupt enabled
             ADC12IE27_1 = 0b1,
         }
         /// interrupt enable  28
-        ADC12IE28: 12..12 = enum ADC12IE28 {
+        ADC12IE28: 12 = enum ADC12IE28 {
             /// Interrupt disabled
             ADC12IE28_0 = 0b0,
             /// Interrupt enabled
             ADC12IE28_1 = 0b1,
         }
         /// interrupt enable 29
-        ADC12IE29: 13..13 = enum ADC12IE29 {
+        ADC12IE29: 13 = enum ADC12IE29 {
             /// Interrupt disabled
             ADC12IE29_0 = 0b0,
             /// Interrupt enabled
             ADC12IE29_1 = 0b1,
         }
         /// interrupt enable 30
-        ADC12IE30: 14..14 = enum ADC12IE30 {
+        ADC12IE30: 14 = enum ADC12IE30 {
             /// Interrupt disabled
             ADC12IE30_0 = 0b0,
             /// Interrupt enabled
             ADC12IE30_1 = 0b1,
         }
         /// interrupt enable 30
-        ADC12IE31: 15..15 = enum ADC12IE31 {
+        ADC12IE31: 15 = enum ADC12IE31 {
             /// Interrupt disabled
             ADC12IE31_0 = 0b0,
             /// Interrupt enabled
@@ -857,42 +857,42 @@ utils::periph! {
     /// ADC12_B Interrupt Enable 2
     rw ADC12IER2 @ 0x16: u16 = 0_0 {
         /// interrupt enable MEMx between ADC12HI and LO
-        ADC12INIE: 1..1 = enum ADC12INIE {
+        ADC12INIE: 1 = enum ADC12INIE {
             /// Interrupt disabled
             ADC12INIE_0 = 0b0,
             /// Interrupt enabled
             ADC12INIE_1 = 0b1,
         }
         /// interrupt enable MEMx  ADC12LO
-        ADC12LOIE: 2..2 = enum ADC12LOIE {
+        ADC12LOIE: 2 = enum ADC12LOIE {
             /// Interrupt disabled
             ADC12LOIE_0 = 0b0,
             /// Interrupt enabled
             ADC12LOIE_1 = 0b1,
         }
         /// interrupt enable MEMx  ADC12HI
-        ADC12HIIE: 3..3 = enum ADC12HIIE {
+        ADC12HIIE: 3 = enum ADC12HIIE {
             /// Interrupt disabled
             ADC12HIIE_0 = 0b0,
             /// Interrupt enabled
             ADC12HIIE_1 = 0b1,
         }
         /// ADC12MEMx overflow-interrupt enable
-        ADC12OVIE: 4..4 = enum ADC12OVIE {
+        ADC12OVIE: 4 = enum ADC12OVIE {
             /// Interrupt disabled
             ADC12OVIE_0 = 0b0,
             /// Interrupt enabled
             ADC12OVIE_1 = 0b1,
         }
         /// conversion-time-overflow interrupt enable
-        ADC12TOVIE: 5..5 = enum ADC12TOVIE {
+        ADC12TOVIE: 5 = enum ADC12TOVIE {
             /// Interrupt disabled
             ADC12TOVIE_0 = 0b0,
             /// Interrupt enabled
             ADC12TOVIE_1 = 0b1,
         }
         /// interrupt enable ADC ref buffer ready
-        ADC12RDYIE: 6..6 = enum ADC12RDYIE {
+        ADC12RDYIE: 6 = enum ADC12RDYIE {
             /// Interrupt disabled
             ADC12RDYIE_0 = 0b0,
             /// Interrupt enabled
@@ -1053,7 +1053,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL0_ADC12EOS: 7..7 = enum ADC12MCTL0_ADC12EOS {
+        ADC12MCTL0_ADC12EOS: 7 = enum ADC12MCTL0_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -1095,14 +1095,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL0_ADC12DIF: 13..13 = enum ADC12MCTL0_ADC12DIF {
+        ADC12MCTL0_ADC12DIF: 13 = enum ADC12MCTL0_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL0_ADC12WINC: 14..14 = enum ADC12MCTL0_ADC12WINC {
+        ADC12MCTL0_ADC12WINC: 14 = enum ADC12MCTL0_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -1179,7 +1179,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL1_ADC12EOS: 7..7 = enum ADC12MCTL1_ADC12EOS {
+        ADC12MCTL1_ADC12EOS: 7 = enum ADC12MCTL1_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -1221,14 +1221,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL1_ADC12DIF: 13..13 = enum ADC12MCTL1_ADC12DIF {
+        ADC12MCTL1_ADC12DIF: 13 = enum ADC12MCTL1_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL1_ADC12WINC: 14..14 = enum ADC12MCTL1_ADC12WINC {
+        ADC12MCTL1_ADC12WINC: 14 = enum ADC12MCTL1_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -1305,7 +1305,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL2_ADC12EOS: 7..7 = enum ADC12MCTL2_ADC12EOS {
+        ADC12MCTL2_ADC12EOS: 7 = enum ADC12MCTL2_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -1347,14 +1347,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL2_ADC12DIF: 13..13 = enum ADC12MCTL2_ADC12DIF {
+        ADC12MCTL2_ADC12DIF: 13 = enum ADC12MCTL2_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL2_ADC12WINC: 14..14 = enum ADC12MCTL2_ADC12WINC {
+        ADC12MCTL2_ADC12WINC: 14 = enum ADC12MCTL2_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -1431,7 +1431,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL3_ADC12EOS: 7..7 = enum ADC12MCTL3_ADC12EOS {
+        ADC12MCTL3_ADC12EOS: 7 = enum ADC12MCTL3_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -1473,14 +1473,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL3_ADC12DIF: 13..13 = enum ADC12MCTL3_ADC12DIF {
+        ADC12MCTL3_ADC12DIF: 13 = enum ADC12MCTL3_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL3_ADC12WINC: 14..14 = enum ADC12MCTL3_ADC12WINC {
+        ADC12MCTL3_ADC12WINC: 14 = enum ADC12MCTL3_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -1557,7 +1557,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL4_ADC12EOS: 7..7 = enum ADC12MCTL4_ADC12EOS {
+        ADC12MCTL4_ADC12EOS: 7 = enum ADC12MCTL4_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -1599,14 +1599,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL4_ADC12DIF: 13..13 = enum ADC12MCTL4_ADC12DIF {
+        ADC12MCTL4_ADC12DIF: 13 = enum ADC12MCTL4_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL4_ADC12WINC: 14..14 = enum ADC12MCTL4_ADC12WINC {
+        ADC12MCTL4_ADC12WINC: 14 = enum ADC12MCTL4_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -1683,7 +1683,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL5_ADC12EOS: 7..7 = enum ADC12MCTL5_ADC12EOS {
+        ADC12MCTL5_ADC12EOS: 7 = enum ADC12MCTL5_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -1725,14 +1725,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL5_ADC12DIF: 13..13 = enum ADC12MCTL5_ADC12DIF {
+        ADC12MCTL5_ADC12DIF: 13 = enum ADC12MCTL5_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL5_ADC12WINC: 14..14 = enum ADC12MCTL5_ADC12WINC {
+        ADC12MCTL5_ADC12WINC: 14 = enum ADC12MCTL5_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -1809,7 +1809,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL6_ADC12EOS: 7..7 = enum ADC12MCTL6_ADC12EOS {
+        ADC12MCTL6_ADC12EOS: 7 = enum ADC12MCTL6_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -1851,14 +1851,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL6_ADC12DIF: 13..13 = enum ADC12MCTL6_ADC12DIF {
+        ADC12MCTL6_ADC12DIF: 13 = enum ADC12MCTL6_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL6_ADC12WINC: 14..14 = enum ADC12MCTL6_ADC12WINC {
+        ADC12MCTL6_ADC12WINC: 14 = enum ADC12MCTL6_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -1935,7 +1935,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL7_ADC12EOS: 7..7 = enum ADC12MCTL7_ADC12EOS {
+        ADC12MCTL7_ADC12EOS: 7 = enum ADC12MCTL7_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -1977,14 +1977,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL7_ADC12DIF: 13..13 = enum ADC12MCTL7_ADC12DIF {
+        ADC12MCTL7_ADC12DIF: 13 = enum ADC12MCTL7_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL7_ADC12WINC: 14..14 = enum ADC12MCTL7_ADC12WINC {
+        ADC12MCTL7_ADC12WINC: 14 = enum ADC12MCTL7_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -2061,7 +2061,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL8_ADC12EOS: 7..7 = enum ADC12MCTL8_ADC12EOS {
+        ADC12MCTL8_ADC12EOS: 7 = enum ADC12MCTL8_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -2103,14 +2103,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL8_ADC12DIF: 13..13 = enum ADC12MCTL8_ADC12DIF {
+        ADC12MCTL8_ADC12DIF: 13 = enum ADC12MCTL8_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL8_ADC12WINC: 14..14 = enum ADC12MCTL8_ADC12WINC {
+        ADC12MCTL8_ADC12WINC: 14 = enum ADC12MCTL8_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -2187,7 +2187,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL9_ADC12EOS: 7..7 = enum ADC12MCTL9_ADC12EOS {
+        ADC12MCTL9_ADC12EOS: 7 = enum ADC12MCTL9_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -2229,14 +2229,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL9_ADC12DIF: 13..13 = enum ADC12MCTL9_ADC12DIF {
+        ADC12MCTL9_ADC12DIF: 13 = enum ADC12MCTL9_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL9_ADC12WINC: 14..14 = enum ADC12MCTL9_ADC12WINC {
+        ADC12MCTL9_ADC12WINC: 14 = enum ADC12MCTL9_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -2313,7 +2313,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL10_ADC12EOS: 7..7 = enum ADC12MCTL10_ADC12EOS {
+        ADC12MCTL10_ADC12EOS: 7 = enum ADC12MCTL10_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -2355,14 +2355,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL10_ADC12DIF: 13..13 = enum ADC12MCTL10_ADC12DIF {
+        ADC12MCTL10_ADC12DIF: 13 = enum ADC12MCTL10_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL10_ADC12WINC: 14..14 = enum ADC12MCTL10_ADC12WINC {
+        ADC12MCTL10_ADC12WINC: 14 = enum ADC12MCTL10_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -2439,7 +2439,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL11_ADC12EOS: 7..7 = enum ADC12MCTL11_ADC12EOS {
+        ADC12MCTL11_ADC12EOS: 7 = enum ADC12MCTL11_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -2481,14 +2481,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL11_ADC12DIF: 13..13 = enum ADC12MCTL11_ADC12DIF {
+        ADC12MCTL11_ADC12DIF: 13 = enum ADC12MCTL11_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL11_ADC12WINC: 14..14 = enum ADC12MCTL11_ADC12WINC {
+        ADC12MCTL11_ADC12WINC: 14 = enum ADC12MCTL11_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -2565,7 +2565,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL12_ADC12EOS: 7..7 = enum ADC12MCTL12_ADC12EOS {
+        ADC12MCTL12_ADC12EOS: 7 = enum ADC12MCTL12_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -2607,14 +2607,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL12_ADC12DIF: 13..13 = enum ADC12MCTL12_ADC12DIF {
+        ADC12MCTL12_ADC12DIF: 13 = enum ADC12MCTL12_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL12_ADC12WINC: 14..14 = enum ADC12MCTL12_ADC12WINC {
+        ADC12MCTL12_ADC12WINC: 14 = enum ADC12MCTL12_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -2691,7 +2691,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL13_ADC12EOS: 7..7 = enum ADC12MCTL13_ADC12EOS {
+        ADC12MCTL13_ADC12EOS: 7 = enum ADC12MCTL13_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -2733,14 +2733,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL13_ADC12DIF: 13..13 = enum ADC12MCTL13_ADC12DIF {
+        ADC12MCTL13_ADC12DIF: 13 = enum ADC12MCTL13_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL13_ADC12WINC: 14..14 = enum ADC12MCTL13_ADC12WINC {
+        ADC12MCTL13_ADC12WINC: 14 = enum ADC12MCTL13_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -2817,7 +2817,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL14_ADC12EOS: 7..7 = enum ADC12MCTL14_ADC12EOS {
+        ADC12MCTL14_ADC12EOS: 7 = enum ADC12MCTL14_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -2859,14 +2859,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL14_ADC12DIF: 13..13 = enum ADC12MCTL14_ADC12DIF {
+        ADC12MCTL14_ADC12DIF: 13 = enum ADC12MCTL14_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL14_ADC12WINC: 14..14 = enum ADC12MCTL14_ADC12WINC {
+        ADC12MCTL14_ADC12WINC: 14 = enum ADC12MCTL14_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -2943,7 +2943,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL15_ADC12EOS: 7..7 = enum ADC12MCTL15_ADC12EOS {
+        ADC12MCTL15_ADC12EOS: 7 = enum ADC12MCTL15_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -2985,14 +2985,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL15_ADC12DIF: 13..13 = enum ADC12MCTL15_ADC12DIF {
+        ADC12MCTL15_ADC12DIF: 13 = enum ADC12MCTL15_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL15_ADC12WINC: 14..14 = enum ADC12MCTL15_ADC12WINC {
+        ADC12MCTL15_ADC12WINC: 14 = enum ADC12MCTL15_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -3069,7 +3069,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL16_ADC12EOS: 7..7 = enum ADC12MCTL16_ADC12EOS {
+        ADC12MCTL16_ADC12EOS: 7 = enum ADC12MCTL16_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -3111,14 +3111,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL16_ADC12DIF: 13..13 = enum ADC12MCTL16_ADC12DIF {
+        ADC12MCTL16_ADC12DIF: 13 = enum ADC12MCTL16_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL16_ADC12WINC: 14..14 = enum ADC12MCTL16_ADC12WINC {
+        ADC12MCTL16_ADC12WINC: 14 = enum ADC12MCTL16_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -3195,7 +3195,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL17_ADC12EOS: 7..7 = enum ADC12MCTL17_ADC12EOS {
+        ADC12MCTL17_ADC12EOS: 7 = enum ADC12MCTL17_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -3237,14 +3237,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL17_ADC12DIF: 13..13 = enum ADC12MCTL17_ADC12DIF {
+        ADC12MCTL17_ADC12DIF: 13 = enum ADC12MCTL17_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL17_ADC12WINC: 14..14 = enum ADC12MCTL17_ADC12WINC {
+        ADC12MCTL17_ADC12WINC: 14 = enum ADC12MCTL17_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -3321,7 +3321,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL18_ADC12EOS: 7..7 = enum ADC12MCTL18_ADC12EOS {
+        ADC12MCTL18_ADC12EOS: 7 = enum ADC12MCTL18_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -3363,14 +3363,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL18_ADC12DIF: 13..13 = enum ADC12MCTL18_ADC12DIF {
+        ADC12MCTL18_ADC12DIF: 13 = enum ADC12MCTL18_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL18_ADC12WINC: 14..14 = enum ADC12MCTL18_ADC12WINC {
+        ADC12MCTL18_ADC12WINC: 14 = enum ADC12MCTL18_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -3447,7 +3447,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL19_ADC12EOS: 7..7 = enum ADC12MCTL19_ADC12EOS {
+        ADC12MCTL19_ADC12EOS: 7 = enum ADC12MCTL19_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -3489,14 +3489,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL19_ADC12DIF: 13..13 = enum ADC12MCTL19_ADC12DIF {
+        ADC12MCTL19_ADC12DIF: 13 = enum ADC12MCTL19_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL19_ADC12WINC: 14..14 = enum ADC12MCTL19_ADC12WINC {
+        ADC12MCTL19_ADC12WINC: 14 = enum ADC12MCTL19_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -3573,7 +3573,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL20_ADC12EOS: 7..7 = enum ADC12MCTL20_ADC12EOS {
+        ADC12MCTL20_ADC12EOS: 7 = enum ADC12MCTL20_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -3615,14 +3615,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL20_ADC12DIF: 13..13 = enum ADC12MCTL20_ADC12DIF {
+        ADC12MCTL20_ADC12DIF: 13 = enum ADC12MCTL20_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL20_ADC12WINC: 14..14 = enum ADC12MCTL20_ADC12WINC {
+        ADC12MCTL20_ADC12WINC: 14 = enum ADC12MCTL20_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -3699,7 +3699,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL21_ADC12EOS: 7..7 = enum ADC12MCTL21_ADC12EOS {
+        ADC12MCTL21_ADC12EOS: 7 = enum ADC12MCTL21_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -3741,14 +3741,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL21_ADC12DIF: 13..13 = enum ADC12MCTL21_ADC12DIF {
+        ADC12MCTL21_ADC12DIF: 13 = enum ADC12MCTL21_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL21_ADC12WINC: 14..14 = enum ADC12MCTL21_ADC12WINC {
+        ADC12MCTL21_ADC12WINC: 14 = enum ADC12MCTL21_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -3825,7 +3825,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL22_ADC12EOS: 7..7 = enum ADC12MCTL22_ADC12EOS {
+        ADC12MCTL22_ADC12EOS: 7 = enum ADC12MCTL22_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -3867,14 +3867,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL22_ADC12DIF: 13..13 = enum ADC12MCTL22_ADC12DIF {
+        ADC12MCTL22_ADC12DIF: 13 = enum ADC12MCTL22_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL22_ADC12WINC: 14..14 = enum ADC12MCTL22_ADC12WINC {
+        ADC12MCTL22_ADC12WINC: 14 = enum ADC12MCTL22_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -3951,7 +3951,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL23_ADC12EOS: 7..7 = enum ADC12MCTL23_ADC12EOS {
+        ADC12MCTL23_ADC12EOS: 7 = enum ADC12MCTL23_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -3993,14 +3993,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL23_ADC12DIF: 13..13 = enum ADC12MCTL23_ADC12DIF {
+        ADC12MCTL23_ADC12DIF: 13 = enum ADC12MCTL23_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL23_ADC12WINC: 14..14 = enum ADC12MCTL23_ADC12WINC {
+        ADC12MCTL23_ADC12WINC: 14 = enum ADC12MCTL23_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -4077,7 +4077,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL24_ADC12EOS: 7..7 = enum ADC12MCTL24_ADC12EOS {
+        ADC12MCTL24_ADC12EOS: 7 = enum ADC12MCTL24_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -4119,14 +4119,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL24_ADC12DIF: 13..13 = enum ADC12MCTL24_ADC12DIF {
+        ADC12MCTL24_ADC12DIF: 13 = enum ADC12MCTL24_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL24_ADC12WINC: 14..14 = enum ADC12MCTL24_ADC12WINC {
+        ADC12MCTL24_ADC12WINC: 14 = enum ADC12MCTL24_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -4203,7 +4203,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL25_ADC12EOS: 7..7 = enum ADC12MCTL25_ADC12EOS {
+        ADC12MCTL25_ADC12EOS: 7 = enum ADC12MCTL25_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -4245,14 +4245,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL25_ADC12DIF: 13..13 = enum ADC12MCTL25_ADC12DIF {
+        ADC12MCTL25_ADC12DIF: 13 = enum ADC12MCTL25_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL25_ADC12WINC: 14..14 = enum ADC12MCTL25_ADC12WINC {
+        ADC12MCTL25_ADC12WINC: 14 = enum ADC12MCTL25_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -4329,7 +4329,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL26_ADC12EOS: 7..7 = enum ADC12MCTL26_ADC12EOS {
+        ADC12MCTL26_ADC12EOS: 7 = enum ADC12MCTL26_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -4371,14 +4371,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL26_ADC12DIF: 13..13 = enum ADC12MCTL26_ADC12DIF {
+        ADC12MCTL26_ADC12DIF: 13 = enum ADC12MCTL26_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL26_ADC12WINC: 14..14 = enum ADC12MCTL26_ADC12WINC {
+        ADC12MCTL26_ADC12WINC: 14 = enum ADC12MCTL26_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -4455,7 +4455,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL27_ADC12EOS: 7..7 = enum ADC12MCTL27_ADC12EOS {
+        ADC12MCTL27_ADC12EOS: 7 = enum ADC12MCTL27_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -4497,14 +4497,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL27_ADC12DIF: 13..13 = enum ADC12MCTL27_ADC12DIF {
+        ADC12MCTL27_ADC12DIF: 13 = enum ADC12MCTL27_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL27_ADC12WINC: 14..14 = enum ADC12MCTL27_ADC12WINC {
+        ADC12MCTL27_ADC12WINC: 14 = enum ADC12MCTL27_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -4581,7 +4581,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL28_ADC12EOS: 7..7 = enum ADC12MCTL28_ADC12EOS {
+        ADC12MCTL28_ADC12EOS: 7 = enum ADC12MCTL28_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -4623,14 +4623,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL28_ADC12DIF: 13..13 = enum ADC12MCTL28_ADC12DIF {
+        ADC12MCTL28_ADC12DIF: 13 = enum ADC12MCTL28_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL28_ADC12WINC: 14..14 = enum ADC12MCTL28_ADC12WINC {
+        ADC12MCTL28_ADC12WINC: 14 = enum ADC12MCTL28_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -4707,7 +4707,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL29_ADC12EOS: 7..7 = enum ADC12MCTL29_ADC12EOS {
+        ADC12MCTL29_ADC12EOS: 7 = enum ADC12MCTL29_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -4749,14 +4749,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL29_ADC12DIF: 13..13 = enum ADC12MCTL29_ADC12DIF {
+        ADC12MCTL29_ADC12DIF: 13 = enum ADC12MCTL29_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL29_ADC12WINC: 14..14 = enum ADC12MCTL29_ADC12WINC {
+        ADC12MCTL29_ADC12WINC: 14 = enum ADC12MCTL29_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -4833,7 +4833,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL30_ADC12EOS: 7..7 = enum ADC12MCTL30_ADC12EOS {
+        ADC12MCTL30_ADC12EOS: 7 = enum ADC12MCTL30_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -4875,14 +4875,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL30_ADC12DIF: 13..13 = enum ADC12MCTL30_ADC12DIF {
+        ADC12MCTL30_ADC12DIF: 13 = enum ADC12MCTL30_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL30_ADC12WINC: 14..14 = enum ADC12MCTL30_ADC12WINC {
+        ADC12MCTL30_ADC12WINC: 14 = enum ADC12MCTL30_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled
@@ -4959,7 +4959,7 @@ utils::periph! {
             ADC12INCH_31 = 0b11111,
         }
         /// End of sequence
-        ADC12MCTL31_ADC12EOS: 7..7 = enum ADC12MCTL31_ADC12EOS {
+        ADC12MCTL31_ADC12EOS: 7 = enum ADC12MCTL31_ADC12EOS {
             /// Not end of sequence
             ADC12EOS_0 = 0b0,
             /// End of sequence
@@ -5001,14 +5001,14 @@ utils::periph! {
             ADC12VRSEL_15 = 0b1111,
         }
         /// Differential mode.
-        ADC12MCTL31_ADC12DIF: 13..13 = enum ADC12MCTL31_ADC12DIF {
+        ADC12MCTL31_ADC12DIF: 13 = enum ADC12MCTL31_ADC12DIF {
             /// Single-ended mode enabled
             ADC12DIF_0 = 0b0,
             /// Differential mode enabled
             ADC12DIF_1 = 0b1,
         }
         /// Comparator window enable
-        ADC12MCTL31_ADC12WINC: 14..14 = enum ADC12MCTL31_ADC12WINC {
+        ADC12MCTL31_ADC12WINC: 14 = enum ADC12MCTL31_ADC12WINC {
             /// Comparator window disabled
             ADC12WINC_0 = 0b0,
             /// Comparator window enabled

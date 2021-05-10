@@ -116,28 +116,28 @@ utils::periph! {
     /// MPY32 control register 0
     rw MPY32CTL0 @ 0x2c: u16 = 0_0 {
         /// Delayed write mode.
-        MPYDLY32: 9..9 = enum MPYDLY32 {
+        MPYDLY32: 9 = enum MPYDLY32 {
             /// Writes are delayed until 64-bit result (RES0 to RES3) is available.
             MPYDLY32_0 = 0b0,
             /// Writes are delayed until 32-bit result (RES0 to RES1) is available. 8 MPYDLYWRTEN
             MPYDLY32_1 = 0b1,
         }
         /// Delayed write enable.
-        MPYDLYWRTEN: 8..8 = enum MPYDLYWRTEN {
+        MPYDLYWRTEN: 8 = enum MPYDLYWRTEN {
             /// Writes are not delayed.
             MPYDLYWRTEN_0 = 0b0,
             /// Writes are delayed.
             MPYDLYWRTEN_1 = 0b1,
         }
         /// Multiplier bit width of operand 2
-        MPYOP2_32: 7..7 = enum MPYOP2_32 {
+        MPYOP2_32: 7 = enum MPYOP2_32 {
             /// 16 bits.
             _16 = 0b0,
             /// 32 bits.
             _32 = 0b1,
         }
         /// Multiplier bit width of operand 1
-        MPYOP1_32: 6..6 = enum MPYOP1_32 {
+        MPYOP1_32: 6 = enum MPYOP1_32 {
             /// 16 bits.
             _16 = 0b0,
             /// 32 bits.
@@ -155,21 +155,21 @@ utils::periph! {
             MACS = 0b11,
         }
         /// Saturation mode
-        MPYSAT: 3..3 = enum MPYSAT {
+        MPYSAT: 3 = enum MPYSAT {
             /// Saturation mode disabled.
             DISABLE = 0b0,
             /// Saturation mode enabled.
             ENABLE = 0b1,
         }
         /// Fractional mode.
-        MPYFRAC: 2..2 = enum MPYFRAC {
+        MPYFRAC: 2 = enum MPYFRAC {
             /// Fractional mode disabled.
             DISABLE = 0b0,
             /// Fractional mode enabled.
             ENABLE = 0b1,
         }
         /// Carry of the multiplier
-        MPYC: 0..0 = enum MPYC {
+        MPYC: 0 = enum MPYC {
             /// No carry for result.
             MPYC_0 = 0b0,
             /// Result has a carry.

@@ -13,7 +13,7 @@ utils::periph! {
     /// Clock System Control 1
     rw CSCTL1 @ 0x02: u16 = 0_0 {
         /// Modulation. This bit enables/disables the modulation.
-        DISMOD: 0..0 = enum DISMOD {
+        DISMOD: 0 = enum DISMOD {
             /// Modulation enabled
             DISMOD_0 = 0b0,
             /// Modulation disabled
@@ -41,7 +41,7 @@ utils::periph! {
         /// DCO frequency trim. These bits trims the DCO frequency. By default, it is chipspecific trimmed. These bits can also be trimmed by user code.
         DCOFTRIM: 4..6 = struct DCOFTRIM(u16);
         /// DCO Frequency Trim Enable. When this bit is set, DCOFTRIM value is selected to set DCO frequency. Otherwise, DCOFTRIM value is bypassed and DCO applies default settings in manufacture.
-        DCOFTRIMEN: 7..7 = enum DCOFTRIMEN {
+        DCOFTRIMEN: 7 = enum DCOFTRIMEN {
             /// Disable frequency trim
             DCOFTRIMEN_0 = 0b0,
             /// Enable frequency trim
@@ -105,7 +105,7 @@ utils::periph! {
             SELREF_3 = 0b11,
         }
         /// REFO Low Power Enable. This bit turns on REFO low-power mode. During switch, the low-power mode will be invalid until REFOREADY is set.
-        REFOLP: 7..7 = enum REFOLP {
+        REFOLP: 7 = enum REFOLP {
             /// REFO Low Power Disabled (High Power Mode)
             REFOLP_0 = 0b0,
             /// REFO Low Power Enabled
@@ -178,14 +178,14 @@ utils::periph! {
             _8 = 0b11,
         }
         /// SMCLK off. This bit turns off SMCLK clock
-        SMCLKOFF: 8..8 = enum SMCLKOFF {
+        SMCLKOFF: 8 = enum SMCLKOFF {
             /// SMCLK on
             SMCLKOFF_0 = 0b0,
             /// SMCLK off
             SMCLKOFF_1 = 0b1,
         }
         /// VLO automatic off enable. This bit turns off VLO, if VLO is not used.
-        VLOAUTOOFF: 12..12 = enum VLOAUTOOFF {
+        VLOAUTOOFF: 12 = enum VLOAUTOOFF {
             /// VLO always on
             VLOAUTOOFF_0 = 0b0,
             /// VLO automatically turned off if not used(default)
@@ -195,14 +195,14 @@ utils::periph! {
     /// Clock System Control 6
     rw CSCTL6 @ 0x0c: u16 = 0_0 {
         /// XT1 automatic off enable. This bit allows XT1 turned turns off when it is not used
-        XT1AUTOOFF: 0..0 = enum XT1AUTOOFF {
+        XT1AUTOOFF: 0 = enum XT1AUTOOFF {
             /// XT1 is on if XT1 is selected by the port selection and XT1 is not in bypass mode of operation.
             XT1AUTOOFF_0 = 0b0,
             /// XT1 is off if it is not used as a source for ACLK, MCLK, or SMCLK or is not used as a reference source required for FLL operation.
             XT1AUTOOFF_1 = 0b1,
         }
         /// Automatic Gain Control (AGC) disable.
-        XT1AGCOFF: 1..1 = enum XT1AGCOFF {
+        XT1AGCOFF: 1 = enum XT1AGCOFF {
             /// AGC on
             XT1AGCOFF_0 = 0b0,
             /// AGC off
@@ -220,14 +220,14 @@ utils::periph! {
             XT1HFFREQ_3 = 0b11,
         }
         /// XT1 bypass select
-        XT1BYPASS: 4..4 = enum XT1BYPASS {
+        XT1BYPASS: 4 = enum XT1BYPASS {
             /// XT1 source internally
             XT1BYPASS_0 = 0b0,
             /// XT1 sources externally from pin
             XT1BYPASS_1 = 0b1,
         }
         /// XT1 mode select
-        XTS: 5..5 = enum XTS {
+        XTS: 5 = enum XTS {
             /// Low-frequency mode.
             XTS_0 = 0b0,
             /// High-frequency mode.
@@ -280,7 +280,7 @@ utils::periph! {
             DIVA_15 = 0b1111,
         }
         /// The XT1 oscillator fault detection off
-        XT1FAULTOFF: 13..13 = enum XT1FAULTOFF {
+        XT1FAULTOFF: 13 = enum XT1FAULTOFF {
             /// Enabling XT1 fault to switch ACLK to REFO
             XT1FAULTOFF_0 = 0b0,
             /// Disabling XT1 fault to switch ACLK to REFO
@@ -290,35 +290,35 @@ utils::periph! {
     /// Clock System Control Register 7
     rw CSCTL7 @ 0x0e: u16 = 0_0 {
         /// REFO ready flag. This bit reflects the REFO readiness whent REFO is good for operation (such as FLL reference)
-        REFOREADY: 2..2 = enum REFOREADY {
+        REFOREADY: 2 = enum REFOREADY {
             /// REFO unstable
             REFOREADY_0 = 0b0,
             /// REFO ready to go
             REFOREADY_1 = 0b1,
         }
         /// DCO fault flag. If this bit is set, the OFIFG flag is also set. The DCOFFG bit is set if DCO = {0} or DCO = {511}. DCOFFG can be cleared by software. If the DCO fault condition still remains, DCOFFG is set. As long as DCOFFG is set, FLLUNLOCK shows the DCOERROR condition.
-        DCOFFG: 0..0 = enum DCOFFG {
+        DCOFFG: 0 = enum DCOFFG {
             /// No fault condition occurred after the last reset.
             DCOFFG_0 = 0b0,
             /// DCO fault. A DCO fault occurred after the last reset.
             DCOFFG_1 = 0b1,
         }
         /// T1 oscillator fault flag. If this bit is set, the OFIFG flag is also set. XT1OFFG is set if a XT1 fault condition exists. XT1OFFG can be cleared by software. If the XT1 fault condition still remains, XT1OFFG is set.
-        XT1OFFG: 1..1 = enum XT1OFFG {
+        XT1OFFG: 1 = enum XT1OFFG {
             /// No fault condition occurred after the last reset.
             XT1OFFG_0 = 0b0,
             /// XT1 fault. An XT1 fault occurred after the last reset.
             XT1OFFG_1 = 0b1,
         }
         /// FLL unlock interrupt flag. This flag is set when FLLUNLOCK bits equal 10b (DCO too fast). If FLLULPUC is also set, a PUC is triggered when FLLUIFG is set.
-        FLLULIFG: 4..4 = enum FLLULIFG {
+        FLLULIFG: 4 = enum FLLULIFG {
             /// FLLUNLOCK bits not equal to 10b
             FLLULIFG_0 = 0b0,
             /// FLLUNLOCK bits equal to 10b
             FLLULIFG_1 = 0b1,
         }
         /// Enable start counter for XT1.
-        ENSTFCNT1: 6..6 = enum ENSTFCNT1 {
+        ENSTFCNT1: 6 = enum ENSTFCNT1 {
             /// Startup fault counter disabled. Counter is cleared..
             ENSTFCNT1_0 = 0b0,
             /// Startup fault counter enabled.
@@ -349,7 +349,7 @@ utils::periph! {
         /// FLL unlock PUC enable. If the FLLULPUC bit is set, a reset (PUC) is triggered if FLLULIFG is set. FLLULIFG indicates when FLLUNLOCK bits equal 10 (too fast). FLLULPUC is automatically cleared upon servicing the event. If FLLULPUC is cleared (0), no PUC can be triggered by FLLULIFG.
         FLLULPUC: 12 = struct FLLULPUC(bool);
         /// Warning enable. If this bit is set, an interrupt is generated based on the FLLUNLOCKHIS bits. If FLLUNLOCKHIS is not equal to 00, an OFIFG is generated.
-        FLLWARNEN: 13..13 = enum FLLWARNEN {
+        FLLWARNEN: 13 = enum FLLWARNEN {
             /// FLLUNLOCKHIS status cannot set OFIFG.
             FLLWARNEN_0 = 0b0,
             /// FLLUNLOCKHIS status can set OFIFG.
@@ -359,28 +359,28 @@ utils::periph! {
     /// Clock System Control Register 8
     rw CSCTL8 @ 0x10: u16 = 0_0 {
         /// ACLK clock request enable. Setting this enables conditional module requests for ACLK
-        ACLKREQEN: 0..0 = enum ACLKREQEN {
+        ACLKREQEN: 0 = enum ACLKREQEN {
             /// ACLK conditional requests are disabled.
             ACLKREQEN_0 = 0b0,
             /// ACLK conditional requests are enabled.
             ACLKREQEN_1 = 0b1,
         }
         /// MCLK clock request enable. Setting this enables conditional module requests for MCLK
-        MCLKREQEN: 1..1 = enum MCLKREQEN {
+        MCLKREQEN: 1 = enum MCLKREQEN {
             /// MCLK conditional requests are disabled.
             MCLKREQEN_0 = 0b0,
             /// MCLK conditional requests are enabled.
             MCLKREQEN_1 = 0b1,
         }
         /// SMCLK clock request enable. Setting this enables conditional module requests for SMCLK
-        SMCLKREQEN: 2..2 = enum SMCLKREQEN {
+        SMCLKREQEN: 2 = enum SMCLKREQEN {
             /// SMCLK conditional requests are disabled.
             SMCLKREQEN_0 = 0b0,
             /// SMCLK conditional requests are enabled.
             SMCLKREQEN_1 = 0b1,
         }
         /// MODOSC clock request enable. Setting this enables conditional module requests for MODOSC.
-        MODOSCREQEN: 3..3 = enum MODOSCREQEN {
+        MODOSCREQEN: 3 = enum MODOSCREQEN {
             /// MODOSC conditional requests are disabled.
             MODOSCREQEN_0 = 0b0,
             /// MODOSC conditional requests are enabled.

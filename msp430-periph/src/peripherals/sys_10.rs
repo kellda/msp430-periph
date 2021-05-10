@@ -6,28 +6,28 @@ utils::periph! {
     /// System Control
     rw SYSCTL @ 0x00: u16 = 0_0 {
         /// RAM-based interrupt vectors
-        SYSRIVECT: 0..0 = enum SYSRIVECT {
+        SYSRIVECT: 0 = enum SYSRIVECT {
             /// Interrupt vectors generated with end address TOP of lower 64K FRAM FFFFh
             FRAM = 0b0,
             /// Interrupt vectors generated with end address TOP of RAM, when RAM available
             RAM = 0b1,
         }
         /// PMM access protect
-        SYSPMMPE: 2..2 = enum SYSPMMPE {
+        SYSPMMPE: 2 = enum SYSPMMPE {
             /// Access from anywhere in memory
             DIS = 0b0,
             /// Access only from the BSL segments
             EN = 0b1,
         }
         /// BSL entry indication
-        SYSBSLIND: 4..4 = enum SYSBSLIND {
+        SYSBSLIND: 4 = enum SYSBSLIND {
             /// No BSL entry sequence detected
             CLR = 0b0,
             /// BSL entry sequence detected
             SET = 0b1,
         }
         /// Dedicated JTAG pins enable
-        SYSJTAGPIN: 5..5 = enum SYSJTAGPIN {
+        SYSJTAGPIN: 5 = enum SYSJTAGPIN {
             /// Shared JTAG pins (JTAG mode selectable using SBW sequence)
             SHARED = 0b0,
             /// Dedicated JTAG pins (explicit 4-wire JTAG mode selection)
@@ -37,21 +37,21 @@ utils::periph! {
     /// Bootloader Configuration
     rw SYSBSLC @ 0x02: u16 = 0_0 {
         /// RAM assigned to BSL
-        SYSBSLR: 2..2 = enum SYSBSLR {
+        SYSBSLR: 2 = enum SYSBSLR {
             /// No RAM assigned to BSL area
             NORAM = 0b0,
             /// Lowest 16 bytes of RAM assigned to BSL
             RAM = 0b1,
         }
         /// Bootstrap loader memory disable for the size covered in SYSBSLSIZE
-        SYSBSLOFF: 14..14 = enum SYSBSLOFF {
+        SYSBSLOFF: 14 = enum SYSBSLOFF {
             /// BSL memory is addressed when this area is read.
             ON = 0b0,
             /// BSL memory behaves like vacant memory. Reads cause 3FFFh to be read. Fetches cause JMP $ to be executed.
             OFF = 0b1,
         }
         /// Bootstrap loader memory protection enable for the size covered in SYSBSLSIZE. By default, this bit is cleared by hardware with a BOR event (as indicated above); however, the boot code that checks for an available BSL may set this bit in software to protect the BSL. Because devices normally come with a TI BSL preprogrammed and protected, the boot code sets this bit.
-        SYSBSLPE: 15..15 = enum SYSBSLPE {
+        SYSBSLPE: 15 = enum SYSBSLPE {
             /// Area not protected. Read, program, and erase of BSL memory is possible.
             NOTPROT = 0b0,
             /// Area protected
@@ -61,49 +61,49 @@ utils::periph! {
     /// JTAG Mailbox Control
     rw SYSJMBC @ 0x06: u16 = 0_0 {
         /// Incoming JTAG Mailbox 0 flag
-        JMBIN0FG: 0..0 = enum JMBIN0FG {
+        JMBIN0FG: 0 = enum JMBIN0FG {
             /// JMBI0 has no new data
             NODAT = 0b0,
             /// JMBI0 has new data available
             NEWDAT = 0b1,
         }
         /// Incoming JTAG Mailbox 1 flag
-        JMBIN1FG: 1..1 = enum JMBIN1FG {
+        JMBIN1FG: 1 = enum JMBIN1FG {
             /// JMBI1 has no new data
             NODAT = 0b0,
             /// JMBI1 has new data available
             NEWDAT = 0b1,
         }
         /// Outgoing JTAG Mailbox 0 flag
-        JMBOUT0FG: 2..2 = enum JMBOUT0FG {
+        JMBOUT0FG: 2 = enum JMBOUT0FG {
             /// JMBO0 is not ready to receive new data
             BUSY = 0b0,
             /// JMBO0 is ready to receive new data
             READY = 0b1,
         }
         /// Outgoing JTAG Mailbox 1 flag
-        JMBOUT1FG: 3..3 = enum JMBOUT1FG {
+        JMBOUT1FG: 3 = enum JMBOUT1FG {
             /// JMBO1 is not ready to receive new data
             BUSY = 0b0,
             /// JMBO1 is ready to receive new data
             READY = 0b1,
         }
         /// Operation mode of JMB
-        JMBMODE: 4..4 = enum JMBMODE {
+        JMBMODE: 4 = enum JMBMODE {
             /// 16-bit transfers using JMBO0 and JMBI0 only
             _16BIT = 0b0,
             /// 32-bit transfers using JMBO0 with JMBO1 and JMBI0 with JMBI1
             _32BIT = 0b1,
         }
         /// Incoming JTAG Mailbox 0 flag auto-clear disable
-        JMBCLR0OFF: 6..6 = enum JMBCLR0OFF {
+        JMBCLR0OFF: 6 = enum JMBCLR0OFF {
             /// JMBIN0FG cleared on read of JMB0IN register
             CLRORD = 0b0,
             /// JMBIN0FG cleared by software
             CLRBSW = 0b1,
         }
         /// Incoming JTAG Mailbox 1 flag auto-clear disable
-        JMBCLR1OFF: 7..7 = enum JMBCLR1OFF {
+        JMBCLR1OFF: 7 = enum JMBCLR1OFF {
             /// JMBIN1FG cleared on read of JMB1IN register
             CLRORD = 0b0,
             /// JMBIN1FG cleared by software
@@ -229,7 +229,7 @@ utils::periph! {
     /// System Configuration 0
     rw SYSCFG0 @ 0x20: u16 = 0_0 {
         /// Program FRAM write protection
-        PFWP: 0..0 = enum PFWP {
+        PFWP: 0 = enum PFWP {
             /// Program FRAM write enable
             WEN = 0b0,
             /// Program FRAM write protected (not writable)
@@ -238,7 +238,7 @@ utils::periph! {
         /// FRWPPW password.
         FRWPPW: 8..15 = struct FRWPPW(u16);
         /// Data FRAM write protection
-        DFWP: 1..1 = enum DFWP {
+        DFWP: 1 = enum DFWP {
             /// Data FRAM write enable
             WEN = 0b0,
             /// Data FRAM write protected (not writable)
@@ -250,35 +250,35 @@ utils::periph! {
     /// System Configuration 1
     rw SYSCFG1 @ 0x22: u16 = 0_0 {
         /// Infrared enable
-        IREN: 0..0 = enum IREN {
+        IREN: 0 = enum IREN {
             /// Infrared function disabled
             DIS = 0b0,
             /// Infrared function enabled
             EN = 0b1,
         }
         /// Infrared polarity select
-        IRPSEL: 1..1 = enum IRPSEL {
+        IRPSEL: 1 = enum IRPSEL {
             /// Normal polarity
             NORM = 0b0,
             /// Inverted polarity
             INV = 0b1,
         }
         /// Infrared mode select
-        IRMSEL: 2..2 = enum IRMSEL {
+        IRMSEL: 2 = enum IRMSEL {
             /// ASK mode
             ASK = 0b0,
             /// FSK mode
             FSK = 0b1,
         }
         /// Infrared data source select
-        IRDSSEL: 3..3 = enum IRDSSEL {
+        IRDSSEL: 3 = enum IRDSSEL {
             /// From hardware peripherals upon device configuration
             HW = 0b0,
             /// From IRDATA bit
             IRDATA = 0b1,
         }
         /// Infrared data
-        IRDATA: 4..4 = enum IRDATA {
+        IRDATA: 4 = enum IRDATA {
             /// Infrared data logic 0
             LOW = 0b0,
             /// Infrared data logic 1
@@ -299,21 +299,21 @@ utils::periph! {
     /// System Configuration 2
     rw SYSCFG2 @ 0x24: u16 = 0_0 {
         /// RTC clock selection
-        RTCCKSEL: 10..10 = enum RTCCKSEL {
+        RTCCKSEL: 10 = enum RTCCKSEL {
             /// SMCLK is selected
             RTCCKSEL_0 = 0b0,
             /// ACLK is selected
             RTCCKSEL_1 = 0b1,
         }
         /// eUSCI_B0 remapping source selection
-        USCIB0RMP: 11..11 = enum USCIB0RMP {
+        USCIB0RMP: 11 = enum USCIB0RMP {
             /// Default function. See the device-specific data sheet for details.
             USCIB0RMP_0 = 0b0,
             /// Remapped function. See the device-specific data sheet for details.
             USCIB0RMP_1 = 0b1,
         }
         /// TB0OUTH trigger source selection
-        TB0TRGSEL: 15..15 = enum TB0TRGSEL {
+        TB0TRGSEL: 15 = enum TB0TRGSEL {
             /// Internal source is selected
             TB0TRGSEL_0 = 0b0,
             /// External source is selected
@@ -323,28 +323,28 @@ utils::periph! {
     /// System Configuration 3
     rw SYSCFG3 @ 0x26: u16 = 0_0 {
         /// eUSCI_A0 remapping source selection
-        USCIA0RMP: 0..0 = enum USCIA0RMP {
+        USCIA0RMP: 0 = enum USCIA0RMP {
             /// Default function. See the device-specific data sheet for details.
             USCIA0RMP_0 = 0b0,
             /// Remapped function. See the device-specific data sheet for details.
             USCIA0RMP_1 = 0b1,
         }
         /// Timer2_A3 remapping source selection
-        TA2RMP: 2..2 = enum TA2RMP {
+        TA2RMP: 2 = enum TA2RMP {
             /// Default function. See the device-specific data sheet for details.
             TA2RMP_0 = 0b0,
             /// Remapped function. See the device-specific data sheet for details.
             TA2RMP_1 = 0b1,
         }
         /// Timer3_A3 remapping source selection
-        TA3RMP: 3..3 = enum TA3RMP {
+        TA3RMP: 3 = enum TA3RMP {
             /// Default function. See the device-specific data sheet for details.
             TA3RMP_0 = 0b0,
             /// Remapped function. See the device-specific data sheet for details.
             TA3RMP_1 = 0b1,
         }
         /// eUSCI_B1 remapping source selection
-        USCIB1RMP: 4..4 = enum USCIB1RMP {
+        USCIB1RMP: 4 = enum USCIB1RMP {
             /// Default function. See the device-specific data sheet for details.
             USCIB1RMP_0 = 0b0,
             /// Remapped function. See the device-specific data sheet for details.

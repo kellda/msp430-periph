@@ -30,42 +30,42 @@ utils::periph! {
     /// Masked Interrupt Status and Clear Register
     r SDHSMIS @ 0x02: u16 = 0_0 {
         /// SDHS Data Ready Masked Interrupt Status bit.
-        SDHSMIS_DTRDY: 3..3 = enum SDHSMIS_DTRDY {
+        SDHSMIS_DTRDY: 3 = enum SDHSMIS_DTRDY {
             /// No interrupt pending
             DTRDY_0 = 0b0,
             /// Interrupt pending
             DTRDY_1 = 0b1,
         }
         /// SDHS Start Conversion Trigger Masked Interrupt Status bit.
-        SDHSMIS_SSTRG: 2..2 = enum SDHSMIS_SSTRG {
+        SDHSMIS_SSTRG: 2 = enum SDHSMIS_SSTRG {
             /// No interrupt pending
             SSTRG_0 = 0b0,
             /// Interrupt pending
             SSTRG_1 = 0b1,
         }
         /// SDHS Data Overflow Masked Interrupt Status bit.
-        SDHSMIS_OVF: 0..0 = enum SDHSMIS_OVF {
+        SDHSMIS_OVF: 0 = enum SDHSMIS_OVF {
             /// No interrupt pending
             OVF_0 = 0b0,
             /// Interrupt pending
             OVF_1 = 0b1,
         }
         /// Acquisition Done Masked Interrupt Status bit.
-        SDHSMIS_ACQDONE: 1..1 = enum SDHSMIS_ACQDONE {
+        SDHSMIS_ACQDONE: 1 = enum SDHSMIS_ACQDONE {
             /// No interrupt pending
             ACQDONE_0 = 0b0,
             /// Interrupt pending
             ACQDONE_1 = 0b1,
         }
         /// SDHS Window High Masked Interrupt Status bit.
-        SDHSMIS_WINHI: 4..4 = enum SDHSMIS_WINHI {
+        SDHSMIS_WINHI: 4 = enum SDHSMIS_WINHI {
             /// No interrupt pending
             WINHI_0 = 0b0,
             /// Interrupt pending
             WINHI_1 = 0b1,
         }
         /// SDHS Window Low Masked Interrupt Status and Clear bit.
-        SDHSMIS_WINLO: 5..5 = enum SDHSMIS_WINLO {
+        SDHSMIS_WINLO: 5 = enum SDHSMIS_WINLO {
             /// No interrupt pending
             WINLO_0 = 0b0,
             /// Interrupt pending
@@ -75,49 +75,49 @@ utils::periph! {
     /// Raw Interrupt Status Register
     r SDHSRIS @ 0x04: u16 = 0_0 {
         /// SDHS Data Ready Raw Interrupt Status bit.
-        SDHSRIS_DTRDY: 3..3 = enum SDHSRIS_DTRDY {
+        SDHSRIS_DTRDY: 3 = enum SDHSRIS_DTRDY {
             /// No DTRDY event
             DTRDY_0 = 0b0,
             /// The data buffer has become empty.
             DTRDY_1 = 0b1,
         }
         /// SDHS Start Conversion Trigger Raw Interrupt Status bit.
-        SDHSRIS_SSTRG: 2..2 = enum SDHSRIS_SSTRG {
+        SDHSRIS_SSTRG: 2 = enum SDHSRIS_SSTRG {
             /// No SSTRG event
             SSTRG_0 = 0b0,
             /// Converson Start signal has been asserted
             SSTRG_1 = 0b1,
         }
         /// SDHS Data Overflow Raw Interrupt Status bit.
-        SDHSRIS_OVF: 0..0 = enum SDHSRIS_OVF {
+        SDHSRIS_OVF: 0 = enum SDHSRIS_OVF {
             /// No OVF event
             OVF_0 = 0b0,
             /// When DTC is enabled (CTL2.DTCOFF = 0), DTC has dropped at least one sample. This indicates that the system clock needs to be increased.  When DTC is disabled (CTL2.DTCOFF = 1),  At least one new sample has been overwritten to SDHSDT register before the previous value is read.
             OVF_1 = 0b1,
         }
         /// Acquisition Done Raw Interrupt Status bit
-        SDHSRIS_ACQDONE: 1..1 = enum SDHSRIS_ACQDONE {
+        SDHSRIS_ACQDONE: 1 = enum SDHSRIS_ACQDONE {
             /// No ACQDONE event
             ACQDONE_0 = 0b0,
             /// Data conversion has been finished (either complete or incomplete).
             ACQDONE_1 = 0b1,
         }
         /// SDHS Window High Raw Interrupt Status bit.
-        SDHSRIS_WINHI: 4..4 = enum SDHSRIS_WINHI {
+        SDHSRIS_WINHI: 4 = enum SDHSRIS_WINHI {
             /// No WINHI event
             WINHI_0 = 0b0,
             /// The output data value is higher than the value in the WINHITH register
             WINHI_1 = 0b1,
         }
         /// SDHS Window Low Raw Interrupt Status bit.
-        SDHSRIS_WINLO: 5..5 = enum SDHSRIS_WINLO {
+        SDHSRIS_WINLO: 5 = enum SDHSRIS_WINLO {
             /// No new data is lower than the value in the WINLOTH register
             WINLO_0 = 0b0,
             /// New data is low than the value in the WINLOTH register
             WINLO_1 = 0b1,
         }
         /// Incomplete Stop Status bit.
-        SDHSRIS_ISTOP: 15..15 = enum SDHSRIS_ISTOP {
+        SDHSRIS_ISTOP: 15 = enum SDHSRIS_ISTOP {
             /// No ISTOP event
             ISTOP_0 = 0b0,
             /// Conversion has been interrupted and stopped before completing the number of samples defined in CTL2.SAMPSZ.
@@ -127,42 +127,42 @@ utils::periph! {
     /// Interrupt Mask Register
     rw SDHSIMSC @ 0x06: u16 = 0_0 {
         /// SDHS Data Ready Interrupt Mask bit.
-        SDHSIMSC_DTRDY: 3..3 = enum SDHSIMSC_DTRDY {
+        SDHSIMSC_DTRDY: 3 = enum SDHSIMSC_DTRDY {
             /// Interrupt is disabled
             DTRDY_0 = 0b0,
             /// Interrupt is enabled
             DTRDY_1 = 0b1,
         }
         /// SDHS Start Conversion Trigger Interrupt Mask bit.
-        SDHSIMSC_SSTRG: 2..2 = enum SDHSIMSC_SSTRG {
+        SDHSIMSC_SSTRG: 2 = enum SDHSIMSC_SSTRG {
             /// Interrupt is disabled
             SSTRG_0 = 0b0,
             /// Interrupt is enabled
             SSTRG_1 = 0b1,
         }
         /// SDHS Data Overflow Interrupt Mask bit.
-        SDHSIMSC_OVF: 0..0 = enum SDHSIMSC_OVF {
+        SDHSIMSC_OVF: 0 = enum SDHSIMSC_OVF {
             /// Interrupt is disabled
             OVF_0 = 0b0,
             /// Interrupt is enabled
             OVF_1 = 0b1,
         }
         /// Acquisition Done  Interrupt Mask bit.
-        SDHSIMSC_ACQDONE: 1..1 = enum SDHSIMSC_ACQDONE {
+        SDHSIMSC_ACQDONE: 1 = enum SDHSIMSC_ACQDONE {
             /// Interrupt is disabled
             ACQDONE_0 = 0b0,
             /// Interrupt is enabled
             ACQDONE_1 = 0b1,
         }
         /// SDHS Window High Interrupt Mask bit.
-        SDHSIMSC_WINHI: 4..4 = enum SDHSIMSC_WINHI {
+        SDHSIMSC_WINHI: 4 = enum SDHSIMSC_WINHI {
             /// Interrupt is disabled
             WINHI_0 = 0b0,
             /// Interrupt is enabled
             WINHI_1 = 0b1,
         }
         /// SDHS Window Low Interrupt Mask bit.
-        SDHSIMSC_WINLO: 5..5 = enum SDHSIMSC_WINLO {
+        SDHSIMSC_WINLO: 5 = enum SDHSIMSC_WINLO {
             /// Interrupt is disabled
             WINLO_0 = 0b0,
             /// Interrupt is enabled
@@ -222,7 +222,7 @@ utils::periph! {
     /// SDHS Control Register 0
     rw SDHSCTL0 @ 0x10: u16 = 0_0 {
         /// Data alignment
-        DALGN: 7..7 = enum DALGN {
+        DALGN: 7 = enum DALGN {
             /// Right-aligned.
             DALGN_0 = 0b0,
             /// Left-aligned.
@@ -259,14 +259,14 @@ utils::periph! {
             INTDLY_7 = 0b111,
         }
         /// SDHS Auto Sample Start Disable
-        AUTOSSDIS: 0..0 = enum AUTOSSDIS {
+        AUTOSSDIS: 0 = enum AUTOSSDIS {
             /// Auto Sample start enabled. SDHS is powered up when the SHDS_PWR_UP applied, then data conversion is automatically started once the SDHS is fully powered up.
             AUTOSSDIS_0 = 0b0,
             /// Auto Sample start disabled.  (This configuration must be used when the ASQ controls the measurement sequences) - SHDS_PWR_UP signal to turns on the SDHS - CONVERSION_START signal to start data convesion
             AUTOSSDIS_1 = 0b1,
         }
         /// SDHS trigger source select.
-        TRGSRC: 15..15 = enum TRGSRC {
+        TRGSRC: 15 = enum TRGSRC {
             /// Register control mode:  - CTL4.SDHSON is the source of the SHDS_PWR_UP/DOWN signal - CTL5.SSTART is the source of the CONVERSION_START/STOP signal
             TRGSRC_0 = 0b0,
             /// ASQ control mode: The SDHS is controlled by the ASQ. - ASQ_ACQARM signal from the ASQ is the source of the SHDS_PWR_UP/DOWN signal - ASQ_ACQTRIG signal from the ASQ is the source of the CONVERSION_START/STOP signal
@@ -314,7 +314,7 @@ utils::periph! {
     /// SDHS Control Register 2
     rw SDHSCTL2 @ 0x14: u16 = 0_0 {
         /// Disable sampling size counting.
-        SMPCTLOFF: 10..10 = enum SMPCTLOFF {
+        SMPCTLOFF: 10 = enum SMPCTLOFF {
             /// Total sampling size is determined by SMPSZ bits. The SDHS automatically stops data conversion.
             SMPCTLOFF_0 = 0b0,
             /// SMPSZ bits are ignored. Conversion does not stop until the trigger source selected by TRGSRC bits is deasserted.
@@ -323,14 +323,14 @@ utils::periph! {
         /// Total Sample Size.
         SMPSZ: 0..9 = struct SMPSZ(u16);
         /// Data Transfer Controller (DTC) Off
-        DTCOFF: 15..15 = enum DTCOFF {
+        DTCOFF: 15 = enum DTCOFF {
             /// DTC enabled. The DTC automatically transfers the data from the SDHSDT register to the address specified in the DTCDA register.
             DTCOFF_0 = 0b0,
             /// DTC disabled. The data in the SDHSDT register must be read by CPU, otherwise the overflow interrupt flag (RIS.OVF) will eventually be asserted.
             DTCOFF_1 = 0b1,
         }
         /// Window Comparator Enable
-        WINCMPEN: 14..14 = enum WINCMPEN {
+        WINCMPEN: 14 = enum WINCMPEN {
             /// Window Comparator is disabled
             WINCMPEN_0 = 0b0,
             /// Window Comparator is enabled
@@ -340,7 +340,7 @@ utils::periph! {
     /// SDHS Control Register 3
     rw SDHSCTL3 @ 0x16: u16 = 0_0 {
         /// SDHS Trigger Enable bit
-        TRIGEN: 0..0 = enum TRIGEN {
+        TRIGEN: 0 = enum TRIGEN {
             /// SDHS Trigger is disabled. Once this bit is de-asserted, CTL0,  CTL1, CTL2, CTL7,WINHITH, WINLOTH, and DTCDA registers are unlocked (allowed to be modified).
             TRIGEN_0 = 0b0,
             /// SDHS Trigger is enabled. Once this bit is asserted, CTL0,  CTL1, CTL2, CTL7,WINHITH, WINLOTH, and DTCDA registers are locked (not allowed to be modified).
@@ -350,7 +350,7 @@ utils::periph! {
     /// SDHS Control Register 4
     rw SDHSCTL4 @ 0x18: u16 = 0_0 {
         /// SDHS Power-up
-        SDHSON: 0..0 = enum SDHSON {
+        SDHSON: 0 = enum SDHSON {
             /// Power down the SDHS module
             SDHSON_0 = 0b0,
             /// Power on the SDHS module
@@ -360,14 +360,14 @@ utils::periph! {
     /// SDHS Control Register 5
     rw SDHSCTL5 @ 0x1a: u16 = 0_0 {
         /// Start of conversion.
-        SSTART: 0..0 = enum SSTART {
+        SSTART: 0 = enum SSTART {
             /// Stop conversion
             SSTART_0 = 0b0,
             /// Start conversion
             SSTART_1 = 0b1,
         }
         /// Start of conversion.
-        SDHS_LOCK: 8..8 = enum SDHS_LOCK {
+        SDHS_LOCK: 8 = enum SDHS_LOCK {
             /// CTL3 register is unlocked.
             SDHS_LOCK_0 = 0b0,
             /// CTL3 register is locked as well as  CTL0,  CTL1, CTL2, CTL7,WINHITH, WINLOTH, and DTCDA registers. Only read is allowed.

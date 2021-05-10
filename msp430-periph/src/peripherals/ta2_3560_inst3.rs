@@ -6,14 +6,14 @@ utils::periph! {
     /// TimerAx Control Register
     rw TA2CTL @ 0x00: u16 = 0_0 {
         /// TimerA interrupt flag
-        TAIFG: 0..0 = enum TAIFG {
+        TAIFG: 0 = enum TAIFG {
             /// No interrupt pending
             TAIFG_0 = 0b0,
             /// Interrupt pending
             TAIFG_1 = 0b1,
         }
         /// TimerA interrupt enable
-        TAIE: 1..1 = enum TAIE {
+        TAIE: 1 = enum TAIE {
             /// Interrupt disabled
             TAIE_0 = 0b0,
             /// Interrupt enabled
@@ -58,21 +58,21 @@ utils::periph! {
     /// Timer_A Capture/Compare Control Register
     rw TA2CCTL0 @ 0x02: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TA2CCTL0_CCIFG: 0..0 = enum TA2CCTL0_CCIFG {
+        TA2CCTL0_CCIFG: 0 = enum TA2CCTL0_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TA2CCTL0_COV: 1..1 = enum TA2CCTL0_COV {
+        TA2CCTL0_COV: 1 = enum TA2CCTL0_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TA2CCTL0_OUT: 2..2 = enum TA2CCTL0_OUT {
+        TA2CCTL0_OUT: 2 = enum TA2CCTL0_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -81,7 +81,7 @@ utils::periph! {
         /// Capture/compare input
         TA2CCTL0_CCI: 3 = struct TA2CCTL0_CCI(bool);
         /// Capture/compare interrupt enable
-        TA2CCTL0_CCIE: 4..4 = enum TA2CCTL0_CCIE {
+        TA2CCTL0_CCIE: 4 = enum TA2CCTL0_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -107,7 +107,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TA2CCTL0_CAP: 8..8 = enum TA2CCTL0_CAP {
+        TA2CCTL0_CAP: 8 = enum TA2CCTL0_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -116,7 +116,7 @@ utils::periph! {
         /// Synchronized capture/compare input
         TA2CCTL0_SCCI: 10 = struct TA2CCTL0_SCCI(bool);
         /// Synchronize capture source
-        TA2CCTL0_SCS: 11..11 = enum TA2CCTL0_SCS {
+        TA2CCTL0_SCS: 11 = enum TA2CCTL0_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
@@ -148,21 +148,21 @@ utils::periph! {
     /// Timer_A Capture/Compare Control Register
     rw TA2CCTL1 @ 0x04: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TA2CCTL1_CCIFG: 0..0 = enum TA2CCTL1_CCIFG {
+        TA2CCTL1_CCIFG: 0 = enum TA2CCTL1_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TA2CCTL1_COV: 1..1 = enum TA2CCTL1_COV {
+        TA2CCTL1_COV: 1 = enum TA2CCTL1_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TA2CCTL1_OUT: 2..2 = enum TA2CCTL1_OUT {
+        TA2CCTL1_OUT: 2 = enum TA2CCTL1_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -171,7 +171,7 @@ utils::periph! {
         /// Capture/compare input
         TA2CCTL1_CCI: 3 = struct TA2CCTL1_CCI(bool);
         /// Capture/compare interrupt enable
-        TA2CCTL1_CCIE: 4..4 = enum TA2CCTL1_CCIE {
+        TA2CCTL1_CCIE: 4 = enum TA2CCTL1_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -197,7 +197,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TA2CCTL1_CAP: 8..8 = enum TA2CCTL1_CAP {
+        TA2CCTL1_CAP: 8 = enum TA2CCTL1_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -206,7 +206,7 @@ utils::periph! {
         /// Synchronized capture/compare input
         TA2CCTL1_SCCI: 10 = struct TA2CCTL1_SCCI(bool);
         /// Synchronize capture source
-        TA2CCTL1_SCS: 11..11 = enum TA2CCTL1_SCS {
+        TA2CCTL1_SCS: 11 = enum TA2CCTL1_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
@@ -238,21 +238,21 @@ utils::periph! {
     /// Timer_A Capture/Compare Control Register
     rw TA2CCTL2 @ 0x06: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TA2CCTL2_CCIFG: 0..0 = enum TA2CCTL2_CCIFG {
+        TA2CCTL2_CCIFG: 0 = enum TA2CCTL2_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TA2CCTL2_COV: 1..1 = enum TA2CCTL2_COV {
+        TA2CCTL2_COV: 1 = enum TA2CCTL2_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TA2CCTL2_OUT: 2..2 = enum TA2CCTL2_OUT {
+        TA2CCTL2_OUT: 2 = enum TA2CCTL2_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -261,7 +261,7 @@ utils::periph! {
         /// Capture/compare input
         TA2CCTL2_CCI: 3 = struct TA2CCTL2_CCI(bool);
         /// Capture/compare interrupt enable
-        TA2CCTL2_CCIE: 4..4 = enum TA2CCTL2_CCIE {
+        TA2CCTL2_CCIE: 4 = enum TA2CCTL2_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -287,7 +287,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TA2CCTL2_CAP: 8..8 = enum TA2CCTL2_CAP {
+        TA2CCTL2_CAP: 8 = enum TA2CCTL2_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -296,7 +296,7 @@ utils::periph! {
         /// Synchronized capture/compare input
         TA2CCTL2_SCCI: 10 = struct TA2CCTL2_SCCI(bool);
         /// Synchronize capture source
-        TA2CCTL2_SCS: 11..11 = enum TA2CCTL2_SCS {
+        TA2CCTL2_SCS: 11 = enum TA2CCTL2_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture

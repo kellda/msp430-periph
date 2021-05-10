@@ -6,21 +6,21 @@ utils::periph! {
     /// RTCCTL0 Register
     rw RTCCTL @ 0x00: u16 = 0_0 {
         /// Real-time interrupt flag. This bit reports the status of a pending interrupt. This read only bit can be cleared by reading RTCIV register.
-        RTCIFG: 0..0 = enum RTCIFG {
+        RTCIFG: 0 = enum RTCIFG {
             /// No interrupt pending
             RTCIFG_0 = 0b0,
             /// Interrupt pending
             RTCIFG_1 = 0b1,
         }
         /// Real-time interrupt enable
-        RTCIE: 1..1 = enum RTCIE {
+        RTCIE: 1 = enum RTCIE {
             /// Interrupt disabled
             RTCIE_0 = 0b0,
             /// Interrupt enabled
             RTCIE_1 = 0b1,
         }
         /// Real-time software reset. This is a write only bit and is always read with logic 0. 0b = Write 0 has no effect
-        RTCSR: 6..6 = enum RTCSR {
+        RTCSR: 6 = enum RTCSR {
             /// Write 0 has no effect
             RTCSR_0 = 0b0,
             /// Write 1 to this bit clears the counter value and reloads the shadow register value from the modulo register at the next tick of the selected source clock. No overflow event or interrupt is generated.

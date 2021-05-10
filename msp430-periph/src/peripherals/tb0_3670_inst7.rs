@@ -6,14 +6,14 @@ utils::periph! {
     /// Timer_B Control Register
     rw TB0CTL @ 0x00: u16 = 0_0 {
         /// TimerB interrupt flag
-        TBIFG: 0..0 = enum TBIFG {
+        TBIFG: 0 = enum TBIFG {
             /// No interrupt pending
             TBIFG_0 = 0b0,
             /// Interrupt pending
             TBIFG_1 = 0b1,
         }
         /// TimerB interrupt enable
-        TBIE: 1..1 = enum TBIE {
+        TBIE: 1 = enum TBIE {
             /// Interrupt disabled
             TBIE_0 = 0b0,
             /// Interrupt enabled
@@ -80,21 +80,21 @@ utils::periph! {
     /// Timer_B Capture/Compare Control Register
     rw TB0CCTL0 @ 0x02: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TB0CCTL0_CCIFG: 0..0 = enum TB0CCTL0_CCIFG {
+        TB0CCTL0_CCIFG: 0 = enum TB0CCTL0_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TB0CCTL0_COV: 1..1 = enum TB0CCTL0_COV {
+        TB0CCTL0_COV: 1 = enum TB0CCTL0_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TB0CCTL0_OUT: 2..2 = enum TB0CCTL0_OUT {
+        TB0CCTL0_OUT: 2 = enum TB0CCTL0_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -103,7 +103,7 @@ utils::periph! {
         /// Capture/compare input
         TB0CCTL0_CCI: 3 = struct TB0CCTL0_CCI(bool);
         /// Capture/compare interrupt enable
-        TB0CCTL0_CCIE: 4..4 = enum TB0CCTL0_CCIE {
+        TB0CCTL0_CCIE: 4 = enum TB0CCTL0_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -129,7 +129,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TB0CCTL0_CAP: 8..8 = enum TB0CCTL0_CAP {
+        TB0CCTL0_CAP: 8 = enum TB0CCTL0_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -147,7 +147,7 @@ utils::periph! {
             CLLD_3 = 0b11,
         }
         /// Synchronize capture source
-        TB0CCTL0_SCS: 11..11 = enum TB0CCTL0_SCS {
+        TB0CCTL0_SCS: 11 = enum TB0CCTL0_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
@@ -179,21 +179,21 @@ utils::periph! {
     /// Timer_B Capture/Compare Control Register
     rw TB0CCTL1 @ 0x04: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TB0CCTL1_CCIFG: 0..0 = enum TB0CCTL1_CCIFG {
+        TB0CCTL1_CCIFG: 0 = enum TB0CCTL1_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TB0CCTL1_COV: 1..1 = enum TB0CCTL1_COV {
+        TB0CCTL1_COV: 1 = enum TB0CCTL1_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TB0CCTL1_OUT: 2..2 = enum TB0CCTL1_OUT {
+        TB0CCTL1_OUT: 2 = enum TB0CCTL1_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -202,7 +202,7 @@ utils::periph! {
         /// Capture/compare input
         TB0CCTL1_CCI: 3 = struct TB0CCTL1_CCI(bool);
         /// Capture/compare interrupt enable
-        TB0CCTL1_CCIE: 4..4 = enum TB0CCTL1_CCIE {
+        TB0CCTL1_CCIE: 4 = enum TB0CCTL1_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -228,7 +228,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TB0CCTL1_CAP: 8..8 = enum TB0CCTL1_CAP {
+        TB0CCTL1_CAP: 8 = enum TB0CCTL1_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -246,7 +246,7 @@ utils::periph! {
             CLLD_3 = 0b11,
         }
         /// Synchronize capture source
-        TB0CCTL1_SCS: 11..11 = enum TB0CCTL1_SCS {
+        TB0CCTL1_SCS: 11 = enum TB0CCTL1_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
@@ -278,21 +278,21 @@ utils::periph! {
     /// Timer_B Capture/Compare Control Register
     rw TB0CCTL2 @ 0x06: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TB0CCTL2_CCIFG: 0..0 = enum TB0CCTL2_CCIFG {
+        TB0CCTL2_CCIFG: 0 = enum TB0CCTL2_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TB0CCTL2_COV: 1..1 = enum TB0CCTL2_COV {
+        TB0CCTL2_COV: 1 = enum TB0CCTL2_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TB0CCTL2_OUT: 2..2 = enum TB0CCTL2_OUT {
+        TB0CCTL2_OUT: 2 = enum TB0CCTL2_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -301,7 +301,7 @@ utils::periph! {
         /// Capture/compare input
         TB0CCTL2_CCI: 3 = struct TB0CCTL2_CCI(bool);
         /// Capture/compare interrupt enable
-        TB0CCTL2_CCIE: 4..4 = enum TB0CCTL2_CCIE {
+        TB0CCTL2_CCIE: 4 = enum TB0CCTL2_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -327,7 +327,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TB0CCTL2_CAP: 8..8 = enum TB0CCTL2_CAP {
+        TB0CCTL2_CAP: 8 = enum TB0CCTL2_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -345,7 +345,7 @@ utils::periph! {
             CLLD_3 = 0b11,
         }
         /// Synchronize capture source
-        TB0CCTL2_SCS: 11..11 = enum TB0CCTL2_SCS {
+        TB0CCTL2_SCS: 11 = enum TB0CCTL2_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
@@ -377,21 +377,21 @@ utils::periph! {
     /// Timer_B Capture/Compare Control Register
     rw TB0CCTL3 @ 0x08: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TB0CCTL3_CCIFG: 0..0 = enum TB0CCTL3_CCIFG {
+        TB0CCTL3_CCIFG: 0 = enum TB0CCTL3_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TB0CCTL3_COV: 1..1 = enum TB0CCTL3_COV {
+        TB0CCTL3_COV: 1 = enum TB0CCTL3_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TB0CCTL3_OUT: 2..2 = enum TB0CCTL3_OUT {
+        TB0CCTL3_OUT: 2 = enum TB0CCTL3_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -400,7 +400,7 @@ utils::periph! {
         /// Capture/compare input
         TB0CCTL3_CCI: 3 = struct TB0CCTL3_CCI(bool);
         /// Capture/compare interrupt enable
-        TB0CCTL3_CCIE: 4..4 = enum TB0CCTL3_CCIE {
+        TB0CCTL3_CCIE: 4 = enum TB0CCTL3_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -426,7 +426,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TB0CCTL3_CAP: 8..8 = enum TB0CCTL3_CAP {
+        TB0CCTL3_CAP: 8 = enum TB0CCTL3_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -444,7 +444,7 @@ utils::periph! {
             CLLD_3 = 0b11,
         }
         /// Synchronize capture source
-        TB0CCTL3_SCS: 11..11 = enum TB0CCTL3_SCS {
+        TB0CCTL3_SCS: 11 = enum TB0CCTL3_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
@@ -476,21 +476,21 @@ utils::periph! {
     /// Timer_B Capture/Compare Control Register
     rw TB0CCTL4 @ 0x0a: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TB0CCTL4_CCIFG: 0..0 = enum TB0CCTL4_CCIFG {
+        TB0CCTL4_CCIFG: 0 = enum TB0CCTL4_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TB0CCTL4_COV: 1..1 = enum TB0CCTL4_COV {
+        TB0CCTL4_COV: 1 = enum TB0CCTL4_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TB0CCTL4_OUT: 2..2 = enum TB0CCTL4_OUT {
+        TB0CCTL4_OUT: 2 = enum TB0CCTL4_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -499,7 +499,7 @@ utils::periph! {
         /// Capture/compare input
         TB0CCTL4_CCI: 3 = struct TB0CCTL4_CCI(bool);
         /// Capture/compare interrupt enable
-        TB0CCTL4_CCIE: 4..4 = enum TB0CCTL4_CCIE {
+        TB0CCTL4_CCIE: 4 = enum TB0CCTL4_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -525,7 +525,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TB0CCTL4_CAP: 8..8 = enum TB0CCTL4_CAP {
+        TB0CCTL4_CAP: 8 = enum TB0CCTL4_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -543,7 +543,7 @@ utils::periph! {
             CLLD_3 = 0b11,
         }
         /// Synchronize capture source
-        TB0CCTL4_SCS: 11..11 = enum TB0CCTL4_SCS {
+        TB0CCTL4_SCS: 11 = enum TB0CCTL4_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
@@ -575,21 +575,21 @@ utils::periph! {
     /// Timer_B Capture/Compare Control Register
     rw TB0CCTL5 @ 0x0c: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TB0CCTL5_CCIFG: 0..0 = enum TB0CCTL5_CCIFG {
+        TB0CCTL5_CCIFG: 0 = enum TB0CCTL5_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TB0CCTL5_COV: 1..1 = enum TB0CCTL5_COV {
+        TB0CCTL5_COV: 1 = enum TB0CCTL5_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TB0CCTL5_OUT: 2..2 = enum TB0CCTL5_OUT {
+        TB0CCTL5_OUT: 2 = enum TB0CCTL5_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -598,7 +598,7 @@ utils::periph! {
         /// Capture/compare input
         TB0CCTL5_CCI: 3 = struct TB0CCTL5_CCI(bool);
         /// Capture/compare interrupt enable
-        TB0CCTL5_CCIE: 4..4 = enum TB0CCTL5_CCIE {
+        TB0CCTL5_CCIE: 4 = enum TB0CCTL5_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -624,7 +624,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TB0CCTL5_CAP: 8..8 = enum TB0CCTL5_CAP {
+        TB0CCTL5_CAP: 8 = enum TB0CCTL5_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -642,7 +642,7 @@ utils::periph! {
             CLLD_3 = 0b11,
         }
         /// Synchronize capture source
-        TB0CCTL5_SCS: 11..11 = enum TB0CCTL5_SCS {
+        TB0CCTL5_SCS: 11 = enum TB0CCTL5_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
@@ -674,21 +674,21 @@ utils::periph! {
     /// Timer_B Capture/Compare Control Register
     rw TB0CCTL6 @ 0x0e: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TB0CCTL6_CCIFG: 0..0 = enum TB0CCTL6_CCIFG {
+        TB0CCTL6_CCIFG: 0 = enum TB0CCTL6_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TB0CCTL6_COV: 1..1 = enum TB0CCTL6_COV {
+        TB0CCTL6_COV: 1 = enum TB0CCTL6_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TB0CCTL6_OUT: 2..2 = enum TB0CCTL6_OUT {
+        TB0CCTL6_OUT: 2 = enum TB0CCTL6_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -697,7 +697,7 @@ utils::periph! {
         /// Capture/compare input
         TB0CCTL6_CCI: 3 = struct TB0CCTL6_CCI(bool);
         /// Capture/compare interrupt enable
-        TB0CCTL6_CCIE: 4..4 = enum TB0CCTL6_CCIE {
+        TB0CCTL6_CCIE: 4 = enum TB0CCTL6_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -723,7 +723,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TB0CCTL6_CAP: 8..8 = enum TB0CCTL6_CAP {
+        TB0CCTL6_CAP: 8 = enum TB0CCTL6_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -741,7 +741,7 @@ utils::periph! {
             CLLD_3 = 0b11,
         }
         /// Synchronize capture source
-        TB0CCTL6_SCS: 11..11 = enum TB0CCTL6_SCS {
+        TB0CCTL6_SCS: 11 = enum TB0CCTL6_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture

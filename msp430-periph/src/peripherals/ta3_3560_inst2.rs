@@ -6,14 +6,14 @@ utils::periph! {
     /// TimerAx Control Register
     rw TA3CTL @ 0x00: u16 = 0_0 {
         /// TimerA interrupt flag
-        TAIFG: 0..0 = enum TAIFG {
+        TAIFG: 0 = enum TAIFG {
             /// No interrupt pending
             TAIFG_0 = 0b0,
             /// Interrupt pending
             TAIFG_1 = 0b1,
         }
         /// TimerA interrupt enable
-        TAIE: 1..1 = enum TAIE {
+        TAIE: 1 = enum TAIE {
             /// Interrupt disabled
             TAIE_0 = 0b0,
             /// Interrupt enabled
@@ -58,21 +58,21 @@ utils::periph! {
     /// Timer_A Capture/Compare Control Register
     rw TA3CCTL0 @ 0x02: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TA3CCTL0_CCIFG: 0..0 = enum TA3CCTL0_CCIFG {
+        TA3CCTL0_CCIFG: 0 = enum TA3CCTL0_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TA3CCTL0_COV: 1..1 = enum TA3CCTL0_COV {
+        TA3CCTL0_COV: 1 = enum TA3CCTL0_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TA3CCTL0_OUT: 2..2 = enum TA3CCTL0_OUT {
+        TA3CCTL0_OUT: 2 = enum TA3CCTL0_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -81,7 +81,7 @@ utils::periph! {
         /// Capture/compare input
         TA3CCTL0_CCI: 3 = struct TA3CCTL0_CCI(bool);
         /// Capture/compare interrupt enable
-        TA3CCTL0_CCIE: 4..4 = enum TA3CCTL0_CCIE {
+        TA3CCTL0_CCIE: 4 = enum TA3CCTL0_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -107,7 +107,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TA3CCTL0_CAP: 8..8 = enum TA3CCTL0_CAP {
+        TA3CCTL0_CAP: 8 = enum TA3CCTL0_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -116,7 +116,7 @@ utils::periph! {
         /// Synchronized capture/compare input
         TA3CCTL0_SCCI: 10 = struct TA3CCTL0_SCCI(bool);
         /// Synchronize capture source
-        TA3CCTL0_SCS: 11..11 = enum TA3CCTL0_SCS {
+        TA3CCTL0_SCS: 11 = enum TA3CCTL0_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
@@ -148,21 +148,21 @@ utils::periph! {
     /// Timer_A Capture/Compare Control Register
     rw TA3CCTL1 @ 0x04: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TA3CCTL1_CCIFG: 0..0 = enum TA3CCTL1_CCIFG {
+        TA3CCTL1_CCIFG: 0 = enum TA3CCTL1_CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TA3CCTL1_COV: 1..1 = enum TA3CCTL1_COV {
+        TA3CCTL1_COV: 1 = enum TA3CCTL1_COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TA3CCTL1_OUT: 2..2 = enum TA3CCTL1_OUT {
+        TA3CCTL1_OUT: 2 = enum TA3CCTL1_OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
@@ -171,7 +171,7 @@ utils::periph! {
         /// Capture/compare input
         TA3CCTL1_CCI: 3 = struct TA3CCTL1_CCI(bool);
         /// Capture/compare interrupt enable
-        TA3CCTL1_CCIE: 4..4 = enum TA3CCTL1_CCIE {
+        TA3CCTL1_CCIE: 4 = enum TA3CCTL1_CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
@@ -197,7 +197,7 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TA3CCTL1_CAP: 8..8 = enum TA3CCTL1_CAP {
+        TA3CCTL1_CAP: 8 = enum TA3CCTL1_CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
@@ -206,7 +206,7 @@ utils::periph! {
         /// Synchronized capture/compare input
         TA3CCTL1_SCCI: 10 = struct TA3CCTL1_SCCI(bool);
         /// Synchronize capture source
-        TA3CCTL1_SCS: 11..11 = enum TA3CCTL1_SCS {
+        TA3CCTL1_SCS: 11 = enum TA3CCTL1_SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture

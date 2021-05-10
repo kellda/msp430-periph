@@ -6,42 +6,42 @@ utils::periph! {
     /// eUSCI_Ax Control Word Register 0
     rw UCA0CTLW0 @ 0x00: u16 = 0_0 {
         /// Software reset enable
-        UCA0CTLW0_UCSWRST: 0..0 = enum UCA0CTLW0_UCSWRST {
+        UCA0CTLW0_UCSWRST: 0 = enum UCA0CTLW0_UCSWRST {
             /// Disabled. eUSCI_A reset released for operation
             DISABLE = 0b0,
             /// Enabled. eUSCI_A logic held in reset state
             ENABLE = 0b1,
         }
         /// Transmit break
-        UCTXBRK: 1..1 = enum UCTXBRK {
+        UCTXBRK: 1 = enum UCTXBRK {
             /// Next frame transmitted is not a break
             UCTXBRK_0 = 0b0,
             /// Next frame transmitted is a break or a break/synch
             UCTXBRK_1 = 0b1,
         }
         /// Transmit address
-        UCTXADDR: 2..2 = enum UCTXADDR {
+        UCTXADDR: 2 = enum UCTXADDR {
             /// Next frame transmitted is data
             UCTXADDR_0 = 0b0,
             /// Next frame transmitted is an address
             UCTXADDR_1 = 0b1,
         }
         /// Dormant
-        UCDORM: 3..3 = enum UCDORM {
+        UCDORM: 3 = enum UCDORM {
             /// Not dormant. All received characters set UCRXIFG.
             UCDORM_0 = 0b0,
             /// Dormant. Only characters that are preceded by an idle-line or with address bit set UCRXIFG. In UART mode with automatic baud-rate detection, only the combination of a break and synch field sets UCRXIFG.
             UCDORM_1 = 0b1,
         }
         /// Receive break character interrupt enable
-        UCBRKIE: 4..4 = enum UCBRKIE {
+        UCBRKIE: 4 = enum UCBRKIE {
             /// Received break characters do not set UCRXIFG
             UCBRKIE_0 = 0b0,
             /// Received break characters set UCRXIFG
             UCBRKIE_1 = 0b1,
         }
         /// Receive erroneous-character interrupt enable
-        UCRXEIE: 5..5 = enum UCRXEIE {
+        UCRXEIE: 5 = enum UCRXEIE {
             /// Erroneous characters rejected and UCRXIFG is not set
             UCRXEIE_0 = 0b0,
             /// Erroneous characters received set UCRXIFG
@@ -57,7 +57,7 @@ utils::periph! {
             SMCLK = 0b10,
         }
         /// Synchronous mode enable
-        UCA0CTLW0_UCSYNC: 8..8 = enum UCA0CTLW0_UCSYNC {
+        UCA0CTLW0_UCSYNC: 8 = enum UCA0CTLW0_UCSYNC {
             /// Asynchronous mode
             ASYNC = 0b0,
             /// Synchronous mode
@@ -75,35 +75,35 @@ utils::periph! {
             UCMODE_3 = 0b11,
         }
         /// Stop bit select
-        UCSPB: 11..11 = enum UCSPB {
+        UCSPB: 11 = enum UCSPB {
             /// One stop bit
             UCSPB_0 = 0b0,
             /// Two stop bits
             UCSPB_1 = 0b1,
         }
         /// Character length
-        UCA0CTLW0_UC7BIT: 12..12 = enum UCA0CTLW0_UC7BIT {
+        UCA0CTLW0_UC7BIT: 12 = enum UCA0CTLW0_UC7BIT {
             /// 8-bit data
             _8BIT = 0b0,
             /// 7-bit data
             _7BIT = 0b1,
         }
         /// MSB first select
-        UCA0CTLW0_UCMSB: 13..13 = enum UCA0CTLW0_UCMSB {
+        UCA0CTLW0_UCMSB: 13 = enum UCA0CTLW0_UCMSB {
             /// LSB first
             UCMSB_0 = 0b0,
             /// MSB first
             UCMSB_1 = 0b1,
         }
         /// Parity select
-        UCPAR: 14..14 = enum UCPAR {
+        UCPAR: 14 = enum UCPAR {
             /// Odd parity
             ODD = 0b0,
             /// Even parity
             EVEN = 0b1,
         }
         /// Parity enable
-        UCPEN: 15..15 = enum UCPEN {
+        UCPEN: 15 = enum UCPEN {
             /// Parity disabled
             UCPEN_0 = 0b0,
             /// Parity enabled. Parity bit is generated (UCAxTXD) and expected (UCAxRXD). In address-bit multiprocessor mode, the address bit is included in the parity calculation.
@@ -113,14 +113,14 @@ utils::periph! {
     /// eUSCI_Ax Control Word Register 0
     rw UCA0CTLW0_SPI @ 0x00: u16 = 0_0 {
         /// Software reset enable
-        UCA0CTLW0_SPI_UCSWRST: 0..0 = enum UCA0CTLW0_SPI_UCSWRST {
+        UCA0CTLW0_SPI_UCSWRST: 0 = enum UCA0CTLW0_SPI_UCSWRST {
             /// Disabled. eUSCI_A reset released for operation
             DISABLE = 0b0,
             /// Enabled. eUSCI_A logic held in reset state
             ENABLE = 0b1,
         }
         /// STE mode select in master mode.
-        UCSTEM: 1..1 = enum UCSTEM {
+        UCSTEM: 1 = enum UCSTEM {
             /// STE pin is used to prevent conflicts with other masters
             UCSTEM_0 = 0b0,
             /// STE pin is used to generate the enable signal for a 4-wire slave
@@ -136,7 +136,7 @@ utils::periph! {
             SMCLK = 0b10,
         }
         /// Synchronous mode enable
-        UCA0CTLW0_SPI_UCSYNC: 8..8 = enum UCA0CTLW0_SPI_UCSYNC {
+        UCA0CTLW0_SPI_UCSYNC: 8 = enum UCA0CTLW0_SPI_UCSYNC {
             /// Asynchronous mode
             ASYNC = 0b0,
             /// Synchronous mode
@@ -152,35 +152,35 @@ utils::periph! {
             UCMODE_2 = 0b10,
         }
         /// Master mode select
-        UCMST: 11..11 = enum UCMST {
+        UCMST: 11 = enum UCMST {
             /// Slave mode
             SLAVE = 0b0,
             /// Master mode
             MASTER = 0b1,
         }
         /// Character length
-        UCA0CTLW0_SPI_UC7BIT: 12..12 = enum UCA0CTLW0_SPI_UC7BIT {
+        UCA0CTLW0_SPI_UC7BIT: 12 = enum UCA0CTLW0_SPI_UC7BIT {
             /// 8-bit data
             _8BIT = 0b0,
             /// 7-bit data
             _7BIT = 0b1,
         }
         /// MSB first select
-        UCA0CTLW0_SPI_UCMSB: 13..13 = enum UCA0CTLW0_SPI_UCMSB {
+        UCA0CTLW0_SPI_UCMSB: 13 = enum UCA0CTLW0_SPI_UCMSB {
             /// LSB first
             UCMSB_0 = 0b0,
             /// MSB first
             UCMSB_1 = 0b1,
         }
         /// Clock polarity select
-        UCCKPL: 14..14 = enum UCCKPL {
+        UCCKPL: 14 = enum UCCKPL {
             /// The inactive state is low
             LOW = 0b0,
             /// The inactive state is high
             HIGH = 0b1,
         }
         /// Clock phase select
-        UCCKPH: 15..15 = enum UCCKPH {
+        UCCKPH: 15 = enum UCCKPH {
             /// Data is changed on the first UCLK edge and captured on the following edge.
             UCCKPH_0 = 0b0,
             /// Data is captured on the first UCLK edge and changed on the following edge.
@@ -214,7 +214,7 @@ utils::periph! {
     /// eUSCI_Ax Modulation Control Word Register
     rw UCA0MCTLW @ 0x08: u16 = 0_0 {
         /// Oversampling mode enabled
-        UCOS16: 0..0 = enum UCOS16 {
+        UCOS16: 0 = enum UCOS16 {
             /// Disabled
             UCOS16_0 = 0b0,
             /// Enabled
@@ -228,7 +228,7 @@ utils::periph! {
     /// eUSCI_Ax Status Register
     rw UCA0STATW @ 0x0a: u16 = 0_0 {
         /// eUSCI_A busy
-        UCBUSY: 0..0 = enum UCBUSY {
+        UCBUSY: 0 = enum UCBUSY {
             /// eUSCI_A inactive
             IDLE = 0b0,
             /// eUSCI_A transmitting or receiving
@@ -237,42 +237,42 @@ utils::periph! {
         /// Address received / Idle line detected
         UCADDR_UCIDLE: 1 = struct UCADDR_UCIDLE(bool);
         /// Receive error flag
-        UCRXERR: 2..2 = enum UCRXERR {
+        UCRXERR: 2 = enum UCRXERR {
             /// No receive errors detected
             UCRXERR_0 = 0b0,
             /// Receive error detected
             UCRXERR_1 = 0b1,
         }
         /// Break detect flag
-        UCBRK: 3..3 = enum UCBRK {
+        UCBRK: 3 = enum UCBRK {
             /// No break condition
             UCBRK_0 = 0b0,
             /// Break condition occurred
             UCBRK_1 = 0b1,
         }
         /// Parity error flag. When UCPEN = 0, UCPE is read as 0. UCPE is cleared when UCAxRXBUF is read.
-        UCPE: 4..4 = enum UCPE {
+        UCPE: 4 = enum UCPE {
             /// No error
             UCPE_0 = 0b0,
             /// Character received with parity error
             UCPE_1 = 0b1,
         }
         /// Overrun error flag
-        UCA0STATW_UCOE: 5..5 = enum UCA0STATW_UCOE {
+        UCA0STATW_UCOE: 5 = enum UCA0STATW_UCOE {
             /// No error
             UCOE_0 = 0b0,
             /// Overrun error occurred
             UCOE_1 = 0b1,
         }
         /// Framing error flag
-        UCA0STATW_UCFE: 6..6 = enum UCA0STATW_UCFE {
+        UCA0STATW_UCFE: 6 = enum UCA0STATW_UCFE {
             /// No error
             UCFE_0 = 0b0,
             /// Character received with low stop bit
             UCFE_1 = 0b1,
         }
         /// Listen enable
-        UCA0STATW_UCLISTEN: 7..7 = enum UCA0STATW_UCLISTEN {
+        UCA0STATW_UCLISTEN: 7 = enum UCA0STATW_UCLISTEN {
             /// Disabled
             UCLISTEN_0 = 0b0,
             /// Enabled. UCAxTXD is internally fed back to the receiver
@@ -282,21 +282,21 @@ utils::periph! {
     /// UCA0STATW_SPI
     rw UCA0STATW_SPI @ 0x0a: u16 = 0_0 {
         /// Overrun error flag
-        UCA0STATW_SPI_UCOE: 5..5 = enum UCA0STATW_SPI_UCOE {
+        UCA0STATW_SPI_UCOE: 5 = enum UCA0STATW_SPI_UCOE {
             /// No error
             UCOE_0 = 0b0,
             /// Overrun error occurred
             UCOE_1 = 0b1,
         }
         /// Framing error flag
-        UCA0STATW_SPI_UCFE: 6..6 = enum UCA0STATW_SPI_UCFE {
+        UCA0STATW_SPI_UCFE: 6 = enum UCA0STATW_SPI_UCFE {
             /// No error
             UCFE_0 = 0b0,
             /// Bus conflict occurred
             UCFE_1 = 0b1,
         }
         /// Listen enable
-        UCA0STATW_SPI_UCLISTEN: 7..7 = enum UCA0STATW_SPI_UCLISTEN {
+        UCA0STATW_SPI_UCLISTEN: 7 = enum UCA0STATW_SPI_UCLISTEN {
             /// Disabled
             UCLISTEN_0 = 0b0,
             /// Enabled. UCAxTXD is internally fed back to the receiver
@@ -326,21 +326,21 @@ utils::periph! {
     /// eUSCI_Ax Auto Baud Rate Control Register
     rw UCA0ABCTL @ 0x10: u16 = 0_0 {
         /// Automatic baud-rate detect enable
-        UCABDEN: 0..0 = enum UCABDEN {
+        UCABDEN: 0 = enum UCABDEN {
             /// Baud-rate detection disabled. Length of break and synch field is not measured.
             UCABDEN_0 = 0b0,
             /// Baud-rate detection enabled. Length of break and synch field is measured and baud-rate settings are changed accordingly.
             UCABDEN_1 = 0b1,
         }
         /// Break time out error
-        UCBTOE: 2..2 = enum UCBTOE {
+        UCBTOE: 2 = enum UCBTOE {
             /// No error
             UCBTOE_0 = 0b0,
             /// Length of break field exceeded 22 bit times
             UCBTOE_1 = 0b1,
         }
         /// Synch field time out error
-        UCSTOE: 3..3 = enum UCSTOE {
+        UCSTOE: 3 = enum UCSTOE {
             /// No error
             UCSTOE_0 = 0b0,
             /// Length of synch field exceeded measurable time
@@ -361,14 +361,14 @@ utils::periph! {
     /// eUSCI_Ax IrDA Control Word Register
     rw UCA0IRCTL @ 0x12: u16 = 0_0 {
         /// IrDA encoder/decoder enable
-        UCIREN: 0..0 = enum UCIREN {
+        UCIREN: 0 = enum UCIREN {
             /// IrDA encoder/decoder disabled
             UCIREN_0 = 0b0,
             /// IrDA encoder/decoder enabled
             UCIREN_1 = 0b1,
         }
         /// IrDA transmit pulse clock select
-        UCIRTXCLK: 1..1 = enum UCIRTXCLK {
+        UCIRTXCLK: 1 = enum UCIRTXCLK {
             /// BRCLK
             UCIRTXCLK_0 = 0b0,
             /// BITCLK16 when UCOS16 = 1. Otherwise, BRCLK.
@@ -377,14 +377,14 @@ utils::periph! {
         /// Transmit pulse length
         UCIRTXPL: 2..7 = struct UCIRTXPL(u16);
         /// IrDA receive filter enabled
-        UCIRRXFE: 8..8 = enum UCIRRXFE {
+        UCIRRXFE: 8 = enum UCIRRXFE {
             /// Receive filter disabled
             UCIRRXFE_0 = 0b0,
             /// Receive filter enabled
             UCIRRXFE_1 = 0b1,
         }
         /// IrDA receive input UCAxRXD polarity
-        UCIRRXPL: 9..9 = enum UCIRRXPL {
+        UCIRRXPL: 9 = enum UCIRRXPL {
             /// IrDA transceiver delivers a high pulse when a light pulse is seen
             HIGH = 0b0,
             /// IrDA transceiver delivers a low pulse when a light pulse is seen
@@ -396,28 +396,28 @@ utils::periph! {
     /// eUSCI_Ax Interrupt Enable Register
     rw UCA0IE @ 0x1a: u16 = 0_0 {
         /// Receive interrupt enable
-        UCA0IE_UCRXIE: 0..0 = enum UCA0IE_UCRXIE {
+        UCA0IE_UCRXIE: 0 = enum UCA0IE_UCRXIE {
             /// Interrupt disabled
             UCRXIE_0 = 0b0,
             /// Interrupt enabled
             UCRXIE_1 = 0b1,
         }
         /// Transmit interrupt enable
-        UCA0IE_UCTXIE: 1..1 = enum UCA0IE_UCTXIE {
+        UCA0IE_UCTXIE: 1 = enum UCA0IE_UCTXIE {
             /// Interrupt disabled
             UCTXIE_0 = 0b0,
             /// Interrupt enabled
             UCTXIE_1 = 0b1,
         }
         /// Start bit interrupt enable
-        UCSTTIE: 2..2 = enum UCSTTIE {
+        UCSTTIE: 2 = enum UCSTTIE {
             /// Interrupt disabled
             UCSTTIE_0 = 0b0,
             /// Interrupt enabled
             UCSTTIE_1 = 0b1,
         }
         /// Transmit complete interrupt enable
-        UCTXCPTIE: 3..3 = enum UCTXCPTIE {
+        UCTXCPTIE: 3 = enum UCTXCPTIE {
             /// Interrupt disabled
             UCTXCPTIE_0 = 0b0,
             /// Interrupt enabled
@@ -427,14 +427,14 @@ utils::periph! {
     /// eUSCI_Ax Interrupt Enable Register
     rw UCA0IE_SPI @ 0x1a: u16 = 0_0 {
         /// Receive interrupt enable
-        UCA0IE_SPI_UCRXIE: 0..0 = enum UCA0IE_SPI_UCRXIE {
+        UCA0IE_SPI_UCRXIE: 0 = enum UCA0IE_SPI_UCRXIE {
             /// Interrupt disabled
             UCRXIE_0 = 0b0,
             /// Interrupt enabled
             UCRXIE_1 = 0b1,
         }
         /// Transmit interrupt enable
-        UCA0IE_SPI_UCTXIE: 1..1 = enum UCA0IE_SPI_UCTXIE {
+        UCA0IE_SPI_UCTXIE: 1 = enum UCA0IE_SPI_UCTXIE {
             /// Interrupt disabled
             UCTXIE_0 = 0b0,
             /// Interrupt enabled
@@ -444,28 +444,28 @@ utils::periph! {
     /// eUSCI_Ax Interrupt Flag Register
     rw UCA0IFG @ 0x1c: u16 = 0_0 {
         /// Receive interrupt flag
-        UCA0IFG_UCRXIFG: 0..0 = enum UCA0IFG_UCRXIFG {
+        UCA0IFG_UCRXIFG: 0 = enum UCA0IFG_UCRXIFG {
             /// No interrupt pending
             UCRXIFG_0 = 0b0,
             /// Interrupt pending
             UCRXIFG_1 = 0b1,
         }
         /// Transmit interrupt flag
-        UCA0IFG_UCTXIFG: 1..1 = enum UCA0IFG_UCTXIFG {
+        UCA0IFG_UCTXIFG: 1 = enum UCA0IFG_UCTXIFG {
             /// No interrupt pending
             UCTXIFG_0 = 0b0,
             /// Interrupt pending
             UCTXIFG_1 = 0b1,
         }
         /// Start bit interrupt flag
-        UCSTTIFG: 2..2 = enum UCSTTIFG {
+        UCSTTIFG: 2 = enum UCSTTIFG {
             /// No interrupt pending
             UCSTTIFG_0 = 0b0,
             /// Interrupt pending
             UCSTTIFG_1 = 0b1,
         }
         /// Transmit ready interrupt enable
-        UCTXCPTIFG: 3..3 = enum UCTXCPTIFG {
+        UCTXCPTIFG: 3 = enum UCTXCPTIFG {
             /// No interrupt pending
             UCTXCPTIFG_0 = 0b0,
             /// Interrupt pending
@@ -475,14 +475,14 @@ utils::periph! {
     /// eUSCI_Ax Interrupt Flag Register
     rw UCA0IFG_SPI @ 0x1c: u16 = 0_0 {
         /// Receive interrupt flag
-        UCA0IFG_SPI_UCRXIFG: 0..0 = enum UCA0IFG_SPI_UCRXIFG {
+        UCA0IFG_SPI_UCRXIFG: 0 = enum UCA0IFG_SPI_UCRXIFG {
             /// No interrupt pending
             UCRXIFG_0 = 0b0,
             /// Interrupt pending
             UCRXIFG_1 = 0b1,
         }
         /// Transmit interrupt flag
-        UCA0IFG_SPI_UCTXIFG: 1..1 = enum UCA0IFG_SPI_UCTXIFG {
+        UCA0IFG_SPI_UCTXIFG: 1 = enum UCA0IFG_SPI_UCTXIFG {
             /// No interrupt pending
             UCTXIFG_0 = 0b0,
             /// Interrupt pending

@@ -30,35 +30,35 @@ utils::periph! {
     /// General Control Register 0
     rw GCCTL0 @ 0x04: u16 = 0_0 {
         /// Enable Power Up Clear (PUC) reset for the uncorrectable bit error detection flag (UBDIFG)
-        UBDRSTEN: 7..7 = enum UBDRSTEN {
+        UBDRSTEN: 7 = enum UBDRSTEN {
             /// PUC not initiated on uncorrectable bit error detection flag.
             UBDRSTEN_0 = 0b0,
             /// PUC initiated on uncorrectable bit error detection flag. Generates vector in SYSRSTIV. Clear the UBDIE bit.
             UBDRSTEN_1 = 0b1,
         }
         /// Enable NMI event for the uncorrectable bit error detection flag (UBDIFG)
-        UBDIE: 6..6 = enum UBDIE {
+        UBDIE: 6 = enum UBDIE {
             /// Disable NMI for the uncorrectable bit error detection flag (UBDIFG).
             UBDIE_0 = 0b0,
             /// Enable NMI for the uncorrectable bit error detection flag (UBDIFG). Generates vector in SYSSNIV. Clear the UBDRSTEN bit.
             UBDIE_1 = 0b1,
         }
         /// Enable NMI event for the correctable bit error detection flag (CBDIFG)
-        CBDIE: 5..5 = enum CBDIE {
+        CBDIE: 5 = enum CBDIE {
             /// Disable NMI for the correctable bit error detection flag (CBDIFG).
             CBDIE_0 = 0b0,
             /// Disable NMI for the correctable bit error detection flag (CBDIFG). Generates vector in SYSSNIV.
             CBDIE_1 = 0b1,
         }
         /// FRAM Memory Power Control Request
-        FRPWR: 2..2 = enum FRPWR {
+        FRPWR: 2 = enum FRPWR {
             /// Enable INACTIVE mode.
             FRPWR_0 = 0b0,
             /// Enable ACTIVE mode.
             FRPWR_1 = 0b1,
         }
         /// Enables FRAM auto power up after LPM
-        FRLPMPWR: 1..1 = enum FRLPMPWR {
+        FRLPMPWR: 1 = enum FRLPMPWR {
             /// FRAM startup is delayed to the first FRAM access after exit from LPM
             FRLPMPWR_0 = 0b0,
             /// FRAM is powered up immediately on exit from LPM
@@ -68,21 +68,21 @@ utils::periph! {
     /// General Control Register 1
     rw GCCTL1 @ 0x06: u16 = 0_0 {
         /// Access time error flag
-        ACCTEIFG: 3..3 = enum ACCTEIFG {
+        ACCTEIFG: 3 = enum ACCTEIFG {
             /// No interrupt pending.
             ACCTEIFG_0 = 0b0,
             /// Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt.
             ACCTEIFG_1 = 0b1,
         }
         /// FRAM uncorrectable bit error detection flag
-        UBDIFG: 2..2 = enum UBDIFG {
+        UBDIFG: 2 = enum UBDIFG {
             /// No interrupt pending.
             UBDIFG_0 = 0b0,
             /// Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV when it is the highest pending interrupt.
             UBDIFG_1 = 0b1,
         }
         /// FRAM correctable bit error detection flag
-        CBDIFG: 1..1 = enum CBDIFG {
+        CBDIFG: 1 = enum CBDIFG {
             /// No interrupt is pending
             CBDIFG_0 = 0b0,
             /// Interrupt pending. Can be cleared by writing '0' or by reading SYSSNIV if it is the highest pending interrupt.

@@ -8,21 +8,21 @@ utils::periph! {
         /// Current Interrupt Compare Mask of virtual stack specifies the current ICM at the top of virtual stack If ICM[1:0] is less than the priority level (ILSRx[1:0]) of the new interrupt, the corresponding source is sent to the CPU. Note that the ICMC is the element stack that the stack pointer is pointing to.
         ICMC: 0..1 = struct ICMC(u16);
         /// Virtual stack full flag This bit indicates whether or not the virtual stack is full. It is automatically updated when the stack is pushed or popped.
-        VSFFLG: 4..4 = enum VSFFLG {
+        VSFFLG: 4 = enum VSFFLG {
             /// ICCMVS register is not full
             VSFFLG_0 = 0b0,
             /// ICCMVS register is full
             VSFFLG_1 = 0b1,
         }
         /// Virtual stack empty flag.This bit indicates whether or not the virtual stack is empty. It is automatically updated when the stack is pushed or popped.
-        VSEFLG: 5..5 = enum VSEFLG {
+        VSEFLG: 5 = enum VSEFLG {
             /// Stack has valid data
             VSEFLG_0 = 0b0,
             /// Stack has no valid data
             VSEFLG_1 = 0b1,
         }
         /// ICC enable
-        ICCEN: 7..7 = enum ICCEN {
+        ICCEN: 7 = enum ICCEN {
             /// ICC module disabled
             ICCEN_0 = 0b0,
             /// ICC module enabled

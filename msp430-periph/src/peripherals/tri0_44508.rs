@@ -6,14 +6,14 @@ utils::periph! {
     /// TRI Control Register
     rw TRI0CTL @ 0x00: u16 = 0_0 {
         /// TRI enable.
-        TRIEN: 0..0 = enum TRIEN {
+        TRIEN: 0 = enum TRIEN {
             /// Disable the TRI module
             DISABLE = 0b0,
             /// Enable the TRI module
             ENABLE = 0b1,
         }
         /// TRI power mode select.
-        TRIPM: 1..1 = enum TRIPM {
+        TRIPM: 1 = enum TRIPM {
             /// High speed and high power
             TRIPM_0 = 0b0,
             /// Low speed and low power

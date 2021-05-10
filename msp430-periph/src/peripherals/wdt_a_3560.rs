@@ -25,14 +25,14 @@ utils::periph! {
             _64 = 0b111,
         }
         /// Watchdog timer counter clear
-        WDTCNTCL: 3..3 = enum WDTCNTCL {
+        WDTCNTCL: 3 = enum WDTCNTCL {
             /// No action
             WDTCNTCL_0 = 0b0,
             /// WDTCNT = 0000h
             WDTCNTCL_1 = 0b1,
         }
         /// Watchdog timer mode select
-        WDTTMSEL: 4..4 = enum WDTTMSEL {
+        WDTTMSEL: 4 = enum WDTTMSEL {
             /// Watchdog mode
             WDTTMSEL_0 = 0b0,
             /// Interval timer mode
@@ -50,7 +50,7 @@ utils::periph! {
             BCLK = 0b11,
         }
         /// Watchdog timer hold
-        WDTHOLD: 7..7 = enum WDTHOLD {
+        WDTHOLD: 7 = enum WDTHOLD {
             /// Watchdog timer is not stopped
             UNHOLD = 0b0,
             /// Watchdog timer is stopped

@@ -22,21 +22,21 @@ utils::periph! {
     /// Masked Interrupt Status Register
     r UUPSMIS @ 0x02: u16 = 0_0 {
         /// UUPS Power Up Time Out Masked Interrupt Status bit.
-        UUPSMIS_PTMOUT: 0..0 = enum UUPSMIS_PTMOUT {
+        UUPSMIS_PTMOUT: 0 = enum UUPSMIS_PTMOUT {
             /// No interrupt pending
             PTMOUT_0 = 0b0,
             /// Interrupt pending
             PTMOUT_1 = 0b1,
         }
         /// UUPS Power Request Ignore Masked Interrupt Status bit.
-        UUPSMIS_PREQIG: 1..1 = enum UUPSMIS_PREQIG {
+        UUPSMIS_PREQIG: 1 = enum UUPSMIS_PREQIG {
             /// No interrupt pending
             PREQIG_0 = 0b0,
             /// Interrupt pending
             PREQIG_1 = 0b1,
         }
         /// USS has been interrupted by debug mode Masked Interrupt Status bit.
-        UUPSMIS_STPBYDB: 2..2 = enum UUPSMIS_STPBYDB {
+        UUPSMIS_STPBYDB: 2 = enum UUPSMIS_STPBYDB {
             /// No interrupt pending
             STPBYDB_0 = 0b0,
             /// Interrupt pending
@@ -46,21 +46,21 @@ utils::periph! {
     /// Raw Interrupt Status Register
     r UUPSRIS @ 0x04: u16 = 0_0 {
         /// UUPS Power Up Timer Out Raw Interrupt Status bit.
-        UUPSRIS_PTMOUT: 0..0 = enum UUPSRIS_PTMOUT {
+        UUPSRIS_PTMOUT: 0 = enum UUPSRIS_PTMOUT {
             /// Time out during power up has not occurred
             PTMOUT_0 = 0b0,
             /// Time out during power up has occurred
             PTMOUT_1 = 0b1,
         }
         /// UUPS Power Request Ignore Masked Interrupt Status and Clear bit.
-        UUPSRIS_PREQIG: 1..1 = enum UUPSRIS_PREQIG {
+        UUPSRIS_PREQIG: 1 = enum UUPSRIS_PREQIG {
             /// No USS_PWRREQ signal has been ignored
             PREQIG_0 = 0b0,
             /// USS_PWRREQ signal has been ignored
             PREQIG_1 = 0b1,
         }
         /// USS has been interrupted by debug mode.
-        UUPSRIS_STPBYDB: 2..2 = enum UUPSRIS_STPBYDB {
+        UUPSRIS_STPBYDB: 2 = enum UUPSRIS_STPBYDB {
             /// USS has not been interrupted by debug halt mode.
             STPBYDB_0 = 0b0,
             /// USS has been interrupted by debug halt mode.
@@ -70,21 +70,21 @@ utils::periph! {
     /// Interrupt Mask Register
     rw UUPSIMSC @ 0x06: u16 = 0_0 {
         /// UUPS Power Up Time Out Interrupt Mask bit.
-        UUPSIMSC_PTMOUT: 0..0 = enum UUPSIMSC_PTMOUT {
+        UUPSIMSC_PTMOUT: 0 = enum UUPSIMSC_PTMOUT {
             /// UUPS Power Up Time Out Interrupt is disabled.
             PTMOUT_0 = 0b0,
             /// UUPS Power Up Time Out Interrupt is enabled.
             PTMOUT_1 = 0b1,
         }
         /// Power Request Ignore Interrupt Mask bit.
-        UUPSIMSC_PREQIG: 1..1 = enum UUPSIMSC_PREQIG {
+        UUPSIMSC_PREQIG: 1 = enum UUPSIMSC_PREQIG {
             /// Power Request Ignore Interrupt is disabled.
             PREQIG_0 = 0b0,
             /// Power Request Ignore Interrupt is enabled.
             PREQIG_1 = 0b1,
         }
         /// USS has been interrupted by debug mode Interrupt Mask bit.
-        UUPSIMSC_STPBYDB: 2..2 = enum UUPSIMSC_STPBYDB {
+        UUPSIMSC_STPBYDB: 2 = enum UUPSIMSC_STPBYDB {
             /// STPBYDB Interrupt is disabled
             STPBYDB_0 = 0b0,
             /// STPBYDB Interrupt is enabled
@@ -128,21 +128,21 @@ utils::periph! {
     /// UUPS Control
     rw UUPSCTL @ 0x10: u16 = 0_0 {
         /// Turn on USS Power and  PLL
-        USSPWRUP: 8..8 = enum USSPWRUP {
+        USSPWRUP: 8 = enum USSPWRUP {
             /// No action
             USSPWRUP_0 = 0b0,
             /// Power up the USS module and generate the PSQ_START to the ASQ if CTL.ASQEN = 1. Note: This bit becomes invalid in debug mode.
             USSPWRUP_1 = 0b1,
         }
         /// Power Ready Output Event Select
-        ASQEN: 11..11 = enum ASQEN {
+        ASQEN: 11 = enum ASQEN {
             /// Do not generate the PSQ_START signal event to ASQ.
             ASQEN_0 = 0b0,
             /// Generate the PSQ_START signal event to the ASQ.
             ASQEN_1 = 0b1,
         }
         /// USS LDO is ready
-        LDORDY: 0..0 = enum LDORDY {
+        LDORDY: 0 = enum LDORDY {
             /// USS LDO is powered down or in transition mode
             LDORDY_0 = 0b0,
             /// USS LDO is powered on
@@ -160,7 +160,7 @@ utils::periph! {
             LBHDEL_3 = 0b11,
         }
         /// USS Power Down
-        USSPWRDN: 14..14 = enum USSPWRDN {
+        USSPWRDN: 14 = enum USSPWRDN {
             /// No action
             USSPWRDN_0 = 0b0,
             /// Stop the current measurement and power off the USS module.
@@ -178,7 +178,7 @@ utils::periph! {
             USSPWRUPSEL_3 = 0b11,
         }
         /// USS Measurement Stop
-        USSSTOP: 15..15 = enum USSSTOP {
+        USSSTOP: 15 = enum USSSTOP {
             /// No action
             USSSTOP_0 = 0b0,
             /// Stop the current measurement.
@@ -196,14 +196,14 @@ utils::periph! {
             UPSTATE_3 = 0b11,
         }
         /// USS Busy bit.
-        USS_BUSY: 3..3 = enum USS_BUSY {
+        USS_BUSY: 3 = enum USS_BUSY {
             /// The USS module is not busy.
             USS_BUSY_0 = 0b0,
             /// The USS module is busy.
             USS_BUSY_1 = 0b1,
         }
         /// Software reset
-        USSSWRST: 7..7 = enum USSSWRST {
+        USSSWRST: 7 = enum USSSWRST {
             /// Disabled. USS (and sub modules) reset released for operation
             USSSWRST_0 = 0b0,
             /// Enabled. USS (and sub modules) logic held in reset state

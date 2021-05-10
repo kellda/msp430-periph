@@ -6,7 +6,7 @@ utils::periph! {
     /// Comparator Control Register 0
     rw CP0CTL0 @ 0x00: u16 = 0_0 {
         /// Channel input enable for the V+ terminal
-        CPPEN: 4..4 = enum CPPEN {
+        CPPEN: 4 = enum CPPEN {
             /// Selected analog input channel for V+ terminal is disabled.
             CPPEN_0 = 0b0,
             /// Selected analog input channel for V+ terminal is enabled.
@@ -32,7 +32,7 @@ utils::periph! {
             CPNSEL_7 = 0b111,
         }
         /// Channel input enable for the - terminal
-        CPNEN: 12..12 = enum CPNEN {
+        CPNEN: 12 = enum CPNEN {
             /// Selected analog input channel for V- terminal is disabled.
             CPNEN_0 = 0b0,
             /// Selected analog input channel for V- terminal is enabled.
@@ -63,21 +63,21 @@ utils::periph! {
         /// Comparator output value
         CPOUT: 0 = struct CPOUT(bool);
         /// Comparator output polarity
-        CPINV: 1..1 = enum CPINV {
+        CPINV: 1 = enum CPINV {
             /// Comparator output is non-inverted
             CPINV_0 = 0b0,
             /// Comparator output is inverted
             CPINV_1 = 0b1,
         }
         /// Interrupt edge select for CEIIFG and CEIFG
-        CPIES: 4..4 = enum CPIES {
+        CPIES: 4 = enum CPIES {
             /// Rising edge for CPIFG, falling edge for CPIIFG
             CPIES_0 = 0b0,
             /// Falling edge for CPIFG, rising edge for CPIIFG
             CPIES_1 = 0b1,
         }
         /// Analog Output Low Pass filter Selection. Changing CPFLT might set interrupt flag.
-        CPFLT: 5..5 = enum CPFLT {
+        CPFLT: 5 = enum CPFLT {
             /// Comparator output is not filtered
             CPFLT_0 = 0b0,
             /// Comparator output is filtered
@@ -95,14 +95,14 @@ utils::periph! {
             CPFLTDLY_3 = 0b11,
         }
         /// Power mode selection.
-        CPMSEL: 8..8 = enum CPMSEL {
+        CPMSEL: 8 = enum CPMSEL {
             /// High-power & High speed mode (500nA)
             CPMSEL_0 = 0b0,
             /// Low-power & Low speed mode (10nA)
             CPMSEL_1 = 0b1,
         }
         /// Comparator enable/disable. This bit is used to disable/enable the comparator. When the comparator is disabled, the Comparator consumes no power.
-        CPEN: 9..9 = enum CPEN {
+        CPEN: 9 = enum CPEN {
             /// Comparator is disabled
             CPEN_0 = 0b0,
             /// Comparator is enabled
@@ -120,14 +120,14 @@ utils::periph! {
             CPHSEL_3 = 0b11,
         }
         /// Comparator interrupt output enable bit
-        CPIE: 14..14 = enum CPIE {
+        CPIE: 14 = enum CPIE {
             /// Interrupt output is disabled
             CPIE_0 = 0b0,
             /// Interrupt output is enabled
             CPIE_1 = 0b1,
         }
         /// Comparator inverted interrupt output enable bit
-        CPIIE: 15..15 = enum CPIIE {
+        CPIIE: 15 = enum CPIIE {
             /// Interrupt inverted output is disabled
             CPIIE_0 = 0b0,
             /// Interrupt inverted output is enabled
@@ -137,14 +137,14 @@ utils::periph! {
     /// Comparator Interrupt Control Register
     rw CP0INT @ 0x06: u16 = 0_0 {
         /// Comparator output interrupt flag
-        CPIFG: 0..0 = enum CPIFG {
+        CPIFG: 0 = enum CPIFG {
             /// No interrupt pending.
             CPIFG_0 = 0b0,
             /// Output interrupt pending.
             CPIFG_1 = 0b1,
         }
         /// Comparator output inverted interrupt flag
-        CPIIFG: 1..1 = enum CPIIFG {
+        CPIIFG: 1 = enum CPIIFG {
             /// No interrupt pending.
             CPIIFG_0 = 0b0,
             /// Output interrupt pending.
@@ -166,28 +166,28 @@ utils::periph! {
     /// 6-bit Comparator built-in DAC Control Register
     rw CP0DACCTL @ 0x10: u16 = 0_0 {
         /// This bit is only valid when CPDACBUFS is set to 1.
-        CPDACSW: 0..0 = enum CPDACSW {
+        CPDACSW: 0 = enum CPDACSW {
             /// CPDACBUF1 selected
             CPDACSW_0 = 0b0,
             /// CPDACBUF2 selected
             CPDACSW_1 = 0b1,
         }
         /// Comparator built-in DAC buffer controlled source selection.
-        CPDACBUFS: 1..1 = enum CPDACBUFS {
+        CPDACBUFS: 1 = enum CPDACBUFS {
             /// Comparator output is selected as the buffer control source
             CPDACBUFS_0 = 0b0,
             /// CPDACSW bit is selected as the buffer control source
             CPDACBUFS_1 = 0b1,
         }
         /// Comparator built-in DAC reference voltage selection
-        CPDACREFS: 2..2 = enum CPDACREFS {
+        CPDACREFS: 2 = enum CPDACREFS {
             /// VDD selected
             CPDACREFS_0 = 0b0,
             /// on-chip VREF selected
             CPDACREFS_1 = 0b1,
         }
         /// Comparator built-in DAC output control bit.
-        CPDACEN: 7..7 = enum CPDACEN {
+        CPDACEN: 7 = enum CPDACEN {
             /// DAC output is disabled.
             CPDACEN_0 = 0b0,
             /// DAC output is enabled.

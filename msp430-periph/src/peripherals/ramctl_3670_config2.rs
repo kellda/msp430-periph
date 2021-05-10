@@ -47,14 +47,14 @@ utils::periph! {
     /// RAM Controller Control 1
     rw RCCTL1 @ 0x02: u16 = 0_0 {
         /// DACCESS Bus Error NMI enable
-        DACCESSIE: 8..8 = enum DACCESSIE {
+        DACCESSIE: 8 = enum DACCESSIE {
             /// Disable NMI for DACCESS Interrupt
             DACCESSIE_0 = 0b0,
             /// Enable NMI for DACCESS Interrupt
             DACCESSIE_1 = 0b1,
         }
         /// DACCESS Interrupt Flag
-        DACCESSIFG: 0..0 = enum DACCESSIFG {
+        DACCESSIFG: 0 = enum DACCESSIFG {
             /// DACCESS Interrupt is not pending
             DACCESSIFG_0 = 0b0,
             /// DACCESS Interrupt is pending.

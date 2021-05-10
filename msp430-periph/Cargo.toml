@@ -10,7 +10,7 @@ keywords = ["peripheral", "register", "registers", "msp430", "ti"]
 categories = ["hardware-support", "embedded", "no-std"]
 
 [dependencies]
-utils = { version = "0.0.2", package = "peripherals" }
+utils = { version = "0.0.3", package = "peripherals" }
 
 [features]
 default = []
@@ -45,7 +45,6 @@ calibration_data_1 = []
 calibration_data_2 = []
 calibration_data_3 = []
 capacitive_touch_io_0_1 = []
-capacitive_touch_io_0_2 = []
 capacitive_touch_io_1_1 = []
 captio0_3670 = []
 captio1_3670 = []
@@ -63,7 +62,6 @@ comparator_e_1 = []
 comp_e_3670 = []
 crc16_1 = []
 crc16_2 = []
-crc16_3 = []
 crc32_1 = []
 crc32_3670 = []
 crc_2080 = []
@@ -129,7 +127,6 @@ flash_6 = []
 flash_7 = []
 fram_1 = []
 fram_2 = []
-fram_3 = []
 frctl_3670 = []
 frctl_a_3670 = []
 hspll_3670 = []
@@ -282,7 +279,6 @@ rc__ram_control_module_fram_1 = []
 rc__ram_control_module_1 = []
 rc__ram_control_module_2 = []
 realtime_clock_1 = []
-realtime_clock_2 = []
 ref_a_3670 = []
 rf13m_module_1 = []
 rtc_445 = []
@@ -311,7 +307,6 @@ sd16_a1_1 = []
 sd16_a1_2 = []
 sd16_a1_3 = []
 sd16_a3_1 = []
-sd16_a3_2 = []
 sd16_a4_1 = []
 sd16_a6_1 = []
 sd16_a7_1 = []
@@ -358,7 +353,6 @@ special_function_8 = []
 special_function_9 = []
 supply_voltage_supervisor_1 = []
 supply_voltage_supervisor_2 = []
-supply_voltage_supervisor_3 = []
 system_clock_1 = []
 system_clock_2 = []
 system_clock_3 = []
@@ -396,10 +390,7 @@ tb2_3670_inst3 = []
 tb3_3670_inst7 = []
 timer0_a3_1 = []
 timer0_a3_2 = []
-timer0_a3_3 = []
 timer0_a3_4 = []
-timer0_a3_5 = []
-timer0_a3_6 = []
 timer0_a5_1 = []
 timer0_b3_1 = []
 timer0_b7_1 = []
@@ -410,8 +401,6 @@ timer1_a3_1 = []
 timer1_a3_2 = []
 timer1_a3_3 = []
 timer1_a3_4 = []
-timer1_a3_5 = []
-timer1_a3_6 = []
 timer1_a5_1 = []
 timer1_b3_1 = []
 timer1_d3_1 = []
@@ -447,21 +436,15 @@ usb_operation_1 = []
 usci_a0__spi_mode_1 = []
 usci_a0__spi_mode_2 = []
 usci_a0__spi_mode_3 = []
-usci_a0__spi_mode_4 = []
-usci_a0__spi_mode_5 = []
 usci_a0__uart_mode_1 = []
 usci_a0__uart_mode_2 = []
 usci_a0__uart_mode_3 = []
-usci_a0__uart_mode_4 = []
-usci_a0__uart_mode_5 = []
 usci_a1__spi_mode_1 = []
 usci_a1__spi_mode_2 = []
 usci_a1__spi_mode_3 = []
-usci_a1__spi_mode_4 = []
 usci_a1__uart_mode_1 = []
 usci_a1__uart_mode_2 = []
 usci_a1__uart_mode_3 = []
-usci_a1__uart_mode_4 = []
 usci_a2__spi_mode_1 = []
 usci_a2__spi_mode_2 = []
 usci_a2__uart_mode_1 = []
@@ -474,13 +457,9 @@ usci_b0__i2c_mode_1 = []
 usci_b0__i2c_mode_2 = []
 usci_b0__i2c_mode_3 = []
 usci_b0__i2c_mode_4 = []
-usci_b0__i2c_mode_5 = []
-usci_b0__i2c_mode_6 = []
 usci_b0__spi_mode_1 = []
 usci_b0__spi_mode_2 = []
 usci_b0__spi_mode_3 = []
-usci_b0__spi_mode_4 = []
-usci_b0__spi_mode_5 = []
 usci_b1__i2c_mode_1 = []
 usci_b1__i2c_mode_2 = []
 usci_b1__i2c_mode_3 = []
@@ -495,7 +474,6 @@ usi_1 = []
 uups_3670 = []
 watchdog_timer_1 = []
 watchdog_timer_2 = []
-watchdog_timer_3 = []
 wdt_a_3560 = []
 # enable all peripherals
 periph-all = [
@@ -503,45 +481,45 @@ periph-all = [
     "flash_5", "port_b_3", "shared_reference_3", "port_b_2", "usart_0__i2c_mode_1", "usci_b1__i2c_mode_1", "port_a_6", "pe_2720", "crc16_2", "operational_amplifier_1", "usci_a1__uart_mode_2",
     "ccs__compact_system_clock_1", "port_1_2_6", "rc__ram_control_module_1", "port_e_3", "port_1_2_2", "mpy32_2080", "sac3_45508_config3", "mpy_16__multiplier__16_bit_mode_1", "frctl_3670",
     "eusci_a3_2080", "port_3_4_2", "system_clock_fllplus_1", "icc_445", "pmm__power_management_system_4", "operational_amplifier_0_1", "pmm__power_management_system_5", "tb1_3670_inst3", "uups_3670",
-    "adc_2", "fram_3", "multiplier__16_bit_mode_1", "sd24_b6_1", "sfr__special_function_registers_1", "port_3_2", "comparator_a_2", "pmm__power_management_system_7", "special_function_5", "port_j_2",
-    "mpu_2", "port_1_2_5", "sys_445", "capacitive_touch_io_0_1", "eusci_b3_2080", "port_3_4_1", "port_b_4", "usci_a2__uart_mode_2", "p10_2720", "usci_a0__spi_mode_5", "flash_3", "flash_7",
-    "crc_2080", "usci_a2__uart_mode_1", "timer1_d3_1", "lcd_2", "timer0_b3_1", "sys__system_module_2", "pmm_3670", "usci_b0__i2c_mode_6", "port_5_2", "dac12_2", "timer_a2_1", "sd16_1", "port_5_6_4",
+    "adc_2", "fram_2", "multiplier__16_bit_mode_1", "sd24_b6_1", "sfr__special_function_registers_1", "port_3_2", "comparator_a_2", "pmm__power_management_system_7", "special_function_5", "port_j_2",
+    "mpu_2", "port_1_2_5", "sys_445", "capacitive_touch_io_0_1", "eusci_b3_2080", "port_3_4_1", "port_b_4", "usci_a2__uart_mode_2", "p10_2720", "usci_a0__spi_mode_3", "flash_3", "flash_7",
+    "crc_2080", "usci_a2__uart_mode_1", "timer1_d3_1", "lcd_2", "timer0_b3_1", "sys__system_module_2", "pmm_3670", "usci_b0__i2c_mode_4", "port_5_2", "dac12_2", "timer_a2_1", "sd16_1", "port_5_6_4",
     "usb_control_1", "tlv_calibration_data_2", "port_c_2", "usci_b0__i2c_mode_3", "eusci_b2_2080", "lea_sc_3670", "flash_6", "port_d_4", "tb0_3670_inst3", "adc_1", "port_a_5", "port_c_1", "port_3_3",
     "supply_voltage_supervisor_2", "special_function_4", "usci_a1__uart_mode_1", "operational_amplifier_4", "port_f_1", "comparator_a_1", "ramctl_3670_config1", "port_mapping_port_1_1", "port_7_3",
-    "usci_a3__spi_mode_2", "csys__compact_system_module_2", "sd16_a3_2", "port_7_8_6", "special_function_16", "timer1_b3_1", "saph_a_3670", "calibration_data_3", "port_j_5", "port_5_6_6",
+    "usci_a3__spi_mode_2", "csys__compact_system_module_2", "sd16_a3_1", "port_7_8_6", "special_function_16", "timer1_b3_1", "saph_a_3670", "calibration_data_3", "port_j_5", "port_5_6_6",
     "aes_accelerator_1", "port_5_1", "cs__clock_system_4", "fram_2", "special_function_15", "sd16_a6_1", "dma_8", "bkmem_44508", "_8bit_timer_counter_1", "dma_9", "timer1_a2_2", "port_j_1",
     "csys__compact_system_module_1", "shared_reference_2", "cc1101_radio_interface_1", "port_1_2_4", "dma_10", "sac0_45508_config1", "sfr__special_function_registers_3", "dma_17", "port_1_2_10",
     "rtc_ce__real_time_clock_2", "p5_2720", "p7_2720", "pmm__power_management_system_3", "adc10_b_1", "crc32_3670", "sac1_45508_config3", "usci_b2__spi_mode_1", "ucs__unified_system_clock_1",
     "port_e_4", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_2", "sd16_a1_3", "dac12_4", "ta0_3560_inst3", "usci_b3__i2c_mode_1", "usci_b3__spi_mode_1", "p2_2720", "sd16_a1_1", "port_1_2_8",
     "timer_port_1", "rtc_b__real_time_clock_1", "port_3_4_9", "timer2_b3_1", "dma_2", "port_5_6_1", "port_f_2", "timer0_a3_2", "extscanif_ram_1", "port_3_4_5", "eusci_a2_2080", "cs_3670",
-    "port_3_4_6", "sfr__special_function_registers_2", "sys__system_module_6", "ta0_3560_inst7", "usb_operation_1", "adc10_3", "pc_2720", "crc16_3", "sd14_module_1", "timer1_a3_6",
-    "mpy_32__multiplier__32_bit_mode_1", "port_u_control_1", "eusci_b1_2080", "port_11_2", "realtime_clock_2", "usci_a0__spi_mode_1", "sd24_b3_2", "port_3_4_3", "port_d_1", "port_3_4_8",
+    "port_3_4_6", "sfr__special_function_registers_2", "sys__system_module_6", "ta0_3560_inst7", "usb_operation_1", "adc10_3", "pc_2720", "crc16_2", "sd14_module_1", "timer1_a3_1",
+    "mpy_32__multiplier__32_bit_mode_1", "port_u_control_1", "eusci_b1_2080", "port_11_2", "realtime_clock_1", "usci_a0__spi_mode_1", "sd24_b3_2", "port_3_4_3", "port_d_1", "port_3_4_8",
     "multiplier_1", "aes_accelerator_2", "pmm_445", "sd24_b4_1", "tri0_44508", "watchdog_timer_2", "port_5_6_3", "flash_2", "usci_b1__spi_mode_3", "port_mapping_port_2_1", "p3_2720", "eusci_b0_2080",
     "sys__system_module_4", "usci_a3__spi_mode_1", "port_9_10_3", "sd24_b2_1", "usci_a0__uart_mode_2", "flash_4", "multiplier__32_bit_mode_1", "dma_19", "ta4_3560_inst3",
     "supply_voltage_supervisor_1", "pa_2720", "pmm__power_management_system_6", "sd16_a7_1", "pmm__power_management_system_2", "sd16_a4_1", "timer_a5_1", "port_9_10_1", "cs__clock_system_1",
     "port_3_4_4", "adc12_3", "tlv_calibration_data_3", "analog_pool_1", "p6_2720", "port_9_2", "captivate_1", "pmm_45", "timer_event_control_1", "lcd_c_2080", "ramctl_3670_config2",
-    "system_clock_fllplus_6", "dma_6", "system_clock_fllplus_5", "sys__system_module_1", "sys__system_module_3", "timer_b7_1", "port_11_1", "usci_a0__spi_mode_4", "comparator_b_1",
-    "usci_a1__uart_mode_3", "port_b_5", "ta2_3560_inst3", "adc10_1", "special_function_13", "special_function_18", "rtc_c__real_time_clock_3", "ta2_3560_inst2", "timer0_a3_3", "backup_memory_1",
-    "crc16_1", "ta3_3560_inst2", "timer0_b7_1", "lcd_c_2", "port_3_4_10", "usci_a0__uart_mode_5", "sd24_a2_2", "special_function_14", "eusci_a1_445", "timer3_a2_1", "sd24_a4_1", "port_1_2_7",
+    "system_clock_fllplus_6", "dma_6", "system_clock_fllplus_5", "sys__system_module_1", "sys__system_module_3", "timer_b7_1", "port_11_1", "usci_a0__spi_mode_3", "comparator_b_1",
+    "usci_a1__uart_mode_3", "port_b_5", "ta2_3560_inst3", "adc10_1", "special_function_13", "special_function_18", "rtc_c__real_time_clock_3", "ta2_3560_inst2", "timer0_a3_2", "backup_memory_1",
+    "crc16_1", "ta3_3560_inst2", "timer0_b7_1", "lcd_c_2", "port_3_4_10", "usci_a0__uart_mode_3", "sd24_a2_2", "special_function_14", "eusci_a1_445", "timer3_a2_1", "sd24_a4_1", "port_1_2_7",
     "port_3_4_7", "port_b_6", "calibration_data_2", "ucs__unified_system_clock_6", "usart_0__uart_spi_mode_1", "special_function_1", "port_e_2", "timer1_a3_4", "pd_2720", "eusci_a0_445",
     "sys__system_module_5", "espctl_2", "port_mapping_control_1", "sac0_45508_config3", "system_clock_fllplus_3", "rc__ram_control_module_2", "ta1_3560_inst3", "timer_event_control_2", "port_j_4",
     "special_function_9", "captio0_3670", "system_clock_1", "port_7_8_1", "timer1_a3_3", "sd16_2", "shared_reference_1", "port_c_3", "saph_3670", "special_function_7", "ucs__unified_system_clock_2",
-    "port_7_8_4", "tlv_calibration_data_1", "ucs__unified_system_clock_4", "dma_16", "usci_b0__i2c_mode_5", "sd16_a1_2", "adc_445", "backup_ram_1", "dma_4", "port_1_2_9", "mpu_3670",
+    "port_7_8_4", "tlv_calibration_data_1", "ucs__unified_system_clock_4", "dma_16", "usci_b0__i2c_mode_4", "sd16_a1_2", "adc_445", "backup_ram_1", "dma_4", "port_1_2_9", "mpu_3670",
     "usci_a0__spi_mode_2", "port_9_10_2", "battery_charger_1", "dac12_3", "rtc_ce__real_time_clock_1", "sd24_a2_1", "sd24_a1_1", "special_function_17", "port_c_4", "pmm__power_management_system_1",
     "adc12_2", "timer0_d3_1", "realtime_clock_1", "usci_a3__uart_mode_1", "timer3_a5_1", "espctl_1", "adc10_4", "port_7_8_5", "timer0_a5_1", "usci_b0__spi_mode_2", "port_7_8_2", "port_5_6_2",
-    "p4_2720", "timer2_a2_1", "lcd_c_1", "capacitive_touch_io_0_2", "comp_e_3670", "dma_18", "supply_voltage_supervisor_3", "dac12_1", "operational_amplifier_1_1", "p8_2720", "usci_b2__i2c_mode_1",
-    "port_mapping_port_4_1", "captio_3670", "eusci_a1_2080", "port_c_5", "port_b_1", "usci_b1__spi_mode_1", "frctl_a_3670", "port_a_4", "special_function_12", "usci_a0__uart_mode_4",
-    "usci_b1__i2c_mode_3", "pj_2720", "ucs__unified_system_clock_5", "comparator_d_1", "dma_14", "special_function_11", "sfr_4450", "usci_a1__uart_mode_4", "lcd_1", "usci_a1__spi_mode_3",
+    "p4_2720", "timer2_a2_1", "lcd_c_1", "capacitive_touch_io_0_1", "comp_e_3670", "dma_18", "supply_voltage_supervisor_2", "dac12_1", "operational_amplifier_1_1", "p8_2720", "usci_b2__i2c_mode_1",
+    "port_mapping_port_4_1", "captio_3670", "eusci_a1_2080", "port_c_5", "port_b_1", "usci_b1__spi_mode_1", "frctl_a_3670", "port_a_4", "special_function_12", "usci_a0__uart_mode_3",
+    "usci_b1__i2c_mode_3", "pj_2720", "ucs__unified_system_clock_5", "comparator_d_1", "dma_14", "special_function_11", "sfr_4450", "usci_a1__uart_mode_3", "lcd_1", "usci_a1__spi_mode_3",
     "port_1_2_1", "rc__ram_control_module_fram_1", "dma_7", "system_clock_fllplus_4", "port_e_1", "port_5_6_7", "scan_interface_1", "system_clock_4", "port_5_6_5", "cs__clock_system_5",
-    "rtc_c__real_time_clock_2", "usci_b0__i2c_mode_1", "system_clock_3", "dma_13", "port_a_3", "timer0_a3_1", "crc32_1", "special_function_20", "timer1_a3_5", "port_9_1", "ta4_3560_inst2",
+    "rtc_c__real_time_clock_2", "usci_b0__i2c_mode_1", "system_clock_3", "dma_13", "port_a_3", "timer0_a3_1", "crc32_1", "special_function_20", "timer1_a3_1", "port_9_1", "ta4_3560_inst2",
     "port_9_10_5", "timer2_a3_1", "system_clock_5", "usci_a1__spi_mode_1", "timer_b3_1", "lcd_b_1", "p1_2720", "lea_3670", "usci_b1__i2c_mode_2", "adc12_b_3670", "adc10_a_1", "port_a_2", "sd24_a3_2",
-    "ecomp1_445", "sys_2080", "rtc_c_2080", "aes256_3670", "port_7_8_3", "special_function_19", "port_d_2", "adc12_1", "usci_a1__spi_mode_4", "ucs__unified_system_clock_3", "usci_a2__spi_mode_1",
-    "hspll_3670", "special_function_3", "auxilary_supply_1", "ref_a_3670", "sd16_a3_1", "port_a_1", "timer0_a3_5", "usci_b1__spi_mode_2", "usi_1", "sd24_b7_1", "fram_1", "port_3_1",
-    "usci_b0__spi_mode_4", "timer0_a3_4", "dma_5", "port_1_2_3", "basic_timer_1", "timer1_a3_1", "watchdog_timer_3", "special_function_2", "ta3_3560_inst3", "timer0_a3_6", "dma_3", "ecomp0_445",
+    "ecomp1_445", "sys_2080", "rtc_c_2080", "aes256_3670", "port_7_8_3", "special_function_19", "port_d_2", "adc12_1", "usci_a1__spi_mode_3", "ucs__unified_system_clock_3", "usci_a2__spi_mode_1",
+    "hspll_3670", "special_function_3", "auxilary_supply_1", "ref_a_3670", "sd16_a3_1", "port_a_1", "timer0_a3_2", "usci_b1__spi_mode_2", "usi_1", "sd24_b7_1", "fram_1", "port_3_1",
+    "usci_b0__spi_mode_3", "timer0_a3_4", "dma_5", "port_1_2_3", "basic_timer_1", "timer1_a3_1", "watchdog_timer_2", "special_function_2", "ta3_3560_inst3", "timer0_a3_2", "dma_3", "ecomp0_445",
     "eusci_b0_445", "captivate_445_inst4", "usci_b0__i2c_mode_4", "eusci_a0_2080", "p9_2720", "system_clock_2", "cs__clock_system_3", "operational_amplifier_2", "calibration_data_1", "port_d_5",
     "cs_445", "usci_a0__uart_mode_1", "timer1_a3_2", "mpu_1", "mtif_3670", "operational_amplifier_3", "sac2_45508_config3", "adc10_2", "system_clock_fllplus_2", "port_mapping_port_3_1",
     "tb2_3670_inst3", "dma_1", "sys_10", "captivate_100", "wdt_a_3560", "port_d_3", "dma_12", "watchdog_timer_1", "tb3_3670_inst7", "port_9_10_4", "special_function_8", "usci_a2__spi_mode_2",
-    "comparator_e_1", "usci_b0__spi_mode_5", "sd24_a3_1", "usci_a0__spi_mode_3", "uart_1", "rf13m_module_1", "lcd_e_1", "usci_a1__spi_mode_2", "sfr_2080", "tb0_3670_inst7", "usci_a0__uart_mode_3",
+    "comparator_e_1", "usci_b0__spi_mode_3", "sd24_a3_1", "usci_a0__spi_mode_3", "uart_1", "rf13m_module_1", "lcd_e_1", "usci_a1__spi_mode_2", "sfr_2080", "tb0_3670_inst7", "usci_a0__uart_mode_3",
     "timer1_a2_1", "special_function_6", "cs__clock_system_2", "espctl_3", "pb_2720", "extscanif_1", "ctsd16_b4_1", "rtc_d__real_time_clock_1", "basic_timer___rtc_1", "special_function_10", "dma_15",
     "usci_a3__uart_mode_2", "timer1_a5_1", "dma_11", "usart_1_1", "port_7_1", "eusci_b1_445", "sac0_45508_config4", "sdhs_3670", "usci_b0__spi_mode_1", "ta1_3560_inst7", "timer_a3_1",
 ]
@@ -679,55 +657,55 @@ cc430f6147-all = [
 msp430afe221 = []
 msp430afe221-all = [
    "msp430afe221",
- "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_3", "usart_0__uart_spi_mode_1", "sd24_a1_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
+ "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_2", "usart_0__uart_spi_mode_1", "sd24_a1_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
     "multiplier_1", "calibration_data_3",
 ]
 msp430afe222 = []
 msp430afe222-all = [
    "msp430afe222",
- "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_3", "usart_0__uart_spi_mode_1", "sd24_a2_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
+ "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_2", "usart_0__uart_spi_mode_1", "sd24_a2_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
     "multiplier_1", "calibration_data_3",
 ]
 msp430afe223 = []
 msp430afe223-all = [
    "msp430afe223",
- "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_3", "usart_0__uart_spi_mode_1", "sd24_a3_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
+ "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_2", "usart_0__uart_spi_mode_1", "sd24_a3_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
     "multiplier_1", "calibration_data_3",
 ]
 msp430afe231 = []
 msp430afe231-all = [
    "msp430afe231",
- "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_3", "usart_0__uart_spi_mode_1", "sd24_a1_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
+ "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_2", "usart_0__uart_spi_mode_1", "sd24_a1_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
     "multiplier_1", "calibration_data_3",
 ]
 msp430afe232 = []
 msp430afe232-all = [
    "msp430afe232",
- "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_3", "usart_0__uart_spi_mode_1", "sd24_a2_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
+ "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_2", "usart_0__uart_spi_mode_1", "sd24_a2_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
     "multiplier_1", "calibration_data_3",
 ]
 msp430afe233 = []
 msp430afe233-all = [
    "msp430afe233",
- "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_3", "usart_0__uart_spi_mode_1", "sd24_a3_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
+ "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_2", "usart_0__uart_spi_mode_1", "sd24_a3_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
     "multiplier_1", "calibration_data_3",
 ]
 msp430afe251 = []
 msp430afe251-all = [
    "msp430afe251",
- "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_3", "usart_0__uart_spi_mode_1", "sd24_a1_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
+ "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_2", "usart_0__uart_spi_mode_1", "sd24_a1_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
     "multiplier_1", "calibration_data_3",
 ]
 msp430afe252 = []
 msp430afe252-all = [
    "msp430afe252",
- "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_3", "usart_0__uart_spi_mode_1", "sd24_a2_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
+ "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_2", "usart_0__uart_spi_mode_1", "sd24_a2_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
     "multiplier_1", "calibration_data_3",
 ]
 msp430afe253 = []
 msp430afe253-all = [
    "msp430afe253",
- "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_3", "usart_0__uart_spi_mode_1", "sd24_a3_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
+ "special_function_19", "port_1_2_3", "system_clock_3", "supply_voltage_supervisor_2", "usart_0__uart_spi_mode_1", "sd24_a3_1", "watchdog_timer_1", "flash_3", "timer_a3_1",
     "multiplier_1", "calibration_data_3",
 ]
 msp430bt5190 = []
@@ -1018,55 +996,55 @@ msp430f1491-all = [
 msp430f155 = []
 msp430f155-all = [
    "msp430f155",
- "special_function_2", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_3", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
+ "special_function_2", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_2", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
     "adc12_1", "timer_b3_1", "watchdog_timer_1", "dma_2", "flash_1", "timer_a3_1", "dac12_2",
 ]
 msp430f156 = []
 msp430f156-all = [
    "msp430f156",
- "special_function_2", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_3", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
+ "special_function_2", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_2", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
     "adc12_1", "timer_b3_1", "watchdog_timer_1", "dma_2", "flash_1", "timer_a3_1", "dac12_2",
 ]
 msp430f157 = []
 msp430f157-all = [
    "msp430f157",
- "special_function_2", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_3", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
+ "special_function_2", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_2", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
     "adc12_1", "timer_b3_1", "watchdog_timer_1", "dma_2", "flash_1", "timer_a3_1", "dac12_2",
 ]
 msp430f1610 = []
 msp430f1610-all = [
    "msp430f1610",
- "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_3", "system_clock_1", "comparator_a_1",
+ "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_2", "system_clock_1", "comparator_a_1",
     "usart_0__uart_spi_mode_1", "usart_1_1", "adc12_1", "timer_b7_1", "watchdog_timer_1", "dma_2", "flash_1", "timer_a3_1", "multiplier_1", "dac12_2",
 ]
 msp430f1611 = []
 msp430f1611-all = [
    "msp430f1611",
- "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_3", "system_clock_1", "comparator_a_1",
+ "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_2", "system_clock_1", "comparator_a_1",
     "usart_0__uart_spi_mode_1", "usart_1_1", "adc12_1", "timer_b7_1", "watchdog_timer_1", "dma_2", "flash_1", "timer_a3_1", "multiplier_1", "dac12_2",
 ]
 msp430f1612 = []
 msp430f1612-all = [
    "msp430f1612",
- "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_3", "system_clock_1", "comparator_a_1",
+ "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_2", "system_clock_1", "comparator_a_1",
     "usart_0__uart_spi_mode_1", "usart_1_1", "adc12_1", "timer_b7_1", "watchdog_timer_1", "dma_2", "flash_1", "timer_a3_1", "multiplier_1", "dac12_2",
 ]
 msp430f167 = []
 msp430f167-all = [
    "msp430f167",
- "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_3", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
+ "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_2", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
     "usart_1_1", "adc12_1", "timer_b7_1", "watchdog_timer_1", "dma_2", "flash_1", "timer_a3_1", "multiplier_1", "dac12_2",
 ]
 msp430f168 = []
 msp430f168-all = [
    "msp430f168",
- "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_3", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
+ "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_2", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
     "usart_1_1", "adc12_1", "timer_b7_1", "watchdog_timer_1", "dma_2", "flash_1", "timer_a3_1", "multiplier_1", "dac12_2",
 ]
 msp430f169 = []
 msp430f169-all = [
    "msp430f169",
- "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_3", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
+ "special_function_9", "port_3_4_1", "port_1_2_1", "port_5_6_1", "usart_0__i2c_mode_1", "supply_voltage_supervisor_2", "system_clock_1", "comparator_a_1", "usart_0__uart_spi_mode_1",
     "usart_1_1", "adc12_1", "timer_b7_1", "watchdog_timer_1", "dma_2", "flash_1", "timer_a3_1", "multiplier_1", "dac12_2",
 ]
 msp430f2001 = []
@@ -1176,7 +1154,7 @@ msp430f2274-all = [
 msp430f233 = []
 msp430f233-all = [
    "msp430f233",
- "special_function_11", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
+ "special_function_11", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
     "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "timer_b3_1", "watchdog_timer_1", "flash_5", "timer_a3_1", "multiplier_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2330 = []
@@ -1188,7 +1166,7 @@ msp430f2330-all = [
 msp430f235 = []
 msp430f235-all = [
    "msp430f235",
- "special_function_11", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
+ "special_function_11", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
     "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "timer_b3_1", "watchdog_timer_1", "flash_5", "timer_a3_1", "multiplier_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2350 = []
@@ -1206,105 +1184,105 @@ msp430f2370-all = [
 msp430f2410 = []
 msp430f2410-all = [
    "msp430f2410",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
     "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1", "watchdog_timer_1", "flash_5",
     "timer_a3_1", "multiplier_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2416 = []
 msp430f2416-all = [
    "msp430f2416",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1",
     "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1",
     "watchdog_timer_1", "flash_5", "timer_a3_1", "multiplier_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2417 = []
 msp430f2417-all = [
    "msp430f2417",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1",
     "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1",
     "watchdog_timer_1", "flash_5", "timer_a3_1", "multiplier_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2418 = []
 msp430f2418-all = [
    "msp430f2418",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1",
     "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1",
     "watchdog_timer_1", "flash_5", "timer_a3_1", "multiplier_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2419 = []
 msp430f2419-all = [
    "msp430f2419",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1",
     "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1",
     "watchdog_timer_1", "flash_5", "timer_a3_1", "multiplier_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f247 = []
 msp430f247-all = [
    "msp430f247",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
     "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1", "watchdog_timer_1", "flash_5",
     "timer_a3_1", "multiplier_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2471 = []
 msp430f2471-all = [
    "msp430f2471",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
     "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1", "watchdog_timer_1", "flash_5",
     "timer_a3_1", "multiplier_1", "tlv_calibration_data_3", "calibration_data_1",
 ]
 msp430f248 = []
 msp430f248-all = [
    "msp430f248",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
     "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1", "watchdog_timer_1", "flash_5",
     "timer_a3_1", "multiplier_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2481 = []
 msp430f2481-all = [
    "msp430f2481",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
     "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1", "watchdog_timer_1", "flash_5",
     "timer_a3_1", "multiplier_1", "tlv_calibration_data_3", "calibration_data_1",
 ]
 msp430f249 = []
 msp430f249-all = [
    "msp430f249",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
     "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1", "watchdog_timer_1", "flash_5",
     "timer_a3_1", "multiplier_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2491 = []
 msp430f2491-all = [
    "msp430f2491",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1",
     "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1", "watchdog_timer_1", "flash_5",
     "timer_a3_1", "multiplier_1", "tlv_calibration_data_3", "calibration_data_1",
 ]
 msp430f2616 = []
 msp430f2616-all = [
    "msp430f2616",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1",
     "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1",
     "watchdog_timer_1", "dma_3", "flash_5", "timer_a3_1", "multiplier_1", "dac12_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2617 = []
 msp430f2617-all = [
    "msp430f2617",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1",
     "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1",
     "watchdog_timer_1", "dma_3", "flash_5", "timer_a3_1", "multiplier_1", "dac12_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2618 = []
 msp430f2618-all = [
    "msp430f2618",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1",
     "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1",
     "watchdog_timer_1", "dma_3", "flash_5", "timer_a3_1", "multiplier_1", "dac12_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
 msp430f2619 = []
 msp430f2619-all = [
    "msp430f2619",
- "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_3", "comparator_a_2", "usci_a0__uart_mode_1",
+ "special_function_12", "port_3_4_3", "port_5_6_2", "port_7_8_2", "port_1_2_2", "system_clock_5", "supply_voltage_supervisor_2", "comparator_a_2", "usci_a0__uart_mode_1",
     "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_1", "adc12_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1", "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b7_1",
     "watchdog_timer_1", "dma_3", "flash_5", "timer_a3_1", "multiplier_1", "dac12_1", "tlv_calibration_data_2", "calibration_data_1",
 ]
@@ -1547,7 +1525,7 @@ msp430f47163 = []
 msp430f47163-all = [
    "msp430f47163",
  "special_function_16", "port_9_10_2", "port_3_4_3", "port_5_1", "port_7_8_2", "port_1_2_2", "basic_timer___rtc_1", "system_clock_fllplus_5", "supply_voltage_supervisor_2",
-    "comparator_a_1", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_2", "lcd_a_1", "sd16_a3_2", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1",
+    "comparator_a_1", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_2", "lcd_a_1", "sd16_a3_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1",
     "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b3_1", "watchdog_timer_1", "dma_4", "flash_5", "timer_a3_1", "multiplier__16_bit_mode_1", "multiplier__32_bit_mode_1",
 ]
 msp430f47166 = []
@@ -1568,7 +1546,7 @@ msp430f47173 = []
 msp430f47173-all = [
    "msp430f47173",
  "special_function_16", "port_9_10_2", "port_3_4_3", "port_5_1", "port_7_8_2", "port_1_2_2", "basic_timer___rtc_1", "system_clock_fllplus_5", "supply_voltage_supervisor_2",
-    "comparator_a_1", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_2", "lcd_a_1", "sd16_a3_2", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1",
+    "comparator_a_1", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_2", "lcd_a_1", "sd16_a3_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1",
     "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b3_1", "watchdog_timer_1", "dma_4", "flash_5", "timer_a3_1", "multiplier__16_bit_mode_1", "multiplier__32_bit_mode_1",
 ]
 msp430f47176 = []
@@ -1589,7 +1567,7 @@ msp430f47183 = []
 msp430f47183-all = [
    "msp430f47183",
  "special_function_16", "port_9_10_2", "port_3_4_3", "port_5_1", "port_7_8_2", "port_1_2_2", "basic_timer___rtc_1", "system_clock_fllplus_5", "supply_voltage_supervisor_2",
-    "comparator_a_1", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_2", "lcd_a_1", "sd16_a3_2", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1",
+    "comparator_a_1", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_2", "lcd_a_1", "sd16_a3_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1",
     "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b3_1", "watchdog_timer_1", "dma_4", "flash_5", "timer_a3_1", "multiplier__16_bit_mode_1", "multiplier__32_bit_mode_1",
 ]
 msp430f47186 = []
@@ -1610,7 +1588,7 @@ msp430f47193 = []
 msp430f47193-all = [
    "msp430f47193",
  "special_function_16", "port_9_10_2", "port_3_4_3", "port_5_1", "port_7_8_2", "port_1_2_2", "basic_timer___rtc_1", "system_clock_fllplus_5", "supply_voltage_supervisor_2",
-    "comparator_a_1", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_2", "lcd_a_1", "sd16_a3_2", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1",
+    "comparator_a_1", "usci_a0__uart_mode_1", "usci_a0__spi_mode_1", "usci_b0__spi_mode_1", "usci_b0__i2c_mode_2", "lcd_a_1", "sd16_a3_1", "usci_a1__uart_mode_1", "usci_a1__spi_mode_1",
     "usci_b1__spi_mode_1", "usci_b1__i2c_mode_1", "timer_b3_1", "watchdog_timer_1", "dma_4", "flash_5", "timer_a3_1", "multiplier__16_bit_mode_1", "multiplier__32_bit_mode_1",
 ]
 msp430f47196 = []
@@ -1678,7 +1656,7 @@ msp430f5131-all = [
    "msp430f5131",
  "sfr__special_function_registers_1", "pmm__power_management_system_2", "flash_6", "crc16_2", "rc__ram_control_module_1", "watchdog_timer_2", "ucs__unified_system_clock_5",
     "sys__system_module_2", "shared_reference_1", "port_mapping_control_1", "port_mapping_port_1_1", "port_mapping_port_2_1", "port_mapping_port_3_1", "port_a_1", "port_1_2_5", "port_b_1",
-    "port_3_2", "port_j_2", "timer0_a3_3", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
+    "port_3_2", "port_j_2", "timer0_a3_2", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
     "usci_b0__i2c_mode_3", "comparator_b_1", "timer0_d3_1", "timer1_d3_1", "timer_event_control_1", "timer_event_control_2",
 ]
 msp430f5132 = []
@@ -1686,7 +1664,7 @@ msp430f5132-all = [
    "msp430f5132",
  "sfr__special_function_registers_1", "pmm__power_management_system_2", "flash_6", "crc16_2", "rc__ram_control_module_1", "watchdog_timer_2", "ucs__unified_system_clock_5",
     "sys__system_module_2", "shared_reference_1", "port_mapping_control_1", "port_mapping_port_1_1", "port_mapping_port_2_1", "port_mapping_port_3_1", "port_a_1", "port_1_2_5", "port_b_1",
-    "port_3_2", "port_j_2", "timer0_a3_3", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
+    "port_3_2", "port_j_2", "timer0_a3_2", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
     "usci_b0__i2c_mode_3", "adc10_a_1", "comparator_b_1", "timer0_d3_1", "timer1_d3_1", "timer_event_control_1", "timer_event_control_2",
 ]
 msp430f5151 = []
@@ -1694,7 +1672,7 @@ msp430f5151-all = [
    "msp430f5151",
  "sfr__special_function_registers_1", "pmm__power_management_system_2", "flash_6", "crc16_2", "rc__ram_control_module_1", "watchdog_timer_2", "ucs__unified_system_clock_5",
     "sys__system_module_2", "shared_reference_1", "port_mapping_control_1", "port_mapping_port_1_1", "port_mapping_port_2_1", "port_mapping_port_3_1", "port_a_1", "port_1_2_5", "port_b_1",
-    "port_3_2", "port_j_2", "timer0_a3_3", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
+    "port_3_2", "port_j_2", "timer0_a3_2", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
     "usci_b0__i2c_mode_3", "comparator_b_1", "timer0_d3_1", "timer1_d3_1", "timer_event_control_1", "timer_event_control_2",
 ]
 msp430f5152 = []
@@ -1702,7 +1680,7 @@ msp430f5152-all = [
    "msp430f5152",
  "sfr__special_function_registers_1", "pmm__power_management_system_2", "flash_6", "crc16_2", "rc__ram_control_module_1", "watchdog_timer_2", "ucs__unified_system_clock_5",
     "sys__system_module_2", "shared_reference_1", "port_mapping_control_1", "port_mapping_port_1_1", "port_mapping_port_2_1", "port_mapping_port_3_1", "port_a_1", "port_1_2_5", "port_b_1",
-    "port_3_2", "port_j_2", "timer0_a3_3", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
+    "port_3_2", "port_j_2", "timer0_a3_2", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
     "usci_b0__i2c_mode_3", "adc10_a_1", "comparator_b_1", "timer0_d3_1", "timer1_d3_1", "timer_event_control_1", "timer_event_control_2",
 ]
 msp430f5171 = []
@@ -1710,7 +1688,7 @@ msp430f5171-all = [
    "msp430f5171",
  "sfr__special_function_registers_1", "pmm__power_management_system_2", "flash_6", "crc16_2", "rc__ram_control_module_1", "watchdog_timer_2", "ucs__unified_system_clock_5",
     "sys__system_module_2", "shared_reference_1", "port_mapping_control_1", "port_mapping_port_1_1", "port_mapping_port_2_1", "port_mapping_port_3_1", "port_a_1", "port_1_2_5", "port_b_1",
-    "port_3_2", "port_j_2", "timer0_a3_3", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
+    "port_3_2", "port_j_2", "timer0_a3_2", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
     "usci_b0__i2c_mode_3", "comparator_b_1", "timer0_d3_1", "timer1_d3_1", "timer_event_control_1", "timer_event_control_2",
 ]
 msp430f5172 = []
@@ -1718,7 +1696,7 @@ msp430f5172-all = [
    "msp430f5172",
  "sfr__special_function_registers_1", "pmm__power_management_system_2", "flash_6", "crc16_2", "rc__ram_control_module_1", "watchdog_timer_2", "ucs__unified_system_clock_5",
     "sys__system_module_2", "shared_reference_1", "port_mapping_control_1", "port_mapping_port_1_1", "port_mapping_port_2_1", "port_mapping_port_3_1", "port_a_1", "port_1_2_5", "port_b_1",
-    "port_3_2", "port_j_2", "timer0_a3_3", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
+    "port_3_2", "port_j_2", "timer0_a3_2", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
     "usci_b0__i2c_mode_3", "adc10_a_1", "comparator_b_1", "timer0_d3_1", "timer1_d3_1", "timer_event_control_1", "timer_event_control_2",
 ]
 msp430f5212 = []
@@ -3767,16 +3745,16 @@ msp430fr2000-all = [
 msp430fr2032 = []
 msp430fr2032-all = [
    "msp430fr2032",
- "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_4", "cs__clock_system_5", "fram_3", "crc16_3", "watchdog_timer_3", "port_a_5",
-    "port_1_2_9", "port_b_5", "port_3_4_10", "port_c_4", "port_5_6_6", "port_d_5", "port_7_8_6", "capacitive_touch_io_0_2", "timer0_a3_5", "timer1_a3_5", "realtime_clock_1", "usci_a0__uart_mode_5",
-    "usci_a0__spi_mode_5", "usci_b0__spi_mode_5", "usci_b0__i2c_mode_6", "backup_memory_1", "adc_2",
+ "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_4", "cs__clock_system_5", "fram_2", "crc16_2", "watchdog_timer_2", "port_a_5",
+    "port_1_2_9", "port_b_5", "port_3_4_10", "port_c_4", "port_5_6_6", "port_d_5", "port_7_8_6", "capacitive_touch_io_0_1", "timer0_a3_2", "timer1_a3_1", "realtime_clock_1", "usci_a0__uart_mode_3",
+    "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4", "backup_memory_1", "adc_2",
 ]
 msp430fr2033 = []
 msp430fr2033-all = [
    "msp430fr2033",
- "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_4", "cs__clock_system_5", "fram_3", "crc16_3", "watchdog_timer_3", "port_a_5",
-    "port_1_2_9", "port_b_5", "port_3_4_10", "port_c_4", "port_5_6_6", "port_d_5", "port_7_8_6", "capacitive_touch_io_0_2", "timer0_a3_5", "timer1_a3_5", "realtime_clock_1", "usci_a0__uart_mode_5",
-    "usci_a0__spi_mode_5", "usci_b0__spi_mode_5", "usci_b0__i2c_mode_6", "backup_memory_1", "adc_2",
+ "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_4", "cs__clock_system_5", "fram_2", "crc16_2", "watchdog_timer_2", "port_a_5",
+    "port_1_2_9", "port_b_5", "port_3_4_10", "port_c_4", "port_5_6_6", "port_d_5", "port_7_8_6", "capacitive_touch_io_0_1", "timer0_a3_2", "timer1_a3_1", "realtime_clock_1", "usci_a0__uart_mode_3",
+    "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4", "backup_memory_1", "adc_2",
 ]
 msp430fr2100 = []
 msp430fr2100-all = [
@@ -3848,9 +3826,9 @@ msp430fr2422-all = [
 msp430fr2433 = []
 msp430fr2433-all = [
    "msp430fr2433",
- "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_5", "cs__clock_system_5", "fram_3", "crc16_3", "watchdog_timer_3", "port_a_6",
-    "port_1_2_10", "port_b_6", "port_3_3", "realtime_clock_2", "timer0_a3_6", "timer1_a3_6", "timer2_a2_1", "timer3_a2_1", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1",
-    "usci_a0__uart_mode_5", "usci_a0__spi_mode_5", "usci_a1__uart_mode_4", "usci_a1__spi_mode_4", "usci_b0__spi_mode_5", "usci_b0__i2c_mode_6", "backup_memory_1", "adc_2",
+ "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_5", "cs__clock_system_5", "fram_2", "crc16_2", "watchdog_timer_2", "port_a_6",
+    "port_1_2_10", "port_b_6", "port_3_3", "realtime_clock_1", "timer0_a3_2", "timer1_a3_1", "timer2_a2_1", "timer3_a2_1", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1",
+    "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_a1__uart_mode_3", "usci_a1__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4", "backup_memory_1", "adc_2",
 ]
 msp430fr2475 = []
 msp430fr2475-all = [
@@ -3883,30 +3861,30 @@ msp430fr2522-all = [
 msp430fr2532 = []
 msp430fr2532-all = [
    "msp430fr2532",
- "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_6", "cs__clock_system_5", "fram_3", "crc16_3", "watchdog_timer_3", "port_a_6",
-    "port_1_2_10", "port_b_6", "port_3_3", "realtime_clock_2", "timer0_a3_6", "timer1_a3_6", "timer2_a2_1", "timer3_a2_1", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1",
-    "usci_a0__uart_mode_5", "usci_a0__spi_mode_5", "usci_a1__uart_mode_4", "usci_a1__spi_mode_4", "usci_b0__spi_mode_5", "usci_b0__i2c_mode_6", "backup_memory_1", "adc_2", "captivate_1",
+ "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_6", "cs__clock_system_5", "fram_2", "crc16_2", "watchdog_timer_2", "port_a_6",
+    "port_1_2_10", "port_b_6", "port_3_3", "realtime_clock_1", "timer0_a3_2", "timer1_a3_1", "timer2_a2_1", "timer3_a2_1", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1",
+    "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_a1__uart_mode_3", "usci_a1__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4", "backup_memory_1", "adc_2", "captivate_1",
 ]
 msp430fr2533 = []
 msp430fr2533-all = [
    "msp430fr2533",
- "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_6", "cs__clock_system_5", "fram_3", "crc16_3", "watchdog_timer_3", "port_a_6",
-    "port_1_2_10", "port_b_6", "port_3_3", "realtime_clock_2", "timer0_a3_6", "timer1_a3_6", "timer2_a2_1", "timer3_a2_1", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1",
-    "usci_a0__uart_mode_5", "usci_a0__spi_mode_5", "usci_a1__uart_mode_4", "usci_a1__spi_mode_4", "usci_b0__spi_mode_5", "usci_b0__i2c_mode_6", "backup_memory_1", "adc_2", "captivate_1",
+ "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_6", "cs__clock_system_5", "fram_2", "crc16_2", "watchdog_timer_2", "port_a_6",
+    "port_1_2_10", "port_b_6", "port_3_3", "realtime_clock_1", "timer0_a3_2", "timer1_a3_1", "timer2_a2_1", "timer3_a2_1", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1",
+    "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_a1__uart_mode_3", "usci_a1__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4", "backup_memory_1", "adc_2", "captivate_1",
 ]
 msp430fr2632 = []
 msp430fr2632-all = [
    "msp430fr2632",
- "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_6", "cs__clock_system_5", "fram_3", "crc16_3", "watchdog_timer_3", "port_a_6",
-    "port_1_2_10", "port_b_6", "port_3_3", "realtime_clock_2", "timer0_a3_6", "timer1_a3_6", "timer2_a2_1", "timer3_a2_1", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1",
-    "usci_a0__uart_mode_5", "usci_a0__spi_mode_5", "usci_a1__uart_mode_4", "usci_a1__spi_mode_4", "usci_b0__spi_mode_5", "usci_b0__i2c_mode_6", "backup_memory_1", "adc_2", "captivate_1",
+ "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_6", "cs__clock_system_5", "fram_2", "crc16_2", "watchdog_timer_2", "port_a_6",
+    "port_1_2_10", "port_b_6", "port_3_3", "realtime_clock_1", "timer0_a3_2", "timer1_a3_1", "timer2_a2_1", "timer3_a2_1", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1",
+    "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_a1__uart_mode_3", "usci_a1__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4", "backup_memory_1", "adc_2", "captivate_1",
 ]
 msp430fr2633 = []
 msp430fr2633-all = [
    "msp430fr2633",
- "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_6", "cs__clock_system_5", "fram_3", "crc16_3", "watchdog_timer_3", "port_a_6",
-    "port_1_2_10", "port_b_6", "port_3_3", "realtime_clock_2", "timer0_a3_6", "timer1_a3_6", "timer2_a2_1", "timer3_a2_1", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1",
-    "usci_a0__uart_mode_5", "usci_a0__spi_mode_5", "usci_a1__uart_mode_4", "usci_a1__spi_mode_4", "usci_b0__spi_mode_5", "usci_b0__i2c_mode_6", "backup_memory_1", "adc_2", "captivate_1",
+ "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_6", "cs__clock_system_5", "fram_2", "crc16_2", "watchdog_timer_2", "port_a_6",
+    "port_1_2_10", "port_b_6", "port_3_3", "realtime_clock_1", "timer0_a3_2", "timer1_a3_1", "timer2_a2_1", "timer3_a2_1", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1",
+    "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_a1__uart_mode_3", "usci_a1__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4", "backup_memory_1", "adc_2", "captivate_1",
 ]
 msp430fr2675 = []
 msp430fr2675-all = [
@@ -3925,23 +3903,23 @@ msp430fr2676-all = [
 msp430fr4131 = []
 msp430fr4131-all = [
    "msp430fr4131",
- "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_4", "cs__clock_system_5", "fram_3", "crc16_3", "watchdog_timer_3", "port_a_5",
-    "port_1_2_9", "port_b_5", "port_3_4_10", "port_c_4", "port_5_6_6", "port_d_5", "port_7_8_6", "capacitive_touch_io_0_2", "timer0_a3_5", "timer1_a3_5", "realtime_clock_1", "usci_a0__uart_mode_5",
-    "usci_a0__spi_mode_5", "usci_b0__spi_mode_5", "usci_b0__i2c_mode_6", "lcd_e_1", "backup_memory_1", "adc_2",
+ "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_4", "cs__clock_system_5", "fram_2", "crc16_2", "watchdog_timer_2", "port_a_5",
+    "port_1_2_9", "port_b_5", "port_3_4_10", "port_c_4", "port_5_6_6", "port_d_5", "port_7_8_6", "capacitive_touch_io_0_1", "timer0_a3_2", "timer1_a3_1", "realtime_clock_1", "usci_a0__uart_mode_3",
+    "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4", "lcd_e_1", "backup_memory_1", "adc_2",
 ]
 msp430fr4132 = []
 msp430fr4132-all = [
    "msp430fr4132",
- "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_4", "cs__clock_system_5", "fram_3", "crc16_3", "watchdog_timer_3", "port_a_5",
-    "port_1_2_9", "port_b_5", "port_3_4_10", "port_c_4", "port_5_6_6", "port_d_5", "port_7_8_6", "capacitive_touch_io_0_2", "timer0_a3_5", "timer1_a3_5", "realtime_clock_1", "usci_a0__uart_mode_5",
-    "usci_a0__spi_mode_5", "usci_b0__spi_mode_5", "usci_b0__i2c_mode_6", "lcd_e_1", "backup_memory_1", "adc_2",
+ "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_4", "cs__clock_system_5", "fram_2", "crc16_2", "watchdog_timer_2", "port_a_5",
+    "port_1_2_9", "port_b_5", "port_3_4_10", "port_c_4", "port_5_6_6", "port_d_5", "port_7_8_6", "capacitive_touch_io_0_1", "timer0_a3_2", "timer1_a3_1", "realtime_clock_1", "usci_a0__uart_mode_3",
+    "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4", "lcd_e_1", "backup_memory_1", "adc_2",
 ]
 msp430fr4133 = []
 msp430fr4133-all = [
    "msp430fr4133",
- "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_4", "cs__clock_system_5", "fram_3", "crc16_3", "watchdog_timer_3", "port_a_5",
-    "port_1_2_9", "port_b_5", "port_3_4_10", "port_c_4", "port_5_6_6", "port_d_5", "port_7_8_6", "capacitive_touch_io_0_2", "timer0_a3_5", "timer1_a3_5", "realtime_clock_1", "usci_a0__uart_mode_5",
-    "usci_a0__spi_mode_5", "usci_b0__spi_mode_5", "usci_b0__i2c_mode_6", "lcd_e_1", "backup_memory_1", "adc_2",
+ "sfr__special_function_registers_3", "pmm__power_management_system_7", "sys__system_module_4", "cs__clock_system_5", "fram_2", "crc16_2", "watchdog_timer_2", "port_a_5",
+    "port_1_2_9", "port_b_5", "port_3_4_10", "port_c_4", "port_5_6_6", "port_d_5", "port_7_8_6", "capacitive_touch_io_0_1", "timer0_a3_2", "timer1_a3_1", "realtime_clock_1", "usci_a0__uart_mode_3",
+    "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4", "lcd_e_1", "backup_memory_1", "adc_2",
 ]
 msp430fr5041 = []
 msp430fr5041-all = [
@@ -5130,37 +5108,37 @@ msp430i2020 = []
 msp430i2020-all = [
    "msp430i2020",
  "special_function_20", "port_a_4", "port_1_2_8", "cs__clock_system_4", "pmm__power_management_system_5", "sd24_a2_2", "timer1_a3_4", "watchdog_timer_1", "flash_7", "timer0_a3_4",
-    "multiplier_1", "usci_a0__uart_mode_4", "usci_a0__spi_mode_4", "usci_b0__spi_mode_4", "usci_b0__i2c_mode_5",
+    "multiplier_1", "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4",
 ]
 msp430i2021 = []
 msp430i2021-all = [
    "msp430i2021",
  "special_function_20", "port_a_4", "port_1_2_8", "cs__clock_system_4", "pmm__power_management_system_5", "sd24_a2_2", "timer1_a3_4", "watchdog_timer_1", "flash_7", "timer0_a3_4",
-    "multiplier_1", "usci_a0__uart_mode_4", "usci_a0__spi_mode_4", "usci_b0__spi_mode_4", "usci_b0__i2c_mode_5",
+    "multiplier_1", "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4",
 ]
 msp430i2030 = []
 msp430i2030-all = [
    "msp430i2030",
  "special_function_20", "port_a_4", "port_1_2_8", "cs__clock_system_4", "pmm__power_management_system_5", "sd24_a3_2", "timer1_a3_4", "watchdog_timer_1", "flash_7", "timer0_a3_4",
-    "multiplier_1", "usci_a0__uart_mode_4", "usci_a0__spi_mode_4", "usci_b0__spi_mode_4", "usci_b0__i2c_mode_5",
+    "multiplier_1", "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4",
 ]
 msp430i2031 = []
 msp430i2031-all = [
    "msp430i2031",
  "special_function_20", "port_a_4", "port_1_2_8", "cs__clock_system_4", "pmm__power_management_system_5", "sd24_a3_2", "timer1_a3_4", "watchdog_timer_1", "flash_7", "timer0_a3_4",
-    "multiplier_1", "usci_a0__uart_mode_4", "usci_a0__spi_mode_4", "usci_b0__spi_mode_4", "usci_b0__i2c_mode_5",
+    "multiplier_1", "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4",
 ]
 msp430i2040 = []
 msp430i2040-all = [
    "msp430i2040",
  "special_function_20", "port_a_4", "port_1_2_8", "cs__clock_system_4", "pmm__power_management_system_5", "sd24_a4_1", "timer1_a3_4", "watchdog_timer_1", "flash_7", "timer0_a3_4",
-    "multiplier_1", "usci_a0__uart_mode_4", "usci_a0__spi_mode_4", "usci_b0__spi_mode_4", "usci_b0__i2c_mode_5",
+    "multiplier_1", "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4",
 ]
 msp430i2041 = []
 msp430i2041-all = [
    "msp430i2041",
  "special_function_20", "port_a_4", "port_1_2_8", "cs__clock_system_4", "pmm__power_management_system_5", "sd24_a4_1", "timer1_a3_4", "watchdog_timer_1", "flash_7", "timer0_a3_4",
-    "multiplier_1", "usci_a0__uart_mode_4", "usci_a0__spi_mode_4", "usci_b0__spi_mode_4", "usci_b0__i2c_mode_5",
+    "multiplier_1", "usci_a0__uart_mode_3", "usci_a0__spi_mode_3", "usci_b0__spi_mode_3", "usci_b0__i2c_mode_4",
 ]
 msp430l092 = []
 msp430l092-all = [
@@ -5220,7 +5198,7 @@ rf430f5144-all = [
    "rf430f5144",
  "sfr__special_function_registers_1", "pmm__power_management_system_2", "flash_6", "crc16_2", "rc__ram_control_module_1", "watchdog_timer_2", "ucs__unified_system_clock_5",
     "sys__system_module_2", "shared_reference_1", "port_mapping_control_1", "port_mapping_port_1_1", "port_mapping_port_2_1", "port_mapping_port_3_1", "port_a_1", "port_1_2_5", "port_b_1",
-    "port_3_2", "port_j_2", "timer0_a3_3", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
+    "port_3_2", "port_j_2", "timer0_a3_2", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
     "usci_b0__i2c_mode_3", "adc10_a_1", "comparator_b_1", "timer0_d3_1", "timer1_d3_1", "timer_event_control_1", "timer_event_control_2",
 ]
 rf430f5155 = []
@@ -5228,7 +5206,7 @@ rf430f5155-all = [
    "rf430f5155",
  "sfr__special_function_registers_1", "pmm__power_management_system_2", "flash_6", "crc16_2", "rc__ram_control_module_1", "watchdog_timer_2", "ucs__unified_system_clock_5",
     "sys__system_module_2", "shared_reference_1", "port_mapping_control_1", "port_mapping_port_1_1", "port_mapping_port_2_1", "port_mapping_port_3_1", "port_a_1", "port_1_2_5", "port_b_1",
-    "port_3_2", "port_j_2", "timer0_a3_3", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
+    "port_3_2", "port_j_2", "timer0_a3_2", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
     "usci_b0__i2c_mode_3", "adc10_a_1", "comparator_b_1", "timer0_d3_1", "timer1_d3_1", "timer_event_control_1", "timer_event_control_2",
 ]
 rf430f5175 = []
@@ -5236,7 +5214,7 @@ rf430f5175-all = [
    "rf430f5175",
  "sfr__special_function_registers_1", "pmm__power_management_system_2", "flash_6", "crc16_2", "rc__ram_control_module_1", "watchdog_timer_2", "ucs__unified_system_clock_5",
     "sys__system_module_2", "shared_reference_1", "port_mapping_control_1", "port_mapping_port_1_1", "port_mapping_port_2_1", "port_mapping_port_3_1", "port_a_1", "port_1_2_5", "port_b_1",
-    "port_3_2", "port_j_2", "timer0_a3_3", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
+    "port_3_2", "port_j_2", "timer0_a3_2", "mpy_16__multiplier__16_bit_mode_1", "mpy_32__multiplier__32_bit_mode_1", "dma_17", "usci_a0__uart_mode_2", "usci_a0__spi_mode_2", "usci_b0__spi_mode_2",
     "usci_b0__i2c_mode_3", "adc10_a_1", "comparator_b_1", "timer0_d3_1", "timer1_d3_1", "timer_event_control_1", "timer_event_control_2",
 ]
 rf430frl152h = []

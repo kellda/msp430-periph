@@ -37,35 +37,35 @@ utils::periph! {
             CFB = 0b11,
         }
         /// AES software reset
-        AESSWRST: 7..7 = enum AESSWRST {
+        AESSWRST: 7 = enum AESSWRST {
             /// No reset
             AESSWRST_0 = 0b0,
             /// Reset AES accelerator module
             RESET = 0b1,
         }
         /// AES ready interrupt flag
-        AESRDYIFG: 8..8 = enum AESRDYIFG {
+        AESRDYIFG: 8 = enum AESRDYIFG {
             /// No interrupt pending
             AESRDYIFG_0 = 0b0,
             /// Interrupt pending
             AESRDYIFG_1 = 0b1,
         }
         /// AES error flag
-        AESERRFG: 11..11 = enum AESERRFG {
+        AESERRFG: 11 = enum AESERRFG {
             /// No error
             AESERRFG_0 = 0b0,
             /// Error occurred
             AESERRFG_1 = 0b1,
         }
         /// AES ready interrupt enable
-        AESRDYIE: 12..12 = enum AESRDYIE {
+        AESRDYIE: 12 = enum AESRDYIE {
             /// Interrupt disabled
             DISABLE = 0b0,
             /// Interrupt enabled
             ENABLE = 0b1,
         }
         /// AES cipher mode enable
-        AESCMEN: 15..15 = enum AESCMEN {
+        AESCMEN: 15 = enum AESCMEN {
             /// No DMA triggers are generated
             DISABLE = 0b0,
             /// DMA ciphermode support operation is enabled and the corresponding DMA triggers are generated
@@ -80,28 +80,28 @@ utils::periph! {
     /// AES Accelerator Status Register
     rw AESASTAT @ 0x04: u16 = 0_0 {
         /// AES accelerator module busy
-        AESBUSY: 0..0 = enum AESBUSY {
+        AESBUSY: 0 = enum AESBUSY {
             /// Not busy
             IDLE = 0b0,
             /// Busy
             BUSY = 0b1,
         }
         /// All 16 bytes written to AESAKEY
-        AESKEYWR: 1..1 = enum AESKEYWR {
+        AESKEYWR: 1 = enum AESKEYWR {
             /// Not all bytes written
             AESKEYWR_0 = 0b0,
             /// All bytes written
             AESKEYWR_1 = 0b1,
         }
         /// All 16 bytes written to AESADIN, AESAXDIN or AESAXIN
-        AESDINWR: 2..2 = enum AESDINWR {
+        AESDINWR: 2 = enum AESDINWR {
             /// Not all bytes written
             AESDINWR_0 = 0b0,
             /// All bytes written
             AESDINWR_1 = 0b1,
         }
         /// All 16 bytes read from AESADOUT
-        AESDOUTRD: 3..3 = enum AESDOUTRD {
+        AESDOUTRD: 3 = enum AESDOUTRD {
             /// Not all bytes read
             AESDOUTRD_0 = 0b0,
             /// All bytes read

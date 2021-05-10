@@ -18,7 +18,7 @@ utils::periph! {
     /// Masked Interrupt Status Register.
     r HSPLLMIS @ 0x02: u16 = 0_0 {
         /// HSPLL Unlock Masked Interrupt Status bit
-        HSPLLMIS_PLLUNLOCK: 0..0 = enum HSPLLMIS_PLLUNLOCK {
+        HSPLLMIS_PLLUNLOCK: 0 = enum HSPLLMIS_PLLUNLOCK {
             /// No interrupt pending
             PLLUNLOCK_0 = 0b0,
             /// Interrupt pending
@@ -28,7 +28,7 @@ utils::periph! {
     /// Raw Interrupt Status Register
     r HSPLLRIS @ 0x04: u16 = 0_0 {
         /// PLL Unlock Raw Interrupt Status bit.
-        HSPLLRIS_PLLUNLOCK: 0..0 = enum HSPLLRIS_PLLUNLOCK {
+        HSPLLRIS_PLLUNLOCK: 0 = enum HSPLLRIS_PLLUNLOCK {
             /// PLL status has not been changed
             PLLUNLOCK_0 = 0b0,
             /// PLL status has been changed from Lock to Unlock
@@ -38,7 +38,7 @@ utils::periph! {
     /// Interrupt Mask Register
     rw HSPLLIMSC @ 0x06: u16 = 0_0 {
         /// PLL Unlock Interrupt Mask bit.
-        HSPLLIMSC_PLLUNLOCK: 0..0 = enum HSPLLIMSC_PLLUNLOCK {
+        HSPLLIMSC_PLLUNLOCK: 0 = enum HSPLLIMSC_PLLUNLOCK {
             /// PLL Unlock Interrupt is disabled
             PLLUNLOCK_0 = 0b0,
             /// PLL Unlock Interrupt is enabled
@@ -125,14 +125,14 @@ utils::periph! {
             PLLM_39 = 0b100111,
         }
         /// PLL Lock Status
-        PLL_LOCK: 0..0 = enum PLL_LOCK {
+        PLL_LOCK: 0 = enum PLL_LOCK {
             /// PLL is not running or not locked
             PLL_LOCK_0 = 0b0,
             /// PLL is locked
             PLL_LOCK_1 = 0b1,
         }
         /// PLL Input Frequency Selection.
-        PLLINFREQ: 8..8 = enum PLLINFREQ {
+        PLLINFREQ: 8 = enum PLLINFREQ {
             /// Input frequency is equal to 6MHz or lower than 6MHz
             PLLINFREQ_0 = 0b0,
             /// Input frequency is higher than 6MHz
@@ -142,28 +142,28 @@ utils::periph! {
     /// USSXT Control Register
     rw HSPLLUSSXTLCTL @ 0x12: u16 = 0_0 {
         /// USSXT Enable.
-        USSXTEN: 0..0 = enum USSXTEN {
+        USSXTEN: 0 = enum USSXTEN {
             /// Disable USSXT Oscillator
             USSXTEN_0 = 0b0,
             /// Enable USSXT Oscillator
             USSXTEN_1 = 0b1,
         }
         /// USSXT Buffered Output OFF
-        XTOUTOFF: 8..8 = enum XTOUTOFF {
+        XTOUTOFF: 8 = enum XTOUTOFF {
             /// Enable USSXT buffered output
             XTOUTOFF_0 = 0b0,
             /// Disable USSXT buffered output. Default.
             XTOUTOFF_1 = 0b1,
         }
         /// Reserved
-        OSCTYPE: 9..9 = enum OSCTYPE {
+        OSCTYPE: 9 = enum OSCTYPE {
             /// Gating Counter Length: 4096. It is recommended to use this configuration for crystal resonators.  Note: the counter counts the oscillator clock, so total time can be calculated as Time = 4096 x 1/Oscillator Clock Frequency.
             XTAL = 0b0,
             /// Gating Counter Length: 512. It is recommended to use this configuration for ceramic resonators. Note: the counter counts the oscillator clock, so total time can be calculated as Time = 512x 1/Oscillator Clock Frequency.
             CERAMIC = 0b1,
         }
         /// Oscillator Status Bit.
-        OSCSTATE: 1..1 = enum OSCSTATE {
+        OSCSTATE: 1 = enum OSCSTATE {
             /// Oscillator is either not enabled or in the middle of start-up transition.
             OSCSTATE_0 = 0b0,
             /// Oscillator has started but is not stable yet. Wait for sufficient time for stabilization.

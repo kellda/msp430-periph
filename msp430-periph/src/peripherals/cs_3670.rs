@@ -125,28 +125,28 @@ utils::periph! {
     /// Clock System Control 4
     rw CSCTL4 @ 0x08: u16 = 0_0 {
         /// LFXT off
-        LFXTOFF: 0..0 = enum LFXTOFF {
+        LFXTOFF: 0 = enum LFXTOFF {
             /// LFXT is on if LFXT is selected via the port selection and LFXT is not in bypass mode of operation
             LFXTOFF_0 = 0b0,
             /// LFXT is off if it is not used as a source for ACLK, MCLK, or SMCLK
             LFXTOFF_1 = 0b1,
         }
         /// SMCLK off
-        SMCLKOFF: 1..1 = enum SMCLKOFF {
+        SMCLKOFF: 1 = enum SMCLKOFF {
             /// SMCLK on
             SMCLKOFF_0 = 0b0,
             /// SMCLK off
             SMCLKOFF_1 = 0b1,
         }
         /// VLO off
-        VLOOFF: 3..3 = enum VLOOFF {
+        VLOOFF: 3 = enum VLOOFF {
             /// VLO is on
             VLOOFF_0 = 0b0,
             /// VLO is off if it is not used as a source for ACLK, MCLK, or SMCLK or if not used as a source for the RTC in LPM3.5
             VLOOFF_1 = 0b1,
         }
         /// LFXT bypass select
-        LFXTBYPASS: 4..4 = enum LFXTBYPASS {
+        LFXTBYPASS: 4 = enum LFXTBYPASS {
             /// LFXT sourced from external crystal
             LFXTBYPASS_0 = 0b0,
             /// LFXT sourced from external clock signal
@@ -164,7 +164,7 @@ utils::periph! {
             LFXTDRIVE_3 = 0b11,
         }
         /// Turns off the HFXT oscillator
-        HFXTOFF: 8..8 = enum HFXTOFF {
+        HFXTOFF: 8 = enum HFXTOFF {
             /// HFXT is on if HFXT is selected via the port selection and HFXT is not in bypass mode of operation
             HFXTOFF_0 = 0b0,
             /// HFXT is off if it is not used as a source for ACLK, MCLK, or SMCLK
@@ -182,7 +182,7 @@ utils::periph! {
             HFFREQ_3 = 0b11,
         }
         /// HFXT bypass select
-        HFXTBYPASS: 12..12 = enum HFXTBYPASS {
+        HFXTBYPASS: 12 = enum HFXTBYPASS {
             /// HFXT sourced from external crystal
             HFXTBYPASS_0 = 0b0,
             /// HFXT sourced from external clock signal
@@ -203,28 +203,28 @@ utils::periph! {
     /// Clock System Control 5
     rw CSCTL5 @ 0x0a: u16 = 0_0 {
         /// LFXT oscillator fault flag
-        LFXTOFFG: 0..0 = enum LFXTOFFG {
+        LFXTOFFG: 0 = enum LFXTOFFG {
             /// No fault condition occurred after the last reset
             LFXTOFFG_0 = 0b0,
             /// LFXT fault; an LFXT fault occurred after the last reset
             LFXTOFFG_1 = 0b1,
         }
         /// HFXT oscillator fault flag
-        HFXTOFFG: 1..1 = enum HFXTOFFG {
+        HFXTOFFG: 1 = enum HFXTOFFG {
             /// No fault condition occurred after the last reset
             HFXTOFFG_0 = 0b0,
             /// HFXT fault; an HFXT fault occurred after the last reset
             HFXTOFFG_1 = 0b1,
         }
         /// Enable start counter for LFXT
-        ENSTFCNT1: 6..6 = enum ENSTFCNT1 {
+        ENSTFCNT1: 6 = enum ENSTFCNT1 {
             /// Startup fault counter disabled. Counter is cleared.
             DISABLE = 0b0,
             /// Startup fault counter enabled
             ENABLE = 0b1,
         }
         /// Enable start counter for HFXT
-        ENSTFCNT2: 7..7 = enum ENSTFCNT2 {
+        ENSTFCNT2: 7 = enum ENSTFCNT2 {
             /// Startup fault counter disabled. Counter is cleared.
             DISABLE = 0b0,
             /// Startup fault counter enabled
@@ -234,28 +234,28 @@ utils::periph! {
     /// Clock System Control 6
     rw CSCTL6 @ 0x0c: u16 = 0_0 {
         /// ACLK clock request enable
-        ACLKREQEN: 0..0 = enum ACLKREQEN {
+        ACLKREQEN: 0 = enum ACLKREQEN {
             /// ACLK conditional requests are disabled
             DISABLE = 0b0,
             /// ACLK conditional requests are enabled
             ENABLE = 0b1,
         }
         /// MCLK clock request enable
-        MCLKREQEN: 1..1 = enum MCLKREQEN {
+        MCLKREQEN: 1 = enum MCLKREQEN {
             /// MCLK conditional requests are disabled
             DISABLE = 0b0,
             /// MCLK conditional requests are enabled
             ENABLE = 0b1,
         }
         /// SMCLK clock request enable
-        SMCLKREQEN: 2..2 = enum SMCLKREQEN {
+        SMCLKREQEN: 2 = enum SMCLKREQEN {
             /// SMCLK conditional requests are disabled
             DISABLE = 0b0,
             /// SMCLK conditional requests are enabled
             ENABLE = 0b1,
         }
         /// MODCLK clock request enable
-        MODCLKREQEN: 3..3 = enum MODCLKREQEN {
+        MODCLKREQEN: 3 = enum MODCLKREQEN {
             /// MODCLK conditional requests are disabled
             DISABLE = 0b0,
             /// MODCLK conditional requests are enabled

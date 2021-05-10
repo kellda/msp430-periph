@@ -6,28 +6,28 @@ utils::periph! {
     /// ADC Control 0
     rw ADCCTL0 @ 0x00: u16 = 0_0 {
         /// start conversion
-        ADCSC: 0..0 = enum ADCSC {
+        ADCSC: 0 = enum ADCSC {
             /// No sample-and-conversion-start
             ADCSC_0 = 0b0,
             /// Start sample-and-conversion
             ADCSC_1 = 0b1,
         }
         /// enable conversion
-        ADCENC: 1..1 = enum ADCENC {
+        ADCENC: 1 = enum ADCENC {
             /// ADC disabled
             ADCENC_0 = 0b0,
             /// ADC enabled
             ADCENC_1 = 0b1,
         }
         /// ADC on
-        ADCON: 4..4 = enum ADCON {
+        ADCON: 4 = enum ADCON {
             /// ADC off
             ADCON_0 = 0b0,
             /// ADC on
             ADCON_1 = 0b1,
         }
         /// sample-and-hold time.
-        ADCMSC: 7..7 = enum ADCMSC {
+        ADCMSC: 7 = enum ADCMSC {
             /// The sampling timer requires a rising edge of the SHI signal to trigger each sample-and-convert.
             ADCMSC_0 = 0b0,
             /// The incidence of a positive(or for devices first rising edge of the) SHI signal triggers the sampling timer, but further sample-and-conversions are performed automatically as soon as the prior conversion is completed.
@@ -72,7 +72,7 @@ utils::periph! {
     /// ADC Control 1
     rw ADCCTL1 @ 0x02: u16 = 0_0 {
         /// ADC busy
-        ADCBUSY: 0..0 = enum ADCBUSY {
+        ADCBUSY: 0 = enum ADCBUSY {
             /// No operation is active.
             ADCBUSY_0 = 0b0,
             /// A sequence, sample, or conversion is active.
@@ -120,14 +120,14 @@ utils::periph! {
             ADCDIV_7 = 0b111,
         }
         /// invert signal sample-and-hold
-        ADCISSH: 8..8 = enum ADCISSH {
+        ADCISSH: 8 = enum ADCISSH {
             /// The sample-input signal is not inverted.
             ADCISSH_0 = 0b0,
             /// The sample-input signal is inverted.
             ADCISSH_1 = 0b1,
         }
         /// sample-and-hold pulse-mode select
-        ADCSHP: 9..9 = enum ADCSHP {
+        ADCSHP: 9 = enum ADCSHP {
             /// SAMPCON signal is sourced from the sample-input signal.
             ADCSHP_0 = 0b0,
             /// SAMPCON signal is sourced from the sampling timer.
@@ -148,7 +148,7 @@ utils::periph! {
     /// ADC Control 2
     rw ADCCTL2 @ 0x04: u16 = 0_0 {
         /// data read-back format
-        ADCDF: 3..3 = enum ADCDF {
+        ADCDF: 3 = enum ADCDF {
             /// Binary unsigned. Theoretically the analog input voltage V(REF) results in 0000h, the analog input voltage +V(REF) results in 03FFh.
             ADCDF_0 = 0b0,
             /// Signed binary (2s complement), left aligned. Theoretically the analog input voltage V(REF) results in 8000h, the analog input voltage +V(REF) results in 7FC0h.
@@ -246,7 +246,7 @@ utils::periph! {
             ADCSREF_7 = 0b111,
         }
         /// ADC input channels expanded
-        EXPCHEN: 8..8 = enum EXPCHEN {
+        EXPCHEN: 8 = enum EXPCHEN {
             /// ADC channel expanded disable
             EXPCHEN_0 = 0b0,
             /// ADC channel expanded enable
@@ -261,42 +261,42 @@ utils::periph! {
     /// ADC Interrupt Enable 0
     rw ADCIE @ 0x1a: u16 = 0_0 {
         /// Interrupt enable. This bits enable or disable the interrupt request for a completed ADC conversion.
-        ADCIE0: 0..0 = enum ADCIE0 {
+        ADCIE0: 0 = enum ADCIE0 {
             /// 0b = Interrupt disabled
             ADCIE0_0 = 0b0,
             /// 1b = Interrupt enabled
             ADCIE0_1 = 0b1,
         }
         /// Interrupt enable for the inside of window interrupt of the window comparator.
-        ADCINIE: 1..1 = enum ADCINIE {
+        ADCINIE: 1 = enum ADCINIE {
             /// 0b = Inside of window interrupt disabled
             ADCINIE_0 = 0b0,
             /// 1b = Inside of window interrupt enabled
             ADCINIE_1 = 0b1,
         }
         /// Interrupt enable for the below lower threshold interrupt of the window comparator.
-        ADCLOIE: 2..2 = enum ADCLOIE {
+        ADCLOIE: 2 = enum ADCLOIE {
             /// 0b = Below lower threshold interrupt disabled
             ADCLOIE_0 = 0b0,
             /// 1b = Below lower threshold interrupt enabled
             ADCLOIE_1 = 0b1,
         }
         /// Interrupt enable for the above upper threshold interrupt of the window comparator.
-        ADCHIIE: 3..3 = enum ADCHIIE {
+        ADCHIIE: 3 = enum ADCHIIE {
             /// 0b = Above upper threshold interrupt disabled
             ADCHIIE_0 = 0b0,
             /// 1b = Above upper threshold interrupt enabled
             ADCHIIE_1 = 0b1,
         }
         /// ADCMEM0 overflow interrupt enable.
-        ADCOVIE: 4..4 = enum ADCOVIE {
+        ADCOVIE: 4 = enum ADCOVIE {
             /// 0b = Overflow interrupt disabled
             ADCOVIE_0 = 0b0,
             /// 1b = Overflow interrupt enabled
             ADCOVIE_1 = 0b1,
         }
         /// ADC conversion-time-overflow interrupt enable.
-        ADCTOVIE: 5..5 = enum ADCTOVIE {
+        ADCTOVIE: 5 = enum ADCTOVIE {
             /// 0b = Conversion time overflow interrupt disabled
             ADCTOVIE_0 = 0b0,
             /// 1b = Conversion time overflow interrupt enabled
@@ -306,42 +306,42 @@ utils::periph! {
     /// ADC Interrupt Flag
     rw ADCIFG @ 0x1c: u16 = 0_0 {
         /// ADCMEM0 interrupt flag
-        ADCIFG0: 0..0 = enum ADCIFG0 {
+        ADCIFG0: 0 = enum ADCIFG0 {
             /// No interrupt pending
             ADCIFG0_0 = 0b0,
             /// Interrupt pending
             ADCIFG0_1 = 0b1,
         }
         /// The ADCINIFG is set when the result of the current ADC conversion is within the thresholds defined by the window comparator threshold registers.
-        ADCINIFG: 1..1 = enum ADCINIFG {
+        ADCINIFG: 1 = enum ADCINIFG {
             /// No interrupt pending
             ADCINIFG_0 = 0b0,
             /// Interrupt pending
             ADCINIFG_1 = 0b1,
         }
         /// The ADCLOIFG is set when the result of the current ADC conversion is below the lower threshold defined by the window comparator lower threshold register.
-        ADCLOIFG: 2..2 = enum ADCLOIFG {
+        ADCLOIFG: 2 = enum ADCLOIFG {
             /// No interrupt pending
             ADCLOIFG_0 = 0b0,
             /// Interrupt pending
             ADCLOIFG_1 = 0b1,
         }
         /// The ADCHIIFG is set when the result of the current ADC conversion is greater than the upper threshold defined by the window comparator upper threshold register.
-        ADCHIIFG: 3..3 = enum ADCHIIFG {
+        ADCHIIFG: 3 = enum ADCHIIFG {
             /// No interrupt pending
             ADCHIIFG_0 = 0b0,
             /// Interrupt pending
             ADCHIIFG_1 = 0b1,
         }
         /// The ADCOVIFG is set when the ADCMEM0 register is written before the last conversion result has been read.
-        ADCOVIFG: 4..4 = enum ADCOVIFG {
+        ADCOVIFG: 4 = enum ADCOVIFG {
             /// No interrupt pending
             ADCOVIFG_0 = 0b0,
             /// Interrupt pending
             ADCOVIFG_1 = 0b1,
         }
         /// The ADCTOVIFG is set when an ADC conversion is triggered before the actual conversion has completed.
-        ADCTOVIFG: 5..5 = enum ADCTOVIFG {
+        ADCTOVIFG: 5 = enum ADCTOVIFG {
             /// No interrupt pending
             ADCOVIFG_0 = 0b0,
             /// Interrupt pending

@@ -34,8 +34,9 @@
 //! source code or build documentation for the features you use by running `cargo doc` in your project directory.
 //!
 
-#![allow(bad_style)]
 #![no_std]
+#![allow(bad_style)]
+#![recursion_limit="512"]
 
 pub use utils;
 

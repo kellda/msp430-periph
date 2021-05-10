@@ -15,7 +15,7 @@ utils::periph! {
             PSEL_2 = 0b10,
         }
         /// SAC Positive input MUX control.
-        PMUXEN: 3..3 = enum PMUXEN {
+        PMUXEN: 3 = enum PMUXEN {
             /// All positive input sources are disconnected to OA positive port
             PMUXEN_0 = 0b0,
             /// All positive input sources are connected to OA positive port
@@ -31,28 +31,28 @@ utils::periph! {
             NSEL_2 = 0b10,
         }
         /// SAC Negative input MUX controL
-        NMUXEN: 7..7 = enum NMUXEN {
+        NMUXEN: 7 = enum NMUXEN {
             /// All negative input sources are disconnected to OA negative port
             NMUXEN_0 = 0b0,
             /// All negative input sources are connected to OA negative port
             NMUXEN_1 = 0b1,
         }
         /// SAC OA Enable selection
-        OAEN: 8..8 = enum OAEN {
+        OAEN: 8 = enum OAEN {
             /// SAC OA is disabled, then the SAC OA output high impedance
             OAEN_0 = 0b0,
             /// SAC OA is enabled, normal mode
             OAEN_1 = 0b1,
         }
         /// SAC OA power mode selection
-        OAPM: 9..9 = enum OAPM {
+        OAPM: 9 = enum OAPM {
             /// High speed and high power
             OAPM_0 = 0b0,
             /// Llow speed and low power
             OAPM_1 = 0b1,
         }
         /// SAC Enable selection
-        SACEN: 10..10 = enum SACEN {
+        SACEN: 10 = enum SACEN {
             /// SAC all modules are disabled, then the SAC output high impedance
             SACEN_0 = 0b0,
             /// SAC all modules are enabled, normal mode
@@ -78,21 +78,21 @@ utils::periph! {
     /// SAC DAC Control Register
     rw SAC0DAC @ 0x04: u16 = 0_0 {
         /// SAC DAC enable
-        DACEN: 0..0 = enum DACEN {
+        DACEN: 0 = enum DACEN {
             /// Disabled
             DACEN_0 = 0b0,
             /// Enabled
             DACEN_1 = 0b1,
         }
         /// SAC DAC interrupt enable
-        DACIE: 1..1 = enum DACIE {
+        DACIE: 1 = enum DACIE {
             /// Disabled
             DACIE_0 = 0b0,
             /// Enabled
             DACIE_1 = 0b1,
         }
         /// SAC DAC DMA request enable
-        DACDMAE: 2..2 = enum DACDMAE {
+        DACDMAE: 2 = enum DACDMAE {
             /// DMA request disabled
             DACDMAE_0 = 0b0,
             /// DMA request enabled
@@ -108,7 +108,7 @@ utils::periph! {
             DACLSEL_3 = 0b11,
         }
         /// SAC DAC select reference voltage
-        DACSREF: 12..12 = enum DACSREF {
+        DACSREF: 12 = enum DACSREF {
             /// AVCC
             DACSREF_0 = 0b0,
             /// Alternative reference
@@ -140,7 +140,7 @@ utils::periph! {
     /// SAC S&H Circuitry Register
     rw SAC0SHC @ 0x0c: u16 = 0_0 {
         /// SAC S&H interrupt enable.
-        SHIE: 0..0 = enum SHIE {
+        SHIE: 0 = enum SHIE {
             /// S&H interrupt disabled
             SHIE_0 = 0b0,
             /// S&H interrupt enabled
@@ -182,7 +182,7 @@ utils::periph! {
         /// SAC S&H Counter
         SHCNT: 8..13 = struct SHCNT(u16);
         /// SAC S&H internal connector switch control
-        SHINCON: 15..15 = enum SHINCON {
+        SHINCON: 15 = enum SHINCON {
             /// Internal connector switch is off
             SHINCON_0 = 0b0,
             /// Internal connector switch is on
@@ -192,7 +192,7 @@ utils::periph! {
     /// SAC S&H Status Register
     rw SAC0SHSTS @ 0x0e: u16 = 0_0 {
         /// SAC S&H completed flag
-        SHIFG: 0..0 = enum SHIFG {
+        SHIFG: 0 = enum SHIFG {
             /// No S&H interrupt
             SHIFG_0 = 0b0,
             /// S&H interrupt present

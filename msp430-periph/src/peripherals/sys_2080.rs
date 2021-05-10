@@ -6,28 +6,28 @@ utils::periph! {
     /// System Control
     rw SYSCTL @ 0x00: u16 = 0_0 {
         /// RAM-based interrupt vectors
-        SYSRIVECT: 0..0 = enum SYSRIVECT {
+        SYSRIVECT: 0 = enum SYSRIVECT {
             /// Interrupt vectors generated with end address TOP of lower 64K FRAM FFFFh
             FRAM = 0b0,
             /// Interrupt vectors generated with end address TOP of RAM, when RAM available
             RAM = 0b1,
         }
         /// PMM access protect
-        SYSPMMPE: 2..2 = enum SYSPMMPE {
+        SYSPMMPE: 2 = enum SYSPMMPE {
             /// Access from anywhere in memory
             SYSPMMPE_0 = 0b0,
             /// Access only from the BSL segments
             SYSPMMPE_1 = 0b1,
         }
         /// BSL entry indication
-        SYSBSLIND: 4..4 = enum SYSBSLIND {
+        SYSBSLIND: 4 = enum SYSBSLIND {
             /// No BSL entry sequence detected
             SYSBSLIND_0 = 0b0,
             /// BSL entry sequence detected
             SYSBSLIND_1 = 0b1,
         }
         /// Dedicated JTAG pins enable
-        SYSJTAGPIN: 5..5 = enum SYSJTAGPIN {
+        SYSJTAGPIN: 5 = enum SYSJTAGPIN {
             /// Shared JTAG pins (JTAG mode selectable using SBW sequence)
             SHARED = 0b0,
             /// Dedicated JTAG pins (explicit 4-wire JTAG mode selection)
@@ -37,49 +37,49 @@ utils::periph! {
     /// JTAG Mailbox Control
     rw SYSJMBC @ 0x06: u16 = 0_0 {
         /// Incoming JTAG Mailbox 0 flag
-        JMBIN0FG: 0..0 = enum JMBIN0FG {
+        JMBIN0FG: 0 = enum JMBIN0FG {
             /// JMBI0 has no new data
             JMBIN0FG_0 = 0b0,
             /// JMBI0 has new data available
             JMBIN0FG_1 = 0b1,
         }
         /// Incoming JTAG Mailbox 1 flag
-        JMBIN1FG: 1..1 = enum JMBIN1FG {
+        JMBIN1FG: 1 = enum JMBIN1FG {
             /// JMBI1 has no new data
             JMBIN1FG_0 = 0b0,
             /// JMBI1 has new data available
             JMBIN1FG_1 = 0b1,
         }
         /// Outgoing JTAG Mailbox 0 flag
-        JMBOUT0FG: 2..2 = enum JMBOUT0FG {
+        JMBOUT0FG: 2 = enum JMBOUT0FG {
             /// JMBO0 is not ready to receive new data
             JMBOUT0FG_0 = 0b0,
             /// JMBO0 is ready to receive new data
             JMBOUT0FG_1 = 0b1,
         }
         /// Outgoing JTAG Mailbox 1 flag
-        JMBOUT1FG: 3..3 = enum JMBOUT1FG {
+        JMBOUT1FG: 3 = enum JMBOUT1FG {
             /// JMBO1 is not ready to receive new data
             JMBOUT1FG_0 = 0b0,
             /// JMBO1 is ready to receive new data
             JMBOUT1FG_1 = 0b1,
         }
         /// Operation mode of JMB
-        JMBMODE: 4..4 = enum JMBMODE {
+        JMBMODE: 4 = enum JMBMODE {
             /// 16-bit transfers using JMBO0 and JMBI0 only
             _16BIT = 0b0,
             /// 32-bit transfers using JMBO0 with JMBO1 and JMBI0 with JMBI1
             _32BIT = 0b1,
         }
         /// Incoming JTAG Mailbox 0 flag auto-clear disable
-        JMBCLR0OFF: 6..6 = enum JMBCLR0OFF {
+        JMBCLR0OFF: 6 = enum JMBCLR0OFF {
             /// JMBIN0FG cleared on read of JMB0IN register
             JMBCLR0OFF_0 = 0b0,
             /// JMBIN0FG cleared by software
             JMBCLR0OFF_1 = 0b1,
         }
         /// Incoming JTAG Mailbox 1 flag auto-clear disable
-        JMBCLR1OFF: 7..7 = enum JMBCLR1OFF {
+        JMBCLR1OFF: 7 = enum JMBCLR1OFF {
             /// JMBIN1FG cleared on read of JMB1IN register
             JMBCLR1OFF_0 = 0b0,
             /// JMBIN1FG cleared by software

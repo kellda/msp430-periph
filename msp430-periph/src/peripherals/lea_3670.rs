@@ -18,21 +18,21 @@ utils::periph! {
         /// LEA module software restart. Setting this bit to one restarts the LEA module. As long this bit remains set to one the LEA is held in Restart. (The LEA accessible memory behaves as system RAM)
         LEASWRST: 0 = struct LEASWRST(bool);
         /// Hold on faults and NMIs for all pending LEA operations transfers.This is for all system wide fault/NMI cases (for our first implementation we may just consider local LEA triggered fault cases)
-        LEAFTHOLD: 1..1 = enum LEAFTHOLD {
+        LEAFTHOLD: 1 = enum LEAFTHOLD {
             /// LEA transfers continue on faults/NMIs
             LEAFTHOLD_0 = 0b0,
             /// LEA transfers enter HOLD on faults/NMIs
             LEAFTHOLD_1 = 0b1,
         }
         /// This bit defined if command execution shall be continued in LPM modes
-        LEALPR: 8..8 = enum LEALPR {
+        LEALPR: 8 = enum LEALPR {
             /// LEA command execution stops in deep low power modes
             LEALPR_0 = 0b0,
             /// LEA command execution continues in deep low power modes
             LEALPR_1 = 0b1,
         }
         /// This bit defines if a "Command done interrupt" shall be triggered in LPM mode
-        LEAILPM: 10..10 = enum LEAILPM {
+        LEAILPM: 10 = enum LEAILPM {
             /// Interrupt of LEA is suppressed in LPM mode until AM is entered then the LEA interrupt is triggered as well
             LEAILPM_0 = 0b0,
             /// Interrupt of LEA is always triggered on completion of an LEA command
@@ -41,21 +41,21 @@ utils::periph! {
         /// LEA instruction loop buffer disable. Debugging function for LEA (leave it zero).
         LEAILB: 11 = struct LEAILB(bool);
         /// LEA module timer fault enable.
-        LEATIMFLTE: 13..13 = enum LEATIMFLTE {
+        LEATIMFLTE: 13 = enum LEATIMFLTE {
             /// LEA module timer timeout will not cause a fault indication
             LEATIMFLT_0 = 0b0,
             /// LEA module timer timeout will cause a fault indication. LEA stops operation and enters "Ready-state".
             LEATIMFLTE_1 = 0b1,
         }
         /// LEAHPCFLTE when hardware trigger available later Enable bit on peripheral mapped command faults and hardware triggered command faults.
-        LEACFLT: 14..14 = enum LEACFLT {
+        LEACFLT: 14 = enum LEACFLT {
             /// LEAHPCFLT is disabled
             LEACFLT_0 = 0b0,
             /// LEAHPCFLT is enabled
             LEACFLT_1 = 0b1,
         }
         /// Enable bit on memory faults.
-        LEAMEMFLTE: 15..15 = enum LEAMEMFLTE {
+        LEAMEMFLTE: 15 = enum LEAMEMFLTE {
             /// LEA memory faults are disabled
             LEAMEMFLTE_0 = 0b0,
             /// LEA memory faults are enabled
@@ -68,14 +68,14 @@ utils::periph! {
         /// LEA timeout fault indication and set flag; This bits indicates that timer timeout occurred. This fault may also be set by writing a one to it. Writing a zero has no effect.The corresponding terminal is connected to one of the UNMI inputs of the SYS module (A package option)
         LEATIMFLTS: 21 = struct LEATIMFLTS(bool);
         /// LEAHPCFLTS when hardware trigger enabled later LEA command fault on peripheral interface or hardware triggered indication and set flag; This bits indicates that a command was invoked that is not implemented. This fault is also signaled to the SYS module as a "User-NMI" when enabled. Only one fault condition is signaled until this bit is cleared. Leaving this bit set will not cause any further faults. This fault may also be set by writing a one to it. Writing a zero has no effect.The corresponding terminal is connected to one of the UNMI inputs of the SYS module.
-        LEACFLTS: 22..22 = enum LEACFLTS {
+        LEACFLTS: 22 = enum LEACFLTS {
             /// No command fault occurred since this bit was cleared
             LEACFLTS_0 = 0b0,
             /// At least one command fault occurred since this bit was cleared
             LEACFLTS_1 = 0b1,
         }
         /// LEA memory fault indication and set flag. This bit indicates that a fault in the memory VBUS interface occurred. The exact fault reason may be identified by checking LEACNF1. LEAWRSTAT and LEACNF1.LEARDSTAT.
-        LEAMEMFLTS: 23..23 = enum LEAMEMFLTS {
+        LEAMEMFLTS: 23 = enum LEAMEMFLTS {
             /// No memory fault occurred since this bit was cleared
             LEAMEMFLTS_0 = 0b0,
             /// At least one memory fault since this bit was cleared
@@ -124,7 +124,7 @@ utils::periph! {
     /// Configuration Register 1
     rw LEACNF1 @ 0x08: u32 = 0_0 {
         /// This bit indicate if LEA is able to accept new Commands (SUSPEND is always accepted)
-        LEABUSY: 0..0 = enum LEABUSY {
+        LEABUSY: 0 = enum LEABUSY {
             /// LEA is in Ready can accept new commands
             READY = 0b0,
             /// LEA is busy right now and cannot accept any commands
@@ -160,14 +160,14 @@ utils::periph! {
         /// LEA timeout fault indication and clear flag; This bits indicates that a timer timeout occurred. This fault is cleared by writing a one to it. Writing a zero has no effect..
         LEATIMFLTC: 21 = struct LEATIMFLTC(bool);
         /// LEA command fault
-        LEACFLTC: 22..22 = enum LEACFLTC {
+        LEACFLTC: 22 = enum LEACFLTC {
             /// No command fault occurred since this bit was cleared
             LEACFLTC_0 = 0b0,
             /// At least one command fault occurred since this bit was cleared
             LEACFLTC_1 = 0b1,
         }
         /// LEA memory fault indication and clear flag. This bit indicates that a fault in the memory VBUS interface occurred. The exact fault reason may be identified by checking LEAWRSTAT and LEARDSTAT. This fault is also signaled to the SYS-module as bus error when enabled (LEACNF0.LEAMEMFLTE=1). Only one fault condition is signaled until this bit is cleared. Leaving this bit set will not cause any further faults. This fault is cleared by writing a one to it. Writing a zero has no effect.
-        LEAMEMFLTC: 23..23 = enum LEAMEMFLTC {
+        LEAMEMFLTC: 23 = enum LEAMEMFLTC {
             /// No memory fault occurred since this bit was cleared
             LEAMEMFLTC_0 = 0b0,
             /// At least one memory fault since this bit was cleared
@@ -201,7 +201,7 @@ utils::periph! {
     /// Code Memory Control Register
     rw LEACMCTL @ 0x1c: u32 = 0_0 {
         /// This bit controls access to LEA code memory.
-        LEACMAE: 0..0 = enum LEACMAE {
+        LEACMAE: 0 = enum LEACMAE {
             /// Code memory access disabled. Accesses to LEA code memory are not possible. LEA does accept commands for execution. Reads to LEA code memory will return zeroes and writes are ignored.
             LEACMAE_0 = 0b0,
             /// Code memory access enabled. Accesses to LEA code memory are possible. LEA does not accept commands during this mode (command is ignored). Coprocessor interface accesses by the CPU cause a Coprocessor not available indication.
@@ -374,7 +374,7 @@ utils::periph! {
     /// PM Control Register
     rw LEAPMCTL @ 0x40: u32 = 0_0 {
         /// Command enable
-        LEACMDEN: 0..0 = enum LEACMDEN {
+        LEACMDEN: 0 = enum LEACMDEN {
             /// Command triggering by writing to LEAPMCB is disabled
             LEACMDEN_0 = 0b0,
             /// Command triggering by writing to LEAPMCB is enabled
@@ -532,35 +532,35 @@ utils::periph! {
     /// Interrupt Flag and Set Register
     rw LEAIFGSET @ 0x70: u32 = 0_0 {
         /// LEA command overflow interrupt flag
-        LEACOVLIS: 0..0 = enum LEACOVLIS {
+        LEACOVLIS: 0 = enum LEACOVLIS {
             /// No interrupt pending
             LEACOVLIS_0 = 0b0,
             /// Interrupt pending
             LEACOVLIS_1 = 0b1,
         }
         /// LEA timer interrupt flag
-        LEATIS: 1..1 = enum LEATIS {
+        LEATIS: 1 = enum LEATIS {
             /// No interrupt pending
             LEATIS_0 = 0b0,
             /// Interrupt pending
             LEATIS_1 = 0b1,
         }
         /// LEA out of address range interrupt flag.
-        LEAOORIS: 2..2 = enum LEAOORIS {
+        LEAOORIS: 2 = enum LEAOORIS {
             /// No interrupt pending
             LEAOORIS_0 = 0b0,
             /// Interrupt pending
             LEAOORIS_1 = 0b1,
         }
         /// LEA scalar data inconsistency interrupt flag
-        LEASDIIS: 3..3 = enum LEASDIIS {
+        LEASDIIS: 3 = enum LEASDIIS {
             /// No interrupt pending
             LEASDIIS_0 = 0b0,
             /// Interrupt pending
             LEASDIIS_1 = 0b1,
         }
         /// PMCMD as soon hardware trigger is avail. Peripheral memory triggered Command completed interrupt flag.
-        LEAPMCMDIS: 4..4 = enum LEAPMCMDIS {
+        LEAPMCMDIS: 4 = enum LEAPMCMDIS {
             /// No interrupt pending
             LEAPMCMDIS_0 = 0b0,
             /// Interrupt pending
@@ -570,35 +570,35 @@ utils::periph! {
     /// Interrupt Enable Register
     rw LEAIE @ 0x74: u32 = 0_0 {
         /// LEA command overflow interrupt enable
-        LEACOVLIE: 0..0 = enum LEACOVLIE {
+        LEACOVLIE: 0 = enum LEACOVLIE {
             /// Interrupt disabled
             LEACOVLIE_0 = 0b0,
             /// Interrupt enabled
             LEACOVLIE_1 = 0b1,
         }
         /// LEA timer event interrupt enable
-        LEATIE: 1..1 = enum LEATIE {
+        LEATIE: 1 = enum LEATIE {
             /// Interrupt disabled
             LEATIE_0 = 0b0,
             /// Interrupt enabled
             LEATIE_1 = 0b1,
         }
         /// LEA out of address range interrupt enable.
-        LEAOORIE: 2..2 = enum LEAOORIE {
+        LEAOORIE: 2 = enum LEAOORIE {
             /// Interrupt disabled
             LEAOORIE_0 = 0b0,
             /// Interrupt enabled
             LEAOORIE_1 = 0b1,
         }
         /// LEA scalar data inconsistency interrupt enable
-        LEASDIIE: 3..3 = enum LEASDIIE {
+        LEASDIIE: 3 = enum LEASDIIE {
             /// Interrupt disabled
             LEASDIIE_0 = 0b0,
             /// Interrupt enabled
             LEASDIIE_1 = 0b1,
         }
         /// PMCMD as soon hardware trigger is avail. Peripheral memory triggered Command completed interrupt enable.
-        LEAPMCMDIE: 4..4 = enum LEAPMCMDIE {
+        LEAPMCMDIE: 4 = enum LEAPMCMDIE {
             /// Interrupt disabled
             LEAPMCMDIE_0 = 0b0,
             /// Interrupt enabled
@@ -608,35 +608,35 @@ utils::periph! {
     /// Interrupt Flag and Clear Register
     rw LEAIFG @ 0x78: u32 = 0_0 {
         /// LEA command overflow interrupt flag
-        LEACOVLIFG: 0..0 = enum LEACOVLIFG {
+        LEACOVLIFG: 0 = enum LEACOVLIFG {
             /// No interrupt pending
             LEACOVLIFG_0 = 0b0,
             /// Interrupt pending
             LEACOVLIFG_1 = 0b1,
         }
         /// LEA timer interrupt flag
-        LEATIFG: 1..1 = enum LEATIFG {
+        LEATIFG: 1 = enum LEATIFG {
             /// No interrupt pending
             LEATIFG_0 = 0b0,
             /// Interrupt pending
             LEATIFG_1 = 0b1,
         }
         /// LEA out of address range interrupt flag.
-        LEAOORIFG: 2..2 = enum LEAOORIFG {
+        LEAOORIFG: 2 = enum LEAOORIFG {
             /// No interrupt pending
             LEAOORIFG_0 = 0b0,
             /// Interrupt pending
             LEAOORIFG_1 = 0b1,
         }
         /// LEA scalar data inconsistency interrupt flag
-        LEASDIIFG: 3..3 = enum LEASDIIFG {
+        LEASDIIFG: 3 = enum LEASDIIFG {
             /// No interrupt pending
             LEASDIIFG_0 = 0b0,
             /// Interrupt pending
             LEASDIIFG_1 = 0b1,
         }
         /// PMCMD when hardware trigger is available. Peripheral memory triggered Command completed interrupt flag.
-        LEAPMCMDIFG: 4..4 = enum LEAPMCMDIFG {
+        LEAPMCMDIFG: 4 = enum LEAPMCMDIFG {
             /// No interrupt pending
             LEAPMCMDIFG_0 = 0b0,
             /// Interrupt pending

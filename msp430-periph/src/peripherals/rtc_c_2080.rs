@@ -49,26 +49,26 @@ utils::periph! {
             RT1PS1 = 0b11,
         }
         /// Real-time clock ready
-        RTCRDY: 4..4 = enum RTCRDY {
+        RTCRDY: 4 = enum RTCRDY {
             /// RTC time values in transition
             RTCRDY_0 = 0b0,
             /// RTC time values safe for reading. This bit indicates when the real-time clock time values are safe for reading.
             RTCRDY_1 = 0b1,
         }
         /// RTCMODE
-        RTCMODE: 5..5 = enum RTCMODE {
+        RTCMODE: 5 = enum RTCMODE {
             /// Calendar mode. Always reads a value of 1.
             RTCMODE_1 = 0b1,
         }
         /// Real-time clock hold
-        RTCHOLD: 6..6 = enum RTCHOLD {
+        RTCHOLD: 6 = enum RTCHOLD {
             /// Real-time clock is operational
             RTCHOLD_0 = 0b0,
             /// When set, the calendar is stopped as well as the prescale counters, RT0PS and RT1PS are don't care
             RTCHOLD_1 = 0b1,
         }
         /// Real-time clock BCD select
-        RTCBCD: 7..7 = enum RTCBCD {
+        RTCBCD: 7 = enum RTCBCD {
             /// Binary (hexadecimal) code selected
             HEX = 0b0,
             /// Binary coded decimal (BCD) code selected
@@ -91,7 +91,7 @@ utils::periph! {
         /// Real-time clock offset error calibration
         RTCOCAL: 0..7 = struct RTCOCALField(u16);
         /// Real-time clock offset error calibration sign
-        RTCOCALS: 15..15 = enum RTCOCALS {
+        RTCOCALS: 15 = enum RTCOCALS {
             /// Down calibration. Frequency adjusted down.
             DOWN = 0b0,
             /// Up calibration. Frequency adjusted up.
@@ -103,7 +103,7 @@ utils::periph! {
         /// Real-time clock temperature compensation
         RTCTCMP: 0..7 = struct RTCTCMPField(u16);
         /// Real-time clock temperature compensation write OK
-        RTCTCOK: 13..13 = enum RTCTCOK {
+        RTCTCOK: 13 = enum RTCTCOK {
             /// Write to RTCTCMPx is unsuccessful
             RTCTCOK_0 = 0b0,
             /// Write to RTCTCMPx is successful
@@ -112,7 +112,7 @@ utils::periph! {
         /// Real-time clock temperature compensation ready
         RTCTCRDY: 14 = struct RTCTCRDY(bool);
         /// Real-time clock temperature compensation sign
-        RTCTCMPS: 15..15 = enum RTCTCMPS {
+        RTCTCMPS: 15 = enum RTCTCMPS {
             /// Down calibration. Frequency adjusted down
             DOWN = 0b0,
             /// Up calibration. Frequency adjusted up
@@ -122,14 +122,14 @@ utils::periph! {
     /// Real-Time Clock Prescale Timer 0 Control Register
     rw RTCPS0CTL @ 0x08: u16 = 0_0 {
         /// Prescale timer 0 interrupt flag
-        RT0PSIFG: 0..0 = enum RT0PSIFG {
+        RT0PSIFG: 0 = enum RT0PSIFG {
             /// No time event occurred
             RT0PSIFG_0 = 0b0,
             /// Time event occurred
             RT0PSIFG_1 = 0b1,
         }
         /// Prescale timer 0 interrupt enable
-        RT0PSIE: 1..1 = enum RT0PSIE {
+        RT0PSIE: 1 = enum RT0PSIE {
             /// Interrupt not enabled
             DISABLE = 0b0,
             /// Interrupt enabled
@@ -155,7 +155,7 @@ utils::periph! {
             _256 = 0b111,
         }
         /// Prescale timer 0 hold
-        RT0PSHOLD: 8..8 = enum RT0PSHOLD {
+        RT0PSHOLD: 8 = enum RT0PSHOLD {
             /// RT0PS is operational
             RT0PSHOLD_0 = 0b0,
             /// RT0PS is held
@@ -184,14 +184,14 @@ utils::periph! {
     /// Real-Time Clock Prescale Timer 1 Control Register
     rw RTCPS1CTL @ 0x0a: u16 = 0_0 {
         /// Prescale timer 1 interrupt flag
-        RT1PSIFG: 0..0 = enum RT1PSIFG {
+        RT1PSIFG: 0 = enum RT1PSIFG {
             /// No time event occurred
             RT1PSIFG_0 = 0b0,
             /// Time event occurred
             RT1PSIFG_1 = 0b1,
         }
         /// Prescale timer 1 interrupt enable
-        RT1PSIE: 1..1 = enum RT1PSIE {
+        RT1PSIE: 1 = enum RT1PSIE {
             /// Interrupt not enabled
             DISABLE = 0b0,
             /// Interrupt enabled (LPM3/LPM3.5 wake-up enabled)
@@ -217,7 +217,7 @@ utils::periph! {
             _256 = 0b111,
         }
         /// Prescale timer 1 hold
-        RT1PSHOLD: 8..8 = enum RT1PSHOLD {
+        RT1PSHOLD: 8 = enum RT1PSHOLD {
             /// RT1PS is operational
             RT1PSHOLD_0 = 0b0,
             /// RT1PS is held

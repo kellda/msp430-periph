@@ -85,7 +85,7 @@ utils::periph! {
         /// Test port password. Always reads as 0x0F. Must be written as 0xC3 for register changes to be effective.This password differs from the pulse generator and pulse counter passwords
         TPPW: 8..15 = struct TPPW(u16);
         /// Test port input select for pulse counter. This value determines the source for the pulse counter.
-        TPISEL: 2..2 = enum TPISEL {
+        TPISEL: 2 = enum TPISEL {
             /// The pulse generator is used as input
             TPISEL_0 = 0b0,
             /// The test port input terminal is selected as input
@@ -96,7 +96,7 @@ utils::periph! {
         /// Test port output enable. This bit allows to enable the test pulse output when set to one
         TPOE: 0 = struct TPOE(bool);
         /// Test port terminal enable activation. This value determines if the testport output is enabled solely by software or by software and hardware.
-        ACTIVATE: 3..3 = enum ACTIVATE {
+        ACTIVATE: 3 = enum ACTIVATE {
             /// The test port output is enabled solely by TPOE (enabled if TPOE=1)
             ACTIVATE_0 = 0b0,
             /// The testport output requires both TPOE to be high and the MTPE pin to be high to be enabled

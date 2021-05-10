@@ -6,21 +6,21 @@ utils::periph! {
     /// LCD_C control 0
     rw LCDCCTL0 @ 0x00: u16 = 0_0 {
         /// LCD on
-        LCDON: 0..0 = enum LCDON {
+        LCDON: 0 = enum LCDON {
             /// LCD_C module off
             OFF = 0b0,
             /// LCD_C module on
             ON = 0b1,
         }
         /// LCD low-power waveform
-        LCDLP: 1..1 = enum LCDLP {
+        LCDLP: 1 = enum LCDLP {
             /// Standard LCD waveforms on segment and common lines selected
             LCDLP_0 = 0b0,
             /// Low-power LCD waveforms on segment and common lines selected
             LCDLP_1 = 0b1,
         }
         /// LCD segments on
-        LCDSON: 2..2 = enum LCDSON {
+        LCDSON: 2 = enum LCDSON {
             /// All LCD segments are off
             OFF = 0b0,
             /// All LCD segments are enabled and on or off according to their corresponding memory location
@@ -46,7 +46,7 @@ utils::periph! {
             _8MUX = 0b111,
         }
         /// Clock source select for LCD and blinking frequency
-        LCDSSEL: 7..7 = enum LCDSSEL {
+        LCDSSEL: 7 = enum LCDSSEL {
             /// ACLK (30 kHz to 40 kHz)
             ACLK = 0b0,
             /// VLOCLK
@@ -138,56 +138,56 @@ utils::periph! {
     /// LCD_C control 1
     rw LCDCCTL1 @ 0x02: u16 = 0_0 {
         /// LCD frame interrupt flag
-        LCDFRMIFG: 0..0 = enum LCDFRMIFG {
+        LCDFRMIFG: 0 = enum LCDFRMIFG {
             /// No interrupt pending
             LCDFRMIFG_0 = 0b0,
             /// Interrupt pending
             LCDFRMIFG_1 = 0b1,
         }
         /// LCD blinking interrupt flag, segments switched off
-        LCDBLKOFFIFG: 1..1 = enum LCDBLKOFFIFG {
+        LCDBLKOFFIFG: 1 = enum LCDBLKOFFIFG {
             /// No interrupt pending
             LCDBLKOFFIFG_0 = 0b0,
             /// Interrupt pending
             LCDBLKOFFIFG_1 = 0b1,
         }
         /// LCD blinking interrupt flag, segments switched on
-        LCDBLKONIFG: 2..2 = enum LCDBLKONIFG {
+        LCDBLKONIFG: 2 = enum LCDBLKONIFG {
             /// No interrupt pending
             LCDBLKONIFG_0 = 0b0,
             /// Interrupt pending
             LCDBLKONIFG_1 = 0b1,
         }
         /// No capacitance connected interrupt flag
-        LCDNOCAPIFG: 3..3 = enum LCDNOCAPIFG {
+        LCDNOCAPIFG: 3 = enum LCDNOCAPIFG {
             /// No interrupt pending
             LCDNOCAPIFG_0 = 0b0,
             /// Interrupt pending
             LCDNOCAPIFG_1 = 0b1,
         }
         /// LCD frame interrupt enable
-        LCDFRMIE: 8..8 = enum LCDFRMIE {
+        LCDFRMIE: 8 = enum LCDFRMIE {
             /// Interrupt disabled
             LCDFRMIE_0 = 0b0,
             /// Interrupt enabled
             LCDFRMIE_1 = 0b1,
         }
         /// LCD blinking interrupt enable, segments switched off
-        LCDBLKOFFIE: 9..9 = enum LCDBLKOFFIE {
+        LCDBLKOFFIE: 9 = enum LCDBLKOFFIE {
             /// Interrupt disabled
             LCDBLKOFFIE_0 = 0b0,
             /// Interrupt enabled
             LCDBLKOFFIE_1 = 0b1,
         }
         /// LCD blinking interrupt enable, segments switched on
-        LCDBLKONIE: 10..10 = enum LCDBLKONIE {
+        LCDBLKONIE: 10 = enum LCDBLKONIE {
             /// Interrupt disabled
             LCDBLKONIE_0 = 0b0,
             /// Interrupt enabled
             LCDBLKONIE_1 = 0b1,
         }
         /// No capacitance connected interrupt enable
-        LCDNOCAPIE: 11..11 = enum LCDNOCAPIE {
+        LCDNOCAPIE: 11 = enum LCDNOCAPIE {
             /// Interrupt disabled
             LCDNOCAPIE_0 = 0b0,
             /// Interrupt enabled
@@ -249,21 +249,21 @@ utils::periph! {
     /// LCD_C memory control
     rw LCDCMEMCTL @ 0x06: u16 = 0_0 {
         /// Select LCD memory registers for display
-        LCDDISP: 0..0 = enum LCDDISP {
+        LCDDISP: 0 = enum LCDDISP {
             /// Display content of LCD memory registers LCDM
             LCDDISP_0 = 0b0,
             /// Display content of LCD blinking memory registers LCDBM
             LCDDISP_1 = 0b1,
         }
         /// Clear LCD memory
-        LCDCLRM: 1..1 = enum LCDCLRM {
+        LCDCLRM: 1 = enum LCDCLRM {
             /// Contents of LCD memory registers LCDMx remain unchanged
             LCDCLRM_0 = 0b0,
             /// Clear content of all LCD memory registers LCDM
             LCDCLRM_1 = 0b1,
         }
         /// Clear LCD blinking memory
-        LCDCLRBM: 2..2 = enum LCDCLRBM {
+        LCDCLRBM: 2 = enum LCDCLRBM {
             /// Contents of blinking memory registers LCDBM remain unchanged
             LCDCLRBM_0 = 0b0,
             /// Clear content of all blinking memory registers LCDBM
@@ -273,7 +273,7 @@ utils::periph! {
     /// LCD_C Voltage Control Register
     rw LCDCVCTL @ 0x08: u16 = 0_0 {
         /// Bias select
-        LCD2B: 0..0 = enum LCD2B {
+        LCD2B: 0 = enum LCD2B {
             /// 1/3 bias
             LCD2B_0 = 0b0,
             /// 1/2 bias
@@ -291,35 +291,35 @@ utils::periph! {
             VLCDREF_3 = 0b11,
         }
         /// Charge pump enable
-        LCDCPEN: 3..3 = enum LCDCPEN {
+        LCDCPEN: 3 = enum LCDCPEN {
             /// Charge pump disabled
             LCDCPEN_0 = 0b0,
             /// Charge pump enabled when VLCD is generated internally (VLCDEXT = 0) and VLCD  0 or VLCDREF  0
             LCDCPEN_1 = 0b1,
         }
         /// VLCD source select
-        VLCDEXT: 4..4 = enum VLCDEXT {
+        VLCDEXT: 4 = enum VLCDEXT {
             /// VLCD is generated internally
             VLCDEXT_0 = 0b0,
             /// VLCD is sourced externally
             VLCDEXT_1 = 0b1,
         }
         /// V2 to V4 voltage select
-        LCDEXTBIAS: 5..5 = enum LCDEXTBIAS {
+        LCDEXTBIAS: 5 = enum LCDEXTBIAS {
             /// V2 to V4 are generated internally
             LCDEXTBIAS_0 = 0b0,
             /// V2 to V4 are sourced externally and the internal bias generator is switched off
             LCDEXTBIAS_1 = 0b1,
         }
         /// V5 voltage select
-        R03EXT: 6..6 = enum R03EXT {
+        R03EXT: 6 = enum R03EXT {
             /// V5 is VSS
             VSS = 0b0,
             /// V5 is sourced from the R03 pin
             R03 = 0b1,
         }
         /// V2 to V4 voltage on external Rx3 pins
-        LCDREXT: 7..7 = enum LCDREXT {
+        LCDREXT: 7 = enum LCDREXT {
             /// Internally generated V2 to V4 are not switched to pins (LCDEXTBIAS = 0)
             LCDREXT_0 = 0b0,
             /// Internally generated V2 to V4 are switched to pins (LCDEXTBIAS = 0)
@@ -364,112 +364,112 @@ utils::periph! {
     /// LCD_C port control 0
     rw LCDCPCTL0 @ 0x0a: u16 = 0_0 {
         /// LCD segment line 0 enable
-        LCDS0: 0..0 = enum LCDS0 {
+        LCDS0: 0 = enum LCDS0 {
             /// Multiplexed pins are port functions
             LCDS0_0 = 0b0,
             /// Pins are LCD functions
             LCDS0_1 = 0b1,
         }
         /// LCD segment line 1 enable
-        LCDS1: 1..1 = enum LCDS1 {
+        LCDS1: 1 = enum LCDS1 {
             /// Multiplexed pins are port functions
             LCDS1_0 = 0b0,
             /// Pins are LCD functions
             LCDS1_1 = 0b1,
         }
         /// LCD segment line 2 enable
-        LCDS2: 2..2 = enum LCDS2 {
+        LCDS2: 2 = enum LCDS2 {
             /// Multiplexed pins are port functions
             LCDS2_0 = 0b0,
             /// Pins are LCD functions
             LCDS2_1 = 0b1,
         }
         /// LCD segment line 3 enable
-        LCDS3: 3..3 = enum LCDS3 {
+        LCDS3: 3 = enum LCDS3 {
             /// Multiplexed pins are port functions
             LCDS3_0 = 0b0,
             /// Pins are LCD functions
             LCDS3_1 = 0b1,
         }
         /// LCD segment line 4 enable
-        LCDS4: 4..4 = enum LCDS4 {
+        LCDS4: 4 = enum LCDS4 {
             /// Multiplexed pins are port functions
             LCDS4_0 = 0b0,
             /// Pins are LCD functions
             LCDS4_1 = 0b1,
         }
         /// LCD segment line 5 enable
-        LCDS5: 5..5 = enum LCDS5 {
+        LCDS5: 5 = enum LCDS5 {
             /// Multiplexed pins are port functions
             LCDS5_0 = 0b0,
             /// Pins are LCD functions
             LCDS5_1 = 0b1,
         }
         /// LCD segment line 6 enable
-        LCDS6: 6..6 = enum LCDS6 {
+        LCDS6: 6 = enum LCDS6 {
             /// Multiplexed pins are port functions
             LCDS6_0 = 0b0,
             /// Pins are LCD functions
             LCDS6_1 = 0b1,
         }
         /// LCD segment line 7 enable
-        LCDS7: 7..7 = enum LCDS7 {
+        LCDS7: 7 = enum LCDS7 {
             /// Multiplexed pins are port functions
             LCDS7_0 = 0b0,
             /// Pins are LCD functions
             LCDS7_1 = 0b1,
         }
         /// LCD segment line 8 enable
-        LCDS8: 8..8 = enum LCDS8 {
+        LCDS8: 8 = enum LCDS8 {
             /// Multiplexed pins are port functions
             LCDS8_0 = 0b0,
             /// Pins are LCD functions
             LCDS8_1 = 0b1,
         }
         /// LCD segment line 9 enable
-        LCDS9: 9..9 = enum LCDS9 {
+        LCDS9: 9 = enum LCDS9 {
             /// Multiplexed pins are port functions
             LCDS9_0 = 0b0,
             /// Pins are LCD functions
             LCDS9_1 = 0b1,
         }
         /// LCD segment line 10 enable
-        LCDS10: 10..10 = enum LCDS10 {
+        LCDS10: 10 = enum LCDS10 {
             /// Multiplexed pins are port functions
             LCDS10_0 = 0b0,
             /// Pins are LCD functions
             LCDS10_1 = 0b1,
         }
         /// LCD segment line 11 enable
-        LCDS11: 11..11 = enum LCDS11 {
+        LCDS11: 11 = enum LCDS11 {
             /// Multiplexed pins are port functions
             LCDS11_0 = 0b0,
             /// Pins are LCD functions
             LCDS11_1 = 0b1,
         }
         /// LCD segment line 12 enable
-        LCDS12: 12..12 = enum LCDS12 {
+        LCDS12: 12 = enum LCDS12 {
             /// Multiplexed pins are port functions
             LCDS12_0 = 0b0,
             /// Pins are LCD functions
             LCDS12_1 = 0b1,
         }
         /// LCD segment line 13 enable
-        LCDS13: 13..13 = enum LCDS13 {
+        LCDS13: 13 = enum LCDS13 {
             /// Multiplexed pins are port functions
             LCDS13_0 = 0b0,
             /// Pins are LCD functions
             LCDS13_1 = 0b1,
         }
         /// LCD segment line 14 enable
-        LCDS14: 14..14 = enum LCDS14 {
+        LCDS14: 14 = enum LCDS14 {
             /// Multiplexed pins are port functions
             LCDS14_0 = 0b0,
             /// Pins are LCD functions
             LCDS14_1 = 0b1,
         }
         /// LCD segment line 15 enable
-        LCDS15: 15..15 = enum LCDS15 {
+        LCDS15: 15 = enum LCDS15 {
             /// Multiplexed pins are port functions
             LCDS15_0 = 0b0,
             /// Pins are LCD functions
@@ -479,112 +479,112 @@ utils::periph! {
     /// LCD_C port control 1
     rw LCDCPCTL1 @ 0x0c: u16 = 0_0 {
         /// LCD segment line 16 enable
-        LCDS16: 0..0 = enum LCDS16 {
+        LCDS16: 0 = enum LCDS16 {
             /// Multiplexed pins are port functions
             LCDS16_0 = 0b0,
             /// Pins are LCD functions
             LCDS16_1 = 0b1,
         }
         /// LCD segment line 17 enable
-        LCDS17: 1..1 = enum LCDS17 {
+        LCDS17: 1 = enum LCDS17 {
             /// Multiplexed pins are port functions
             LCDS17_0 = 0b0,
             /// Pins are LCD functions
             LCDS17_1 = 0b1,
         }
         /// LCD segment line 18 enable
-        LCDS18: 2..2 = enum LCDS18 {
+        LCDS18: 2 = enum LCDS18 {
             /// Multiplexed pins are port functions
             LCDS18_0 = 0b0,
             /// Pins are LCD functions
             LCDS18_1 = 0b1,
         }
         /// LCD segment line 19 enable
-        LCDS19: 3..3 = enum LCDS19 {
+        LCDS19: 3 = enum LCDS19 {
             /// Multiplexed pins are port functions
             LCDS19_0 = 0b0,
             /// Pins are LCD functions
             LCDS19_1 = 0b1,
         }
         /// LCD segment line 20 enable
-        LCDS20: 4..4 = enum LCDS20 {
+        LCDS20: 4 = enum LCDS20 {
             /// Multiplexed pins are port functions
             LCDS20_0 = 0b0,
             /// Pins are LCD functions
             LCDS20_1 = 0b1,
         }
         /// LCD segment line 21 enable
-        LCDS21: 5..5 = enum LCDS21 {
+        LCDS21: 5 = enum LCDS21 {
             /// Multiplexed pins are port functions
             LCDS21_0 = 0b0,
             /// Pins are LCD functions
             LCDS21_1 = 0b1,
         }
         /// LCD segment line 22 enable
-        LCDS22: 6..6 = enum LCDS22 {
+        LCDS22: 6 = enum LCDS22 {
             /// Multiplexed pins are port functions
             LCDS22_0 = 0b0,
             /// Pins are LCD functions
             LCDS22_1 = 0b1,
         }
         /// LCD segment line 23 enable
-        LCDS23: 7..7 = enum LCDS23 {
+        LCDS23: 7 = enum LCDS23 {
             /// Multiplexed pins are port functions
             LCDS23_0 = 0b0,
             /// Pins are LCD functions
             LCDS23_1 = 0b1,
         }
         /// LCD segment line 24 enable
-        LCDS24: 8..8 = enum LCDS24 {
+        LCDS24: 8 = enum LCDS24 {
             /// Multiplexed pins are port functions
             LCDS24_0 = 0b0,
             /// Pins are LCD functions
             LCDS24_1 = 0b1,
         }
         /// LCD segment line 25 enable
-        LCDS25: 9..9 = enum LCDS25 {
+        LCDS25: 9 = enum LCDS25 {
             /// Multiplexed pins are port functions
             LCDS25_0 = 0b0,
             /// Pins are LCD functions
             LCDS25_1 = 0b1,
         }
         /// LCD segment line 26 enable
-        LCDS26: 10..10 = enum LCDS26 {
+        LCDS26: 10 = enum LCDS26 {
             /// Multiplexed pins are port functions
             LCDS26_0 = 0b0,
             /// Pins are LCD functions
             LCDS26_1 = 0b1,
         }
         /// LCD segment line 27 enable
-        LCDS27: 11..11 = enum LCDS27 {
+        LCDS27: 11 = enum LCDS27 {
             /// Multiplexed pins are port functions
             LCDS27_0 = 0b0,
             /// Pins are LCD functions
             LCDS27_1 = 0b1,
         }
         /// LCD segment line 28 enable
-        LCDS28: 12..12 = enum LCDS28 {
+        LCDS28: 12 = enum LCDS28 {
             /// Multiplexed pins are port functions
             LCDS28_0 = 0b0,
             /// Pins are LCD functions
             LCDS28_1 = 0b1,
         }
         /// LCD segment line 29 enable
-        LCDS29: 13..13 = enum LCDS29 {
+        LCDS29: 13 = enum LCDS29 {
             /// Multiplexed pins are port functions
             LCDS29_0 = 0b0,
             /// Pins are LCD functions
             LCDS29_1 = 0b1,
         }
         /// LCD segment line 30 enable
-        LCDS30: 14..14 = enum LCDS30 {
+        LCDS30: 14 = enum LCDS30 {
             /// Multiplexed pins are port functions
             LCDS30_0 = 0b0,
             /// Pins are LCD functions
             LCDS30_1 = 0b1,
         }
         /// LCD segment line 31 enable
-        LCDS31: 15..15 = enum LCDS31 {
+        LCDS31: 15 = enum LCDS31 {
             /// Multiplexed pins are port functions
             LCDS31_0 = 0b0,
             /// Pins are LCD functions
@@ -594,112 +594,112 @@ utils::periph! {
     /// LCD_C port control 2 (256 segments)
     rw LCDCPCTL2 @ 0x0e: u16 = 0_0 {
         /// LCD segment line 32 enable
-        LCDS32: 0..0 = enum LCDS32 {
+        LCDS32: 0 = enum LCDS32 {
             /// Multiplexed pins are port functions
             LCDS32_0 = 0b0,
             /// Pins are LCD functions
             LCDS32_1 = 0b1,
         }
         /// LCD segment line 33 enable
-        LCDS33: 1..1 = enum LCDS33 {
+        LCDS33: 1 = enum LCDS33 {
             /// Multiplexed pins are port functions
             LCDS33_0 = 0b0,
             /// Pins are LCD functions
             LCDS33_1 = 0b1,
         }
         /// LCD segment line 34 enable
-        LCDS34: 2..2 = enum LCDS34 {
+        LCDS34: 2 = enum LCDS34 {
             /// Multiplexed pins are port functions
             LCDS34_0 = 0b0,
             /// Pins are LCD functions
             LCDS34_1 = 0b1,
         }
         /// LCD segment line 35 enable
-        LCDS35: 3..3 = enum LCDS35 {
+        LCDS35: 3 = enum LCDS35 {
             /// Multiplexed pins are port functions
             LCDS35_0 = 0b0,
             /// Pins are LCD functions
             LCDS35_1 = 0b1,
         }
         /// LCD segment line 36 enable
-        LCDS36: 4..4 = enum LCDS36 {
+        LCDS36: 4 = enum LCDS36 {
             /// Multiplexed pins are port functions
             LCDS36_0 = 0b0,
             /// Pins are LCD functions
             LCDS36_1 = 0b1,
         }
         /// LCD segment line 37 enable
-        LCDS37: 5..5 = enum LCDS37 {
+        LCDS37: 5 = enum LCDS37 {
             /// Multiplexed pins are port functions
             LCDS37_0 = 0b0,
             /// Pins are LCD functions
             LCDS37_1 = 0b1,
         }
         /// LCD segment line 38 enable
-        LCDS38: 6..6 = enum LCDS38 {
+        LCDS38: 6 = enum LCDS38 {
             /// Multiplexed pins are port functions
             LCDS38_0 = 0b0,
             /// Pins are LCD functions
             LCDS38_1 = 0b1,
         }
         /// LCD segment line 39 enable
-        LCDS39: 7..7 = enum LCDS39 {
+        LCDS39: 7 = enum LCDS39 {
             /// Multiplexed pins are port functions
             LCDS39_0 = 0b0,
             /// Pins are LCD functions
             LCDS39_1 = 0b1,
         }
         /// LCD segment line 40 enable
-        LCDS40: 8..8 = enum LCDS40 {
+        LCDS40: 8 = enum LCDS40 {
             /// Multiplexed pins are port functions
             LCDS40_0 = 0b0,
             /// Pins are LCD functions
             LCDS40_1 = 0b1,
         }
         /// LCD segment line 41 enable
-        LCDS41: 9..9 = enum LCDS41 {
+        LCDS41: 9 = enum LCDS41 {
             /// Multiplexed pins are port functions
             LCDS41_0 = 0b0,
             /// Pins are LCD functions
             LCDS41_1 = 0b1,
         }
         /// LCD segment line 42 enable
-        LCDS42: 10..10 = enum LCDS42 {
+        LCDS42: 10 = enum LCDS42 {
             /// Multiplexed pins are port functions
             LCDS42_0 = 0b0,
             /// Pins are LCD functions
             LCDS42_1 = 0b1,
         }
         /// LCD segment line 43 enable
-        LCDS43: 11..11 = enum LCDS43 {
+        LCDS43: 11 = enum LCDS43 {
             /// Multiplexed pins are port functions
             LCDS43_0 = 0b0,
             /// Pins are LCD functions
             LCDS43_1 = 0b1,
         }
         /// LCD segment line 44 enable
-        LCDS44: 12..12 = enum LCDS44 {
+        LCDS44: 12 = enum LCDS44 {
             /// Multiplexed pins are port functions
             LCDS44_0 = 0b0,
             /// Pins are LCD functions
             LCDS44_1 = 0b1,
         }
         /// LCD segment line 45 enable
-        LCDS45: 13..13 = enum LCDS45 {
+        LCDS45: 13 = enum LCDS45 {
             /// Multiplexed pins are port functions
             LCDS45_0 = 0b0,
             /// Pins are LCD functions
             LCDS45_1 = 0b1,
         }
         /// LCD segment line 46 enable
-        LCDS46: 14..14 = enum LCDS46 {
+        LCDS46: 14 = enum LCDS46 {
             /// Multiplexed pins are port functions
             LCDS46_0 = 0b0,
             /// Pins are LCD functions
             LCDS46_1 = 0b1,
         }
         /// LCD segment line 47 enable
-        LCDS47: 15..15 = enum LCDS47 {
+        LCDS47: 15 = enum LCDS47 {
             /// Multiplexed pins are port functions
             LCDS47_0 = 0b0,
             /// Pins are LCD functions
@@ -709,42 +709,42 @@ utils::periph! {
     /// LCD_C port control 3 (384 segments)
     rw LCDCPCTL3 @ 0x10: u16 = 0_0 {
         /// LCD segment line 48 enable
-        LCDS48: 0..0 = enum LCDS48 {
+        LCDS48: 0 = enum LCDS48 {
             /// Multiplexed pins are port functions
             LCDS48_0 = 0b0,
             /// Pins are LCD functions
             LCDS48_1 = 0b1,
         }
         /// LCD segment line 49 enable
-        LCDS49: 1..1 = enum LCDS49 {
+        LCDS49: 1 = enum LCDS49 {
             /// Multiplexed pins are port functions
             LCDS49_0 = 0b0,
             /// Pins are LCD functions
             LCDS49_1 = 0b1,
         }
         /// LCD segment line 50 enable
-        LCDS50: 2..2 = enum LCDS50 {
+        LCDS50: 2 = enum LCDS50 {
             /// Multiplexed pins are port functions
             LCDS50_0 = 0b0,
             /// Pins are LCD functions
             LCDS50_1 = 0b1,
         }
         /// LCD segment line 51 enable
-        LCDS51: 3..3 = enum LCDS51 {
+        LCDS51: 3 = enum LCDS51 {
             /// Multiplexed pins are port functions
             LCDS51_0 = 0b0,
             /// Pins are LCD functions
             LCDS51_1 = 0b1,
         }
         /// LCD segment line 52 enable
-        LCDS52: 4..4 = enum LCDS52 {
+        LCDS52: 4 = enum LCDS52 {
             /// Multiplexed pins are port functions
             LCDS52_0 = 0b0,
             /// Pins are LCD functions
             LCDS52_1 = 0b1,
         }
         /// LCD segment line 53 enable
-        LCDS53: 5..5 = enum LCDS53 {
+        LCDS53: 5 = enum LCDS53 {
             /// Multiplexed pins are port functions
             LCDS53_0 = 0b0,
             /// Pins are LCD functions
@@ -756,7 +756,7 @@ utils::periph! {
         /// LCD charge pump disable
         LCDCPDIS: 0..7 = struct LCDCPDIS(u16);
         /// LCD charge pump clock synchronization
-        LCDCPCLKSYNC: 15..15 = enum LCDCPCLKSYNC {
+        LCDCPCLKSYNC: 15 = enum LCDCPCLKSYNC {
             /// Synchronization disabled
             LCDCPCLKSYNC_0 = 0b0,
             /// Synchronization enabled

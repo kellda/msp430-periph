@@ -60,14 +60,14 @@ utils::periph! {
             P15 = 0b1111,
         }
         /// Capacitive Touch IO enable
-        CAPTIOEN: 8..8 = enum CAPTIOEN {
+        CAPTIOEN: 8 = enum CAPTIOEN {
             /// All Capacitive Touch IOs are disabled. Signal towards timers is 0.
             OFF = 0b0,
             /// Selected Capacitive Touch IO is enabled
             ON = 0b1,
         }
         /// Capacitive Touch IO state
-        CAPTIO: 9..9 = enum CAPTIO {
+        CAPTIO: 9 = enum CAPTIO {
             /// Curent state 0 or Capacitive Touch IO is disabled
             CAPTIO_0 = 0b0,
             /// Current state 1
