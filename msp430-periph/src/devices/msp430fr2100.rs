@@ -6,8 +6,8 @@ utils::device! {
     #[all:cfg_attr(not(feature = "MSP430FR2100-all"), non_exhaustive)]
     MSP430FR2100;
     /// SFR
-    #[all:cfg(feature = "sfr_2080")]
-    SFR @ 0x0100: sfr_2080::SFR;
+    #[all:cfg(feature = "sfr_3")]
+    SFR @ 0x0100: sfr_3::SFR;
     /// PMM
     #[all:cfg(feature = "pmm_45")]
     PMM @ 0x0120: pmm_45::PMM;
@@ -18,26 +18,26 @@ utils::device! {
     #[all:cfg(feature = "cs_445")]
     CS @ 0x0180: cs_445::CS;
     /// FRCTL
-    #[all:cfg(feature = "frctl_3670")]
-    FRCTL @ 0x01a0: frctl_3670::FRCTL;
+    #[all:cfg(feature = "frctl")]
+    FRCTL @ 0x01a0: frctl::FRCTL;
     /// CRC
-    #[all:cfg(feature = "crc_2080")]
-    CRC @ 0x01c0: crc_2080::CRC;
+    #[all:cfg(feature = "crc16_2")]
+    CRC @ 0x01c0: crc16_2::CRC16;
     /// WDT_A
-    #[all:cfg(feature = "wdt_a_3560")]
-    WDT_A @ 0x01cc: wdt_a_3560::WDT_A;
+    #[all:cfg(feature = "wdt_a")]
+    WDT_A @ 0x01cc: wdt_a::WDT_A;
     /// PA
-    #[all:cfg(feature = "pa_2720")]
-    PA @ 0x0200: pa_2720::PA;
+    #[all:cfg(feature = "px")]
+    PA @ 0x0200: px::Px;
     /// P1
-    #[all:cfg(feature = "p1_2720")]
-    P1 @ 0x0200: p1_2720::P1;
+    #[all:cfg(feature = "p1x")]
+    P1 @ 0x0200: p1x::P1x;
     /// P2
-    #[all:cfg(feature = "p2_2720")]
-    P2 @ 0x0201: p2_2720::P2;
+    #[all:cfg(feature = "p2x")]
+    P2 @ 0x0201: p2x::P2x;
     /// CAPTIO
-    #[all:cfg(feature = "captio_3670")]
-    CAPTIO @ 0x02ee: captio_3670::CAPTIO;
+    #[all:cfg(feature = "captio")]
+    CAPTIO @ 0x02ee: captio::CAPTIO;
     /// RTC
     #[all:cfg(feature = "rtc_445")]
     RTC @ 0x0300: rtc_445::RTC;
@@ -45,18 +45,18 @@ utils::device! {
     #[all:cfg(feature = "pj_2720")]
     PJ @ 0x0320: pj_2720::PJ;
     /// TB0
-    #[all:cfg(feature = "tb0_3670_inst3")]
-    TB0 @ 0x0380: tb0_3670_inst3::TB0;
+    #[all:cfg(feature = "tb_3")]
+    TB0 @ 0x0380: tb_3::TB;
     /// eUSCI_A0
-    #[all:cfg(feature = "eusci_a0_445")]
-    eUSCI_A0 @ 0x0500: eusci_a0_445::eUSCI_A0;
+    #[all:cfg(feature = "eusci_a")]
+    eUSCI_A0 @ 0x0500: eusci_a::eUSCI_A;
     /// BKMEM
-    #[all:cfg(feature = "bkmem_44508")]
-    BKMEM @ 0x0660: bkmem_44508::BKMEM;
+    #[all:cfg(feature = "backup_memory")]
+    BKMEM @ 0x0660: backup_memory::BackupMemory;
     /// ADC
-    #[all:cfg(feature = "adc_445")]
-    ADC @ 0x0700: adc_445::ADC;
+    #[all:cfg(feature = "adc_3")]
+    ADC @ 0x0700: adc_3::ADC;
     /// eCOMP0
-    #[all:cfg(feature = "ecomp0_445")]
-    eCOMP0 @ 0x08e0: ecomp0_445::eCOMP0;
+    #[all:cfg(feature = "ecomp")]
+    eCOMP0 @ 0x08e0: ecomp::eCOMP;
 }

@@ -21,8 +21,8 @@ utils::device! {
     #[all:cfg(feature = "comparator_a_2")]
     Comparator_A @ 0x0059: comparator_a_2::ComparatorA;
     /// USI
-    #[all:cfg(feature = "usi_1")]
-    USI @ 0x0078: usi_1::USI;
+    #[all:cfg(feature = "usi")]
+    USI @ 0x0078: usi::USI;
     /// Watchdog Timer
     #[all:cfg(feature = "watchdog_timer_1")]
     Watchdog_Timer @ 0x0120: watchdog_timer_1::WatchdogTimer;

@@ -6,11 +6,11 @@ utils::device! {
     #[all:cfg_attr(not(feature = "CC430F5133-all"), non_exhaustive)]
     CC430F5133;
     /// SFR  Special Function Registers
-    #[all:cfg(feature = "sfr__special_function_registers_1")]
-    SFR__Special_Function_Registers @ 0x0100: sfr__special_function_registers_1::SFRSpecialFunctionRegisters;
+    #[all:cfg(feature = "sfr_1")]
+    SFR @ 0x0100: sfr_1::SFR;
     /// PMM  Power Management System
-    #[all:cfg(feature = "pmm__power_management_system_1")]
-    PMM__Power_Management_System @ 0x0120: pmm__power_management_system_1::PMMPowerManagementSystem;
+    #[all:cfg(feature = "pmm_1")]
+    PMM @ 0x0120: pmm_1::PMM;
     /// Flash
     #[all:cfg(feature = "flash_6")]
     Flash @ 0x0140: flash_6::Flash;
@@ -18,32 +18,32 @@ utils::device! {
     #[all:cfg(feature = "crc16_1")]
     CRC16 @ 0x0150: crc16_1::CRC16;
     /// RC  RAM Control Module
-    #[all:cfg(feature = "rc__ram_control_module_1")]
-    RC__RAM_Control_Module @ 0x0158: rc__ram_control_module_1::RCRAMControlModule;
+    #[all:cfg(feature = "rc_1")]
+    RC @ 0x0158: rc_1::RC;
     /// Watchdog Timer
     #[all:cfg(feature = "watchdog_timer_2")]
     Watchdog_Timer @ 0x015c: watchdog_timer_2::WatchdogTimer;
     /// UCS  Unified System Clock
-    #[all:cfg(feature = "ucs__unified_system_clock_4")]
-    UCS__Unified_System_Clock @ 0x0160: ucs__unified_system_clock_4::UCSUnifiedSystemClock;
+    #[all:cfg(feature = "ucs_4")]
+    UCS @ 0x0160: ucs_4::UCS;
     /// SYS  System Module
-    #[all:cfg(feature = "sys__system_module_2")]
-    SYS__System_Module @ 0x0180: sys__system_module_2::SYSSystemModule;
+    #[all:cfg(feature = "sys_2")]
+    SYS @ 0x0180: sys_2::SYS;
     /// Shared Reference
     #[all:cfg(feature = "shared_reference_1")]
     Shared_Reference @ 0x01b0: shared_reference_1::SharedReference;
     /// Port Mapping Control
-    #[all:cfg(feature = "port_mapping_control_1")]
-    Port_Mapping_Control @ 0x01c0: port_mapping_control_1::PortMappingControl;
+    #[all:cfg(feature = "port_mapping_control")]
+    Port_Mapping_Control @ 0x01c0: port_mapping_control::PortMappingControl;
     /// Port Mapping Port 1
-    #[all:cfg(feature = "port_mapping_port_1_1")]
-    Port_Mapping_Port_1 @ 0x01c8: port_mapping_port_1_1::PortMappingPort1;
+    #[all:cfg(feature = "port_mapping")]
+    Port_Mapping_Port_1 @ 0x01c8: port_mapping::PortMapping;
     /// Port Mapping Port 2
-    #[all:cfg(feature = "port_mapping_port_2_1")]
-    Port_Mapping_Port_2 @ 0x01d0: port_mapping_port_2_1::PortMappingPort2;
+    #[all:cfg(feature = "port_mapping")]
+    Port_Mapping_Port_2 @ 0x01d0: port_mapping::PortMapping;
     /// Port Mapping Port 3
-    #[all:cfg(feature = "port_mapping_port_3_1")]
-    Port_Mapping_Port_3 @ 0x01d8: port_mapping_port_3_1::PortMappingPort3;
+    #[all:cfg(feature = "port_mapping")]
+    Port_Mapping_Port_3 @ 0x01d8: port_mapping::PortMapping;
     /// Port A
     #[all:cfg(feature = "port_a_1")]
     Port_A @ 0x0200: port_a_1::PortA;
@@ -72,39 +72,39 @@ utils::device! {
     #[all:cfg(feature = "timer1_a3_1")]
     Timer1_A3 @ 0x0380: timer1_a3_1::Timer1_A3;
     /// RTC  Real Time Clock
-    #[all:cfg(feature = "rtc__real_time_clock_1")]
-    RTC__Real_Time_Clock @ 0x04a0: rtc__real_time_clock_1::RTCRealTimeClock;
+    #[all:cfg(feature = "rtc_1")]
+    RTC @ 0x04a0: rtc_1::RTC;
     /// MPY 16  Multiplier  16 Bit Mode
-    #[all:cfg(feature = "mpy_16__multiplier__16_bit_mode_1")]
-    MPY_16__Multiplier__16_Bit_Mode @ 0x04c0: mpy_16__multiplier__16_bit_mode_1::MPY16Multiplier16BitMode;
+    #[all:cfg(feature = "mpy_16")]
+    MPY_16 @ 0x04c0: mpy_16::MPY16;
     /// MPY 32  Multiplier  32 Bit Mode
-    #[all:cfg(feature = "mpy_32__multiplier__32_bit_mode_1")]
-    MPY_32__Multiplier__32_Bit_Mode @ 0x04d0: mpy_32__multiplier__32_bit_mode_1::MPY32Multiplier32BitMode;
+    #[all:cfg(feature = "mpy_32")]
+    MPY_32 @ 0x04d0: mpy_32::MPY32;
     /// DMA
     #[all:cfg(feature = "dma_9")]
     DMA @ 0x0500: dma_9::DMA;
     /// USCI_A0  UART Mode
-    #[all:cfg(feature = "usci_a0__uart_mode_2")]
-    USCI_A0__UART_Mode @ 0x05c0: usci_a0__uart_mode_2::USCI_A0UARTMode;
+    #[all:cfg(feature = "usci_a_uart_2")]
+    USCI_A0_UART @ 0x05c0: usci_a_uart_2::USCI_A_UART;
     /// USCI_A0  SPI Mode
-    #[all:cfg(feature = "usci_a0__spi_mode_2")]
-    USCI_A0__SPI_Mode @ 0x05c0: usci_a0__spi_mode_2::USCI_A0SPIMode;
+    #[all:cfg(feature = "usci_a_spi_2")]
+    USCI_A0_SPI @ 0x05c0: usci_a_spi_2::USCI_A_SPI;
     /// USCI_B0  SPI Mode
-    #[all:cfg(feature = "usci_b0__spi_mode_2")]
-    USCI_B0__SPI_Mode @ 0x05e0: usci_b0__spi_mode_2::USCI_B0SPIMode;
+    #[all:cfg(feature = "usci_b_spi_2")]
+    USCI_B0_SPI @ 0x05e0: usci_b_spi_2::USCI_B_SPI;
     /// USCI_B0  I2C Mode
-    #[all:cfg(feature = "usci_b0__i2c_mode_3")]
-    USCI_B0__I2C_Mode @ 0x05e0: usci_b0__i2c_mode_3::USCI_B0I2CMode;
+    #[all:cfg(feature = "usci_b_i2c_4")]
+    USCI_B0_I2C @ 0x05e0: usci_b_i2c_4::USCI_B_I2C;
     /// ADC12
     #[all:cfg(feature = "adc12_2")]
     ADC12 @ 0x0700: adc12_2::ADC12;
     /// Comparator B
-    #[all:cfg(feature = "comparator_b_1")]
-    Comparator_B @ 0x08c0: comparator_b_1::ComparatorB;
+    #[all:cfg(feature = "comparator_b")]
+    Comparator_B @ 0x08c0: comparator_b::ComparatorB;
     /// AES Accelerator
     #[all:cfg(feature = "aes_accelerator_1")]
     AES_Accelerator @ 0x09c0: aes_accelerator_1::AESAccelerator;
     /// CC1101 Radio Interface
-    #[all:cfg(feature = "cc1101_radio_interface_1")]
-    CC1101_Radio_Interface @ 0x0f00: cc1101_radio_interface_1::CC1101RadioInterface;
+    #[all:cfg(feature = "cc1101")]
+    CC1101 @ 0x0f00: cc1101::CC1101;
 }

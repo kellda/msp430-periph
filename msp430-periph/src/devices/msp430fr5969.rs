@@ -6,11 +6,11 @@ utils::device! {
     #[all:cfg_attr(not(feature = "MSP430FR5969-all"), non_exhaustive)]
     MSP430FR5969;
     /// SFR  Special Function Registers
-    #[all:cfg(feature = "sfr__special_function_registers_3")]
-    SFR__Special_Function_Registers @ 0x0100: sfr__special_function_registers_3::SFRSpecialFunctionRegisters;
+    #[all:cfg(feature = "sfr_3")]
+    SFR @ 0x0100: sfr_3::SFR;
     /// PMM  Power Management System
-    #[all:cfg(feature = "pmm__power_management_system_4")]
-    PMM__Power_Management_System @ 0x0120: pmm__power_management_system_4::PMMPowerManagementSystem;
+    #[all:cfg(feature = "pmm_4")]
+    PMM @ 0x0120: pmm_4::PMM;
     /// FRAM
     #[all:cfg(feature = "fram_2")]
     FRAM @ 0x0140: fram_2::FRAM;
@@ -21,11 +21,11 @@ utils::device! {
     #[all:cfg(feature = "watchdog_timer_2")]
     Watchdog_Timer @ 0x015c: watchdog_timer_2::WatchdogTimer;
     /// CS  Clock System
-    #[all:cfg(feature = "cs__clock_system_2")]
-    CS__Clock_System @ 0x0160: cs__clock_system_2::CSClockSystem;
+    #[all:cfg(feature = "cs_2")]
+    CS @ 0x0160: cs_2::CS;
     /// SYS  System Module
-    #[all:cfg(feature = "sys__system_module_3")]
-    SYS__System_Module @ 0x0180: sys__system_module_3::SYSSystemModule;
+    #[all:cfg(feature = "sys_3")]
+    SYS @ 0x0180: sys_3::SYS;
     /// Shared Reference
     #[all:cfg(feature = "shared_reference_3")]
     Shared_Reference @ 0x01b0: shared_reference_3::SharedReference;
@@ -57,23 +57,23 @@ utils::device! {
     #[all:cfg(feature = "timer2_a2_1")]
     Timer2_A2 @ 0x0400: timer2_a2_1::Timer2_A2;
     /// Capacitive_Touch_IO 0
-    #[all:cfg(feature = "capacitive_touch_io_0_1")]
-    Capacitive_Touch_IO_0 @ 0x043e: capacitive_touch_io_0_1::Capacitive_Touch_IO0;
+    #[all:cfg(feature = "capacitive_touch_io")]
+    Capacitive_Touch_IO_0 @ 0x043e: capacitive_touch_io::Capacitive_Touch_IO;
     /// Timer3_A2
     #[all:cfg(feature = "timer3_a2_1")]
     Timer3_A2 @ 0x0440: timer3_a2_1::Timer3_A2;
     /// Capacitive_Touch_IO 1
-    #[all:cfg(feature = "capacitive_touch_io_1_1")]
-    Capacitive_Touch_IO_1 @ 0x047e: capacitive_touch_io_1_1::Capacitive_Touch_IO1;
+    #[all:cfg(feature = "capacitive_touch_io")]
+    Capacitive_Touch_IO_1 @ 0x047e: capacitive_touch_io::Capacitive_Touch_IO;
     /// RTC_B  Real Time Clock
-    #[all:cfg(feature = "rtc_b__real_time_clock_1")]
-    RTC_B__Real_Time_Clock @ 0x04a0: rtc_b__real_time_clock_1::RTC_BRealTimeClock;
+    #[all:cfg(feature = "rtc_b")]
+    RTC_B @ 0x04a0: rtc_b::RTC_B;
     /// MPY 16  Multiplier  16 Bit Mode
-    #[all:cfg(feature = "mpy_16__multiplier__16_bit_mode_1")]
-    MPY_16__Multiplier__16_Bit_Mode @ 0x04c0: mpy_16__multiplier__16_bit_mode_1::MPY16Multiplier16BitMode;
+    #[all:cfg(feature = "mpy_16")]
+    MPY_16 @ 0x04c0: mpy_16::MPY16;
     /// MPY 32  Multiplier  32 Bit Mode
-    #[all:cfg(feature = "mpy_32__multiplier__32_bit_mode_1")]
-    MPY_32__Multiplier__32_Bit_Mode @ 0x04d0: mpy_32__multiplier__32_bit_mode_1::MPY32Multiplier32BitMode;
+    #[all:cfg(feature = "mpy_32")]
+    MPY_32 @ 0x04d0: mpy_32::MPY32;
     /// DMA
     #[all:cfg(feature = "dma_18")]
     DMA @ 0x0500: dma_18::DMA;
@@ -81,29 +81,29 @@ utils::device! {
     #[all:cfg(feature = "mpu_2")]
     MPU @ 0x05a0: mpu_2::MPU;
     /// USCI_A0  UART Mode
-    #[all:cfg(feature = "usci_a0__uart_mode_3")]
-    USCI_A0__UART_Mode @ 0x05c0: usci_a0__uart_mode_3::USCI_A0UARTMode;
+    #[all:cfg(feature = "usci_a_uart_3")]
+    USCI_A0_UART @ 0x05c0: usci_a_uart_3::USCI_A_UART;
     /// USCI_A0  SPI Mode
-    #[all:cfg(feature = "usci_a0__spi_mode_3")]
-    USCI_A0__SPI_Mode @ 0x05c0: usci_a0__spi_mode_3::USCI_A0SPIMode;
+    #[all:cfg(feature = "usci_a_spi_3")]
+    USCI_A0_SPI @ 0x05c0: usci_a_spi_3::USCI_A_SPI;
     /// USCI_A1  UART Mode
-    #[all:cfg(feature = "usci_a1__uart_mode_3")]
-    USCI_A1__UART_Mode @ 0x05e0: usci_a1__uart_mode_3::USCI_A1UARTMode;
+    #[all:cfg(feature = "usci_a_uart_3")]
+    USCI_A1_UART @ 0x05e0: usci_a_uart_3::USCI_A_UART;
     /// USCI_A1  SPI Mode
-    #[all:cfg(feature = "usci_a1__spi_mode_3")]
-    USCI_A1__SPI_Mode @ 0x05e0: usci_a1__spi_mode_3::USCI_A1SPIMode;
+    #[all:cfg(feature = "usci_a_spi_3")]
+    USCI_A1_SPI @ 0x05e0: usci_a_spi_3::USCI_A_SPI;
     /// USCI_B0  SPI Mode
-    #[all:cfg(feature = "usci_b0__spi_mode_3")]
-    USCI_B0__SPI_Mode @ 0x0640: usci_b0__spi_mode_3::USCI_B0SPIMode;
+    #[all:cfg(feature = "usci_b_spi_3")]
+    USCI_B0_SPI @ 0x0640: usci_b_spi_3::USCI_B_SPI;
     /// USCI_B0  I2C Mode
-    #[all:cfg(feature = "usci_b0__i2c_mode_4")]
-    USCI_B0__I2C_Mode @ 0x0640: usci_b0__i2c_mode_4::USCI_B0I2CMode;
+    #[all:cfg(feature = "usci_b_i2c_5")]
+    USCI_B0_I2C @ 0x0640: usci_b_i2c_5::USCI_B_I2C;
     /// ADC12
     #[all:cfg(feature = "adc12_3")]
     ADC12 @ 0x0800: adc12_3::ADC12;
     /// Comparator E
-    #[all:cfg(feature = "comparator_e_1")]
-    Comparator_E @ 0x08c0: comparator_e_1::ComparatorE;
+    #[all:cfg(feature = "comparator_e")]
+    Comparator_E @ 0x08c0: comparator_e::ComparatorE;
     /// AES Accelerator
     #[all:cfg(feature = "aes_accelerator_2")]
     AES_Accelerator @ 0x09c0: aes_accelerator_2::AESAccelerator;

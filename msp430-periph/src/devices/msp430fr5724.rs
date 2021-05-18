@@ -6,11 +6,11 @@ utils::device! {
     #[all:cfg_attr(not(feature = "MSP430FR5724-all"), non_exhaustive)]
     MSP430FR5724;
     /// SFR  Special Function Registers
-    #[all:cfg(feature = "sfr__special_function_registers_3")]
-    SFR__Special_Function_Registers @ 0x0100: sfr__special_function_registers_3::SFRSpecialFunctionRegisters;
+    #[all:cfg(feature = "sfr_3")]
+    SFR @ 0x0100: sfr_3::SFR;
     /// PMM  Power Management System
-    #[all:cfg(feature = "pmm__power_management_system_3")]
-    PMM__Power_Management_System @ 0x0120: pmm__power_management_system_3::PMMPowerManagementSystem;
+    #[all:cfg(feature = "pmm_3")]
+    PMM @ 0x0120: pmm_3::PMM;
     /// FRAM
     #[all:cfg(feature = "fram_1")]
     FRAM @ 0x0140: fram_1::FRAM;
@@ -21,11 +21,11 @@ utils::device! {
     #[all:cfg(feature = "watchdog_timer_2")]
     Watchdog_Timer @ 0x015c: watchdog_timer_2::WatchdogTimer;
     /// CS  Clock System
-    #[all:cfg(feature = "cs__clock_system_1")]
-    CS__Clock_System @ 0x0160: cs__clock_system_1::CSClockSystem;
+    #[all:cfg(feature = "cs_1")]
+    CS @ 0x0160: cs_1::CS;
     /// SYS  System Module
-    #[all:cfg(feature = "sys__system_module_2")]
-    SYS__System_Module @ 0x0180: sys__system_module_2::SYSSystemModule;
+    #[all:cfg(feature = "sys_2")]
+    SYS @ 0x0180: sys_2::SYS;
     /// Shared Reference
     #[all:cfg(feature = "shared_reference_2")]
     Shared_Reference @ 0x01b0: shared_reference_2::SharedReference;
@@ -48,14 +48,14 @@ utils::device! {
     #[all:cfg(feature = "timer0_b3_1")]
     Timer0_B3 @ 0x03c0: timer0_b3_1::Timer0_B3;
     /// RTC_B  Real Time Clock
-    #[all:cfg(feature = "rtc_b__real_time_clock_1")]
-    RTC_B__Real_Time_Clock @ 0x04a0: rtc_b__real_time_clock_1::RTC_BRealTimeClock;
+    #[all:cfg(feature = "rtc_b")]
+    RTC_B @ 0x04a0: rtc_b::RTC_B;
     /// MPY 16  Multiplier  16 Bit Mode
-    #[all:cfg(feature = "mpy_16__multiplier__16_bit_mode_1")]
-    MPY_16__Multiplier__16_Bit_Mode @ 0x04c0: mpy_16__multiplier__16_bit_mode_1::MPY16Multiplier16BitMode;
+    #[all:cfg(feature = "mpy_16")]
+    MPY_16 @ 0x04c0: mpy_16::MPY16;
     /// MPY 32  Multiplier  32 Bit Mode
-    #[all:cfg(feature = "mpy_32__multiplier__32_bit_mode_1")]
-    MPY_32__Multiplier__32_Bit_Mode @ 0x04d0: mpy_32__multiplier__32_bit_mode_1::MPY32Multiplier32BitMode;
+    #[all:cfg(feature = "mpy_32")]
+    MPY_32 @ 0x04d0: mpy_32::MPY32;
     /// DMA
     #[all:cfg(feature = "dma_18")]
     DMA @ 0x0500: dma_18::DMA;
@@ -63,21 +63,21 @@ utils::device! {
     #[all:cfg(feature = "mpu_1")]
     MPU @ 0x05a0: mpu_1::MPU;
     /// USCI_A0  UART Mode
-    #[all:cfg(feature = "usci_a0__uart_mode_3")]
-    USCI_A0__UART_Mode @ 0x05c0: usci_a0__uart_mode_3::USCI_A0UARTMode;
+    #[all:cfg(feature = "usci_a_uart_3")]
+    USCI_A0_UART @ 0x05c0: usci_a_uart_3::USCI_A_UART;
     /// USCI_A0  SPI Mode
-    #[all:cfg(feature = "usci_a0__spi_mode_3")]
-    USCI_A0__SPI_Mode @ 0x05c0: usci_a0__spi_mode_3::USCI_A0SPIMode;
+    #[all:cfg(feature = "usci_a_spi_3")]
+    USCI_A0_SPI @ 0x05c0: usci_a_spi_3::USCI_A_SPI;
     /// USCI_B0  SPI Mode
-    #[all:cfg(feature = "usci_b0__spi_mode_3")]
-    USCI_B0__SPI_Mode @ 0x0640: usci_b0__spi_mode_3::USCI_B0SPIMode;
+    #[all:cfg(feature = "usci_b_spi_3")]
+    USCI_B0_SPI @ 0x0640: usci_b_spi_3::USCI_B_SPI;
     /// USCI_B0  I2C Mode
-    #[all:cfg(feature = "usci_b0__i2c_mode_4")]
-    USCI_B0__I2C_Mode @ 0x0640: usci_b0__i2c_mode_4::USCI_B0I2CMode;
+    #[all:cfg(feature = "usci_b_i2c_5")]
+    USCI_B0_I2C @ 0x0640: usci_b_i2c_5::USCI_B_I2C;
     /// ADC10_B
-    #[all:cfg(feature = "adc10_b_1")]
-    ADC10_B @ 0x0700: adc10_b_1::ADC10_B;
+    #[all:cfg(feature = "adc10_ab")]
+    ADC10_B @ 0x0700: adc10_ab::ADC10_AB;
     /// Comparator D
-    #[all:cfg(feature = "comparator_d_1")]
-    Comparator_D @ 0x08c0: comparator_d_1::ComparatorD;
+    #[all:cfg(feature = "comparator_d")]
+    Comparator_D @ 0x08c0: comparator_d::ComparatorD;
 }

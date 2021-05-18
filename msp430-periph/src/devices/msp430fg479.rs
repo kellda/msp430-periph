@@ -18,8 +18,8 @@ utils::device! {
     #[all:cfg(feature = "port_5_6_1")]
     Port_5_6 @ 0x0030: port_5_6_1::Port56;
     /// Basic Timer / RTC
-    #[all:cfg(feature = "basic_timer___rtc_1")]
-    Basic_Timer___RTC @ 0x0040: basic_timer___rtc_1::BasicTimerRTC;
+    #[all:cfg(feature = "basic_timer_rtc")]
+    Basic_Timer_RTC @ 0x0040: basic_timer_rtc::BasicTimerRTC;
     /// System Clock FLLPLUS
     #[all:cfg(feature = "system_clock_fllplus_2")]
     System_Clock_FLLPLUS @ 0x0050: system_clock_fllplus_2::SystemClockFLLPLUS;
@@ -30,17 +30,17 @@ utils::device! {
     #[all:cfg(feature = "comparator_a_1")]
     Comparator_A @ 0x0059: comparator_a_1::ComparatorA;
     /// USCI_A0  UART Mode
-    #[all:cfg(feature = "usci_a0__uart_mode_1")]
-    USCI_A0__UART_Mode @ 0x005d: usci_a0__uart_mode_1::USCI_A0UARTMode;
+    #[all:cfg(feature = "usci_a_uart_1")]
+    USCI_A0_UART @ 0x005d: usci_a_uart_1::USCI_A_UART;
     /// USCI_A0  SPI Mode
-    #[all:cfg(feature = "usci_a0__spi_mode_1")]
-    USCI_A0__SPI_Mode @ 0x0060: usci_a0__spi_mode_1::USCI_A0SPIMode;
+    #[all:cfg(feature = "usci_a_spi_1")]
+    USCI_A0_SPI @ 0x0060: usci_a_spi_1::USCI_A_SPI;
     /// USCI_B0  SPI Mode
-    #[all:cfg(feature = "usci_b0__spi_mode_1")]
-    USCI_B0__SPI_Mode @ 0x0068: usci_b0__spi_mode_1::USCI_B0SPIMode;
+    #[all:cfg(feature = "usci_b_spi_1")]
+    USCI_B0_SPI @ 0x0068: usci_b_spi_1::USCI_B_SPI;
     /// USCI_B0  I2C Mode
-    #[all:cfg(feature = "usci_b0__i2c_mode_1")]
-    USCI_B0__I2C_Mode @ 0x0068: usci_b0__i2c_mode_1::USCI_B0I2CMode;
+    #[all:cfg(feature = "usci_b_i2c_1")]
+    USCI_B0_I2C @ 0x0068: usci_b_i2c_1::USCI_B_I2C;
     /// LCD_A
     #[all:cfg(feature = "lcd_a_1")]
     LCD_A @ 0x0090: lcd_a_1::LCD_A;

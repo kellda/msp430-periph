@@ -18,8 +18,8 @@ utils::device! {
     #[all:cfg(feature = "port_5_6_1")]
     Port_5_6 @ 0x0030: port_5_6_1::Port56;
     /// USART 0  I2C Mode
-    #[all:cfg(feature = "usart_0__i2c_mode_1")]
-    USART_0__I2C_Mode @ 0x0050: usart_0__i2c_mode_1::USART0I2CMode;
+    #[all:cfg(feature = "usart_i2c")]
+    USART_0_I2C @ 0x0050: usart_i2c::USART_I2C;
     /// Supply Voltage Supervisor
     #[all:cfg(feature = "supply_voltage_supervisor_2")]
     Supply_Voltage_Supervisor @ 0x0055: supply_voltage_supervisor_2::SupplyVoltageSupervisor;
@@ -30,8 +30,8 @@ utils::device! {
     #[all:cfg(feature = "comparator_a_1")]
     Comparator_A @ 0x0059: comparator_a_1::ComparatorA;
     /// USART 0  UART/SPI Mode
-    #[all:cfg(feature = "usart_0__uart_spi_mode_1")]
-    USART_0__UART_SPI_Mode @ 0x0070: usart_0__uart_spi_mode_1::USART0UARTSPIMode;
+    #[all:cfg(feature = "usart")]
+    USART_0 @ 0x0070: usart::USART;
     /// ADC12
     #[all:cfg(feature = "adc12_1")]
     ADC12 @ 0x0080: adc12_1::ADC12;

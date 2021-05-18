@@ -22,7 +22,7 @@ utils::periph! {
             MC_0 = 0b00,
             /// Timer A mode control: 1 - Up to CCR0
             MC_1 = 0b01,
-            /// Timer A mode control: 2 - Continous up
+            /// Timer A mode control: 2 - Continuous up
             MC_2 = 0b10,
             /// Timer A mode control: 3 - Up/Down
             MC_3 = 0b11,

@@ -15,8 +15,8 @@ utils::device! {
     #[all:cfg(feature = "system_clock_3")]
     System_Clock @ 0x0053: system_clock_3::SystemClock;
     /// USI
-    #[all:cfg(feature = "usi_1")]
-    USI @ 0x0078: usi_1::USI;
+    #[all:cfg(feature = "usi")]
+    USI @ 0x0078: usi::USI;
     /// SD16_A1
     #[all:cfg(feature = "sd16_a1_1")]
     SD16_A1 @ 0x00b0: sd16_a1_1::SD16_A1;

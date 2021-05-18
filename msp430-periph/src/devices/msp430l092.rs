@@ -6,20 +6,20 @@ utils::device! {
     #[all:cfg_attr(not(feature = "MSP430L092-all"), non_exhaustive)]
     MSP430L092;
     /// SFR  Special Function Registers
-    #[all:cfg(feature = "sfr__special_function_registers_2")]
-    SFR__Special_Function_Registers @ 0x0100: sfr__special_function_registers_2::SFRSpecialFunctionRegisters;
+    #[all:cfg(feature = "sfr_2")]
+    SFR @ 0x0100: sfr_2::SFR;
     /// Watchdog Timer
     #[all:cfg(feature = "watchdog_timer_2")]
     Watchdog_Timer @ 0x015c: watchdog_timer_2::WatchdogTimer;
     /// CCS  Compact System Clock
-    #[all:cfg(feature = "ccs__compact_system_clock_1")]
-    CCS__Compact_System_Clock @ 0x0160: ccs__compact_system_clock_1::CCSCompactSystemClock;
+    #[all:cfg(feature = "ccs")]
+    CCS @ 0x0160: ccs::CCS;
     /// CSYS  Compact System Module
-    #[all:cfg(feature = "csys__compact_system_module_1")]
-    CSYS__Compact_System_Module @ 0x0180: csys__compact_system_module_1::CSYSCompactSystemModule;
+    #[all:cfg(feature = "csys_1")]
+    CSYS @ 0x0180: csys_1::CSYS;
     /// Analog Pool
-    #[all:cfg(feature = "analog_pool_1")]
-    Analog_Pool @ 0x01a0: analog_pool_1::AnalogPool;
+    #[all:cfg(feature = "analog_pool")]
+    Analog_Pool @ 0x01a0: analog_pool::AnalogPool;
     /// Port A
     #[all:cfg(feature = "port_a_2")]
     Port_A @ 0x0200: port_a_2::PortA;

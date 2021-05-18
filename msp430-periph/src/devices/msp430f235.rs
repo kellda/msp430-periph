@@ -27,17 +27,17 @@ utils::device! {
     #[all:cfg(feature = "comparator_a_2")]
     Comparator_A @ 0x0059: comparator_a_2::ComparatorA;
     /// USCI_A0  UART Mode
-    #[all:cfg(feature = "usci_a0__uart_mode_1")]
-    USCI_A0__UART_Mode @ 0x005d: usci_a0__uart_mode_1::USCI_A0UARTMode;
+    #[all:cfg(feature = "usci_a_uart_1")]
+    USCI_A0_UART @ 0x005d: usci_a_uart_1::USCI_A_UART;
     /// USCI_A0  SPI Mode
-    #[all:cfg(feature = "usci_a0__spi_mode_1")]
-    USCI_A0__SPI_Mode @ 0x0060: usci_a0__spi_mode_1::USCI_A0SPIMode;
+    #[all:cfg(feature = "usci_a_spi_1")]
+    USCI_A0_SPI @ 0x0060: usci_a_spi_1::USCI_A_SPI;
     /// USCI_B0  SPI Mode
-    #[all:cfg(feature = "usci_b0__spi_mode_1")]
-    USCI_B0__SPI_Mode @ 0x0068: usci_b0__spi_mode_1::USCI_B0SPIMode;
+    #[all:cfg(feature = "usci_b_spi_1")]
+    USCI_B0_SPI @ 0x0068: usci_b_spi_1::USCI_B_SPI;
     /// USCI_B0  I2C Mode
-    #[all:cfg(feature = "usci_b0__i2c_mode_1")]
-    USCI_B0__I2C_Mode @ 0x0068: usci_b0__i2c_mode_1::USCI_B0I2CMode;
+    #[all:cfg(feature = "usci_b_i2c_1")]
+    USCI_B0_I2C @ 0x0068: usci_b_i2c_1::USCI_B_I2C;
     /// ADC12
     #[all:cfg(feature = "adc12_1")]
     ADC12 @ 0x0080: adc12_1::ADC12;
@@ -54,8 +54,8 @@ utils::device! {
     #[all:cfg(feature = "timer_a3_1")]
     Timer_A3 @ 0x012e: timer_a3_1::TimerA3;
     /// Multiplier
-    #[all:cfg(feature = "multiplier_1")]
-    Multiplier @ 0x0130: multiplier_1::Multiplier;
+    #[all:cfg(feature = "multiplier")]
+    Multiplier @ 0x0130: multiplier::Multiplier;
     /// TLV Calibration Data
     #[all:cfg(feature = "tlv_calibration_data_2")]
     TLV_Calibration_Data @ 0x10c0: tlv_calibration_data_2::TLVCalibrationData;

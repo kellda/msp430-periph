@@ -24,8 +24,8 @@ utils::device! {
     #[all:cfg(feature = "comparator_a_1")]
     Comparator_A @ 0x0059: comparator_a_1::ComparatorA;
     /// USART 0  UART/SPI Mode
-    #[all:cfg(feature = "usart_0__uart_spi_mode_1")]
-    USART_0__UART_SPI_Mode @ 0x0070: usart_0__uart_spi_mode_1::USART0UARTSPIMode;
+    #[all:cfg(feature = "usart")]
+    USART_0 @ 0x0070: usart::USART;
     /// Timer B3
     #[all:cfg(feature = "timer_b3_1")]
     Timer_B3 @ 0x011e: timer_b3_1::TimerB3;

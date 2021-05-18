@@ -24,8 +24,8 @@ utils::device! {
     #[all:cfg(feature = "port_7_8_1")]
     Port_7_8 @ 0x0038: port_7_8_1::Port78;
     /// Basic Timer / RTC
-    #[all:cfg(feature = "basic_timer___rtc_1")]
-    Basic_Timer___RTC @ 0x0040: basic_timer___rtc_1::BasicTimerRTC;
+    #[all:cfg(feature = "basic_timer_rtc")]
+    Basic_Timer_RTC @ 0x0040: basic_timer_rtc::BasicTimerRTC;
     /// System Clock FLLPLUS
     #[all:cfg(feature = "system_clock_fllplus_2")]
     System_Clock_FLLPLUS @ 0x0050: system_clock_fllplus_2::SystemClockFLLPLUS;
@@ -36,20 +36,20 @@ utils::device! {
     #[all:cfg(feature = "comparator_a_1")]
     Comparator_A @ 0x0059: comparator_a_1::ComparatorA;
     /// USCI_A0  UART Mode
-    #[all:cfg(feature = "usci_a0__uart_mode_1")]
-    USCI_A0__UART_Mode @ 0x005d: usci_a0__uart_mode_1::USCI_A0UARTMode;
+    #[all:cfg(feature = "usci_a_uart_1")]
+    USCI_A0_UART @ 0x005d: usci_a_uart_1::USCI_A_UART;
     /// USCI_A0  SPI Mode
-    #[all:cfg(feature = "usci_a0__spi_mode_1")]
-    USCI_A0__SPI_Mode @ 0x0060: usci_a0__spi_mode_1::USCI_A0SPIMode;
+    #[all:cfg(feature = "usci_a_spi_1")]
+    USCI_A0_SPI @ 0x0060: usci_a_spi_1::USCI_A_SPI;
     /// USCI_B0  SPI Mode
-    #[all:cfg(feature = "usci_b0__spi_mode_1")]
-    USCI_B0__SPI_Mode @ 0x0068: usci_b0__spi_mode_1::USCI_B0SPIMode;
+    #[all:cfg(feature = "usci_b_spi_1")]
+    USCI_B0_SPI @ 0x0068: usci_b_spi_1::USCI_B_SPI;
     /// USCI_B0  I2C Mode
-    #[all:cfg(feature = "usci_b0__i2c_mode_1")]
-    USCI_B0__I2C_Mode @ 0x0068: usci_b0__i2c_mode_1::USCI_B0I2CMode;
+    #[all:cfg(feature = "usci_b_i2c_1")]
+    USCI_B0_I2C @ 0x0068: usci_b_i2c_1::USCI_B_I2C;
     /// USART 1
-    #[all:cfg(feature = "usart_1_1")]
-    USART_1 @ 0x0078: usart_1_1::USART1;
+    #[all:cfg(feature = "usart")]
+    USART_1 @ 0x0078: usart::USART;
     /// ADC12
     #[all:cfg(feature = "adc12_1")]
     ADC12 @ 0x0080: adc12_1::ADC12;
@@ -72,6 +72,6 @@ utils::device! {
     #[all:cfg(feature = "timer_a3_1")]
     Timer_A3 @ 0x012e: timer_a3_1::TimerA3;
     /// Multiplier
-    #[all:cfg(feature = "multiplier_1")]
-    Multiplier @ 0x0130: multiplier_1::Multiplier;
+    #[all:cfg(feature = "multiplier")]
+    Multiplier @ 0x0130: multiplier::Multiplier;
 }

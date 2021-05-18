@@ -1,15 +1,14 @@
 [package]
 name = "blink"
 version = "0.1.0"
-authors = ["kellda"]
 edition = "2018"
 
 [dependencies.msp430-periph]
-version = "0.0.1"
+path = "../../msp430-periph"
 features = [
     "msp430fr5969", 
     "watchdog_timer_2",
-    "pmm__power_management_system_4",
+    "pmm_4",
     "port_1_2_7",
     "port_3_4_7",
 ]

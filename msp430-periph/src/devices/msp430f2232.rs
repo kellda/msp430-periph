@@ -21,17 +21,17 @@ utils::device! {
     #[all:cfg(feature = "system_clock_5")]
     System_Clock @ 0x0053: system_clock_5::SystemClock;
     /// USCI_A0  UART Mode
-    #[all:cfg(feature = "usci_a0__uart_mode_1")]
-    USCI_A0__UART_Mode @ 0x005d: usci_a0__uart_mode_1::USCI_A0UARTMode;
+    #[all:cfg(feature = "usci_a_uart_1")]
+    USCI_A0_UART @ 0x005d: usci_a_uart_1::USCI_A_UART;
     /// USCI_A0  SPI Mode
-    #[all:cfg(feature = "usci_a0__spi_mode_1")]
-    USCI_A0__SPI_Mode @ 0x0060: usci_a0__spi_mode_1::USCI_A0SPIMode;
+    #[all:cfg(feature = "usci_a_spi_1")]
+    USCI_A0_SPI @ 0x0060: usci_a_spi_1::USCI_A_SPI;
     /// USCI_B0  SPI Mode
-    #[all:cfg(feature = "usci_b0__spi_mode_1")]
-    USCI_B0__SPI_Mode @ 0x0068: usci_b0__spi_mode_1::USCI_B0SPIMode;
+    #[all:cfg(feature = "usci_b_spi_1")]
+    USCI_B0_SPI @ 0x0068: usci_b_spi_1::USCI_B_SPI;
     /// USCI_B0  I2C Mode
-    #[all:cfg(feature = "usci_b0__i2c_mode_1")]
-    USCI_B0__I2C_Mode @ 0x0068: usci_b0__i2c_mode_1::USCI_B0I2CMode;
+    #[all:cfg(feature = "usci_b_i2c_1")]
+    USCI_B0_I2C @ 0x0068: usci_b_i2c_1::USCI_B_I2C;
     /// Timer B3
     #[all:cfg(feature = "timer_b3_1")]
     Timer_B3 @ 0x011e: timer_b3_1::TimerB3;

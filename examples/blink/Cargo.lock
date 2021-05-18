@@ -12,8 +12,6 @@ dependencies = [
 [[package]]
 name = "msp430-periph"
 version = "0.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32c92cc762c4112e49711d3130251f481dbf6e1dd6f539304abd8d6d3c8d7ca9"
 dependencies = [
  "peripherals",
 ]
@@ -26,9 +24,9 @@ checksum = "acbf547ad0c65e31259204bd90935776d1c693cec2f4ff7abb7a1bbbd40dfe58"
 
 [[package]]
 name = "peripherals"
-version = "0.0.2"
+version = "0.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ba4cb330a12fed835c5d353166932c9bc0d8ffcba767b03e955f02b7d615d000"
+checksum = "82e27badd13c515267b422de5853f1c9ef4b583a435e02119d3350f2c3e5a2af"
 dependencies = [
  "paste",
 ]

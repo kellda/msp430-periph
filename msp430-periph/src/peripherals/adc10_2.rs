@@ -19,10 +19,24 @@ utils::periph! {
         /// ADC10 Data Transfer Control 1
         ADC10DTC1: 0..7 = struct ADC10DTC1Field(u8);
     }
-    /// ADC10 Analog Enable 0
-    rw ADC10AE0 @ 0x02: u8 = 0_0 {
-        /// ADC10 Analog Enable 0
-        ADC10AE0: 0..7 = struct ADC10AE0Field(u8);
+    /// ADC10 Analog Enable
+    rw ADC10AE @ 0x02: u8 = 0_0 {
+        /// ADC10 External Input Enable 0
+        ADC10AE0: 0 = struct ADC10AE0(bool);
+        /// ADC10 External Input Enable 1
+        ADC10AE1: 1 = struct ADC10AE1(bool);
+        /// ADC10 External Input Enable 2
+        ADC10AE2: 2 = struct ADC10AE2(bool);
+        /// ADC10 External Input Enable 3
+        ADC10AE3: 3 = struct ADC10AE3(bool);
+        /// ADC10 External Input Enable 4
+        ADC10AE4: 4 = struct ADC10AE4(bool);
+        /// ADC10 External Input Enable 5
+        ADC10AE5: 5 = struct ADC10AE5(bool);
+        /// ADC10 External Input Enable 6
+        ADC10AE6: 6 = struct ADC10AE6(bool);
+        /// ADC10 External Input Enable 7
+        ADC10AE7: 7 = struct ADC10AE7(bool);
     }
     /// ADC10 Control 0
     rw ADC10CTL0 @ 0x168: u16 = 0_0 {

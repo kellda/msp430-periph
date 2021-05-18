@@ -6,17 +6,17 @@ utils::device! {
     #[all:cfg_attr(not(feature = "MSP430FR4133-all"), non_exhaustive)]
     MSP430FR4133;
     /// SFR  Special Function Registers
-    #[all:cfg(feature = "sfr__special_function_registers_3")]
-    SFR__Special_Function_Registers @ 0x0100: sfr__special_function_registers_3::SFRSpecialFunctionRegisters;
+    #[all:cfg(feature = "sfr_3")]
+    SFR @ 0x0100: sfr_3::SFR;
     /// PMM  Power Management System
-    #[all:cfg(feature = "pmm__power_management_system_7")]
-    PMM__Power_Management_System @ 0x0120: pmm__power_management_system_7::PMMPowerManagementSystem;
+    #[all:cfg(feature = "pmm_7")]
+    PMM @ 0x0120: pmm_7::PMM;
     /// SYS  System Module
-    #[all:cfg(feature = "sys__system_module_4")]
-    SYS__System_Module @ 0x0140: sys__system_module_4::SYSSystemModule;
+    #[all:cfg(feature = "sys_4")]
+    SYS @ 0x0140: sys_4::SYS;
     /// CS  Clock System
-    #[all:cfg(feature = "cs__clock_system_5")]
-    CS__Clock_System @ 0x0180: cs__clock_system_5::CSClockSystem;
+    #[all:cfg(feature = "cs_5")]
+    CS @ 0x0180: cs_5::CS;
     /// FRAM
     #[all:cfg(feature = "fram_2")]
     FRAM @ 0x01a0: fram_2::FRAM;
@@ -51,8 +51,8 @@ utils::device! {
     #[all:cfg(feature = "port_7_8_6")]
     Port_7_8 @ 0x0260: port_7_8_6::Port78;
     /// Capacitive_Touch_IO 0
-    #[all:cfg(feature = "capacitive_touch_io_0_1")]
-    Capacitive_Touch_IO_0 @ 0x02ee: capacitive_touch_io_0_1::Capacitive_Touch_IO0;
+    #[all:cfg(feature = "capacitive_touch_io")]
+    Capacitive_Touch_IO_0 @ 0x02ee: capacitive_touch_io::Capacitive_Touch_IO;
     /// Timer0_A3
     #[all:cfg(feature = "timer0_a3_2")]
     Timer0_A3 @ 0x0300: timer0_a3_2::Timer0_A3;
@@ -60,26 +60,26 @@ utils::device! {
     #[all:cfg(feature = "timer1_a3_1")]
     Timer1_A3 @ 0x0340: timer1_a3_1::Timer1_A3;
     /// Real-Time Clock
-    #[all:cfg(feature = "realtime_clock_1")]
-    RealTime_Clock @ 0x03c0: realtime_clock_1::RealTimeClock;
+    #[all:cfg(feature = "realtime_clock")]
+    RealTime_Clock @ 0x03c0: realtime_clock::RealTimeClock;
     /// USCI_A0  UART Mode
-    #[all:cfg(feature = "usci_a0__uart_mode_3")]
-    USCI_A0__UART_Mode @ 0x0500: usci_a0__uart_mode_3::USCI_A0UARTMode;
+    #[all:cfg(feature = "usci_a_uart_3")]
+    USCI_A0_UART @ 0x0500: usci_a_uart_3::USCI_A_UART;
     /// USCI_A0  SPI Mode
-    #[all:cfg(feature = "usci_a0__spi_mode_3")]
-    USCI_A0__SPI_Mode @ 0x0500: usci_a0__spi_mode_3::USCI_A0SPIMode;
+    #[all:cfg(feature = "usci_a_spi_3")]
+    USCI_A0_SPI @ 0x0500: usci_a_spi_3::USCI_A_SPI;
     /// USCI_B0  SPI Mode
-    #[all:cfg(feature = "usci_b0__spi_mode_3")]
-    USCI_B0__SPI_Mode @ 0x0540: usci_b0__spi_mode_3::USCI_B0SPIMode;
+    #[all:cfg(feature = "usci_b_spi_3")]
+    USCI_B0_SPI @ 0x0540: usci_b_spi_3::USCI_B_SPI;
     /// USCI_B0  I2C Mode
-    #[all:cfg(feature = "usci_b0__i2c_mode_4")]
-    USCI_B0__I2C_Mode @ 0x0540: usci_b0__i2c_mode_4::USCI_B0I2CMode;
+    #[all:cfg(feature = "usci_b_i2c_5")]
+    USCI_B0_I2C @ 0x0540: usci_b_i2c_5::USCI_B_I2C;
     /// LCD_E
     #[all:cfg(feature = "lcd_e_1")]
     LCD_E @ 0x0600: lcd_e_1::LCD_E;
     /// Backup Memory
-    #[all:cfg(feature = "backup_memory_1")]
-    Backup_Memory @ 0x0660: backup_memory_1::BackupMemory;
+    #[all:cfg(feature = "backup_memory")]
+    Backup_Memory @ 0x0660: backup_memory::BackupMemory;
     /// ADC
     #[all:cfg(feature = "adc_2")]
     ADC @ 0x0700: adc_2::ADC;

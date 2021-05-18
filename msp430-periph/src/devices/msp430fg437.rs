@@ -18,8 +18,8 @@ utils::device! {
     #[all:cfg(feature = "port_5_6_1")]
     Port_5_6 @ 0x0030: port_5_6_1::Port56;
     /// Basic Timer
-    #[all:cfg(feature = "basic_timer_1")]
-    Basic_Timer @ 0x0040: basic_timer_1::BasicTimer;
+    #[all:cfg(feature = "basic_timer")]
+    Basic_Timer @ 0x0040: basic_timer::BasicTimer;
     /// System Clock FLLPLUS
     #[all:cfg(feature = "system_clock_fllplus_4")]
     System_Clock_FLLPLUS @ 0x0050: system_clock_fllplus_4::SystemClockFLLPLUS;
@@ -30,8 +30,8 @@ utils::device! {
     #[all:cfg(feature = "comparator_a_1")]
     Comparator_A @ 0x0059: comparator_a_1::ComparatorA;
     /// USART 0  UART/SPI Mode
-    #[all:cfg(feature = "usart_0__uart_spi_mode_1")]
-    USART_0__UART_SPI_Mode @ 0x0070: usart_0__uart_spi_mode_1::USART0UARTSPIMode;
+    #[all:cfg(feature = "usart")]
+    USART_0 @ 0x0070: usart::USART;
     /// ADC12
     #[all:cfg(feature = "adc12_1")]
     ADC12 @ 0x0080: adc12_1::ADC12;

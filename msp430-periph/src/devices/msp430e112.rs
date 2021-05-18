@@ -12,8 +12,8 @@ utils::device! {
     #[all:cfg(feature = "port_1_2_1")]
     Port_1_2 @ 0x0020: port_1_2_1::Port12;
     /// EPROM
-    #[all:cfg(feature = "eprom_1")]
-    EPROM @ 0x0054: eprom_1::EPROM;
+    #[all:cfg(feature = "eprom")]
+    EPROM @ 0x0054: eprom::EPROM;
     /// System Clock
     #[all:cfg(feature = "system_clock_1")]
     System_Clock @ 0x0056: system_clock_1::SystemClock;

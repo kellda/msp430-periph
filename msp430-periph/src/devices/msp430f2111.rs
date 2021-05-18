@@ -12,8 +12,8 @@ utils::device! {
     #[all:cfg(feature = "port_1_2_2")]
     Port_1_2 @ 0x0020: port_1_2_2::Port12;
     /// System Clock
-    #[all:cfg(feature = "system_clock_4")]
-    System_Clock @ 0x0053: system_clock_4::SystemClock;
+    #[all:cfg(feature = "system_clock_3")]
+    System_Clock @ 0x0053: system_clock_3::SystemClock;
     /// Comparator A
     #[all:cfg(feature = "comparator_a_2")]
     Comparator_A @ 0x0059: comparator_a_2::ComparatorA;

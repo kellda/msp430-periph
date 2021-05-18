@@ -7,9 +7,7 @@
 mod rt;
 
 use msp430_periph::devices::msp430fr5969::MSP430FR5969;
-use msp430_periph::peripherals::{
-    pmm__power_management_system_4::*, port_1_2_7::*, port_3_4_7::*, watchdog_timer_2::*,
-};
+use msp430_periph::peripherals::{pmm_4::*, port_1_2_7::*, port_3_4_7::*, watchdog_timer_2::*};
 use msp430_periph::utils::Value;
 
 #[no_mangle]
@@ -29,9 +27,7 @@ extern "C" fn main() -> ! {
     p.port_3_4.p4dir.modify(P4DIR6(true));
 
     // Enable I/Os
-    p.pmm__power_management_system
-        .pm5ctl0
-        .modify(LOCKLPM5(false));
+    p.pmm.pm5ctl0.modify(LOCKLPM5(false));
 
     loop {
         let mut i = 0;

@@ -18,8 +18,8 @@ utils::device! {
     #[all:cfg(feature = "port_5_6_1")]
     Port_5_6 @ 0x0030: port_5_6_1::Port56;
     /// Basic Timer
-    #[all:cfg(feature = "basic_timer_1")]
-    Basic_Timer @ 0x0040: basic_timer_1::BasicTimer;
+    #[all:cfg(feature = "basic_timer")]
+    Basic_Timer @ 0x0040: basic_timer::BasicTimer;
     /// System Clock FLLPLUS
     #[all:cfg(feature = "system_clock_fllplus_1")]
     System_Clock_FLLPLUS @ 0x0050: system_clock_fllplus_1::SystemClockFLLPLUS;
@@ -45,6 +45,6 @@ utils::device! {
     #[all:cfg(feature = "timer0_a3_1")]
     Timer0_A3 @ 0x012e: timer0_a3_1::Timer0_A3;
     /// Scan Interface
-    #[all:cfg(feature = "scan_interface_1")]
-    Scan_Interface @ 0x01b0: scan_interface_1::ScanInterface;
+    #[all:cfg(feature = "scan_interface")]
+    Scan_Interface @ 0x01b0: scan_interface::ScanInterface;
 }

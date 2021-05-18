@@ -15,8 +15,8 @@ utils::device! {
     #[all:cfg(feature = "port_5_6_1")]
     Port_5_6 @ 0x0030: port_5_6_1::Port56;
     /// Basic Timer
-    #[all:cfg(feature = "basic_timer_1")]
-    Basic_Timer @ 0x0040: basic_timer_1::BasicTimer;
+    #[all:cfg(feature = "basic_timer")]
+    Basic_Timer @ 0x0040: basic_timer::BasicTimer;
     /// System Clock FLLPLUS
     #[all:cfg(feature = "system_clock_fllplus_1")]
     System_Clock_FLLPLUS @ 0x0050: system_clock_fllplus_1::SystemClockFLLPLUS;

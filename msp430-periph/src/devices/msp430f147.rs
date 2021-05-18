@@ -24,11 +24,11 @@ utils::device! {
     #[all:cfg(feature = "comparator_a_1")]
     Comparator_A @ 0x0059: comparator_a_1::ComparatorA;
     /// USART 0  UART/SPI Mode
-    #[all:cfg(feature = "usart_0__uart_spi_mode_1")]
-    USART_0__UART_SPI_Mode @ 0x0070: usart_0__uart_spi_mode_1::USART0UARTSPIMode;
+    #[all:cfg(feature = "usart")]
+    USART_0 @ 0x0070: usart::USART;
     /// USART 1
-    #[all:cfg(feature = "usart_1_1")]
-    USART_1 @ 0x0078: usart_1_1::USART1;
+    #[all:cfg(feature = "usart")]
+    USART_1 @ 0x0078: usart::USART;
     /// ADC12
     #[all:cfg(feature = "adc12_1")]
     ADC12 @ 0x0080: adc12_1::ADC12;
@@ -45,6 +45,6 @@ utils::device! {
     #[all:cfg(feature = "timer_a3_1")]
     Timer_A3 @ 0x012e: timer_a3_1::TimerA3;
     /// Multiplier
-    #[all:cfg(feature = "multiplier_1")]
-    Multiplier @ 0x0130: multiplier_1::Multiplier;
+    #[all:cfg(feature = "multiplier")]
+    Multiplier @ 0x0130: multiplier::Multiplier;
 }

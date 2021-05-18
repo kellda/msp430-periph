@@ -15,14 +15,14 @@ utils::device! {
     #[all:cfg(feature = "port_1_2_1")]
     Port_1_2 @ 0x0020: port_1_2_1::Port12;
     /// ADC10
-    #[all:cfg(feature = "adc10_1")]
-    ADC10 @ 0x0048: adc10_1::ADC10;
+    #[all:cfg(feature = "adc10_2")]
+    ADC10 @ 0x0048: adc10_2::ADC10;
     /// System Clock
     #[all:cfg(feature = "system_clock_1")]
     System_Clock @ 0x0056: system_clock_1::SystemClock;
     /// USART 0  UART/SPI Mode
-    #[all:cfg(feature = "usart_0__uart_spi_mode_1")]
-    USART_0__UART_SPI_Mode @ 0x0070: usart_0__uart_spi_mode_1::USART0UARTSPIMode;
+    #[all:cfg(feature = "usart")]
+    USART_0 @ 0x0070: usart::USART;
     /// Watchdog Timer
     #[all:cfg(feature = "watchdog_timer_1")]
     Watchdog_Timer @ 0x0120: watchdog_timer_1::WatchdogTimer;

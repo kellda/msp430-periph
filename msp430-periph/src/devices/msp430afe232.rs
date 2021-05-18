@@ -18,8 +18,8 @@ utils::device! {
     #[all:cfg(feature = "supply_voltage_supervisor_2")]
     Supply_Voltage_Supervisor @ 0x0055: supply_voltage_supervisor_2::SupplyVoltageSupervisor;
     /// USART 0  UART/SPI Mode
-    #[all:cfg(feature = "usart_0__uart_spi_mode_1")]
-    USART_0__UART_SPI_Mode @ 0x0070: usart_0__uart_spi_mode_1::USART0UARTSPIMode;
+    #[all:cfg(feature = "usart")]
+    USART_0 @ 0x0070: usart::USART;
     /// SD24_A2
     #[all:cfg(feature = "sd24_a2_1")]
     SD24_A2 @ 0x00b0: sd24_a2_1::SD24_A2;
@@ -33,8 +33,8 @@ utils::device! {
     #[all:cfg(feature = "timer_a3_1")]
     Timer_A3 @ 0x012e: timer_a3_1::TimerA3;
     /// Multiplier
-    #[all:cfg(feature = "multiplier_1")]
-    Multiplier @ 0x0130: multiplier_1::Multiplier;
+    #[all:cfg(feature = "multiplier")]
+    Multiplier @ 0x0130: multiplier::Multiplier;
     /// Calibration Data
     #[all:cfg(feature = "calibration_data_3")]
     Calibration_Data @ 0x10fa: calibration_data_3::CalibrationData;
