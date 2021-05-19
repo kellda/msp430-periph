@@ -8,9 +8,12 @@ utils::device! {
     /// Special Function
     #[all:cfg(feature = "special_function_14")]
     Special_Function @ 0x0000: special_function_14::SpecialFunction;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_1")]
-    Port_1_2 @ 0x0020: port_1_2_1::Port12;
+    /// Port 1
+    #[all:cfg(feature = "port_12_1")]
+    Port_1 @ 0x0020: port_12_1::Port;
+    /// Port 2
+    #[all:cfg(feature = "port_12_1")]
+    Port_2 @ 0x0028: port_12_1::Port;
     /// Basic Timer
     #[all:cfg(feature = "basic_timer")]
     Basic_Timer @ 0x0040: basic_timer::BasicTimer;

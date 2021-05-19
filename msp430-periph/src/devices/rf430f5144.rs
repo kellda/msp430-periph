@@ -45,20 +45,23 @@ utils::device! {
     #[all:cfg(feature = "port_mapping")]
     Port_Mapping_Port_3 @ 0x01d8: port_mapping::PortMapping;
     /// Port A
-    #[all:cfg(feature = "port_a_1")]
-    Port_A @ 0x0200: port_a_1::PortA;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_5")]
-    Port_1_2 @ 0x0200: port_1_2_5::Port12;
+    #[all:cfg(feature = "portw_1i")]
+    Port_A @ 0x0200: portw_1i::Port;
+    /// Port 1
+    #[all:cfg(feature = "portb_1i1")]
+    Port_1 @ 0x0200: portb_1i1::Port;
+    /// Port 2
+    #[all:cfg(feature = "portb_1i2")]
+    Port_2 @ 0x0201: portb_1i2::Port;
     /// Port B
-    #[all:cfg(feature = "port_b_1")]
-    Port_B @ 0x0220: port_b_1::PortB;
+    #[all:cfg(feature = "portw_1")]
+    Port_B @ 0x0220: portw_1::Port;
     /// Port 3
-    #[all:cfg(feature = "port_3_2")]
-    Port_3 @ 0x0220: port_3_2::Port3;
+    #[all:cfg(feature = "portb_1")]
+    Port_3 @ 0x0220: portb_1::Port;
     /// Port J
     #[all:cfg(feature = "port_j_2")]
-    Port_J @ 0x0320: port_j_2::PortJ;
+    Port_J @ 0x0320: port_j_2::Port;
     /// Timer0_A3
     #[all:cfg(feature = "timer0_a3_2")]
     Timer0_A3 @ 0x03c0: timer0_a3_2::Timer0_A3;

@@ -8,12 +8,15 @@ utils::device! {
     /// Special Function
     #[all:cfg(feature = "special_function_11")]
     Special_Function @ 0x0000: special_function_11::SpecialFunction;
-    /// Port 3/4
-    #[all:cfg(feature = "port_3_4_2")]
-    Port_3_4 @ 0x0010: port_3_4_2::Port34;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_3")]
-    Port_1_2 @ 0x0020: port_1_2_3::Port12;
+    /// Port 3
+    #[all:cfg(feature = "port_x_1")]
+    Port_3 @ 0x0010: port_x_1::Port;
+    /// Port 1
+    #[all:cfg(feature = "port_1_1")]
+    Port_1 @ 0x0020: port_1_1::Port;
+    /// Port 2
+    #[all:cfg(feature = "port_2_1")]
+    Port_2 @ 0x0028: port_2_1::Port;
     /// ADC10
     #[all:cfg(feature = "adc10_3")]
     ADC10 @ 0x0048: adc10_3::ADC10;

@@ -27,17 +27,20 @@ utils::device! {
     #[all:cfg(feature = "watchdog_timer_2")]
     Watchdog_Timer @ 0x01cc: watchdog_timer_2::WatchdogTimer;
     /// Port A
-    #[all:cfg(feature = "port_a_6")]
-    Port_A @ 0x0200: port_a_6::PortA;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_10")]
-    Port_1_2 @ 0x0200: port_1_2_10::Port12;
+    #[all:cfg(feature = "portw_6i")]
+    Port_A @ 0x0200: portw_6i::Port;
+    /// Port 1
+    #[all:cfg(feature = "portb_6i1")]
+    Port_1 @ 0x0200: portb_6i1::Port;
+    /// Port 2
+    #[all:cfg(feature = "portb_6i2")]
+    Port_2 @ 0x0201: portb_6i2::Port;
     /// Port B
-    #[all:cfg(feature = "port_b_6")]
-    Port_B @ 0x0220: port_b_6::PortB;
+    #[all:cfg(feature = "portw_6")]
+    Port_B @ 0x0220: portw_6::Port;
     /// Port 3
-    #[all:cfg(feature = "port_3_3")]
-    Port_3 @ 0x0220: port_3_3::Port3;
+    #[all:cfg(feature = "portb_6")]
+    Port_3 @ 0x0220: portb_6::Port;
     /// Real-Time Clock
     #[all:cfg(feature = "realtime_clock")]
     RealTime_Clock @ 0x0300: realtime_clock::RealTimeClock;

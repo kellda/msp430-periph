@@ -24,11 +24,14 @@ utils::device! {
     #[all:cfg(feature = "csys_2")]
     CSYS @ 0x0180: csys_2::CSYS;
     /// Port A
-    #[all:cfg(feature = "port_a_2")]
-    Port_A @ 0x0200: port_a_2::PortA;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_6")]
-    Port_1_2 @ 0x0200: port_1_2_6::Port12;
+    #[all:cfg(feature = "portw_2i")]
+    Port_A @ 0x0200: portw_2i::Port;
+    /// Port 1
+    #[all:cfg(feature = "portb_2i1")]
+    Port_1 @ 0x0200: portb_2i1::Port;
+    /// Port 2
+    #[all:cfg(feature = "portb_2i2")]
+    Port_2 @ 0x0201: portb_2i2::Port;
     /// Timer0_A3
     #[all:cfg(feature = "timer0_a3_2")]
     Timer0_A3 @ 0x0340: timer0_a3_2::Timer0_A3;

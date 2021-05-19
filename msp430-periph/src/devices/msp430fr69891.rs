@@ -33,38 +33,53 @@ utils::device! {
     #[all:cfg(feature = "shared_reference_3")]
     Shared_Reference @ 0x01b0: shared_reference_3::SharedReference;
     /// Port A
-    #[all:cfg(feature = "port_a_3")]
-    Port_A @ 0x0200: port_a_3::PortA;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_7")]
-    Port_1_2 @ 0x0200: port_1_2_7::Port12;
+    #[all:cfg(feature = "portw_3i")]
+    Port_A @ 0x0200: portw_3i::Port;
+    /// Port 1
+    #[all:cfg(feature = "portb_3i1")]
+    Port_1 @ 0x0200: portb_3i1::Port;
+    /// Port 2
+    #[all:cfg(feature = "portb_3i2")]
+    Port_2 @ 0x0201: portb_3i2::Port;
     /// Port B
-    #[all:cfg(feature = "port_b_4")]
-    Port_B @ 0x0220: port_b_4::PortB;
-    /// Port 3/4
-    #[all:cfg(feature = "port_3_4_7")]
-    Port_3_4 @ 0x0220: port_3_4_7::Port34;
+    #[all:cfg(feature = "portw_3i")]
+    Port_B @ 0x0220: portw_3i::Port;
+    /// Port 3
+    #[all:cfg(feature = "portb_3i1")]
+    Port_3 @ 0x0220: portb_3i1::Port;
+    /// Port 4
+    #[all:cfg(feature = "portb_3i2")]
+    Port_4 @ 0x0221: portb_3i2::Port;
     /// Port C
-    #[all:cfg(feature = "port_c_3")]
-    Port_C @ 0x0240: port_c_3::PortC;
-    /// Port 5/6
-    #[all:cfg(feature = "port_5_6_5")]
-    Port_5_6 @ 0x0240: port_5_6_5::Port56;
+    #[all:cfg(feature = "portw_3")]
+    Port_C @ 0x0240: portw_3::Port;
+    /// Port 5
+    #[all:cfg(feature = "portb_3")]
+    Port_5 @ 0x0240: portb_3::Port;
+    /// Port 6
+    #[all:cfg(feature = "portb_3")]
+    Port_6 @ 0x0241: portb_3::Port;
     /// Port D
     #[all:cfg(feature = "port_d_3")]
-    Port_D @ 0x0260: port_d_3::PortD;
-    /// Port 7/8
-    #[all:cfg(feature = "port_7_8_5")]
-    Port_7_8 @ 0x0260: port_7_8_5::Port78;
+    Port_D @ 0x0260: port_d_3::Port;
+    /// Port 7
+    #[all:cfg(feature = "portb_3")]
+    Port_7 @ 0x0260: portb_3::Port;
+    /// Port 8
+    #[all:cfg(feature = "portb_3")]
+    Port_8 @ 0x0261: portb_3::Port;
     /// Port E
-    #[all:cfg(feature = "port_e_3")]
-    Port_E @ 0x0280: port_e_3::PortE;
-    /// Port 9/10
-    #[all:cfg(feature = "port_9_10_5")]
-    Port_9_10 @ 0x0280: port_9_10_5::Port910;
+    #[all:cfg(feature = "portw_3")]
+    Port_E @ 0x0280: portw_3::Port;
+    /// Port 9
+    #[all:cfg(feature = "portb_3")]
+    Port_9 @ 0x0280: portb_3::Port;
+    /// Port 10
+    #[all:cfg(feature = "portb_3")]
+    Port_10 @ 0x0281: portb_3::Port;
     /// Port J
     #[all:cfg(feature = "port_j_5")]
-    Port_J @ 0x0320: port_j_5::PortJ;
+    Port_J @ 0x0320: port_j_5::Port;
     /// Timer0_A3
     #[all:cfg(feature = "timer0_a3_2")]
     Timer0_A3 @ 0x0340: timer0_a3_2::Timer0_A3;

@@ -27,29 +27,41 @@ utils::device! {
     #[all:cfg(feature = "watchdog_timer_2")]
     Watchdog_Timer @ 0x01cc: watchdog_timer_2::WatchdogTimer;
     /// Port A
-    #[all:cfg(feature = "port_a_5")]
-    Port_A @ 0x0200: port_a_5::PortA;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_9")]
-    Port_1_2 @ 0x0200: port_1_2_9::Port12;
+    #[all:cfg(feature = "portw_5i")]
+    Port_A @ 0x0200: portw_5i::Port;
+    /// Port 1
+    #[all:cfg(feature = "portb_5i1")]
+    Port_1 @ 0x0200: portb_5i1::Port;
+    /// Port 2
+    #[all:cfg(feature = "portb_5i2")]
+    Port_2 @ 0x0201: portb_5i2::Port;
     /// Port B
-    #[all:cfg(feature = "port_b_5")]
-    Port_B @ 0x0220: port_b_5::PortB;
-    /// Port 3/4
-    #[all:cfg(feature = "port_3_4_10")]
-    Port_3_4 @ 0x0220: port_3_4_10::Port34;
+    #[all:cfg(feature = "portw_5")]
+    Port_B @ 0x0220: portw_5::Port;
+    /// Port 3
+    #[all:cfg(feature = "portb_5")]
+    Port_3 @ 0x0220: portb_5::Port;
+    /// Port 4
+    #[all:cfg(feature = "portb_5")]
+    Port_4 @ 0x0221: portb_5::Port;
     /// Port C
-    #[all:cfg(feature = "port_c_4")]
-    Port_C @ 0x0240: port_c_4::PortC;
-    /// Port 5/6
-    #[all:cfg(feature = "port_5_6_6")]
-    Port_5_6 @ 0x0240: port_5_6_6::Port56;
+    #[all:cfg(feature = "portw_5")]
+    Port_C @ 0x0240: portw_5::Port;
+    /// Port 5
+    #[all:cfg(feature = "portb_5")]
+    Port_5 @ 0x0240: portb_5::Port;
+    /// Port 6
+    #[all:cfg(feature = "portb_5")]
+    Port_6 @ 0x0241: portb_5::Port;
     /// Port D
-    #[all:cfg(feature = "port_d_5")]
-    Port_D @ 0x0260: port_d_5::PortD;
-    /// Port 7/8
-    #[all:cfg(feature = "port_7_8_6")]
-    Port_7_8 @ 0x0260: port_7_8_6::Port78;
+    #[all:cfg(feature = "portw_5")]
+    Port_D @ 0x0260: portw_5::Port;
+    /// Port 7
+    #[all:cfg(feature = "portb_5")]
+    Port_7 @ 0x0260: portb_5::Port;
+    /// Port 8
+    #[all:cfg(feature = "portb_5")]
+    Port_8 @ 0x0261: portb_5::Port;
     /// Capacitive_Touch_IO 0
     #[all:cfg(feature = "capacitive_touch_io")]
     Capacitive_Touch_IO_0 @ 0x02ee: capacitive_touch_io::Capacitive_Touch_IO;

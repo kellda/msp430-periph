@@ -45,26 +45,32 @@ utils::device! {
     #[all:cfg(feature = "port_mapping")]
     Port_Mapping_Port_3 @ 0x01d8: port_mapping::PortMapping;
     /// Port A
-    #[all:cfg(feature = "port_a_1")]
-    Port_A @ 0x0200: port_a_1::PortA;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_5")]
-    Port_1_2 @ 0x0200: port_1_2_5::Port12;
+    #[all:cfg(feature = "portw_1i")]
+    Port_A @ 0x0200: portw_1i::Port;
+    /// Port 1
+    #[all:cfg(feature = "portb_1i1")]
+    Port_1 @ 0x0200: portb_1i1::Port;
+    /// Port 2
+    #[all:cfg(feature = "portb_1i2")]
+    Port_2 @ 0x0201: portb_1i2::Port;
     /// Port B
-    #[all:cfg(feature = "port_b_1")]
-    Port_B @ 0x0220: port_b_1::PortB;
-    /// Port 3/4
-    #[all:cfg(feature = "port_3_4_4")]
-    Port_3_4 @ 0x0220: port_3_4_4::Port34;
+    #[all:cfg(feature = "portw_1")]
+    Port_B @ 0x0220: portw_1::Port;
+    /// Port 3
+    #[all:cfg(feature = "portb_1")]
+    Port_3 @ 0x0220: portb_1::Port;
+    /// Port 4
+    #[all:cfg(feature = "portb_1")]
+    Port_4 @ 0x0221: portb_1::Port;
     /// Port C
-    #[all:cfg(feature = "port_c_1")]
-    Port_C @ 0x0240: port_c_1::PortC;
+    #[all:cfg(feature = "portw_1")]
+    Port_C @ 0x0240: portw_1::Port;
     /// Port 5
-    #[all:cfg(feature = "port_5_2")]
-    Port_5 @ 0x0240: port_5_2::Port5;
+    #[all:cfg(feature = "portb_1")]
+    Port_5 @ 0x0240: portb_1::Port;
     /// Port J
     #[all:cfg(feature = "port_j_1")]
-    Port_J @ 0x0320: port_j_1::PortJ;
+    Port_J @ 0x0320: port_j_1::Port;
     /// Timer0_A5
     #[all:cfg(feature = "timer0_a5_1")]
     Timer0_A5 @ 0x0340: timer0_a5_1::Timer0_A5;

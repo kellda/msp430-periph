@@ -27,14 +27,14 @@ utils::device! {
     #[all:cfg(feature = "wdt_a")]
     WDT_A @ 0x01cc: wdt_a::WDT_A;
     /// PA
-    #[all:cfg(feature = "px")]
-    PA @ 0x0200: px::Px;
+    #[all:cfg(feature = "portw_3i")]
+    PA @ 0x0200: portw_3i::Port;
     /// P1
-    #[all:cfg(feature = "p1x")]
-    P1 @ 0x0200: p1x::P1x;
+    #[all:cfg(feature = "portb_3i1")]
+    P1 @ 0x0200: portb_3i1::Port;
     /// P2
-    #[all:cfg(feature = "p2x")]
-    P2 @ 0x0201: p2x::P2x;
+    #[all:cfg(feature = "portb_3i2")]
+    P2 @ 0x0201: portb_3i2::Port;
     /// CAPTIO
     #[all:cfg(feature = "captio")]
     CAPTIO @ 0x02ee: captio::CAPTIO;
@@ -42,8 +42,8 @@ utils::device! {
     #[all:cfg(feature = "rtc_445")]
     RTC @ 0x0300: rtc_445::RTC;
     /// PJ
-    #[all:cfg(feature = "pj_2720")]
-    PJ @ 0x0320: pj_2720::PJ;
+    #[all:cfg(feature = "portw_3_2720")]
+    PJ @ 0x0320: portw_3_2720::Port;
     /// TB0
     #[all:cfg(feature = "tb_3")]
     TB0 @ 0x0380: tb_3::TB;

@@ -10,7 +10,7 @@ utils::device! {
     Special_Function @ 0x0000: special_function_4::SpecialFunction;
     /// Port 0
     #[all:cfg(feature = "port_0_1")]
-    Port_0 @ 0x0010: port_0_1::Port0;
+    Port_0 @ 0x0010: port_0_1::Port;
     /// LCD
     #[all:cfg(feature = "lcd_1")]
     LCD @ 0x0030: lcd_1::LCD;

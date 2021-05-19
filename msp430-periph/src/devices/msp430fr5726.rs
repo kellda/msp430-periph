@@ -30,14 +30,17 @@ utils::device! {
     #[all:cfg(feature = "shared_reference_2")]
     Shared_Reference @ 0x01b0: shared_reference_2::SharedReference;
     /// Port A
-    #[all:cfg(feature = "port_a_3")]
-    Port_A @ 0x0200: port_a_3::PortA;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_7")]
-    Port_1_2 @ 0x0200: port_1_2_7::Port12;
+    #[all:cfg(feature = "portw_3i")]
+    Port_A @ 0x0200: portw_3i::Port;
+    /// Port 1
+    #[all:cfg(feature = "portb_3i1")]
+    Port_1 @ 0x0200: portb_3i1::Port;
+    /// Port 2
+    #[all:cfg(feature = "portb_3i2")]
+    Port_2 @ 0x0201: portb_3i2::Port;
     /// Port J
     #[all:cfg(feature = "port_j_4")]
-    Port_J @ 0x0320: port_j_4::PortJ;
+    Port_J @ 0x0320: port_j_4::Port;
     /// Timer0_A3
     #[all:cfg(feature = "timer0_a3_2")]
     Timer0_A3 @ 0x0340: timer0_a3_2::Timer0_A3;

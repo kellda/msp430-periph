@@ -8,15 +8,24 @@ utils::device! {
     /// Special Function
     #[all:cfg(feature = "special_function_12")]
     Special_Function @ 0x0000: special_function_12::SpecialFunction;
-    /// Port 3/4
-    #[all:cfg(feature = "port_3_4_3")]
-    Port_3_4 @ 0x0010: port_3_4_3::Port34;
-    /// Port 5/6
-    #[all:cfg(feature = "port_5_6_2")]
-    Port_5_6 @ 0x0012: port_5_6_2::Port56;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_2")]
-    Port_1_2 @ 0x0020: port_1_2_2::Port12;
+    /// Port 3
+    #[all:cfg(feature = "port_x_1")]
+    Port_3 @ 0x0010: port_x_1::Port;
+    /// Port 4
+    #[all:cfg(feature = "port_4_1")]
+    Port_4 @ 0x0011: port_4_1::Port;
+    /// Port 5
+    #[all:cfg(feature = "port_5_1")]
+    Port_5 @ 0x0012: port_5_1::Port;
+    /// Port 6
+    #[all:cfg(feature = "port_6_1")]
+    Port_6 @ 0x0013: port_6_1::Port;
+    /// Port 1
+    #[all:cfg(feature = "port_12_2")]
+    Port_1 @ 0x0020: port_12_2::Port;
+    /// Port 2
+    #[all:cfg(feature = "port_12_2")]
+    Port_2 @ 0x0028: port_12_2::Port;
     /// System Clock
     #[all:cfg(feature = "system_clock_5")]
     System_Clock @ 0x0053: system_clock_5::SystemClock;

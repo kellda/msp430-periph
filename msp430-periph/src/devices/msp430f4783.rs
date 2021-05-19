@@ -8,21 +8,39 @@ utils::device! {
     /// Special Function
     #[all:cfg(feature = "special_function_16")]
     Special_Function @ 0x0000: special_function_16::SpecialFunction;
-    /// Port 9/10
-    #[all:cfg(feature = "port_9_10_2")]
-    Port_9_10 @ 0x0008: port_9_10_2::Port910;
-    /// Port 3/4
-    #[all:cfg(feature = "port_3_4_3")]
-    Port_3_4 @ 0x0010: port_3_4_3::Port34;
+    /// Port 9
+    #[all:cfg(feature = "port_910")]
+    Port_9 @ 0x0008: port_910::Port;
+    /// Port 10
+    #[all:cfg(feature = "port_910")]
+    Port_10 @ 0x0009: port_910::Port;
+    /// Port B
+    #[all:cfg(feature = "port_b")]
+    Port_B @ 0x0008: port_b::Port;
+    /// Port 3
+    #[all:cfg(feature = "port_x_1")]
+    Port_3 @ 0x0010: port_x_1::Port;
+    /// Port 4
+    #[all:cfg(feature = "port_4_1")]
+    Port_4 @ 0x0011: port_4_1::Port;
     /// Port 5
     #[all:cfg(feature = "port_5_1")]
-    Port_5 @ 0x0012: port_5_1::Port5;
-    /// Port 7/8
-    #[all:cfg(feature = "port_7_8_2")]
-    Port_7_8 @ 0x0014: port_7_8_2::Port78;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_2")]
-    Port_1_2 @ 0x0020: port_1_2_2::Port12;
+    Port_5 @ 0x0012: port_5_1::Port;
+    /// Port 7
+    #[all:cfg(feature = "port_78")]
+    Port_7 @ 0x0014: port_78::Port;
+    /// Port 8
+    #[all:cfg(feature = "port_78")]
+    Port_8 @ 0x0015: port_78::Port;
+    /// Port A
+    #[all:cfg(feature = "port_a")]
+    Port_A @ 0x0014: port_a::Port;
+    /// Port 1
+    #[all:cfg(feature = "port_12_2")]
+    Port_1 @ 0x0020: port_12_2::Port;
+    /// Port 2
+    #[all:cfg(feature = "port_12_2")]
+    Port_2 @ 0x0028: port_12_2::Port;
     /// Basic Timer
     #[all:cfg(feature = "basic_timer")]
     Basic_Timer @ 0x0040: basic_timer::BasicTimer;

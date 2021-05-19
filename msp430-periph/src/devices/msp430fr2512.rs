@@ -27,56 +27,56 @@ utils::device! {
     #[all:cfg(feature = "wdt_a")]
     WDT_A @ 0x01cc: wdt_a::WDT_A;
     /// PA
-    #[all:cfg(feature = "px")]
-    PA @ 0x0200: px::Px;
+    #[all:cfg(feature = "portw_3i")]
+    PA @ 0x0200: portw_3i::Port;
     /// P1
-    #[all:cfg(feature = "p1x")]
-    P1 @ 0x0200: p1x::P1x;
+    #[all:cfg(feature = "portb_3i1")]
+    P1 @ 0x0200: portb_3i1::Port;
     /// P2
-    #[all:cfg(feature = "p2x")]
-    P2 @ 0x0201: p2x::P2x;
+    #[all:cfg(feature = "portb_3i2")]
+    P2 @ 0x0201: portb_3i2::Port;
     /// PB
-    #[all:cfg(feature = "px")]
-    PB @ 0x0220: px::Px;
+    #[all:cfg(feature = "portw_3i")]
+    PB @ 0x0220: portw_3i::Port;
     /// P3
-    #[all:cfg(feature = "p1x")]
-    P3 @ 0x0220: p1x::P1x;
+    #[all:cfg(feature = "portb_3i1")]
+    P3 @ 0x0220: portb_3i1::Port;
     /// P4
-    #[all:cfg(feature = "p2x")]
-    P4 @ 0x0221: p2x::P2x;
+    #[all:cfg(feature = "portb_3i2")]
+    P4 @ 0x0221: portb_3i2::Port;
     /// PC
-    #[all:cfg(feature = "px")]
-    PC @ 0x0240: px::Px;
+    #[all:cfg(feature = "portw_3i")]
+    PC @ 0x0240: portw_3i::Port;
     /// P5
-    #[all:cfg(feature = "p1x")]
-    P5 @ 0x0240: p1x::P1x;
+    #[all:cfg(feature = "portb_3i1")]
+    P5 @ 0x0240: portb_3i1::Port;
     /// P6
-    #[all:cfg(feature = "p2x")]
-    P6 @ 0x0241: p2x::P2x;
+    #[all:cfg(feature = "portb_3i2")]
+    P6 @ 0x0241: portb_3i2::Port;
     /// PD
-    #[all:cfg(feature = "px")]
-    PD @ 0x0260: px::Px;
+    #[all:cfg(feature = "portw_3i")]
+    PD @ 0x0260: portw_3i::Port;
     /// P7
-    #[all:cfg(feature = "p1x")]
-    P7 @ 0x0260: p1x::P1x;
+    #[all:cfg(feature = "portb_3i1")]
+    P7 @ 0x0260: portb_3i1::Port;
     /// P8
-    #[all:cfg(feature = "p2x")]
-    P8 @ 0x0261: p2x::P2x;
+    #[all:cfg(feature = "portb_3i2")]
+    P8 @ 0x0261: portb_3i2::Port;
     /// PE
-    #[all:cfg(feature = "px")]
-    PE @ 0x0280: px::Px;
+    #[all:cfg(feature = "portw_3i")]
+    PE @ 0x0280: portw_3i::Port;
     /// P9
-    #[all:cfg(feature = "p1x")]
-    P9 @ 0x0280: p1x::P1x;
+    #[all:cfg(feature = "portb_3i1")]
+    P9 @ 0x0280: portb_3i1::Port;
     /// P10
-    #[all:cfg(feature = "p10_2720")]
-    P10 @ 0x0281: p10_2720::P1x0;
+    #[all:cfg(feature = "portb_3i_2720")]
+    P10 @ 0x0281: portb_3i_2720::P1x0;
     /// RTC
     #[all:cfg(feature = "rtc_445")]
     RTC @ 0x0300: rtc_445::RTC;
     /// PJ
-    #[all:cfg(feature = "pj_2720")]
-    PJ @ 0x0320: pj_2720::PJ;
+    #[all:cfg(feature = "portw_3_2720")]
+    PJ @ 0x0320: portw_3_2720::Port;
     /// TA0
     #[all:cfg(feature = "ta_7")]
     TA0 @ 0x0380: ta_7::TA;

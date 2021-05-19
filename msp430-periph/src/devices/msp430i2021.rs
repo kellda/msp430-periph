@@ -9,11 +9,14 @@ utils::device! {
     #[all:cfg(feature = "special_function_20")]
     Special_Function @ 0x0000: special_function_20::SpecialFunction;
     /// Port A
-    #[all:cfg(feature = "port_a_4")]
-    Port_A @ 0x0010: port_a_4::PortA;
-    /// Port 1/2
-    #[all:cfg(feature = "port_1_2_8")]
-    Port_1_2 @ 0x0010: port_1_2_8::Port12;
+    #[all:cfg(feature = "portw_4i")]
+    Port_A @ 0x0010: portw_4i::Port;
+    /// Port 1
+    #[all:cfg(feature = "portb_4i1")]
+    Port_1 @ 0x0010: portb_4i1::Port;
+    /// Port 2
+    #[all:cfg(feature = "portb_4i2")]
+    Port_2 @ 0x0011: portb_4i2::Port;
     /// CS  Clock System
     #[all:cfg(feature = "cs_4")]
     CS @ 0x0050: cs_4::CS;

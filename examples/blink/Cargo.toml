@@ -9,8 +9,8 @@ features = [
     "msp430fr5969", 
     "watchdog_timer_2",
     "pmm_4",
-    "port_1_2_7",
-    "port_3_4_7",
+    "portb_3i1",
+    "portb_3i2",
 ]
 
 [profile.release]
