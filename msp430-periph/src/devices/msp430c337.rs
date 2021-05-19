@@ -48,8 +48,8 @@ utils::device! {
     #[all:cfg(feature = "watchdog_timer_1")]
     Watchdog_Timer @ 0x0120: watchdog_timer_1::WatchdogTimer;
     /// Timer A5
-    #[all:cfg(feature = "timer_a5_1")]
-    Timer_A5 @ 0x012e: timer_a5_1::TimerA5;
+    #[all:cfg(feature = "timer_a5_3")]
+    Timer_A5 @ 0x012e: timer_a5_3::TimerA5;
     /// Multiplier
     #[all:cfg(feature = "multiplier")]
     Multiplier @ 0x0130: multiplier::Multiplier;

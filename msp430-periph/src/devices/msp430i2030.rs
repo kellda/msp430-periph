@@ -27,8 +27,8 @@ utils::device! {
     #[all:cfg(feature = "sd24_a3_2")]
     SD24_A3 @ 0x00b0: sd24_a3_2::SD24_A3;
     /// Timer1_A3
-    #[all:cfg(feature = "timer1_a3_2")]
-    Timer1_A3 @ 0x011e: timer1_a3_2::Timer1_A3;
+    #[all:cfg(feature = "timer_a3_2")]
+    Timer1_A3 @ 0x011e: timer_a3_2::TimerA3;
     /// Watchdog Timer
     #[all:cfg(feature = "watchdog_timer_1")]
     Watchdog_Timer @ 0x0120: watchdog_timer_1::WatchdogTimer;
@@ -36,8 +36,8 @@ utils::device! {
     #[all:cfg(feature = "flash_7")]
     Flash @ 0x0128: flash_7::Flash;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_1")]
-    Timer0_A3 @ 0x012e: timer0_a3_1::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_3")]
+    Timer0_A3 @ 0x012e: timer_a3_3::TimerA3;
     /// Multiplier
     #[all:cfg(feature = "multiplier")]
     Multiplier @ 0x0130: multiplier::Multiplier;

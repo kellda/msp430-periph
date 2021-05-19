@@ -75,17 +75,17 @@ utils::device! {
     #[all:cfg(feature = "port_j_1")]
     Port_J @ 0x0320: port_j_1::Port;
     /// Timer0_A5
-    #[all:cfg(feature = "timer0_a5_1")]
-    Timer0_A5 @ 0x0340: timer0_a5_1::Timer0_A5;
+    #[all:cfg(feature = "timer_a5_1")]
+    Timer0_A5 @ 0x0340: timer_a5_1::TimerA5;
     /// Timer1_A3
-    #[all:cfg(feature = "timer1_a3_1")]
-    Timer1_A3 @ 0x0380: timer1_a3_1::Timer1_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer1_A3 @ 0x0380: timer_a3_1::TimerA3;
     /// Timer0_B7
-    #[all:cfg(feature = "timer0_b7_1")]
-    Timer0_B7 @ 0x03c0: timer0_b7_1::Timer0_B7;
+    #[all:cfg(feature = "timer_b7_1")]
+    Timer0_B7 @ 0x03c0: timer_b7_1::TimerB7;
     /// Timer2_A3
-    #[all:cfg(feature = "timer2_a3_1")]
-    Timer2_A3 @ 0x0400: timer2_a3_1::Timer2_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer2_A3 @ 0x0400: timer_a3_1::TimerA3;
     /// RTC  Real Time Clock
     #[all:cfg(feature = "rtc_1")]
     RTC @ 0x04a0: rtc_1::RTC;

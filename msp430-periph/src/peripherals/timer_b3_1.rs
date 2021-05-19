@@ -3,20 +3,15 @@
 utils::periph! {
     /// Timer B3
     TimerB3;
-    /// Timer B Interrupt Vector Word
-    rw TBIV @ 0x00: u16 = 0_0 {
-        /// Timer B Interrupt Vector Word
-        TBIV: 0..15 = struct TBIVField(u16);
-    }
-    /// Timer B Control
-    rw TBCTL @ 0x62: u16 = 0_0 {
-        /// Timer B interrupt flag
+    /// Timer B3 Control
+    rw TBCTL @ 0x00: u16 = 0_0 {
+        /// Timer0_B7 interrupt flag
         TBIFG: 0 = struct TBIFG(bool);
-        /// Timer B interrupt enable
+        /// Timer0_B7 interrupt enable
         TBIE: 1 = struct TBIE(bool);
-        /// Timer B counter clear
+        /// Timer0_B7 counter clear
         TBCLR: 2 = struct TBCLR(bool);
-        /// Timer B mode control 1
+        /// Timer0_B7 mode control 1
         MC: 4..5 = enum MC {
             /// Timer A mode control: 0 - Stop
             MC_0 = 0b00,
@@ -27,7 +22,7 @@ utils::periph! {
             /// Timer A mode control: 3 - Up/Down
             MC_3 = 0b11,
         }
-        /// Timer B clock input divider 1
+        /// Timer0_B7 clock input divider 1
         ID: 6..7 = enum ID {
             /// Timer A input divider: 0 - /1
             ID_0 = 0b00,
@@ -60,20 +55,20 @@ utils::periph! {
             /// Counter lenght:  8 bit
             CNTL_3 = 0b11,
         }
-        /// Timer B Compare latch load group 1
+        /// Timer0_B7 Compare latch load group 1
         TBCLGRP: 13..14 = enum TBCLGRP {
-            /// Timer B Group: 0 - individually
+            /// Timer0_B7 Group: 0 - individually
             TBCLGRP_0 = 0b00,
-            /// Timer B Group: 1 - 3 groups (1-2
+            /// Timer0_B7 Group: 1 - 3 groups (1-2
             TBCLGRP_1 = 0b01,
-            /// Timer B Group: 2 - 2 groups (1-3
+            /// Timer0_B7 Group: 2 - 2 groups (1-3
             TBCLGRP_2 = 0b10,
-            /// Timer B Group: 3 - 1 group (all)
+            /// Timer0_B7 Group: 3 - 1 group (all)
             TBCLGRP_3 = 0b11,
         }
     }
-    /// Timer B Capture/Compare Control 0
-    rw TBCCTL0 @ 0x64: u16 = 0_0 {
+    /// Timer B3 Capture/Compare Control 0
+    rw TBCCTL0 @ 0x02: u16 = 0_0 {
         /// Capture/compare interrupt flag
         TBCCTL0_CCIFG: 0 = struct TBCCTL0_CCIFG(bool);
         /// Capture/compare overflow flag
@@ -141,8 +136,8 @@ utils::periph! {
             CM_3 = 0b11,
         }
     }
-    /// Timer B Capture/Compare Control 1
-    rw TBCCTL1 @ 0x66: u16 = 0_0 {
+    /// Timer B3 Capture/Compare Control 1
+    rw TBCCTL1 @ 0x04: u16 = 0_0 {
         /// Capture/compare interrupt flag
         TBCCTL1_CCIFG: 0 = struct TBCCTL1_CCIFG(bool);
         /// Capture/compare overflow flag
@@ -210,8 +205,8 @@ utils::periph! {
             CM_3 = 0b11,
         }
     }
-    /// Timer B Capture/Compare Control 2
-    rw TBCCTL2 @ 0x68: u16 = 0_0 {
+    /// Timer B3 Capture/Compare Control 2
+    rw TBCCTL2 @ 0x06: u16 = 0_0 {
         /// Capture/compare interrupt flag
         TBCCTL2_CCIFG: 0 = struct TBCCTL2_CCIFG(bool);
         /// Capture/compare overflow flag
@@ -279,24 +274,51 @@ utils::periph! {
             CM_3 = 0b11,
         }
     }
-    /// Timer B Counter Register
-    rw TBR @ 0x72: u16 = 0_0 {
-        /// Timer B Counter Register
+    /// Timer B3
+    rw TBR @ 0x10: u16 = 0_0 {
+        /// Timer B3
         TBR: 0..15 = struct TBRField(u16);
     }
-    /// Timer B Capture/Compare 0
-    rw TBCCR0 @ 0x74: u16 = 0_0 {
-        /// Timer B Capture/Compare 0
+    /// Timer B3 Capture/Compare 0
+    rw TBCCR0 @ 0x12: u16 = 0_0 {
+        /// Timer B3 Capture/Compare 0
         TBCCR0: 0..15 = struct TBCCR0Field(u16);
     }
-    /// Timer B Capture/Compare 1
-    rw TBCCR1 @ 0x76: u16 = 0_0 {
-        /// Timer B Capture/Compare 1
+    /// Timer B3 Capture/Compare 1
+    rw TBCCR1 @ 0x14: u16 = 0_0 {
+        /// Timer B3 Capture/Compare 1
         TBCCR1: 0..15 = struct TBCCR1Field(u16);
     }
-    /// Timer B Capture/Compare 2
-    rw TBCCR2 @ 0x78: u16 = 0_0 {
-        /// Timer B Capture/Compare 2
+    /// Timer B3 Capture/Compare 2
+    rw TBCCR2 @ 0x16: u16 = 0_0 {
+        /// Timer B3 Capture/Compare 2
         TBCCR2: 0..15 = struct TBCCR2Field(u16);
+    }
+    /// Timer B3 Interrupt Vector Word
+    rw TBIV @ 0x2e: u16 = 0_0 {
+        /// Timer B3 Interrupt Vector Word
+        TBIV: 0..15 = struct TBIVField(u16);
+    }
+    /// Timer B3 Expansion Register 0
+    rw TBEX0 @ 0x20: u16 = 0_0 {
+        /// Timer0_B7 Input divider expansion Bit: 0
+        TBIDEX: 0..2 = enum TBIDEX {
+            /// Timer0_B7 Input divider expansion : /1
+            TBIDEX_0 = 0b000,
+            /// Timer0_B7 Input divider expansion : /2
+            TBIDEX_1 = 0b001,
+            /// Timer0_B7 Input divider expansion : /3
+            TBIDEX_2 = 0b010,
+            /// Timer0_B7 Input divider expansion : /4
+            TBIDEX_3 = 0b011,
+            /// Timer0_B7 Input divider expansion : /5
+            TBIDEX_4 = 0b100,
+            /// Timer0_B7 Input divider expansion : /6
+            TBIDEX_5 = 0b101,
+            /// Timer0_B7 Input divider expansion : /7
+            TBIDEX_6 = 0b110,
+            /// Timer0_B7 Input divider expansion : /8
+            TBIDEX_7 = 0b111,
+        }
     }
 }

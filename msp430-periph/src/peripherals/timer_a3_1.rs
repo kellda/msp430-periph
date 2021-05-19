@@ -3,13 +3,8 @@
 utils::periph! {
     /// Timer A3
     TimerA3;
-    /// Timer A Interrupt Vector Word
-    rw TAIV @ 0x00: u16 = 0_0 {
-        /// Timer A Interrupt Vector Word
-        TAIV: 0..15 = struct TAIVField(u16);
-    }
-    /// Timer A Control
-    rw TACTL @ 0x32: u16 = 0_0 {
+    /// Timer A3 Control
+    rw TACTL @ 0x00: u16 = 0_0 {
         /// Timer A counter interrupt flag
         TAIFG: 0 = struct TAIFG(bool);
         /// Timer A counter interrupt enable
@@ -50,8 +45,8 @@ utils::periph! {
             TASSEL_3 = 0b11,
         }
     }
-    /// Timer A Capture/Compare Control 0
-    rw TACCTL0 @ 0x34: u16 = 0_0 {
+    /// Timer A3 Capture/Compare Control 0
+    rw TACCTL0 @ 0x02: u16 = 0_0 {
         /// Capture/compare interrupt flag
         TACCTL0_CCIFG: 0 = struct TACCTL0_CCIFG(bool);
         /// Capture/compare overflow flag
@@ -110,8 +105,8 @@ utils::periph! {
             CM_3 = 0b11,
         }
     }
-    /// Timer A Capture/Compare Control 1
-    rw TACCTL1 @ 0x36: u16 = 0_0 {
+    /// Timer A3 Capture/Compare Control 1
+    rw TACCTL1 @ 0x04: u16 = 0_0 {
         /// Capture/compare interrupt flag
         TACCTL1_CCIFG: 0 = struct TACCTL1_CCIFG(bool);
         /// Capture/compare overflow flag
@@ -170,8 +165,8 @@ utils::periph! {
             CM_3 = 0b11,
         }
     }
-    /// Timer A Capture/Compare Control 2
-    rw TACCTL2 @ 0x38: u16 = 0_0 {
+    /// Timer A3 Capture/Compare Control 2
+    rw TACCTL2 @ 0x06: u16 = 0_0 {
         /// Capture/compare interrupt flag
         TACCTL2_CCIFG: 0 = struct TACCTL2_CCIFG(bool);
         /// Capture/compare overflow flag
@@ -230,24 +225,51 @@ utils::periph! {
             CM_3 = 0b11,
         }
     }
-    /// Timer A Counter Register
-    rw TAR @ 0x42: u16 = 0_0 {
-        /// Timer A Counter Register
+    /// Timer A3
+    rw TAR @ 0x10: u16 = 0_0 {
+        /// Timer A3
         TAR: 0..15 = struct TARField(u16);
     }
-    /// Timer A Capture/Compare 0
-    rw TACCR0 @ 0x44: u16 = 0_0 {
-        /// Timer A Capture/Compare 0
+    /// Timer A3 Capture/Compare 0
+    rw TACCR0 @ 0x12: u16 = 0_0 {
+        /// Timer A3 Capture/Compare 0
         TACCR0: 0..15 = struct TACCR0Field(u16);
     }
-    /// Timer A Capture/Compare 1
-    rw TACCR1 @ 0x46: u16 = 0_0 {
-        /// Timer A Capture/Compare 1
+    /// Timer A3 Capture/Compare 1
+    rw TACCR1 @ 0x14: u16 = 0_0 {
+        /// Timer A3 Capture/Compare 1
         TACCR1: 0..15 = struct TACCR1Field(u16);
     }
-    /// Timer A Capture/Compare 2
-    rw TACCR2 @ 0x48: u16 = 0_0 {
-        /// Timer A Capture/Compare 2
+    /// Timer A3 Capture/Compare 2
+    rw TACCR2 @ 0x16: u16 = 0_0 {
+        /// Timer A3 Capture/Compare 2
         TACCR2: 0..15 = struct TACCR2Field(u16);
+    }
+    /// Timer A3 Interrupt Vector Word
+    rw TAIV @ 0x2e: u16 = 0_0 {
+        /// Timer A3 Interrupt Vector Word
+        TAIV: 0..15 = struct TAIVField(u16);
+    }
+    /// Timer A3 Expansion Register 0
+    rw TAEX0 @ 0x20: u16 = 0_0 {
+        /// Timer A Input divider expansion Bit: 0
+        TAIDEX: 0..2 = enum TAIDEX {
+            /// Timer A Input divider expansion : /1
+            TAIDEX_0 = 0b000,
+            /// Timer A Input divider expansion : /2
+            TAIDEX_1 = 0b001,
+            /// Timer A Input divider expansion : /3
+            TAIDEX_2 = 0b010,
+            /// Timer A Input divider expansion : /4
+            TAIDEX_3 = 0b011,
+            /// Timer A Input divider expansion : /5
+            TAIDEX_4 = 0b100,
+            /// Timer A Input divider expansion : /6
+            TAIDEX_5 = 0b101,
+            /// Timer A Input divider expansion : /7
+            TAIDEX_6 = 0b110,
+            /// Timer A Input divider expansion : /8
+            TAIDEX_7 = 0b111,
+        }
     }
 }

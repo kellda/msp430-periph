@@ -63,8 +63,8 @@ utils::device! {
     #[all:cfg(feature = "port_j_2")]
     Port_J @ 0x0320: port_j_2::Port;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_2")]
-    Timer0_A3 @ 0x03c0: timer0_a3_2::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer0_A3 @ 0x03c0: timer_a3_1::TimerA3;
     /// MPY 16  Multiplier  16 Bit Mode
     #[all:cfg(feature = "mpy_16")]
     MPY_16 @ 0x04c0: mpy_16::MPY16;
@@ -93,11 +93,11 @@ utils::device! {
     #[all:cfg(feature = "comparator_b")]
     Comparator_B @ 0x08c0: comparator_b::ComparatorB;
     /// Timer0_D3
-    #[all:cfg(feature = "timer0_d3_1")]
-    Timer0_D3 @ 0x0b00: timer0_d3_1::Timer0_D3;
+    #[all:cfg(feature = "timer_d3_1")]
+    Timer0_D3 @ 0x0b00: timer_d3_1::TimerD3;
     /// Timer1_D3
-    #[all:cfg(feature = "timer1_d3_1")]
-    Timer1_D3 @ 0x0b40: timer1_d3_1::Timer1_D3;
+    #[all:cfg(feature = "timer_d3_1")]
+    Timer1_D3 @ 0x0b40: timer_d3_1::TimerD3;
     /// Timer_Event_Control
     #[all:cfg(feature = "timer_event_control")]
     Timer_Event_Control @ 0x0c00: timer_event_control::Timer_Event_Control;

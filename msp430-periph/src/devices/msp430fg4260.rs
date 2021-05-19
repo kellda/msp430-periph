@@ -42,8 +42,8 @@ utils::device! {
     #[all:cfg(feature = "flash_1")]
     Flash @ 0x0128: flash_1::Flash;
     /// Timer A3
-    #[all:cfg(feature = "timer_a3_1")]
-    Timer_A3 @ 0x012e: timer_a3_1::TimerA3;
+    #[all:cfg(feature = "timer_a3_3")]
+    Timer_A3 @ 0x012e: timer_a3_3::TimerA3;
     /// DAC12
     #[all:cfg(feature = "dac12_3")]
     DAC12 @ 0x01c0: dac12_3::DAC12;

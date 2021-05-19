@@ -48,8 +48,8 @@ utils::device! {
     #[all:cfg(feature = "flash_1")]
     Flash @ 0x0128: flash_1::Flash;
     /// Timer A3
-    #[all:cfg(feature = "timer_a3_1")]
-    Timer_A3 @ 0x012e: timer_a3_1::TimerA3;
+    #[all:cfg(feature = "timer_a3_3")]
+    Timer_A3 @ 0x012e: timer_a3_3::TimerA3;
     /// Multiplier
     #[all:cfg(feature = "multiplier")]
     Multiplier @ 0x0130: multiplier::Multiplier;

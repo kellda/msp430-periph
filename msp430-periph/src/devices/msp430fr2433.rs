@@ -45,17 +45,17 @@ utils::device! {
     #[all:cfg(feature = "realtime_clock")]
     RealTime_Clock @ 0x0300: realtime_clock::RealTimeClock;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_2")]
-    Timer0_A3 @ 0x0380: timer0_a3_2::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer0_A3 @ 0x0380: timer_a3_1::TimerA3;
     /// Timer1_A3
-    #[all:cfg(feature = "timer1_a3_1")]
-    Timer1_A3 @ 0x03c0: timer1_a3_1::Timer1_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer1_A3 @ 0x03c0: timer_a3_1::TimerA3;
     /// Timer2_A2
-    #[all:cfg(feature = "timer2_a2_1")]
-    Timer2_A2 @ 0x0400: timer2_a2_1::Timer2_A2;
+    #[all:cfg(feature = "timer_a2_1")]
+    Timer2_A2 @ 0x0400: timer_a2_1::TimerA2;
     /// Timer3_A2
-    #[all:cfg(feature = "timer3_a2_1")]
-    Timer3_A2 @ 0x0440: timer3_a2_1::Timer3_A2;
+    #[all:cfg(feature = "timer_a2_1")]
+    Timer3_A2 @ 0x0440: timer_a2_1::TimerA2;
     /// MPY 16  Multiplier  16 Bit Mode
     #[all:cfg(feature = "mpy_16")]
     MPY_16 @ 0x04c0: mpy_16::MPY16;

@@ -33,8 +33,8 @@ utils::device! {
     #[all:cfg(feature = "usci_b_i2c_1")]
     USCI_B0_I2C @ 0x0068: usci_b_i2c_1::USCI_B_I2C;
     /// Timer1_A3
-    #[all:cfg(feature = "timer1_a3_2")]
-    Timer1_A3 @ 0x011e: timer1_a3_2::Timer1_A3;
+    #[all:cfg(feature = "timer_a3_2")]
+    Timer1_A3 @ 0x011e: timer_a3_2::TimerA3;
     /// Watchdog Timer
     #[all:cfg(feature = "watchdog_timer_1")]
     Watchdog_Timer @ 0x0120: watchdog_timer_1::WatchdogTimer;
@@ -42,8 +42,8 @@ utils::device! {
     #[all:cfg(feature = "flash_3")]
     Flash @ 0x0128: flash_3::Flash;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_1")]
-    Timer0_A3 @ 0x012e: timer0_a3_1::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_3")]
+    Timer0_A3 @ 0x012e: timer_a3_3::TimerA3;
     /// TLV Calibration Data
     #[all:cfg(feature = "tlv_calibration_data_1")]
     TLV_Calibration_Data @ 0x10c0: tlv_calibration_data_1::TLVCalibrationData;

@@ -99,17 +99,17 @@ utils::device! {
     #[all:cfg(feature = "port_j_3")]
     Port_J @ 0x0320: port_j_3::Port;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_2")]
-    Timer0_A3 @ 0x0340: timer0_a3_2::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer0_A3 @ 0x0340: timer_a3_1::TimerA3;
     /// Timer1_A2
-    #[all:cfg(feature = "timer1_a2_2")]
-    Timer1_A2 @ 0x0380: timer1_a2_2::Timer1_A2;
+    #[all:cfg(feature = "timer_a2_1")]
+    Timer1_A2 @ 0x0380: timer_a2_1::TimerA2;
     /// Timer2_A2
-    #[all:cfg(feature = "timer2_a2_1")]
-    Timer2_A2 @ 0x0400: timer2_a2_1::Timer2_A2;
+    #[all:cfg(feature = "timer_a2_1")]
+    Timer2_A2 @ 0x0400: timer_a2_1::TimerA2;
     /// Timer3_A2
-    #[all:cfg(feature = "timer3_a2_1")]
-    Timer3_A2 @ 0x0440: timer3_a2_1::Timer3_A2;
+    #[all:cfg(feature = "timer_a2_1")]
+    Timer3_A2 @ 0x0440: timer_a2_1::TimerA2;
     /// Backup RAM
     #[all:cfg(feature = "backup_ram")]
     Backup_RAM @ 0x0480: backup_ram::BackupRAM;

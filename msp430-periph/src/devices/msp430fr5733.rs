@@ -51,20 +51,20 @@ utils::device! {
     #[all:cfg(feature = "port_j_4")]
     Port_J @ 0x0320: port_j_4::Port;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_2")]
-    Timer0_A3 @ 0x0340: timer0_a3_2::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer0_A3 @ 0x0340: timer_a3_1::TimerA3;
     /// Timer1_A3
-    #[all:cfg(feature = "timer1_a3_1")]
-    Timer1_A3 @ 0x0380: timer1_a3_1::Timer1_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer1_A3 @ 0x0380: timer_a3_1::TimerA3;
     /// Timer0_B3
-    #[all:cfg(feature = "timer0_b3_1")]
-    Timer0_B3 @ 0x03c0: timer0_b3_1::Timer0_B3;
+    #[all:cfg(feature = "timer_b3_1")]
+    Timer0_B3 @ 0x03c0: timer_b3_1::TimerB3;
     /// Timer1_B3
-    #[all:cfg(feature = "timer1_b3_1")]
-    Timer1_B3 @ 0x0400: timer1_b3_1::Timer1_B3;
+    #[all:cfg(feature = "timer_b3_1")]
+    Timer1_B3 @ 0x0400: timer_b3_1::TimerB3;
     /// Timer2_B3
-    #[all:cfg(feature = "timer2_b3_1")]
-    Timer2_B3 @ 0x0440: timer2_b3_1::Timer2_B3;
+    #[all:cfg(feature = "timer_b3_1")]
+    Timer2_B3 @ 0x0440: timer_b3_1::TimerB3;
     /// RTC_B  Real Time Clock
     #[all:cfg(feature = "rtc_b")]
     RTC_B @ 0x04a0: rtc_b::RTC_B;

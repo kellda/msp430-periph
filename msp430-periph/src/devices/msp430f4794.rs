@@ -84,8 +84,8 @@ utils::device! {
     #[all:cfg(feature = "usci_b_i2c_3")]
     USCI_B1_I2C @ 0x00d8: usci_b_i2c_3::USCI_B_I2C;
     /// Timer B3
-    #[all:cfg(feature = "timer_b3_1")]
-    Timer_B3 @ 0x011e: timer_b3_1::TimerB3;
+    #[all:cfg(feature = "timer_b3_2")]
+    Timer_B3 @ 0x011e: timer_b3_2::TimerB3;
     /// Watchdog Timer
     #[all:cfg(feature = "watchdog_timer_1")]
     Watchdog_Timer @ 0x0120: watchdog_timer_1::WatchdogTimer;
@@ -93,8 +93,8 @@ utils::device! {
     #[all:cfg(feature = "flash_5")]
     Flash @ 0x0128: flash_5::Flash;
     /// Timer A3
-    #[all:cfg(feature = "timer_a3_1")]
-    Timer_A3 @ 0x012e: timer_a3_1::TimerA3;
+    #[all:cfg(feature = "timer_a3_3")]
+    Timer_A3 @ 0x012e: timer_a3_3::TimerA3;
     /// Multiplier  16 Bit Mode
     #[all:cfg(feature = "multiplier_16")]
     Multiplier_16 @ 0x0130: multiplier_16::Multiplier16;

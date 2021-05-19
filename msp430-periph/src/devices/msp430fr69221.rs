@@ -75,23 +75,23 @@ utils::device! {
     #[all:cfg(feature = "port_j_5")]
     Port_J @ 0x0320: port_j_5::Port;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_2")]
-    Timer0_A3 @ 0x0340: timer0_a3_2::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer0_A3 @ 0x0340: timer_a3_1::TimerA3;
     /// Timer1_A3
-    #[all:cfg(feature = "timer1_a3_1")]
-    Timer1_A3 @ 0x0380: timer1_a3_1::Timer1_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer1_A3 @ 0x0380: timer_a3_1::TimerA3;
     /// Timer0_B7
-    #[all:cfg(feature = "timer0_b7_1")]
-    Timer0_B7 @ 0x03c0: timer0_b7_1::Timer0_B7;
+    #[all:cfg(feature = "timer_b7_1")]
+    Timer0_B7 @ 0x03c0: timer_b7_1::TimerB7;
     /// Timer2_A2
-    #[all:cfg(feature = "timer2_a2_1")]
-    Timer2_A2 @ 0x0400: timer2_a2_1::Timer2_A2;
+    #[all:cfg(feature = "timer_a2_1")]
+    Timer2_A2 @ 0x0400: timer_a2_1::TimerA2;
     /// Capacitive_Touch_IO 0
     #[all:cfg(feature = "capacitive_touch_io")]
     Capacitive_Touch_IO_0 @ 0x043e: capacitive_touch_io::Capacitive_Touch_IO;
     /// Timer3_A5
-    #[all:cfg(feature = "timer3_a5_1")]
-    Timer3_A5 @ 0x0440: timer3_a5_1::Timer3_A5;
+    #[all:cfg(feature = "timer_a5_1")]
+    Timer3_A5 @ 0x0440: timer_a5_1::TimerA5;
     /// Capacitive_Touch_IO 1
     #[all:cfg(feature = "capacitive_touch_io")]
     Capacitive_Touch_IO_1 @ 0x047e: capacitive_touch_io::Capacitive_Touch_IO;

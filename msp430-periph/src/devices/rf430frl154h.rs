@@ -33,8 +33,8 @@ utils::device! {
     #[all:cfg(feature = "portb_2i2")]
     Port_2 @ 0x0201: portb_2i2::Port;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_2")]
-    Timer0_A3 @ 0x0340: timer0_a3_2::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer0_A3 @ 0x0340: timer_a3_1::TimerA3;
     /// USCI_B0  SPI Mode
     #[all:cfg(feature = "usci_b_spi_3")]
     USCI_B0_SPI @ 0x0640: usci_b_spi_3::USCI_B_SPI;

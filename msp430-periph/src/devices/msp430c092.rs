@@ -30,9 +30,9 @@ utils::device! {
     #[all:cfg(feature = "portb_2i2")]
     Port_2 @ 0x0201: portb_2i2::Port;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_2")]
-    Timer0_A3 @ 0x0340: timer0_a3_2::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer0_A3 @ 0x0340: timer_a3_1::TimerA3;
     /// Timer1_A3
-    #[all:cfg(feature = "timer1_a3_1")]
-    Timer1_A3 @ 0x0380: timer1_a3_1::Timer1_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer1_A3 @ 0x0380: timer_a3_1::TimerA3;
 }

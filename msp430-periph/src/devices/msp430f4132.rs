@@ -60,8 +60,8 @@ utils::device! {
     #[all:cfg(feature = "lcd_a_1")]
     LCD_A @ 0x0090: lcd_a_1::LCD_A;
     /// Timer1_A5
-    #[all:cfg(feature = "timer1_a5_1")]
-    Timer1_A5 @ 0x011e: timer1_a5_1::Timer1_A5;
+    #[all:cfg(feature = "timer_a5_2")]
+    Timer1_A5 @ 0x011e: timer_a5_2::TimerA5;
     /// Watchdog Timer
     #[all:cfg(feature = "watchdog_timer_1")]
     Watchdog_Timer @ 0x0120: watchdog_timer_1::WatchdogTimer;
@@ -69,6 +69,6 @@ utils::device! {
     #[all:cfg(feature = "flash_4")]
     Flash @ 0x0128: flash_4::Flash;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_1")]
-    Timer0_A3 @ 0x012e: timer0_a3_1::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_3")]
+    Timer0_A3 @ 0x012e: timer_a3_3::TimerA3;
 }

@@ -66,11 +66,11 @@ utils::device! {
     #[all:cfg(feature = "capacitive_touch_io")]
     Capacitive_Touch_IO_0 @ 0x02ee: capacitive_touch_io::Capacitive_Touch_IO;
     /// Timer0_A3
-    #[all:cfg(feature = "timer0_a3_2")]
-    Timer0_A3 @ 0x0300: timer0_a3_2::Timer0_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer0_A3 @ 0x0300: timer_a3_1::TimerA3;
     /// Timer1_A3
-    #[all:cfg(feature = "timer1_a3_1")]
-    Timer1_A3 @ 0x0340: timer1_a3_1::Timer1_A3;
+    #[all:cfg(feature = "timer_a3_1")]
+    Timer1_A3 @ 0x0340: timer_a3_1::TimerA3;
     /// Real-Time Clock
     #[all:cfg(feature = "realtime_clock")]
     RealTime_Clock @ 0x03c0: realtime_clock::RealTimeClock;

@@ -30,8 +30,8 @@ utils::device! {
     #[all:cfg(feature = "flash_3")]
     Flash @ 0x0128: flash_3::Flash;
     /// Timer A2
-    #[all:cfg(feature = "timer_a2_1")]
-    Timer_A2 @ 0x012e: timer_a2_1::TimerA2;
+    #[all:cfg(feature = "timer_a2_3")]
+    Timer_A2 @ 0x012e: timer_a2_3::TimerA2;
     /// Calibration Data
     #[all:cfg(feature = "calibration_data_2")]
     Calibration_Data @ 0x10fe: calibration_data_2::CalibrationData;
