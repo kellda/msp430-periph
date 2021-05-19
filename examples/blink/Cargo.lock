@@ -11,7 +11,7 @@ dependencies = [
 
 [[package]]
 name = "msp430-periph"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "peripherals",
 ]
