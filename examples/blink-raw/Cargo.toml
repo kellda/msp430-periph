@@ -1,0 +1,22 @@
+[package]
+name = "blink-raw"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies.msp430-periph]
+path = "../../msp430-periph"
+features = [
+    "msp430fr5969",     # The microcontroller we use
+    "watchdog_timer_2", # The peripherals we need
+    "pmm_4",
+    "portb_3i1",
+    "portb_3i2",
+]
+
+[profile.dev]
+# Optimisations for debug runs goes here
+
+[profile.release]
+opt-level = "s"   # Optimize for size over speed
+codegen-units = 1 # Better optimizations but slower compilation
+lto = "fat"       # Allows to inline any function accross crate boundary

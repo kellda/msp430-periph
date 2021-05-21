@@ -4,7 +4,9 @@ This directory contains example programs using the `msp430-periph` crate. There 
 MSP430FR5969 LaunchPad, which has LEDs on pins P1.0 and P4.6, as well as push buttons on pins P1.1
 and P4.5.
 
-- `blink`: Blink alternatively both LEDs
+- `blink-raw`: Blink alternatively both LEDs, along with a minimal runtime
+- `blink-rt`: Blink alternatively both LEDs, using the `msp430-rt` crate
+- `blink-interrupt`: Blink alternatively both LEDs, using a timer and an interrupt
 
 # License
 

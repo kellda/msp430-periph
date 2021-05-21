@@ -8,7 +8,7 @@ Add this crate to your dependencies:
 
 ```
 [dependencies.msp430-periph]
-version = "0.0.1"
+version = "0.0.3"
 ```
 
 Then add the features you need, e.g.
@@ -19,9 +19,9 @@ features = [
     "msp430fr5969",
     # every peripheral you need
     "watchdog_timer_2",
-    "pmm__power_management_system_4",
-    "port_1_2_7",
-    "port_3_4_7",
+    "pmm_4",
+    "portb_3i1",
+    "portb_3i2",
 ]
 ```
 
@@ -31,10 +31,7 @@ or append `-all` to the microcontroller feature to enable all peripherals from t
 features = [ "msp430fr5969-all" ]
 ```
 
-# Note
-
-This is currently the raw output converted from DSLite files. The hope is that errors from DSLite files
-can be fixed directly in the generated code, and that peripherals similar enought can be merged.
+To use with the `msp430-rt` runtime, also enable the `rt` feature. No `memory.x` files are needed.
 
 # License
 

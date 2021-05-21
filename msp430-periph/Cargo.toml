@@ -1,6 +1,6 @@
 [package]
 name = "msp430-periph"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["kellda <damikefr@gmail.com>"]
 edition = "2018"
 description = "Peripheral definition for all MSP430s"
@@ -11,9 +11,11 @@ categories = ["hardware-support", "embedded", "no-std"]
 
 [dependencies]
 utils = { version = "0.0.3", package = "peripherals" }
+msp430-rt = { version = "0.2.4", optional = true }
 
 [features]
 default = []
+rt = ["msp430-rt/device"]
 
 # Peripheral feature flags
 _8bit_timer_counter_1 = []
@@ -3759,6 +3761,20 @@ msp430fr2633-all = [
     "portb_6i1", "portb_6i2", "portw_6", "portb_6", "realtime_clock", "timer_a3_1", "timer_a3_1", "timer_a2_1", "timer_a2_1", "mpy_16", "mpy_32",
     "usci_a_uart_3", "usci_a_spi_3", "usci_a_uart_3", "usci_a_spi_3", "usci_b_spi_3", "usci_b_i2c_5", "backup_memory", "adc_2", "captivate",
 ]
+msp430fr2672 = []
+msp430fr2672-all = [
+   "msp430fr2672",
+ "sfr_4", "pmm_445", "sys_10", "cs_445", "frctl", "crc16_2", "wdt_a", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1",
+    "portb_3i2", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i", "rtc_445", "portw_3", "ta_3", "ta_3", "ta_3", "ta_3", "tb_7",
+    "mpy32", "eusci_a", "eusci_a", "eusci_b", "eusci_b", "backup_memory", "adc_3", "ecomp", "captivate",
+]
+msp430fr2673 = []
+msp430fr2673-all = [
+   "msp430fr2673",
+ "sfr_4", "pmm_445", "sys_10", "cs_445", "frctl", "crc16_2", "wdt_a", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1",
+    "portb_3i2", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i", "rtc_445", "portw_3", "ta_3", "ta_3", "ta_3", "ta_3", "tb_7",
+    "mpy32", "eusci_a", "eusci_a", "eusci_b", "eusci_b", "backup_memory", "adc_3", "ecomp", "captivate",
+]
 msp430fr2675 = []
 msp430fr2675-all = [
    "msp430fr2675",
@@ -4336,6 +4352,22 @@ msp430fr59941-all = [
     "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i2", "portw_3", "ta_3", "ta_3", "tb_7", "ta_2", "captio",
     "ta_2", "captio", "rtc_c_2080", "mpy32", "mpu_3", "eusci_a", "eusci_a", "eusci_a", "eusci_a", "eusci_b", "eusci_b", "eusci_b",
     "eusci_b", "ta_3", "adc12_b", "comp_e", "crc32_2", "aes256", "lea",
+]
+msp430fr6005 = []
+msp430fr6005-all = [
+   "msp430fr6005",
+ "sfr_3", "pmm_3670", "frctl_a", "crc16_2", "ramctl_2", "wdt_a", "cs_3670", "sys_2080", "ref_a", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i",
+    "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i", "portw_3", "ta_3", "ta_3", "tb_7",
+    "ta_2", "captio", "ta_2", "captio", "rtc_c_2080", "mpy32", "mpu_3", "eusci_a", "eusci_a", "eusci_a", "eusci_a", "eusci_b",
+    "eusci_b", "ta_2", "adc12_b", "comp_e", "crc32_2", "aes256", "lcd_c_3", "lea", "saph", "sdhs_3670", "uups", "hspll",
+]
+msp430fr6007 = []
+msp430fr6007-all = [
+   "msp430fr6007",
+ "sfr_3", "pmm_3670", "frctl_a", "crc16_2", "ramctl_2", "wdt_a", "cs_3670", "sys_2080", "ref_a", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i",
+    "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i2", "portw_3i", "portb_3i1", "portb_3i", "portw_3", "ta_3", "ta_3", "tb_7",
+    "ta_2", "captio", "ta_2", "captio", "rtc_c_2080", "mpy32", "mpu_3", "eusci_a", "eusci_a", "eusci_a", "eusci_a", "eusci_b",
+    "eusci_b", "ta_2", "adc12_b", "comp_e", "crc32_2", "aes256", "lcd_c_3", "lea", "saph", "sdhs_3670", "uups", "hspll",
 ]
 msp430fr6035 = []
 msp430fr6035-all = [
@@ -5144,13 +5176,13 @@ device-all = [
     "msp430fe425a", "msp430fe427", "msp430fe4272", "msp430fe427a", "msp430fg4250", "msp430fg4260", "msp430fg4270", "msp430fg437", "msp430fg438", "msp430fg439", "msp430fg4616", "msp430fg4617",
     "msp430fg4618", "msp430fg4619", "msp430fg477", "msp430fg478", "msp430fg479", "msp430fg6425", "msp430fg6426", "msp430fg6625", "msp430fg6626", "msp430fr2000", "msp430fr2032", "msp430fr2033",
     "msp430fr2100", "msp430fr2110", "msp430fr2111", "msp430fr2153", "msp430fr2155", "msp430fr2310", "msp430fr2311", "msp430fr2353", "msp430fr2355", "msp430fr2422", "msp430fr2433", "msp430fr2475",
-    "msp430fr2476", "msp430fr2512", "msp430fr2522", "msp430fr2532", "msp430fr2533", "msp430fr2632", "msp430fr2633", "msp430fr2675", "msp430fr2676", "msp430fr4131", "msp430fr4132", "msp430fr4133",
+    "msp430fr2476", "msp430fr2512", "msp430fr2522", "msp430fr2532", "msp430fr2533", "msp430fr2632", "msp430fr2633", "msp430fr2672", "msp430fr2673", "msp430fr2675", "msp430fr2676", "msp430fr4131", "msp430fr4132", "msp430fr4133",
     "msp430fr5041", "msp430fr5043", "msp430fr50431", "msp430fr5720", "msp430fr5721", "msp430fr5722", "msp430fr5723", "msp430fr5724", "msp430fr5725", "msp430fr5726", "msp430fr5727", "msp430fr5728",
     "msp430fr5729", "msp430fr5730", "msp430fr5731", "msp430fr5732", "msp430fr5733", "msp430fr5734", "msp430fr5735", "msp430fr5736", "msp430fr5737", "msp430fr5738", "msp430fr5739", "msp430fr5847",
     "msp430fr58471", "msp430fr5848", "msp430fr5849", "msp430fr5857", "msp430fr5858", "msp430fr5859", "msp430fr5867", "msp430fr58671", "msp430fr5868", "msp430fr5869", "msp430fr5870", "msp430fr5872",
     "msp430fr58721", "msp430fr5887", "msp430fr5888", "msp430fr5889", "msp430fr58891", "msp430fr5922", "msp430fr59221", "msp430fr5947", "msp430fr59471", "msp430fr5948", "msp430fr5949", "msp430fr5957",
     "msp430fr5958", "msp430fr5959", "msp430fr5962", "msp430fr5964", "msp430fr5967", "msp430fr5968", "msp430fr5969", "msp430fr59691", "msp430fr5970", "msp430fr5972", "msp430fr59721", "msp430fr5986",
-    "msp430fr5987", "msp430fr5988", "msp430fr5989", "msp430fr59891", "msp430fr5992", "msp430fr5994", "msp430fr59941", "msp430fr6035", "msp430fr6037", "msp430fr60371", "msp430fr6041", "msp430fr6043",
+    "msp430fr5987", "msp430fr5988", "msp430fr5989", "msp430fr59891", "msp430fr5992", "msp430fr5994", "msp430fr59941", "msp430fr6005", "msp430fr6007", "msp430fr6035", "msp430fr6037", "msp430fr60371", "msp430fr6041", "msp430fr6043",
     "msp430fr60431", "msp430fr6045", "msp430fr6047", "msp430fr60471", "msp430fr6820", "msp430fr6822", "msp430fr68221", "msp430fr6870", "msp430fr6872", "msp430fr68721", "msp430fr6877", "msp430fr6879",
     "msp430fr68791", "msp430fr6887", "msp430fr6888", "msp430fr6889", "msp430fr68891", "msp430fr6920", "msp430fr6922", "msp430fr69221", "msp430fr6927", "msp430fr69271", "msp430fr6928", "msp430fr6970",
     "msp430fr6972", "msp430fr69721", "msp430fr6977", "msp430fr6979", "msp430fr69791", "msp430fr6987", "msp430fr6988", "msp430fr6989", "msp430fr69891", "msp430fw423", "msp430fw425", "msp430fw427",

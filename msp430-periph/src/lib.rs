@@ -4,20 +4,20 @@
 //!
 //! # Usage
 //!
-//! Since this crate includes 621 devices and 481 peripherals, everything is feature-gated.
+//! Since this crate includes 625 devices and 336 peripherals, everything is feature-gated.
 //! That means you have to enable every microcontroller and peripheral you want to use, for example:
 //!
 //! ```
 //! [dependencies.msp430-periph]
-//! version = "0.0.1"
+//! version = "0.0.3"
 //! features = [
 //!     # your microcontroller
 //!     "msp430fr5969",
 //!     # every peripheral you need
 //!     "watchdog_timer_2",
-//!     "pmm__power_management_system_4",
-//!     "port_1_2_7",
-//!     "port_3_4_7",
+//!     "pmm_4",
+//!     "portb_3i1",
+//!     "portb_3i2",
 //! ]
 //! ```
 //!
@@ -25,18 +25,21 @@
 //!
 //! ```
 //! [dependencies]
-//! msp430-periph = { version = "0.0.1", features = [ "msp430fr5969-all" ] }
+//! msp430-periph = { version = "0.0.3", features = [ "msp430fr5969-all" ] }
 //! ```
+//!
+//! To use with the `msp430-rt` runtime, also enable the `rt` feature. No `memory.x` files are needed.
 //!
 //! # Documentation
 //!
 //! It is not reasonable to build documentation for the whole crate with all features enabled. You can either look at the
-//! source code or build documentation for the features you use by running `cargo doc` in your project directory.
-//!
+//! source code or build documentation for the features you use by running `cargo doc --open` in your project directory.
+//! To locally build documentation only for this crate, run `cargo doc -p msp430-periph --no-deps --open`
 
 #![no_std]
 #![allow(bad_style)]
 #![recursion_limit="512"]
+#![cfg_attr(feature = "rt", feature(abi_msp430_interrupt))]
 
 pub use utils;
 
@@ -55,3 +58,12 @@ pub mod devices;
 ///
 /// There is also a `periph-all` flag, that you likely shouldn't use
 pub mod peripherals;
+
+#[cfg(feature = "rt")]
+include!(concat!(env!("OUT_DIR"), "/use_interrupt.rs"));
+
+#[cfg(feature = "rt")]
+union Vector {
+    _handler: unsafe extern "msp430-interrupt" fn(),
+    _reserved: u16,
+}

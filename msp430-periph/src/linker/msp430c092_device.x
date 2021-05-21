@@ -1,0 +1,10 @@
+PROVIDE(PORT2 = DefaultHandler);
+PROVIDE(TIMER0_A1 = DefaultHandler);
+PROVIDE(TIMER0_A0 = DefaultHandler);
+PROVIDE(PORT1 = DefaultHandler);
+PROVIDE(APOOL = DefaultHandler);
+PROVIDE(WDT = DefaultHandler);
+PROVIDE(TIMER1_A1 = DefaultHandler);
+PROVIDE(TIMER1_A0 = DefaultHandler);
+PROVIDE(UNMI = DefaultHandler);
+PROVIDE(SYSNMI = DefaultHandler);

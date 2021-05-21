@@ -1,0 +1,9 @@
+PROVIDE(PORT1 = DefaultHandler);
+PROVIDE(PORT2 = DefaultHandler);
+PROVIDE(ADC10 = DefaultHandler);
+PROVIDE(USART0TX = DefaultHandler);
+PROVIDE(USART0RX = DefaultHandler);
+PROVIDE(TIMERA1 = DefaultHandler);
+PROVIDE(TIMERA0 = DefaultHandler);
+PROVIDE(WDT = DefaultHandler);
+PROVIDE(NMI = DefaultHandler);

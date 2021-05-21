@@ -3,7 +3,7 @@ use crate::peripherals::*;
 
 utils::device! {
     /// MSP430F4783
-    #[all:cfg_attr(not(feature = "MSP430F4783-all"), non_exhaustive)]
+    #[all:cfg_attr(not(feature = "msp430f4783-all"), non_exhaustive)]
     MSP430F4783;
     /// Special Function
     #[all:cfg(feature = "special_function_16")]
@@ -102,3 +102,79 @@ utils::device! {
     #[all:cfg(feature = "multiplier_32")]
     Multiplier_32 @ 0x0140: multiplier_32::Multiplier32;
 }
+
+/// Enumeration of all the interrupts. This enum is seldom used in application or library crates. It is present primarily for documenting the device's implemented interrupts.
+#[derive(Copy, Clone, Debug, PartialEq, Eq)]
+#[repr(u16)]
+pub enum Interrupt {
+    /// 0xFFE0 Basic Timer / RTC
+    BASICTIMER = 0,
+    /// 0xFFE2 Port 2
+    PORT2 = 1,
+    /// 0xFFE4 USCI A1/B1 Transmit
+    USCIAB1TX = 2,
+    /// 0xFFE6 USCI A1/B1 Receive
+    USCIAB1RX = 3,
+    /// 0xFFE8 Port 1
+    PORT1 = 4,
+    /// 0xFFEA Timer A CC1-2, TA
+    TIMERA1 = 5,
+    /// 0xFFEC Timer A CC0
+    TIMERA0 = 6,
+    /// 0xFFEE ADC
+    SD16A = 7,
+    /// 0xFFF0 USCI A0/B0 Transmit
+    USCIAB0TX = 8,
+    /// 0xFFF2 USCI A0/B0 Receive
+    USCIAB0RX = 9,
+    /// 0xFFF4 Watchdog Timer
+    WDT = 10,
+    /// 0xFFF6 Comparator A
+    COMPARATORA = 11,
+    /// 0xFFF8 Timer B CC1-2, TB
+    TIMERB1 = 12,
+    /// 0xFFFA Timer B CC0
+    TIMERB0 = 13,
+    /// 0xFFFC Non-maskable
+    NMI = 14,
+}
+
+#[cfg(feature = "rt")]
+extern "msp430-interrupt" {
+    fn BASICTIMER();
+    fn PORT2();
+    fn USCIAB1TX();
+    fn USCIAB1RX();
+    fn PORT1();
+    fn TIMERA1();
+    fn TIMERA0();
+    fn SD16A();
+    fn USCIAB0TX();
+    fn USCIAB0RX();
+    fn WDT();
+    fn COMPARATORA();
+    fn TIMERB1();
+    fn TIMERB0();
+    fn NMI();
+}
+
+#[cfg(feature = "rt")]
+#[link_section = ".vector_table.interrupts"]
+#[used]
+static __INTERRUPTS: [crate::Vector; 15] = [
+    crate::Vector { _handler: BASICTIMER },
+    crate::Vector { _handler: PORT2 },
+    crate::Vector { _handler: USCIAB1TX },
+    crate::Vector { _handler: USCIAB1RX },
+    crate::Vector { _handler: PORT1 },
+    crate::Vector { _handler: TIMERA1 },
+    crate::Vector { _handler: TIMERA0 },
+    crate::Vector { _handler: SD16A },
+    crate::Vector { _handler: USCIAB0TX },
+    crate::Vector { _handler: USCIAB0RX },
+    crate::Vector { _handler: WDT },
+    crate::Vector { _handler: COMPARATORA },
+    crate::Vector { _handler: TIMERB1 },
+    crate::Vector { _handler: TIMERB0 },
+    crate::Vector { _handler: NMI },
+];

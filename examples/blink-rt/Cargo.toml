@@ -1,0 +1,25 @@
+[package]
+name = "blink-rt"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+msp430 = "0.2.2"
+msp430-rt = "0.2.4"
+panic-msp430 = "0.2.0"
+
+[dependencies.msp430-periph]
+path = "../../msp430-periph"
+features = [
+    "rt",
+    "msp430fr5969", 
+    "watchdog_timer_2",
+    "pmm_4",
+    "portb_3i1",
+    "portb_3i2",
+]
+
+[profile.release]
+opt-level = "s"
+codegen-units = 1
+lto = "fat"

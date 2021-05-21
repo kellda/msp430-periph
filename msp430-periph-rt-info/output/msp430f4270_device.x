@@ -1,0 +1,9 @@
+PROVIDE(BASICTIMER = DefaultHandler);
+PROVIDE(PORT2 = DefaultHandler);
+PROVIDE(DAC12 = DefaultHandler);
+PROVIDE(PORT1 = DefaultHandler);
+PROVIDE(TIMERA1 = DefaultHandler);
+PROVIDE(TIMERA0 = DefaultHandler);
+PROVIDE(WDT = DefaultHandler);
+PROVIDE(SD16 = DefaultHandler);
+PROVIDE(NMI = DefaultHandler);

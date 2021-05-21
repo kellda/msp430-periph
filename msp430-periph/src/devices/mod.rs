@@ -868,6 +868,10 @@ pub mod msp430fr2533;
 pub mod msp430fr2632;
 #[cfg(feature = "msp430fr2633")]
 pub mod msp430fr2633;
+#[cfg(feature = "msp430fr2672")]
+pub mod msp430fr2672;
+#[cfg(feature = "msp430fr2673")]
+pub mod msp430fr2673;
 #[cfg(feature = "msp430fr2675")]
 pub mod msp430fr2675;
 #[cfg(feature = "msp430fr2676")]
@@ -1012,6 +1016,10 @@ pub mod msp430fr5992;
 pub mod msp430fr5994;
 #[cfg(feature = "msp430fr59941")]
 pub mod msp430fr59941;
+#[cfg(feature = "msp430fr6005")]
+pub mod msp430fr6005;
+#[cfg(feature = "msp430fr6007")]
+pub mod msp430fr6007;
 #[cfg(feature = "msp430fr6035")]
 pub mod msp430fr6035;
 #[cfg(feature = "msp430fr6037")]
