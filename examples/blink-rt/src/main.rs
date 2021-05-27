@@ -15,14 +15,14 @@ fn main() -> ! {
 
     // Disable watchdog
     p.watchdog_timer
-        .wdtctl
-        .write(unsafe { Value::from_raw(0x5a00) } | wdt::WDTHOLD(true));
+        .ctl
+        .write(unsafe { Value::from_raw(0x5a00) } | wdt::HOLD(true));
 
     // Set P1.0 and P4.6 as output
-    p.port_1.pout.modify(p1::POUT0(false));
-    p.port_4.pout.modify(p4::POUT6(true));
-    p.port_1.pdir.modify(p1::PDIR0(true));
-    p.port_4.pdir.modify(p4::PDIR6(true));
+    p.port_1.out.modify(p1::OUT0(false));
+    p.port_4.out.modify(p4::OUT6(true));
+    p.port_1.dir.modify(p1::DIR0(true));
+    p.port_4.dir.modify(p4::DIR6(true));
 
     // Enable I/Os
     p.pmm.pm5ctl0.modify(pmm::LOCKLPM5(false));
@@ -35,8 +35,8 @@ fn main() -> ! {
         }
 
         // Toggle outputs
-        p.port_1.pout.toggle(p1::POUT::POUT0);
-        p.port_4.pout.toggle(p4::POUT::POUT6);
+        p.port_1.out.toggle(p1::OUT::OUT0);
+        p.port_4.out.toggle(p4::OUT::OUT6);
     }
 }
 

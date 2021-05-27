@@ -3,7 +3,7 @@
 version = 3
 
 [[package]]
-name = "blink"
+name = "blink-raw"
 version = "0.1.0"
 dependencies = [
  "msp430-periph",
@@ -11,7 +11,7 @@ dependencies = [
 
 [[package]]
 name = "msp430-periph"
-version = "0.0.2"
+version = "0.0.4"
 dependencies = [
  "peripherals",
 ]
@@ -24,9 +24,9 @@ checksum = "acbf547ad0c65e31259204bd90935776d1c693cec2f4ff7abb7a1bbbd40dfe58"
 
 [[package]]
 name = "peripherals"
-version = "0.0.3"
+version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "82e27badd13c515267b422de5853f1c9ef4b583a435e02119d3350f2c3e5a2af"
+checksum = "39b6b790ca8436f13781997e1f3e303c537d047b9e95f21f769d1cda735c8646"
 dependencies = [
  "paste",
 ]

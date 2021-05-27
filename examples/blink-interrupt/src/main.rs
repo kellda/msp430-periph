@@ -24,33 +24,33 @@ fn main(cs: CriticalSection) -> ! {
 
     // Disable watchdog
     p.watchdog_timer
-        .wdtctl
-        .write(unsafe { Value::from_raw(0x5a00) } | wdt::WDTHOLD(true));
+        .ctl
+        .write(unsafe { Value::from_raw(0x5a00) } | wdt::HOLD(true));
 
     // Set P1.0 and P4.6 as output
-    p.port_1.pout.modify(p1::POUT0(false));
-    p.port_4.pout.modify(p4::POUT6(true));
-    p.port_1.pdir.modify(p1::PDIR0(true));
-    p.port_4.pdir.modify(p4::PDIR6(true));
+    p.port_1.out.modify(p1::OUT0(false));
+    p.port_4.out.modify(p4::OUT6(true));
+    p.port_1.dir.modify(p1::DIR0(true));
+    p.port_4.dir.modify(p4::DIR6(true));
 
     // Enable I/Os
     p.pmm.pm5ctl0.modify(pmm::LOCKLPM5(false));
 
     // Unlock clock system register
-    p.cs.csctl0.write(Value::reset() | cs::CSCTL0Field(0xA500));
+    p.cs.ctl0.write(Value::reset() | cs::CTL0Field(0xA500));
     // Use LFO (10 kHz low frequency oscillator) as ACLK (auxiliary clock source)
-    p.cs.csctl2.modify(cs::SELA::SELA_1);
+    p.cs.ctl2.modify(cs::SELA::SELA_1);
 
     // Set the period
     p.timer0_a3
-        .taccr0
-        .write(Value::reset() | timer0::TACCR0Field(1200));
+        .ccr0
+        .write(Value::reset() | timer0::CCR0Field(1200));
     // Use ACLK as clock source and count upward until TACCR0
     p.timer0_a3
-        .tactl
-        .modify(timer0::TASSEL::TASSEL_1 | timer0::MC::MC_1);
+        .ctl
+        .modify(timer0::SSEL::SSEL_1 | timer0::MC::MC_1);
     // Enable timer interrupt
-    p.timer0_a3.tacctl1.modify(timer0::TACCTL1_CCIE(true));
+    p.timer0_a3.cctl1.modify(timer0::C1CCIE(true));
 
     // Share peripherals with the interrupt
     *PERIPHERALS.borrow(&cs).borrow_mut() = Some(p);
@@ -67,11 +67,11 @@ fn TIMER0_A1(cs: CriticalSection) {
     let p = p.as_mut().unwrap();
 
     // Clear interrupt flag
-    p.timer0_a3.tacctl1.modify(timer0::TACCTL1_CCIFG(false));
+    p.timer0_a3.cctl1.modify(timer0::C1CCIFG(false));
 
     // Toggle outputs
-    p.port_1.pout.toggle(p1::POUT::POUT0);
-    p.port_4.pout.toggle(p4::POUT::POUT6);
+    p.port_1.out.toggle(p1::OUT::OUT0);
+    p.port_4.out.toggle(p4::OUT::OUT6);
 }
 
 #[no_mangle]
