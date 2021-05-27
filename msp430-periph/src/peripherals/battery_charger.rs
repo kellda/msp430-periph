@@ -4,27 +4,27 @@ utils::periph! {
     /// Battery Charger
     BatteryCharger;
     /// Battery Backup Control
-    rw BAKCTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// Lock backup sub-system
-        LOCKBAK: 0 = struct LOCKBAK(bool);
+        LOCK: 0 = struct LOCK(bool);
         /// Manual switch to battery backup supply
-        BAKSW: 1 = struct BAKSW(bool);
+        SW: 1 = struct SW(bool);
         /// Battery backup supply to ADC.
-        BAKADC: 2 = struct BAKADC(bool);
+        ADC: 2 = struct ADC(bool);
         /// Disable backup supply switching.
-        BAKDIS: 3 = struct BAKDIS(bool);
+        DIS: 3 = struct DIS(bool);
     }
     /// Battery Charger Control
-    rw BAKCHCTL @ 0x02: u16 = 0_0 {
+    rw CHCTL @ 0x02: u16 = 0_0 {
         /// Charger enable
-        CHEN: 0 = struct CHEN(bool);
+        EN: 0 = struct EN(bool);
         /// Charger charge current Bit 0
-        CHC0: 1 = struct CHC0(bool);
+        C0: 1 = struct C0(bool);
         /// Charger charge current Bit 1
-        CHC1: 2 = struct CHC1(bool);
+        C1: 2 = struct C1(bool);
         /// Charger end voltage Bit 0
-        CHV0: 4 = struct CHV0(bool);
+        V0: 4 = struct V0(bool);
         /// Charger end voltage Bit 1
-        CHV1: 5 = struct CHV1(bool);
+        V1: 5 = struct V1(bool);
     }
 }

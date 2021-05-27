@@ -4,18 +4,18 @@ utils::periph! {
     /// Timer B3
     TimerB3;
     /// Timer B3 Interrupt Vector Word
-    rw TBIV @ 0x00: u16 = 0_0 {
+    rw IV @ 0x00: u16 = 0_0 {
         /// Timer B3 Interrupt Vector Word
-        TBIV: 0..15 = struct TBIVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
     /// Timer B3 Control
-    rw TBCTL @ 0x62: u16 = 0_0 {
+    rw CTL @ 0x62: u16 = 0_0 {
         /// Timer B interrupt flag
-        TBIFG: 0 = struct TBIFG(bool);
+        IFG: 0 = struct IFG(bool);
         /// Timer B interrupt enable
-        TBIE: 1 = struct TBIE(bool);
+        IE: 1 = struct IE(bool);
         /// Timer B counter clear
-        TBCLR: 2 = struct TBCLR(bool);
+        CLR: 2 = struct CLR(bool);
         /// Timer B mode control 1
         MC: 4..5 = enum MC {
             /// Timer A mode control: 0 - Stop
@@ -39,15 +39,15 @@ utils::periph! {
             ID_3 = 0b11,
         }
         /// Clock source 1
-        TBSSEL: 8..9 = enum TBSSEL {
+        SSEL: 8..9 = enum SSEL {
             /// Clock Source: TBCLK
-            TBSSEL_0 = 0b00,
+            SSEL_0 = 0b00,
             /// Clock Source: ACLK
-            TBSSEL_1 = 0b01,
+            SSEL_1 = 0b01,
             /// Clock Source: SMCLK
-            TBSSEL_2 = 0b10,
+            SSEL_2 = 0b10,
             /// Clock Source: INCLK
-            TBSSEL_3 = 0b11,
+            SSEL_3 = 0b11,
         }
         /// Counter lenght 1
         CNTL: 11..12 = enum CNTL {
@@ -61,31 +61,31 @@ utils::periph! {
             CNTL_3 = 0b11,
         }
         /// Timer B Compare latch load group 1
-        TBCLGRP: 13..14 = enum TBCLGRP {
+        CLGRP: 13..14 = enum CLGRP {
             /// Timer B Group: 0 - individually
-            TBCLGRP_0 = 0b00,
+            CLGRP_0 = 0b00,
             /// Timer B Group: 1 - 3 groups (1-2
-            TBCLGRP_1 = 0b01,
+            CLGRP_1 = 0b01,
             /// Timer B Group: 2 - 2 groups (1-3
-            TBCLGRP_2 = 0b10,
+            CLGRP_2 = 0b10,
             /// Timer B Group: 3 - 1 group (all)
-            TBCLGRP_3 = 0b11,
+            CLGRP_3 = 0b11,
         }
     }
     /// Timer B3 Capture/Compare Control 0
-    rw TBCCTL0 @ 0x64: u16 = 0_0 {
+    rw CCTL0 @ 0x64: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TBCCTL0_CCIFG: 0 = struct TBCCTL0_CCIFG(bool);
+        C0CCIFG: 0 = struct C0CCIFG(bool);
         /// Capture/compare overflow flag
-        TBCCTL0_COV: 1 = struct TBCCTL0_COV(bool);
+        C0COV: 1 = struct C0COV(bool);
         /// PWM Output signal if output mode 0
-        TBCCTL0_OUT: 2 = struct TBCCTL0_OUT(bool);
+        C0OUT: 2 = struct C0OUT(bool);
         /// Capture input signal (read)
-        TBCCTL0_CCI: 3 = struct TBCCTL0_CCI(bool);
+        C0CCI: 3 = struct C0CCI(bool);
         /// Capture/compare interrupt enable
-        TBCCTL0_CCIE: 4 = struct TBCCTL0_CCIE(bool);
+        C0CCIE: 4 = struct C0CCIE(bool);
         /// Output mode 2
-        TBCCTL0_OUTMOD: 5..7 = enum TBCCTL0_OUTMOD {
+        C0OUTMOD: 5..7 = enum C0OUTMOD {
             /// PWM output mode: 0 - output only
             OUTMOD_0 = 0b000,
             /// PWM output mode: 1 - set
@@ -104,9 +104,9 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode: 1 /Compare mode : 0
-        TBCCTL0_CAP: 8 = struct TBCCTL0_CAP(bool);
+        C0CAP: 8 = struct C0CAP(bool);
         /// Compare latch load source 1
-        TBCCTL0_CLLD: 9..10 = enum TBCCTL0_CLLD {
+        C0CLLD: 9..10 = enum C0CLLD {
             /// Compare latch load sourec : 0 - immediate
             CLLD_0 = 0b00,
             /// Compare latch load sourec : 1 - TBR counts to 0
@@ -117,9 +117,9 @@ utils::periph! {
             CLLD_3 = 0b11,
         }
         /// Capture sychronize
-        TBCCTL0_SCS: 11 = struct TBCCTL0_SCS(bool);
+        C0SCS: 11 = struct C0SCS(bool);
         /// Capture input select 1
-        TBCCTL0_CCIS: 12..13 = enum TBCCTL0_CCIS {
+        C0CCIS: 12..13 = enum C0CCIS {
             /// Capture input select: 0 - CCIxA
             CCIS_0 = 0b00,
             /// Capture input select: 1 - CCIxB
@@ -130,7 +130,7 @@ utils::periph! {
             CCIS_3 = 0b11,
         }
         /// Capture mode 1
-        TBCCTL0_CM: 14..15 = enum TBCCTL0_CM {
+        C0CM: 14..15 = enum C0CM {
             /// Capture mode: 0 - disabled
             CM_0 = 0b00,
             /// Capture mode: 1 - pos. edge
@@ -142,19 +142,19 @@ utils::periph! {
         }
     }
     /// Timer B3 Capture/Compare Control 1
-    rw TBCCTL1 @ 0x66: u16 = 0_0 {
+    rw CCTL1 @ 0x66: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TBCCTL1_CCIFG: 0 = struct TBCCTL1_CCIFG(bool);
+        C1CCIFG: 0 = struct C1CCIFG(bool);
         /// Capture/compare overflow flag
-        TBCCTL1_COV: 1 = struct TBCCTL1_COV(bool);
+        C1COV: 1 = struct C1COV(bool);
         /// PWM Output signal if output mode 0
-        TBCCTL1_OUT: 2 = struct TBCCTL1_OUT(bool);
+        C1OUT: 2 = struct C1OUT(bool);
         /// Capture input signal (read)
-        TBCCTL1_CCI: 3 = struct TBCCTL1_CCI(bool);
+        C1CCI: 3 = struct C1CCI(bool);
         /// Capture/compare interrupt enable
-        TBCCTL1_CCIE: 4 = struct TBCCTL1_CCIE(bool);
+        C1CCIE: 4 = struct C1CCIE(bool);
         /// Output mode 2
-        TBCCTL1_OUTMOD: 5..7 = enum TBCCTL1_OUTMOD {
+        C1OUTMOD: 5..7 = enum C1OUTMOD {
             /// PWM output mode: 0 - output only
             OUTMOD_0 = 0b000,
             /// PWM output mode: 1 - set
@@ -173,9 +173,9 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode: 1 /Compare mode : 0
-        TBCCTL1_CAP: 8 = struct TBCCTL1_CAP(bool);
+        C1CAP: 8 = struct C1CAP(bool);
         /// Compare latch load source 1
-        TBCCTL1_CLLD: 9..10 = enum TBCCTL1_CLLD {
+        C1CLLD: 9..10 = enum C1CLLD {
             /// Compare latch load sourec : 0 - immediate
             CLLD_0 = 0b00,
             /// Compare latch load sourec : 1 - TBR counts to 0
@@ -186,9 +186,9 @@ utils::periph! {
             CLLD_3 = 0b11,
         }
         /// Capture sychronize
-        TBCCTL1_SCS: 11 = struct TBCCTL1_SCS(bool);
+        C1SCS: 11 = struct C1SCS(bool);
         /// Capture input select 1
-        TBCCTL1_CCIS: 12..13 = enum TBCCTL1_CCIS {
+        C1CCIS: 12..13 = enum C1CCIS {
             /// Capture input select: 0 - CCIxA
             CCIS_0 = 0b00,
             /// Capture input select: 1 - CCIxB
@@ -199,7 +199,7 @@ utils::periph! {
             CCIS_3 = 0b11,
         }
         /// Capture mode 1
-        TBCCTL1_CM: 14..15 = enum TBCCTL1_CM {
+        C1CM: 14..15 = enum C1CM {
             /// Capture mode: 0 - disabled
             CM_0 = 0b00,
             /// Capture mode: 1 - pos. edge
@@ -211,19 +211,19 @@ utils::periph! {
         }
     }
     /// Timer B3 Capture/Compare Control 2
-    rw TBCCTL2 @ 0x68: u16 = 0_0 {
+    rw CCTL2 @ 0x68: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TBCCTL2_CCIFG: 0 = struct TBCCTL2_CCIFG(bool);
+        C2CCIFG: 0 = struct C2CCIFG(bool);
         /// Capture/compare overflow flag
-        TBCCTL2_COV: 1 = struct TBCCTL2_COV(bool);
+        C2COV: 1 = struct C2COV(bool);
         /// PWM Output signal if output mode 0
-        TBCCTL2_OUT: 2 = struct TBCCTL2_OUT(bool);
+        C2OUT: 2 = struct C2OUT(bool);
         /// Capture input signal (read)
-        TBCCTL2_CCI: 3 = struct TBCCTL2_CCI(bool);
+        C2CCI: 3 = struct C2CCI(bool);
         /// Capture/compare interrupt enable
-        TBCCTL2_CCIE: 4 = struct TBCCTL2_CCIE(bool);
+        C2CCIE: 4 = struct C2CCIE(bool);
         /// Output mode 2
-        TBCCTL2_OUTMOD: 5..7 = enum TBCCTL2_OUTMOD {
+        C2OUTMOD: 5..7 = enum C2OUTMOD {
             /// PWM output mode: 0 - output only
             OUTMOD_0 = 0b000,
             /// PWM output mode: 1 - set
@@ -242,9 +242,9 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode: 1 /Compare mode : 0
-        TBCCTL2_CAP: 8 = struct TBCCTL2_CAP(bool);
+        C2CAP: 8 = struct C2CAP(bool);
         /// Compare latch load source 1
-        TBCCTL2_CLLD: 9..10 = enum TBCCTL2_CLLD {
+        C2CLLD: 9..10 = enum C2CLLD {
             /// Compare latch load sourec : 0 - immediate
             CLLD_0 = 0b00,
             /// Compare latch load sourec : 1 - TBR counts to 0
@@ -255,9 +255,9 @@ utils::periph! {
             CLLD_3 = 0b11,
         }
         /// Capture sychronize
-        TBCCTL2_SCS: 11 = struct TBCCTL2_SCS(bool);
+        C2SCS: 11 = struct C2SCS(bool);
         /// Capture input select 1
-        TBCCTL2_CCIS: 12..13 = enum TBCCTL2_CCIS {
+        C2CCIS: 12..13 = enum C2CCIS {
             /// Capture input select: 0 - CCIxA
             CCIS_0 = 0b00,
             /// Capture input select: 1 - CCIxB
@@ -268,7 +268,7 @@ utils::periph! {
             CCIS_3 = 0b11,
         }
         /// Capture mode 1
-        TBCCTL2_CM: 14..15 = enum TBCCTL2_CM {
+        C2CM: 14..15 = enum C2CM {
             /// Capture mode: 0 - disabled
             CM_0 = 0b00,
             /// Capture mode: 1 - pos. edge
@@ -280,23 +280,23 @@ utils::periph! {
         }
     }
     /// Timer B3 Counter Register
-    rw TBR @ 0x72: u16 = 0_0 {
+    rw R @ 0x72: u16 = 0_0 {
         /// Timer B3 Counter Register
-        TBR: 0..15 = struct TBRField(u16);
+        R: 0..15 = struct RField(u16);
     }
     /// Timer B3 Capture/Compare 0
-    rw TBCCR0 @ 0x74: u16 = 0_0 {
+    rw CCR0 @ 0x74: u16 = 0_0 {
         /// Timer B3 Capture/Compare 0
-        TBCCR0: 0..15 = struct TBCCR0Field(u16);
+        CCR0: 0..15 = struct CCR0Field(u16);
     }
     /// Timer B3 Capture/Compare 1
-    rw TBCCR1 @ 0x76: u16 = 0_0 {
+    rw CCR1 @ 0x76: u16 = 0_0 {
         /// Timer B3 Capture/Compare 1
-        TBCCR1: 0..15 = struct TBCCR1Field(u16);
+        CCR1: 0..15 = struct CCR1Field(u16);
     }
     /// Timer B3 Capture/Compare 2
-    rw TBCCR2 @ 0x78: u16 = 0_0 {
+    rw CCR2 @ 0x78: u16 = 0_0 {
         /// Timer B3 Capture/Compare 2
-        TBCCR2: 0..15 = struct TBCCR2Field(u16);
+        CCR2: 0..15 = struct CCR2Field(u16);
     }
 }

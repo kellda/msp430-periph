@@ -4,7 +4,7 @@ utils::periph! {
     /// SFR  Special Function Registers
     SFR;
     /// Interrupt Enable 1
-    rw SFRIE1 @ 0x00: u16 = 0_0 {
+    rw IE1 @ 0x00: u16 = 0_0 {
         /// WDT Interrupt Enable
         WDTIE: 0 = struct WDTIE(bool);
         /// Osc Fault Enable
@@ -21,7 +21,7 @@ utils::periph! {
         JMBOUTIE: 7 = struct JMBOUTIE(bool);
     }
     /// Interrupt Flag 1
-    rw SFRIFG1 @ 0x02: u16 = 0_0 {
+    rw IFG1 @ 0x02: u16 = 0_0 {
         /// WDT Interrupt Flag
         WDTIFG: 0 = struct WDTIFG(bool);
         /// Osc Fault Flag
@@ -36,7 +36,7 @@ utils::periph! {
         JMBOUTIFG: 7 = struct JMBOUTIFG(bool);
     }
     /// RESET Pin Control Register
-    rw SFRRPCR @ 0x04: u16 = 0_0 {
+    rw RPCR @ 0x04: u16 = 0_0 {
         /// NMI select
         SYSNMI: 0 = struct SYSNMI(bool);
         /// NMI edge select

@@ -4,12 +4,12 @@ utils::periph! {
     /// CS
     CS;
     /// Clock System Control 0
-    rw CSCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// CSKEY password
-        CSKEY: 8..15 = struct CSKEY(u16);
+        KEY: 8..15 = struct KEY(u16);
     }
     /// Clock System Control 1
-    rw CSCTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// DCO frequency select
         DCOFSEL: 1..3 = enum DCOFSEL {
             /// If DCORSEL = 0: 1 MHz; If DCORSEL = 1: 1 MHz
@@ -33,7 +33,7 @@ utils::periph! {
         DCORSEL: 6 = struct DCORSEL(bool);
     }
     /// Clock System Control 2
-    rw CSCTL2 @ 0x04: u16 = 0_0 {
+    rw CTL2 @ 0x04: u16 = 0_0 {
         /// Selects the MCLK source
         SELM: 0..2 = enum SELM {
             /// LFXTCLK when LFXT available, otherwise VLOCLK
@@ -75,7 +75,7 @@ utils::periph! {
         }
     }
     /// Clock System Control 3
-    rw CSCTL3 @ 0x06: u16 = 0_0 {
+    rw CTL3 @ 0x06: u16 = 0_0 {
         /// MCLK source divider
         DIVM: 0..2 = enum DIVM {
             /// /1
@@ -123,7 +123,7 @@ utils::periph! {
         }
     }
     /// Clock System Control 4
-    rw CSCTL4 @ 0x08: u16 = 0_0 {
+    rw CTL4 @ 0x08: u16 = 0_0 {
         /// LFXT off
         LFXTOFF: 0 = enum LFXTOFF {
             /// LFXT is on if LFXT is selected via the port selection and LFXT is not in bypass mode of operation
@@ -201,7 +201,7 @@ utils::periph! {
         }
     }
     /// Clock System Control 5
-    rw CSCTL5 @ 0x0a: u16 = 0_0 {
+    rw CTL5 @ 0x0a: u16 = 0_0 {
         /// LFXT oscillator fault flag
         LFXTOFFG: 0 = enum LFXTOFFG {
             /// No fault condition occurred after the last reset
@@ -232,7 +232,7 @@ utils::periph! {
         }
     }
     /// Clock System Control 6
-    rw CSCTL6 @ 0x0c: u16 = 0_0 {
+    rw CTL6 @ 0x0c: u16 = 0_0 {
         /// ACLK clock request enable
         ACLKREQEN: 0 = enum ACLKREQEN {
             /// ACLK conditional requests are disabled

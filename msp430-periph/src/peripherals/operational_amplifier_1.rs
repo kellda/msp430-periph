@@ -6,11 +6,11 @@ utils::periph! {
     /// OA0 Control register 0
     rw OA0CTL0 @ 0x00: u8 = 0_0 {
         /// OAx output to ADC12 input channel select 0
-        OA0CTL0_OAADC0: 0 = struct OA0CTL0_OAADC0(bool);
+        OA0ADC0: 0 = struct OA0ADC0(bool);
         /// OAx output to ADC12 input channel select 1
-        OA0CTL0_OAADC1: 1 = struct OA0CTL0_OAADC1(bool);
+        OA0ADC1: 1 = struct OA0ADC1(bool);
         /// OAx Power mode select 0
-        OA0CTL0_OAPM: 2..3 = enum OA0CTL0_OAPM {
+        OA0PM: 2..3 = enum OA0PM {
             /// OAx Power mode select: off
             OAPM_0 = 0b00,
             /// OAx Power mode select: slow
@@ -21,7 +21,7 @@ utils::periph! {
             OAPM_3 = 0b11,
         }
         /// OAx Non-inverting input select 0
-        OA0CTL0_OAP: 4..5 = enum OA0CTL0_OAP {
+        OA0P: 4..5 = enum OA0P {
             /// OAx Non-inverting input select 00
             OAP_0 = 0b00,
             /// OAx Non-inverting input select 01
@@ -32,7 +32,7 @@ utils::periph! {
             OAP_3 = 0b11,
         }
         /// OAx Inverting input select 0
-        OA0CTL0_OAN: 6..7 = enum OA0CTL0_OAN {
+        OA0N: 6..7 = enum OA0N {
             /// OAx Inverting input select 00
             OAN_0 = 0b00,
             /// OAx Inverting input select 01
@@ -46,9 +46,9 @@ utils::periph! {
     /// OA0 Control register 1
     rw OA0CTL1 @ 0x01: u8 = 0_0 {
         /// OAx Rail-to-Rail Input off
-        OA0CTL1_OARRIP: 0 = struct OA0CTL1_OARRIP(bool);
+        OA0RRIP: 0 = struct OA0RRIP(bool);
         /// OAx Function control 0
-        OA0CTL1_OAFC: 2..4 = enum OA0CTL1_OAFC {
+        OA0FC: 2..4 = enum OA0FC {
             /// OAx Function: Gen. Purpose
             OAFC_0 = 0b000,
             /// OAx Function: Unity gain buffer
@@ -67,7 +67,7 @@ utils::periph! {
             OAFC_7 = 0b111,
         }
         /// OAx Feedback resistor select 0
-        OA0CTL1_OAFBR: 5..7 = enum OA0CTL1_OAFBR {
+        OA0FBR: 5..7 = enum OA0FBR {
             /// OAx Feedback resistor: Tap 0
             OAFBR_0 = 0b000,
             /// OAx Feedback resistor: Tap 1
@@ -89,11 +89,11 @@ utils::periph! {
     /// OA1 Control register 0
     rw OA1CTL0 @ 0x02: u8 = 0_0 {
         /// OAx output to ADC12 input channel select 0
-        OA1CTL0_OAADC0: 0 = struct OA1CTL0_OAADC0(bool);
+        OA1ADC0: 0 = struct OA1ADC0(bool);
         /// OAx output to ADC12 input channel select 1
-        OA1CTL0_OAADC1: 1 = struct OA1CTL0_OAADC1(bool);
+        OA1ADC1: 1 = struct OA1ADC1(bool);
         /// OAx Power mode select 0
-        OA1CTL0_OAPM: 2..3 = enum OA1CTL0_OAPM {
+        OA1PM: 2..3 = enum OA1PM {
             /// OAx Power mode select: off
             OAPM_0 = 0b00,
             /// OAx Power mode select: slow
@@ -104,7 +104,7 @@ utils::periph! {
             OAPM_3 = 0b11,
         }
         /// OAx Non-inverting input select 0
-        OA1CTL0_OAP: 4..5 = enum OA1CTL0_OAP {
+        OA1P: 4..5 = enum OA1P {
             /// OAx Non-inverting input select 00
             OAP_0 = 0b00,
             /// OAx Non-inverting input select 01
@@ -115,7 +115,7 @@ utils::periph! {
             OAP_3 = 0b11,
         }
         /// OAx Inverting input select 0
-        OA1CTL0_OAN: 6..7 = enum OA1CTL0_OAN {
+        OA1N: 6..7 = enum OA1N {
             /// OAx Inverting input select 00
             OAN_0 = 0b00,
             /// OAx Inverting input select 01
@@ -129,9 +129,9 @@ utils::periph! {
     /// OA1 Control register 1
     rw OA1CTL1 @ 0x03: u8 = 0_0 {
         /// OAx Rail-to-Rail Input off
-        OA1CTL1_OARRIP: 0 = struct OA1CTL1_OARRIP(bool);
+        OA1RRIP: 0 = struct OA1RRIP(bool);
         /// OAx Function control 0
-        OA1CTL1_OAFC: 2..4 = enum OA1CTL1_OAFC {
+        OA1FC: 2..4 = enum OA1FC {
             /// OAx Function: Gen. Purpose
             OAFC_0 = 0b000,
             /// OAx Function: Unity gain buffer
@@ -150,7 +150,7 @@ utils::periph! {
             OAFC_7 = 0b111,
         }
         /// OAx Feedback resistor select 0
-        OA1CTL1_OAFBR: 5..7 = enum OA1CTL1_OAFBR {
+        OA1FBR: 5..7 = enum OA1FBR {
             /// OAx Feedback resistor: Tap 0
             OAFBR_0 = 0b000,
             /// OAx Feedback resistor: Tap 1
@@ -172,11 +172,11 @@ utils::periph! {
     /// OA2 Control register 0
     rw OA2CTL0 @ 0x04: u8 = 0_0 {
         /// OAx output to ADC12 input channel select 0
-        OA2CTL0_OAADC0: 0 = struct OA2CTL0_OAADC0(bool);
+        OA2ADC0: 0 = struct OA2ADC0(bool);
         /// OAx output to ADC12 input channel select 1
-        OA2CTL0_OAADC1: 1 = struct OA2CTL0_OAADC1(bool);
+        OA2ADC1: 1 = struct OA2ADC1(bool);
         /// OAx Power mode select 0
-        OA2CTL0_OAPM: 2..3 = enum OA2CTL0_OAPM {
+        OA2PM: 2..3 = enum OA2PM {
             /// OAx Power mode select: off
             OAPM_0 = 0b00,
             /// OAx Power mode select: slow
@@ -187,7 +187,7 @@ utils::periph! {
             OAPM_3 = 0b11,
         }
         /// OAx Non-inverting input select 0
-        OA2CTL0_OAP: 4..5 = enum OA2CTL0_OAP {
+        OA2P: 4..5 = enum OA2P {
             /// OAx Non-inverting input select 00
             OAP_0 = 0b00,
             /// OAx Non-inverting input select 01
@@ -198,7 +198,7 @@ utils::periph! {
             OAP_3 = 0b11,
         }
         /// OAx Inverting input select 0
-        OA2CTL0_OAN: 6..7 = enum OA2CTL0_OAN {
+        OA2N: 6..7 = enum OA2N {
             /// OAx Inverting input select 00
             OAN_0 = 0b00,
             /// OAx Inverting input select 01
@@ -212,9 +212,9 @@ utils::periph! {
     /// OA2 Control register 1
     rw OA2CTL1 @ 0x05: u8 = 0_0 {
         /// OAx Rail-to-Rail Input off
-        OA2CTL1_OARRIP: 0 = struct OA2CTL1_OARRIP(bool);
+        OA2RRIP: 0 = struct OA2RRIP(bool);
         /// OAx Function control 0
-        OA2CTL1_OAFC: 2..4 = enum OA2CTL1_OAFC {
+        OA2FC: 2..4 = enum OA2FC {
             /// OAx Function: Gen. Purpose
             OAFC_0 = 0b000,
             /// OAx Function: Unity gain buffer
@@ -233,7 +233,7 @@ utils::periph! {
             OAFC_7 = 0b111,
         }
         /// OAx Feedback resistor select 0
-        OA2CTL1_OAFBR: 5..7 = enum OA2CTL1_OAFBR {
+        OA2FBR: 5..7 = enum OA2FBR {
             /// OAx Feedback resistor: Tap 0
             OAFBR_0 = 0b000,
             /// OAx Feedback resistor: Tap 1

@@ -4,35 +4,35 @@ utils::periph! {
     /// PMM  Power Management System
     PMM;
     /// PMM Control 0
-    rw PMMCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// PMM Core Voltage Bit: 0
-        PMMCOREV: 0..1 = enum PMMCOREV {
+        COREV: 0..1 = enum COREV {
             /// PMM Core Voltage 0 (1.35V)
-            PMMCOREV_0 = 0b00,
+            COREV_0 = 0b00,
             /// PMM Core Voltage 1 (1.55V)
-            PMMCOREV_1 = 0b01,
+            COREV_1 = 0b01,
             /// PMM Core Voltage 2 (1.75V)
-            PMMCOREV_2 = 0b10,
+            COREV_2 = 0b10,
             /// PMM Core Voltage 3 (1.85V)
-            PMMCOREV_3 = 0b11,
+            COREV_3 = 0b11,
         }
         /// PMM Software BOR
-        PMMSWBOR: 2 = struct PMMSWBOR(bool);
+        SWBOR: 2 = struct SWBOR(bool);
         /// PMM Software POR
-        PMMSWPOR: 3 = struct PMMSWPOR(bool);
+        SWPOR: 3 = struct SWPOR(bool);
         /// PMM Turn Regulator off
-        PMMREGOFF: 4 = struct PMMREGOFF(bool);
+        REGOFF: 4 = struct REGOFF(bool);
         /// PMM Global High Power Module Request Enable
-        PMMHPMRE: 7 = struct PMMHPMRE(bool);
+        HPMRE: 7 = struct HPMRE(bool);
     }
     /// PMM Control 1
-    rw PMMCTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// PMM Reference Mode
-        PMMREFMD: 0 = struct PMMREFMD(bool);
+        REFMD: 0 = struct REFMD(bool);
         /// PMM Voltage Regulator Current Mode Bit: 0
-        PMMCMD0: 4 = struct PMMCMD0(bool);
+        CMD0: 4 = struct CMD0(bool);
         /// PMM Voltage Regulator Current Mode Bit: 1
-        PMMCMD1: 5 = struct PMMCMD1(bool);
+        CMD1: 5 = struct CMD1(bool);
     }
     /// SVS and SVM high side control register
     rw SVSMHCTL @ 0x04: u16 = 0_0 {
@@ -150,7 +150,7 @@ utils::periph! {
         SVMHVLROE: 12 = struct SVMHVLROE(bool);
     }
     /// PMM Interrupt Flag
-    rw PMMIFG @ 0x0c: u16 = 0_0 {
+    rw IFG @ 0x0c: u16 = 0_0 {
         /// SVS and SVM low side Delay expired interrupt flag
         SVSMLDLYIFG: 0 = struct SVSMLDLYIFG(bool);
         /// SVM low side interrupt flag
@@ -177,7 +177,7 @@ utils::periph! {
         PMMLPM5IFG: 15 = struct PMMLPM5IFG(bool);
     }
     /// PMM and RESET Interrupt Enable
-    rw PMMRIE @ 0x0e: u16 = 0_0 {
+    rw RIE @ 0x0e: u16 = 0_0 {
         /// SVS and SVM low side Delay expired interrupt enable
         SVSMLDLYIE: 0 = struct SVSMLDLYIE(bool);
         /// SVM low side interrupt enable

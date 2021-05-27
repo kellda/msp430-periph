@@ -4,15 +4,15 @@ utils::periph! {
     /// Port Mapping Control
     PortMappingControl;
     /// Port Mapping Key register
-    rw PMAPKEYID @ 0x00: u16 = 0_0 {
+    rw KEYID @ 0x00: u16 = 0_0 {
         /// Port Mapping Key register
-        PMAPKEYID: 0..15 = struct PMAPKEYIDField(u16);
+        KEYID: 0..15 = struct KEYIDField(u16);
     }
     /// Port Mapping control register
-    rw PMAPCTL @ 0x02: u16 = 0_0 {
+    rw CTL @ 0x02: u16 = 0_0 {
         /// Port Mapping Lock bit. Read only
-        PMAPLOCKED: 0 = struct PMAPLOCKED(bool);
+        LOCKED: 0 = struct LOCKED(bool);
         /// Port Mapping re-configuration control bit
-        PMAPRECFG: 1 = struct PMAPRECFG(bool);
+        RECFG: 1 = struct RECFG(bool);
     }
 }

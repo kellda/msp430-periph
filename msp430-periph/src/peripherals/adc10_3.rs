@@ -4,43 +4,43 @@ utils::periph! {
     /// ADC10
     ADC10;
     /// ADC10 Data Transfer Control 0
-    rw ADC10DTC0 @ 0x00: u8 = 0_0 {
+    rw DTC0 @ 0x00: u8 = 0_0 {
         /// This bit should normally be reset
-        ADC10FETCH: 0 = struct ADC10FETCH(bool);
+        FETCH: 0 = struct FETCH(bool);
         /// ADC10 block one
-        ADC10B1: 1 = struct ADC10B1(bool);
+        B1: 1 = struct B1(bool);
         /// ADC10 continuous transfer
-        ADC10CT: 2 = struct ADC10CT(bool);
+        CT: 2 = struct CT(bool);
         /// ADC10 two-block mode
-        ADC10TB: 3 = struct ADC10TB(bool);
+        TB: 3 = struct TB(bool);
     }
     /// ADC10 Data Transfer Control 1
-    rw ADC10DTC1 @ 0x01: u8 = 0_0 {
+    rw DTC1 @ 0x01: u8 = 0_0 {
         /// ADC10 Data Transfer Control 1
-        ADC10DTC1: 0..7 = struct ADC10DTC1Field(u8);
+        DTC1: 0..7 = struct DTC1Field(u8);
     }
     /// ADC10 Analog Enable 0
-    rw ADC10AE0 @ 0x02: u8 = 0_0 {
+    rw AE0 @ 0x02: u8 = 0_0 {
         /// ADC10 Analog Enable 0
-        ADC10AE0: 0..7 = struct ADC10AE0Field(u8);
+        AE0: 0..7 = struct AE0Field(u8);
     }
     /// ADC10 Analog Enable 1
-    rw ADC10AE1 @ 0x03: u8 = 0_0 {
+    rw AE1 @ 0x03: u8 = 0_0 {
         /// ADC10 Analog Enable 1
-        ADC10AE1: 0..7 = struct ADC10AE1Field(u8);
+        AE1: 0..7 = struct AE1Field(u8);
     }
     /// ADC10 Control 0
-    rw ADC10CTL0 @ 0x168: u16 = 0_0 {
+    rw CTL0 @ 0x168: u16 = 0_0 {
         /// ADC10 Start Conversion
-        ADC10SC: 0 = struct ADC10SC(bool);
+        SC: 0 = struct SC(bool);
         /// ADC10 Enable Conversion
         ENC: 1 = struct ENC(bool);
         /// ADC10 Interrupt Flag
-        ADC10IFG: 2 = struct ADC10IFG(bool);
+        IFG: 2 = struct IFG(bool);
         /// ADC10 Interrupt Enalbe
-        ADC10IE: 3 = struct ADC10IE(bool);
+        IE: 3 = struct IE(bool);
         /// ADC10 On/Enable
-        ADC10ON: 4 = struct ADC10ON(bool);
+        ON: 4 = struct ON(bool);
         /// ADC10 Reference on
         REFON: 5 = struct REFON(bool);
         /// ADC10 Ref 0:1.5V / 1:2.5V
@@ -52,17 +52,17 @@ utils::periph! {
         /// ADC10 Enalbe output of Ref.
         REFOUT: 9 = struct REFOUT(bool);
         /// ADC10 Sampling Rate 0:200ksps / 1:50ksps
-        ADC10SR: 10 = struct ADC10SR(bool);
+        SR: 10 = struct SR(bool);
         /// ADC10 Sample Hold Select Bit: 0
-        ADC10SHT: 11..12 = enum ADC10SHT {
+        SHT: 11..12 = enum SHT {
             /// 4 x ADC10CLKs
-            ADC10SHT_0 = 0b00,
+            SHT_0 = 0b00,
             /// 8 x ADC10CLKs
-            ADC10SHT_1 = 0b01,
+            SHT_1 = 0b01,
             /// 16 x ADC10CLKs
-            ADC10SHT_2 = 0b10,
+            SHT_2 = 0b10,
             /// 64 x ADC10CLKs
-            ADC10SHT_3 = 0b11,
+            SHT_3 = 0b11,
         }
         /// ADC10 Reference Select Bit: 0
         SREF: 13..15 = enum SREF {
@@ -85,9 +85,9 @@ utils::periph! {
         }
     }
     /// ADC10 Control 1
-    rw ADC10CTL1 @ 0x16a: u16 = 0_0 {
+    rw CTL1 @ 0x16a: u16 = 0_0 {
         /// ADC10 BUSY
-        ADC10BUSY: 0 = struct ADC10BUSY(bool);
+        BUSY: 0 = struct BUSY(bool);
         /// ADC10 Conversion Sequence Select 0
         CONSEQ: 1..2 = enum CONSEQ {
             /// Single channel single conversion
@@ -100,39 +100,39 @@ utils::periph! {
             CONSEQ_3 = 0b11,
         }
         /// ADC10 Clock Source Select Bit: 0
-        ADC10SSEL: 3..4 = enum ADC10SSEL {
+        SSEL: 3..4 = enum SSEL {
             /// ADC10OSC
-            ADC10SSEL_0 = 0b00,
+            SSEL_0 = 0b00,
             /// ACLK
-            ADC10SSEL_1 = 0b01,
+            SSEL_1 = 0b01,
             /// MCLK
-            ADC10SSEL_2 = 0b10,
+            SSEL_2 = 0b10,
             /// SMCLK
-            ADC10SSEL_3 = 0b11,
+            SSEL_3 = 0b11,
         }
         /// ADC10 Clock Divider Select Bit: 0
-        ADC10DIV: 5..7 = enum ADC10DIV {
+        DIV: 5..7 = enum DIV {
             /// ADC10 Clock Divider Select 0
-            ADC10DIV_0 = 0b000,
+            DIV_0 = 0b000,
             /// ADC10 Clock Divider Select 1
-            ADC10DIV_1 = 0b001,
+            DIV_1 = 0b001,
             /// ADC10 Clock Divider Select 2
-            ADC10DIV_2 = 0b010,
+            DIV_2 = 0b010,
             /// ADC10 Clock Divider Select 3
-            ADC10DIV_3 = 0b011,
+            DIV_3 = 0b011,
             /// ADC10 Clock Divider Select 4
-            ADC10DIV_4 = 0b100,
+            DIV_4 = 0b100,
             /// ADC10 Clock Divider Select 5
-            ADC10DIV_5 = 0b101,
+            DIV_5 = 0b101,
             /// ADC10 Clock Divider Select 6
-            ADC10DIV_6 = 0b110,
+            DIV_6 = 0b110,
             /// ADC10 Clock Divider Select 7
-            ADC10DIV_7 = 0b111,
+            DIV_7 = 0b111,
         }
         /// ADC10 Invert Sample Hold Signal
         ISSH: 8 = struct ISSH(bool);
         /// ADC10 Data Format 0:binary 1:2's complement
-        ADC10DF: 9 = struct ADC10DF(bool);
+        DF: 9 = struct DF(bool);
         /// ADC10 Sample/Hold Source Bit: 0
         SHS: 10..11 = enum SHS {
             /// ADC10SC
@@ -181,13 +181,13 @@ utils::periph! {
         }
     }
     /// ADC10 Memory
-    rw ADC10MEM @ 0x16c: u16 = 0_0 {
+    rw MEM @ 0x16c: u16 = 0_0 {
         /// ADC10 Memory
-        ADC10MEM: 0..15 = struct ADC10MEMField(u16);
+        MEM: 0..15 = struct MEMField(u16);
     }
     /// ADC10 Data Transfer Start Address
-    rw ADC10SA @ 0x174: u16 = 0_0 {
+    rw SA @ 0x174: u16 = 0_0 {
         /// ADC10 Data Transfer Start Address
-        ADC10SA: 0..15 = struct ADC10SAField(u16);
+        SA: 0..15 = struct SAField(u16);
     }
 }

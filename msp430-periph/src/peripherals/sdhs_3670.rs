@@ -4,9 +4,9 @@ utils::periph! {
     /// SDHS
     SDHS;
     /// Interrupt Index Register
-    r SDHSIIDX @ 0x00: u16 = 0_0 {
+    r IIDX @ 0x00: u16 = 0_0 {
         /// SDHS Interrupt Vector Value.
-        IIDX: 1..15 = enum IIDX {
+        IIDX: 1..15 = enum IIDXField {
             /// No Interrupt pending.
             IIDX_0 = 0b000000000000000,
             /// Interrupt Source: RIS.OVF; Interrupt Priority: Highest
@@ -28,44 +28,44 @@ utils::periph! {
         }
     }
     /// Masked Interrupt Status and Clear Register
-    r SDHSMIS @ 0x02: u16 = 0_0 {
+    r MIS @ 0x02: u16 = 0_0 {
         /// SDHS Data Ready Masked Interrupt Status bit.
-        SDHSMIS_DTRDY: 3 = enum SDHSMIS_DTRDY {
+        MIS_DTRDY: 3 = enum MIS_DTRDY {
             /// No interrupt pending
             DTRDY_0 = 0b0,
             /// Interrupt pending
             DTRDY_1 = 0b1,
         }
         /// SDHS Start Conversion Trigger Masked Interrupt Status bit.
-        SDHSMIS_SSTRG: 2 = enum SDHSMIS_SSTRG {
+        MIS_SSTRG: 2 = enum MIS_SSTRG {
             /// No interrupt pending
             SSTRG_0 = 0b0,
             /// Interrupt pending
             SSTRG_1 = 0b1,
         }
         /// SDHS Data Overflow Masked Interrupt Status bit.
-        SDHSMIS_OVF: 0 = enum SDHSMIS_OVF {
+        MIS_OVF: 0 = enum MIS_OVF {
             /// No interrupt pending
             OVF_0 = 0b0,
             /// Interrupt pending
             OVF_1 = 0b1,
         }
         /// Acquisition Done Masked Interrupt Status bit.
-        SDHSMIS_ACQDONE: 1 = enum SDHSMIS_ACQDONE {
+        MIS_ACQDONE: 1 = enum MIS_ACQDONE {
             /// No interrupt pending
             ACQDONE_0 = 0b0,
             /// Interrupt pending
             ACQDONE_1 = 0b1,
         }
         /// SDHS Window High Masked Interrupt Status bit.
-        SDHSMIS_WINHI: 4 = enum SDHSMIS_WINHI {
+        MIS_WINHI: 4 = enum MIS_WINHI {
             /// No interrupt pending
             WINHI_0 = 0b0,
             /// Interrupt pending
             WINHI_1 = 0b1,
         }
         /// SDHS Window Low Masked Interrupt Status and Clear bit.
-        SDHSMIS_WINLO: 5 = enum SDHSMIS_WINLO {
+        MIS_WINLO: 5 = enum MIS_WINLO {
             /// No interrupt pending
             WINLO_0 = 0b0,
             /// Interrupt pending
@@ -73,51 +73,51 @@ utils::periph! {
         }
     }
     /// Raw Interrupt Status Register
-    r SDHSRIS @ 0x04: u16 = 0_0 {
+    r RIS @ 0x04: u16 = 0_0 {
         /// SDHS Data Ready Raw Interrupt Status bit.
-        SDHSRIS_DTRDY: 3 = enum SDHSRIS_DTRDY {
+        RIS_DTRDY: 3 = enum RIS_DTRDY {
             /// No DTRDY event
             DTRDY_0 = 0b0,
             /// The data buffer has become empty.
             DTRDY_1 = 0b1,
         }
         /// SDHS Start Conversion Trigger Raw Interrupt Status bit.
-        SDHSRIS_SSTRG: 2 = enum SDHSRIS_SSTRG {
+        RIS_SSTRG: 2 = enum RIS_SSTRG {
             /// No SSTRG event
             SSTRG_0 = 0b0,
             /// Converson Start signal has been asserted
             SSTRG_1 = 0b1,
         }
         /// SDHS Data Overflow Raw Interrupt Status bit.
-        SDHSRIS_OVF: 0 = enum SDHSRIS_OVF {
+        RIS_OVF: 0 = enum RIS_OVF {
             /// No OVF event
             OVF_0 = 0b0,
             /// When DTC is enabled (CTL2.DTCOFF = 0), DTC has dropped at least one sample. This indicates that the system clock needs to be increased.  When DTC is disabled (CTL2.DTCOFF = 1),  At least one new sample has been overwritten to SDHSDT register before the previous value is read.
             OVF_1 = 0b1,
         }
         /// Acquisition Done Raw Interrupt Status bit
-        SDHSRIS_ACQDONE: 1 = enum SDHSRIS_ACQDONE {
+        RIS_ACQDONE: 1 = enum RIS_ACQDONE {
             /// No ACQDONE event
             ACQDONE_0 = 0b0,
             /// Data conversion has been finished (either complete or incomplete).
             ACQDONE_1 = 0b1,
         }
         /// SDHS Window High Raw Interrupt Status bit.
-        SDHSRIS_WINHI: 4 = enum SDHSRIS_WINHI {
+        RIS_WINHI: 4 = enum RIS_WINHI {
             /// No WINHI event
             WINHI_0 = 0b0,
             /// The output data value is higher than the value in the WINHITH register
             WINHI_1 = 0b1,
         }
         /// SDHS Window Low Raw Interrupt Status bit.
-        SDHSRIS_WINLO: 5 = enum SDHSRIS_WINLO {
+        RIS_WINLO: 5 = enum RIS_WINLO {
             /// No new data is lower than the value in the WINLOTH register
             WINLO_0 = 0b0,
             /// New data is low than the value in the WINLOTH register
             WINLO_1 = 0b1,
         }
         /// Incomplete Stop Status bit.
-        SDHSRIS_ISTOP: 15 = enum SDHSRIS_ISTOP {
+        RIS_ISTOP: 15 = enum RIS_ISTOP {
             /// No ISTOP event
             ISTOP_0 = 0b0,
             /// Conversion has been interrupted and stopped before completing the number of samples defined in CTL2.SAMPSZ.
@@ -125,44 +125,44 @@ utils::periph! {
         }
     }
     /// Interrupt Mask Register
-    rw SDHSIMSC @ 0x06: u16 = 0_0 {
+    rw IMSC @ 0x06: u16 = 0_0 {
         /// SDHS Data Ready Interrupt Mask bit.
-        SDHSIMSC_DTRDY: 3 = enum SDHSIMSC_DTRDY {
+        IMSC_DTRDY: 3 = enum IMSC_DTRDY {
             /// Interrupt is disabled
             DTRDY_0 = 0b0,
             /// Interrupt is enabled
             DTRDY_1 = 0b1,
         }
         /// SDHS Start Conversion Trigger Interrupt Mask bit.
-        SDHSIMSC_SSTRG: 2 = enum SDHSIMSC_SSTRG {
+        IMSC_SSTRG: 2 = enum IMSC_SSTRG {
             /// Interrupt is disabled
             SSTRG_0 = 0b0,
             /// Interrupt is enabled
             SSTRG_1 = 0b1,
         }
         /// SDHS Data Overflow Interrupt Mask bit.
-        SDHSIMSC_OVF: 0 = enum SDHSIMSC_OVF {
+        IMSC_OVF: 0 = enum IMSC_OVF {
             /// Interrupt is disabled
             OVF_0 = 0b0,
             /// Interrupt is enabled
             OVF_1 = 0b1,
         }
         /// Acquisition Done  Interrupt Mask bit.
-        SDHSIMSC_ACQDONE: 1 = enum SDHSIMSC_ACQDONE {
+        IMSC_ACQDONE: 1 = enum IMSC_ACQDONE {
             /// Interrupt is disabled
             ACQDONE_0 = 0b0,
             /// Interrupt is enabled
             ACQDONE_1 = 0b1,
         }
         /// SDHS Window High Interrupt Mask bit.
-        SDHSIMSC_WINHI: 4 = enum SDHSIMSC_WINHI {
+        IMSC_WINHI: 4 = enum IMSC_WINHI {
             /// Interrupt is disabled
             WINHI_0 = 0b0,
             /// Interrupt is enabled
             WINHI_1 = 0b1,
         }
         /// SDHS Window Low Interrupt Mask bit.
-        SDHSIMSC_WINLO: 5 = enum SDHSIMSC_WINLO {
+        IMSC_WINLO: 5 = enum IMSC_WINLO {
             /// Interrupt is disabled
             WINLO_0 = 0b0,
             /// Interrupt is enabled
@@ -170,41 +170,41 @@ utils::periph! {
         }
     }
     /// Interrupt Clear Register.
-    rw SDHSICR @ 0x08: u16 = 0_0 {
+    rw ICR @ 0x08: u16 = 0_0 {
         /// SDHS Start Conversion Trigger Interrupt Clear bit.
-        SDHSICR_SSTRG: 2 = struct SDHSICR_SSTRG(bool);
+        ICR_SSTRG: 2 = struct ICR_SSTRG(bool);
         /// SDHS Data Overflow Interrupt Clear bit.
-        SDHSICR_OVF: 0 = struct SDHSICR_OVF(bool);
+        ICR_OVF: 0 = struct ICR_OVF(bool);
         /// Acquisition Done  Interrupt Clear bit.
-        SDHSICR_ACQDONE: 1 = struct SDHSICR_ACQDONE(bool);
+        ICR_ACQDONE: 1 = struct ICR_ACQDONE(bool);
         /// SDHS Window High Interrupt Clear bit.
-        SDHSICR_WINHI: 4 = struct SDHSICR_WINHI(bool);
+        ICR_WINHI: 4 = struct ICR_WINHI(bool);
         /// SDHS Window Low Interrupt Clear bit.
-        SDHSICR_WINLO: 5 = struct SDHSICR_WINLO(bool);
+        ICR_WINLO: 5 = struct ICR_WINLO(bool);
         /// Incomplete Stop Interrupt Clear bit.
-        SDHSICR_ISTOP: 15 = struct SDHSICR_ISTOP(bool);
+        ICR_ISTOP: 15 = struct ICR_ISTOP(bool);
         /// SDHS Data Ready Interrupt Clear bit.
-        SDHSICR_DTRDY: 3 = struct SDHSICR_DTRDY(bool);
+        ICR_DTRDY: 3 = struct ICR_DTRDY(bool);
     }
     /// Interrupt Set Register.
-    rw SDHSISR @ 0x0a: u16 = 0_0 {
+    rw ISR @ 0x0a: u16 = 0_0 {
         /// SDHS Data Ready Interrupt Set bit.
-        SDHSISR_DTRDY: 3 = struct SDHSISR_DTRDY(bool);
+        ISR_DTRDY: 3 = struct ISR_DTRDY(bool);
         /// SDHS Start Conversion Trigger Interrupt Set bit.
-        SDHSISR_SSTRG: 2 = struct SDHSISR_SSTRG(bool);
+        ISR_SSTRG: 2 = struct ISR_SSTRG(bool);
         /// SDHS Data Overflow Interrupt Set bit.
-        SDHSISR_OVF: 0 = struct SDHSISR_OVF(bool);
+        ISR_OVF: 0 = struct ISR_OVF(bool);
         /// Acquisition Done Interrupt Set bit.
-        SDHSISR_ACQDONE: 1 = struct SDHSISR_ACQDONE(bool);
+        ISR_ACQDONE: 1 = struct ISR_ACQDONE(bool);
         /// SDHS Window High Interrupt Set bit.
-        SDHSISR_WINHI: 4 = struct SDHSISR_WINHI(bool);
+        ISR_WINHI: 4 = struct ISR_WINHI(bool);
         /// SDHS Window Low Interrupt Set bit.
-        SDHSISR_WINLO: 5 = struct SDHSISR_WINLO(bool);
+        ISR_WINLO: 5 = struct ISR_WINLO(bool);
         /// Incomplete Stop Interrupt Set bit.
-        SDHSISR_ISTOP: 15 = struct SDHSISR_ISTOP(bool);
+        ISR_ISTOP: 15 = struct ISR_ISTOP(bool);
     }
     /// SDHS Descriptor Register L.
-    r SDHSDESCLO @ 0x0c: u16 = 0_0 {
+    r DESCLO @ 0x0c: u16 = 0_0 {
         /// Minor Revision
         MINREV: 0..3 = struct MINREV(u16);
         /// Instance Number within the device.
@@ -215,12 +215,12 @@ utils::periph! {
         FEATUREVER: 12..15 = struct FEATUREVER(u16);
     }
     /// SDHS Descriptor Register H.
-    rw SDHSDESCHI @ 0x0e: u16 = 0_0 {
+    rw DESCHI @ 0x0e: u16 = 0_0 {
         /// SDHS Descriptor Register H.
-        SDHSDESCHI: 0..15 = struct SDHSDESCHIField(u16);
+        DESCHI: 0..15 = struct DESCHIField(u16);
     }
     /// SDHS Control Register 0
-    rw SDHSCTL0 @ 0x10: u16 = 0_0 {
+    rw CTL0 @ 0x10: u16 = 0_0 {
         /// Data alignment
         DALGN: 7 = enum DALGN {
             /// Right-aligned.
@@ -296,7 +296,7 @@ utils::periph! {
         }
     }
     /// SDHS Control Register 1
-    rw SDHSCTL1 @ 0x12: u16 = 0_0 {
+    rw CTL1 @ 0x12: u16 = 0_0 {
         /// Over Sampling Rate.
         OSR: 0..3 = enum OSR {
             /// 10
@@ -312,7 +312,7 @@ utils::periph! {
         }
     }
     /// SDHS Control Register 2
-    rw SDHSCTL2 @ 0x14: u16 = 0_0 {
+    rw CTL2 @ 0x14: u16 = 0_0 {
         /// Disable sampling size counting.
         SMPCTLOFF: 10 = enum SMPCTLOFF {
             /// Total sampling size is determined by SMPSZ bits. The SDHS automatically stops data conversion.
@@ -338,7 +338,7 @@ utils::periph! {
         }
     }
     /// SDHS Control Register 3
-    rw SDHSCTL3 @ 0x16: u16 = 0_0 {
+    rw CTL3 @ 0x16: u16 = 0_0 {
         /// SDHS Trigger Enable bit
         TRIGEN: 0 = enum TRIGEN {
             /// SDHS Trigger is disabled. Once this bit is de-asserted, CTL0,  CTL1, CTL2, CTL7,WINHITH, WINLOTH, and DTCDA registers are unlocked (allowed to be modified).
@@ -348,17 +348,17 @@ utils::periph! {
         }
     }
     /// SDHS Control Register 4
-    rw SDHSCTL4 @ 0x18: u16 = 0_0 {
+    rw CTL4 @ 0x18: u16 = 0_0 {
         /// SDHS Power-up
-        SDHSON: 0 = enum SDHSON {
+        ON: 0 = enum ON {
             /// Power down the SDHS module
-            SDHSON_0 = 0b0,
+            ON_0 = 0b0,
             /// Power on the SDHS module
-            SDHSON_1 = 0b1,
+            ON_1 = 0b1,
         }
     }
     /// SDHS Control Register 5
-    rw SDHSCTL5 @ 0x1a: u16 = 0_0 {
+    rw CTL5 @ 0x1a: u16 = 0_0 {
         /// Start of conversion.
         SSTART: 0 = enum SSTART {
             /// Stop conversion
@@ -375,33 +375,33 @@ utils::periph! {
         }
     }
     /// SDHS Control Register 6
-    rw SDHSCTL6 @ 0x1c: u16 = 0_0 {
+    rw CTL6 @ 0x1c: u16 = 0_0 {
         /// PGA Gain Control bits
         PGA_GAIN: 0..5 = struct PGA_GAIN(u16);
     }
     /// SDHS Control Register 7
-    rw SDHSCTL7 @ 0x1e: u16 = 0_0 {
+    rw CTL7 @ 0x1e: u16 = 0_0 {
         /// SDHS Modulator Optimization bits.
         MODOPTI: 0..4 = struct MODOPTI(u16);
     }
     /// SDHS Data Converstion Register
-    rw SDHSDT @ 0x22: u16 = 0_0 {
+    rw DT @ 0x22: u16 = 0_0 {
         /// SDHS Data Converstion Register
-        SDHSDT: 0..15 = struct SDHSDTField(u16);
+        DT: 0..15 = struct DTField(u16);
     }
     /// SDHS Window Comparator High Threshold Register.
-    rw SDHSWINHITH @ 0x24: u16 = 0_0 {
+    rw WINHITH @ 0x24: u16 = 0_0 {
         /// SDHS Window Comparator High Threshold Register.
-        SDHSWINHITH: 0..15 = struct SDHSWINHITHField(u16);
+        WINHITH: 0..15 = struct WINHITHField(u16);
     }
     /// SDHS Window Comparator Low Threshold Register.
-    rw SDHSWINLOTH @ 0x26: u16 = 0_0 {
+    rw WINLOTH @ 0x26: u16 = 0_0 {
         /// SDHS Window Comparator Low Threshold Register.
-        SDHSWINLOTH: 0..15 = struct SDHSWINLOTHField(u16);
+        WINLOTH: 0..15 = struct WINLOTHField(u16);
     }
     /// DTC destination address register
-    rw SDHSDTCDA @ 0x28: u16 = 0_0 {
+    rw DTCDA @ 0x28: u16 = 0_0 {
         /// DTC destination address.
-        DTCDA: 0..14 = struct DTCDA(u16);
+        DTCDA: 0..14 = struct DTCDAField(u16);
     }
 }

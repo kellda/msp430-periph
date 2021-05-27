@@ -4,130 +4,130 @@ utils::periph! {
     /// USI
     USI;
     /// USI  Control Register 0
-    rw USICTL0 @ 0x00: u8 = 0_0 {
+    rw CTL0 @ 0x00: u8 = 0_0 {
         /// USI  Software Reset
-        USISWRST: 0 = struct USISWRST(bool);
+        SWRST: 0 = struct SWRST(bool);
         /// USI  Output Enable
-        USIOE: 1 = struct USIOE(bool);
+        OE: 1 = struct OE(bool);
         /// USI  General Output Enable Latch
-        USIGE: 2 = struct USIGE(bool);
+        GE: 2 = struct GE(bool);
         /// USI  Master Select  0:Slave / 1:Master
-        USIMST: 3 = struct USIMST(bool);
+        MST: 3 = struct MST(bool);
         /// USI  LSB first  1:LSB / 0:MSB
-        USILSB: 4 = struct USILSB(bool);
+        LSB: 4 = struct LSB(bool);
         /// USI  Port Enable Px.5
-        USIPE5: 5 = struct USIPE5(bool);
+        PE5: 5 = struct PE5(bool);
         /// USI  Port Enable Px.6
-        USIPE6: 6 = struct USIPE6(bool);
+        PE6: 6 = struct PE6(bool);
         /// USI  Port Enable Px.7
-        USIPE7: 7 = struct USIPE7(bool);
+        PE7: 7 = struct PE7(bool);
     }
     /// USI  Control Register 1
-    rw USICTL1 @ 0x01: u8 = 0_0 {
+    rw CTL1 @ 0x01: u8 = 0_0 {
         /// USI  Counter Interrupt Flag
-        USIIFG: 0 = struct USIIFG(bool);
+        IFG: 0 = struct IFG(bool);
         /// USI  START Condition interrupt Flag
-        USISTTIFG: 1 = struct USISTTIFG(bool);
+        STTIFG: 1 = struct STTIFG(bool);
         /// USI  STOP Condition received
-        USISTP: 2 = struct USISTP(bool);
+        STP: 2 = struct STP(bool);
         /// USI  Arbitration Lost
-        USIAL: 3 = struct USIAL(bool);
+        AL: 3 = struct AL(bool);
         /// USI  Counter Interrupt enable
-        USIIE: 4 = struct USIIE(bool);
+        IE: 4 = struct IE(bool);
         /// USI  START Condition interrupt enable
-        USISTTIE: 5 = struct USISTTIE(bool);
+        STTIE: 5 = struct STTIE(bool);
         /// USI  I2C Mode
-        USII2C: 6 = struct USII2C(bool);
+        I2C: 6 = struct I2C(bool);
         /// USI  Sync. Mode: Clock Phase
-        USICKPH: 7 = struct USICKPH(bool);
+        CKPH: 7 = struct CKPH(bool);
     }
     /// USI  Clock Control Register
-    rw USICKCTL @ 0x02: u8 = 0_0 {
+    rw CKCTL @ 0x02: u8 = 0_0 {
         /// USI  Software Clock
-        USISWCLK: 0 = struct USISWCLK(bool);
+        SWCLK: 0 = struct SWCLK(bool);
         /// USI  Clock Polarity 0:Inactive=Low / 1:Inactive=High
-        USICKPL: 1 = struct USICKPL(bool);
+        CKPL: 1 = struct CKPL(bool);
         /// USI  Clock Source Select 2
-        USISSEL: 2..4 = enum USISSEL {
+        SSEL: 2..4 = enum SSEL {
             /// USI  Clock Source: 0
-            USISSEL_0 = 0b000,
+            SSEL_0 = 0b000,
             /// USI  Clock Source: 1
-            USISSEL_1 = 0b001,
+            SSEL_1 = 0b001,
             /// USI  Clock Source: 2
-            USISSEL_2 = 0b010,
+            SSEL_2 = 0b010,
             /// USI  Clock Source: 3
-            USISSEL_3 = 0b011,
+            SSEL_3 = 0b011,
             /// USI  Clock Source: 4
-            USISSEL_4 = 0b100,
+            SSEL_4 = 0b100,
             /// USI  Clock Source: 5
-            USISSEL_5 = 0b101,
+            SSEL_5 = 0b101,
             /// USI  Clock Source: 6
-            USISSEL_6 = 0b110,
+            SSEL_6 = 0b110,
             /// USI  Clock Source: 7
-            USISSEL_7 = 0b111,
+            SSEL_7 = 0b111,
         }
         /// USI  Clock Divider 2
-        USIDIV: 5..7 = enum USIDIV {
+        DIV: 5..7 = enum DIV {
             /// USI  Clock Divider: 0
-            USIDIV_0 = 0b000,
+            DIV_0 = 0b000,
             /// USI  Clock Divider: 1
-            USIDIV_1 = 0b001,
+            DIV_1 = 0b001,
             /// USI  Clock Divider: 2
-            USIDIV_2 = 0b010,
+            DIV_2 = 0b010,
             /// USI  Clock Divider: 3
-            USIDIV_3 = 0b011,
+            DIV_3 = 0b011,
             /// USI  Clock Divider: 4
-            USIDIV_4 = 0b100,
+            DIV_4 = 0b100,
             /// USI  Clock Divider: 5
-            USIDIV_5 = 0b101,
+            DIV_5 = 0b101,
             /// USI  Clock Divider: 6
-            USIDIV_6 = 0b110,
+            DIV_6 = 0b110,
             /// USI  Clock Divider: 7
-            USIDIV_7 = 0b111,
+            DIV_7 = 0b111,
         }
     }
     /// USI  Bit Counter Register
-    rw USICNT @ 0x03: u8 = 0_0 {
+    rw CNT @ 0x03: u8 = 0_0 {
         /// USI  Bit Count 0
-        USICNT0: 0 = struct USICNT0(bool);
+        CNT0: 0 = struct CNT0(bool);
         /// USI  Bit Count 1
-        USICNT1: 1 = struct USICNT1(bool);
+        CNT1: 1 = struct CNT1(bool);
         /// USI  Bit Count 2
-        USICNT2: 2 = struct USICNT2(bool);
+        CNT2: 2 = struct CNT2(bool);
         /// USI  Bit Count 3
-        USICNT3: 3 = struct USICNT3(bool);
+        CNT3: 3 = struct CNT3(bool);
         /// USI  Bit Count 4
-        USICNT4: 4 = struct USICNT4(bool);
+        CNT4: 4 = struct CNT4(bool);
         /// USI  Interrupt Flag Clear Control
-        USIIFGCC: 5 = struct USIIFGCC(bool);
+        IFGCC: 5 = struct IFGCC(bool);
         /// USI  16 Bit Shift Register Enable
-        USI16B: 6 = struct USI16B(bool);
+        _16B: 6 = struct _16B(bool);
         /// USI  SCL Released
-        USISCLREL: 7 = struct USISCLREL(bool);
+        SCLREL: 7 = struct SCLREL(bool);
     }
     /// USI  Low Byte Shift Register
-    rw USISRL @ 0x04: u8 = 0_0 {
+    rw SRL @ 0x04: u8 = 0_0 {
         /// USI  Low Byte Shift Register
-        USISRL: 0..7 = struct USISRLField(u8);
+        SRL: 0..7 = struct SRLField(u8);
     }
     /// USI  High Byte Shift Register
-    rw USISRH @ 0x05: u8 = 0_0 {
+    rw SRH @ 0x05: u8 = 0_0 {
         /// USI  High Byte Shift Register
-        USISRH: 0..7 = struct USISRHField(u8);
+        SRH: 0..7 = struct SRHField(u8);
     }
     /// USI  Control Register
-    rw USICTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// USI  Control Register
-        USICTL: 0..15 = struct USICTLField(u16);
+        CTL: 0..15 = struct CTLField(u16);
     }
     /// USI  Clock and Counter Control Register
-    rw USICCTL @ 0x02: u16 = 0_0 {
+    rw CCTL @ 0x02: u16 = 0_0 {
         /// USI  Clock and Counter Control Register
-        USICCTL: 0..15 = struct USICCTLField(u16);
+        CCTL: 0..15 = struct CCTLField(u16);
     }
     /// USI  Shift Register
-    rw USISR @ 0x04: u16 = 0_0 {
+    rw SR @ 0x04: u16 = 0_0 {
         /// USI  Shift Register
-        USISR: 0..15 = struct USISRField(u16);
+        SR: 0..15 = struct SRField(u16);
     }
 }

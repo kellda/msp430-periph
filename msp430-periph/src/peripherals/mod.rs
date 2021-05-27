@@ -1,5 +1,3 @@
-#[cfg(feature = "_8bit_timer_counter_1")]
-pub mod _8bit_timer_counter_1;
 #[cfg(feature = "adc10_2")]
 pub mod adc10_2;
 #[cfg(feature = "adc10_3")]
@@ -596,6 +594,8 @@ pub mod timer_a3_3;
 pub mod timer_a5_3;
 #[cfg(feature = "timer_a3_4")]
 pub mod timer_a3_4;
+#[cfg(feature = "timer_counter")]
+pub mod timer_counter;
 #[cfg(feature = "timer_event_control")]
 pub mod timer_event_control;
 #[cfg(feature = "timer_port")]

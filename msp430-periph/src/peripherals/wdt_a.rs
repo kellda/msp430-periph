@@ -4,9 +4,9 @@ utils::periph! {
     /// WDT_A
     WDT_A;
     /// Watchdog Timer Control Register
-    rw WDTCTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// Watchdog timer interval select
-        WDTIS: 0..2 = enum WDTIS {
+        IS: 0..2 = enum IS {
             /// Watchdog clock source / (2^(31)) (18:12:16 at 32.768 kHz)
             _2G = 0b000,
             /// Watchdog clock source /(2^(27)) (01:08:16 at 32.768 kHz)
@@ -25,21 +25,21 @@ utils::periph! {
             _64 = 0b111,
         }
         /// Watchdog timer counter clear
-        WDTCNTCL: 3 = enum WDTCNTCL {
+        CNTCL: 3 = enum CNTCL {
             /// No action
-            WDTCNTCL_0 = 0b0,
+            CNTCL_0 = 0b0,
             /// WDTCNT = 0000h
-            WDTCNTCL_1 = 0b1,
+            CNTCL_1 = 0b1,
         }
         /// Watchdog timer mode select
-        WDTTMSEL: 4 = enum WDTTMSEL {
+        TMSEL: 4 = enum TMSEL {
             /// Watchdog mode
-            WDTTMSEL_0 = 0b0,
+            TMSEL_0 = 0b0,
             /// Interval timer mode
-            WDTTMSEL_1 = 0b1,
+            TMSEL_1 = 0b1,
         }
         /// Watchdog timer clock source select
-        WDTSSEL: 5..6 = enum WDTSSEL {
+        SSEL: 5..6 = enum SSEL {
             /// SMCLK
             SMCLK = 0b00,
             /// ACLK
@@ -50,13 +50,13 @@ utils::periph! {
             BCLK = 0b11,
         }
         /// Watchdog timer hold
-        WDTHOLD: 7 = enum WDTHOLD {
+        HOLD: 7 = enum HOLD {
             /// Watchdog timer is not stopped
             UNHOLD = 0b0,
             /// Watchdog timer is stopped
             HOLD = 0b1,
         }
         /// Watchdog timer password
-        WDTPW: 8..15 = struct WDTPW(u16);
+        PW: 8..15 = struct PW(u16);
     }
 }

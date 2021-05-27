@@ -4,51 +4,51 @@ utils::periph! {
     /// eUSCI_B
     eUSCI_B;
     /// eUSCI_Bx Control Word Register 0
-    rw UCBCTLW0 @ 0x00: u16 = 0_0 {
+    rw CTLW0 @ 0x00: u16 = 0_0 {
         /// Software reset enable
-        UCBCTLW0_UCSWRST: 0 = enum UCBCTLW0_UCSWRST {
+        SWRST: 0 = enum SWRST {
             /// Disabled. eUSCI_B reset released for operation
             DISABLE = 0b0,
             /// Enabled. eUSCI_B logic held in reset state
             ENABLE = 0b1,
         }
         /// Transmit START condition in master mode
-        UCTXSTT: 1 = enum UCTXSTT {
+        TXSTT: 1 = enum TXSTT {
             /// Do not generate START condition
-            UCTXSTT_0 = 0b0,
+            TXSTT_0 = 0b0,
             /// Generate START condition
-            UCTXSTT_1 = 0b1,
+            TXSTT_1 = 0b1,
         }
         /// Transmit STOP condition in master mode
-        UCTXSTP: 2 = enum UCTXSTP {
+        TXSTP: 2 = enum TXSTP {
             /// No STOP generated
-            UCTXSTP_0 = 0b0,
+            TXSTP_0 = 0b0,
             /// Generate STOP
-            UCTXSTP_1 = 0b1,
+            TXSTP_1 = 0b1,
         }
         /// Transmit a NACK
-        UCTXNACK: 3 = enum UCTXNACK {
+        TXNACK: 3 = enum TXNACK {
             /// Acknowledge normally
-            UCTXNACK_0 = 0b0,
+            TXNACK_0 = 0b0,
             /// Generate NACK
-            UCTXNACK_1 = 0b1,
+            TXNACK_1 = 0b1,
         }
         /// Transmitter/receiver
-        UCTR: 4 = enum UCTR {
+        TR: 4 = enum TR {
             /// Receiver
             RX = 0b0,
             /// Transmitter
             TX = 0b1,
         }
         /// Transmit ACK condition in slave mode
-        UCTXACK: 5 = enum UCTXACK {
+        TXACK: 5 = enum TXACK {
             /// Do not acknowledge the slave address
-            UCTXACK_0 = 0b0,
+            TXACK_0 = 0b0,
             /// Acknowledge the slave address
-            UCTXACK_1 = 0b1,
+            TXACK_1 = 0b1,
         }
         /// eUSCI_B clock source select
-        UCBCTLW0_UCSSEL: 6..7 = enum UCBCTLW0_UCSSEL {
+        SSEL: 6..7 = enum SSEL {
             /// UCLKI
             UCLKI = 0b00,
             /// ACLK
@@ -59,300 +59,300 @@ utils::periph! {
             UCSSEL_3 = 0b11,
         }
         /// Synchronous mode enable
-        UCBCTLW0_UCSYNC: 8 = enum UCBCTLW0_UCSYNC {
+        SYNC: 8 = enum SYNC {
             /// Asynchronous mode
             ASYNC = 0b0,
             /// Synchronous mode
             SYNC = 0b1,
         }
         /// eUSCI_B mode
-        UCBCTLW0_UCMODE: 9..10 = enum UCBCTLW0_UCMODE {
+        MODE: 9..10 = enum MODE {
             /// 3-pin SPI
-            UCMODE_0 = 0b00,
+            MODE_0 = 0b00,
             /// 4-pin SPI (master or slave enabled if STE = 1)
-            UCMODE_1 = 0b01,
+            MODE_1 = 0b01,
             /// 4-pin SPI (master or slave enabled if STE = 0)
-            UCMODE_2 = 0b10,
+            MODE_2 = 0b10,
             /// I2C mode
-            UCMODE_3 = 0b11,
+            MODE_3 = 0b11,
         }
         /// Master mode select
-        UCBCTLW0_UCMST: 11 = enum UCBCTLW0_UCMST {
+        MST: 11 = enum MST {
             /// Slave mode
             SLAVE = 0b0,
             /// Master mode
             MASTER = 0b1,
         }
         /// Multi-master environment select
-        UCMM: 13 = enum UCMM {
+        MM: 13 = enum MM {
             /// Single master environment. There is no other master in the system. The address compare unit is disabled.
             SINGLE = 0b0,
             /// Multi-master environment
             MULTI = 0b1,
         }
         /// Slave addressing mode select
-        UCSLA10: 14 = enum UCSLA10 {
+        SLA10: 14 = enum SLA10 {
             /// Address slave with 7-bit address
             _7BIT = 0b0,
             /// Address slave with 10-bit address
             _10BIT = 0b1,
         }
         /// Own addressing mode select
-        UCA10: 15 = enum UCA10 {
+        A10: 15 = enum A10 {
             /// Own address is a 7-bit address
-            UCA10_0 = 0b0,
+            A10_0 = 0b0,
             /// Own address is a 10-bit address
-            UCA10_1 = 0b1,
+            A10_1 = 0b1,
         }
     }
     /// eUSCI_Bx Control Word Register 0
-    rw UCBCTLW0_SPI @ 0x00: u16 = 0_0 {
+    rw BCTLW0_SPI @ 0x00: u16 = 0_0 {
         /// Software reset enable
-        UCBCTLW0_SPI_UCSWRST: 0 = enum UCBCTLW0_SPI_UCSWRST {
+        SWRST_SPI: 0 = enum SWRST_SPI {
             /// Disabled. eUSCI_B reset released for operation
             DISABLE = 0b0,
             /// Enabled. eUSCI_B logic held in reset state
             ENABLE = 0b1,
         }
         /// STE mode select in master mode.
-        UCSTEM: 1 = enum UCSTEM {
+        STEM: 1 = enum STEM {
             /// STE pin is used to prevent conflicts with other masters
-            UCSTEM_0 = 0b0,
+            STEM_0 = 0b0,
             /// STE pin is used to generate the enable signal for a 4-wire slave
-            UCSTEM_1 = 0b1,
+            STEM_1 = 0b1,
         }
         /// eUSCI_B clock source select
-        UCBCTLW0_SPI_UCSSEL: 6..7 = enum UCBCTLW0_SPI_UCSSEL {
+        SSEL_SPI: 6..7 = enum SSEL_SPI {
             /// Reserved
-            UCSSEL_0 = 0b00,
+            SSEL_0 = 0b00,
             /// ACLK
             ACLK = 0b01,
             /// SMCLK
             SMCLK = 0b10,
             /// SMCLK
-            UCSSEL_3 = 0b11,
+            SSEL_3 = 0b11,
         }
         /// Synchronous mode enable
-        UCBCTLW0_SPI_UCSYNC: 8 = enum UCBCTLW0_SPI_UCSYNC {
+        SYNC_SPI: 8 = enum SYNC_SPI {
             /// Asynchronous mode
             ASYNC = 0b0,
             /// Synchronous mode
             SYNC = 0b1,
         }
         /// eUSCI mode
-        UCBCTLW0_SPI_UCMODE: 9..10 = enum UCBCTLW0_SPI_UCMODE {
+        MODE_SPI: 9..10 = enum MODE_SPI {
             /// 3-pin SPI
-            UCMODE_0 = 0b00,
+            MODE_0 = 0b00,
             /// 4-pin SPI with UCxSTE active high: Slave enabled when UCxSTE = 1
-            UCMODE_1 = 0b01,
+            MODE_1 = 0b01,
             /// 4-pin SPI with UCxSTE active low: Slave enabled when UCxSTE = 0
-            UCMODE_2 = 0b10,
+            MODE_2 = 0b10,
             /// I2C mode
-            UCMODE_3 = 0b11,
+            MODE_3 = 0b11,
         }
         /// Master mode select
-        UCBCTLW0_SPI_UCMST: 11 = enum UCBCTLW0_SPI_UCMST {
+        MST_SPI: 11 = enum MST_SPI {
             /// Slave mode
             SLAVE = 0b0,
             /// Master mode
             MASTER = 0b1,
         }
         /// Character length
-        UC7BIT: 12 = enum UC7BIT {
+        _7BIT: 12 = enum _7BIT {
             /// 8-bit data
             _8BIT = 0b0,
             /// 7-bit data
             _7BIT = 0b1,
         }
         /// MSB first select
-        UCMSB: 13 = enum UCMSB {
+        MSB: 13 = enum MSB {
             /// LSB first
-            UCMSB_0 = 0b0,
+            MSB_0 = 0b0,
             /// MSB first
-            UCMSB_1 = 0b1,
+            MSB_1 = 0b1,
         }
         /// Clock polarity select
-        UCCKPL: 14 = enum UCCKPL {
+        CKPL: 14 = enum CKPL {
             /// The inactive state is low
             LOW = 0b0,
             /// The inactive state is high
             HIGH = 0b1,
         }
         /// Clock phase select
-        UCCKPH: 15 = enum UCCKPH {
+        CKPH: 15 = enum CKPH {
             /// Data is changed on the first UCLK edge and captured on the following edge.
-            UCCKPH_0 = 0b0,
+            CKPH_0 = 0b0,
             /// Data is captured on the first UCLK edge and changed on the following edge.
-            UCCKPH_1 = 0b1,
+            CKPH_1 = 0b1,
         }
     }
     /// eUSCI_Bx Control Word Register 1
-    rw UCBCTLW1 @ 0x02: u16 = 0_0 {
+    rw CTLW1 @ 0x02: u16 = 0_0 {
         /// Deglitch time
-        UCGLIT: 0..1 = enum UCGLIT {
+        GLIT: 0..1 = enum GLIT {
             /// 50 ns
-            UCGLIT_0 = 0b00,
+            GLIT_0 = 0b00,
             /// 25 ns
-            UCGLIT_1 = 0b01,
+            GLIT_1 = 0b01,
             /// 12.5 ns
-            UCGLIT_2 = 0b10,
+            GLIT_2 = 0b10,
             /// 6.25 ns
-            UCGLIT_3 = 0b11,
+            GLIT_3 = 0b11,
         }
         /// Automatic STOP condition generation
-        UCASTP: 2..3 = enum UCASTP {
+        ASTP: 2..3 = enum ASTP {
             /// No automatic STOP generation. The STOP condition is generated after the user sets the UCTXSTP bit. The value in UCBxTBCNT is a don't care.
-            UCASTP_0 = 0b00,
+            ASTP_0 = 0b00,
             /// UCBCNTIFG is set with the byte counter reaches the threshold defined in UCBxTBCNT
-            UCASTP_1 = 0b01,
+            ASTP_1 = 0b01,
             /// A STOP condition is generated automatically after the byte counter value reached UCBxTBCNT. UCBCNTIFG is set with the byte counter reaching the threshold
-            UCASTP_2 = 0b10,
+            ASTP_2 = 0b10,
             /// Reserved
-            UCASTP_3 = 0b11,
+            ASTP_3 = 0b11,
         }
         /// SW or HW ACK control
-        UCSWACK: 4 = enum UCSWACK {
+        SWACK: 4 = enum SWACK {
             /// The address acknowledge of the slave is controlled by the eUSCI_B module
-            UCSWACK_0 = 0b0,
+            SWACK_0 = 0b0,
             /// The user needs to trigger the sending of the address ACK by issuing UCTXACK
-            UCSWACK_1 = 0b1,
+            SWACK_1 = 0b1,
         }
         /// ACK all master bytes
-        UCSTPNACK: 5 = enum UCSTPNACK {
+        STPNACK: 5 = enum STPNACK {
             /// Send a non-acknowledge before the STOP condition as a master receiver (conform to I2C standard)
-            UCSTPNACK_0 = 0b0,
+            STPNACK_0 = 0b0,
             /// All bytes are acknowledged by the eUSCI_B when configured as master receiver
-            UCSTPNACK_1 = 0b1,
+            STPNACK_1 = 0b1,
         }
         /// Clock low timeout select
-        UCCLTO: 6..7 = enum UCCLTO {
+        CLTO: 6..7 = enum CLTO {
             /// Disable clock low timeout counter
-            UCCLTO_0 = 0b00,
+            CLTO_0 = 0b00,
             /// 135 000 SYSCLK cycles (approximately 28 ms)
-            UCCLTO_1 = 0b01,
+            CLTO_1 = 0b01,
             /// 150 000 SYSCLK cycles (approximately 31 ms)
-            UCCLTO_2 = 0b10,
+            CLTO_2 = 0b10,
             /// 165 000 SYSCLK cycles (approximately 34 ms)
-            UCCLTO_3 = 0b11,
+            CLTO_3 = 0b11,
         }
         /// Early UCTXIFG0
-        UCETXINT: 8 = enum UCETXINT {
+        ETXINT: 8 = enum ETXINT {
             /// UCTXIFGx is set after an address match with UCxI2COAx and the direction bit indicating slave transmit
-            UCETXINT_0 = 0b0,
+            ETXINT_0 = 0b0,
             /// UCTXIFG0 is set for each START condition
-            UCETXINT_1 = 0b1,
+            ETXINT_1 = 0b1,
         }
     }
     /// eUSCI_Bx Baud Rate Control Word Register
-    rw UCBBRW @ 0x06: u16 = 0_0 {
+    rw BRW @ 0x06: u16 = 0_0 {
         /// eUSCI_Bx Baud Rate Control Word Register
-        UCBBRW: 0..15 = struct UCBBRWField(u16);
+        BRW: 0..15 = struct BRWField(u16);
     }
     /// eUSCI_Bx Bit Rate Control Register 1
-    rw UCBBRW_SPI @ 0x06: u16 = 0_0 {
+    rw BRW_SPI @ 0x06: u16 = 0_0 {
         /// eUSCI_Bx Bit Rate Control Register 1
-        UCBBRW_SPI: 0..15 = struct UCBBRW_SPIField(u16);
+        BRW_SPI: 0..15 = struct BRW_SPIField(u16);
     }
     /// eUSCI_Bx Status Register
-    r UCBSTATW @ 0x08: u16 = 0_0 {
+    r STATW @ 0x08: u16 = 0_0 {
         /// Bus busy
-        UCBBUSY: 4 = enum UCBBUSY {
+        BUSY: 4 = enum BUSY {
             /// Bus inactive
             IDLE = 0b0,
             /// Bus busy
             BUSY = 0b1,
         }
         /// General call address received
-        UCGC: 5 = enum UCGC {
+        GC: 5 = enum GC {
             /// No general call address received
-            UCGC_0 = 0b0,
+            GC_0 = 0b0,
             /// General call address received
-            UCGC_1 = 0b1,
+            GC_1 = 0b1,
         }
         /// SCL low
-        UCSCLLOW: 6 = enum UCSCLLOW {
+        SCLLOW: 6 = enum SCLLOW {
             /// SCL is not held low
-            UCSCLLOW_0 = 0b0,
+            SCLLOW_0 = 0b0,
             /// SCL is held low
-            UCSCLLOW_1 = 0b1,
+            SCLLOW_1 = 0b1,
         }
         /// Hardware byte counter value
-        UCBCNT: 8..15 = struct UCBCNT(u16);
+        CNT: 8..15 = struct CNT(u16);
     }
     /// UCBSTATW_SPI
-    rw UCBSTATW_SPI @ 0x08: u16 = 0_0 {
+    rw STATW_SPI @ 0x08: u16 = 0_0 {
         /// Overrun error flag
-        UCOE: 5 = enum UCOE {
+        OE: 5 = enum OE {
             /// No error
-            UCOE_0 = 0b0,
+            OE_0 = 0b0,
             /// Overrun error occurred
-            UCOE_1 = 0b1,
+            OE_1 = 0b1,
         }
         /// Framing error flag
-        UCFE: 6 = enum UCFE {
+        FE: 6 = enum FE {
             /// No error
-            UCFE_0 = 0b0,
+            FE_0 = 0b0,
             /// Bus conflict occurred
-            UCFE_1 = 0b1,
+            FE_1 = 0b1,
         }
         /// Listen enable
-        UCLISTEN: 7 = enum UCLISTEN {
+        LISTEN: 7 = enum LISTEN {
             /// Disabled
-            UCLISTEN_0 = 0b0,
+            LISTEN_0 = 0b0,
             /// Enabled. UCBxTXD is internally fed back to the receiver
-            UCLISTEN_1 = 0b1,
+            LISTEN_1 = 0b1,
         }
     }
     /// eUSCI_Bx Byte Counter Threshold Register
-    rw UCBTBCNT @ 0x0a: u16 = 0_0 {
+    rw TBCNT @ 0x0a: u16 = 0_0 {
         /// Byte counter threshold value
-        UCTBCNT: 0..7 = struct UCTBCNT(u16);
+        TBCNT: 0..7 = struct TBCNTField(u16);
     }
     /// eUSCI_Bx Receive Buffer Register
-    r UCBRXBUF @ 0x0c: u16 = 0_0 {
+    r RXBUF @ 0x0c: u16 = 0_0 {
         /// Receive data buffer
-        UCBRXBUF_UCRXBUF: 0..7 = struct UCBRXBUF_UCRXBUF(u16);
+        RXBUF_UCRXBUF: 0..7 = struct RXBUF_UCRXBUF(u16);
     }
     /// eUSCI_Bx Receive Buffer Register
-    r UCBRXBUF_SPI @ 0x0c: u16 = 0_0 {
+    r RXBUF_SPI @ 0x0c: u16 = 0_0 {
         /// Receive data buffer
-        UCBRXBUF_SPI_UCRXBUF: 0..7 = struct UCBRXBUF_SPI_UCRXBUF(u16);
+        RXBUF_SPI_UCRXBUF: 0..7 = struct RXBUF_SPI_UCRXBUF(u16);
     }
     /// eUSCI_Bx Transmit Buffer Register
-    rw UCBTXBUF @ 0x0e: u16 = 0_0 {
+    rw TXBUF @ 0x0e: u16 = 0_0 {
         /// Transmit data buffer
-        UCBTXBUF_UCTXBUF: 0..7 = struct UCBTXBUF_UCTXBUF(u16);
+        TXBUF_UCTXBUF: 0..7 = struct TXBUF_UCTXBUF(u16);
     }
     /// eUSCI_Bx Transmit Buffer Register
-    rw UCBTXBUF_SPI @ 0x0e: u16 = 0_0 {
+    rw TXBUF_SPI @ 0x0e: u16 = 0_0 {
         /// Transmit data buffer
-        UCBTXBUF_SPI_UCTXBUF: 0..7 = struct UCBTXBUF_SPI_UCTXBUF(u16);
+        TXBUF_SPI_UCTXBUF: 0..7 = struct TXBUF_SPI_UCTXBUF(u16);
     }
     /// eUSCI_Bx I2C Own Address 0 Register
-    rw UCBI2COA0 @ 0x14: u16 = 0_0 {
+    rw I2COA0 @ 0x14: u16 = 0_0 {
         /// I2C own address
-        I2COA0: 0..9 = struct I2COA0(u16);
+        I2COA0: 0..9 = struct I2COA0Field(u16);
         /// Own Address enable register
-        UCBI2COA0_UCOAEN: 10 = enum UCBI2COA0_UCOAEN {
+        I2COA0_UCOAEN: 10 = enum I2COA0_UCOAEN {
             /// The slave address defined in I2COA0 is disabled
             DISABLE = 0b0,
             /// The slave address defined in I2COA0 is enabled
             ENABLE = 0b1,
         }
         /// General call response enable
-        UCGCEN: 15 = enum UCGCEN {
+        GCEN: 15 = enum GCEN {
             /// Do not respond to a general call
-            UCGCEN_0 = 0b0,
+            GCEN_0 = 0b0,
             /// Respond to a general call
-            UCGCEN_1 = 0b1,
+            GCEN_1 = 0b1,
         }
     }
     /// eUSCI_Bx I2C Own Address 1 Register
-    rw UCBI2COA1 @ 0x16: u16 = 0_0 {
+    rw I2COA1 @ 0x16: u16 = 0_0 {
         /// I2C own address
-        I2COA1: 0..9 = struct I2COA1(u16);
+        I2COA1: 0..9 = struct I2COA1Field(u16);
         /// Own Address enable register
-        UCBI2COA1_UCOAEN: 10 = enum UCBI2COA1_UCOAEN {
+        I2COA1_UCOAEN: 10 = enum I2COA1_UCOAEN {
             /// The slave address defined in I2COA1 is disabled
             DISABLE = 0b0,
             /// The slave address defined in I2COA1 is enabled
@@ -360,11 +360,11 @@ utils::periph! {
         }
     }
     /// eUSCI_Bx I2C Own Address 2 Register
-    rw UCBI2COA2 @ 0x18: u16 = 0_0 {
+    rw I2COA2 @ 0x18: u16 = 0_0 {
         /// I2C own address
-        I2COA2: 0..9 = struct I2COA2(u16);
+        I2COA2: 0..9 = struct I2COA2Field(u16);
         /// Own Address enable register
-        UCBI2COA2_UCOAEN: 10 = enum UCBI2COA2_UCOAEN {
+        I2COA2_UCOAEN: 10 = enum I2COA2_UCOAEN {
             /// The slave address defined in I2COA2 is disabled
             DISABLE = 0b0,
             /// The slave address defined in I2COA2 is enabled
@@ -372,11 +372,11 @@ utils::periph! {
         }
     }
     /// eUSCI_Bx I2C Own Address 3 Register
-    rw UCBI2COA3 @ 0x1a: u16 = 0_0 {
+    rw I2COA3 @ 0x1a: u16 = 0_0 {
         /// I2C own address
-        I2COA3: 0..9 = struct I2COA3(u16);
+        I2COA3: 0..9 = struct I2COA3Field(u16);
         /// Own Address enable register
-        UCBI2COA3_UCOAEN: 10 = enum UCBI2COA3_UCOAEN {
+        I2COA3_UCOAEN: 10 = enum I2COA3_UCOAEN {
             /// The slave address defined in I2COA3 is disabled
             DISABLE = 0b0,
             /// The slave address defined in I2COA3 is enabled
@@ -384,318 +384,318 @@ utils::periph! {
         }
     }
     /// eUSCI_Bx I2C Received Address Register
-    r UCBADDRX @ 0x1c: u16 = 0_0 {
+    r ADDRX @ 0x1c: u16 = 0_0 {
         /// Received Address Register
-        ADDRX: 0..9 = struct ADDRX(u16);
+        ADDRX: 0..9 = struct ADDRXField(u16);
     }
     /// eUSCI_Bx I2C Address Mask Register
-    rw UCBADDMASK @ 0x1e: u16 = 0_0 {
+    rw ADDMASK @ 0x1e: u16 = 0_0 {
         /// Address Mask Register. By clearing the corresponding bit of the own address, this bit is a don't care when comparing the address on the bus to the own address. Using this method, it is possible to react on more than one slave address. When all bits of ADDMASKx are set, the address mask feature is deactivated. Modify only when UCSWRST = 1.
-        ADDMASK: 0..9 = struct ADDMASK(u16);
+        ADDMASK: 0..9 = struct ADDMASKField(u16);
     }
     /// eUSCI_Bx I2C Slave Address Register
-    rw UCBI2CSA @ 0x20: u16 = 0_0 {
+    rw I2CSA @ 0x20: u16 = 0_0 {
         /// I2C slave address
-        I2CSA: 0..9 = struct I2CSA(u16);
+        I2CSA: 0..9 = struct I2CSAField(u16);
     }
     /// eUSCI_Bx Interrupt Enable Register
-    rw UCBIE @ 0x2a: u16 = 0_0 {
+    rw IE @ 0x2a: u16 = 0_0 {
         /// Receive interrupt enable 0
-        UCRXIE0: 0 = enum UCRXIE0 {
+        RXIE0: 0 = enum RXIE0 {
             /// Interrupt disabled
-            UCRXIE0_0 = 0b0,
+            RXIE0_0 = 0b0,
             /// Interrupt enabled
-            UCRXIE0_1 = 0b1,
+            RXIE0_1 = 0b1,
         }
         /// Transmit interrupt enable 0
-        UCTXIE0: 1 = enum UCTXIE0 {
+        TXIE0: 1 = enum TXIE0 {
             /// Interrupt disabled
-            UCTXIE0_0 = 0b0,
+            TXIE0_0 = 0b0,
             /// Interrupt enabled
-            UCTXIE0_1 = 0b1,
+            TXIE0_1 = 0b1,
         }
         /// START condition interrupt enable
-        UCSTTIE: 2 = enum UCSTTIE {
+        STTIE: 2 = enum STTIE {
             /// Interrupt disabled
-            UCSTTIE_0 = 0b0,
+            STTIE_0 = 0b0,
             /// Interrupt enabled
-            UCSTTIE_1 = 0b1,
+            STTIE_1 = 0b1,
         }
         /// STOP condition interrupt enable
-        UCSTPIE: 3 = enum UCSTPIE {
+        STPIE: 3 = enum STPIE {
             /// Interrupt disabled
-            UCSTPIE_0 = 0b0,
+            STPIE_0 = 0b0,
             /// Interrupt enabled
-            UCSTPIE_1 = 0b1,
+            STPIE_1 = 0b1,
         }
         /// Arbitration lost interrupt enable
-        UCALIE: 4 = enum UCALIE {
+        ALIE: 4 = enum ALIE {
             /// Interrupt disabled
-            UCALIE_0 = 0b0,
+            ALIE_0 = 0b0,
             /// Interrupt enabled
-            UCALIE_1 = 0b1,
+            ALIE_1 = 0b1,
         }
         /// Not-acknowledge interrupt enable
-        UCNACKIE: 5 = enum UCNACKIE {
+        NACKIE: 5 = enum NACKIE {
             /// Interrupt disabled
-            UCNACKIE_0 = 0b0,
+            NACKIE_0 = 0b0,
             /// Interrupt enabled
-            UCNACKIE_1 = 0b1,
+            NACKIE_1 = 0b1,
         }
         /// Byte counter interrupt enable
-        UCBCNTIE: 6 = enum UCBCNTIE {
+        BCNTIE: 6 = enum BCNTIE {
             /// Interrupt disabled
-            UCBCNTIE_0 = 0b0,
+            BCNTIE_0 = 0b0,
             /// Interrupt enabled
-            UCBCNTIE_1 = 0b1,
+            BCNTIE_1 = 0b1,
         }
         /// Clock low timeout interrupt enable
-        UCCLTOIE: 7 = enum UCCLTOIE {
+        CLTOIE: 7 = enum CLTOIE {
             /// Interrupt disabled
-            UCCLTOIE_0 = 0b0,
+            CLTOIE_0 = 0b0,
             /// Interrupt enabled
-            UCCLTOIE_1 = 0b1,
+            CLTOIE_1 = 0b1,
         }
         /// Receive interrupt enable 1
-        UCRXIE1: 8 = enum UCRXIE1 {
+        RXIE1: 8 = enum RXIE1 {
             /// Interrupt disabled
-            UCRXIE1_0 = 0b0,
+            RXIE1_0 = 0b0,
             /// Interrupt enabled
-            UCRXIE1_1 = 0b1,
+            RXIE1_1 = 0b1,
         }
         /// Transmit interrupt enable 1
-        UCTXIE1: 9 = enum UCTXIE1 {
+        TXIE1: 9 = enum TXIE1 {
             /// Interrupt disabled
-            UCTXIE1_0 = 0b0,
+            TXIE1_0 = 0b0,
             /// Interrupt enabled
-            UCTXIE1_1 = 0b1,
+            TXIE1_1 = 0b1,
         }
         /// Receive interrupt enable 2
-        UCRXIE2: 10 = enum UCRXIE2 {
+        RXIE2: 10 = enum RXIE2 {
             /// Interrupt disabled
-            UCRXIE2_0 = 0b0,
+            RXIE2_0 = 0b0,
             /// Interrupt enabled
-            UCRXIE2_1 = 0b1,
+            RXIE2_1 = 0b1,
         }
         /// Transmit interrupt enable 2
-        UCTXIE2: 11 = enum UCTXIE2 {
+        TXIE2: 11 = enum TXIE2 {
             /// Interrupt disabled
-            UCTXIE2_0 = 0b0,
+            TXIE2_0 = 0b0,
             /// Interrupt enabled
-            UCTXIE2_1 = 0b1,
+            TXIE2_1 = 0b1,
         }
         /// Receive interrupt enable 3
-        UCRXIE3: 12 = enum UCRXIE3 {
+        RXIE3: 12 = enum RXIE3 {
             /// Interrupt disabled
-            UCRXIE3_0 = 0b0,
+            RXIE3_0 = 0b0,
             /// Interrupt enabled
-            UCRXIE3_1 = 0b1,
+            RXIE3_1 = 0b1,
         }
         /// Transmit interrupt enable 3
-        UCTXIE3: 13 = enum UCTXIE3 {
+        TXIE3: 13 = enum TXIE3 {
             /// Interrupt disabled
-            UCTXIE3_0 = 0b0,
+            TXIE3_0 = 0b0,
             /// Interrupt enabled
-            UCTXIE3_1 = 0b1,
+            TXIE3_1 = 0b1,
         }
         /// Bit position 9 interrupt enable
-        UCBIT9IE: 14 = enum UCBIT9IE {
+        IT9IE: 14 = enum IT9IE {
             /// Interrupt disabled
-            UCBIT9IE_0 = 0b0,
+            IT9IE_0 = 0b0,
             /// Interrupt enabled
-            UCBIT9IE_1 = 0b1,
+            IT9IE_1 = 0b1,
         }
     }
     /// eUSCI_Bx Interrupt Enable Register
-    rw UCBIE_SPI @ 0x2a: u16 = 0_0 {
+    rw IE_SPI @ 0x2a: u16 = 0_0 {
         /// Receive interrupt enable
-        UCRXIE: 0 = enum UCRXIE {
+        RXIE: 0 = enum RXIE {
             /// Interrupt disabled
-            UCRXIE_0 = 0b0,
+            RXIE_0 = 0b0,
             /// Interrupt enabled
-            UCRXIE_1 = 0b1,
+            RXIE_1 = 0b1,
         }
         /// Transmit interrupt enable
-        UCTXIE: 1 = enum UCTXIE {
+        TXIE: 1 = enum TXIE {
             /// Interrupt disabled
-            UCTXIE_0 = 0b0,
+            TXIE_0 = 0b0,
             /// Interrupt enabled
-            UCTXIE_1 = 0b1,
+            TXIE_1 = 0b1,
         }
     }
     /// eUSCI_Bx Interrupt Flag Register
-    rw UCBIFG @ 0x2c: u16 = 0_0 {
+    rw IFG @ 0x2c: u16 = 0_0 {
         /// eUSCI_B receive interrupt flag 0
-        UCRXIFG0: 0 = enum UCRXIFG0 {
+        RXIFG0: 0 = enum RXIFG0 {
             /// No interrupt pending
-            UCRXIFG0_0 = 0b0,
+            RXIFG0_0 = 0b0,
             /// Interrupt pending
-            UCRXIFG0_1 = 0b1,
+            RXIFG0_1 = 0b1,
         }
         /// eUSCI_B transmit interrupt flag 0
-        UCTXIFG0: 1 = enum UCTXIFG0 {
+        TXIFG0: 1 = enum TXIFG0 {
             /// No interrupt pending
-            UCTXIFG0_0 = 0b0,
+            TXIFG0_0 = 0b0,
             /// Interrupt pending
-            UCTXIFG0_1 = 0b1,
+            TXIFG0_1 = 0b1,
         }
         /// START condition interrupt flag
-        UCSTTIFG: 2 = enum UCSTTIFG {
+        STTIFG: 2 = enum STTIFG {
             /// No interrupt pending
-            UCSTTIFG_0 = 0b0,
+            STTIFG_0 = 0b0,
             /// Interrupt pending
-            UCSTTIFG_1 = 0b1,
+            STTIFG_1 = 0b1,
         }
         /// STOP condition interrupt flag
-        UCSTPIFG: 3 = enum UCSTPIFG {
+        STPIFG: 3 = enum STPIFG {
             /// No interrupt pending
-            UCSTPIFG_0 = 0b0,
+            STPIFG_0 = 0b0,
             /// Interrupt pending
-            UCSTPIFG_1 = 0b1,
+            STPIFG_1 = 0b1,
         }
         /// Arbitration lost interrupt flag
-        UCALIFG: 4 = enum UCALIFG {
+        ALIFG: 4 = enum ALIFG {
             /// No interrupt pending
-            UCALIFG_0 = 0b0,
+            ALIFG_0 = 0b0,
             /// Interrupt pending
-            UCALIFG_1 = 0b1,
+            ALIFG_1 = 0b1,
         }
         /// Not-acknowledge received interrupt flag
-        UCNACKIFG: 5 = enum UCNACKIFG {
+        NACKIFG: 5 = enum NACKIFG {
             /// No interrupt pending
-            UCNACKIFG_0 = 0b0,
+            NACKIFG_0 = 0b0,
             /// Interrupt pending
-            UCNACKIFG_1 = 0b1,
+            NACKIFG_1 = 0b1,
         }
         /// Byte counter interrupt flag
-        UCBCNTIFG: 6 = enum UCBCNTIFG {
+        BCNTIFG: 6 = enum BCNTIFG {
             /// No interrupt pending
-            UCBCNTIFG_0 = 0b0,
+            BCNTIFG_0 = 0b0,
             /// Interrupt pending
-            UCBCNTIFG_1 = 0b1,
+            BCNTIFG_1 = 0b1,
         }
         /// Clock low timeout interrupt flag
-        UCCLTOIFG: 7 = enum UCCLTOIFG {
+        CLTOIFG: 7 = enum CLTOIFG {
             /// No interrupt pending
-            UCCLTOIFG_0 = 0b0,
+            CLTOIFG_0 = 0b0,
             /// Interrupt pending
-            UCCLTOIFG_1 = 0b1,
+            CLTOIFG_1 = 0b1,
         }
         /// eUSCI_B receive interrupt flag 1
-        UCRXIFG1: 8 = enum UCRXIFG1 {
+        RXIFG1: 8 = enum RXIFG1 {
             /// No interrupt pending
-            UCRXIFG1_0 = 0b0,
+            RXIFG1_0 = 0b0,
             /// Interrupt pending
-            UCRXIFG1_1 = 0b1,
+            RXIFG1_1 = 0b1,
         }
         /// eUSCI_B transmit interrupt flag 1
-        UCTXIFG1: 9 = enum UCTXIFG1 {
+        TXIFG1: 9 = enum TXIFG1 {
             /// No interrupt pending
-            UCTXIFG1_0 = 0b0,
+            TXIFG1_0 = 0b0,
             /// Interrupt pending
-            UCTXIFG1_1 = 0b1,
+            TXIFG1_1 = 0b1,
         }
         /// eUSCI_B receive interrupt flag 2
-        UCRXIFG2: 10 = enum UCRXIFG2 {
+        RXIFG2: 10 = enum RXIFG2 {
             /// No interrupt pending
-            UCRXIFG2_0 = 0b0,
+            RXIFG2_0 = 0b0,
             /// Interrupt pending
-            UCRXIFG2_1 = 0b1,
+            RXIFG2_1 = 0b1,
         }
         /// eUSCI_B transmit interrupt flag 2
-        UCTXIFG2: 11 = enum UCTXIFG2 {
+        TXIFG2: 11 = enum TXIFG2 {
             /// No interrupt pending
-            UCTXIFG2_0 = 0b0,
+            TXIFG2_0 = 0b0,
             /// Interrupt pending
-            UCTXIFG2_1 = 0b1,
+            TXIFG2_1 = 0b1,
         }
         /// eUSCI_B receive interrupt flag 3
-        UCRXIFG3: 12 = enum UCRXIFG3 {
+        RXIFG3: 12 = enum RXIFG3 {
             /// No interrupt pending
-            UCRXIFG3_0 = 0b0,
+            RXIFG3_0 = 0b0,
             /// Interrupt pending
-            UCRXIFG3_1 = 0b1,
+            RXIFG3_1 = 0b1,
         }
         /// eUSCI_B transmit interrupt flag 3
-        UCTXIFG3: 13 = enum UCTXIFG3 {
+        TXIFG3: 13 = enum TXIFG3 {
             /// No interrupt pending
-            UCTXIFG3_0 = 0b0,
+            TXIFG3_0 = 0b0,
             /// Interrupt pending
-            UCTXIFG3_1 = 0b1,
+            TXIFG3_1 = 0b1,
         }
         /// Bit position 9 interrupt flag
-        UCBIT9IFG: 14 = enum UCBIT9IFG {
+        IT9IFG: 14 = enum IT9IFG {
             /// No interrupt pending
-            UCBIT9IFG_0 = 0b0,
+            IT9IFG_0 = 0b0,
             /// Interrupt pending
-            UCBIT9IFG_1 = 0b1,
+            IT9IFG_1 = 0b1,
         }
     }
     /// eUSCI_Bx Interrupt Flag Register
-    rw UCBIFG_SPI @ 0x2c: u16 = 0_0 {
+    rw IFG_SPI @ 0x2c: u16 = 0_0 {
         /// Receive interrupt flag
-        UCRXIFG: 0 = enum UCRXIFG {
+        RXIFG: 0 = enum RXIFG {
             /// No interrupt pending
-            UCRXIFG_0 = 0b0,
+            RXIFG_0 = 0b0,
             /// Interrupt pending
-            UCRXIFG_1 = 0b1,
+            RXIFG_1 = 0b1,
         }
         /// Transmit interrupt flag
-        UCTXIFG: 1 = enum UCTXIFG {
+        TXIFG: 1 = enum TXIFG {
             /// No interrupt pending
-            UCTXIFG_0 = 0b0,
+            TXIFG_0 = 0b0,
             /// Interrupt pending
-            UCTXIFG_1 = 0b1,
+            TXIFG_1 = 0b1,
         }
     }
     /// eUSCI_Bx Interrupt Vector Register
-    r UCBIV @ 0x2e: u16 = 0_0 {
+    r IV @ 0x2e: u16 = 0_0 {
         /// eUSCI_B interrupt vector value
-        UCBIV_UCIV: 0..15 = enum UCBIV_UCIV {
+        IV: 0..15 = enum IVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// Interrupt Source: Arbitration lost; Interrupt Flag: UCALIFG; Interrupt Priority: Highest
-            UCALIFG = 0b0000000000000010,
+            ALIFG = 0b0000000000000010,
             /// Interrupt Source: Not acknowledgment; Interrupt Flag: UCNACKIFG
-            UCNACKIFG = 0b0000000000000100,
+            NACKIFG = 0b0000000000000100,
             /// Interrupt Source: Start condition received; Interrupt Flag: UCSTTIFG
-            UCSTTIFG = 0b0000000000000110,
+            STTIFG = 0b0000000000000110,
             /// Interrupt Source: Stop condition received; Interrupt Flag: UCSTPIFG
-            UCSTPIFG = 0b0000000000001000,
+            STPIFG = 0b0000000000001000,
             /// Interrupt Source: Slave 3 Data received; Interrupt Flag: UCRXIFG3
-            UCRXIFG3 = 0b0000000000001010,
+            RXIFG3 = 0b0000000000001010,
             /// Interrupt Source: Slave 3 Transmit buffer empty; Interrupt Flag: UCTXIFG3
-            UCTXIFG3 = 0b0000000000001100,
+            TXIFG3 = 0b0000000000001100,
             /// Interrupt Source: Slave 2 Data received; Interrupt Flag: UCRXIFG2
-            UCRXIFG2 = 0b0000000000001110,
+            RXIFG2 = 0b0000000000001110,
             /// Interrupt Source: Slave 2 Transmit buffer empty; Interrupt Flag: UCTXIFG2
-            UCTXIFG2 = 0b0000000000010000,
+            TXIFG2 = 0b0000000000010000,
             /// Interrupt Source: Slave 1 Data received; Interrupt Flag: UCRXIFG1
-            UCRXIFG1 = 0b0000000000010010,
+            RXIFG1 = 0b0000000000010010,
             /// Interrupt Source: Slave 1 Transmit buffer empty; Interrupt Flag: UCTXIFG1
-            UCTXIFG1 = 0b0000000000010100,
+            TXIFG1 = 0b0000000000010100,
             /// Interrupt Source: Data received; Interrupt Flag: UCRXIFG0
-            UCRXIFG0 = 0b0000000000010110,
+            RXIFG0 = 0b0000000000010110,
             /// Interrupt Source: Transmit buffer empty; Interrupt Flag: UCTXIFG0
-            UCTXIFG0 = 0b0000000000011000,
+            TXIFG0 = 0b0000000000011000,
             /// Interrupt Source: Byte counter zero; Interrupt Flag: UCBCNTIFG
-            UCBCNTIFG = 0b0000000000011010,
+            BCNTIFG = 0b0000000000011010,
             /// Interrupt Source: Clock low timeout; Interrupt Flag: UCCLTOIFG
-            UCCLTOIFG = 0b0000000000011100,
+            CLTOIFG = 0b0000000000011100,
             /// Interrupt Source: Nineth bit position; Interrupt Flag: UCBIT9IFG; Priority: Lowest
-            UCBIT9IFG = 0b0000000000011110,
+            BIT9IFG = 0b0000000000011110,
         }
     }
     /// eUSCI_Bx Interrupt Vector Register
-    r UCBIV_SPI @ 0x2e: u16 = 0_0 {
+    r IV_SPI @ 0x2e: u16 = 0_0 {
         /// eUSCI_B interrupt vector value
-        UCBIV_SPI_UCIV: 0..15 = enum UCBIV_SPI_UCIV {
+        IV_SPI: 0..15 = enum IV_SPIField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// Interrupt Source: Data received; Interrupt Flag: UCRXIFG; Interrupt Priority: Highest
-            UCRXIFG = 0b0000000000000010,
+            RXIFG = 0b0000000000000010,
             /// Interrupt Source: Transmit buffer empty; Interrupt Flag: UCTXIFG; Interrupt Priority: Lowest
-            UCTXIFG = 0b0000000000000100,
+            TXIFG = 0b0000000000000100,
         }
     }
 }

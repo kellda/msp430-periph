@@ -4,12 +4,12 @@ utils::periph! {
     /// USB Control
     USBControl;
     /// USB Controller key register
-    rw USBKEYID @ 0x00: u16 = 0_0 {
+    rw KEYID @ 0x00: u16 = 0_0 {
         /// USB Controller key register
-        USBKEYID: 0..15 = struct USBKEYIDField(u16);
+        KEYID: 0..15 = struct KEYIDField(u16);
     }
     /// USB Module  configuration register
-    rw USBCNF @ 0x02: u16 = 0_0 {
+    rw CNF @ 0x02: u16 = 0_0 {
         /// USB - Module enable
         USB_EN: 0 = struct USB_EN(bool);
         /// USB - PUR pin enable
@@ -22,7 +22,7 @@ utils::periph! {
         FNTEN: 4 = struct FNTEN(bool);
     }
     /// USB PHY control register
-    rw USBPHYCTL @ 0x04: u16 = 0_0 {
+    rw PHYCTL @ 0x04: u16 = 0_0 {
         /// USB - USB Port Output Signal Bit 0
         PUOUT0: 0 = struct PUOUT0(bool);
         /// USB - USB Port Output Signal Bit 1
@@ -39,7 +39,7 @@ utils::periph! {
         PUIPE: 8 = struct PUIPE(bool);
     }
     /// USB Power control register
-    rw USBPWRCTL @ 0x08: u16 = 0_0 {
+    rw PWRCTL @ 0x08: u16 = 0_0 {
         /// USB - VUSB Overload Interrupt Flag
         VUOVLIFG: 0 = struct VUOVLIFG(bool);
         /// USB - VBUS "Coming ON" Interrupt Flag
@@ -66,7 +66,7 @@ utils::periph! {
         SLDOEN: 12 = struct SLDOEN(bool);
     }
     /// USB PLL control register
-    rw USBPLLCTL @ 0x10: u16 = 0_0 {
+    rw PLLCTL @ 0x10: u16 = 0_0 {
         /// USB - Module Clock Select Bit 0
         UCLKSEL: 6..7 = enum UCLKSEL {
             /// USB - Module Clock Select: 0
@@ -84,7 +84,7 @@ utils::periph! {
         UPFDEN: 9 = struct UPFDEN(bool);
     }
     /// USB PLL Clock Divider Buffer control register
-    rw USBPLLDIVB @ 0x12: u16 = 0_0 {
+    rw PLLDIVB @ 0x12: u16 = 0_0 {
         /// USB - PLL feedback divider buffer Bit 0
         UPMB0: 0 = struct UPMB0(bool);
         /// USB - PLL feedback divider buffer Bit 1
@@ -105,79 +105,79 @@ utils::periph! {
         UPQB2: 10 = struct UPQB2(bool);
     }
     /// USB PLL Interrupt control register
-    rw USBPLLIR @ 0x14: u16 = 0_0 {
+    rw PLLIR @ 0x14: u16 = 0_0 {
         /// USB - PLL out of lock Interrupt Flag
-        USBOOLIFG: 0 = struct USBOOLIFG(bool);
+        OOLIFG: 0 = struct OOLIFG(bool);
         /// USB - PLL loss of signal Interrupt Flag
-        USBLOSIFG: 1 = struct USBLOSIFG(bool);
+        LOSIFG: 1 = struct LOSIFG(bool);
         /// USB - PLL out of range Interrupt Flag
-        USBOORIFG: 2 = struct USBOORIFG(bool);
+        OORIFG: 2 = struct OORIFG(bool);
         /// USB - PLL out of lock Interrupt enable
-        USBOOLIE: 8 = struct USBOOLIE(bool);
+        OOLIE: 8 = struct OOLIE(bool);
         /// USB - PLL loss of signal Interrupt enable
-        USBLOSIE: 9 = struct USBLOSIE(bool);
+        LOSIE: 9 = struct LOSIE(bool);
         /// USB - PLL out of range Interrupt enable
-        USBOORIE: 10 = struct USBOORIE(bool);
+        OORIE: 10 = struct OORIE(bool);
     }
-    /// USB Input endpoint_0: Configuration
-    rw USBIEPCNF_0 @ 0x20: u8 = 0_0 {
+    /// USB Input endpoint: Configuration
+    rw IEPCNF @ 0x20: u8 = 0_0 {
         /// USB - Transaction Interrupt indication enable
-        USBIEPCNF_0_USBIIE: 2 = struct USBIEPCNF_0_USBIIE(bool);
+        IEP_IIE: 2 = struct IEP_IIE(bool);
         /// USB - Stall Condition
-        USBIEPCNF_0_STALL: 3 = struct USBIEPCNF_0_STALL(bool);
+        IEP_STALL: 3 = struct IEP_STALL(bool);
         /// USB - Toggle Bit
-        USBIEPCNF_0_TOGGLE: 5 = struct USBIEPCNF_0_TOGGLE(bool);
+        IEP_TOGGLE: 5 = struct IEP_TOGGLE(bool);
         /// USB - UBM In-Endpoint Enable
-        USBIEPCNF_0_UBME: 7 = struct USBIEPCNF_0_UBME(bool);
+        IEP_UBME: 7 = struct IEP_UBME(bool);
     }
-    /// USB Input endpoint_0: Byte Count
-    rw USBIEPCNT_0 @ 0x21: u8 = 0_0 {
-        /// USB Input endpoint_0: Byte Count
-        USBIEPCNT_0: 0..7 = struct USBIEPCNT_0Field(u8);
+    /// USB Input endpoint: Byte Count
+    rw IEPCNT @ 0x21: u8 = 0_0 {
+        /// USB Input endpoint: Byte Count
+        IEPCNT: 0..7 = struct IEPCNTField(u8);
     }
-    /// USB Output endpoint_0: Configuration
-    rw USBOEPCNF_0 @ 0x22: u8 = 0_0 {
+    /// USB Output endpoint: Configuration
+    rw OEPCNF_0 @ 0x22: u8 = 0_0 {
         /// USB - Transaction Interrupt indication enable
-        USBOEPCNF_0_USBIIE: 2 = struct USBOEPCNF_0_USBIIE(bool);
+        OEP_IIE: 2 = struct OEP_IIE(bool);
         /// USB - Stall Condition
-        USBOEPCNF_0_STALL: 3 = struct USBOEPCNF_0_STALL(bool);
+        OEP_STALL: 3 = struct OEP_STALL(bool);
         /// USB - Toggle Bit
-        USBOEPCNF_0_TOGGLE: 5 = struct USBOEPCNF_0_TOGGLE(bool);
+        OEP_TOGGLE: 5 = struct OEP_TOGGLE(bool);
         /// USB - UBM In-Endpoint Enable
-        USBOEPCNF_0_UBME: 7 = struct USBOEPCNF_0_UBME(bool);
+        OEP_UBME: 7 = struct OEP_UBME(bool);
     }
-    /// USB Output endpoint_0: byte count
-    rw USBOEPCNT_0 @ 0x23: u8 = 0_0 {
-        /// USB Output endpoint_0: byte count
-        USBOEPCNT_0: 0..7 = struct USBOEPCNT_0Field(u8);
+    /// USB Output endpoint: byte count
+    rw OEPCNT @ 0x23: u8 = 0_0 {
+        /// USB Output endpoint: byte count
+        OEPCNT: 0..7 = struct OEPCNTField(u8);
     }
     /// USB Input endpoint interrupt enable flags
-    rw USBIEPIE @ 0x2e: u8 = 0_0 {
+    rw IEPIE @ 0x2e: u8 = 0_0 {
         /// USB Input endpoint interrupt enable flags
-        USBIEPIE: 0..7 = struct USBIEPIEField(u8);
+        IEPIE: 0..7 = struct IEPIEField(u8);
     }
     /// USB Output endpoint interrupt enable flags
-    rw USBOEPIE @ 0x2f: u8 = 0_0 {
+    rw OEPIE @ 0x2f: u8 = 0_0 {
         /// USB Output endpoint interrupt enable flags
-        USBOEPIE: 0..7 = struct USBOEPIEField(u8);
+        OEPIE: 0..7 = struct OEPIEField(u8);
     }
     /// USB Input endpoint interrupt flags
-    rw USBIEPIFG @ 0x30: u8 = 0_0 {
+    rw IEPIFG @ 0x30: u8 = 0_0 {
         /// USB Input endpoint interrupt flags
-        USBIEPIFG: 0..7 = struct USBIEPIFGField(u8);
+        IEPIFG: 0..7 = struct IEPIFGField(u8);
     }
     /// USB Output endpoint interrupt flags
-    rw USBOEPIFG @ 0x31: u8 = 0_0 {
+    rw OEPIFG @ 0x31: u8 = 0_0 {
         /// USB Output endpoint interrupt flags
-        USBOEPIFG: 0..7 = struct USBOEPIFGField(u8);
+        OEPIFG: 0..7 = struct OEPIFGField(u8);
     }
     /// USB Vector interrupt register
-    rw USBVECINT @ 0x32: u16 = 0_0 {
+    rw VECINT @ 0x32: u16 = 0_0 {
         /// USB Vector interrupt register
-        USBVECINT: 0..15 = struct USBVECINTField(u16);
+        VECINT: 0..15 = struct VECINTField(u16);
     }
     /// USB maintenance register
-    rw USBMAINT @ 0x36: u16 = 0_0 {
+    rw MAINT @ 0x36: u16 = 0_0 {
         /// USB - Timer Interrupt Flag
         UTIFG: 0 = struct UTIFG(bool);
         /// USB - Timer Interrupt Enable
@@ -218,17 +218,17 @@ utils::periph! {
         }
     }
     /// USB Time Stamp register
-    rw USBTSREG @ 0x38: u16 = 0_0 {
+    rw TSREG @ 0x38: u16 = 0_0 {
         /// USB Time Stamp register
-        USBTSREG: 0..15 = struct USBTSREGField(u16);
+        TSREG: 0..15 = struct TSREGField(u16);
     }
     /// USB Frame number
-    rw USBFN @ 0x3a: u16 = 0_0 {
+    rw FN_ @ 0x3a: u16 = 0_0 {
         /// USB Frame number
-        USBFN: 0..15 = struct USBFNField(u16);
+        FN: 0..15 = struct FNField(u16);
     }
     /// USB control register
-    rw USBCTL @ 0x3c: u8 = 0_0 {
+    rw CTL @ 0x3c: u8 = 0_0 {
         /// USB - Data Response Bit
         DIR: 0 = struct DIR(bool);
         /// USB - Function Reset Connection Enable
@@ -239,7 +239,7 @@ utils::periph! {
         FEN: 6 = struct FEN(bool);
     }
     /// USB interrupt enable register
-    rw USBIE @ 0x3d: u8 = 0_0 {
+    rw IE @ 0x3d: u8 = 0_0 {
         /// USB - Setup Overwrite Interrupt Enable
         STPOWIE: 0 = struct STPOWIE(bool);
         /// USB - Setup Interrupt Enable
@@ -252,7 +252,7 @@ utils::periph! {
         RSTRIE: 7 = struct RSTRIE(bool);
     }
     /// USB interrupt flag register
-    rw USBIFG @ 0x3e: u8 = 0_0 {
+    rw IFG @ 0x3e: u8 = 0_0 {
         /// USB - Setup Overwrite Interrupt Flag
         STPOWIFG: 0 = struct STPOWIFG(bool);
         /// USB - Setup Interrupt Flag
@@ -265,8 +265,8 @@ utils::periph! {
         RSTRIFG: 7 = struct RSTRIFG(bool);
     }
     /// USB Function address register
-    rw USBFUNADR @ 0x3f: u8 = 0_0 {
+    rw FUNADR @ 0x3f: u8 = 0_0 {
         /// USB Function address register
-        USBFUNADR: 0..7 = struct USBFUNADRField(u8);
+        FUNADR: 0..7 = struct FUNADRField(u8);
     }
 }

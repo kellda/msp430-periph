@@ -4,30 +4,30 @@ utils::periph! {
     /// SYS
     SYS;
     /// System Control
-    rw SYSCTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// RAM-based interrupt vectors
-        SYSRIVECT: 0 = enum SYSRIVECT {
+        RIVECT: 0 = enum RIVECT {
             /// Interrupt vectors generated with end address TOP of lower 64K FRAM FFFFh
             FRAM = 0b0,
             /// Interrupt vectors generated with end address TOP of RAM, when RAM available
             RAM = 0b1,
         }
         /// PMM access protect
-        SYSPMMPE: 2 = enum SYSPMMPE {
+        PMMPE: 2 = enum PMMPE {
             /// Access from anywhere in memory
-            SYSPMMPE_0 = 0b0,
+            PMMPE_0 = 0b0,
             /// Access only from the BSL segments
-            SYSPMMPE_1 = 0b1,
+            PMMPE_1 = 0b1,
         }
         /// BSL entry indication
-        SYSBSLIND: 4 = enum SYSBSLIND {
+        BSLIND: 4 = enum BSLIND {
             /// No BSL entry sequence detected
-            SYSBSLIND_0 = 0b0,
+            BSLIND_0 = 0b0,
             /// BSL entry sequence detected
-            SYSBSLIND_1 = 0b1,
+            BSLIND_1 = 0b1,
         }
         /// Dedicated JTAG pins enable
-        SYSJTAGPIN: 5 = enum SYSJTAGPIN {
+        JTAGPIN: 5 = enum JTAGPIN {
             /// Shared JTAG pins (JTAG mode selectable using SBW sequence)
             SHARED = 0b0,
             /// Dedicated JTAG pins (explicit 4-wire JTAG mode selection)
@@ -35,7 +35,7 @@ utils::periph! {
         }
     }
     /// JTAG Mailbox Control
-    rw SYSJMBC @ 0x06: u16 = 0_0 {
+    rw JMBC @ 0x06: u16 = 0_0 {
         /// Incoming JTAG Mailbox 0 flag
         JMBIN0FG: 0 = enum JMBIN0FG {
             /// JMBI0 has no new data
@@ -87,37 +87,37 @@ utils::periph! {
         }
     }
     /// JTAG Mailbox Input
-    rw SYSJMBI0 @ 0x08: u16 = 0_0 {
+    rw JMBI0 @ 0x08: u16 = 0_0 {
         /// JTAG mailbox incoming message low byte
-        SYSJMBI0_MSGLO: 0..7 = struct SYSJMBI0_MSGLO(u16);
+        JMBI0_MSGLO: 0..7 = struct JMBI0_MSGLO(u16);
         /// JTAG mailbox incoming message high byte
-        SYSJMBI0_MSGHI: 8..15 = struct SYSJMBI0_MSGHI(u16);
+        JMBI0_MSGHI: 8..15 = struct JMBI0_MSGHI(u16);
     }
     /// JTAG Mailbox Input
-    rw SYSJMBI1 @ 0x0a: u16 = 0_0 {
+    rw JMBI1 @ 0x0a: u16 = 0_0 {
         /// JTAG mailbox incoming message low byte
-        SYSJMBI1_MSGLO: 0..7 = struct SYSJMBI1_MSGLO(u16);
+        JMBI1_MSGLO: 0..7 = struct JMBI1_MSGLO(u16);
         /// JTAG mailbox incoming message high byte
-        SYSJMBI1_MSGHI: 8..15 = struct SYSJMBI1_MSGHI(u16);
+        JMBI1_MSGHI: 8..15 = struct JMBI1_MSGHI(u16);
     }
     /// JTAG Mailbox Output
-    rw SYSJMBO0 @ 0x0c: u16 = 0_0 {
+    rw JMBO0 @ 0x0c: u16 = 0_0 {
         /// JTAG mailbox outgoing message low byte
-        SYSJMBO0_MSGLO: 0..7 = struct SYSJMBO0_MSGLO(u16);
+        JMBO0_MSGLO: 0..7 = struct JMBO0_MSGLO(u16);
         /// JTAG mailbox outgoing message high byte
-        SYSJMBO0_MSGHI: 8..15 = struct SYSJMBO0_MSGHI(u16);
+        JMBO0_MSGHI: 8..15 = struct JMBO0_MSGHI(u16);
     }
     /// JTAG Mailbox Output
-    rw SYSJMBO1 @ 0x0e: u16 = 0_0 {
+    rw JMBO1 @ 0x0e: u16 = 0_0 {
         /// JTAG mailbox outgoing message low byte
-        SYSJMBO1_MSGLO: 0..7 = struct SYSJMBO1_MSGLO(u16);
+        JMBO1_MSGLO: 0..7 = struct JMBO1_MSGLO(u16);
         /// JTAG mailbox outgoing message high byte
-        SYSJMBO1_MSGHI: 8..15 = struct SYSJMBO1_MSGHI(u16);
+        JMBO1_MSGHI: 8..15 = struct JMBO1_MSGHI(u16);
     }
     /// User NMI Vector Generator
-    r SYSUNIV @ 0x1a: u16 = 0_0 {
+    r UNIV @ 0x1a: u16 = 0_0 {
         /// User NMI vector
-        SYSUNIV: 0..15 = enum SYSUNIVField {
+        UNIV: 0..15 = enum UNIVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// NMIIFG NMI pin
@@ -127,13 +127,13 @@ utils::periph! {
         }
     }
     /// System NMI Vector Generator
-    r SYSSNIV @ 0x1c: u16 = 0_0 {
+    r SNIV @ 0x1c: u16 = 0_0 {
         /// System NMI vector
-        SYSSNIV: 0..15 = enum SYSSNIVField {
+        SNIV: 0..15 = enum SNIVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// Reserved
-            SYSSNIV_2 = 0b0000000000000010,
+            SNIV_2 = 0b0000000000000010,
             /// Uncorrectable FRAM bit error detection
             UBDIFG = 0b0000000000000100,
             /// FRAM Access Time Error
@@ -165,9 +165,9 @@ utils::periph! {
         }
     }
     /// Reset Vector Generator
-    r SYSRSTIV @ 0x1e: u16 = 0_0 {
+    r RSTIV @ 0x1e: u16 = 0_0 {
         /// Reset interrupt vector
-        SYSRSTIV: 0..15 = enum SYSRSTIVField {
+        RSTIV: 0..15 = enum RSTIVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// Brownout
@@ -181,13 +181,13 @@ utils::periph! {
             /// Security violation
             SECYV = 0b0000000000001010,
             /// Reserved
-            SYSRSTIV_12 = 0b0000000000001100,
+            RSTIV_12 = 0b0000000000001100,
             /// SVSHIFG SVSH event
             SVSHIFG = 0b0000000000001110,
             /// Reserved
-            SYSRSTIV_16 = 0b0000000000010000,
+            RSTIV_16 = 0b0000000000010000,
             /// Reserved
-            SYSRSTIV_18 = 0b0000000000010010,
+            RSTIV_18 = 0b0000000000010010,
             /// PMMSWPOR software POR
             PMMSWPOR = 0b0000000000010100,
             /// WDTIFG watchdog timeout

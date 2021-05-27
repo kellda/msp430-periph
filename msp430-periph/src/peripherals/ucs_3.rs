@@ -4,7 +4,7 @@ utils::periph! {
     /// UCS  Unified System Clock
     UCS;
     /// UCS Control Register 0
-    rw UCSCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// Modulation Bit Counter Bit : 0
         MOD0: 3 = struct MOD0(bool);
         /// Modulation Bit Counter Bit : 1
@@ -27,7 +27,7 @@ utils::periph! {
         DCO4: 12 = struct DCO4(bool);
     }
     /// UCS Control Register 1
-    rw UCSCTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// Disable Modulation
         DISMOD: 0 = struct DISMOD(bool);
         /// DCO Freq. Range Select Bit : 0
@@ -51,7 +51,7 @@ utils::periph! {
         }
     }
     /// UCS Control Register 2
-    rw UCSCTL2 @ 0x04: u16 = 0_0 {
+    rw CTL2 @ 0x04: u16 = 0_0 {
         /// FLL Multipier Bit : 0
         FLLN0: 0 = struct FLLN0(bool);
         /// FLL Multipier Bit : 1
@@ -93,7 +93,7 @@ utils::periph! {
         }
     }
     /// UCS Control Register 3
-    rw UCSCTL3 @ 0x06: u16 = 0_0 {
+    rw CTL3 @ 0x06: u16 = 0_0 {
         /// Reference Divider Bit : 0
         FLLREFDIV: 0..2 = enum FLLREFDIV {
             /// Reference Divider: f(LFCLK)/1
@@ -134,7 +134,7 @@ utils::periph! {
         }
     }
     /// UCS Control Register 4
-    rw UCSCTL4 @ 0x08: u16 = 0_0 {
+    rw CTL4 @ 0x08: u16 = 0_0 {
         /// MCLK Source Select Bit: 0
         SELM: 0..2 = enum SELM {
             /// MCLK Source Select 0
@@ -194,7 +194,7 @@ utils::periph! {
         }
     }
     /// UCS Control Register 5
-    rw UCSCTL5 @ 0x0a: u16 = 0_0 {
+    rw CTL5 @ 0x0a: u16 = 0_0 {
         /// MCLK Divider Bit: 0
         DIVM: 0..2 = enum DIVM {
             /// MCLK Source Divider 0
@@ -273,7 +273,7 @@ utils::periph! {
         }
     }
     /// UCS Control Register 6
-    rw UCSCTL6 @ 0x0c: u16 = 0_0 {
+    rw CTL6 @ 0x0c: u16 = 0_0 {
         /// High Frequency Oscillator 1 (XT1) disable
         XT1OFF: 0 = struct XT1OFF(bool);
         /// SMCLK Off
@@ -321,7 +321,7 @@ utils::periph! {
         }
     }
     /// UCS Control Register 7
-    rw UCSCTL7 @ 0x0e: u16 = 0_0 {
+    rw CTL7 @ 0x0e: u16 = 0_0 {
         /// DCO Fault Flag
         DCOFFG: 0 = struct DCOFFG(bool);
         /// XT1 Low Frequency Oscillator Fault Flag
@@ -330,7 +330,7 @@ utils::periph! {
         XT2OFFG: 3 = struct XT2OFFG(bool);
     }
     /// UCS Control Register 8
-    rw UCSCTL8 @ 0x10: u16 = 0_0 {
+    rw CTL8 @ 0x10: u16 = 0_0 {
         /// ACLK Clock Request Enable
         ACLKREQEN: 0 = struct ACLKREQEN(bool);
         /// MCLK Clock Request Enable

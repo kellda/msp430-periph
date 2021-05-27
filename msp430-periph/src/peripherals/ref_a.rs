@@ -4,73 +4,73 @@ utils::periph! {
     /// REF_A
     REF_A;
     /// REF Control Register 0
-    rw REFCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// Reference enable
-        REFON: 0 = enum REFON {
+        ON: 0 = enum ON {
             /// Disables reference if no other reference requests are pending
-            REFON_0 = 0b0,
+            ON_0 = 0b0,
             /// Enables reference in static mode
-            REFON_1 = 0b1,
+            ON_1 = 0b1,
         }
         /// Reference output buffer
-        REFOUT: 1 = enum REFOUT {
+        OUT: 1 = enum OUT {
             /// Reference output not available externally
-            REFOUT_0 = 0b0,
+            OUT_0 = 0b0,
             /// Reference output available externally. If ADC14REFBURST = 0, output is available continuously. If ADC14REFBURST = 1, output is available only during an ADC14 conversion.
-            REFOUT_1 = 0b1,
+            OUT_1 = 0b1,
         }
         /// Temperature sensor disabled
-        REFTCOFF: 3 = enum REFTCOFF {
+        TCOFF: 3 = enum TCOFF {
             /// Temperature sensor enabled
-            REFTCOFF_0 = 0b0,
+            TCOFF_0 = 0b0,
             /// Temperature sensor disabled to save power
-            REFTCOFF_1 = 0b1,
+            TCOFF_1 = 0b1,
         }
         /// Reference voltage level select
-        REFVSEL: 4..5 = enum REFVSEL {
+        VSEL: 4..5 = enum VSEL {
             /// 1.2 V available when reference requested or REFON = 1
-            REFVSEL_0 = 0b00,
+            VSEL_0 = 0b00,
             /// 2.0 V available when reference requested or REFON = 1
-            REFVSEL_1 = 0b01,
+            VSEL_1 = 0b01,
             /// 2.5 V available when reference requested or REFON = 1
-            REFVSEL_2 = 0b10,
+            VSEL_2 = 0b10,
             /// 2.5 V available when reference requested or REFON = 1
-            REFVSEL_3 = 0b11,
+            VSEL_3 = 0b11,
         }
         /// Reference generator one-time trigger
-        REFGENOT: 6 = enum REFGENOT {
+        GENOT: 6 = enum GENOT {
             /// No trigger
-            REFGENOT_0 = 0b0,
+            GENOT_0 = 0b0,
             /// Generation of the reference voltage is started by writing 1 or by a hardware trigger
-            REFGENOT_1 = 0b1,
+            GENOT_1 = 0b1,
         }
         /// Bandgap and bandgap buffer one-time trigger
-        REFBGOT: 7 = enum REFBGOT {
+        BGOT: 7 = enum BGOT {
             /// No trigger
-            REFBGOT_0 = 0b0,
+            BGOT_0 = 0b0,
             /// Generation of the bandgap voltage is started by writing 1 or by a hardware trigger
-            REFBGOT_1 = 0b1,
+            BGOT_1 = 0b1,
         }
         /// Reference generator active
-        REFGENACT: 8 = enum REFGENACT {
+        GENACT: 8 = enum GENACT {
             /// Reference generator not active
-            REFGENACT_0 = 0b0,
+            GENACT_0 = 0b0,
             /// Reference generator active
-            REFGENACT_1 = 0b1,
+            GENACT_1 = 0b1,
         }
         /// Reference bandgap active
-        REFBGACT: 9 = enum REFBGACT {
+        BGACT: 9 = enum BGACT {
             /// Reference bandgap buffer not active
-            REFBGACT_0 = 0b0,
+            BGACT_0 = 0b0,
             /// Reference bandgap buffer active
-            REFBGACT_1 = 0b1,
+            BGACT_1 = 0b1,
         }
         /// Reference generator busy
-        REFGENBUSY: 10 = enum REFGENBUSY {
+        GENBUSY: 10 = enum GENBUSY {
             /// Reference generator not busy
-            REFGENBUSY_0 = 0b0,
+            GENBUSY_0 = 0b0,
             /// Reference generator busy
-            REFGENBUSY_1 = 0b1,
+            GENBUSY_1 = 0b1,
         }
         /// Bandgap mode
         BGMODE: 11 = enum BGMODE {
@@ -80,18 +80,18 @@ utils::periph! {
             BGMODE_1 = 0b1,
         }
         /// Variable reference voltage ready status
-        REFGENRDY: 12 = enum REFGENRDY {
+        GENRDY: 12 = enum GENRDY {
             /// Reference voltage output is not ready to be used
-            REFGENRDY_0 = 0b0,
+            GENRDY_0 = 0b0,
             /// Reference voltage output is ready to be used
-            REFGENRDY_1 = 0b1,
+            GENRDY_1 = 0b1,
         }
         /// Buffered bandgap voltage ready status
-        REFBGRDY: 13 = enum REFBGRDY {
+        BGRDY: 13 = enum BGRDY {
             /// Buffered bandgap voltage is not ready to be used
-            REFBGRDY_0 = 0b0,
+            BGRDY_0 = 0b0,
             /// Buffered bandgap voltage is ready to be used
-            REFBGRDY_1 = 0b1,
+            BGRDY_1 = 0b1,
         }
     }
 }

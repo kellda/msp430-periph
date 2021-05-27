@@ -6,7 +6,7 @@ utils::periph! {
     /// OA0 Control register 0
     rw OA0CTL0 @ 0x00: u8 = 0_0 {
         /// OAx Power mode select 0
-        OA0CTL0_OAPM: 2..3 = enum OA0CTL0_OAPM {
+        OA0PM: 2..3 = enum OA0PM {
             /// OAx Power mode select: off
             OAPM_0 = 0b00,
             /// OAx Power mode select: slow
@@ -17,7 +17,7 @@ utils::periph! {
             OAPM_3 = 0b11,
         }
         /// OAx Non-inverting input select 0
-        OA0CTL0_OAP: 4..5 = enum OA0CTL0_OAP {
+        OA0P: 4..5 = enum OA0P {
             /// OAx Non-inverting input select 00
             OAP_0 = 0b00,
             /// OAx Non-inverting input select 01
@@ -28,7 +28,7 @@ utils::periph! {
             OAP_3 = 0b11,
         }
         /// OAx Inverting input select 0
-        OA0CTL0_OAN: 6..7 = enum OA0CTL0_OAN {
+        OA0N: 6..7 = enum OA0N {
             /// OAx Inverting input select 00
             OAN_0 = 0b00,
             /// OAx Inverting input select 01
@@ -42,9 +42,9 @@ utils::periph! {
     /// OA0 Control register 1
     rw OA0CTL1 @ 0x01: u8 = 0_0 {
         /// OAx Offset Calibration
-        OA0CTL1_OACAL: 1 = struct OA0CTL1_OACAL(bool);
+        OA0CAL: 1 = struct OA0CAL(bool);
         /// OAx Function control 0
-        OA0CTL1_OAFC: 2..4 = enum OA0CTL1_OAFC {
+        OA0FC: 2..4 = enum OA0FC {
             /// OAx Function: Gen. Purpose
             OAFC_0 = 0b000,
             /// OAx Function: Unity gain buffer
@@ -66,7 +66,7 @@ utils::periph! {
     /// OA1 Control register 0
     rw OA1CTL0 @ 0x02: u8 = 0_0 {
         /// OAx Power mode select 0
-        OA1CTL0_OAPM: 2..3 = enum OA1CTL0_OAPM {
+        OA1PM: 2..3 = enum OA1PM {
             /// OAx Power mode select: off
             OAPM_0 = 0b00,
             /// OAx Power mode select: slow
@@ -77,7 +77,7 @@ utils::periph! {
             OAPM_3 = 0b11,
         }
         /// OAx Non-inverting input select 0
-        OA1CTL0_OAP: 4..5 = enum OA1CTL0_OAP {
+        OA1P: 4..5 = enum OA1P {
             /// OAx Non-inverting input select 00
             OAP_0 = 0b00,
             /// OAx Non-inverting input select 01
@@ -88,7 +88,7 @@ utils::periph! {
             OAP_3 = 0b11,
         }
         /// OAx Inverting input select 0
-        OA1CTL0_OAN: 6..7 = enum OA1CTL0_OAN {
+        OA1N: 6..7 = enum OA1N {
             /// OAx Inverting input select 00
             OAN_0 = 0b00,
             /// OAx Inverting input select 01
@@ -102,9 +102,9 @@ utils::periph! {
     /// OA1 Control register 1
     rw OA1CTL1 @ 0x03: u8 = 0_0 {
         /// OAx Offset Calibration
-        OA1CTL1_OACAL: 1 = struct OA1CTL1_OACAL(bool);
+        OA1CAL: 1 = struct OA1CAL(bool);
         /// OAx Function control 0
-        OA1CTL1_OAFC: 2..4 = enum OA1CTL1_OAFC {
+        OA1FC: 2..4 = enum OA1FC {
             /// OAx Function: Gen. Purpose
             OAFC_0 = 0b000,
             /// OAx Function: Unity gain buffer

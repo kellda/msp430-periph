@@ -4,28 +4,28 @@ utils::periph! {
     /// CAPTIO
     CAPTIO;
     /// Capacitive Touch IO 0 Control Register
-    rw CAPTIOCTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// Capacitive Touch IO pin select
-        CAPTIOPISEL: 1..3 = enum CAPTIOPISEL {
+        PISEL: 1..3 = enum PISEL {
             /// Px.0
-            CAPTIOPISEL_0 = 0b000,
+            PISEL_0 = 0b000,
             /// Px.1
-            CAPTIOPISEL_1 = 0b001,
+            PISEL_1 = 0b001,
             /// Px.2
-            CAPTIOPISEL_2 = 0b010,
+            PISEL_2 = 0b010,
             /// Px.3
-            CAPTIOPISEL_3 = 0b011,
+            PISEL_3 = 0b011,
             /// Px.4
-            CAPTIOPISEL_4 = 0b100,
+            PISEL_4 = 0b100,
             /// Px.5
-            CAPTIOPISEL_5 = 0b101,
+            PISEL_5 = 0b101,
             /// Px.6
-            CAPTIOPISEL_6 = 0b110,
+            PISEL_6 = 0b110,
             /// Px.7
-            CAPTIOPISEL_7 = 0b111,
+            PISEL_7 = 0b111,
         }
         /// Capacitive Touch IO port select
-        CAPTIOPOSEL: 4..7 = enum CAPTIOPOSEL {
+        POSEL: 4..7 = enum POSEL {
             /// Px = PJ
             PJ = 0b0000,
             /// Px = P1
@@ -60,7 +60,7 @@ utils::periph! {
             P15 = 0b1111,
         }
         /// Capacitive Touch IO enable
-        CAPTIOEN: 8 = enum CAPTIOEN {
+        EN: 8 = enum EN {
             /// All Capacitive Touch IOs are disabled. Signal towards timers is 0.
             OFF = 0b0,
             /// Selected Capacitive Touch IO is enabled

@@ -4,271 +4,271 @@ utils::periph! {
     /// USCI_A  UART Mode
     USCI_A_UART;
     /// USCI A Control Word Register 0
-    rw UCACTLW0 @ 0x00: u16 = 0_0 {
+    rw CTLW0 @ 0x00: u16 = 0_0 {
         /// USCI Software Reset
-        UCSWRST: 0 = struct UCSWRST(bool);
+        SWRST: 0 = struct SWRST(bool);
         /// Send next Data as Break
-        UCTXBRK: 1 = struct UCTXBRK(bool);
+        TXBRK: 1 = struct TXBRK(bool);
         /// Send next Data as Address
-        UCTXADDR: 2 = struct UCTXADDR(bool);
+        TXADDR: 2 = struct TXADDR(bool);
         /// Dormant (Sleep) Mode
-        UCDORM: 3 = struct UCDORM(bool);
+        DORM: 3 = struct DORM(bool);
         /// Break interrupt enable
-        UCBRKIE: 4 = struct UCBRKIE(bool);
+        BRKIE: 4 = struct BRKIE(bool);
         /// RX Error interrupt enable
-        UCRXEIE: 5 = struct UCRXEIE(bool);
+        RXEIE: 5 = struct RXEIE(bool);
         /// USCI 0 Clock Source Select 1
-        UCSSEL: 6..7 = enum UCSSEL {
+        SSEL: 6..7 = enum SSEL {
             /// USCI 0 Clock Source: 0
-            UCSSEL_0 = 0b00,
+            SSEL_0 = 0b00,
             /// USCI 0 Clock Source: 1
-            UCSSEL_1 = 0b01,
+            SSEL_1 = 0b01,
             /// USCI 0 Clock Source: 2
-            UCSSEL_2 = 0b10,
+            SSEL_2 = 0b10,
             /// USCI 0 Clock Source: 3
-            UCSSEL_3 = 0b11,
+            SSEL_3 = 0b11,
         }
         /// Sync-Mode  0:UART-Mode / 1:SPI-Mode
-        UCSYNC: 8 = struct UCSYNC(bool);
+        SYNC: 8 = struct SYNC(bool);
         /// Async. Mode: USCI Mode 1
-        UCMODE: 9..10 = enum UCMODE {
+        MODE: 9..10 = enum MODE {
             /// Sync. Mode: USCI Mode: 0
-            UCMODE_0 = 0b00,
+            MODE_0 = 0b00,
             /// Sync. Mode: USCI Mode: 1
-            UCMODE_1 = 0b01,
+            MODE_1 = 0b01,
             /// Sync. Mode: USCI Mode: 2
-            UCMODE_2 = 0b10,
+            MODE_2 = 0b10,
             /// Sync. Mode: USCI Mode: 3
-            UCMODE_3 = 0b11,
+            MODE_3 = 0b11,
         }
         /// Async. Mode: Stop Bits  0:one / 1: two
-        UCSPB: 11 = struct UCSPB(bool);
+        SPB: 11 = struct SPB(bool);
         /// Async. Mode: Data Bits  0:8-bits / 1:7-bits
-        UC7BIT: 12 = struct UC7BIT(bool);
+        _7BIT: 12 = struct _7BIT(bool);
         /// Async. Mode: MSB first  0:LSB / 1:MSB
-        UCMSB: 13 = struct UCMSB(bool);
+        MSB: 13 = struct MSB(bool);
         /// Async. Mode: Parity     0:odd / 1:even
-        UCPAR: 14 = struct UCPAR(bool);
+        PAR: 14 = struct PAR(bool);
         /// Async. Mode: Parity enable
-        UCPEN: 15 = struct UCPEN(bool);
+        PEN: 15 = struct PEN(bool);
     }
     /// USCI A Control Register 0
-    rw UCACTL0 @ 0x01: u8 = 0_0 {
+    rw CTL0 @ 0x01: u8 = 0_0 {
         /// USCI A Control Register 0
-        UCACTL0: 0..7 = struct UCA0CTL0Field(u8);
+        CTL0: 0..7 = struct CTL0Field(u8);
     }
     /// USCI A Control Register 1
-    rw UCACTL1 @ 0x00: u8 = 0_0 {
+    rw CTL1 @ 0x00: u8 = 0_0 {
         /// USCI A Control Register 1
-        UCACTL1: 0..7 = struct UCA0CTL1Field(u8);
+        CTL1: 0..7 = struct CTL1Field(u8);
     }
     /// USCI A Control Word Register 1
-    rw UCACTLW1 @ 0x02: u16 = 0_0 {
+    rw CTLW1 @ 0x02: u16 = 0_0 {
         /// USCI Deglitch Time Bit 1
-        UCGLIT: 0..1 = enum UCGLIT {
+        GLIT: 0..1 = enum GLIT {
             /// USCI Deglitch time: 0
-            UCGLIT_0 = 0b00,
+            GLIT_0 = 0b00,
             /// USCI Deglitch time: 1
-            UCGLIT_1 = 0b01,
+            GLIT_1 = 0b01,
             /// USCI Deglitch time: 2
-            UCGLIT_2 = 0b10,
+            GLIT_2 = 0b10,
             /// USCI Deglitch time: 3
-            UCGLIT_3 = 0b11,
+            GLIT_3 = 0b11,
         }
     }
     /// USCI A Baud Word Rate 0
-    rw UCABRW @ 0x06: u16 = 0_0 {
+    rw BRW @ 0x06: u16 = 0_0 {
         /// USCI A Baud Word Rate 0
-        UCABRW: 0..15 = struct UCA0BRWField(u16);
+        BRW: 0..15 = struct BRWField(u16);
     }
     /// USCI A Baud Rate 0
-    rw UCABR0 @ 0x06: u8 = 0_0 {
+    rw BR0 @ 0x06: u8 = 0_0 {
         /// USCI A Baud Rate 0
-        UCABR0: 0..7 = struct UCA0BR0Field(u8);
+        BR0: 0..7 = struct BR0Field(u8);
     }
     /// USCI A Baud Rate 1
-    rw UCABR1 @ 0x07: u8 = 0_0 {
+    rw BR1 @ 0x07: u8 = 0_0 {
         /// USCI A Baud Rate 1
-        UCABR1: 0..7 = struct UCA0BR1Field(u8);
+        BR1: 0..7 = struct BR1Field(u8);
     }
     /// USCI A Modulation Control
-    rw UCAMCTLW @ 0x08: u16 = 0_0 {
+    rw MCTLW @ 0x08: u16 = 0_0 {
         /// USCI 16-times Oversampling enable
-        UCOS16: 0 = struct UCOS16(bool);
+        OS16: 0 = struct OS16(bool);
         /// USCI First Stage Modulation Select 3
-        UCBRF: 4..7 = enum UCBRF {
+        BRF: 4..7 = enum BRF {
             /// USCI First Stage Modulation: 0
-            UCBRF_0 = 0b0000,
+            BRF_0 = 0b0000,
             /// USCI First Stage Modulation: 1
-            UCBRF_1 = 0b0001,
+            BRF_1 = 0b0001,
             /// USCI First Stage Modulation: 2
-            UCBRF_2 = 0b0010,
+            BRF_2 = 0b0010,
             /// USCI First Stage Modulation: 3
-            UCBRF_3 = 0b0011,
+            BRF_3 = 0b0011,
             /// USCI First Stage Modulation: 4
-            UCBRF_4 = 0b0100,
+            BRF_4 = 0b0100,
             /// USCI First Stage Modulation: 5
-            UCBRF_5 = 0b0101,
+            BRF_5 = 0b0101,
             /// USCI First Stage Modulation: 6
-            UCBRF_6 = 0b0110,
+            BRF_6 = 0b0110,
             /// USCI First Stage Modulation: 7
-            UCBRF_7 = 0b0111,
+            BRF_7 = 0b0111,
             /// USCI First Stage Modulation: 8
-            UCBRF_8 = 0b1000,
+            BRF_8 = 0b1000,
             /// USCI First Stage Modulation: 9
-            UCBRF_9 = 0b1001,
+            BRF_9 = 0b1001,
             /// USCI First Stage Modulation: A
-            UCBRF_10 = 0b1010,
+            BRF_10 = 0b1010,
             /// USCI First Stage Modulation: B
-            UCBRF_11 = 0b1011,
+            BRF_11 = 0b1011,
             /// USCI First Stage Modulation: C
-            UCBRF_12 = 0b1100,
+            BRF_12 = 0b1100,
             /// USCI First Stage Modulation: D
-            UCBRF_13 = 0b1101,
+            BRF_13 = 0b1101,
             /// USCI First Stage Modulation: E
-            UCBRF_14 = 0b1110,
+            BRF_14 = 0b1110,
             /// USCI First Stage Modulation: F
-            UCBRF_15 = 0b1111,
+            BRF_15 = 0b1111,
         }
         /// USCI Second Stage Modulation Select 0
-        UCBRS0: 8 = struct UCBRS0(bool);
+        BRS0: 8 = struct BRS0(bool);
         /// USCI Second Stage Modulation Select 1
-        UCBRS1: 9 = struct UCBRS1(bool);
+        BRS1: 9 = struct BRS1(bool);
         /// USCI Second Stage Modulation Select 2
-        UCBRS2: 10 = struct UCBRS2(bool);
+        BRS2: 10 = struct BRS2(bool);
         /// USCI Second Stage Modulation Select 3
-        UCBRS3: 11 = struct UCBRS3(bool);
+        BRS3: 11 = struct BRS3(bool);
         /// USCI Second Stage Modulation Select 4
-        UCBRS4: 12 = struct UCBRS4(bool);
+        BRS4: 12 = struct BRS4(bool);
         /// USCI Second Stage Modulation Select 5
-        UCBRS5: 13 = struct UCBRS5(bool);
+        BRS5: 13 = struct BRS5(bool);
         /// USCI Second Stage Modulation Select 6
-        UCBRS6: 14 = struct UCBRS6(bool);
+        BRS6: 14 = struct BRS6(bool);
         /// USCI Second Stage Modulation Select 7
-        UCBRS7: 15 = struct UCBRS7(bool);
+        BRS7: 15 = struct BRS7(bool);
     }
     /// USCI A Status Register
-    rw UCASTATW @ 0x0a: u8 = 0_0 {
+    rw STATW @ 0x0a: u8 = 0_0 {
         /// USCI Busy Flag
-        UCBUSY: 0 = struct UCBUSY(bool);
+        BUSY: 0 = struct BUSY(bool);
         /// USCI Address received Flag
-        UCADDR: 1 = struct UCADDR(bool);
+        DDR: 1 = struct DDR(bool);
         /// USCI RX Error Flag
-        UCRXERR: 2 = struct UCRXERR(bool);
+        RXERR: 2 = struct RXERR(bool);
         /// USCI Break received
-        UCBRK: 3 = struct UCBRK(bool);
+        BRK: 3 = struct BRK(bool);
         /// USCI Parity Error Flag
-        UCPE: 4 = struct UCPE(bool);
+        PE: 4 = struct PE(bool);
         /// USCI Overrun Error Flag
-        UCOE: 5 = struct UCOE(bool);
+        OE: 5 = struct OE(bool);
         /// USCI Frame Error Flag
-        UCFE: 6 = struct UCFE(bool);
+        FE: 6 = struct FE(bool);
         /// USCI Listen mode
-        UCLISTEN: 7 = struct UCLISTEN(bool);
+        LISTEN: 7 = struct LISTEN(bool);
     }
     /// USCI A Receive Buffer
-    rw UCARXBUF @ 0x0c: u16 = 0_0 {
+    rw RXBUF @ 0x0c: u16 = 0_0 {
         /// USCI A Receive Buffer
-        UCARXBUF: 0..15 = struct UCA0RXBUFField(u16);
+        RXBUF: 0..15 = struct RXBUFField(u16);
     }
     /// USCI A Transmit Buffer
-    rw UCATXBUF @ 0x0e: u16 = 0_0 {
+    rw TXBUF @ 0x0e: u16 = 0_0 {
         /// USCI A Transmit Buffer
-        UCATXBUF: 0..15 = struct UCA0TXBUFField(u16);
+        TXBUF: 0..15 = struct TXBUFField(u16);
     }
     /// USCI A LIN Control
-    rw UCAABCTL @ 0x10: u8 = 0_0 {
+    rw ABCTL @ 0x10: u8 = 0_0 {
         /// Auto Baud Rate detect enable
-        UCABDEN: 0 = struct UCABDEN(bool);
+        BDEN: 0 = struct BDEN(bool);
         /// Break Timeout error
-        UCBTOE: 2 = struct UCBTOE(bool);
+        BTOE: 2 = struct BTOE(bool);
         /// Sync-Field Timeout error
-        UCSTOE: 3 = struct UCSTOE(bool);
+        STOE: 3 = struct STOE(bool);
         /// Break Sync Delimiter 0
-        UCDELIM0: 4 = struct UCDELIM0(bool);
+        DELIM0: 4 = struct DELIM0(bool);
         /// Break Sync Delimiter 1
-        UCDELIM1: 5 = struct UCDELIM1(bool);
+        DELIM1: 5 = struct DELIM1(bool);
     }
     /// USCI A IrDA Transmit Control
-    rw UCAIRCTL @ 0x12: u16 = 0_0 {
+    rw IRCTL @ 0x12: u16 = 0_0 {
         /// IRDA Encoder/Decoder enable
-        UCIREN: 0 = struct UCIREN(bool);
+        IREN: 0 = struct IREN(bool);
         /// IRDA Transmit Pulse Clock Select
-        UCIRTXCLK: 1 = struct UCIRTXCLK(bool);
+        IRTXCLK: 1 = struct IRTXCLK(bool);
         /// IRDA Transmit Pulse Length 0
-        UCIRTXPL0: 2 = struct UCIRTXPL0(bool);
+        IRTXPL0: 2 = struct IRTXPL0(bool);
         /// IRDA Transmit Pulse Length 1
-        UCIRTXPL1: 3 = struct UCIRTXPL1(bool);
+        IRTXPL1: 3 = struct IRTXPL1(bool);
         /// IRDA Transmit Pulse Length 2
-        UCIRTXPL2: 4 = struct UCIRTXPL2(bool);
+        IRTXPL2: 4 = struct IRTXPL2(bool);
         /// IRDA Transmit Pulse Length 3
-        UCIRTXPL3: 5 = struct UCIRTXPL3(bool);
+        IRTXPL3: 5 = struct IRTXPL3(bool);
         /// IRDA Transmit Pulse Length 4
-        UCIRTXPL4: 6 = struct UCIRTXPL4(bool);
+        IRTXPL4: 6 = struct IRTXPL4(bool);
         /// IRDA Transmit Pulse Length 5
-        UCIRTXPL5: 7 = struct UCIRTXPL5(bool);
+        IRTXPL5: 7 = struct IRTXPL5(bool);
         /// IRDA Receive Filter enable
-        UCIRRXFE: 8 = struct UCIRRXFE(bool);
+        IRRXFE: 8 = struct IRRXFE(bool);
         /// IRDA Receive Input Polarity
-        UCIRRXPL: 9 = struct UCIRRXPL(bool);
+        IRRXPL: 9 = struct IRRXPL(bool);
         /// IRDA Receive Filter Length 0
-        UCIRRXFL0: 10 = struct UCIRRXFL0(bool);
+        IRRXFL0: 10 = struct IRRXFL0(bool);
         /// IRDA Receive Filter Length 1
-        UCIRRXFL1: 11 = struct UCIRRXFL1(bool);
+        IRRXFL1: 11 = struct IRRXFL1(bool);
         /// IRDA Receive Filter Length 2
-        UCIRRXFL2: 12 = struct UCIRRXFL2(bool);
+        IRRXFL2: 12 = struct IRRXFL2(bool);
         /// IRDA Receive Filter Length 3
-        UCIRRXFL3: 13 = struct UCIRRXFL3(bool);
+        IRRXFL3: 13 = struct IRRXFL3(bool);
         /// IRDA Receive Filter Length 4
-        UCIRRXFL4: 14 = struct UCIRRXFL4(bool);
+        IRRXFL4: 14 = struct IRRXFL4(bool);
         /// IRDA Receive Filter Length 5
-        UCIRRXFL5: 15 = struct UCIRRXFL5(bool);
+        IRRXFL5: 15 = struct IRRXFL5(bool);
     }
     /// USCI A IrDA Transmit Control
-    rw UCAIRTCTL @ 0x12: u8 = 0_0 {
+    rw IRTCTL @ 0x12: u8 = 0_0 {
         /// USCI A IrDA Transmit Control
-        UCAIRTCTL: 0..7 = struct UCA0IRTCTLField(u8);
+        IRTCTL: 0..7 = struct IRTCTLField(u8);
     }
     /// USCI A IrDA Receive Control
-    rw UCAIRRCTL @ 0x13: u8 = 0_0 {
+    rw IRRCTL @ 0x13: u8 = 0_0 {
         /// USCI A IrDA Receive Control
-        UCAIRRCTL: 0..7 = struct UCA0IRRCTLField(u8);
+        IRRCTL: 0..7 = struct IRRCTLField(u8);
     }
     /// USCI A Interrupt Enable Register
-    rw UCAIE @ 0x1a: u16 = 0_0 {
+    rw IE @ 0x1a: u16 = 0_0 {
         /// USCI A Interrupt Enable Register
-        UCAIE: 0..15 = struct UCA0IEField(u16);
+        IE: 0..15 = struct IEField(u16);
     }
     /// USCI A Interrupt Flags Register
-    rw UCAIFG @ 0x1c: u16 = 0_0 {
+    rw IFG @ 0x1c: u16 = 0_0 {
         /// USCI A Interrupt Flags Register
-        UCAIFG: 0..15 = struct UCA0IFGField(u16);
+        IFG: 0..15 = struct IFGField(u16);
     }
     /// USCI A Interrupt Enable Register
-    rw UCAIE__UART @ 0x1a: u16 = 0_0 {
+    rw IE__UART @ 0x1a: u16 = 0_0 {
         /// UART Receive Interrupt Enable
-        UCRXIE: 0 = struct UCRXIE(bool);
+        RXIE: 0 = struct RXIE(bool);
         /// UART Transmit Interrupt Enable
-        UCTXIE: 1 = struct UCTXIE(bool);
+        TXIE: 1 = struct TXIE(bool);
         /// UART Start Bit Interrupt Enalble
-        UCSTTIE: 2 = struct UCSTTIE(bool);
+        STTIE: 2 = struct STTIE(bool);
         /// UART Transmit Complete Interrupt Enable
-        UCTXCPTIE: 3 = struct UCTXCPTIE(bool);
+        TXCPTIE: 3 = struct TXCPTIE(bool);
     }
     /// USCI A Interrupt Flags Register
-    rw UCAIFG__UART @ 0x1c: u16 = 0_0 {
+    rw IFG__UART @ 0x1c: u16 = 0_0 {
         /// UART Receive Interrupt Flag
-        UCRXIFG: 0 = struct UCRXIFG(bool);
+        RXIFG: 0 = struct RXIFG(bool);
         /// UART Transmit Interrupt Flag
-        UCTXIFG: 1 = struct UCTXIFG(bool);
+        TXIFG: 1 = struct TXIFG(bool);
         /// UART Start Bit Interrupt Flag
-        UCSTTIFG: 2 = struct UCSTTIFG(bool);
+        STTIFG: 2 = struct STTIFG(bool);
         /// UART Transmit Complete Interrupt Flag
-        UCTXCPTIFG: 3 = struct UCTXCPTIFG(bool);
+        TXCPTIFG: 3 = struct TXCPTIFG(bool);
     }
     /// USCI A Interrupt Vector Register
-    rw UCAIV @ 0x1e: u16 = 0_0 {
+    rw IV @ 0x1e: u16 = 0_0 {
         /// USCI A Interrupt Vector Register
-        UCAIV: 0..15 = struct UCA0IVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
 }

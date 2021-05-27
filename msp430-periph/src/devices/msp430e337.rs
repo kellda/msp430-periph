@@ -30,8 +30,8 @@ utils::device! {
     #[all:cfg(feature = "basic_timer")]
     Basic_Timer @ 0x0040: basic_timer::BasicTimer;
     /// 8BIT TIMER/COUNTER
-    #[all:cfg(feature = "_8bit_timer_counter_1")]
-    _8BIT_TIMER_COUNTER @ 0x0042: _8bit_timer_counter_1::_8BITTIMERCOUNTER;
+    #[all:cfg(feature = "timer_counter")]
+    TC @ 0x0042: timer_counter::TC;
     /// Timer/Port
     #[all:cfg(feature = "timer_port")]
     Timer_Port @ 0x004b: timer_port::TimerPort;

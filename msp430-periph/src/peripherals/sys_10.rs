@@ -4,30 +4,30 @@ utils::periph! {
     /// SYS
     SYS;
     /// System Control
-    rw SYSCTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// RAM-based interrupt vectors
-        SYSRIVECT: 0 = enum SYSRIVECT {
+        RIVECT: 0 = enum RIVECT {
             /// Interrupt vectors generated with end address TOP of lower 64K FRAM FFFFh
             FRAM = 0b0,
             /// Interrupt vectors generated with end address TOP of RAM, when RAM available
             RAM = 0b1,
         }
         /// PMM access protect
-        SYSPMMPE: 2 = enum SYSPMMPE {
+        PMMPE: 2 = enum PMMPE {
             /// Access from anywhere in memory
             DIS = 0b0,
             /// Access only from the BSL segments
             EN = 0b1,
         }
         /// BSL entry indication
-        SYSBSLIND: 4 = enum SYSBSLIND {
+        BSLIND: 4 = enum BSLIND {
             /// No BSL entry sequence detected
             CLR = 0b0,
             /// BSL entry sequence detected
             SET = 0b1,
         }
         /// Dedicated JTAG pins enable
-        SYSJTAGPIN: 5 = enum SYSJTAGPIN {
+        JTAGPIN: 5 = enum JTAGPIN {
             /// Shared JTAG pins (JTAG mode selectable using SBW sequence)
             SHARED = 0b0,
             /// Dedicated JTAG pins (explicit 4-wire JTAG mode selection)
@@ -35,23 +35,23 @@ utils::periph! {
         }
     }
     /// Bootloader Configuration
-    rw SYSBSLC @ 0x02: u16 = 0_0 {
+    rw BSLC @ 0x02: u16 = 0_0 {
         /// RAM assigned to BSL
-        SYSBSLR: 2 = enum SYSBSLR {
+        BSLR: 2 = enum BSLR {
             /// No RAM assigned to BSL area
             NORAM = 0b0,
             /// Lowest 16 bytes of RAM assigned to BSL
             RAM = 0b1,
         }
-        /// Bootstrap loader memory disable for the size covered in SYSBSLSIZE
-        SYSBSLOFF: 14 = enum SYSBSLOFF {
+        /// Bootstrap loader memory disable for the size covered in BSLSIZE
+        BSLOFF: 14 = enum BSLOFF {
             /// BSL memory is addressed when this area is read.
             ON = 0b0,
             /// BSL memory behaves like vacant memory. Reads cause 3FFFh to be read. Fetches cause JMP $ to be executed.
             OFF = 0b1,
         }
-        /// Bootstrap loader memory protection enable for the size covered in SYSBSLSIZE. By default, this bit is cleared by hardware with a BOR event (as indicated above); however, the boot code that checks for an available BSL may set this bit in software to protect the BSL. Because devices normally come with a TI BSL preprogrammed and protected, the boot code sets this bit.
-        SYSBSLPE: 15 = enum SYSBSLPE {
+        /// Bootstrap loader memory protection enable for the size covered in BSLSIZE. By default, this bit is cleared by hardware with a BOR event (as indicated above); however, the boot code that checks for an available BSL may set this bit in software to protect the BSL. Because devices normally come with a TI BSL preprogrammed and protected, the boot code sets this bit.
+        BSLPE: 15 = enum BSLPE {
             /// Area not protected. Read, program, and erase of BSL memory is possible.
             NOTPROT = 0b0,
             /// Area protected
@@ -59,7 +59,7 @@ utils::periph! {
         }
     }
     /// JTAG Mailbox Control
-    rw SYSJMBC @ 0x06: u16 = 0_0 {
+    rw JMBC @ 0x06: u16 = 0_0 {
         /// Incoming JTAG Mailbox 0 flag
         JMBIN0FG: 0 = enum JMBIN0FG {
             /// JMBI0 has no new data
@@ -111,37 +111,37 @@ utils::periph! {
         }
     }
     /// JTAG Mailbox Input 0
-    r SYSJMBI0 @ 0x08: u16 = 0_0 {
+    r JMBI0 @ 0x08: u16 = 0_0 {
         /// JTAG mailbox incoming message low byte
-        SYSJMBI0_MSGLO: 0..7 = struct SYSJMBI0_MSGLO(u16);
+        JMBI0_MSGLO: 0..7 = struct JMBI0_MSGLO(u16);
         /// JTAG mailbox incoming message high byte
-        SYSJMBI0_MSGHI: 8..15 = struct SYSJMBI0_MSGHI(u16);
+        JMBI0_MSGHI: 8..15 = struct JMBI0_MSGHI(u16);
     }
     /// JTAG Mailbox Input 1
-    r SYSJMBI1 @ 0x0a: u16 = 0_0 {
+    r JMBI1 @ 0x0a: u16 = 0_0 {
         /// JTAG mailbox incoming message low byte
-        SYSJMBI1_MSGLO: 0..7 = struct SYSJMBI1_MSGLO(u16);
+        JMBI1_MSGLO: 0..7 = struct JMBI1_MSGLO(u16);
         /// JTAG mailbox incoming message high byte
-        SYSJMBI1_MSGHI: 8..15 = struct SYSJMBI1_MSGHI(u16);
+        JMBI1_MSGHI: 8..15 = struct JMBI1_MSGHI(u16);
     }
     /// JTAG Mailbox Output 0
-    rw SYSJMBO0 @ 0x0c: u16 = 0_0 {
+    rw JMBO0 @ 0x0c: u16 = 0_0 {
         /// JTAG mailbox outgoing message low byte
-        SYSJMBO0_MSGLO: 0..7 = struct SYSJMBO0_MSGLO(u16);
+        JMBO0_MSGLO: 0..7 = struct JMBO0_MSGLO(u16);
         /// JTAG mailbox outgoing message high byte
-        SYSJMBO0_MSGHI: 8..15 = struct SYSJMBO0_MSGHI(u16);
+        JMBO0_MSGHI: 8..15 = struct JMBO0_MSGHI(u16);
     }
     /// JTAG Mailbox Output 1
-    rw SYSJMBO1 @ 0x0e: u16 = 0_0 {
+    rw JMBO1 @ 0x0e: u16 = 0_0 {
         /// JTAG mailbox outgoing message low byte
-        SYSJMBO1_MSGLO: 0..7 = struct SYSJMBO1_MSGLO(u16);
+        JMBO1_MSGLO: 0..7 = struct JMBO1_MSGLO(u16);
         /// JTAG mailbox outgoing message high byte
-        SYSJMBO1_MSGHI: 8..15 = struct SYSJMBO1_MSGHI(u16);
+        JMBO1_MSGHI: 8..15 = struct JMBO1_MSGHI(u16);
     }
     /// User NMI Vector Generator
-    r SYSUNIV @ 0x1a: u16 = 0_0 {
+    r UNIV @ 0x1a: u16 = 0_0 {
         /// User NMI vector
-        SYSUNIV: 0..15 = enum SYSUNIVField {
+        UNIV: 0..15 = enum UNIVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// NMIFG NMI pin or SVSH event
@@ -151,9 +151,9 @@ utils::periph! {
         }
     }
     /// System NMI Vector Generator
-    r SYSSNIV @ 0x1c: u16 = 0_0 {
+    r SNIV @ 0x1c: u16 = 0_0 {
         /// System NMI vector
-        SYSSNIV: 0..15 = enum SYSSNIVField {
+        SNIV: 0..15 = enum SNIVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// SVS low-power reset entry
@@ -183,9 +183,9 @@ utils::periph! {
         }
     }
     /// Reset Vector Generator
-    r SYSRSTIV @ 0x1e: u16 = 0_0 {
+    r RSTIV @ 0x1e: u16 = 0_0 {
         /// Reset interrupt vector
-        SYSRSTIV: 0..15 = enum SYSRSTIVField {
+        RSTIV: 0..15 = enum RSTIVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// Brownout
@@ -199,13 +199,13 @@ utils::periph! {
             /// Security violation
             SECYV = 0b0000000000001010,
             /// Reserved
-            SYSRSTIV_12 = 0b0000000000001100,
+            RSTIV_12 = 0b0000000000001100,
             /// SVSHIFG SVSH event
             SVSHIFG = 0b0000000000001110,
             /// Reserved
-            SYSRSTIV_16 = 0b0000000000010000,
+            RSTIV_16 = 0b0000000000010000,
             /// Reserved
-            SYSRSTIV_18 = 0b0000000000010010,
+            RSTIV_18 = 0b0000000000010010,
             /// PMMSWPOR software POR
             PMMSWPOR = 0b0000000000010100,
             /// WDTIFG watchdog timeout
@@ -221,13 +221,13 @@ utils::periph! {
             /// PMM password violation
             PMMPW = 0b0000000000100000,
             /// Reserved
-            SYSRSTIV_34 = 0b0000000000100010,
+            RSTIV_34 = 0b0000000000100010,
             /// FLL unlock (PUC)
             FLLUL = 0b0000000000100100,
         }
     }
     /// System Configuration 0
-    rw SYSCFG0 @ 0x20: u16 = 0_0 {
+    rw CFG0 @ 0x20: u16 = 0_0 {
         /// Program FRAM write protection
         PFWP: 0 = enum PFWP {
             /// Program FRAM write enable
@@ -248,7 +248,7 @@ utils::periph! {
         FRWPOA: 2..7 = struct FRWPOA(u16);
     }
     /// System Configuration 1
-    rw SYSCFG1 @ 0x22: u16 = 0_0 {
+    rw CFG1 @ 0x22: u16 = 0_0 {
         /// Infrared enable
         IREN: 0 = enum IREN {
             /// Infrared function disabled
@@ -297,7 +297,7 @@ utils::periph! {
         }
     }
     /// System Configuration 2
-    rw SYSCFG2 @ 0x24: u16 = 0_0 {
+    rw CFG2 @ 0x24: u16 = 0_0 {
         /// RTC clock selection
         RTCCKSEL: 10 = enum RTCCKSEL {
             /// SMCLK is selected
@@ -321,7 +321,7 @@ utils::periph! {
         }
     }
     /// System Configuration 3
-    rw SYSCFG3 @ 0x26: u16 = 0_0 {
+    rw CFG3 @ 0x26: u16 = 0_0 {
         /// eUSCI_A0 remapping source selection
         USCIA0RMP: 0 = enum USCIA0RMP {
             /// Default function. See the device-specific data sheet for details.

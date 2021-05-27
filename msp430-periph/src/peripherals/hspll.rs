@@ -4,9 +4,9 @@ utils::periph! {
     /// HSPLL
     HSPLL;
     /// Interrupt Index Register
-    r HSPLLIIDX @ 0x00: u16 = 0_0 {
+    r IIDX @ 0x00: u16 = 0_0 {
         /// HSPLL Interrupt Vector Value
-        IIDX: 1..15 = enum IIDX {
+        IIDX: 1..15 = enum IIDXField {
             /// No Interrupt pending
             IIDX_0 = 0b000000000000000,
             /// Interrupt Source: PLLUNLOCK; Interrupt Priority: Highest
@@ -16,9 +16,9 @@ utils::periph! {
         }
     }
     /// Masked Interrupt Status Register.
-    r HSPLLMIS @ 0x02: u16 = 0_0 {
+    r MIS @ 0x02: u16 = 0_0 {
         /// HSPLL Unlock Masked Interrupt Status bit
-        HSPLLMIS_PLLUNLOCK: 0 = enum HSPLLMIS_PLLUNLOCK {
+        MIS_PLLUNLOCK: 0 = enum MIS_PLLUNLOCK {
             /// No interrupt pending
             PLLUNLOCK_0 = 0b0,
             /// Interrupt pending
@@ -26,9 +26,9 @@ utils::periph! {
         }
     }
     /// Raw Interrupt Status Register
-    r HSPLLRIS @ 0x04: u16 = 0_0 {
+    r RIS @ 0x04: u16 = 0_0 {
         /// PLL Unlock Raw Interrupt Status bit.
-        HSPLLRIS_PLLUNLOCK: 0 = enum HSPLLRIS_PLLUNLOCK {
+        RIS_PLLUNLOCK: 0 = enum RIS_PLLUNLOCK {
             /// PLL status has not been changed
             PLLUNLOCK_0 = 0b0,
             /// PLL status has been changed from Lock to Unlock
@@ -36,9 +36,9 @@ utils::periph! {
         }
     }
     /// Interrupt Mask Register
-    rw HSPLLIMSC @ 0x06: u16 = 0_0 {
+    rw IMSC @ 0x06: u16 = 0_0 {
         /// PLL Unlock Interrupt Mask bit.
-        HSPLLIMSC_PLLUNLOCK: 0 = enum HSPLLIMSC_PLLUNLOCK {
+        IMSC_PLLUNLOCK: 0 = enum IMSC_PLLUNLOCK {
             /// PLL Unlock Interrupt is disabled
             PLLUNLOCK_0 = 0b0,
             /// PLL Unlock Interrupt is enabled
@@ -46,17 +46,17 @@ utils::periph! {
         }
     }
     /// Interrupt Flag Clear Register.
-    rw HSPLLICR @ 0x08: u16 = 0_0 {
+    rw ICR @ 0x08: u16 = 0_0 {
         /// PLL Unlock Interrupt Clear bit.
-        HSPLLICR_PLLUNLOCK: 0 = struct HSPLLICR_PLLUNLOCK(bool);
+        ICR_PLLUNLOCK: 0 = struct ICR_PLLUNLOCK(bool);
     }
     /// Interrupt Flag Set Register.
-    rw HSPLLISR @ 0x0a: u16 = 0_0 {
+    rw ISR @ 0x0a: u16 = 0_0 {
         /// PLL Unlock Interrupt Set bit.
-        HSPLLISR_PLLUNLOCK: 0 = struct HSPLLISR_PLLUNLOCK(bool);
+        ISR_PLLUNLOCK: 0 = struct ISR_PLLUNLOCK(bool);
     }
     /// HSPLL Descriptor Register L.
-    r HSPLLDESCLO @ 0x0c: u16 = 0_0 {
+    r DESCLO @ 0x0c: u16 = 0_0 {
         /// Minor Revision
         MINREV: 0..3 = struct MINREV(u16);
         /// Instance Number within the device.
@@ -67,12 +67,12 @@ utils::periph! {
         FEATUREVER: 12..15 = struct FEATUREVER(u16);
     }
     /// HSPLL Descriptor Register H.
-    rw HSPLLDESCHI @ 0x0e: u16 = 0_0 {
+    rw DESCHI @ 0x0e: u16 = 0_0 {
         /// HSPLL Descriptor Register H.
-        HSPLLDESCHI: 0..15 = struct HSPLLDESCHIField(u16);
+        DESCHI: 0..15 = struct DESCHIField(u16);
     }
     /// HSPLL Control Register
-    rw HSPLLCTL @ 0x10: u16 = 0_0 {
+    rw CTL @ 0x10: u16 = 0_0 {
         /// PLL Multiplier
         PLLM: 10..15 = enum PLLM {
             /// PLLM_16
@@ -140,7 +140,7 @@ utils::periph! {
         }
     }
     /// USSXT Control Register
-    rw HSPLLUSSXTLCTL @ 0x12: u16 = 0_0 {
+    rw USSXTLCTL @ 0x12: u16 = 0_0 {
         /// USSXT Enable.
         USSXTEN: 0 = enum USSXTEN {
             /// Disable USSXT Oscillator

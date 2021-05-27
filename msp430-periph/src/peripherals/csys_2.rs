@@ -4,14 +4,14 @@ utils::periph! {
     /// CSYS  Compact System Module
     CSYS;
     /// System control
-    rw SYSCTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// SYS - RAM based interrupt vectors
-        SYSRIVECT: 0 = struct SYSRIVECT(bool);
+        RIVECT: 0 = struct RIVECT(bool);
         /// SYS - Dedicated JTAG pins enabled
-        SYSJTAGPIN: 5 = struct SYSJTAGPIN(bool);
+        JTAGPIN: 5 = struct JTAGPIN(bool);
     }
     /// JTAG mailbox control
-    rw SYSJMBC @ 0x06: u16 = 0_0 {
+    rw JMBC @ 0x06: u16 = 0_0 {
         /// SYS - Incoming JTAG Mailbox 0 Flag
         JMBIN0FG: 0 = struct JMBIN0FG(bool);
         /// SYS - Incoming JTAG Mailbox 1 Flag
@@ -28,27 +28,27 @@ utils::periph! {
         JMBCLR1OFF: 7 = struct JMBCLR1OFF(bool);
     }
     /// JTAG mailbox input 0
-    rw SYSJMBI0 @ 0x08: u16 = 0_0 {
+    rw JMBI0 @ 0x08: u16 = 0_0 {
         /// JTAG mailbox input 0
-        SYSJMBI0: 0..15 = struct SYSJMBI0Field(u16);
+        JMBI0: 0..15 = struct JMBI0Field(u16);
     }
     /// JTAG mailbox input 1
-    rw SYSJMBI1 @ 0x0a: u16 = 0_0 {
+    rw JMBI1 @ 0x0a: u16 = 0_0 {
         /// JTAG mailbox input 1
-        SYSJMBI1: 0..15 = struct SYSJMBI1Field(u16);
+        JMBI1: 0..15 = struct JMBI1Field(u16);
     }
     /// JTAG mailbox output 0
-    rw SYSJMBO0 @ 0x0c: u16 = 0_0 {
+    rw JMBO0 @ 0x0c: u16 = 0_0 {
         /// JTAG mailbox output 0
-        SYSJMBO0: 0..15 = struct SYSJMBO0Field(u16);
+        JMBO0: 0..15 = struct JMBO0Field(u16);
     }
     /// JTAG mailbox output 1
-    rw SYSJMBO1 @ 0x0e: u16 = 0_0 {
+    rw JMBO1 @ 0x0e: u16 = 0_0 {
         /// JTAG mailbox output 1
-        SYSJMBO1: 0..15 = struct SYSJMBO1Field(u16);
+        JMBO1: 0..15 = struct JMBO1Field(u16);
     }
     /// System Configuration Register
-    rw SYSCNF @ 0x10: u16 = 0_0 {
+    rw CNF @ 0x10: u16 = 0_0 {
         /// SYS - FRAM Write protect area 0
         FRAMLOCK0: 8 = struct FRAMLOCK0(bool);
         /// SYS - FRAM Write protect area 1
@@ -61,23 +61,23 @@ utils::periph! {
         ROMDEVMODE: 12 = struct ROMDEVMODE(bool);
     }
     /// Bus Error vector generator
-    rw SYSBERRIV @ 0x18: u16 = 0_0 {
+    rw BERRIV @ 0x18: u16 = 0_0 {
         /// Bus Error vector generator
-        SYSBERRIV: 0..15 = struct SYSBERRIVField(u16);
+        BERRIV: 0..15 = struct BERRIVField(u16);
     }
     /// User NMI vector generator
-    rw SYSUNIV @ 0x1a: u16 = 0_0 {
+    rw UNIV @ 0x1a: u16 = 0_0 {
         /// User NMI vector generator
-        SYSUNIV: 0..15 = struct SYSUNIVField(u16);
+        UNIV: 0..15 = struct UNIVField(u16);
     }
     /// System NMI vector generator
-    rw SYSSNIV @ 0x1c: u16 = 0_0 {
+    rw SNIV @ 0x1c: u16 = 0_0 {
         /// System NMI vector generator
-        SYSSNIV: 0..15 = struct SYSSNIVField(u16);
+        SNIV: 0..15 = struct SNIVField(u16);
     }
     /// Reset vector generator
-    rw SYSRSTIV @ 0x1e: u16 = 0_0 {
+    rw RSTIV @ 0x1e: u16 = 0_0 {
         /// Reset vector generator
-        SYSRSTIV: 0..15 = struct SYSRSTIVField(u16);
+        RSTIV: 0..15 = struct RSTIVField(u16);
     }
 }

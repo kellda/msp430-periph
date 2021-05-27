@@ -4,7 +4,7 @@ utils::periph! {
     /// USART
     USART;
     /// USART Control
-    rw UCTL @ 0x00: u8 = 0_0 {
+    rw CTL @ 0x00: u8 = 0_0 {
         /// USART Software Reset
         SWRST: 0 = struct SWRST(bool);
         /// Master Mode off/on
@@ -23,7 +23,7 @@ utils::periph! {
         PENA: 7 = struct PENA(bool);
     }
     /// USART Transmit Control
-    rw UTCTL @ 0x01: u8 = 0_0 {
+    rw TCTL @ 0x01: u8 = 0_0 {
         /// TX Buffer empty
         TXEPT: 0 = struct TXEPT(bool);
         /// SPI: STC enable 0:on / 1:off
@@ -31,7 +31,7 @@ utils::periph! {
         /// TX Wake up mode
         TXWAKE: 2 = struct TXWAKE(bool);
         /// Receive Start edge select
-        URXSE: 3 = struct URXSE(bool);
+        RXSE: 3 = struct RXSE(bool);
         /// Clock Source Select 0
         SSEL0: 4 = struct SSEL0(bool);
         /// Clock Source Select 1
@@ -42,15 +42,15 @@ utils::periph! {
         CKPH: 7 = struct CKPH(bool);
     }
     /// USART Receive Control
-    rw URCTL @ 0x02: u8 = 0_0 {
+    rw RCTL @ 0x02: u8 = 0_0 {
         /// RX Error Error
         RXERR: 0 = struct RXERR(bool);
         /// RX Wake up detect
         RXWAKE: 1 = struct RXWAKE(bool);
         /// RX Wake up interrupt enable
-        URXWIE: 2 = struct URXWIE(bool);
+        RXWIE: 2 = struct RXWIE(bool);
         /// RX Error interrupt enable
-        URXEIE: 3 = struct URXEIE(bool);
+        RXEIE: 3 = struct RXEIE(bool);
         /// Break detected
         BRK: 4 = struct BRK(bool);
         /// Overrun Error
@@ -61,28 +61,28 @@ utils::periph! {
         FE: 7 = struct FE(bool);
     }
     /// USART Modulation Control
-    rw UMCTL @ 0x03: u8 = 0_0 {
+    rw MCTL @ 0x03: u8 = 0_0 {
         /// USART Modulation Control
-        UMCTL: 0..7 = struct UMCTLField(u8);
+        MCTL: 0..7 = struct MCTLField(u8);
     }
     /// USART Baud Rate 0
-    rw UBR0 @ 0x04: u8 = 0_0 {
+    rw BR0 @ 0x04: u8 = 0_0 {
         /// USART Baud Rate 0
-        UBR0: 0..7 = struct UBR0Field(u8);
+        BR0: 0..7 = struct BR0Field(u8);
     }
     /// USART Baud Rate 1
-    rw UBR1 @ 0x05: u8 = 0_0 {
+    rw BR1 @ 0x05: u8 = 0_0 {
         /// USART Baud Rate 1
-        UBR1: 0..7 = struct UBR1Field(u8);
+        BR1: 0..7 = struct BR1Field(u8);
     }
     /// USART Receive Buffer
-    rw URXBUF @ 0x06: u8 = 0_0 {
+    rw RXBUF @ 0x06: u8 = 0_0 {
         /// USART Receive Buffer
-        URXBUF: 0..7 = struct URXBUFField(u8);
+        RXBUF: 0..7 = struct RXBUFField(u8);
     }
     /// USART Transmit Buffer
-    rw UTXBUF @ 0x07: u8 = 0_0 {
+    rw TXBUF @ 0x07: u8 = 0_0 {
         /// USART Transmit Buffer
-        UTXBUF: 0..7 = struct UTXBUFField(u8);
+        TXBUF: 0..7 = struct TXBUFField(u8);
     }
 }

@@ -4,86 +4,86 @@ utils::periph! {
     /// COMP_E
     COMP_E;
     /// Comparator Control Register 0
-    rw CECTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// Channel input selected for the V+ terminal
-        CEIPSEL: 0..3 = enum CEIPSEL {
+        IPSEL: 0..3 = enum IPSEL {
             /// Channel 0 selected
-            CEIPSEL_0 = 0b0000,
+            IPSEL_0 = 0b0000,
             /// Channel 1 selected
-            CEIPSEL_1 = 0b0001,
+            IPSEL_1 = 0b0001,
             /// Channel 2 selected
-            CEIPSEL_2 = 0b0010,
+            IPSEL_2 = 0b0010,
             /// Channel 3 selected
-            CEIPSEL_3 = 0b0011,
+            IPSEL_3 = 0b0011,
             /// Channel 4 selected
-            CEIPSEL_4 = 0b0100,
+            IPSEL_4 = 0b0100,
             /// Channel 5 selected
-            CEIPSEL_5 = 0b0101,
+            IPSEL_5 = 0b0101,
             /// Channel 6 selected
-            CEIPSEL_6 = 0b0110,
+            IPSEL_6 = 0b0110,
             /// Channel 7 selected
-            CEIPSEL_7 = 0b0111,
+            IPSEL_7 = 0b0111,
             /// Channel 8 selected
-            CEIPSEL_8 = 0b1000,
+            IPSEL_8 = 0b1000,
             /// Channel 9 selected
-            CEIPSEL_9 = 0b1001,
+            IPSEL_9 = 0b1001,
             /// Channel 10 selected
-            CEIPSEL_10 = 0b1010,
+            IPSEL_10 = 0b1010,
             /// Channel 11 selected
-            CEIPSEL_11 = 0b1011,
+            IPSEL_11 = 0b1011,
             /// Channel 12 selected
-            CEIPSEL_12 = 0b1100,
+            IPSEL_12 = 0b1100,
             /// Channel 13 selected
-            CEIPSEL_13 = 0b1101,
+            IPSEL_13 = 0b1101,
             /// Channel 14 selected
-            CEIPSEL_14 = 0b1110,
+            IPSEL_14 = 0b1110,
             /// Channel 15 selected
-            CEIPSEL_15 = 0b1111,
+            IPSEL_15 = 0b1111,
         }
         /// Channel input enable for the V+ terminal
-        CEIPEN: 7 = enum CEIPEN {
+        IPEN: 7 = enum IPEN {
             /// Selected analog input channel for V+ terminal is disabled
             DISABLE = 0b0,
             /// Selected analog input channel for V+ terminal is enabled
             ENABLE = 0b1,
         }
         /// Channel input selected for the - terminal
-        CEIMSEL: 8..11 = enum CEIMSEL {
+        IMSEL: 8..11 = enum IMSEL {
             /// Channel 0 selected
-            CEIMSEL_0 = 0b0000,
+            IMSEL_0 = 0b0000,
             /// Channel 1 selected
-            CEIMSEL_1 = 0b0001,
+            IMSEL_1 = 0b0001,
             /// Channel 2 selected
-            CEIMSEL_2 = 0b0010,
+            IMSEL_2 = 0b0010,
             /// Channel 3 selected
-            CEIMSEL_3 = 0b0011,
+            IMSEL_3 = 0b0011,
             /// Channel 4 selected
-            CEIMSEL_4 = 0b0100,
+            IMSEL_4 = 0b0100,
             /// Channel 5 selected
-            CEIMSEL_5 = 0b0101,
+            IMSEL_5 = 0b0101,
             /// Channel 6 selected
-            CEIMSEL_6 = 0b0110,
+            IMSEL_6 = 0b0110,
             /// Channel 7 selected
-            CEIMSEL_7 = 0b0111,
+            IMSEL_7 = 0b0111,
             /// Channel 8 selected
-            CEIMSEL_8 = 0b1000,
+            IMSEL_8 = 0b1000,
             /// Channel 9 selected
-            CEIMSEL_9 = 0b1001,
+            IMSEL_9 = 0b1001,
             /// Channel 10 selected
-            CEIMSEL_10 = 0b1010,
+            IMSEL_10 = 0b1010,
             /// Channel 11 selected
-            CEIMSEL_11 = 0b1011,
+            IMSEL_11 = 0b1011,
             /// Channel 12 selected
-            CEIMSEL_12 = 0b1100,
+            IMSEL_12 = 0b1100,
             /// Channel 13 selected
-            CEIMSEL_13 = 0b1101,
+            IMSEL_13 = 0b1101,
             /// Channel 14 selected
-            CEIMSEL_14 = 0b1110,
+            IMSEL_14 = 0b1110,
             /// Channel 15 selected
-            CEIMSEL_15 = 0b1111,
+            IMSEL_15 = 0b1111,
         }
         /// Channel input enable for the - terminal
-        CEIMEN: 15 = enum CEIMEN {
+        IMEN: 15 = enum IMEN {
             /// Selected analog input channel for V- terminal is disabled
             DISABLE = 0b0,
             /// Selected analog input channel for V- terminal is enabled
@@ -91,107 +91,107 @@ utils::periph! {
         }
     }
     /// Comparator Control Register 1
-    rw CECTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// Comparator output value
-        CEOUT: 0 = struct CEOUT(bool);
+        OUT: 0 = struct OUT(bool);
         /// Comparator output polarity
-        CEOUTPOL: 1 = enum CEOUTPOL {
+        OUTPOL: 1 = enum OUTPOL {
             /// Noninverted
-            CEOUTPOL_0 = 0b0,
+            OUTPOL_0 = 0b0,
             /// Inverted
-            CEOUTPOL_1 = 0b1,
+            OUTPOL_1 = 0b1,
         }
         /// Comparator output filter
-        CEF: 2 = enum CEF {
+        F: 2 = enum F {
             /// Comparator output is not filtered
-            CEF_0 = 0b0,
+            F_0 = 0b0,
             /// Comparator output is filtered
-            CEF_1 = 0b1,
+            F_1 = 0b1,
         }
         /// Interrupt edge select for CEIIFG and CEIFG
-        CEIES: 3 = enum CEIES {
+        IES: 3 = enum IES {
             /// Rising edge for CEIFG, falling edge for CEIIFG
-            CEIES_0 = 0b0,
+            IES_0 = 0b0,
             /// Falling edge for CEIFG, rising edge for CEIIFG
-            CEIES_1 = 0b1,
+            IES_1 = 0b1,
         }
         /// Input short
-        CESHORT: 4 = enum CESHORT {
+        SHORT: 4 = enum SHORT {
             /// Inputs not shorted
-            CESHORT_0 = 0b0,
+            SHORT_0 = 0b0,
             /// Inputs shorted
-            CESHORT_1 = 0b1,
+            SHORT_1 = 0b1,
         }
         /// Exchange
-        CEEX: 5 = struct CEEX(bool);
+        EX: 5 = struct EX(bool);
         /// Filter delay
-        CEFDLY: 6..7 = enum CEFDLY {
+        FDLY: 6..7 = enum FDLY {
             /// Typical filter delay of TBD (450) ns
-            CEFDLY_0 = 0b00,
+            FDLY_0 = 0b00,
             /// Typical filter delay of TBD (900) ns
-            CEFDLY_1 = 0b01,
+            FDLY_1 = 0b01,
             /// Typical filter delay of TBD (1800) ns
-            CEFDLY_2 = 0b10,
+            FDLY_2 = 0b10,
             /// Typical filter delay of TBD (3600) ns
-            CEFDLY_3 = 0b11,
+            FDLY_3 = 0b11,
         }
         /// Power Mode
-        CEPWRMD: 8..9 = enum CEPWRMD {
+        PWRMD: 8..9 = enum PWRMD {
             /// High-speed mode
-            CEPWRMD_0 = 0b00,
+            PWRMD_0 = 0b00,
             /// Normal mode
-            CEPWRMD_1 = 0b01,
+            PWRMD_1 = 0b01,
             /// Ultra-low power mode
-            CEPWRMD_2 = 0b10,
+            PWRMD_2 = 0b10,
         }
         /// Comparator On
-        CEON: 10 = enum CEON {
+        ON: 10 = enum ON {
             /// Off
             OFF = 0b0,
             /// On
             ON = 0b1,
         }
         /// This bit is valid of CEMRVS is set to 1
-        CEMRVL: 11 = enum CEMRVL {
+        MRVL: 11 = enum MRVL {
             /// VREF0 is selected if CERS = 00, 01, or 10
             VREF0 = 0b0,
             /// VREF1 is selected if CERS = 00, 01, or 10
             VREF1 = 0b1,
         }
         /// This bit defines if the comparator output selects between VREF0 or VREF1 if CERS = 00, 01, or 10.
-        CEMRVS: 12 = enum CEMRVS {
+        MRVS: 12 = enum MRVS {
             /// Comparator output state selects between VREF0 or VREF1
-            CEMRVS_0 = 0b0,
+            MRVS_0 = 0b0,
             /// CEMRVL selects between VREF0 or VREF1
-            CEMRVS_1 = 0b1,
+            MRVS_1 = 0b1,
         }
     }
     /// Comparator Control Register 2
-    rw CECTL2 @ 0x04: u16 = 0_0 {
+    rw CTL2 @ 0x04: u16 = 0_0 {
         /// Reference resistor tap 0
-        CEREF0: 0..4 = struct CEREF0(u16);
+        REF0: 0..4 = struct REF0(u16);
         /// Reference select
-        CERSEL: 5 = enum CERSEL {
+        RSEL: 5 = enum RSEL {
             /// When CEEX = 0, VREF is applied to the V+ terminal; When CEEX = 1, VREF is applied to the V- terminal
-            CERSEL_0 = 0b0,
+            RSEL_0 = 0b0,
             /// When CEEX = 0, VREF is applied to the V- terminal; When CEEX = 1, VREF is applied to the V+ terminal
-            CERSEL_1 = 0b1,
+            RSEL_1 = 0b1,
         }
         /// Reference source
-        CERS: 6..7 = enum CERS {
+        RS: 6..7 = enum RS {
             /// No current is drawn by the reference circuitry
-            CERS_0 = 0b00,
+            RS_0 = 0b00,
             /// VCC applied to the resistor ladder
-            CERS_1 = 0b01,
+            RS_1 = 0b01,
             /// Shared reference voltage applied to the resistor ladder
-            CERS_2 = 0b10,
+            RS_2 = 0b10,
             /// Shared reference voltage supplied to V(CREF). Resistor ladder is off
-            CERS_3 = 0b11,
+            RS_3 = 0b11,
         }
         /// Reference resistor tap 1
-        CEREF1: 8..12 = struct CEREF1(u16);
+        REF1: 8..12 = struct REF1(u16);
         /// Reference voltage level
-        CEREFL: 13..14 = enum CEREFL {
+        REFL: 13..14 = enum REFL {
             /// Reference amplifier is disabled. No reference voltage is requested
             OFF = 0b00,
             /// 1.2 V is selected as shared reference voltage input
@@ -202,7 +202,7 @@ utils::periph! {
             _2P5V = 0b11,
         }
         /// Reference accuracy
-        CEREFACC: 15 = enum CEREFACC {
+        REFACC: 15 = enum REFACC {
             /// Static mode
             STATIC = 0b0,
             /// Clocked (low power, low accuracy) mode
@@ -210,159 +210,159 @@ utils::periph! {
         }
     }
     /// Comparator Control Register 3
-    rw CECTL3 @ 0x06: u16 = 0_0 {
+    rw CTL3 @ 0x06: u16 = 0_0 {
         /// Port disable
-        CEPD0: 0 = enum CEPD0 {
+        PD0: 0 = enum PD0 {
             /// The input buffer is enabled
-            CEPD0_0 = 0b0,
+            PD0_0 = 0b0,
             /// The input buffer is disabled
-            CEPD0_1 = 0b1,
+            PD0_1 = 0b1,
         }
         /// Port disable
-        CEPD1: 1 = enum CEPD1 {
+        PD1: 1 = enum PD1 {
             /// The input buffer is enabled
-            CEPD1_0 = 0b0,
+            PD1_0 = 0b0,
             /// The input buffer is disabled
-            CEPD1_1 = 0b1,
+            PD1_1 = 0b1,
         }
         /// Port disable
-        CEPD2: 2 = enum CEPD2 {
+        PD2: 2 = enum PD2 {
             /// The input buffer is enabled
-            CEPD2_0 = 0b0,
+            PD2_0 = 0b0,
             /// The input buffer is disabled
-            CEPD2_1 = 0b1,
+            PD2_1 = 0b1,
         }
         /// Port disable
-        CEPD3: 3 = enum CEPD3 {
+        PD3: 3 = enum PD3 {
             /// The input buffer is enabled
-            CEPD3_0 = 0b0,
+            PD3_0 = 0b0,
             /// The input buffer is disabled
-            CEPD3_1 = 0b1,
+            PD3_1 = 0b1,
         }
         /// Port disable
-        CEPD4: 4 = enum CEPD4 {
+        PD4: 4 = enum PD4 {
             /// The input buffer is enabled
-            CEPD4_0 = 0b0,
+            PD4_0 = 0b0,
             /// The input buffer is disabled
-            CEPD4_1 = 0b1,
+            PD4_1 = 0b1,
         }
         /// Port disable
-        CEPD5: 5 = enum CEPD5 {
+        PD5: 5 = enum PD5 {
             /// The input buffer is enabled
-            CEPD5_0 = 0b0,
+            PD5_0 = 0b0,
             /// The input buffer is disabled
-            CEPD5_1 = 0b1,
+            PD5_1 = 0b1,
         }
         /// Port disable
-        CEPD6: 6 = enum CEPD6 {
+        PD6: 6 = enum PD6 {
             /// The input buffer is enabled
-            CEPD6_0 = 0b0,
+            PD6_0 = 0b0,
             /// The input buffer is disabled
-            CEPD6_1 = 0b1,
+            PD6_1 = 0b1,
         }
         /// Port disable
-        CEPD7: 7 = enum CEPD7 {
+        PD7: 7 = enum PD7 {
             /// The input buffer is enabled
-            CEPD7_0 = 0b0,
+            PD7_0 = 0b0,
             /// The input buffer is disabled
-            CEPD7_1 = 0b1,
+            PD7_1 = 0b1,
         }
         /// Port disable
-        CEPD8: 8 = enum CEPD8 {
+        PD8: 8 = enum PD8 {
             /// The input buffer is enabled
-            CEPD8_0 = 0b0,
+            PD8_0 = 0b0,
             /// The input buffer is disabled
-            CEPD8_1 = 0b1,
+            PD8_1 = 0b1,
         }
         /// Port disable
-        CEPD9: 9 = enum CEPD9 {
+        PD9: 9 = enum PD9 {
             /// The input buffer is enabled
-            CEPD9_0 = 0b0,
+            PD9_0 = 0b0,
             /// The input buffer is disabled
-            CEPD9_1 = 0b1,
+            PD9_1 = 0b1,
         }
         /// Port disable
-        CEPD10: 10 = enum CEPD10 {
+        PD10: 10 = enum PD10 {
             /// The input buffer is enabled
-            CEPD10_0 = 0b0,
+            PD10_0 = 0b0,
             /// The input buffer is disabled
-            CEPD10_1 = 0b1,
+            PD10_1 = 0b1,
         }
         /// Port disable
-        CEPD11: 11 = enum CEPD11 {
+        PD11: 11 = enum PD11 {
             /// The input buffer is enabled
-            CEPD11_0 = 0b0,
+            PD11_0 = 0b0,
             /// The input buffer is disabled
-            CEPD11_1 = 0b1,
+            PD11_1 = 0b1,
         }
         /// Port disable
-        CEPD12: 12 = enum CEPD12 {
+        PD12: 12 = enum PD12 {
             /// The input buffer is enabled
-            CEPD12_0 = 0b0,
+            PD12_0 = 0b0,
             /// The input buffer is disabled
-            CEPD12_1 = 0b1,
+            PD12_1 = 0b1,
         }
         /// Port disable
-        CEPD13: 13 = enum CEPD13 {
+        PD13: 13 = enum PD13 {
             /// The input buffer is enabled
-            CEPD13_0 = 0b0,
+            PD13_0 = 0b0,
             /// The input buffer is disabled
-            CEPD13_1 = 0b1,
+            PD13_1 = 0b1,
         }
         /// Port disable
-        CEPD14: 14 = enum CEPD14 {
+        PD14: 14 = enum PD14 {
             /// The input buffer is enabled
-            CEPD14_0 = 0b0,
+            PD14_0 = 0b0,
             /// The input buffer is disabled
-            CEPD14_1 = 0b1,
+            PD14_1 = 0b1,
         }
         /// Port disable
-        CEPD15: 15 = enum CEPD15 {
+        PD15: 15 = enum PD15 {
             /// The input buffer is enabled
-            CEPD15_0 = 0b0,
+            PD15_0 = 0b0,
             /// The input buffer is disabled
-            CEPD15_1 = 0b1,
+            PD15_1 = 0b1,
         }
     }
     /// Comparator Interrupt Control Register
-    rw CEINT @ 0x0c: u16 = 0_0 {
+    rw INT @ 0x0c: u16 = 0_0 {
         /// Comparator output interrupt flag
-        CEIFG: 0 = enum CEIFG {
+        IFG: 0 = enum IFG {
             /// No interrupt pending
-            CEIFG_0 = 0b0,
+            IFG_0 = 0b0,
             /// Interrupt pending
-            CEIFG_1 = 0b1,
+            IFG_1 = 0b1,
         }
         /// Comparator output inverted interrupt flag
-        CEIIFG: 1 = enum CEIIFG {
+        IIFG: 1 = enum IIFG {
             /// No interrupt pending
-            CEIIFG_0 = 0b0,
+            IIFG_0 = 0b0,
             /// Interrupt pending
-            CEIIFG_1 = 0b1,
+            IIFG_1 = 0b1,
         }
         /// Comparator ready interrupt flag
-        CERDYIFG: 4 = enum CERDYIFG {
+        RDYIFG: 4 = enum RDYIFG {
             /// No interrupt pending
-            CERDYIFG_0 = 0b0,
+            RDYIFG_0 = 0b0,
             /// Interrupt pending
-            CERDYIFG_1 = 0b1,
+            RDYIFG_1 = 0b1,
         }
         /// Comparator output interrupt enable
-        CEIE: 8 = enum CEIE {
+        IE: 8 = enum IE {
             /// Interrupt disabled
             DISABLE = 0b0,
             /// Interrupt enabled
             ENABLE = 0b1,
         }
         /// Comparator output interrupt enable inverted polarity
-        CEIIE: 9 = enum CEIIE {
+        IIE: 9 = enum IIE {
             /// Interrupt disabled
             DISABLE = 0b0,
             /// Interrupt enabled
             ENABLE = 0b1,
         }
         /// Comparator ready interrupt enable
-        CERDYIE: 12 = enum CERDYIE {
+        RDYIE: 12 = enum RDYIE {
             /// Interrupt disabled
             DISABLE = 0b0,
             /// Interrupt enabled
@@ -370,17 +370,17 @@ utils::periph! {
         }
     }
     /// Comparator Interrupt Vector Word Register
-    r CEIV @ 0x0e: u16 = 0_0 {
+    r IV @ 0x0e: u16 = 0_0 {
         /// Comparator interrupt vector word register
-        CEIV: 0..15 = enum CEIVField {
+        IV: 0..15 = enum IVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// Interrupt Source: CEOUT interrupt; Interrupt Flag: CEIFG; Interrupt Priority: Highest
-            CEIFG = 0b0000000000000010,
+            IFG = 0b0000000000000010,
             /// Interrupt Source: CEOUT interrupt inverted polarity; Interrupt Flag: CEIIFG
-            CEIIFG = 0b0000000000000100,
+            IIFG = 0b0000000000000100,
             /// Interrupt Source: Comparator ready interrupt; Interrupt Flag: CERDYIFG; Interrupt Priority: Lowest
-            CERDYIFG = 0b0000000000001010,
+            RDYIFG = 0b0000000000001010,
         }
     }
 }

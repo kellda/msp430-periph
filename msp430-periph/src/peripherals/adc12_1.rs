@@ -4,17 +4,17 @@ utils::periph! {
     /// ADC12
     ADC12;
     /// ADC12 Control 0
-    rw ADC12CTL0 @ 0x120: u16 = 0_0 {
+    rw CTL0 @ 0x120: u16 = 0_0 {
         /// ADC12 Start Conversion
-        ADC12SC: 0 = struct ADC12SC(bool);
+        SC: 0 = struct SC(bool);
         /// ADC12 Enable Conversion
         ENC: 1 = struct ENC(bool);
         /// ADC12 Timer Overflow interrupt enable
-        ADC12TOVIE: 2 = struct ADC12TOVIE(bool);
+        TOVIE: 2 = struct TOVIE(bool);
         /// ADC12 Overflow interrupt enable
-        ADC12OVIE: 3 = struct ADC12OVIE(bool);
+        OVIE: 3 = struct OVIE(bool);
         /// ADC12 On/enable
-        ADC12ON: 4 = struct ADC12ON(bool);
+        ON: 4 = struct ON(bool);
         /// ADC12 Reference on
         REFON: 5 = struct REFON(bool);
         /// ADC12 Ref 0:1.5V / 1:2.5V
@@ -93,9 +93,9 @@ utils::periph! {
         }
     }
     /// ADC12 Control 1
-    rw ADC12CTL1 @ 0x122: u16 = 0_0 {
+    rw CTL1 @ 0x122: u16 = 0_0 {
         /// ADC12 Busy
-        ADC12BUSY: 0 = struct ADC12BUSY(bool);
+        BUSY: 0 = struct BUSY(bool);
         /// ADC12 Conversion Sequence Select 0
         CONSEQ: 1..2 = enum CONSEQ {
             /// ADC12 Conversion Sequence Select: 0
@@ -108,34 +108,34 @@ utils::periph! {
             CONSEQ_3 = 0b11,
         }
         /// ADC12 Clock Source Select 0
-        ADC12SSEL: 3..4 = enum ADC12SSEL {
+        SSEL: 3..4 = enum SSEL {
             /// ADC12 Clock Source Select: 0
-            ADC12SSEL_0 = 0b00,
+            SSEL_0 = 0b00,
             /// ADC12 Clock Source Select: 1
-            ADC12SSEL_1 = 0b01,
+            SSEL_1 = 0b01,
             /// ADC12 Clock Source Select: 2
-            ADC12SSEL_2 = 0b10,
+            SSEL_2 = 0b10,
             /// ADC12 Clock Source Select: 3
-            ADC12SSEL_3 = 0b11,
+            SSEL_3 = 0b11,
         }
         /// ADC12 Clock Divider Select 0
-        ADC12DIV: 5..7 = enum ADC12DIV {
+        DIV: 5..7 = enum DIV {
             /// ADC12 Clock Divider Select: 0
-            ADC12DIV_0 = 0b000,
+            DIV_0 = 0b000,
             /// ADC12 Clock Divider Select: 1
-            ADC12DIV_1 = 0b001,
+            DIV_1 = 0b001,
             /// ADC12 Clock Divider Select: 2
-            ADC12DIV_2 = 0b010,
+            DIV_2 = 0b010,
             /// ADC12 Clock Divider Select: 3
-            ADC12DIV_3 = 0b011,
+            DIV_3 = 0b011,
             /// ADC12 Clock Divider Select: 4
-            ADC12DIV_4 = 0b100,
+            DIV_4 = 0b100,
             /// ADC12 Clock Divider Select: 5
-            ADC12DIV_5 = 0b101,
+            DIV_5 = 0b101,
             /// ADC12 Clock Divider Select: 6
-            ADC12DIV_6 = 0b110,
+            DIV_6 = 0b110,
             /// ADC12 Clock Divider Select: 7
-            ADC12DIV_7 = 0b111,
+            DIV_7 = 0b111,
         }
         /// ADC12 Invert Sample Hold Signal
         ISSH: 8 = struct ISSH(bool);
@@ -189,104 +189,104 @@ utils::periph! {
         }
     }
     /// ADC12 Interrupt Flag
-    rw ADC12IFG @ 0x124: u16 = 0_0 {
+    rw IFG @ 0x124: u16 = 0_0 {
         /// ADC12 Interrupt Flag
-        ADC12IFG: 0..15 = struct ADC12IFGField(u16);
+        IFG: 0..15 = struct IFGField(u16);
     }
     /// ADC12 Interrupt Enable
-    rw ADC12IE @ 0x126: u16 = 0_0 {
+    rw IE @ 0x126: u16 = 0_0 {
         /// ADC12 Interrupt Enable
-        ADC12IE: 0..15 = struct ADC12IEField(u16);
+        IE: 0..15 = struct IEField(u16);
     }
     /// ADC12 Interrupt Vector Word
-    rw ADC12IV @ 0x128: u16 = 0_0 {
+    rw IV @ 0x128: u16 = 0_0 {
         /// ADC12 Interrupt Vector Word
-        ADC12IV: 0..15 = struct ADC12IVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
     /// ADC12 Conversion Memory 0
-    rw ADC12MEM0 @ 0xc0: u16 = 0_0 {
+    rw MEM0 @ 0xc0: u16 = 0_0 {
         /// ADC12 Conversion Memory 0
-        ADC12MEM0: 0..15 = struct ADC12MEM0Field(u16);
+        MEM0: 0..15 = struct MEM0Field(u16);
     }
     /// ADC12 Conversion Memory 1
-    rw ADC12MEM1 @ 0xc2: u16 = 0_0 {
+    rw MEM1 @ 0xc2: u16 = 0_0 {
         /// ADC12 Conversion Memory 1
-        ADC12MEM1: 0..15 = struct ADC12MEM1Field(u16);
+        MEM1: 0..15 = struct MEM1Field(u16);
     }
     /// ADC12 Conversion Memory 2
-    rw ADC12MEM2 @ 0xc4: u16 = 0_0 {
+    rw MEM2 @ 0xc4: u16 = 0_0 {
         /// ADC12 Conversion Memory 2
-        ADC12MEM2: 0..15 = struct ADC12MEM2Field(u16);
+        MEM2: 0..15 = struct MEM2Field(u16);
     }
     /// ADC12 Conversion Memory 3
-    rw ADC12MEM3 @ 0xc6: u16 = 0_0 {
+    rw MEM3 @ 0xc6: u16 = 0_0 {
         /// ADC12 Conversion Memory 3
-        ADC12MEM3: 0..15 = struct ADC12MEM3Field(u16);
+        MEM3: 0..15 = struct MEM3Field(u16);
     }
     /// ADC12 Conversion Memory 4
-    rw ADC12MEM4 @ 0xc8: u16 = 0_0 {
+    rw MEM4 @ 0xc8: u16 = 0_0 {
         /// ADC12 Conversion Memory 4
-        ADC12MEM4: 0..15 = struct ADC12MEM4Field(u16);
+        MEM4: 0..15 = struct MEM4Field(u16);
     }
     /// ADC12 Conversion Memory 5
-    rw ADC12MEM5 @ 0xca: u16 = 0_0 {
+    rw MEM5 @ 0xca: u16 = 0_0 {
         /// ADC12 Conversion Memory 5
-        ADC12MEM5: 0..15 = struct ADC12MEM5Field(u16);
+        MEM5: 0..15 = struct MEM5Field(u16);
     }
     /// ADC12 Conversion Memory 6
-    rw ADC12MEM6 @ 0xcc: u16 = 0_0 {
+    rw MEM6 @ 0xcc: u16 = 0_0 {
         /// ADC12 Conversion Memory 6
-        ADC12MEM6: 0..15 = struct ADC12MEM6Field(u16);
+        MEM6: 0..15 = struct MEM6Field(u16);
     }
     /// ADC12 Conversion Memory 7
-    rw ADC12MEM7 @ 0xce: u16 = 0_0 {
+    rw MEM7 @ 0xce: u16 = 0_0 {
         /// ADC12 Conversion Memory 7
-        ADC12MEM7: 0..15 = struct ADC12MEM7Field(u16);
+        MEM7: 0..15 = struct MEM7Field(u16);
     }
     /// ADC12 Conversion Memory 8
-    rw ADC12MEM8 @ 0xd0: u16 = 0_0 {
+    rw MEM8 @ 0xd0: u16 = 0_0 {
         /// ADC12 Conversion Memory 8
-        ADC12MEM8: 0..15 = struct ADC12MEM8Field(u16);
+        MEM8: 0..15 = struct MEM8Field(u16);
     }
     /// ADC12 Conversion Memory 9
-    rw ADC12MEM9 @ 0xd2: u16 = 0_0 {
+    rw MEM9 @ 0xd2: u16 = 0_0 {
         /// ADC12 Conversion Memory 9
-        ADC12MEM9: 0..15 = struct ADC12MEM9Field(u16);
+        MEM9: 0..15 = struct MEM9Field(u16);
     }
     /// ADC12 Conversion Memory 10
-    rw ADC12MEM10 @ 0xd4: u16 = 0_0 {
+    rw MEM10 @ 0xd4: u16 = 0_0 {
         /// ADC12 Conversion Memory 10
-        ADC12MEM10: 0..15 = struct ADC12MEM10Field(u16);
+        MEM10: 0..15 = struct MEM10Field(u16);
     }
     /// ADC12 Conversion Memory 11
-    rw ADC12MEM11 @ 0xd6: u16 = 0_0 {
+    rw MEM11 @ 0xd6: u16 = 0_0 {
         /// ADC12 Conversion Memory 11
-        ADC12MEM11: 0..15 = struct ADC12MEM11Field(u16);
+        MEM11: 0..15 = struct MEM11Field(u16);
     }
     /// ADC12 Conversion Memory 12
-    rw ADC12MEM12 @ 0xd8: u16 = 0_0 {
+    rw MEM12 @ 0xd8: u16 = 0_0 {
         /// ADC12 Conversion Memory 12
-        ADC12MEM12: 0..15 = struct ADC12MEM12Field(u16);
+        MEM12: 0..15 = struct MEM12Field(u16);
     }
     /// ADC12 Conversion Memory 13
-    rw ADC12MEM13 @ 0xda: u16 = 0_0 {
+    rw MEM13 @ 0xda: u16 = 0_0 {
         /// ADC12 Conversion Memory 13
-        ADC12MEM13: 0..15 = struct ADC12MEM13Field(u16);
+        MEM13: 0..15 = struct MEM13Field(u16);
     }
     /// ADC12 Conversion Memory 14
-    rw ADC12MEM14 @ 0xdc: u16 = 0_0 {
+    rw MEM14 @ 0xdc: u16 = 0_0 {
         /// ADC12 Conversion Memory 14
-        ADC12MEM14: 0..15 = struct ADC12MEM14Field(u16);
+        MEM14: 0..15 = struct MEM14Field(u16);
     }
     /// ADC12 Conversion Memory 15
-    rw ADC12MEM15 @ 0xde: u16 = 0_0 {
+    rw MEM15 @ 0xde: u16 = 0_0 {
         /// ADC12 Conversion Memory 15
-        ADC12MEM15: 0..15 = struct ADC12MEM15Field(u16);
+        MEM15: 0..15 = struct MEM15Field(u16);
     }
     /// ADC12 Memory Control 0
-    rw ADC12MCTL0 @ 0x00: u8 = 0_0 {
+    rw MCTL0 @ 0x00: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL0_INCH: 0..3 = enum ADC12MCTL0_INCH {
+        MCTL0_INCH: 0..3 = enum MCTL0_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -321,7 +321,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL0_SREF: 4..6 = enum ADC12MCTL0_SREF {
+        MCTL0_SREF: 4..6 = enum MCTL0_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -340,12 +340,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL0_EOS: 7 = struct ADC12MCTL0_EOS(bool);
+        MCTL0_EOS: 7 = struct MCTL0_EOS(bool);
     }
     /// ADC12 Memory Control 1
-    rw ADC12MCTL1 @ 0x01: u8 = 0_0 {
+    rw MCTL1 @ 0x01: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL1_INCH: 0..3 = enum ADC12MCTL1_INCH {
+        MCTL1_INCH: 0..3 = enum MCTL1_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -380,7 +380,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL1_SREF: 4..6 = enum ADC12MCTL1_SREF {
+        MCTL1_SREF: 4..6 = enum MCTL1_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -399,12 +399,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL1_EOS: 7 = struct ADC12MCTL1_EOS(bool);
+        MCTL1_EOS: 7 = struct MCTL1_EOS(bool);
     }
     /// ADC12 Memory Control 2
-    rw ADC12MCTL2 @ 0x02: u8 = 0_0 {
+    rw MCTL2 @ 0x02: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL2_INCH: 0..3 = enum ADC12MCTL2_INCH {
+        MCTL2_INCH: 0..3 = enum MCTL2_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -439,7 +439,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL2_SREF: 4..6 = enum ADC12MCTL2_SREF {
+        MCTL2_SREF: 4..6 = enum MCTL2_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -458,12 +458,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL2_EOS: 7 = struct ADC12MCTL2_EOS(bool);
+        MCTL2_EOS: 7 = struct MCTL2_EOS(bool);
     }
     /// ADC12 Memory Control 3
-    rw ADC12MCTL3 @ 0x03: u8 = 0_0 {
+    rw MCTL3 @ 0x03: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL3_INCH: 0..3 = enum ADC12MCTL3_INCH {
+        MCTL3_INCH: 0..3 = enum MCTL3_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -498,7 +498,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL3_SREF: 4..6 = enum ADC12MCTL3_SREF {
+        MCTL3_SREF: 4..6 = enum MCTL3_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -517,12 +517,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL3_EOS: 7 = struct ADC12MCTL3_EOS(bool);
+        MCTL3_EOS: 7 = struct MCTL3_EOS(bool);
     }
     /// ADC12 Memory Control 4
-    rw ADC12MCTL4 @ 0x04: u8 = 0_0 {
+    rw MCTL4 @ 0x04: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL4_INCH: 0..3 = enum ADC12MCTL4_INCH {
+        MCTL4_INCH: 0..3 = enum MCTL4_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -557,7 +557,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL4_SREF: 4..6 = enum ADC12MCTL4_SREF {
+        MCTL4_SREF: 4..6 = enum MCTL4_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -576,12 +576,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL4_EOS: 7 = struct ADC12MCTL4_EOS(bool);
+        MCTL4_EOS: 7 = struct MCTL4_EOS(bool);
     }
     /// ADC12 Memory Control 5
-    rw ADC12MCTL5 @ 0x05: u8 = 0_0 {
+    rw MCTL5 @ 0x05: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL5_INCH: 0..3 = enum ADC12MCTL5_INCH {
+        MCTL5_INCH: 0..3 = enum MCTL5_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -616,7 +616,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL5_SREF: 4..6 = enum ADC12MCTL5_SREF {
+        MCTL5_SREF: 4..6 = enum MCTL5_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -635,12 +635,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL5_EOS: 7 = struct ADC12MCTL5_EOS(bool);
+        MCTL5_EOS: 7 = struct MCTL5_EOS(bool);
     }
     /// ADC12 Memory Control 6
-    rw ADC12MCTL6 @ 0x06: u8 = 0_0 {
+    rw MCTL6 @ 0x06: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL6_INCH: 0..3 = enum ADC12MCTL6_INCH {
+        MCTL6_INCH: 0..3 = enum MCTL6_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -675,7 +675,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL6_SREF: 4..6 = enum ADC12MCTL6_SREF {
+        MCTL6_SREF: 4..6 = enum MCTL6_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -694,12 +694,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL6_EOS: 7 = struct ADC12MCTL6_EOS(bool);
+        MCTL6_EOS: 7 = struct MCTL6_EOS(bool);
     }
     /// ADC12 Memory Control 7
-    rw ADC12MCTL7 @ 0x07: u8 = 0_0 {
+    rw MCTL7 @ 0x07: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL7_INCH: 0..3 = enum ADC12MCTL7_INCH {
+        MCTL7_INCH: 0..3 = enum MCTL7_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -734,7 +734,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL7_SREF: 4..6 = enum ADC12MCTL7_SREF {
+        MCTL7_SREF: 4..6 = enum MCTL7_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -753,12 +753,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL7_EOS: 7 = struct ADC12MCTL7_EOS(bool);
+        MCTL7_EOS: 7 = struct MCTL7_EOS(bool);
     }
     /// ADC12 Memory Control 8
-    rw ADC12MCTL8 @ 0x08: u8 = 0_0 {
+    rw MCTL8 @ 0x08: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL8_INCH: 0..3 = enum ADC12MCTL8_INCH {
+        MCTL8_INCH: 0..3 = enum MCTL8_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -793,7 +793,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL8_SREF: 4..6 = enum ADC12MCTL8_SREF {
+        MCTL8_SREF: 4..6 = enum MCTL8_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -812,12 +812,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL8_EOS: 7 = struct ADC12MCTL8_EOS(bool);
+        MCTL8_EOS: 7 = struct MCTL8_EOS(bool);
     }
     /// ADC12 Memory Control 9
-    rw ADC12MCTL9 @ 0x09: u8 = 0_0 {
+    rw MCTL9 @ 0x09: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL9_INCH: 0..3 = enum ADC12MCTL9_INCH {
+        MCTL9_INCH: 0..3 = enum MCTL9_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -852,7 +852,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL9_SREF: 4..6 = enum ADC12MCTL9_SREF {
+        MCTL9_SREF: 4..6 = enum MCTL9_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -871,12 +871,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL9_EOS: 7 = struct ADC12MCTL9_EOS(bool);
+        MCTL9_EOS: 7 = struct MCTL9_EOS(bool);
     }
     /// ADC12 Memory Control 10
-    rw ADC12MCTL10 @ 0x0a: u8 = 0_0 {
+    rw MCTL10 @ 0x0a: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL10_INCH: 0..3 = enum ADC12MCTL10_INCH {
+        MCTL10_INCH: 0..3 = enum MCTL10_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -911,7 +911,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL10_SREF: 4..6 = enum ADC12MCTL10_SREF {
+        MCTL10_SREF: 4..6 = enum MCTL10_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -930,12 +930,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL10_EOS: 7 = struct ADC12MCTL10_EOS(bool);
+        MCTL10_EOS: 7 = struct MCTL10_EOS(bool);
     }
     /// ADC12 Memory Control 11
-    rw ADC12MCTL11 @ 0x0b: u8 = 0_0 {
+    rw MCTL11 @ 0x0b: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL11_INCH: 0..3 = enum ADC12MCTL11_INCH {
+        MCTL11_INCH: 0..3 = enum MCTL11_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -970,7 +970,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL11_SREF: 4..6 = enum ADC12MCTL11_SREF {
+        MCTL11_SREF: 4..6 = enum MCTL11_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -989,12 +989,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL11_EOS: 7 = struct ADC12MCTL11_EOS(bool);
+        MCTL11_EOS: 7 = struct MCTL11_EOS(bool);
     }
     /// ADC12 Memory Control 12
-    rw ADC12MCTL12 @ 0x0c: u8 = 0_0 {
+    rw MCTL12 @ 0x0c: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL12_INCH: 0..3 = enum ADC12MCTL12_INCH {
+        MCTL12_INCH: 0..3 = enum MCTL12_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -1029,7 +1029,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL12_SREF: 4..6 = enum ADC12MCTL12_SREF {
+        MCTL12_SREF: 4..6 = enum MCTL12_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -1048,12 +1048,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL12_EOS: 7 = struct ADC12MCTL12_EOS(bool);
+        MCTL12_EOS: 7 = struct MCTL12_EOS(bool);
     }
     /// ADC12 Memory Control 13
-    rw ADC12MCTL13 @ 0x0d: u8 = 0_0 {
+    rw MCTL13 @ 0x0d: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL13_INCH: 0..3 = enum ADC12MCTL13_INCH {
+        MCTL13_INCH: 0..3 = enum MCTL13_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -1088,7 +1088,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL13_SREF: 4..6 = enum ADC12MCTL13_SREF {
+        MCTL13_SREF: 4..6 = enum MCTL13_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -1107,12 +1107,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL13_EOS: 7 = struct ADC12MCTL13_EOS(bool);
+        MCTL13_EOS: 7 = struct MCTL13_EOS(bool);
     }
     /// ADC12 Memory Control 14
-    rw ADC12MCTL14 @ 0x0e: u8 = 0_0 {
+    rw MCTL14 @ 0x0e: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL14_INCH: 0..3 = enum ADC12MCTL14_INCH {
+        MCTL14_INCH: 0..3 = enum MCTL14_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -1147,7 +1147,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL14_SREF: 4..6 = enum ADC12MCTL14_SREF {
+        MCTL14_SREF: 4..6 = enum MCTL14_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -1166,12 +1166,12 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL14_EOS: 7 = struct ADC12MCTL14_EOS(bool);
+        MCTL14_EOS: 7 = struct MCTL14_EOS(bool);
     }
     /// ADC12 Memory Control 15
-    rw ADC12MCTL15 @ 0x0f: u8 = 0_0 {
+    rw MCTL15 @ 0x0f: u8 = 0_0 {
         /// ADC12 Input Channel Select Bit 0
-        ADC12MCTL15_INCH: 0..3 = enum ADC12MCTL15_INCH {
+        MCTL15_INCH: 0..3 = enum MCTL15_INCH {
             /// ADC12 Input Channel 0
             INCH_0 = 0b0000,
             /// ADC12 Input Channel 1
@@ -1206,7 +1206,7 @@ utils::periph! {
             INCH_15 = 0b1111,
         }
         /// ADC12 Select Reference Bit 0
-        ADC12MCTL15_SREF: 4..6 = enum ADC12MCTL15_SREF {
+        MCTL15_SREF: 4..6 = enum MCTL15_SREF {
             /// ADC12 Select Reference 0
             SREF_0 = 0b000,
             /// ADC12 Select Reference 1
@@ -1225,6 +1225,6 @@ utils::periph! {
             SREF_7 = 0b111,
         }
         /// ADC12 End of Sequence
-        ADC12MCTL15_EOS: 7 = struct ADC12MCTL15_EOS(bool);
+        MCTL15_EOS: 7 = struct MCTL15_EOS(bool);
     }
 }

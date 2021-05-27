@@ -4,9 +4,9 @@ utils::periph! {
     /// UUPS
     UUPS;
     /// Interrupt Index Register
-    r UUPSIIDX @ 0x00: u16 = 0_0 {
+    r IIDX @ 0x00: u16 = 0_0 {
         /// UUPS Interrupt Vector Value.
-        IIDX: 1..15 = enum IIDX {
+        IIDX: 1..15 = enum IIDXField {
             /// No Interrupt pending
             IIDX_0 = 0b000000000000000,
             /// Interrupt Source: PTMOUT; Interrupt Priority: Highest
@@ -20,23 +20,23 @@ utils::periph! {
         }
     }
     /// Masked Interrupt Status Register
-    r UUPSMIS @ 0x02: u16 = 0_0 {
+    r MIS @ 0x02: u16 = 0_0 {
         /// UUPS Power Up Time Out Masked Interrupt Status bit.
-        UUPSMIS_PTMOUT: 0 = enum UUPSMIS_PTMOUT {
+        MIS_PTMOUT: 0 = enum MIS_PTMOUT {
             /// No interrupt pending
             PTMOUT_0 = 0b0,
             /// Interrupt pending
             PTMOUT_1 = 0b1,
         }
         /// UUPS Power Request Ignore Masked Interrupt Status bit.
-        UUPSMIS_PREQIG: 1 = enum UUPSMIS_PREQIG {
+        MIS_PREQIG: 1 = enum MIS_PREQIG {
             /// No interrupt pending
             PREQIG_0 = 0b0,
             /// Interrupt pending
             PREQIG_1 = 0b1,
         }
         /// USS has been interrupted by debug mode Masked Interrupt Status bit.
-        UUPSMIS_STPBYDB: 2 = enum UUPSMIS_STPBYDB {
+        MIS_STPBYDB: 2 = enum MIS_STPBYDB {
             /// No interrupt pending
             STPBYDB_0 = 0b0,
             /// Interrupt pending
@@ -44,23 +44,23 @@ utils::periph! {
         }
     }
     /// Raw Interrupt Status Register
-    r UUPSRIS @ 0x04: u16 = 0_0 {
+    r RIS @ 0x04: u16 = 0_0 {
         /// UUPS Power Up Timer Out Raw Interrupt Status bit.
-        UUPSRIS_PTMOUT: 0 = enum UUPSRIS_PTMOUT {
+        RIS_PTMOUT: 0 = enum RIS_PTMOUT {
             /// Time out during power up has not occurred
             PTMOUT_0 = 0b0,
             /// Time out during power up has occurred
             PTMOUT_1 = 0b1,
         }
         /// UUPS Power Request Ignore Masked Interrupt Status and Clear bit.
-        UUPSRIS_PREQIG: 1 = enum UUPSRIS_PREQIG {
+        RIS_PREQIG: 1 = enum RIS_PREQIG {
             /// No USS_PWRREQ signal has been ignored
             PREQIG_0 = 0b0,
             /// USS_PWRREQ signal has been ignored
             PREQIG_1 = 0b1,
         }
         /// USS has been interrupted by debug mode.
-        UUPSRIS_STPBYDB: 2 = enum UUPSRIS_STPBYDB {
+        RIS_STPBYDB: 2 = enum RIS_STPBYDB {
             /// USS has not been interrupted by debug halt mode.
             STPBYDB_0 = 0b0,
             /// USS has been interrupted by debug halt mode.
@@ -68,23 +68,23 @@ utils::periph! {
         }
     }
     /// Interrupt Mask Register
-    rw UUPSIMSC @ 0x06: u16 = 0_0 {
+    rw IMSC @ 0x06: u16 = 0_0 {
         /// UUPS Power Up Time Out Interrupt Mask bit.
-        UUPSIMSC_PTMOUT: 0 = enum UUPSIMSC_PTMOUT {
+        IMSC_PTMOUT: 0 = enum IMSC_PTMOUT {
             /// UUPS Power Up Time Out Interrupt is disabled.
             PTMOUT_0 = 0b0,
             /// UUPS Power Up Time Out Interrupt is enabled.
             PTMOUT_1 = 0b1,
         }
         /// Power Request Ignore Interrupt Mask bit.
-        UUPSIMSC_PREQIG: 1 = enum UUPSIMSC_PREQIG {
+        IMSC_PREQIG: 1 = enum IMSC_PREQIG {
             /// Power Request Ignore Interrupt is disabled.
             PREQIG_0 = 0b0,
             /// Power Request Ignore Interrupt is enabled.
             PREQIG_1 = 0b1,
         }
         /// USS has been interrupted by debug mode Interrupt Mask bit.
-        UUPSIMSC_STPBYDB: 2 = enum UUPSIMSC_STPBYDB {
+        IMSC_STPBYDB: 2 = enum IMSC_STPBYDB {
             /// STPBYDB Interrupt is disabled
             STPBYDB_0 = 0b0,
             /// STPBYDB Interrupt is enabled
@@ -92,25 +92,25 @@ utils::periph! {
         }
     }
     /// Interrupt Clear Register.
-    rw UUPSICR @ 0x08: u16 = 0_0 {
+    rw ICR @ 0x08: u16 = 0_0 {
         /// Power Request Ignored Interrupt Clear bit.
-        UUPSICR_PREQIG: 1 = struct UUPSICR_PREQIG(bool);
+        ICR_PREQIG: 1 = struct ICR_PREQIG(bool);
         /// UUPS Power Up Time Out Interrupt Clear bit.
-        UUPSICR_PTMOUT: 0 = struct UUPSICR_PTMOUT(bool);
+        ICR_PTMOUT: 0 = struct ICR_PTMOUT(bool);
         /// USS has been interrupted by debug mode Interrupt Clear bit.
-        UUPSICR_STPBYDB: 2 = struct UUPSICR_STPBYDB(bool);
+        ICR_STPBYDB: 2 = struct ICR_STPBYDB(bool);
     }
     /// Interrupt Flag Set Register.
-    rw UUPSISR @ 0x0a: u16 = 0_0 {
+    rw ISR @ 0x0a: u16 = 0_0 {
         /// Power Request Ignored Interrupt Set bit.
-        UUPSISR_PREQIG: 1 = struct UUPSISR_PREQIG(bool);
+        ISR_PREQIG: 1 = struct ISR_PREQIG(bool);
         /// UUPS Power Up Time Out Interrupt Set bit.
-        UUPSISR_PTMOUT: 0 = struct UUPSISR_PTMOUT(bool);
+        ISR_PTMOUT: 0 = struct ISR_PTMOUT(bool);
         /// USS has been interrupted by debug mode Interrupt Set bit.
-        UUPSISR_STPBYDB: 2 = struct UUPSISR_STPBYDB(bool);
+        ISR_STPBYDB: 2 = struct ISR_STPBYDB(bool);
     }
     /// UUPS Descriptor Register L.
-    r UUPSDESCLO @ 0x0c: u16 = 0_0 {
+    r DESCLO @ 0x0c: u16 = 0_0 {
         /// Minor Revision
         MINREV: 0..3 = struct MINREV(u16);
         /// Instance Number within the device.
@@ -121,12 +121,12 @@ utils::periph! {
         FEATUREVER: 12..15 = struct FEATUREVER(u16);
     }
     /// UUPS Descriptor Register H.
-    rw UUPSDESCHI @ 0x0e: u16 = 0_0 {
+    rw DESCHI @ 0x0e: u16 = 0_0 {
         /// UUPS Descriptor Register H.
-        UUPSDESCHI: 0..15 = struct UUPSDESCHIField(u16);
+        DESCHI: 0..15 = struct DESCHIField(u16);
     }
     /// UUPS Control
-    rw UUPSCTL @ 0x10: u16 = 0_0 {
+    rw CTL @ 0x10: u16 = 0_0 {
         /// Turn on USS Power and  PLL
         USSPWRUP: 8 = enum USSPWRUP {
             /// No action

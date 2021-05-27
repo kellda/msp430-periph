@@ -4,28 +4,28 @@ utils::periph! {
     /// Shared Reference
     SharedReference;
     /// REF Shared Reference control register 0
-    rw REFCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// REF Reference On
-        REFON: 0 = struct REFON(bool);
+        ON: 0 = struct ON(bool);
         /// REF Temp.Sensor off
-        REFTCOFF: 3 = struct REFTCOFF(bool);
+        TCOFF: 3 = struct TCOFF(bool);
         /// REF Reference Voltage Level Select Bit:0
-        REFVSEL: 4..5 = enum REFVSEL {
+        VSEL: 4..5 = enum VSEL {
             /// REF Reference Voltage Level Select 1.5V
-            REFVSEL_0 = 0b00,
+            VSEL_0 = 0b00,
             /// REF Reference Voltage Level Select 2.0V
-            REFVSEL_1 = 0b01,
+            VSEL_1 = 0b01,
             /// REF Reference Voltage Level Select 2.5V
-            REFVSEL_2 = 0b10,
+            VSEL_2 = 0b10,
             /// REF Reference Voltage Level Select 2.5V
-            REFVSEL_3 = 0b11,
+            VSEL_3 = 0b11,
         }
         /// REF Reference generator active
-        REFGENACT: 8 = struct REFGENACT(bool);
+        GENACT: 8 = struct GENACT(bool);
         /// REF Reference bandgap active
-        REFBGACT: 9 = struct REFBGACT(bool);
+        BGACT: 9 = struct BGACT(bool);
         /// REF Reference generator busy
-        REFGENBUSY: 10 = struct REFGENBUSY(bool);
+        GENBUSY: 10 = struct GENBUSY(bool);
         /// REF Bandgap mode
         BGMODE: 11 = struct BGMODE(bool);
     }

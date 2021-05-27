@@ -4,7 +4,7 @@ utils::periph! {
     /// Flash
     Flash;
     /// FLASH Control 1
-    rw FCTL1 @ 0x00: u16 = 0_0 {
+    rw CTL1 @ 0x00: u16 = 0_0 {
         /// Enable bit for Flash segment erase
         ERASE: 1 = struct ERASE(bool);
         /// Enable bit for Flash mass erase
@@ -17,7 +17,7 @@ utils::periph! {
         BLKWRT: 7 = struct BLKWRT(bool);
     }
     /// FLASH Control 3
-    rw FCTL3 @ 0x04: u16 = 0_0 {
+    rw CTL3 @ 0x04: u16 = 0_0 {
         /// Flash busy: 1
         BUSY: 0 = struct BUSY(bool);
         /// Flash Key violation flag
@@ -34,7 +34,7 @@ utils::periph! {
         LOCKA: 6 = struct LOCKA(bool);
     }
     /// FLASH Control 4
-    rw FCTL4 @ 0x06: u16 = 0_0 {
+    rw CTL4 @ 0x06: u16 = 0_0 {
         /// Voltage Changed during Program Error Flag
         VPE: 0 = struct VPE(bool);
         /// Marginal read 0 mode.

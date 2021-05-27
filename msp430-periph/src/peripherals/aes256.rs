@@ -4,20 +4,20 @@ utils::periph! {
     /// AES256
     AES256;
     /// AES Accelerator Control Register 0
-    rw AESACTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// AES operation
-        AESOP: 0..1 = enum AESOP {
+        OP: 0..1 = enum OP {
             /// Encryption
-            AESOP_0 = 0b00,
+            OP_0 = 0b00,
             /// Decryption. The provided key is the same key used for encryption
-            AESOP_1 = 0b01,
+            OP_1 = 0b01,
             /// Generate first round key required for decryption
-            AESOP_2 = 0b10,
+            OP_2 = 0b10,
             /// Decryption. The provided key is the first round key required for decryption
-            AESOP_3 = 0b11,
+            OP_3 = 0b11,
         }
         /// AES key length
-        AESKL: 2..3 = enum AESKL {
+        KL: 2..3 = enum KL {
             /// AES128. The key size is 128 bit
             _128 = 0b00,
             /// AES192. The key size is 192 bit.
@@ -26,7 +26,7 @@ utils::periph! {
             _256 = 0b10,
         }
         /// AES cipher mode select
-        AESCM: 5..6 = enum AESCM {
+        CM: 5..6 = enum CM {
             /// ECB
             ECB = 0b00,
             /// CBC
@@ -37,35 +37,35 @@ utils::periph! {
             CFB = 0b11,
         }
         /// AES software reset
-        AESSWRST: 7 = enum AESSWRST {
+        SWRST: 7 = enum SWRST {
             /// No reset
-            AESSWRST_0 = 0b0,
+            SWRST_0 = 0b0,
             /// Reset AES accelerator module
             RESET = 0b1,
         }
         /// AES ready interrupt flag
-        AESRDYIFG: 8 = enum AESRDYIFG {
+        RDYIFG: 8 = enum RDYIFG {
             /// No interrupt pending
-            AESRDYIFG_0 = 0b0,
+            RDYIFG_0 = 0b0,
             /// Interrupt pending
-            AESRDYIFG_1 = 0b1,
+            RDYIFG_1 = 0b1,
         }
         /// AES error flag
-        AESERRFG: 11 = enum AESERRFG {
+        ERRFG: 11 = enum ERRFG {
             /// No error
-            AESERRFG_0 = 0b0,
+            ERRFG_0 = 0b0,
             /// Error occurred
-            AESERRFG_1 = 0b1,
+            ERRFG_1 = 0b1,
         }
         /// AES ready interrupt enable
-        AESRDYIE: 12 = enum AESRDYIE {
+        RDYIE: 12 = enum RDYIE {
             /// Interrupt disabled
             DISABLE = 0b0,
             /// Interrupt enabled
             ENABLE = 0b1,
         }
         /// AES cipher mode enable
-        AESCMEN: 15 = enum AESCMEN {
+        CMEN: 15 = enum CMEN {
             /// No DMA triggers are generated
             DISABLE = 0b0,
             /// DMA ciphermode support operation is enabled and the corresponding DMA triggers are generated
@@ -73,80 +73,80 @@ utils::periph! {
         }
     }
     /// AES Accelerator Control Register 1
-    rw AESACTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// Cipher Block Counter
-        AESBLKCNT: 0..7 = struct AESBLKCNT(u16);
+        BLKCNT: 0..7 = struct BLKCNT(u16);
     }
     /// AES Accelerator Status Register
-    rw AESASTAT @ 0x04: u16 = 0_0 {
+    rw STAT @ 0x04: u16 = 0_0 {
         /// AES accelerator module busy
-        AESBUSY: 0 = enum AESBUSY {
+        BUSY: 0 = enum BUSY {
             /// Not busy
             IDLE = 0b0,
             /// Busy
             BUSY = 0b1,
         }
         /// All 16 bytes written to AESAKEY
-        AESKEYWR: 1 = enum AESKEYWR {
+        KEYWR: 1 = enum KEYWR {
             /// Not all bytes written
-            AESKEYWR_0 = 0b0,
+            KEYWR_0 = 0b0,
             /// All bytes written
-            AESKEYWR_1 = 0b1,
+            KEYWR_1 = 0b1,
         }
         /// All 16 bytes written to AESADIN, AESAXDIN or AESAXIN
-        AESDINWR: 2 = enum AESDINWR {
+        DINWR: 2 = enum DINWR {
             /// Not all bytes written
-            AESDINWR_0 = 0b0,
+            DINWR_0 = 0b0,
             /// All bytes written
-            AESDINWR_1 = 0b1,
+            DINWR_1 = 0b1,
         }
         /// All 16 bytes read from AESADOUT
-        AESDOUTRD: 3 = enum AESDOUTRD {
+        DOUTRD: 3 = enum DOUTRD {
             /// Not all bytes read
-            AESDOUTRD_0 = 0b0,
+            DOUTRD_0 = 0b0,
             /// All bytes read
-            AESDOUTRD_1 = 0b1,
+            DOUTRD_1 = 0b1,
         }
         /// Bytes written via AESAKEY for AESKL=00, half-words written via AESAKEY
-        AESKEYCNT: 4..7 = struct AESKEYCNT(u16);
+        KEYCNT: 4..7 = struct KEYCNT(u16);
         /// Bytes written via AESADIN, AESAXDIN or AESAXIN
-        AESDINCNT: 8..11 = struct AESDINCNT(u16);
+        DINCNT: 8..11 = struct DINCNT(u16);
         /// Bytes read via AESADOUT
-        AESDOUTCNT: 12..15 = struct AESDOUTCNT(u16);
+        DOUTCNT: 12..15 = struct DOUTCNT(u16);
     }
     /// AES Accelerator Key Register
-    rw AESAKEY @ 0x06: u16 = 0_0 {
+    rw KEY @ 0x06: u16 = 0_0 {
         /// AES key byte n when AESAKEY is written as half-word
-        AESKEY0: 0..7 = struct AESKEY0(u16);
+        KEY0: 0..7 = struct KEY0(u16);
         /// AES key byte n+1 when AESAKEY is written as half-word
-        AESKEY1: 8..15 = struct AESKEY1(u16);
+        KEY1: 8..15 = struct KEY1(u16);
     }
     /// AES Accelerator Data In Register
-    rw AESADIN @ 0x08: u16 = 0_0 {
+    rw DIN @ 0x08: u16 = 0_0 {
         /// AES data in byte n when AESADIN is written as half-word
-        AESDIN0: 0..7 = struct AESDIN0(u16);
+        DIN0: 0..7 = struct DIN0(u16);
         /// AES data in byte n+1 when AESADIN is written as half-word
-        AESDIN1: 8..15 = struct AESDIN1(u16);
+        DIN1: 8..15 = struct DIN1(u16);
     }
     /// AES Accelerator Data Out Register
-    rw AESADOUT @ 0x0a: u16 = 0_0 {
+    rw DOUT @ 0x0a: u16 = 0_0 {
         /// AES data out byte n when AESADOUT is read as half-word
-        AESDOUT0: 0..7 = struct AESDOUT0(u16);
+        DOUT0: 0..7 = struct DOUT0(u16);
         /// AES data out byte n+1 when AESADOUT is read as half-word
-        AESDOUT1: 8..15 = struct AESDOUT1(u16);
+        DOUT1: 8..15 = struct DOUT1(u16);
     }
     /// AES Accelerator XORed Data In Register
-    rw AESAXDIN @ 0x0c: u16 = 0_0 {
+    rw XDIN @ 0x0c: u16 = 0_0 {
         /// AES data in byte n when AESAXDIN is written as half-word
-        AESXDIN0: 0..7 = struct AESXDIN0(u16);
+        XDIN0: 0..7 = struct XDIN0(u16);
         /// AES data in byte n+1 when AESAXDIN is written as half-word
-        AESXDIN1: 8..15 = struct AESXDIN1(u16);
+        XDIN1: 8..15 = struct XDIN1(u16);
     }
     /// AES Accelerator XORed Data In Register
-    rw AESAXIN @ 0x0e: u16 = 0_0 {
+    rw XIN @ 0x0e: u16 = 0_0 {
         /// AES data in byte n when AESAXIN is written as half-word
-        AESXIN0: 0..7 = struct AESXIN0(u16);
+        XIN0: 0..7 = struct XIN0(u16);
         /// AES data in byte n+1 when AESAXIN is written as half-word
-        AESXIN1: 8..15 = struct AESXIN1(u16);
+        XIN1: 8..15 = struct XIN1(u16);
     }
 }

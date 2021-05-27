@@ -4,123 +4,123 @@ utils::periph! {
     /// USCI_A  SPI Mode
     USCI_A_SPI;
     /// USCI A Control Word Register 0
-    rw UCACTLW0__SPI @ 0x00: u16 = 0_0 {
+    rw CTLW0 @ 0x00: u16 = 0_0 {
         /// USCI A Control Word Register 0
-        UCACTLW0__SPI: 0..15 = struct UCA0CTLW0__SPIField(u16);
+        CTLW0: 0..15 = struct CTLW0Field(u16);
     }
     /// USCI A Control Register 0
-    rw UCACTL0__SPI @ 0x01: u8 = 0_0 {
+    rw CTL0 @ 0x01: u8 = 0_0 {
         /// Sync-Mode  0:UART-Mode / 1:SPI-Mode
-        UCSYNC: 0 = struct UCSYNC(bool);
+        SYNC: 0 = struct SYNC(bool);
         /// Sync. Mode: USCI Mode 1
-        UCMODE: 1..2 = enum UCMODE {
+        MODE: 1..2 = enum MODE {
             /// Sync. Mode: USCI Mode: 0
-            UCMODE_0 = 0b00,
+            MODE_0 = 0b00,
             /// Sync. Mode: USCI Mode: 1
-            UCMODE_1 = 0b01,
+            MODE_1 = 0b01,
             /// Sync. Mode: USCI Mode: 2
-            UCMODE_2 = 0b10,
+            MODE_2 = 0b10,
             /// Sync. Mode: USCI Mode: 3
-            UCMODE_3 = 0b11,
+            MODE_3 = 0b11,
         }
         /// Sync. Mode: Master Select
-        UCMST: 3 = struct UCMST(bool);
+        MST: 3 = struct MST(bool);
         /// Sync. Mode: Data Bits 0:8-bits / 1:7-bits
-        UC7BIT: 4 = struct UC7BIT(bool);
+        _7BIT: 4 = struct _7BIT(bool);
         /// Sync. Mode: MSB first 0:LSB / 1:MSB
-        UCMSB: 5 = struct UCMSB(bool);
+        MSB: 5 = struct MSB(bool);
         /// Sync. Mode: Clock Polarity
-        UCCKPL: 6 = struct UCCKPL(bool);
+        CKPL: 6 = struct CKPL(bool);
         /// Sync. Mode: Clock Phase
-        UCCKPH: 7 = struct UCCKPH(bool);
+        CKPH: 7 = struct CKPH(bool);
     }
     /// USCI A Control Register 1
-    rw UCACTL1__SPI @ 0x00: u8 = 0_0 {
+    rw CTL1 @ 0x00: u8 = 0_0 {
         /// USCI Software Reset
-        UCSWRST: 0 = struct UCSWRST(bool);
+        SWRST: 0 = struct SWRST(bool);
         /// USCI 1 Clock Source Select 1
-        UCSSEL: 6..7 = enum UCSSEL {
+        SSEL: 6..7 = enum SSEL {
             /// USCI 0 Clock Source: 0
-            UCSSEL_0 = 0b00,
+            SSEL_0 = 0b00,
             /// USCI 0 Clock Source: 1
-            UCSSEL_1 = 0b01,
+            SSEL_1 = 0b01,
             /// USCI 0 Clock Source: 2
-            UCSSEL_2 = 0b10,
+            SSEL_2 = 0b10,
             /// USCI 0 Clock Source: 3
-            UCSSEL_3 = 0b11,
+            SSEL_3 = 0b11,
         }
     }
     /// USCI A Baud Word Rate 0
-    rw UCABRW__SPI @ 0x06: u16 = 0_0 {
+    rw BRW @ 0x06: u16 = 0_0 {
         /// USCI A Baud Word Rate 0
-        UCABRW__SPI: 0..15 = struct UCA0BRW__SPIField(u16);
+        BRW: 0..15 = struct BRWField(u16);
     }
     /// USCI A Baud Rate 0
-    rw UCABR0__SPI @ 0x06: u8 = 0_0 {
+    rw BR0 @ 0x06: u8 = 0_0 {
         /// USCI A Baud Rate 0
-        UCABR0__SPI: 0..7 = struct UCA0BR0__SPIField(u8);
+        BR0: 0..7 = struct BR0Field(u8);
     }
     /// USCI A Baud Rate 1
-    rw UCABR1__SPI @ 0x07: u8 = 0_0 {
+    rw BR1 @ 0x07: u8 = 0_0 {
         /// USCI A Baud Rate 1
-        UCABR1__SPI: 0..7 = struct UCA0BR1__SPIField(u8);
+        BR1: 0..7 = struct BR1Field(u8);
     }
     /// USCI A Modulation Control
-    rw UCAMCTL__SPI @ 0x08: u8 = 0_0 {
+    rw MCTL @ 0x08: u8 = 0_0 {
         /// USCI A Modulation Control
-        UCAMCTL__SPI: 0..7 = struct UCA0MCTL__SPIField(u8);
+        MCTL: 0..7 = struct MCTLField(u8);
     }
     /// USCI A Status Register
-    rw UCASTAT__SPI @ 0x0a: u8 = 0_0 {
+    rw STAT @ 0x0a: u8 = 0_0 {
         /// USCI Busy Flag
-        UCBUSY: 0 = struct UCBUSY(bool);
+        BUSY: 0 = struct BUSY(bool);
         /// USCI Overrun Error Flag
-        UCOE: 5 = struct UCOE(bool);
+        OE: 5 = struct OE(bool);
         /// USCI Frame Error Flag
-        UCFE: 6 = struct UCFE(bool);
+        FE: 6 = struct FE(bool);
         /// USCI Listen mode
-        UCLISTEN: 7 = struct UCLISTEN(bool);
+        LISTEN: 7 = struct LISTEN(bool);
     }
     /// USCI A Receive Buffer
-    rw UCARXBUF__SPI @ 0x0c: u8 = 0_0 {
+    rw RXBUF @ 0x0c: u8 = 0_0 {
         /// USCI A Receive Buffer
-        UCARXBUF__SPI: 0..7 = struct UCA0RXBUF__SPIField(u8);
+        RXBUF: 0..7 = struct RXBUFField(u8);
     }
     /// USCI A Transmit Buffer
-    rw UCATXBUF__SPI @ 0x0e: u8 = 0_0 {
+    rw TXBUF @ 0x0e: u8 = 0_0 {
         /// USCI A Transmit Buffer
-        UCATXBUF__SPI: 0..7 = struct UCA0TXBUF__SPIField(u8);
+        TXBUF: 0..7 = struct TXBUFField(u8);
     }
     /// USCI A Interrupt Enable Register
-    rw UCAICTL__SPI @ 0x1c: u16 = 0_0 {
+    rw ICTL @ 0x1c: u16 = 0_0 {
         /// USCI A Interrupt Enable Register
-        UCAICTL__SPI: 0..15 = struct UCA0ICTL__SPIField(u16);
+        ICTL: 0..15 = struct ICTLField(u16);
     }
     /// USCI A Interrupt Enable Register
-    rw UCAIE__SPI @ 0x1c: u8 = 0_0 {
+    rw IE @ 0x1c: u8 = 0_0 {
         /// USCI Receive Interrupt Enable
-        UCRXIE: 0 = struct UCRXIE(bool);
+        RXIE: 0 = struct RXIE(bool);
         /// USCI Transmit Interrupt Enable
-        UCTXIE: 1 = struct UCTXIE(bool);
+        TXIE: 1 = struct TXIE(bool);
         /// START Condition interrupt enable
-        UCSTTIE: 2 = struct UCSTTIE(bool);
+        STTIE: 2 = struct STTIE(bool);
         /// STOP Condition interrupt enable
-        UCSTPIE: 3 = struct UCSTPIE(bool);
+        STPIE: 3 = struct STPIE(bool);
         /// Arbitration Lost interrupt enable
-        UCALIE: 4 = struct UCALIE(bool);
+        LIE: 4 = struct LIE(bool);
         /// NACK Condition interrupt enable
-        UCNACKIE: 5 = struct UCNACKIE(bool);
+        NACKIE: 5 = struct NACKIE(bool);
     }
     /// USCI A Interrupt Flags Register
-    rw UCAIFG__SPI @ 0x1d: u8 = 0_0 {
+    rw IFG @ 0x1d: u8 = 0_0 {
         /// USCI Receive Interrupt Flag
-        UCRXIFG: 0 = struct UCRXIFG(bool);
+        RXIFG: 0 = struct RXIFG(bool);
         /// USCI Transmit Interrupt Flag
-        UCTXIFG: 1 = struct UCTXIFG(bool);
+        TXIFG: 1 = struct TXIFG(bool);
     }
     /// USCI A Interrupt Vector Register
-    rw UCAIV__SPI @ 0x1e: u16 = 0_0 {
+    rw IV @ 0x1e: u16 = 0_0 {
         /// USCI A Interrupt Vector Register
-        UCAIV__SPI: 0..15 = struct UCA0IV__SPIField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
 }

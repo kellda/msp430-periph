@@ -4,7 +4,7 @@ utils::periph! {
     /// SACx
     SAC;
     /// SAC OA Control Register
-    rw SACOA @ 0x00: u16 = 0_0 {
+    rw OA @ 0x00: u16 = 0_0 {
         /// SAC OA Positive input source selection
         PSEL: 0..1 = enum PSEL {
             /// External source selected

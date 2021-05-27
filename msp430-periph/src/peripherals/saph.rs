@@ -4,9 +4,9 @@ utils::periph! {
     /// SAPH
     SAPH;
     /// Interrupt Index
-    r SAPHIIDX @ 0x00: u16 = 0_0 {
+    r IIDX @ 0x00: u16 = 0_0 {
         /// This register provides the highest priority enabled interrupt index.
-        IIDX: 1..3 = enum IIDX {
+        IIDX: 1..3 = enum IIDXField {
             /// no interrupts pending
             NONE = 0b000,
             /// This interrupt indicates that either WINHI interrupt or WINLO interrupt has occurred in SDHS.
@@ -20,62 +20,62 @@ utils::periph! {
         }
     }
     /// Masked Interrupt Satus
-    r SAPHMIS @ 0x02: u16 = 0_0 {
+    r MIS @ 0x02: u16 = 0_0 {
         /// This interrupt indicates that either WINHI interrupt or WINLO interrupt has occurred in SDHS.
-        SAPHMIS_DATAERR: 0 = struct SAPHMIS_DATAERR(bool);
+        MIS_DATAERR: 0 = struct MIS_DATAERR(bool);
         /// This bit indicates a TIMEMARK F (timeout) event has happened.
-        SAPHMIS_TMFTO: 1 = struct SAPHMIS_TMFTO(bool);
+        MIS_TMFTO: 1 = struct MIS_TMFTO(bool);
         /// The interrupt occurs when ASQ completes all of the measurements programmed in ASCTL0.PNGCNT. For example, when ASCTL0.PNGCNT = 3, total four measurements are performed. The interrupt indicates that all of the four measurements have been completed.  Note: After the ASQ is triggered, if the current measurement is interrupted by entering debug halt mode (UUPS.RIS.STPBYDB = 1), the SEQDN interrupt is also reported.
-        SAPHMIS_SEQDN: 2 = struct SAPHMIS_SEQDN(bool);
+        MIS_SEQDN: 2 = struct MIS_SEQDN(bool);
         /// The interrupt occurs when the PPG completes pulse generation.
-        SAPHMIS_PNGDN: 3 = struct SAPHMIS_PNGDN(bool);
+        MIS_PNGDN: 3 = struct MIS_PNGDN(bool);
     }
     /// Raw Interrupt Status
-    r SAPHRIS @ 0x04: u16 = 0_0 {
+    r RIS @ 0x04: u16 = 0_0 {
         /// This interrupt indicates that either WINHI interrupt or WINLO interrupt has occurred in SDHS.
-        SAPHRIS_DATAERR: 0 = struct SAPHRIS_DATAERR(bool);
+        RIS_DATAERR: 0 = struct RIS_DATAERR(bool);
         /// This bit indicates a TIMEMARK F (timeout) event has happened.
-        SAPHRIS_TMFTO: 1 = struct SAPHRIS_TMFTO(bool);
+        RIS_TMFTO: 1 = struct RIS_TMFTO(bool);
         /// The interrupt occurs when ASQ completes all of the measurements programmed in ASCTL0.PNGCNT. For example, when ASCTL0.PNGCNT = 3, total four measurements are performed. The interrupt indicates that all of the four measurements have been completed.  Note: After the ASQ is triggered, if the current measurement is interrupted by entering debug halt mode (UUPS.RIS.STPBYDB = 1), the SEQDN interrupt is also reported.
-        SAPHRIS_SEQDN: 2 = struct SAPHRIS_SEQDN(bool);
+        RIS_SEQDN: 2 = struct RIS_SEQDN(bool);
         /// The interrupt occurs when the PPG completes pulse generation.
-        SAPHRIS_PNGDN: 3 = struct SAPHRIS_PNGDN(bool);
+        RIS_PNGDN: 3 = struct RIS_PNGDN(bool);
     }
     /// Interrupt Mask
-    rw SAPHIMSC @ 0x06: u16 = 0_0 {
+    rw IMSC @ 0x06: u16 = 0_0 {
         /// This bit enables the DATAERR interrupt.
-        SAPHIMSC_DATAERR: 0 = struct SAPHIMSC_DATAERR(bool);
+        IMSC_DATAERR: 0 = struct IMSC_DATAERR(bool);
         /// This bit enables the TIMEMARK F (timeout) interrupt.
-        SAPHIMSC_TMFTO: 1 = struct SAPHIMSC_TMFTO(bool);
+        IMSC_TMFTO: 1 = struct IMSC_TMFTO(bool);
         /// This bit enables the SEQDN interrupt
-        SAPHIMSC_SEQDN: 2 = struct SAPHIMSC_SEQDN(bool);
+        IMSC_SEQDN: 2 = struct IMSC_SEQDN(bool);
         /// This bit enables the PNGDN interrupt
-        SAPHIMSC_PNGDN: 3 = struct SAPHIMSC_PNGDN(bool);
+        IMSC_PNGDN: 3 = struct IMSC_PNGDN(bool);
     }
     /// Interrupt Clear
-    rw SAPHICR @ 0x08: u16 = 0_0 {
+    rw ICR @ 0x08: u16 = 0_0 {
         /// Writing one this bit to clear the pending DATAERR interrupt.
-        SAPHICR_DATAERR: 0 = struct SAPHICR_DATAERR(bool);
+        ICR_DATAERR: 0 = struct ICR_DATAERR(bool);
         /// Writing one this bit to clear the pending TIMEMARK F (timeout) interrupt
-        SAPHICR_TMFTO: 1 = struct SAPHICR_TMFTO(bool);
+        ICR_TMFTO: 1 = struct ICR_TMFTO(bool);
         /// Writing one this bit to clear the pending SEQDN interrupt.
-        SAPHICR_SEQDN: 2 = struct SAPHICR_SEQDN(bool);
+        ICR_SEQDN: 2 = struct ICR_SEQDN(bool);
         /// Writing one this bit to clear the pending PNGDN interrupt.
-        SAPHICR_PNGDN: 3 = struct SAPHICR_PNGDN(bool);
+        ICR_PNGDN: 3 = struct ICR_PNGDN(bool);
     }
     /// Interrupt Set
-    rw SAPHISR @ 0x0a: u16 = 0_0 {
+    rw ISR @ 0x0a: u16 = 0_0 {
         /// Writing one this bit generates a DATAERR interrupt by software.
-        SAPHISR_DATAERR: 0 = struct SAPHISR_DATAERR(bool);
+        ISR_DATAERR: 0 = struct ISR_DATAERR(bool);
         /// Writing one this bit to generate a TIMEMARK F (timeout) interrupt by software.
-        SAPHISR_TMFTO: 1 = struct SAPHISR_TMFTO(bool);
+        ISR_TMFTO: 1 = struct ISR_TMFTO(bool);
         /// Writing one this bit to generate a SEQDN interrupt by software.
-        SAPHISR_SEQDN: 2 = struct SAPHISR_SEQDN(bool);
+        ISR_SEQDN: 2 = struct ISR_SEQDN(bool);
         /// Writing one this bit to generate a PNGDN interrupt by software.
-        SAPHISR_PNGDN: 3 = struct SAPHISR_PNGDN(bool);
+        ISR_PNGDN: 3 = struct ISR_PNGDN(bool);
     }
     /// Module-Descriptor Low Word
-    r SAPHDESCLO @ 0x0c: u16 = 0_0 {
+    r DESCLO @ 0x0c: u16 = 0_0 {
         /// Minor Revision
         MINREV: 0..3 = struct MINREV(u16);
         /// Major Revision
@@ -86,17 +86,17 @@ utils::periph! {
         FEATUREVER: 12..15 = struct FEATUREVER(u16);
     }
     /// Module-Descriptor High Word
-    rw SAPHDESCHI @ 0x0e: u16 = 0_0 {
+    rw DESCHI @ 0x0e: u16 = 0_0 {
         /// Module-Descriptor High Word
-        SAPHDESCHI: 0..15 = struct SAPHDESCHIField(u16);
+        DESCHI: 0..15 = struct DESCHIField(u16);
     }
     /// Key
-    rw SAPHKEY @ 0x10: u16 = 0_0 {
+    rw KEY @ 0x10: u16 = 0_0 {
         /// Key
-        SAPHKEY: 0..15 = struct SAPHKEYField(u16);
+        KEY: 0..15 = struct KEYField(u16);
     }
     /// Physical Interface Output Control #0
-    rw SAPHOCTL0 @ 0x12: u16 = 0_0 {
+    rw OCTL0 @ 0x12: u16 = 0_0 {
         /// CH0_OUT Enable. When OSEL.PCH0SEL =0, this bit enables the output CH0 when set to 1. When OSEL.PCH0SEL != 0, this bit is invalid.
         CH0OE: 0 = enum CH0OE {
             /// Ch0 Output is HiZ
@@ -127,7 +127,7 @@ utils::periph! {
         }
     }
     /// Physical Interface Output Control #1
-    rw SAPHOCTL1 @ 0x14: u16 = 0_0 {
+    rw OCTL1 @ 0x14: u16 = 0_0 {
         /// CH0 termination switch (SWG0) enable.  When OSEL.PCH0SEL =0, this bit controls the SWG0 switch.  0 = SWG0 is off.   1 = SWG0 is on. The CH0_OUT is disabled and connected to PVSS via SWG0 switch. No need to change OCTL0.CH0OE status.
         CH0TERM: 0 = enum CH0TERM {
             /// CH0 Output is defined by CH0OUT and CH0OE
@@ -158,7 +158,7 @@ utils::periph! {
         }
     }
     /// Physical Interface Output Function Select
-    rw SAPHOSEL @ 0x16: u16 = 0_0 {
+    rw OSEL @ 0x16: u16 = 0_0 {
         /// Output functional select for CH0_OUT.
         PCH0SEL: 0..1 = enum PCH0SEL {
             /// CH0_OUT is used as a GPO pin. It is controlled by OCTL0.CH0OUT and OCTL0.CH0OE.
@@ -183,37 +183,37 @@ utils::periph! {
         }
     }
     /// Channel 0 Pull UpTrim Register
-    rw SAPHCH0PUT @ 0x20: u16 = 0_0 {
+    rw CH0PUT @ 0x20: u16 = 0_0 {
         /// DRV0 pull up trim register. Write access is allowed only when TACR.UNLOCK=1. For secure the trim value, it is recommended to keep TACR.UNLOCK=0 during normal operation.
-        CH0PUT: 0..3 = struct CH0PUT(u16);
+        CH0PUT: 0..3 = struct CH0PUTField(u16);
     }
     /// Channel 0 Pull DownTrim Register
-    rw SAPHCH0PDT @ 0x22: u16 = 0_0 {
+    rw CH0PDT @ 0x22: u16 = 0_0 {
         /// DRV0 pull down trim register. Write access is allowed only when TACR.UNLOCK=1. For secure the trim value, it is recommended to keep TACR.UNLOCK=0 during normal operation.
-        CH0PDT: 0..3 = struct CH0PDT(u16);
+        CH0PDT: 0..3 = struct CH0PDTField(u16);
     }
     /// Channel 0 Termination Trim
-    rw SAPHCH0TT @ 0x24: u16 = 0_0 {
+    rw CH0TT @ 0x24: u16 = 0_0 {
         /// SWG0 trim register. Write access is allowed only when TACR.UNLOCK=1. For secure the trim value, it is recommended to keep TACR.UNLOCK=0 during normal operation.
-        CH0TT: 0..3 = struct CH0TT(u16);
+        CH0TT: 0..3 = struct CH0TTField(u16);
     }
     /// Channel 1 Pull UpTrim
-    rw SAPHCH1PUT @ 0x26: u16 = 0_0 {
+    rw CH1PUT @ 0x26: u16 = 0_0 {
         /// DRV1 pull up trim register. Write access is allowed only when TACR.UNLOCK=1. For secure the trim value, it is recommended to keep TACR.UNLOCK=0 during normal operation.
-        CH1PUT: 0..3 = struct CH1PUT(u16);
+        CH1PUT: 0..3 = struct CH1PUTField(u16);
     }
     /// Channel 1 Pull DownTrim
-    rw SAPHCH1PDT @ 0x28: u16 = 0_0 {
+    rw CH1PDT @ 0x28: u16 = 0_0 {
         /// DRV1 pull down trim register. Write access is allowed only when TACR.UNLOCK=1. For secure the trim value, it is recommended to keep TACR.UNLOCK=0 during normal operation.
-        CH1PDT: 0..3 = struct CH1PDT(u16);
+        CH1PDT: 0..3 = struct CH1PDTField(u16);
     }
     /// Channel 1 Termination Trim
-    rw SAPHCH1TT @ 0x2a: u16 = 0_0 {
+    rw CH1TT @ 0x2a: u16 = 0_0 {
         /// SWG1 trim register. Write access is allowed only when TACR.UNLOCK=1. For secure the trim value, it is recommended to keep TACR.UNLOCK=0 during normal operation.
-        CH1TT: 0..3 = struct CH1TT(u16);
+        CH1TT: 0..3 = struct CH1TTField(u16);
     }
     /// Mode Configuration Register
-    rw SAPHMCNF @ 0x2c: u16 = 0_0 {
+    rw MCNF @ 0x2c: u16 = 0_0 {
         /// LPBE, low power bias mode enable. This bit enables the low power bias operation mode. The selection of the operation mode shall only be changed while the PSQ is in OFF state (changes during other states of the PSQ causes corrupt measurement results and irregular triggers of sub modules ba ASQ)
         LPBE: 11 = enum LPBE {
             /// For manual bias mode and regular ASQ bias mode. In this configuration the user controls by the ASQBSW has full control over the TxBias and RxBias switches.
@@ -245,12 +245,12 @@ utils::periph! {
         }
     }
     /// Trim Access Control
-    rw SAPHTACTL @ 0x2e: u16 = 0_0 {
+    rw TACTL @ 0x2e: u16 = 0_0 {
         /// When UNLOCK = 1, the trim registers are allowed to be updated (CH0PUT, CH0PDT, CH0TT, CH1PUT, CH1PDT, and CH1TT).
         UNLOCK: 0 = struct UNLOCK(bool);
     }
     /// Physical Interface Input Control #0
-    rw SAPHICTL0 @ 0x30: u16 = 0_0 {
+    rw ICTL0 @ 0x30: u16 = 0_0 {
         /// Input Multiplexer Channel Select
         MUXSEL: 0..3 = enum MUXSEL {
             /// Channel 0 is selected for input
@@ -302,7 +302,7 @@ utils::periph! {
         }
     }
     /// Bias Control
-    rw SAPHBCTL @ 0x34: u16 = 0_0 {
+    rw BCTL @ 0x34: u16 = 0_0 {
         /// Tx bias and Rx bias switches control source select
         ASQBSC: 0 = enum ASQBSC {
             /// Bias switches are controlled by BCTL.CH0EBSW, BCTL.CH1EBSW, BCTL.PGABSW bits (register mode).
@@ -369,7 +369,7 @@ utils::periph! {
         }
     }
     /// PPG Count
-    rw SAPHPGC @ 0x40: u16 = 0_0 {
+    rw PGC @ 0x40: u16 = 0_0 {
         /// Excitation Pulse Count. This bit field defines the number of excitation pulses. Minimum value is zero.
         EPULS: 0..6 = struct EPULS(u16);
         /// Stop Pulse Count; This bit field defines the number of stop pulses. Minimum value is zero. Stop pulses have the inverted polarity of excitation pulses.
@@ -397,17 +397,17 @@ utils::periph! {
         }
     }
     /// Pulse Generator Low Period
-    rw SAPHPGLPER @ 0x42: u16 = 0_0 {
+    rw PGLPER @ 0x42: u16 = 0_0 {
         /// Low phase period of PPG excitation pulses. This value defines the length of the low phase of the pulses. The minimum count is two regardless of the value set in this register.
         LPER: 0..7 = struct LPER(u16);
     }
     /// Pulse Generator High Period
-    rw SAPHPGHPER @ 0x44: u16 = 0_0 {
+    rw PGHPER @ 0x44: u16 = 0_0 {
         /// High phase period of PPG excitation pulses. This value defines the length of the high phase of the pulses. The minimum count is two regardless of the value set in this register.
         HPER: 0..7 = struct HPER(u16);
     }
     /// PPG Control
-    rw SAPHPGCTL @ 0x46: u16 = 0_0 {
+    rw PGCTL @ 0x46: u16 = 0_0 {
         /// PPG output channel select source.
         PGSEL: 0 = enum PGSEL {
             /// PPG output channel is selected by PGCTL.PPGCHSEL bit (register mode).
@@ -458,12 +458,12 @@ utils::periph! {
         }
     }
     /// PPG Software Trigger
-    rw SAPHPPGTRIG @ 0x48: u16 = 0_0 {
+    rw PPGTRIG @ 0x48: u16 = 0_0 {
         /// Writing '1' to this bit triggers the PPG to generate pulses when PGCTL.TRSEL =0.    Note: This bit is write only. Reading always returns with zero.
-        PPGTRIG: 0 = struct PPGTRIG(bool);
+        PPGTRIG: 0 = struct PPGTRIGField(bool);
     }
     /// A-SEQ control register 0
-    rw SAPHASCTL0 @ 0x60: u16 = 0_0 {
+    rw ASCTL0 @ 0x60: u16 = 0_0 {
         /// The total number of measurements to be performed.  0 = 1 measurement will be performed (Min) 1 = 2 measurements will be performed 2 = 3 measurements will be performed 3 = 4 measurements will be performed (Max) Note: This bit field is static, does not reflect the currently reamining measurement numbers.
         PNGCNT: 0..1 = struct PNGCNT(u16);
         /// This bit selects the channel to start with when ASQ contols the measuremnet sequences.
@@ -502,7 +502,7 @@ utils::periph! {
         }
     }
     /// A-SEQ control register 1
-    rw SAPHASCTL1 @ 0x62: u16 = 0_0 {
+    rw ASCTL1 @ 0x62: u16 = 0_0 {
         /// Channel toggle enable at each PNGDN interrupt.
         CHTOG: 0 = enum CHTOG {
             /// Channel toggle is disabled.
@@ -542,57 +542,57 @@ utils::periph! {
         }
     }
     /// ASQ Software Trigger
-    rw SAPHASQTRIG @ 0x64: u8 = 0_0 {
+    rw ASQTRIG @ 0x64: u8 = 0_0 {
         /// Writing '1' to this bit trigger the ASQ when ASCTL0.TRIGSEL = 0. Note: This bit is write only. Reading always returns with zero.
-        ASQTRIG: 0 = struct ASQTRIG(bool);
+        ASQTRIG: 0 = struct ASQTRIGField(bool);
     }
     /// ASQ ping output polarity
-    rw SAPHAPOL @ 0x66: u16 = 0_0 {
+    rw APOL @ 0x66: u16 = 0_0 {
         /// Bit 0 defines the PPG pulse polarity for the first measurement.  Bit 1 defines the PPG pulse polarity for the second measurement.  Bit 2 defines the PPG pulse polarity for the third measurement.  Bit 3 defines the PPG pulse polarity for the fourth measurement.   0 = PPG output pulses starts with logical high polarity. 1 = PPG output pulses starts with logical low polarity.
         PCPOL: 0..3 = struct PCPOL(u16);
     }
     /// ASQ ping pause level
-    rw SAPHAPLEV @ 0x68: u16 = 0_0 {
+    rw APLEV @ 0x68: u16 = 0_0 {
         /// Bit 0 defines the PPG output level at pause for the first measurement when PCPHIZ bit 0 = 0. Bit 1 defines the PPG output level at pause for the second measurement when PCPHIZ bit 1 = 0. Bit 2 defines the PPG output level at pause for the third measurement when PCPHIZ bit 2 = 0. Bit 3 defines the PPG output level at pause for the fourth measurement when PCPHIZ bit 3 = 0.   0 = Logical Low. 1 = Logical High.
         PCPLEV: 0..3 = struct PCPLEV(u16);
     }
     /// ASQ ping pause impedance
-    rw SAPHAPHIZ @ 0x6a: u16 = 0_0 {
+    rw APHIZ @ 0x6a: u16 = 0_0 {
         /// Bit 0 defines the PPG output status at pause for the first measurement.  Bit 1 defines the PPG output status at pause for the second measurement.  Bit 2 defines the PPG output status at pause for the third measurement.  Bit 3 defines the PPG output status at pause for the fourth measurement.   0 = PPG ouput level is determined by APLEV.PCPLEV bits 1 = Hi-z. regardless of APLEV.PCPLEV bits
         PCPHIZ: 0..3 = struct PCPHIZ(u16);
     }
     /// A-SEQ start to 1st ping
-    rw SAPHATM_A @ 0x6e: u16 = 0_0 {
+    rw ATM_A @ 0x6e: u16 = 0_0 {
         /// A-SEQ start to 1st ping
-        SAPHATM_A: 0..15 = struct SAPHATM_AField(u16);
+        ATM_A: 0..15 = struct ATM_AField(u16);
     }
     /// ASQ start to ADC arm
-    rw SAPHATM_B @ 0x70: u16 = 0_0 {
+    rw ATM_B @ 0x70: u16 = 0_0 {
         /// ASQ start to ADC arm
-        SAPHATM_B: 0..15 = struct SAPHATM_BField(u16);
+        ATM_B: 0..15 = struct ATM_BField(u16);
     }
     /// Count for the TIMEMARK C Event
-    rw SAPHATM_C @ 0x72: u16 = 0_0 {
+    rw ATM_C @ 0x72: u16 = 0_0 {
         /// Count for the TIMEMARK C Event
-        SAPHATM_C: 0..15 = struct SAPHATM_CField(u16);
+        ATM_C: 0..15 = struct ATM_CField(u16);
     }
     /// ASQ start to ADC trig
-    rw SAPHATM_D @ 0x74: u16 = 0_0 {
+    rw ATM_D @ 0x74: u16 = 0_0 {
         /// ASQ start to ADC trig
-        SAPHATM_D: 0..15 = struct SAPHATM_DField(u16);
+        ATM_D: 0..15 = struct ATM_DField(u16);
     }
     /// ASQ start to restart
-    rw SAPHATM_E @ 0x76: u16 = 0_0 {
+    rw ATM_E @ 0x76: u16 = 0_0 {
         /// ASQ start to restart
-        SAPHATM_E: 0..15 = struct SAPHATM_EField(u16);
+        ATM_E: 0..15 = struct ATM_EField(u16);
     }
     /// ASQ start to timeout
-    rw SAPHATM_F @ 0x78: u16 = 0_0 {
+    rw ATM_F @ 0x78: u16 = 0_0 {
         /// ASQ start to timeout
-        SAPHATM_F: 0..15 = struct SAPHATM_FField(u16);
+        ATM_F: 0..15 = struct ATM_FField(u16);
     }
     /// Time Base Control
-    rw SAPHTBCTL @ 0x7a: u16 = 0_0 {
+    rw TBCTL @ 0x7a: u16 = 0_0 {
         /// The ASQ time counter clear. Writing '1' to this bit clears the the counter value. The counter must be stopped prior to be cleared. This bit is self cleared. TSTOP, TSTART, and TCLR bits are offerred for only debugging purpose. It is not recommend to use this bit while ASQ is active. Note: This bit is write only. Reading always returns with zero.
         TCLR: 0 = struct TCLR(bool);
         /// The ASQ time counter start. Writing '1' to this bit starts the counter. This bit is self cleared. TSTOP, TSTART, and TCLR bits are offerred for only debugging purpose. It is not recommend to use this bit while ASQ is active. Note: This bit is write only. Reading always returns with zero.
@@ -603,13 +603,13 @@ utils::periph! {
         PSSV: 4..7 = struct PSSV(u16);
     }
     /// Acquisition Timer Low Part
-    rw SAPHATIMLO @ 0x7c: u16 = 0_0 {
+    rw ATIMLO @ 0x7c: u16 = 0_0 {
         /// Acquisition Timer Low Part
-        SAPHATIMLO: 0..15 = struct SAPHATIMLOField(u16);
+        ATIMLO: 0..15 = struct ATIMLOField(u16);
     }
     /// Acquisition Timer High Part
-    r SAPHATIMHI @ 0x7e: u16 = 0_0 {
+    r ATIMHI @ 0x7e: u16 = 0_0 {
         /// ASQ Timer Counter high part. The reading this register returns the counter value [19:16].
-        ATIMHI: 0..3 = struct ATIMHI(u16);
+        ATIMHI: 0..3 = struct ATIMHIField(u16);
     }
 }

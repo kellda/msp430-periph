@@ -4,10 +4,10 @@ utils::periph! {
     /// EPROM
     EPROM;
     /// EPROM Control
-    rw EPCTL @ 0x00: u8 = 0_0 {
+    rw CTL @ 0x00: u8 = 0_0 {
         /// EPEXE
-        EPEXE: 0 = struct EPEXE(bool);
+        EXE: 0 = struct EXE(bool);
         /// EPVPPS
-        EPVPPS: 1 = struct EPVPPS(bool);
+        VPPS: 1 = struct VPPS(bool);
     }
 }

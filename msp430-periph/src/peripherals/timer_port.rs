@@ -4,7 +4,7 @@ utils::periph! {
     /// Timer/Port
     TimerPort;
     /// Timer/Port Control
-    rw TPCTL @ 0x00: u8 = 0_0 {
+    rw CTL @ 0x00: u8 = 0_0 {
         /// EN1FG
         EN1FG: 0 = struct EN1FG(bool);
         /// RC1FG
@@ -18,56 +18,56 @@ utils::periph! {
         /// ENB
         ENB: 5 = struct ENB(bool);
         /// TPSSEL0
-        TPSSEL0: 6 = struct TPSSEL0(bool);
+        SSEL0: 6 = struct SSEL0(bool);
         /// TPSSEL1
-        TPSSEL1: 7 = struct TPSSEL1(bool);
+        SSEL1: 7 = struct SSEL1(bool);
     }
     /// Timer/Port Counter 1
-    rw TPCNT1 @ 0x01: u8 = 0_0 {
+    rw CNT1 @ 0x01: u8 = 0_0 {
         /// Timer/Port Counter 1
-        TPCNT1: 0..7 = struct TPCNT1Field(u8);
+        CNT1: 0..7 = struct CNT1Field(u8);
     }
     /// Timer/Port Counter 2
-    rw TPCNT2 @ 0x02: u8 = 0_0 {
+    rw CNT2 @ 0x02: u8 = 0_0 {
         /// Timer/Port Counter 2
-        TPCNT2: 0..7 = struct TPCNT2Field(u8);
+        CNT2: 0..7 = struct CNT2Field(u8);
     }
     /// Timer/Port Data
-    rw TPD @ 0x03: u8 = 0_0 {
+    rw D @ 0x03: u8 = 0_0 {
         /// TPD_0
-        TPD_0: 0 = struct TPD_0(bool);
-        /// TPD_1
-        TPD_1: 1 = struct TPD_1(bool);
+        D_0: 0 = struct D_0(bool);
+        /// D_1
+        D_1: 1 = struct D_1(bool);
         /// TPD_2
-        TPD_2: 2 = struct TPD_2(bool);
+        D_2: 2 = struct D_2(bool);
         /// TPD_3
-        TPD_3: 3 = struct TPD_3(bool);
+        D_3: 3 = struct D_3(bool);
         /// TPD_4
-        TPD_4: 4 = struct TPD_4(bool);
+        D_4: 4 = struct D_4(bool);
         /// TPD_5
-        TPD_5: 5 = struct TPD_5(bool);
+        D_5: 5 = struct D_5(bool);
         /// CPON
         CPON: 6 = struct CPON(bool);
         /// B16
         B16: 7 = struct B16(bool);
     }
     /// Timer/Port Enable
-    rw TPE @ 0x04: u8 = 0_0 {
+    rw E @ 0x04: u8 = 0_0 {
         /// TPE_0
-        TPE_0: 0 = struct TPE_0(bool);
+        E_0: 0 = struct E_0(bool);
         /// TPE_1
-        TPE_1: 1 = struct TPE_1(bool);
+        E_1: 1 = struct E_1(bool);
         /// TPE_2
-        TPE_2: 2 = struct TPE_2(bool);
+        E_2: 2 = struct E_2(bool);
         /// TPE_3
-        TPE_3: 3 = struct TPE_3(bool);
+        E_3: 3 = struct E_3(bool);
         /// TPE_4
-        TPE_4: 4 = struct TPE_4(bool);
+        E_4: 4 = struct E_4(bool);
         /// TPE_5
-        TPE_5: 5 = struct TPE_5(bool);
+        E_5: 5 = struct E_5(bool);
         /// TPSSEL2
-        TPSSEL2: 6 = struct TPSSEL2(bool);
+        SSEL2: 6 = struct SSEL2(bool);
         /// TPSSEL3
-        TPSSEL3: 7 = struct TPSSEL3(bool);
+        SSEL3: 7 = struct SSEL3(bool);
     }
 }

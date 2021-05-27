@@ -4,23 +4,23 @@ utils::periph! {
     /// TAx
     TA;
     /// TimerAx Control Register
-    rw TACTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// TimerA interrupt flag
-        TAIFG: 0 = enum TAIFG {
+        IFG: 0 = enum IFG {
             /// No interrupt pending
-            TAIFG_0 = 0b0,
+            IFG_0 = 0b0,
             /// Interrupt pending
-            TAIFG_1 = 0b1,
+            IFG_1 = 0b1,
         }
         /// TimerA interrupt enable
-        TAIE: 1 = enum TAIE {
+        IE: 1 = enum IE {
             /// Interrupt disabled
-            TAIE_0 = 0b0,
+            IE_0 = 0b0,
             /// Interrupt enabled
-            TAIE_1 = 0b1,
+            IE_1 = 0b1,
         }
         /// TimerA clear
-        TACLR: 2 = struct TACLR(bool);
+        CLR: 2 = struct CLR(bool);
         /// Mode control
         MC: 4..5 = enum MC {
             /// Stop mode: Timer is halted
@@ -44,7 +44,7 @@ utils::periph! {
             _8 = 0b11,
         }
         /// TimerA clock source select
-        TASSEL: 8..9 = enum TASSEL {
+        SSEL: 8..9 = enum SSEL {
             /// TAxCLK
             TACLK = 0b00,
             /// ACLK
@@ -56,39 +56,39 @@ utils::periph! {
         }
     }
     /// Timer_A Capture/Compare Control Register
-    rw TACCTL0 @ 0x02: u16 = 0_0 {
+    rw CCTL0 @ 0x02: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TACCTL0_CCIFG: 0 = enum TACCTL0_CCIFG {
+        C0CCIFG: 0 = enum C0CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TACCTL0_COV: 1 = enum TACCTL0_COV {
+        C0COV: 1 = enum C0COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TACCTL0_OUT: 2 = enum TACCTL0_OUT {
+        C0OUT: 2 = enum C0OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
             HIGH = 0b1,
         }
         /// Capture/compare input
-        TACCTL0_CCI: 3 = struct TACCTL0_CCI(bool);
+        C0CCI: 3 = struct C0CCI(bool);
         /// Capture/compare interrupt enable
-        TACCTL0_CCIE: 4 = enum TACCTL0_CCIE {
+        C0CCIE: 4 = enum C0CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
             CCIE_1 = 0b1,
         }
         /// Output mode
-        TACCTL0_OUTMOD: 5..7 = enum TACCTL0_OUTMOD {
+        C0OUTMOD: 5..7 = enum C0OUTMOD {
             /// OUT bit value
             OUTMOD_0 = 0b000,
             /// Set
@@ -107,23 +107,23 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TACCTL0_CAP: 8 = enum TACCTL0_CAP {
+        C0CAP: 8 = enum C0CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
             CAPTURE = 0b1,
         }
         /// Synchronized capture/compare input
-        TACCTL0_SCCI: 10 = struct TACCTL0_SCCI(bool);
+        C0SCCI: 10 = struct C0SCCI(bool);
         /// Synchronize capture source
-        TACCTL0_SCS: 11 = enum TACCTL0_SCS {
+        C0SCS: 11 = enum C0SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
             SYNC = 0b1,
         }
         /// Capture/compare input select
-        TACCTL0_CCIS: 12..13 = enum TACCTL0_CCIS {
+        C0CCIS: 12..13 = enum C0CCIS {
             /// CCIxA
             CCIA = 0b00,
             /// CCIxB
@@ -134,7 +134,7 @@ utils::periph! {
             VCC = 0b11,
         }
         /// Capture mode
-        TACCTL0_CM: 14..15 = enum TACCTL0_CM {
+        C0CM: 14..15 = enum C0CM {
             /// No capture
             NONE = 0b00,
             /// Capture on rising edge
@@ -146,39 +146,39 @@ utils::periph! {
         }
     }
     /// Timer_A Capture/Compare Control Register
-    rw TACCTL1 @ 0x04: u16 = 0_0 {
+    rw CCTL1 @ 0x04: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TACCTL1_CCIFG: 0 = enum TACCTL1_CCIFG {
+        C1CCIFG: 0 = enum C1CCIFG {
             /// No interrupt pending
             CCIFG_0 = 0b0,
             /// Interrupt pending
             CCIFG_1 = 0b1,
         }
         /// Capture overflow
-        TACCTL1_COV: 1 = enum TACCTL1_COV {
+        C1COV: 1 = enum C1COV {
             /// No capture overflow occurred
             COV_0 = 0b0,
             /// Capture overflow occurred
             COV_1 = 0b1,
         }
         /// Output
-        TACCTL1_OUT: 2 = enum TACCTL1_OUT {
+        C1OUT: 2 = enum C1OUT {
             /// Output low
             LOW = 0b0,
             /// Output high
             HIGH = 0b1,
         }
         /// Capture/compare input
-        TACCTL1_CCI: 3 = struct TACCTL1_CCI(bool);
+        C1CCI: 3 = struct C1CCI(bool);
         /// Capture/compare interrupt enable
-        TACCTL1_CCIE: 4 = enum TACCTL1_CCIE {
+        C1CCIE: 4 = enum C1CCIE {
             /// Interrupt disabled
             CCIE_0 = 0b0,
             /// Interrupt enabled
             CCIE_1 = 0b1,
         }
         /// Output mode
-        TACCTL1_OUTMOD: 5..7 = enum TACCTL1_OUTMOD {
+        C1OUTMOD: 5..7 = enum C1OUTMOD {
             /// OUT bit value
             OUTMOD_0 = 0b000,
             /// Set
@@ -197,23 +197,23 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode
-        TACCTL1_CAP: 8 = enum TACCTL1_CAP {
+        C1CAP: 8 = enum C1CAP {
             /// Compare mode
             COMPARE = 0b0,
             /// Capture mode
             CAPTURE = 0b1,
         }
         /// Synchronized capture/compare input
-        TACCTL1_SCCI: 10 = struct TACCTL1_SCCI(bool);
+        C1SCCI: 10 = struct C1SCCI(bool);
         /// Synchronize capture source
-        TACCTL1_SCS: 11 = enum TACCTL1_SCS {
+        C1SCS: 11 = enum C1SCS {
             /// Asynchronous capture
             ASYNC = 0b0,
             /// Synchronous capture
             SYNC = 0b1,
         }
         /// Capture/compare input select
-        TACCTL1_CCIS: 12..13 = enum TACCTL1_CCIS {
+        C1CCIS: 12..13 = enum C1CCIS {
             /// CCIxA
             CCIA = 0b00,
             /// CCIxB
@@ -224,7 +224,7 @@ utils::periph! {
             VCC = 0b11,
         }
         /// Capture mode
-        TACCTL1_CM: 14..15 = enum TACCTL1_CM {
+        C1CM: 14..15 = enum C1CM {
             /// No capture
             NONE = 0b00,
             /// Capture on rising edge
@@ -236,24 +236,24 @@ utils::periph! {
         }
     }
     /// TimerA register
-    rw TAR @ 0x10: u16 = 0_0 {
+    rw R @ 0x10: u16 = 0_0 {
         /// TimerA register
-        TAR: 0..15 = struct TARField(u16);
+        R: 0..15 = struct RField(u16);
     }
     /// Timer_A Capture/Compare  Register
-    rw TACCR0 @ 0x12: u16 = 0_0 {
+    rw CCR0 @ 0x12: u16 = 0_0 {
         /// Timer_A Capture/Compare  Register
-        TACCR0: 0..15 = struct TACCR0Field(u16);
+        CCR0: 0..15 = struct CCR0Field(u16);
     }
     /// Timer_A Capture/Compare  Register
-    rw TACCR1 @ 0x14: u16 = 0_0 {
+    rw CCR1 @ 0x14: u16 = 0_0 {
         /// Timer_A Capture/Compare  Register
-        TACCR1: 0..15 = struct TACCR1Field(u16);
+        CCR1: 0..15 = struct CCR1Field(u16);
     }
     /// TimerAx Expansion 0 Register
-    rw TAEX0 @ 0x20: u16 = 0_0 {
+    rw EX0 @ 0x20: u16 = 0_0 {
         /// Input divider expansion
-        TAIDEX: 0..2 = enum TAIDEX {
+        IDEX: 0..2 = enum IDEX {
             /// Divide by 1
             _1 = 0b000,
             /// Divide by 2
@@ -273,25 +273,25 @@ utils::periph! {
         }
     }
     /// TimerAx Interrupt Vector Register
-    r TAIV @ 0x2e: u16 = 0_0 {
+    r IV @ 0x2e: u16 = 0_0 {
         /// TimerA interrupt vector value
-        TAIV: 0..15 = enum TAIVField {
+        IV: 0..15 = enum IVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// Interrupt Source: Capture/compare 1; Interrupt Flag: TAxCCR1 CCIFG; Interrupt Priority: Highest
-            TACCR1 = 0b0000000000000010,
+            CCR1 = 0b0000000000000010,
             /// Interrupt Source: Capture/compare 2; Interrupt Flag: TAxCCR2 CCIFG
-            TACCR2 = 0b0000000000000100,
+            CCR2 = 0b0000000000000100,
             /// Interrupt Source: Capture/compare 3; Interrupt Flag: TAxCCR3 CCIFG
-            TACCR3 = 0b0000000000000110,
+            CCR3 = 0b0000000000000110,
             /// Interrupt Source: Capture/compare 4; Interrupt Flag: TAxCCR4 CCIFG
-            TACCR4 = 0b0000000000001000,
+            CCR4 = 0b0000000000001000,
             /// Interrupt Source: Capture/compare 5; Interrupt Flag: TAxCCR5 CCIFG
-            TACCR5 = 0b0000000000001010,
+            CCR5 = 0b0000000000001010,
             /// Interrupt Source: Capture/compare 6; Interrupt Flag: TAxCCR6 CCIFG
-            TACCR6 = 0b0000000000001100,
+            CCR6 = 0b0000000000001100,
             /// Interrupt Source: Timer overflow; Interrupt Flag: TAxCTL TAIFG; Interrupt Priority: Lowest
-            TAIFG = 0b0000000000001110,
+            IFG = 0b0000000000001110,
         }
     }
 }

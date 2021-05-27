@@ -1,50 +1,50 @@
-//! ADC
+//! ADC12+2 A-to-D Converter
 
 utils::periph! {
-    /// ADC
+    /// ADC12+2 A-to-D Converter
     ADC;
     /// ADC Input
-    rw AIN @ 0x00: u16 = 0_0 {
+    rw IN_ @ 0x00: u16 = 0_0 {
         /// ADC Input
-        AIN: 0..15 = struct AINField(u16);
+        IN: 0..15 = struct INField(u16);
     }
     /// ADC Input Enable
-    rw AEN @ 0x02: u16 = 0_0 {
+    rw EN @ 0x02: u16 = 0_0 {
         /// ADC Input Enable
-        AEN: 0..15 = struct AENField(u16);
+        EN: 0..15 = struct ENField(u16);
     }
     /// ADC Control
-    rw ACTL @ 0x04: u16 = 0_0 {
+    rw CTL @ 0x04: u16 = 0_0 {
         /// ADSOC
-        ADSOC: 0 = struct ADSOC(bool);
+        SOC: 0 = struct SOC(bool);
         /// ADSVCC
-        ADSVCC: 1 = struct ADSVCC(bool);
+        SVCC: 1 = struct SVCC(bool);
         /// ADIN0
-        ADIN0: 2 = struct ADIN0(bool);
+        IN0: 2 = struct IN0(bool);
         /// ADIN1
-        ADIN1: 3 = struct ADIN1(bool);
+        IN1: 3 = struct IN1(bool);
         /// ADIN2
-        ADIN2: 4 = struct ADIN2(bool);
+        IN2: 4 = struct IN2(bool);
         /// ADINOFF
-        ADINOFF: 5 = struct ADINOFF(bool);
+        INOFF: 5 = struct INOFF(bool);
         /// ADCSRC0
-        ADCSRC0: 6 = struct ADCSRC0(bool);
+        CSRC0: 6 = struct CSRC0(bool);
         /// ADCSRC1
-        ADCSRC1: 7 = struct ADCSRC1(bool);
+        CSRC1: 7 = struct CSRC1(bool);
         /// ADCSRCOFF
-        ADCSRCOFF: 8 = struct ADCSRCOFF(bool);
+        CSRCOFF: 8 = struct CSRCOFF(bool);
         /// ADRNG0
-        ADRNG0: 9 = struct ADRNG0(bool);
+        RNG0: 9 = struct RNG0(bool);
         /// ADRNG1
-        ADRNG1: 10 = struct ADRNG1(bool);
+        RNG1: 10 = struct RNG1(bool);
         /// ADAUTO
-        ADAUTO: 11 = struct ADAUTO(bool);
+        AUTO: 11 = struct AUTO(bool);
         /// ADPD
-        ADPD: 12 = struct ADPD(bool);
+        PD: 12 = struct PD(bool);
     }
     /// ADC Data
-    rw ADAT @ 0x08: u16 = 0_0 {
+    rw DAT @ 0x08: u16 = 0_0 {
         /// ADC Data
-        ADAT: 0..15 = struct ADATField(u16);
+        DAT: 0..15 = struct DATField(u16);
     }
 }

@@ -4,109 +4,109 @@ utils::periph! {
     /// Port 0
     Port;
     /// Port Input
-    rw PIN @ 0x00: u8 = 0_0 {
+    rw IN_ @ 0x00: u8 = 0_0 {
         /// PIN_0
-        PIN_0: 0 = struct PIN_0(bool);
+        IN_0: 0 = struct IN_0(bool);
         /// PIN_1
-        PIN_1: 1 = struct PIN_1(bool);
+        IN_1: 1 = struct IN_1(bool);
         /// PIN_2
-        PIN_2: 2 = struct PIN_2(bool);
+        IN_2: 2 = struct IN_2(bool);
         /// PIN_3
-        PIN_3: 3 = struct PIN_3(bool);
+        IN_3: 3 = struct IN_3(bool);
         /// PIN_4
-        PIN_4: 4 = struct PIN_4(bool);
+        IN_4: 4 = struct IN_4(bool);
         /// PIN_5
-        PIN_5: 5 = struct PIN_5(bool);
+        IN_5: 5 = struct IN_5(bool);
         /// PIN_6
-        PIN_6: 6 = struct PIN_6(bool);
+        IN_6: 6 = struct IN_6(bool);
         /// PIN_7
-        PIN_7: 7 = struct PIN_7(bool);
+        IN_7: 7 = struct IN_7(bool);
     }
     /// Port Output
-    rw POUT @ 0x01: u8 = 0_0 {
+    rw OUT @ 0x01: u8 = 0_0 {
         /// POUT_0
-        POUT_0: 0 = struct POUT_0(bool);
+        OUT_0: 0 = struct OUT_0(bool);
         /// POUT_1
-        POUT_1: 1 = struct POUT_1(bool);
+        OUT_1: 1 = struct OUT_1(bool);
         /// POUT_2
-        POUT_2: 2 = struct POUT_2(bool);
+        OUT_2: 2 = struct OUT_2(bool);
         /// POUT_3
-        POUT_3: 3 = struct POUT_3(bool);
+        OUT_3: 3 = struct OUT_3(bool);
         /// POUT_4
-        POUT_4: 4 = struct POUT_4(bool);
+        OUT_4: 4 = struct OUT_4(bool);
         /// POUT_5
-        POUT_5: 5 = struct POUT_5(bool);
+        OUT_5: 5 = struct OUT_5(bool);
         /// POUT_6
-        POUT_6: 6 = struct POUT_6(bool);
+        OUT_6: 6 = struct OUT_6(bool);
         /// POUT_7
-        POUT_7: 7 = struct POUT_7(bool);
+        OUT_7: 7 = struct OUT_7(bool);
     }
     /// Port Direction
-    rw PDIR @ 0x02: u8 = 0_0 {
+    rw DIR @ 0x02: u8 = 0_0 {
         /// PDIR_0
-        PDIR_0: 0 = struct PDIR_0(bool);
+        DIR_0: 0 = struct DIR_0(bool);
         /// PDIR_1
-        PDIR_1: 1 = struct PDIR_1(bool);
+        DIR_1: 1 = struct DIR_1(bool);
         /// PDIR_2
-        PDIR_2: 2 = struct PDIR_2(bool);
+        DIR_2: 2 = struct DIR_2(bool);
         /// PDIR_3
-        PDIR_3: 3 = struct PDIR_3(bool);
+        DIR_3: 3 = struct DIR_3(bool);
         /// PDIR_4
-        PDIR_4: 4 = struct PDIR_4(bool);
+        DIR_4: 4 = struct DIR_4(bool);
         /// PDIR_5
-        PDIR_5: 5 = struct PDIR_5(bool);
+        DIR_5: 5 = struct DIR_5(bool);
         /// PDIR_6
-        PDIR_6: 6 = struct PDIR_6(bool);
+        DIR_6: 6 = struct DIR_6(bool);
         /// PDIR_7
-        PDIR_7: 7 = struct PDIR_7(bool);
+        DIR_7: 7 = struct DIR_7(bool);
     }
     /// Port Interrupt Flag
-    rw PIFG @ 0x03: u8 = 0_0 {
+    rw IFG @ 0x03: u8 = 0_0 {
         /// PIFG_2
-        PIFG_2: 2 = struct PIFG_2(bool);
+        IFG_2: 2 = struct IFG_2(bool);
         /// PIFG_3
-        PIFG_3: 3 = struct PIFG_3(bool);
+        IFG_3: 3 = struct IFG_3(bool);
         /// PIFG_4
-        PIFG_4: 4 = struct PIFG_4(bool);
+        IFG_4: 4 = struct IFG_4(bool);
         /// PIFG_5
-        PIFG_5: 5 = struct PIFG_5(bool);
+        IFG_5: 5 = struct IFG_5(bool);
         /// PIFG_6
-        PIFG_6: 6 = struct PIFG_6(bool);
+        IFG_6: 6 = struct IFG_6(bool);
         /// PIFG_7
-        PIFG_7: 7 = struct PIFG_7(bool);
+        IFG_7: 7 = struct IFG_7(bool);
     }
     /// Port Interrupt Edge Select
-    rw PIES @ 0x04: u8 = 0_0 {
+    rw IES @ 0x04: u8 = 0_0 {
         /// PIES_0
-        PIES_0: 0 = struct PIES_0(bool);
+        IES_0: 0 = struct IES_0(bool);
         /// PIES_1
-        PIES_1: 1 = struct PIES_1(bool);
+        IES_1: 1 = struct IES_1(bool);
         /// PIES_2
-        PIES_2: 2 = struct PIES_2(bool);
+        IES_2: 2 = struct IES_2(bool);
         /// PIES_3
-        PIES_3: 3 = struct PIES_3(bool);
+        IES_3: 3 = struct IES_3(bool);
         /// PIES_4
-        PIES_4: 4 = struct PIES_4(bool);
+        IES_4: 4 = struct IES_4(bool);
         /// PIES_5
-        PIES_5: 5 = struct PIES_5(bool);
+        IES_5: 5 = struct IES_5(bool);
         /// PIES_6
-        PIES_6: 6 = struct PIES_6(bool);
+        IES_6: 6 = struct IES_6(bool);
         /// PIES_7
-        PIES_7: 7 = struct PIES_7(bool);
+        IES_7: 7 = struct IES_7(bool);
     }
     /// Port Interrupt Enable
-    rw PIE @ 0x05: u8 = 0_0 {
+    rw IE @ 0x05: u8 = 0_0 {
         /// PIE_2
-        PIE_2: 2 = struct PIE_2(bool);
+        IE_2: 2 = struct IE_2(bool);
         /// PIE_3
-        PIE_3: 3 = struct PIE_3(bool);
+        IE_3: 3 = struct IE_3(bool);
         /// PIE_4
-        PIE_4: 4 = struct PIE_4(bool);
+        IE_4: 4 = struct IE_4(bool);
         /// PIE_5
-        PIE_5: 5 = struct PIE_5(bool);
+        IE_5: 5 = struct IE_5(bool);
         /// PIE_6
-        PIE_6: 6 = struct PIE_6(bool);
+        IE_6: 6 = struct IE_6(bool);
         /// PIE_7
-        PIE_7: 7 = struct PIE_7(bool);
+        IE_7: 7 = struct IE_7(bool);
     }
 }

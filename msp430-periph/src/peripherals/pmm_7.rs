@@ -4,23 +4,23 @@ utils::periph! {
     /// PMM  Power Management System
     PMM;
     /// PMM Control 0
-    rw PMMCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// PMM Software BOR
-        PMMSWBOR: 2 = struct PMMSWBOR(bool);
+        SWBOR: 2 = struct SWBOR(bool);
         /// PMM Software POR
-        PMMSWPOR: 3 = struct PMMSWPOR(bool);
+        SWPOR: 3 = struct SWPOR(bool);
         /// PMM Turn Regulator off
-        PMMREGOFF: 4 = struct PMMREGOFF(bool);
+        REGOFF: 4 = struct REGOFF(bool);
         /// SVS high side enable
         SVSHE: 6 = struct SVSHE(bool);
     }
     /// PMM Control 1
-    rw PMMCTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// PMM Control 1
-        PMMCTL1: 0..15 = struct PMMCTL1Field(u16);
+        CTL1: 0..15 = struct CTL1Field(u16);
     }
     /// PMM Control 2
-    rw PMMCTL2 @ 0x04: u16 = 0_0 {
+    rw CTL2 @ 0x04: u16 = 0_0 {
         /// Internal Reference Enable
         INTREFEN: 0 = struct INTREFEN(bool);
         /// External Reference output Enable
@@ -39,7 +39,7 @@ utils::periph! {
         REFBGRDY: 13 = struct REFBGRDY(bool);
     }
     /// PMM Interrupt Flag
-    rw PMMIFG @ 0x0a: u16 = 0_0 {
+    rw IFG @ 0x0a: u16 = 0_0 {
         /// PMM Software BOR interrupt flag
         PMMBORIFG: 8 = struct PMMBORIFG(bool);
         /// PMM RESET pin interrupt flag
@@ -52,9 +52,9 @@ utils::periph! {
         PMMLPM5IFG: 15 = struct PMMLPM5IFG(bool);
     }
     /// PMM Interrupt Enable
-    rw PMMIE @ 0x0e: u16 = 0_0 {
+    rw IE @ 0x0e: u16 = 0_0 {
         /// PMM Interrupt Enable
-        PMMIE: 0..15 = struct PMMIEField(u16);
+        IE: 0..15 = struct IEField(u16);
     }
     /// PMM Power Mode 5 Control Register 0
     rw PM5CTL0 @ 0x10: u16 = 0_0 {

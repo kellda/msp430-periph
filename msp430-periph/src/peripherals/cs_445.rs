@@ -4,14 +4,14 @@ utils::periph! {
     /// CS
     CS;
     /// Clock System Control 0
-    rw CSCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// DCO tap selection. These bits select the DCO tap and are modified automatically during FLL operation.
         DCO: 0..8 = struct DCO(u16);
         /// Modulation bit counter. These bits select the modulation pattern. All MOD bits are modified automatically during FLL operation. The DCO register value is incremented when the modulation bit counter rolls over from 31 to 0. If the modulation bit counter decrements from 0 to the maximum count, the DCO register value is also decreased.
         MOD_: 9..13 = struct MOD_(u16);
     }
     /// Clock System Control 1
-    rw CSCTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// Modulation. This bit enables/disables the modulation.
         DISMOD: 0 = enum DISMOD {
             /// Modulation enabled
@@ -49,7 +49,7 @@ utils::periph! {
         }
     }
     /// Clock System Control 2
-    rw CSCTL2 @ 0x04: u16 = 0_0 {
+    rw CTL2 @ 0x04: u16 = 0_0 {
         /// Multiplier bits. These bits set the multiplier value N of the DCO. N must be greater than 0. Writing zero to FLLN causes N to be set to 1.
         FLLN: 0..9 = struct FLLN(u16);
         /// FLL loop divider. These bits divide f(DCOCLK) in the FLL feedback loop. This results in an additional multiplier for the multiplier bits. See also multiplier bits.
@@ -73,7 +73,7 @@ utils::periph! {
         }
     }
     /// Clock System Control 3
-    rw CSCTL3 @ 0x06: u16 = 0_0 {
+    rw CTL3 @ 0x06: u16 = 0_0 {
         /// FLL reference divider. These bits define the divide factor for f(FLLREFCLK). If XT1 supports high frequency input higher than 32 kHz, the divided frequency is used as the FLL reference frequency. If XT1 only supports 32-kHz clock, FLLREFDIV is always read and written as zero, 000b = fFLLREFCLK / 1
         FLLREFDIV: 0..2 = enum FLLREFDIV {
             /// fFLLREFCLK / 1
@@ -113,7 +113,7 @@ utils::periph! {
         }
     }
     /// Clock System Control 4
-    rw CSCTL4 @ 0x08: u16 = 0_0 {
+    rw CTL4 @ 0x08: u16 = 0_0 {
         /// Selects the MCLK and SMCLK source
         SELMS: 0..2 = enum SELMS {
             /// DCOCLKDIV
@@ -146,7 +146,7 @@ utils::periph! {
         }
     }
     /// Clock System Control 5
-    rw CSCTL5 @ 0x0a: u16 = 0_0 {
+    rw CTL5 @ 0x0a: u16 = 0_0 {
         /// MCLK source divider
         DIVM: 0..2 = enum DIVM {
             /// /1
@@ -193,7 +193,7 @@ utils::periph! {
         }
     }
     /// Clock System Control 6
-    rw CSCTL6 @ 0x0c: u16 = 0_0 {
+    rw CTL6 @ 0x0c: u16 = 0_0 {
         /// XT1 automatic off enable. This bit allows XT1 turned turns off when it is not used
         XT1AUTOOFF: 0 = enum XT1AUTOOFF {
             /// XT1 is on if XT1 is selected by the port selection and XT1 is not in bypass mode of operation.
@@ -288,7 +288,7 @@ utils::periph! {
         }
     }
     /// Clock System Control Register 7
-    rw CSCTL7 @ 0x0e: u16 = 0_0 {
+    rw CTL7 @ 0x0e: u16 = 0_0 {
         /// REFO ready flag. This bit reflects the REFO readiness whent REFO is good for operation (such as FLL reference)
         REFOREADY: 2 = enum REFOREADY {
             /// REFO unstable
@@ -357,7 +357,7 @@ utils::periph! {
         }
     }
     /// Clock System Control Register 8
-    rw CSCTL8 @ 0x10: u16 = 0_0 {
+    rw CTL8 @ 0x10: u16 = 0_0 {
         /// ACLK clock request enable. Setting this enables conditional module requests for ACLK
         ACLKREQEN: 0 = enum ACLKREQEN {
             /// ACLK conditional requests are disabled.

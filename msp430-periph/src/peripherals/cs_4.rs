@@ -4,7 +4,7 @@ utils::periph! {
     /// CS  Clock System
     CS;
     /// CS Control Register 0
-    rw CSCTL0 @ 0x00: u8 = 0_0 {
+    rw CTL0 @ 0x00: u8 = 0_0 {
         /// DCO resistor select
         DCOR: 0 = struct DCOR(bool);
         /// DCO bypass mode
@@ -13,7 +13,7 @@ utils::periph! {
         DCOF: 7 = struct DCOF(bool);
     }
     /// CS Control Register 1
-    rw CSCTL1 @ 0x01: u8 = 0_0 {
+    rw CTL1 @ 0x01: u8 = 0_0 {
         /// MCLK Divider Bit: 0
         DIVM: 0..2 = enum DIVM {
             /// MCLK Source Divider 0
@@ -54,7 +54,7 @@ utils::periph! {
         }
     }
     /// CS Internal Resistor Frequency Calibration
-    rw CSIRFCAL @ 0x02: u8 = 0_0 {
+    rw IRFCAL @ 0x02: u8 = 0_0 {
         /// DCO internal resistor frequency calibration value Bit 0
         IRFCAL0: 0 = struct IRFCAL0(bool);
         /// DCO internal resistor frequency calibration value Bit 1
@@ -73,7 +73,7 @@ utils::periph! {
         IRFCAL7: 7 = struct IRFCAL7(bool);
     }
     /// CS Internal Resistor Temperature Calibration
-    rw CSIRTCAL @ 0x03: u8 = 0_0 {
+    rw IRTCAL @ 0x03: u8 = 0_0 {
         /// DCO internal resistor temperature calibration value Bit 0
         IRTCAL0: 0 = struct IRTCAL0(bool);
         /// DCO internal resistor temperature calibration value Bit 1
@@ -92,7 +92,7 @@ utils::periph! {
         IRTCAL7: 7 = struct IRTCAL7(bool);
     }
     /// CS External Resistor Frequency Calibration
-    rw CSERFCAL @ 0x04: u8 = 0_0 {
+    rw ERFCAL @ 0x04: u8 = 0_0 {
         /// DCO external resistor frequency calibration value Bit 0
         ERFCAL0: 0 = struct ERFCAL0(bool);
         /// DCO external resistor frequency calibration value Bit 1
@@ -111,7 +111,7 @@ utils::periph! {
         ERFCAL7: 7 = struct ERFCAL7(bool);
     }
     /// CS External Resistor Temperature Calibration
-    rw CSERTCAL @ 0x05: u8 = 0_0 {
+    rw ERTCAL @ 0x05: u8 = 0_0 {
         /// DCO external resistor temperature calibration value Bit 0
         ERTCAL0: 0 = struct ERTCAL0(bool);
         /// DCO external resistor temperature calibration value Bit 1

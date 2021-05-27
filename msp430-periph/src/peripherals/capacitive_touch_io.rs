@@ -4,23 +4,23 @@ utils::periph! {
     /// Capacitive Touch IO
     Capacitive_Touch_IO;
     /// Capacitive_Touch_IO control register
-    rw CAPTIOCTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// CapTouchIO Pin Select Bit: 0
-        CAPTIOPISEL0: 1 = struct CAPTIOPISEL0(bool);
+        PISEL0: 1 = struct PISEL0(bool);
         /// CapTouchIO Pin Select Bit: 1
-        CAPTIOPISEL1: 2 = struct CAPTIOPISEL1(bool);
+        PISEL1: 2 = struct PISEL1(bool);
         /// CapTouchIO Pin Select Bit: 2
-        CAPTIOPISEL2: 3 = struct CAPTIOPISEL2(bool);
+        PISEL2: 3 = struct PISEL2(bool);
         /// CapTouchIO Port Select Bit: 0
-        CAPTIOPOSEL0: 4 = struct CAPTIOPOSEL0(bool);
+        POSEL0: 4 = struct POSEL0(bool);
         /// CapTouchIO Port Select Bit: 1
-        CAPTIOPOSEL1: 5 = struct CAPTIOPOSEL1(bool);
+        POSEL1: 5 = struct POSEL1(bool);
         /// CapTouchIO Port Select Bit: 2
-        CAPTIOPOSEL2: 6 = struct CAPTIOPOSEL2(bool);
+        POSEL2: 6 = struct POSEL2(bool);
         /// CapTouchIO Port Select Bit: 3
-        CAPTIOPOSEL3: 7 = struct CAPTIOPOSEL3(bool);
+        POSEL3: 7 = struct POSEL3(bool);
         /// CapTouchIO Enable
-        CAPTIOEN: 8 = struct CAPTIOEN(bool);
+        EN: 8 = struct EN(bool);
         /// CapTouchIO state
         CAPTIO: 9 = struct CAPTIO(bool);
     }

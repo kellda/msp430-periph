@@ -4,7 +4,7 @@ utils::periph! {
     /// SACx
     SAC;
     /// SAC OA Control Register
-    rw SACOA @ 0x00: u16 = 0_0 {
+    rw OA @ 0x00: u16 = 0_0 {
         /// SAC OA Positive input source selection
         PSEL: 0..1 = enum PSEL {
             /// External source selected
@@ -60,7 +60,7 @@ utils::periph! {
         }
     }
     /// SAC PGA Control Register
-    rw SACPGA @ 0x02: u16 = 0_0 {
+    rw PGA @ 0x02: u16 = 0_0 {
         /// SAC PGA Mode Selection
         MSEL: 0..1 = enum MSEL {
             /// Inverting PGA mode (external pad IN- is selected)
@@ -76,7 +76,7 @@ utils::periph! {
         GAIN: 4..6 = struct GAIN(u16);
     }
     /// SAC DAC Control Register
-    rw SACDAC @ 0x04: u16 = 0_0 {
+    rw DAC @ 0x04: u16 = 0_0 {
         /// SAC DAC enable
         DACEN: 0 = enum DACEN {
             /// Disabled
@@ -116,29 +116,29 @@ utils::periph! {
         }
     }
     /// SAC DAC Data Register
-    rw SACDAT @ 0x06: u16 = 0_0 {
+    rw DAT @ 0x06: u16 = 0_0 {
         /// SAC DAC data in unsigned format.
         DACData: 0..11 = struct DACData(u16);
     }
     /// SAC DAC Status Register
-    rw SACDACSTS @ 0x08: u16 = 0_0 {
+    rw DACSTS @ 0x08: u16 = 0_0 {
         /// SAC DAC data update flag
         DACIFG: 0 = struct DACIFG(bool);
     }
     /// SAC Interrupt Vector Register
-    r SACIV @ 0x0a: u16 = 0_0 {
+    r IV @ 0x0a: u16 = 0_0 {
         /// SAC Interrupt Vector Register
-        SACIV0: 0..15 = enum SACIV0 {
+        IV: 0..15 = enum IVField {
             /// No interrupt pending
-            SACIV_0 = 0b0000000000000000,
+            IV_0 = 0b0000000000000000,
             /// S&H completed interrupt flag (Highest priority)
-            SACIV_2 = 0b0000000000000010,
+            IV_2 = 0b0000000000000010,
             /// DAC channel update interrupt flag
-            SACIV_4 = 0b0000000000000100,
+            IV_4 = 0b0000000000000100,
         }
     }
     /// SAC S&H Circuitry Register
-    rw SACSHC @ 0x0c: u16 = 0_0 {
+    rw SHC @ 0x0c: u16 = 0_0 {
         /// SAC S&H interrupt enable.
         SHIE: 0 = enum SHIE {
             /// S&H interrupt disabled
@@ -190,7 +190,7 @@ utils::periph! {
         }
     }
     /// SAC S&H Status Register
-    rw SACSHSTS @ 0x0e: u16 = 0_0 {
+    rw SHSTS @ 0x0e: u16 = 0_0 {
         /// SAC S&H completed flag
         SHIFG: 0 = enum SHIFG {
             /// No S&H interrupt

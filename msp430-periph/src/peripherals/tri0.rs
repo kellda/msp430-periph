@@ -4,31 +4,31 @@ utils::periph! {
     /// TRI0
     TRI0;
     /// TRI Control Register
-    rw TRI0CTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// TRI enable.
-        TRIEN: 0 = enum TRIEN {
+        EN: 0 = enum EN {
             /// Disable the TRI module
             DISABLE = 0b0,
             /// Enable the TRI module
             ENABLE = 0b1,
         }
         /// TRI power mode select.
-        TRIPM: 1 = enum TRIPM {
+        PM: 1 = enum PM {
             /// High speed and high power
-            TRIPM_0 = 0b0,
+            PM_0 = 0b0,
             /// Low speed and low power
-            TRIPM_1 = 0b1,
+            PM_1 = 0b1,
         }
         /// TRI positive input select.
-        TRIPSEL: 6..7 = enum TRIPSEL {
+        PSEL: 6..7 = enum PSEL {
             /// External source (package terminal)
-            TRIPSEL_0 = 0b00,
+            PSEL_0 = 0b00,
             /// Device specific; refer to the device-specific sheet for details
-            TRIPSEL_1 = 0b01,
+            PSEL_1 = 0b01,
             /// Device specific; refer to the device-specific sheet for details
-            TRIPSEL_2 = 0b10,
+            PSEL_2 = 0b10,
             /// Device specific; refer to the device-specific sheet for details
-            TRIPSEL_3 = 0b11,
+            PSEL_3 = 0b11,
         }
     }
 }

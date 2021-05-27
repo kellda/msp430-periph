@@ -4,9 +4,9 @@ utils::periph! {
     /// MTIF
     MTIF;
     /// Pulse Generator Configuration Register
-    rw MTIFPGCNF @ 0x00: u16 = 0_0 {
+    rw PGCNF @ 0x00: u16 = 0_0 {
         /// PG password. Always reads as 0x69. Must be written as 0x5A for register changes to be effective. This password differs from the pin configuration and pulse counter passwords.
-        MTIFPGCNF_PGPW: 8..15 = struct MTIFPGCNF_PGPW(u16);
+        PGCNF_PGPW: 8..15 = struct PGCNF_PGPW(u16);
         /// PG pulse grid frequency select. This value determines at which time grid pulses are generated. The pulse generator frame frequency is an 1/256th of this (PGEN has to be one to perform a change).
         PGFS: 4..6 = enum PGFS {
             /// Pulse grid frequency is set to 8 Hz (nominal)
@@ -32,30 +32,30 @@ utils::periph! {
         PGEN: 0 = struct PGEN(bool);
     }
     /// Pulse Generator Value Register
-    rw MTIFPGKVAL @ 0x02: u16 = 0_0 {
+    rw PGKVAL @ 0x02: u16 = 0_0 {
         /// Pulse Count Number. This register value determines how many pulses are generated withing 256 periods of the pulse grid frequency(with password protection as in PGCNF). PGEN has to be one to perform a change.
         KVAL: 0..6 = struct KVAL(u16);
         /// PG password. Always reads as 0x69. Must be written as 0x5A for register changes to be effective. This password differs from the pin configuration and pulse counter passwords.
-        MTIFPGKVAL_PGPW: 8..15 = struct MTIFPGKVAL_PGPW(u16);
+        PGKVAL_PGPW: 8..15 = struct PGKVAL_PGPW(u16);
     }
     /// Pulse Generator Control Register
-    rw MTIFPGCTL @ 0x04: u16 = 0_0 {
+    rw PGCTL @ 0x04: u16 = 0_0 {
         /// Pulse K-Count Update Request (with password protection as in PGCNF). The update of KVAL occurs during the frequency grid slot 0xff (e.g. in the last 4ms of a second with a pulse grid frequency of 256Hz)
         PKUR: 0 = struct PKUR(bool);
         /// PG password. Always reads as 0x69. Must be written as 0x5A for register changes to be effective. This password differs from the pin configuration and pulse counter passwords.
-        MTIFPGCTL_PGPW: 8..15 = struct MTIFPGCTL_PGPW(u16);
+        PGCTL_PGPW: 8..15 = struct PGCTL_PGPW(u16);
         /// Pulse Grid Frequency Update Request (with password protection as in PGCNF). The update of PGFS occurs during the frequency grid slot 0xff (e.g. in the last 4ms of an second with an pulse grid frequency of 256Hz)
         PGUR: 1 = struct PGUR(bool);
     }
     /// Pulse Generator Status Register
-    rw MTIFPGSR @ 0x06: u16 = 0_0 {
+    rw PGSR @ 0x06: u16 = 0_0 {
         /// Pulse K-Count Update Acknowledge. This acknowledges a PCUR directly after the K-values has been updated.
         PKUA: 0 = struct PKUA(bool);
         /// Pulse Grid Frequency Update Acknowledge. This acknowledges a PGUR directly after the PGFS has been updated.
         PGUA: 1 = struct PGUA(bool);
     }
     /// Pulse Counter Configuration Register
-    rw MTIFPCCNF @ 0x08: u16 = 0_0 {
+    rw PCCNF @ 0x08: u16 = 0_0 {
         /// Pulse counter password. Always reads as 0x96. Must be written as 0xA5 for register changes to be effective. This password differs from the pin configuration and pulse generator passwords
         PCPW: 8..15 = struct PCPW(u16);
         /// PC sub module enable. This bit enables the PC sub module when set to one
@@ -64,24 +64,24 @@ utils::periph! {
         PCCLR: 2 = struct PCCLR(bool);
     }
     /// Pulse Counter Value Register
-    rw MTIFPCR @ 0x0a: u16 = 0_0 {
+    rw PCR @ 0x0a: u16 = 0_0 {
         /// Pulse Counter Value Register
-        MTIFPCR: 0..15 = struct MTIFPCRField(u16);
+        PCR: 0..15 = struct PCRField(u16);
     }
     /// Pulse Counter Control Register
-    rw MTIFPCCTL @ 0x0c: u16 = 0_0 {
+    rw PCCTL @ 0x0c: u16 = 0_0 {
         /// Pulse Counter Read Request. Set this to request an update of PCR read register from the actual counter.
         PCRR: 0 = struct PCRR(bool);
     }
     /// Pulse Counter Status Register
-    rw MTIFPCSR @ 0x0e: u16 = 0_0 {
+    rw PCSR @ 0x0e: u16 = 0_0 {
         /// Pulse counter overflow. This bit indicates an overflow of the pulse counter when its value changes since the last read request procedure. It is basically the 17th bit of the counter
         PCOFL: 1 = struct PCOFL(bool);
         /// Pulse counter read acknowledge. This acknowledges the update of the PCR register as response to the PCRR read request. Note!: A read request is being latched. LFXTOFF=1 and PCEN=0 will prevent that.The read will then be performed and acknowledged after the clock is reenabled.
         PCRA: 0 = struct PCRA(bool);
     }
     /// Measurement Test Port Control Register
-    rw MTIFTPCTL @ 0x10: u16 = 0_0 {
+    rw TPCTL @ 0x10: u16 = 0_0 {
         /// Test port password. Always reads as 0x0F. Must be written as 0xC3 for register changes to be effective.This password differs from the pulse generator and pulse counter passwords
         TPPW: 8..15 = struct TPPW(u16);
         /// Test port input select for pulse counter. This value determines the source for the pulse counter.

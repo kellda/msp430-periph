@@ -4,7 +4,7 @@ utils::periph! {
     /// USART  I2C Mode
     USART_I2C;
     /// I2C Interrupt Enable
-    rw I2CIE @ 0x00: u8 = 0_0 {
+    rw IE @ 0x00: u8 = 0_0 {
         /// Arbitration lost
         ALIE: 0 = struct ALIE(bool);
         /// No acknowledge
@@ -23,7 +23,7 @@ utils::periph! {
         STTIE: 7 = struct STTIE(bool);
     }
     /// I2C Interrupt Flag
-    rw I2CIFG @ 0x01: u8 = 0_0 {
+    rw IFG @ 0x01: u8 = 0_0 {
         /// Arbitration lost
         ALIFG: 0 = struct ALIFG(bool);
         /// No acknowledge
@@ -42,14 +42,14 @@ utils::periph! {
         STTIFG: 7 = struct STTIFG(bool);
     }
     /// I2C Data Count
-    rw I2CNDAT @ 0x02: u8 = 0_0 {
+    rw NDAT @ 0x02: u8 = 0_0 {
         /// I2C Data Count
-        I2CNDAT: 0..7 = struct I2CNDATField(u8);
+        NDAT: 0..7 = struct NDATField(u8);
     }
     /// USART Control I2C
-    rw UCTL__I2C @ 0x20: u8 = 0_0 {
+    rw CTL @ 0x20: u8 = 0_0 {
         /// I2C enable
-        I2CEN: 0 = struct I2CEN(bool);
+        EN: 0 = struct EN(bool);
         /// I2C master
         MST: 1 = struct MST(bool);
         /// USART synchronous/asynchronous
@@ -66,84 +66,84 @@ utils::periph! {
         RXDMAEN: 7 = struct RXDMAEN(bool);
     }
     /// I2C Transfer Control
-    rw I2CTCTL @ 0x21: u8 = 0_0 {
+    rw TCTL @ 0x21: u8 = 0_0 {
         /// Start bit
-        I2CSTT: 0 = struct I2CSTT(bool);
+        STT: 0 = struct STT(bool);
         /// Stop bit
-        I2CSTP: 1 = struct I2CSTP(bool);
+        STP: 1 = struct STP(bool);
         /// Start byte mode
-        I2CSTB: 2 = struct I2CSTB(bool);
+        STB: 2 = struct STB(bool);
         /// Transmit
-        I2CTRX: 3 = struct I2CTRX(bool);
+        TRX: 3 = struct TRX(bool);
         /// Clock select bit 0
-        I2CSSEL: 4..5 = enum I2CSSEL {
+        SSEL: 4..5 = enum SSEL {
             /// I2C clock select 0: UCLK
-            I2CSSEL_0 = 0b00,
+            SSEL_0 = 0b00,
             /// I2C clock select 1: ACLK
-            I2CSSEL_1 = 0b01,
+            SSEL_1 = 0b01,
             /// I2C clock select 2: SMCLK
-            I2CSSEL_2 = 0b10,
+            SSEL_2 = 0b10,
             /// I2C clock select 3: SMCLK
-            I2CSSEL_3 = 0b11,
+            SSEL_3 = 0b11,
         }
         /// Repeat mode
-        I2CRM: 6 = struct I2CRM(bool);
+        RM: 6 = struct RM(bool);
         /// Word data mode
-        I2CWORD: 7 = struct I2CWORD(bool);
+        WORD: 7 = struct WORD(bool);
     }
     /// I2C Data Control
-    rw I2CDCTL @ 0x22: u8 = 0_0 {
+    rw DCTL @ 0x22: u8 = 0_0 {
         /// Bus busy
-        I2CBB: 0 = struct I2CBB(bool);
+        BB: 0 = struct BB(bool);
         /// Receiver overrun
-        I2CRXOVR: 1 = struct I2CRXOVR(bool);
+        RXOVR: 1 = struct RXOVR(bool);
         /// Transmit underflow
-        I2CTXUDF: 2 = struct I2CTXUDF(bool);
+        TXUDF: 2 = struct TXUDF(bool);
         /// Received byte
-        I2CSBD: 3 = struct I2CSBD(bool);
+        SBD: 3 = struct SBD(bool);
         /// SCL being held low
-        I2CSCLLOW: 4 = struct I2CSCLLOW(bool);
+        SCLLOW: 4 = struct SCLLOW(bool);
         /// I2C Busy Flag
-        I2CBUSY: 5 = struct I2CBUSY(bool);
+        BUSY: 5 = struct BUSY(bool);
     }
     /// I2C Pre-scaler
-    rw I2CPSC @ 0x23: u8 = 0_0 {
+    rw PSC @ 0x23: u8 = 0_0 {
         /// I2C Pre-scaler
-        I2CPSC: 0..7 = struct I2CPSCField(u8);
+        PSC: 0..7 = struct PSCField(u8);
     }
     /// I2C SCL High
-    rw I2CSCLH @ 0x24: u8 = 0_0 {
+    rw SCLH @ 0x24: u8 = 0_0 {
         /// I2C SCL High
-        I2CSCLH: 0..7 = struct I2CSCLHField(u8);
+        SCLH: 0..7 = struct SCLHField(u8);
     }
     /// I2C SCL Low
-    rw I2CSCLL @ 0x25: u8 = 0_0 {
+    rw SCLL @ 0x25: u8 = 0_0 {
         /// I2C SCL Low
-        I2CSCLL: 0..7 = struct I2CSCLLField(u8);
+        SCLL: 0..7 = struct SCLLField(u8);
     }
     /// I2C Data for Byte access
-    rw I2CDRB @ 0x26: u8 = 0_0 {
+    rw DRB @ 0x26: u8 = 0_0 {
         /// I2C Data for Byte access
-        I2CDRB: 0..7 = struct I2CDRBField(u8);
+        DRB: 0..7 = struct DRBField(u8);
     }
     /// I2C Data for Word access
-    rw I2CDRW @ 0x26: u16 = 0_0 {
+    rw DRW @ 0x26: u16 = 0_0 {
         /// I2C Data for Word access
-        I2CDRW: 0..15 = struct I2CDRWField(u16);
+        DRW: 0..15 = struct DRWField(u16);
     }
     /// I2C Own Address
-    rw I2COA @ 0xc8: u16 = 0_0 {
+    rw OA @ 0xc8: u16 = 0_0 {
         /// I2C Own Address
-        I2COA: 0..15 = struct I2COAField(u16);
+        OA: 0..15 = struct OAField(u16);
     }
     /// I2C Slave Address
-    rw I2CSA @ 0xca: u16 = 0_0 {
+    rw SA @ 0xca: u16 = 0_0 {
         /// I2C Slave Address
-        I2CSA: 0..15 = struct I2CSAField(u16);
+        SA: 0..15 = struct SAField(u16);
     }
     /// I2C Interrupt Vector
-    rw I2CIV @ 0xcc: u16 = 0_0 {
+    rw IV @ 0xcc: u16 = 0_0 {
         /// I2C Interrupt Vector
-        I2CIV: 0..15 = struct I2CIVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
 }

@@ -4,12 +4,12 @@ utils::periph! {
     /// CS  Clock System
     CS;
     /// CS Control Register 0
-    rw CSCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// CS Control Register 0
-        CSCTL0: 0..15 = struct CSCTL0Field(u16);
+        CTL0: 0..15 = struct CTL0Field(u16);
     }
     /// CS Control Register 1
-    rw CSCTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// DCO frequency select Bit: 0
         DCOFSEL: 1..3 = enum DCOFSEL {
             /// DCO frequency select: 0
@@ -33,7 +33,7 @@ utils::periph! {
         DCORSEL: 6 = struct DCORSEL(bool);
     }
     /// CS Control Register 2
-    rw CSCTL2 @ 0x04: u16 = 0_0 {
+    rw CTL2 @ 0x04: u16 = 0_0 {
         /// MCLK Source Select Bit: 0
         SELM: 0..2 = enum SELM {
             /// MCLK Source Select 0
@@ -93,7 +93,7 @@ utils::periph! {
         }
     }
     /// CS Control Register 3
-    rw CSCTL3 @ 0x06: u16 = 0_0 {
+    rw CTL3 @ 0x06: u16 = 0_0 {
         /// MCLK Divider Bit: 0
         DIVM: 0..2 = enum DIVM {
             /// MCLK Source Divider 0
@@ -141,7 +141,7 @@ utils::periph! {
         }
     }
     /// CS Control Register 4
-    rw CSCTL4 @ 0x08: u16 = 0_0 {
+    rw CTL4 @ 0x08: u16 = 0_0 {
         /// Low Frequency Oscillator (LFXT) disable
         LFXTOFF: 0 = struct LFXTOFF(bool);
         /// SMCLK Off
@@ -163,7 +163,7 @@ utils::periph! {
         }
     }
     /// CS Control Register 5
-    rw CSCTL5 @ 0x0a: u16 = 0_0 {
+    rw CTL5 @ 0x0a: u16 = 0_0 {
         /// LFXT Low Frequency Oscillator Fault Flag
         LFXTOFFG: 0 = struct LFXTOFFG(bool);
         /// Enable start counter for XT1
@@ -172,7 +172,7 @@ utils::periph! {
         ENSTFCNT2: 7 = struct ENSTFCNT2(bool);
     }
     /// CS Control Register 6
-    rw CSCTL6 @ 0x0c: u16 = 0_0 {
+    rw CTL6 @ 0x0c: u16 = 0_0 {
         /// ACLK Clock Request Enable
         ACLKREQEN: 0 = struct ACLKREQEN(bool);
         /// MCLK Clock Request Enable

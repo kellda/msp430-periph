@@ -4,17 +4,17 @@ utils::periph! {
     /// PMM  Power Management System
     PMM;
     /// PMM Control 0
-    rw PMMCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// PMM Software BOR
-        PMMSWBOR: 2 = struct PMMSWBOR(bool);
+        SWBOR: 2 = struct SWBOR(bool);
         /// PMM Software POR
-        PMMSWPOR: 3 = struct PMMSWPOR(bool);
+        SWPOR: 3 = struct SWPOR(bool);
         /// PMM Turn Regulator off
-        PMMREGOFF: 4 = struct PMMREGOFF(bool);
+        REGOFF: 4 = struct REGOFF(bool);
         /// SVS high side enable
         SVSHE: 6 = struct SVSHE(bool);
         /// PMM Low-Power Reset Enable
-        PMMLPRST: 7 = struct PMMLPRST(bool);
+        LPRST: 7 = struct LPRST(bool);
     }
     /// PMM Interrupt Flag
     rw PMMIFG @ 0x0a: u16 = 0_0 {

@@ -4,17 +4,17 @@ utils::periph! {
     /// CCS  Compact System Clock
     CCS;
     /// CCS Control Register 0
-    rw CCSCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// CCS Control Register 0
-        CCSCTL0: 0..15 = struct CCSCTL0Field(u16);
+        CTL0: 0..15 = struct CTL0Field(u16);
     }
     /// CCS Control Register 1
-    rw CCSCTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// Clock division for CLKIN / X-OSC
         DIVCLK: 0 = struct DIVCLK(bool);
     }
     /// CCS Control Register 2
-    rw CCSCTL2 @ 0x04: u16 = 0_0 {
+    rw CTL2 @ 0x04: u16 = 0_0 {
         /// Frequency trimming of the HF-OSC Bit: 0
         FSEL0: 0 = struct FSEL0(bool);
         /// Frequency trimming of the HF-OSC Bit: 1
@@ -31,7 +31,7 @@ utils::periph! {
         FSEL6: 6 = struct FSEL6(bool);
     }
     /// CCS Control Register 4
-    rw CCSCTL4 @ 0x08: u16 = 0_0 {
+    rw CTL4 @ 0x08: u16 = 0_0 {
         /// MCLK Source Select Bit: 0
         SELM: 0..1 = enum SELM {
             /// MCLK Source Select 0
@@ -67,7 +67,7 @@ utils::periph! {
         }
     }
     /// CCS Control Register 5
-    rw CCSCTL5 @ 0x0a: u16 = 0_0 {
+    rw CTL5 @ 0x0a: u16 = 0_0 {
         /// MCLK Divider Bit: 0
         DIVM: 0..2 = enum DIVM {
             /// MCLK Source Divider 0
@@ -115,19 +115,19 @@ utils::periph! {
         }
     }
     /// CCS Control Register 6
-    rw CCSCTL6 @ 0x0c: u16 = 0_0 {
+    rw CTL6 @ 0x0c: u16 = 0_0 {
         /// Disable XT oscillator
         XTOFF: 0 = struct XTOFF(bool);
     }
     /// CCS Control Register 7
-    rw CCSCTL7 @ 0x0e: u16 = 0_0 {
+    rw CTL7 @ 0x0e: u16 = 0_0 {
         /// X-tal Oscillator Fault Flag
         XOFFG: 0 = struct XOFFG(bool);
         /// High Frequency Oscillator Fault Flag
         HFOFFG: 1 = struct HFOFFG(bool);
     }
     /// CCS Control Register 8
-    rw CCSCTL8 @ 0x10: u16 = 0_0 {
+    rw CTL8 @ 0x10: u16 = 0_0 {
         /// ACLK Clock Request Enable
         ACLKREQEN: 0 = struct ACLKREQEN(bool);
         /// MCLK Clock Request Enable

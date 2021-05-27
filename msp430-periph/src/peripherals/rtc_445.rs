@@ -4,30 +4,30 @@ utils::periph! {
     /// RTC
     RTC;
     /// RTCCTL0 Register
-    rw RTCCTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// Real-time interrupt flag. This bit reports the status of a pending interrupt. This read only bit can be cleared by reading RTCIV register.
-        RTCIFG: 0 = enum RTCIFG {
+        IFG: 0 = enum IFG {
             /// No interrupt pending
-            RTCIFG_0 = 0b0,
+            IFG_0 = 0b0,
             /// Interrupt pending
-            RTCIFG_1 = 0b1,
+            IFG_1 = 0b1,
         }
         /// Real-time interrupt enable
-        RTCIE: 1 = enum RTCIE {
+        IE: 1 = enum IE {
             /// Interrupt disabled
-            RTCIE_0 = 0b0,
+            IE_0 = 0b0,
             /// Interrupt enabled
-            RTCIE_1 = 0b1,
+            IE_1 = 0b1,
         }
         /// Real-time software reset. This is a write only bit and is always read with logic 0. 0b = Write 0 has no effect
-        RTCSR: 6 = enum RTCSR {
+        SR: 6 = enum SR {
             /// Write 0 has no effect
-            RTCSR_0 = 0b0,
+            SR_0 = 0b0,
             /// Write 1 to this bit clears the counter value and reloads the shadow register value from the modulo register at the next tick of the selected source clock. No overflow event or interrupt is generated.
-            RTCSR_1 = 0b1,
+            SR_1 = 0b1,
         }
         /// Real-time clock pre-divider select
-        RTCPS: 8..10 = enum RTCPS {
+        PS: 8..10 = enum PS {
             /// /1
             _1 = 0b000,
             /// /10
@@ -46,7 +46,7 @@ utils::periph! {
             _1024 = 0b111,
         }
         /// Real-time clock source select
-        RTCSS: 12..13 = enum RTCSS {
+        SS: 12..13 = enum SS {
             /// Disabled
             DISABLED = 0b00,
             /// SMCLK
@@ -58,23 +58,23 @@ utils::periph! {
         }
     }
     /// Real-Time Clock Interrupt Vector Register
-    r RTCIV @ 0x04: u16 = 0_0 {
+    r IV @ 0x04: u16 = 0_0 {
         /// Real-time clock interrupt vector value
-        RTCIV: 0..15 = enum RTCIVField {
+        IV: 0..15 = enum IVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// upt Source: RTC Counter Overflow; Interrupt Flag: RTCIFG
-            RTCIFG = 0b0000000000000010,
+            IFG = 0b0000000000000010,
         }
     }
     /// RTC Counter Modulo Register
-    rw RTCMOD @ 0x08: u16 = 0_0 {
+    rw MOD_ @ 0x08: u16 = 0_0 {
         /// RTC Counter Modulo Register
-        RTCMOD: 0..15 = struct RTCMODField(u16);
+        MOD: 0..15 = struct MODField(u16);
     }
     /// RTC Counter Register
-    rw RTCCNT @ 0x0c: u16 = 0_0 {
+    rw CNT @ 0x0c: u16 = 0_0 {
         /// RTC Counter Register
-        RTCCNT: 0..15 = struct RTCCNTField(u16);
+        CNT: 0..15 = struct CNTField(u16);
     }
 }

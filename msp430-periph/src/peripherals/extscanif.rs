@@ -4,1518 +4,1518 @@ utils::periph! {
     /// ExtScanIF
     ExtScanIF;
     /// ESI debug register 1
-    rw ESIDEBUG1 @ 0x00: u16 = 0_0 {
+    rw DEBUG1 @ 0x00: u16 = 0_0 {
         /// ESI debug register 1
-        ESIDEBUG1: 0..15 = struct ESIDEBUG1Field(u16);
+        DEBUG1: 0..15 = struct DEBUG1Field(u16);
     }
     /// ESI debug register 2
-    rw ESIDEBUG2 @ 0x02: u16 = 0_0 {
+    rw DEBUG2 @ 0x02: u16 = 0_0 {
         /// ESI debug register 2
-        ESIDEBUG2: 0..15 = struct ESIDEBUG2Field(u16);
+        DEBUG2: 0..15 = struct DEBUG2Field(u16);
     }
     /// ESI debug register 3
-    rw ESIDEBUG3 @ 0x04: u16 = 0_0 {
+    rw DEBUG3 @ 0x04: u16 = 0_0 {
         /// ESI debug register 3
-        ESIDEBUG3: 0..15 = struct ESIDEBUG3Field(u16);
+        DEBUG3: 0..15 = struct DEBUG3Field(u16);
     }
     /// ESI debug register 4
-    rw ESIDEBUG4 @ 0x06: u16 = 0_0 {
+    rw DEBUG4 @ 0x06: u16 = 0_0 {
         /// ESI debug register 4
-        ESIDEBUG4: 0..15 = struct ESIDEBUG4Field(u16);
+        DEBUG4: 0..15 = struct DEBUG4Field(u16);
     }
     /// ESI debug register 5
-    rw ESIDEBUG5 @ 0x08: u16 = 0_0 {
+    rw DEBUG5 @ 0x08: u16 = 0_0 {
         /// ESI debug register 5
-        ESIDEBUG5: 0..15 = struct ESIDEBUG5Field(u16);
+        DEBUG5: 0..15 = struct DEBUG5Field(u16);
     }
     /// ESI PSM counter 0
-    rw ESICNT0 @ 0x10: u16 = 0_0 {
+    rw CNT0 @ 0x10: u16 = 0_0 {
         /// ESI PSM counter 0
-        ESICNT0: 0..15 = struct ESICNT0Field(u16);
+        CNT0: 0..15 = struct CNT0Field(u16);
     }
     /// ESI PSM counter 1
-    rw ESICNT1 @ 0x12: u16 = 0_0 {
+    rw CNT1 @ 0x12: u16 = 0_0 {
         /// ESI PSM counter 1
-        ESICNT1: 0..15 = struct ESICNT1Field(u16);
+        CNT1: 0..15 = struct CNT1Field(u16);
     }
     /// ESI PSM counter 2
-    rw ESICNT2 @ 0x14: u16 = 0_0 {
+    rw CNT2 @ 0x14: u16 = 0_0 {
         /// ESI PSM counter 2
-        ESICNT2: 0..15 = struct ESICNT2Field(u16);
+        CNT2: 0..15 = struct CNT2Field(u16);
     }
     /// ESI oscillator counter register
-    rw ESICNT3 @ 0x16: u16 = 0_0 {
+    rw CNT3 @ 0x16: u16 = 0_0 {
         /// ESI oscillator counter register
-        ESICNT3: 0..15 = struct ESICNT3Field(u16);
+        CNT3: 0..15 = struct CNT3Field(u16);
     }
     /// ESI interrupt vector
-    rw ESIIV @ 0x1a: u16 = 0_0 {
+    rw IV @ 0x1a: u16 = 0_0 {
         /// ESI interrupt vector
-        ESIIV: 0..15 = struct ESIIVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
     /// ESI interrupt register 1
-    rw ESIINT1 @ 0x1c: u16 = 0_0 {
+    rw INT1 @ 0x1c: u16 = 0_0 {
         /// Interrupt enable
-        ESIIE0: 0 = struct ESIIE0(bool);
+        IE0: 0 = struct IE0(bool);
         /// Interrupt enable
-        ESIIE1: 1 = struct ESIIE1(bool);
+        IE1: 1 = struct IE1(bool);
         /// Interrupt enable
-        ESIIE2: 2 = struct ESIIE2(bool);
+        IE2: 2 = struct IE2(bool);
         /// Interrupt enable
-        ESIIE3: 3 = struct ESIIE3(bool);
+        IE3: 3 = struct IE3(bool);
         /// Interrupt enable
-        ESIIE4: 4 = struct ESIIE4(bool);
+        IE4: 4 = struct IE4(bool);
         /// Interrupt enable
-        ESIIE5: 5 = struct ESIIE5(bool);
+        IE5: 5 = struct IE5(bool);
         /// Interrupt enable
-        ESIIE6: 6 = struct ESIIE6(bool);
+        IE6: 6 = struct IE6(bool);
         /// Interrupt enable
-        ESIIE7: 7 = struct ESIIE7(bool);
+        IE7: 7 = struct IE7(bool);
         /// Interrupt enable
-        ESIIE8: 8 = struct ESIIE8(bool);
-        /// ESIIFG0 interrupt flag source
-        ESIIFGSET1: 10..12 = enum ESIIFGSET1 {
+        IE8: 8 = struct IE8(bool);
+        /// IFG0 interrupt flag source
+        IFGSET1: 10..12 = enum IFGSET1 {
             /// ESIIFG0 is set when ESIOUT0 is set
-            ESIIFGSET1_0 = 0b000,
+            IFGSET1_0 = 0b000,
             /// ESIIFG0 is set when ESIOUT0 is reset
-            ESIIFGSET1_1 = 0b001,
+            IFGSET1_1 = 0b001,
             /// ESIIFG0 is set when ESIOUT1 is set
-            ESIIFGSET1_2 = 0b010,
+            IFGSET1_2 = 0b010,
             /// ESIIFG0 is set when ESIOUT1 is reset
-            ESIIFGSET1_3 = 0b011,
+            IFGSET1_3 = 0b011,
             /// ESIIFG0 is set when ESIOUT2 is set
-            ESIIFGSET1_4 = 0b100,
+            IFGSET1_4 = 0b100,
             /// ESIIFG0 is set when ESIOUT2 is reset
-            ESIIFGSET1_5 = 0b101,
+            IFGSET1_5 = 0b101,
             /// ESIIFG0 is set when ESIOUT3 is set
-            ESIIFGSET1_6 = 0b110,
+            IFGSET1_6 = 0b110,
             /// ESIIFG0 is set when ESIOUT3 is reset
-            ESIIFGSET1_7 = 0b111,
+            IFGSET1_7 = 0b111,
         }
         /// ESIIFG8 interrupt flag source
-        ESIIFGSET2: 13..15 = enum ESIIFGSET2 {
+        IFGSET2: 13..15 = enum IFGSET2 {
             /// ESIIFG8 is set when ESIOUT4 is set
-            ESIIFGSET2_0 = 0b000,
+            IFGSET2_0 = 0b000,
             /// ESIIFG8 is set when ESIOUT4 is reset
-            ESIIFGSET2_1 = 0b001,
+            IFGSET2_1 = 0b001,
             /// ESIIFG8 is set when ESIOUT5 is set
-            ESIIFGSET2_2 = 0b010,
+            IFGSET2_2 = 0b010,
             /// ESIIFG8 is set when ESIOUT5 is reset
-            ESIIFGSET2_3 = 0b011,
+            IFGSET2_3 = 0b011,
             /// ESIIFG8 is set when ESIOUT6 is set
-            ESIIFGSET2_4 = 0b100,
+            IFGSET2_4 = 0b100,
             /// ESIIFG8 is set when ESIOUT6 is reset
-            ESIIFGSET2_5 = 0b101,
+            IFGSET2_5 = 0b101,
             /// ESIIFG8 is set when ESIOUT7 is set
-            ESIIFGSET2_6 = 0b110,
+            IFGSET2_6 = 0b110,
             /// ESIIFG8 is set when ESIOUT7 is reset
-            ESIIFGSET2_7 = 0b111,
+            IFGSET2_7 = 0b111,
         }
     }
     /// ESI interrupt register 2
-    rw ESIINT2 @ 0x1e: u16 = 0_0 {
+    rw INT2 @ 0x1e: u16 = 0_0 {
         /// ESIIFG0 interrupt pending
-        ESIIFG0: 0 = struct ESIIFG0(bool);
+        IFG0: 0 = struct IFG0(bool);
         /// ESIIFG1 interrupt pending
-        ESIIFG1: 1 = struct ESIIFG1(bool);
+        IFG1: 1 = struct IFG1(bool);
         /// ESIIFG2 interrupt pending
-        ESIIFG2: 2 = struct ESIIFG2(bool);
+        IFG2: 2 = struct IFG2(bool);
         /// ESIIFG3 interrupt pending
-        ESIIFG3: 3 = struct ESIIFG3(bool);
+        IFG3: 3 = struct IFG3(bool);
         /// ESIIFG4 interrupt pending
-        ESIIFG4: 4 = struct ESIIFG4(bool);
+        IFG4: 4 = struct IFG4(bool);
         /// ESIIFG5 interrupt pending
-        ESIIFG5: 5 = struct ESIIFG5(bool);
+        IFG5: 5 = struct IFG5(bool);
         /// ESIIFG6 interrupt pending
-        ESIIFG6: 6 = struct ESIIFG6(bool);
+        IFG6: 6 = struct IFG6(bool);
         /// ESIIFG7 interrupt pending
-        ESIIFG7: 7 = struct ESIIFG7(bool);
+        IFG7: 7 = struct IFG7(bool);
         /// ESIIFG8 interrupt pending
-        ESIIFG8: 8 = struct ESIIFG8(bool);
+        IFG8: 8 = struct IFG8(bool);
         /// SIFIFG7 interrupt flag source
-        ESIIS0: 10..11 = enum ESIIS0 {
+        IS0: 10..11 = enum IS0 {
             /// SIFIFG7 interrupt flag source: SIFCNT0
-            ESIIS0_0 = 0b00,
+            IS0_0 = 0b00,
             /// SIFIFG7 interrupt flag source: SIFCNT0 MOD 4
-            ESIIS0_1 = 0b01,
+            IS0_1 = 0b01,
             /// SIFIFG7 interrupt flag source: SIFCNT0 MOD 256
-            ESIIS0_2 = 0b10,
+            IS0_2 = 0b10,
             /// SIFIFG7 interrupt flag source: SIFCNT0 increments from FFFFh to 00h
-            ESIIS0_3 = 0b11,
+            IS0_3 = 0b11,
         }
         /// SIFIFG4 interrupt flag source
-        ESIIS2: 13..14 = enum ESIIS2 {
+        IS2: 13..14 = enum IS2 {
             /// SIFIFG4 interrupt flag source: SIFCNT2
-            ESIIS2_0 = 0b00,
+            IS2_0 = 0b00,
             /// SIFIFG4 interrupt flag source: SIFCNT2 MOD 4
-            ESIIS2_1 = 0b01,
+            IS2_1 = 0b01,
             /// SIFIFG4 interrupt flag source: SIFCNT2 MOD 256
-            ESIIS2_2 = 0b10,
+            IS2_2 = 0b10,
             /// SIFIFG4 interrupt flag source: SIFCNT2 decrements from 01h to 00h
-            ESIIS2_3 = 0b11,
+            IS2_3 = 0b11,
         }
     }
     /// ESI AFE control register
-    rw ESIAFE @ 0x20: u16 = 0_0 {
+    rw AFE @ 0x20: u16 = 0_0 {
         /// Excitation enable
-        ESITEN: 0 = struct ESITEN(bool);
+        TEN: 0 = struct TEN(bool);
         /// Sample-and-hold enable
-        ESISH: 1 = struct ESISH(bool);
+        SH: 1 = struct SH(bool);
         /// Mid-voltage generator
-        ESIVMIDEN: 2 = struct ESIVMIDEN(bool);
+        VMIDEN: 2 = struct VMIDEN(bool);
         /// Sample-and-hold ESIVSS select
-        ESISHTSM: 3 = struct ESISHTSM(bool);
+        SHTSM: 3 = struct SHTSM(bool);
         /// Comparator input select for AFE1 only
-        ESICACI3: 4 = struct ESICACI3(bool);
+        CACI3: 4 = struct CACI3(bool);
         /// Comparator input select for AFE1 only
-        ESICISEL: 5 = struct ESICISEL(bool);
+        CISEL: 5 = struct CISEL(bool);
         /// AFE1's comparator input select
-        ESICA1X: 6 = struct ESICA1X(bool);
+        CA1X: 6 = struct CA1X(bool);
         /// AFE2's comparator input select
-        ESICA2X: 7 = struct ESICA2X(bool);
+        CA2X: 7 = struct CA2X(bool);
         /// Invert AFE1's comparator output
-        ESICA1INV: 8 = struct ESICA1INV(bool);
+        CA1INV: 8 = struct CA1INV(bool);
         /// Invert AFE2's comparator output
-        ESICA2INV: 9 = struct ESICA2INV(bool);
+        CA2INV: 9 = struct CA2INV(bool);
         /// Enable ESICA(tsm) control for comparator in AFE2
-        ESICA2EN: 10 = struct ESICA2EN(bool);
+        CA2EN: 10 = struct CA2EN(bool);
         /// Enable ESIDAC(tsm) control for DAC in AFE2
-        ESIDAC2EN: 11 = struct ESIDAC2EN(bool);
+        DAC2EN: 11 = struct DAC2EN(bool);
     }
     /// ESI PPU control register
-    rw ESIPPU @ 0x22: u16 = 0_0 {
+    rw PPU @ 0x22: u16 = 0_0 {
         /// Latched AFE1 comparator output when ESICH0 input is selected
-        ESIOUT0: 0 = struct ESIOUT0(bool);
+        OUT0: 0 = struct OUT0(bool);
         /// Latched AFE1 comparator output when ESICH1 input is selected
-        ESIOUT1: 1 = struct ESIOUT1(bool);
+        OUT1: 1 = struct OUT1(bool);
         /// Latched AFE1 comparator output when ESICH2 input is selected
-        ESIOUT2: 2 = struct ESIOUT2(bool);
+        OUT2: 2 = struct OUT2(bool);
         /// Latched AFE1 comparator output when ESICH3 input is selected
-        ESIOUT3: 3 = struct ESIOUT3(bool);
+        OUT3: 3 = struct OUT3(bool);
         /// Latched AFE2 comparator output when ESICH0 input is selected
-        ESIOUT4: 4 = struct ESIOUT4(bool);
+        OUT4: 4 = struct OUT4(bool);
         /// Latched AFE2 comparator output when ESICH1 input is selected
-        ESIOUT5: 5 = struct ESIOUT5(bool);
+        OUT5: 5 = struct OUT5(bool);
         /// Latched AFE2 comparator output when ESICH2 input is selected
-        ESIOUT6: 6 = struct ESIOUT6(bool);
+        OUT6: 6 = struct OUT6(bool);
         /// Latched AFE2 comparator output when ESICH3 input is selected
-        ESIOUT7: 7 = struct ESIOUT7(bool);
+        OUT7: 7 = struct OUT7(bool);
         /// Lachted AFE1 comparator output for test channel 0
-        ESITCHOUT0: 8 = struct ESITCHOUT0(bool);
+        TCHOUT0: 8 = struct TCHOUT0(bool);
         /// Latched AFE1 comparator output for test channel 1
-        ESITCHOUT1: 9 = struct ESITCHOUT1(bool);
+        TCHOUT1: 9 = struct TCHOUT1(bool);
     }
     /// ESI TSM control register
-    rw ESITSM @ 0x24: u16 = 0_0 {
+    rw TSM @ 0x24: u16 = 0_0 {
         /// TSM SMCLK divider
-        ESIDIV1: 0..1 = enum ESIDIV1 {
+        DIV1: 0..1 = enum DIV1 {
             /// TSM SMCLK/ESIOSC divider mode: 0
-            ESIDIV1_0 = 0b00,
+            DIV1_0 = 0b00,
             /// TSM SMCLK/ESIOSC divider mode: 1
-            ESIDIV1_1 = 0b01,
+            DIV1_1 = 0b01,
             /// TSM SMCLK/ESIOSC divider mode: 2
-            ESIDIV1_2 = 0b10,
+            DIV1_2 = 0b10,
             /// TSM SMCLK/ESIOSC divider mode: 3
-            ESIDIV1_3 = 0b11,
+            DIV1_3 = 0b11,
         }
         /// ACLK divider
-        ESIDIV2: 2..3 = enum ESIDIV2 {
+        DIV2: 2..3 = enum DIV2 {
             /// ACLK divider mode: 0
-            ESIDIV2_0 = 0b00,
+            DIV2_0 = 0b00,
             /// ACLK divider mode: 1
-            ESIDIV2_1 = 0b01,
+            DIV2_1 = 0b01,
             /// ACLK divider mode: 2
-            ESIDIV2_2 = 0b10,
+            DIV2_2 = 0b10,
             /// ACLK divider mode: 3
-            ESIDIV2_3 = 0b11,
+            DIV2_3 = 0b11,
         }
         /// TSM start trigger ACLK divider
-        ESIDIV3A: 4..6 = enum ESIDIV3A {
+        DIV3A: 4..6 = enum DIV3A {
             /// TSM start trigger ACLK divider
-            ESIDIV3A_0 = 0b000,
+            DIV3A_0 = 0b000,
             /// TSM start trigger ACLK divider
-            ESIDIV3A_1 = 0b001,
+            DIV3A_1 = 0b001,
             /// TSM start trigger ACLK divider
-            ESIDIV3A_2 = 0b010,
+            DIV3A_2 = 0b010,
             /// TSM start trigger ACLK divider
-            ESIDIV3A_3 = 0b011,
+            DIV3A_3 = 0b011,
             /// TSM start trigger ACLK divider
-            ESIDIV3A_4 = 0b100,
+            DIV3A_4 = 0b100,
             /// TSM start trigger ACLK divider
-            ESIDIV3A_5 = 0b101,
+            DIV3A_5 = 0b101,
             /// TSM start trigger ACLK divider
-            ESIDIV3A_6 = 0b110,
+            DIV3A_6 = 0b110,
             /// TSM start trigger ACLK divider
-            ESIDIV3A_7 = 0b111,
+            DIV3A_7 = 0b111,
         }
         /// TSM start trigger ACLK divider
-        ESIDIV3B: 7..9 = enum ESIDIV3B {
+        DIV3B: 7..9 = enum DIV3B {
             /// TSM start trigger ACLK divider
-            ESIDIV3B_0 = 0b000,
+            DIV3B_0 = 0b000,
             /// TSM start trigger ACLK divider
-            ESIDIV3B_1 = 0b001,
+            DIV3B_1 = 0b001,
             /// TSM start trigger ACLK divider
-            ESIDIV3B_2 = 0b010,
+            DIV3B_2 = 0b010,
             /// TSM start trigger ACLK divider
-            ESIDIV3B_3 = 0b011,
+            DIV3B_3 = 0b011,
             /// TSM start trigger ACLK divider
-            ESIDIV3B_4 = 0b100,
+            DIV3B_4 = 0b100,
             /// TSM start trigger ACLK divider
-            ESIDIV3B_5 = 0b101,
+            DIV3B_5 = 0b101,
             /// TSM start trigger ACLK divider
-            ESIDIV3B_6 = 0b110,
+            DIV3B_6 = 0b110,
             /// TSM start trigger ACLK divider
-            ESIDIV3B_7 = 0b111,
+            DIV3B_7 = 0b111,
         }
         /// TSM repeat modee
-        ESITSMRP: 10 = struct ESITSMRP(bool);
+        TSMRP: 10 = struct TSMRP(bool);
         /// TSM software start trigger
-        ESISTART: 11 = struct ESISTART(bool);
+        START: 11 = struct START(bool);
         /// TSM start trigger selection
-        ESITSMTRG: 12..13 = enum ESITSMTRG {
+        TSMTRG: 12..13 = enum TSMTRG {
             /// Halt mode
-            ESITSMTRG_0 = 0b00,
+            TSMTRG_0 = 0b00,
             /// TSM start trigger ACLK divider
-            ESITSMTRG_1 = 0b01,
+            TSMTRG_1 = 0b01,
             /// Software trigger for TSM
-            ESITSMTRG_2 = 0b10,
+            TSMTRG_2 = 0b10,
             /// Either the ACLK divider or the ESISTART biT
-            ESITSMTRG_3 = 0b11,
+            TSMTRG_3 = 0b11,
         }
         /// Functionality selection of ESITSMx bit5
-        ESICLKAZSEL: 14 = struct ESICLKAZSEL(bool);
+        CLKAZSEL: 14 = struct CLKAZSEL(bool);
     }
     /// ESI PSM control register
-    rw ESIPSM @ 0x26: u16 = 0_0 {
+    rw PSM @ 0x26: u16 = 0_0 {
         /// Q6 enable
-        ESIQ6EN: 0 = struct ESIQ6EN(bool);
+        Q6EN: 0 = struct Q6EN(bool);
         /// Enabling to use Q7 as trigger for a TSM sequence
-        ESIQ7TRG: 2 = struct ESIQ7TRG(bool);
+        Q7TRG: 2 = struct Q7TRG(bool);
         /// ESICNT0 enable (up counter)
-        ESICNT0EN: 3 = struct ESICNT0EN(bool);
+        CNT0EN: 3 = struct CNT0EN(bool);
         /// ESICNT1 enable (up/down counter)
-        ESICNT1EN: 4 = struct ESICNT1EN(bool);
+        CNT1EN: 4 = struct CNT1EN(bool);
         /// ESICNT2 enable (down counter)
-        ESICNT2EN: 5 = struct ESICNT2EN(bool);
+        CNT2EN: 5 = struct CNT2EN(bool);
         /// Source Selection for V2 bit
-        ESIV2SEL: 7 = struct ESIV2SEL(bool);
+        V2SEL: 7 = struct V2SEL(bool);
         /// Output signal selection for SIFTEST4 pin
-        ESITEST4SEL: 8..9 = enum ESITEST4SEL {
+        TEST4SEL: 8..9 = enum TEST4SEL {
             /// Q1 signal from PSM table
-            ESITEST4SEL_0 = 0b00,
+            TEST4SEL_0 = 0b00,
             /// Q2 signal from PSM table
-            ESITEST4SEL_1 = 0b01,
+            TEST4SEL_1 = 0b01,
             /// TSM clock signal from Timing State Machine
-            ESITEST4SEL_2 = 0b10,
+            TEST4SEL_2 = 0b10,
             /// AFE1's comparator output signal Comp1Out
-            ESITEST4SEL_3 = 0b11,
+            TEST4SEL_3 = 0b11,
         }
         /// ESI Counter 0 reset
-        ESICNT0RST: 13 = struct ESICNT0RST(bool);
+        CNT0RST: 13 = struct CNT0RST(bool);
         /// ESI Counter 1 reset
-        ESICNT1RST: 14 = struct ESICNT1RST(bool);
+        CNT1RST: 14 = struct CNT1RST(bool);
         /// ESI Counter 2 reset
-        ESICNT2RST: 15 = struct ESICNT2RST(bool);
+        CNT2RST: 15 = struct CNT2RST(bool);
     }
     /// ESI oscillator control register
-    rw ESIOSC @ 0x28: u16 = 0_0 {
+    rw OSC @ 0x28: u16 = 0_0 {
         /// Internal oscillator enable
-        ESIHFSEL: 0 = struct ESIHFSEL(bool);
+        HFSEL: 0 = struct HFSEL(bool);
         /// Internal oscillator control
-        ESICLKGON: 1 = struct ESICLKGON(bool);
+        CLKGON: 1 = struct CLKGON(bool);
         /// Internal oscillator frequency adjust
-        ESICLKFQ0: 8 = struct ESICLKFQ0(bool);
+        CLKFQ0: 8 = struct CLKFQ0(bool);
         /// Internal oscillator frequency adjust
-        ESICLKFQ1: 9 = struct ESICLKFQ1(bool);
+        CLKFQ1: 9 = struct CLKFQ1(bool);
         /// Internal oscillator frequency adjust
-        ESICLKFQ2: 10 = struct ESICLKFQ2(bool);
+        CLKFQ2: 10 = struct CLKFQ2(bool);
         /// Internal oscillator frequency adjust
-        ESICLKFQ3: 11 = struct ESICLKFQ3(bool);
+        CLKFQ3: 11 = struct CLKFQ3(bool);
         /// Internal oscillator frequency adjust
-        ESICLKFQ4: 12 = struct ESICLKFQ4(bool);
+        CLKFQ4: 12 = struct CLKFQ4(bool);
         /// Internal oscillator frequency adjust
-        ESICLKFQ5: 13 = struct ESICLKFQ5(bool);
+        CLKFQ5: 13 = struct CLKFQ5(bool);
     }
     /// ESI control register
-    rw ESICTL @ 0x2a: u16 = 0_0 {
+    rw CTL @ 0x2a: u16 = 0_0 {
         /// Extended Scan interface enable
-        ESIEN: 0 = struct ESIEN(bool);
+        EN: 0 = struct EN(bool);
         /// Test cycle insertion
-        ESITESTD: 1 = struct ESITESTD(bool);
+        TESTD: 1 = struct TESTD(bool);
         /// Comparator output/Timer_A input selection
-        ESICS: 2 = struct ESICS(bool);
+        CS: 2 = struct CS(bool);
         /// select the comparator input for test channel 0
-        ESITCH0: 3..4 = enum ESITCH0 {
+        TCH0: 3..4 = enum TCH0 {
             /// Comparator input is ESICH0 when ESICAX = 0; Comparator input is ESICI0 when ESICAX = 1
-            ESITCH0_0 = 0b00,
+            TCH0_0 = 0b00,
             /// Comparator input is ESICH1 when ESICAX = 0; Comparator input is ESICI1 when ESICAX = 1
-            ESITCH0_1 = 0b01,
+            TCH0_1 = 0b01,
             /// Comparator input is ESICH2 when ESICAX = 0; Comparator input is ESICI2 when ESICAX = 1
-            ESITCH0_2 = 0b10,
+            TCH0_2 = 0b10,
             /// Comparator input is ESICH3 when ESICAX = 0; Comparator input is ESICI3 when ESICAX = 1
-            ESITCH0_3 = 0b11,
+            TCH0_3 = 0b11,
         }
         /// select the comparator input for test channel 1
-        ESITCH1: 5..6 = enum ESITCH1 {
+        TCH1: 5..6 = enum TCH1 {
             /// Comparator input is ESICH0 when ESICAX = 0; Comparator input is ESICI0 when ESICAX = 1
-            ESITCH1_0 = 0b00,
+            TCH1_0 = 0b00,
             /// Comparator input is ESICH1 when ESICAX = 0; Comparator input is ESICI1 when ESICAX = 1
-            ESITCH1_1 = 0b01,
+            TCH1_1 = 0b01,
             /// Comparator input is ESICH2 when ESICAX = 0; Comparator input is ESICI2 when ESICAX = 1
-            ESITCH1_2 = 0b10,
+            TCH1_2 = 0b10,
             /// Comparator input is ESICH3 when ESICAX = 0; Comparator input is ESICI3 when ESICAX = 1
-            ESITCH1_3 = 0b11,
+            TCH1_3 = 0b11,
         }
         /// PPUS1 source select
-        ESIS1SEL: 7..9 = enum ESIS1SEL {
+        S1SEL: 7..9 = enum S1SEL {
             /// ESIOUT0 is the PPUS1 source
-            ESIS1SEL_0 = 0b000,
+            S1SEL_0 = 0b000,
             /// ESIOUT1 is the PPUS1 source
-            ESIS1SEL_1 = 0b001,
+            S1SEL_1 = 0b001,
             /// ESIOUT2 is the PPUS1 source
-            ESIS1SEL_2 = 0b010,
+            S1SEL_2 = 0b010,
             /// ESIOUT3 is the PPUS1 source
-            ESIS1SEL_3 = 0b011,
+            S1SEL_3 = 0b011,
             /// ESIOUT4 is the PPUS1 source
-            ESIS1SEL_4 = 0b100,
+            S1SEL_4 = 0b100,
             /// ESIOUT5 is the PPUS1 source
-            ESIS1SEL_5 = 0b101,
+            S1SEL_5 = 0b101,
             /// ESIOUT6 is the PPUS1 source
-            ESIS1SEL_6 = 0b110,
+            S1SEL_6 = 0b110,
             /// ESIOUT7 is the PPUS1 source
-            ESIS1SEL_7 = 0b111,
+            S1SEL_7 = 0b111,
         }
         /// PPUS2 source select
-        ESIS2SEL: 10..12 = enum ESIS2SEL {
+        S2SEL: 10..12 = enum S2SEL {
             /// ESIOUT0 is the PPUS2 source
-            ESIS2SEL_0 = 0b000,
+            S2SEL_0 = 0b000,
             /// ESIOUT1 is the PPUS2 source
-            ESIS2SEL_1 = 0b001,
+            S2SEL_1 = 0b001,
             /// ESIOUT2 is the PPUS2 source
-            ESIS2SEL_2 = 0b010,
+            S2SEL_2 = 0b010,
             /// ESIOUT3 is the PPUS2 source
-            ESIS2SEL_3 = 0b011,
+            S2SEL_3 = 0b011,
             /// ESIOUT4 is the PPUS2 source
-            ESIS2SEL_4 = 0b100,
+            S2SEL_4 = 0b100,
             /// ESIOUT5 is the PPUS2 source
-            ESIS2SEL_5 = 0b101,
+            S2SEL_5 = 0b101,
             /// ESIOUT6 is the PPUS2 source
-            ESIS2SEL_6 = 0b110,
+            S2SEL_6 = 0b110,
             /// ESIOUT7 is the PPUS2 source
-            ESIS2SEL_7 = 0b111,
+            S2SEL_7 = 0b111,
         }
         /// PPUS3 source select
-        ESIS3SEL: 13..15 = enum ESIS3SEL {
+        S3SEL: 13..15 = enum S3SEL {
             /// ESIOUT0 is the PPUS3 source
-            ESIS3SEL_0 = 0b000,
+            S3SEL_0 = 0b000,
             /// ESIOUT1 is the PPUS3 source
-            ESIS3SEL_1 = 0b001,
+            S3SEL_1 = 0b001,
             /// ESIOUT2 is the PPUS3 source
-            ESIS3SEL_2 = 0b010,
+            S3SEL_2 = 0b010,
             /// ESIOUT3 is the PPUS3 source
-            ESIS3SEL_3 = 0b011,
+            S3SEL_3 = 0b011,
             /// ESIOUT4 is the PPUS3 source
-            ESIS3SEL_4 = 0b100,
+            S3SEL_4 = 0b100,
             /// ESIOUT5 is the PPUS3 source
-            ESIS3SEL_5 = 0b101,
+            S3SEL_5 = 0b101,
             /// ESIOUT6 is the PPUS3 source
-            ESIS3SEL_6 = 0b110,
+            S3SEL_6 = 0b110,
             /// ESIOUT7 is the PPUS3 source
-            ESIS3SEL_7 = 0b111,
+            S3SEL_7 = 0b111,
         }
     }
     /// ESI PSM Counter Threshold 1 register
-    rw ESITHR1 @ 0x2c: u16 = 0_0 {
+    rw THR1 @ 0x2c: u16 = 0_0 {
         /// ESI PSM Counter Threshold 1 register
-        ESITHR1: 0..15 = struct ESITHR1Field(u16);
+        THR1: 0..15 = struct THR1Field(u16);
     }
     /// ESI PSM Counter Threshold 2 register
-    rw ESITHR2 @ 0x2e: u16 = 0_0 {
+    rw THR2 @ 0x2e: u16 = 0_0 {
         /// ESI PSM Counter Threshold 2 register
-        ESITHR2: 0..15 = struct ESITHR2Field(u16);
+        THR2: 0..15 = struct THR2Field(u16);
     }
     /// ESI DAC1 register 0
-    rw ESIDAC1R0 @ 0x40: u16 = 0_0 {
+    rw DAC1R0 @ 0x40: u16 = 0_0 {
         /// ESI DAC1 register 0
-        ESIDAC1R0: 0..15 = struct ESIDAC1R0Field(u16);
+        DAC1R0: 0..15 = struct DAC1R0Field(u16);
     }
     /// ESI DAC1 register 1
-    rw ESIDAC1R1 @ 0x42: u16 = 0_0 {
+    rw DAC1R1 @ 0x42: u16 = 0_0 {
         /// ESI DAC1 register 1
-        ESIDAC1R1: 0..15 = struct ESIDAC1R1Field(u16);
+        DAC1R1: 0..15 = struct DAC1R1Field(u16);
     }
     /// ESI DAC1 register 2
-    rw ESIDAC1R2 @ 0x44: u16 = 0_0 {
+    rw DAC1R2 @ 0x44: u16 = 0_0 {
         /// ESI DAC1 register 2
-        ESIDAC1R2: 0..15 = struct ESIDAC1R2Field(u16);
+        DAC1R2: 0..15 = struct DAC1R2Field(u16);
     }
     /// ESI DAC1 register 3
-    rw ESIDAC1R3 @ 0x46: u16 = 0_0 {
+    rw DAC1R3 @ 0x46: u16 = 0_0 {
         /// ESI DAC1 register 3
-        ESIDAC1R3: 0..15 = struct ESIDAC1R3Field(u16);
+        DAC1R3: 0..15 = struct DAC1R3Field(u16);
     }
     /// ESI DAC1 register 4
-    rw ESIDAC1R4 @ 0x48: u16 = 0_0 {
+    rw DAC1R4 @ 0x48: u16 = 0_0 {
         /// ESI DAC1 register 4
-        ESIDAC1R4: 0..15 = struct ESIDAC1R4Field(u16);
+        DAC1R4: 0..15 = struct DAC1R4Field(u16);
     }
     /// ESI DAC1 register 5
-    rw ESIDAC1R5 @ 0x4a: u16 = 0_0 {
+    rw DAC1R5 @ 0x4a: u16 = 0_0 {
         /// ESI DAC1 register 5
-        ESIDAC1R5: 0..15 = struct ESIDAC1R5Field(u16);
+        DAC1R5: 0..15 = struct DAC1R5Field(u16);
     }
     /// ESI DAC1 register 6
-    rw ESIDAC1R6 @ 0x4c: u16 = 0_0 {
+    rw DAC1R6 @ 0x4c: u16 = 0_0 {
         /// ESI DAC1 register 6
-        ESIDAC1R6: 0..15 = struct ESIDAC1R6Field(u16);
+        DAC1R6: 0..15 = struct DAC1R6Field(u16);
     }
     /// ESI DAC1 register 7
-    rw ESIDAC1R7 @ 0x4e: u16 = 0_0 {
+    rw DAC1R7 @ 0x4e: u16 = 0_0 {
         /// ESI DAC1 register 7
-        ESIDAC1R7: 0..15 = struct ESIDAC1R7Field(u16);
+        DAC1R7: 0..15 = struct DAC1R7Field(u16);
     }
     /// ESI DAC2 register 0
-    rw ESIDAC2R0 @ 0x50: u16 = 0_0 {
+    rw DAC2R0 @ 0x50: u16 = 0_0 {
         /// ESI DAC2 register 0
-        ESIDAC2R0: 0..15 = struct ESIDAC2R0Field(u16);
+        DAC2R0: 0..15 = struct DAC2R0Field(u16);
     }
     /// ESI DAC2 register 1
-    rw ESIDAC2R1 @ 0x52: u16 = 0_0 {
+    rw DAC2R1 @ 0x52: u16 = 0_0 {
         /// ESI DAC2 register 1
-        ESIDAC2R1: 0..15 = struct ESIDAC2R1Field(u16);
+        DAC2R1: 0..15 = struct DAC2R1Field(u16);
     }
     /// ESI DAC2 register 2
-    rw ESIDAC2R2 @ 0x54: u16 = 0_0 {
+    rw DAC2R2 @ 0x54: u16 = 0_0 {
         /// ESI DAC2 register 2
-        ESIDAC2R2: 0..15 = struct ESIDAC2R2Field(u16);
+        DAC2R2: 0..15 = struct DAC2R2Field(u16);
     }
     /// ESI DAC2 register 3
-    rw ESIDAC2R3 @ 0x56: u16 = 0_0 {
+    rw DAC2R3 @ 0x56: u16 = 0_0 {
         /// ESI DAC2 register 3
-        ESIDAC2R3: 0..15 = struct ESIDAC2R3Field(u16);
+        DAC2R3: 0..15 = struct DAC2R3Field(u16);
     }
     /// ESI DAC2 register 4
-    rw ESIDAC2R4 @ 0x58: u16 = 0_0 {
+    rw DAC2R4 @ 0x58: u16 = 0_0 {
         /// ESI DAC2 register 4
-        ESIDAC2R4: 0..15 = struct ESIDAC2R4Field(u16);
+        DAC2R4: 0..15 = struct DAC2R4Field(u16);
     }
     /// ESI DAC2 register 5
-    rw ESIDAC2R5 @ 0x5a: u16 = 0_0 {
+    rw DAC2R5 @ 0x5a: u16 = 0_0 {
         /// ESI DAC2 register 5
-        ESIDAC2R5: 0..15 = struct ESIDAC2R5Field(u16);
+        DAC2R5: 0..15 = struct DAC2R5Field(u16);
     }
     /// ESI DAC2 register 6
-    rw ESIDAC2R6 @ 0x5c: u16 = 0_0 {
+    rw DAC2R6 @ 0x5c: u16 = 0_0 {
         /// ESI DAC2 register 6
-        ESIDAC2R6: 0..15 = struct ESIDAC2R6Field(u16);
+        DAC2R6: 0..15 = struct DAC2R6Field(u16);
     }
     /// ESI DAC2 register 7
-    rw ESIDAC2R7 @ 0x5e: u16 = 0_0 {
+    rw DAC2R7 @ 0x5e: u16 = 0_0 {
         /// ESI DAC2 register 7
-        ESIDAC2R7: 0..15 = struct ESIDAC2R7Field(u16);
+        DAC2R7: 0..15 = struct DAC2R7Field(u16);
     }
     /// ESI TSM 0
-    rw ESITSM0 @ 0x60: u16 = 0_0 {
+    rw TSM0 @ 0x60: u16 = 0_0 {
         /// Input channel select
-        ESITSM0_ESICH: 0..1 = enum ESITSM0_ESICH {
+        TSM0CH: 0..1 = enum TSM0CH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
-        ESITSM0_ESILCEN: 2 = struct ESITSM0_ESILCEN(bool);
+        TSM0LCEN: 2 = struct TSM0LCEN(bool);
         /// Excitation and sample-and-hold
-        ESITSM0_ESIEX: 3 = struct ESITSM0_ESIEX(bool);
+        TSM0IEX: 3 = struct TSM0EX(bool);
         /// TSM comparator on
-        ESITSM0_ESICA: 4 = struct ESITSM0_ESICA(bool);
+        TSM0CA: 4 = struct TSM0ICA(bool);
         /// High-frequency clock on
-        ESITSM0_ESICLKON: 5 = struct ESITSM0_ESICLKON(bool);
+        TSM0CLKON: 5 = struct TSM0CLKON(bool);
         /// Internal output latches enabled
-        ESITSM0_ESIRSON: 6 = struct ESITSM0_ESIRSON(bool);
+        TSM0RSON: 6 = struct TSM0RSON(bool);
         /// TSM test cycle control
-        ESITSM0_ESITESTS1: 7 = struct ESITSM0_ESITESTS1(bool);
+        TSM0TESTS1: 7 = struct TSM0TESTS1(bool);
         /// TSM DAC on
-        ESITSM0_ESIDAC: 8 = struct ESITSM0_ESIDAC(bool);
+        TSM0DAC: 8 = struct TSM0DAC(bool);
         /// This bit indicates the end of the TSM sequence
-        ESITSM0_ESISTOP: 9 = struct ESITSM0_ESISTOP(bool);
+        TSM0STOP: 9 = struct TSM0STOP(bool);
         /// This bit selects the clock source for the TSM
-        ESITSM0_ESICLK: 10 = struct ESITSM0_ESICLK(bool);
+        TSM0CLK: 10 = struct TSM0CLK(bool);
         /// These bits together with the ESICLK bit configure the duration of this state
-        ESITSM0_ESIREPEAT: 11..15 = enum ESITSM0_ESIREPEAT {
+        TSM0REPEAT: 11..15 = enum TSM0REPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 1
-    rw ESITSM1 @ 0x62: u16 = 0_0 {
+    rw TSM1 @ 0x62: u16 = 0_0 {
         /// Input channel select
-        ESITSM1_ESICH: 0..1 = enum ESITSM1_ESICH {
+        TSM1CH: 0..1 = enum TSM1CH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
-        ESITSM1_ESILCEN: 2 = struct ESITSM1_ESILCEN(bool);
+        TSM1LCEN: 2 = struct TSM1LCEN(bool);
         /// Excitation and sample-and-hold
-        ESITSM1_ESIEX: 3 = struct ESITSM1_ESIEX(bool);
+        TSM1EX: 3 = struct TSM1EX(bool);
         /// TSM comparator on
-        ESITSM1_ESICA: 4 = struct ESITSM1_ESICA(bool);
+        TSM1CA: 4 = struct TSM1CA(bool);
         /// High-frequency clock on
-        ESITSM1_ESICLKON: 5 = struct ESITSM1_ESICLKON(bool);
+        TSM1CLKON: 5 = struct TSM1CLKON(bool);
         /// Internal output latches enabled
-        ESITSM1_ESIRSON: 6 = struct ESITSM1_ESIRSON(bool);
+        TSM1RSON: 6 = struct TSM1RSON(bool);
         /// TSM test cycle control
-        ESITSM1_ESITESTS1: 7 = struct ESITSM1_ESITESTS1(bool);
+        TSM1TESTS1: 7 = struct TSM1TESTS1(bool);
         /// TSM DAC on
-        ESITSM1_ESIDAC: 8 = struct ESITSM1_ESIDAC(bool);
+        TSM1DAC: 8 = struct TSM1DAC(bool);
         /// This bit indicates the end of the TSM sequence
-        ESITSM1_ESISTOP: 9 = struct ESITSM1_ESISTOP(bool);
+        TSM1STOP: 9 = struct TSM1STOP(bool);
         /// This bit selects the clock source for the TSM
-        ESITSM1_ESICLK: 10 = struct ESITSM1_ESICLK(bool);
+        TSM1CLK: 10 = struct TSM1CLK(bool);
         /// These bits together with the ESICLK bit configure the duration of this state
-        ESITSM1_ESIREPEAT: 11..15 = enum ESITSM1_ESIREPEAT {
+        TSM1REPEAT: 11..15 = enum TSM1REPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 2
-    rw ESITSM2 @ 0x64: u16 = 0_0 {
+    rw TSM2 @ 0x64: u16 = 0_0 {
         /// Input channel select
-        ESITSM2_ESICH: 0..1 = enum ESITSM2_ESICH {
+        TSM2CH: 0..1 = enum TSM2CH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
-        ESITSM2_ESILCEN: 2 = struct ESITSM2_ESILCEN(bool);
+        TSM2LCEN: 2 = struct TSM2LCEN(bool);
         /// Excitation and sample-and-hold
-        ESITSM2_ESIEX: 3 = struct ESITSM2_ESIEX(bool);
+        TSM2EX: 3 = struct TSM2EX(bool);
         /// TSM comparator on
-        ESITSM2_ESICA: 4 = struct ESITSM2_ESICA(bool);
+        TSM2CA: 4 = struct TSM2CA(bool);
         /// High-frequency clock on
-        ESITSM2_ESICLKON: 5 = struct ESITSM2_ESICLKON(bool);
+        TSM2CLKON: 5 = struct TSM2CLKON(bool);
         /// Internal output latches enabled
-        ESITSM2_ESIRSON: 6 = struct ESITSM2_ESIRSON(bool);
+        TSM2RSON: 6 = struct TSM2RSON(bool);
         /// TSM test cycle control
-        ESITSM2_ESITESTS1: 7 = struct ESITSM2_ESITESTS1(bool);
+        TSM2TESTS1: 7 = struct TSM2TESTS1(bool);
         /// TSM DAC on
-        ESITSM2_ESIDAC: 8 = struct ESITSM2_ESIDAC(bool);
+        TSM2DAC: 8 = struct TSM2DAC(bool);
         /// This bit indicates the end of the TSM sequence
-        ESITSM2_ESISTOP: 9 = struct ESITSM2_ESISTOP(bool);
+        TSM2STOP: 9 = struct TSM2STOP(bool);
         /// This bit selects the clock source for the TSM
-        ESITSM2_ESICLK: 10 = struct ESITSM2_ESICLK(bool);
+        TSM2CLK: 10 = struct TSM2CLK(bool);
         /// These bits together with the ESICLK bit configure the duration of this state
-        ESITSM2_ESIREPEAT: 11..15 = enum ESITSM2_ESIREPEAT {
+        TSM2REPEAT: 11..15 = enum TSM2REPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 3
-    rw ESITSM3 @ 0x66: u16 = 0_0 {
+    rw TSM3 @ 0x66: u16 = 0_0 {
         /// Input channel select
-        ESITSM3_ESICH: 0..1 = enum ESITSM3_ESICH {
+        TSM3CH: 0..1 = enum TSM3CH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
-        ESITSM3_ESILCEN: 2 = struct ESITSM3_ESILCEN(bool);
+        TSM3LCEN: 2 = struct TSM3LCEN(bool);
         /// Excitation and sample-and-hold
-        ESITSM3_ESIEX: 3 = struct ESITSM3_ESIEX(bool);
+        TSM3EX: 3 = struct TSM3EX(bool);
         /// TSM comparator on
-        ESITSM3_ESICA: 4 = struct ESITSM3_ESICA(bool);
+        TSM3CA: 4 = struct TSM3CA(bool);
         /// High-frequency clock on
-        ESITSM3_ESICLKON: 5 = struct ESITSM3_ESICLKON(bool);
+        TSM3CLKON: 5 = struct TSM3CLKON(bool);
         /// Internal output latches enabled
-        ESITSM3_ESIRSON: 6 = struct ESITSM3_ESIRSON(bool);
+        TSM3RSON: 6 = struct TSM3RSON(bool);
         /// TSM test cycle control
-        ESITSM3_ESITESTS1: 7 = struct ESITSM3_ESITESTS1(bool);
+        TSM3TESTS1: 7 = struct TSM3TESTS1(bool);
         /// TSM DAC on
-        ESITSM3_ESIDAC: 8 = struct ESITSM3_ESIDAC(bool);
+        TSM3DAC: 8 = struct TSM3DAC(bool);
         /// This bit indicates the end of the TSM sequence
-        ESITSM3_ESISTOP: 9 = struct ESITSM3_ESISTOP(bool);
+        TSM3STOP: 9 = struct TSM3STOP(bool);
         /// This bit selects the clock source for the TSM
-        ESITSM3_ESICLK: 10 = struct ESITSM3_ESICLK(bool);
+        TSM3CLK: 10 = struct TSM3CLK(bool);
         /// These bits together with the ESICLK bit configure the duration of this state
-        ESITSM3_ESIREPEAT: 11..15 = enum ESITSM3_ESIREPEAT {
+        TSM3REPEAT: 11..15 = enum TSM3REPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 4
-    rw ESITSM4 @ 0x68: u16 = 0_0 {
+    rw TSM4 @ 0x68: u16 = 0_0 {
         /// Input channel select
-        ESITSM4_ESICH: 0..1 = enum ESITSM4_ESICH {
+        TSM4CH: 0..1 = enum TSM4CH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
-        ESITSM4_ESILCEN: 2 = struct ESITSM4_ESILCEN(bool);
+        TSM4LCEN: 2 = struct TSM4LCEN(bool);
         /// Excitation and sample-and-hold
-        ESITSM4_ESIEX: 3 = struct ESITSM4_ESIEX(bool);
+        TSM4EX: 3 = struct TSM4EX(bool);
         /// TSM comparator on
-        ESITSM4_ESICA: 4 = struct ESITSM4_ESICA(bool);
+        TSM4CA: 4 = struct TSM4CA(bool);
         /// High-frequency clock on
-        ESITSM4_ESICLKON: 5 = struct ESITSM4_ESICLKON(bool);
+        TSM4CLKON: 5 = struct TSM4CLKON(bool);
         /// Internal output latches enabled
-        ESITSM4_ESIRSON: 6 = struct ESITSM4_ESIRSON(bool);
+        TSM4RSON: 6 = struct TSM4RSON(bool);
         /// TSM test cycle control
-        ESITSM4_ESITESTS1: 7 = struct ESITSM4_ESITESTS1(bool);
+        TSM4TESTS1: 7 = struct TSM4TESTS1(bool);
         /// TSM DAC on
-        ESITSM4_ESIDAC: 8 = struct ESITSM4_ESIDAC(bool);
+        TSM4DAC: 8 = struct TSM4DAC(bool);
         /// This bit indicates the end of the TSM sequence
-        ESITSM4_ESISTOP: 9 = struct ESITSM4_ESISTOP(bool);
+        TSM4STOP: 9 = struct TSM4STOP(bool);
         /// This bit selects the clock source for the TSM
-        ESITSM4_ESICLK: 10 = struct ESITSM4_ESICLK(bool);
+        TSM4CLK: 10 = struct TSM4CLK(bool);
         /// These bits together with the ESICLK bit configure the duration of this state
-        ESITSM4_ESIREPEAT: 11..15 = enum ESITSM4_ESIREPEAT {
+        TSM4REPEAT: 11..15 = enum TSM4REPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 5
-    rw ESITSM5 @ 0x6a: u16 = 0_0 {
+    rw TSM5 @ 0x6a: u16 = 0_0 {
         /// Input channel select
-        ESITSM5_ESICH: 0..1 = enum ESITSM5_ESICH {
+        TSM5CH: 0..1 = enum TSM5CH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
-        ESITSM5_ESILCEN: 2 = struct ESITSM5_ESILCEN(bool);
+        TSM5LCEN: 2 = struct TSM5LCEN(bool);
         /// Excitation and sample-and-hold
-        ESITSM5_ESIEX: 3 = struct ESITSM5_ESIEX(bool);
+        TSM5EX: 3 = struct TSM5EX(bool);
         /// TSM comparator on
-        ESITSM5_ESICA: 4 = struct ESITSM5_ESICA(bool);
+        TSM5CA: 4 = struct TSM5CA(bool);
         /// High-frequency clock on
-        ESITSM5_ESICLKON: 5 = struct ESITSM5_ESICLKON(bool);
+        TSM5CLKON: 5 = struct TSM5CLKON(bool);
         /// Internal output latches enabled
-        ESITSM5_ESIRSON: 6 = struct ESITSM5_ESIRSON(bool);
+        TSM5RSON: 6 = struct TSM5RSON(bool);
         /// TSM test cycle control
-        ESITSM5_ESITESTS1: 7 = struct ESITSM5_ESITESTS1(bool);
+        TSM5TESTS1: 7 = struct TSM5TESTS1(bool);
         /// TSM DAC on
-        ESITSM5_ESIDAC: 8 = struct ESITSM5_ESIDAC(bool);
+        TSM5DAC: 8 = struct TSM5DAC(bool);
         /// This bit indicates the end of the TSM sequence
-        ESITSM5_ESISTOP: 9 = struct ESITSM5_ESISTOP(bool);
+        TSM5STOP: 9 = struct TSM5STOP(bool);
         /// This bit selects the clock source for the TSM
-        ESITSM5_ESICLK: 10 = struct ESITSM5_ESICLK(bool);
+        TSM5CLK: 10 = struct TSM5CLK(bool);
         /// These bits together with the ESICLK bit configure the duration of this state
-        ESITSM5_ESIREPEAT: 11..15 = enum ESITSM5_ESIREPEAT {
+        TSM5REPEAT: 11..15 = enum TSM5REPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 6
-    rw ESITSM6 @ 0x6c: u16 = 0_0 {
+    rw TSM6 @ 0x6c: u16 = 0_0 {
         /// Input channel select
-        ESITSM6_ESICH: 0..1 = enum ESITSM6_ESICH {
+        TSM6CH: 0..1 = enum TSM6CH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
-        ESITSM6_ESILCEN: 2 = struct ESITSM6_ESILCEN(bool);
+        TSM6LCEN: 2 = struct TSM6LCEN(bool);
         /// Excitation and sample-and-hold
-        ESITSM6_ESIEX: 3 = struct ESITSM6_ESIEX(bool);
+        TSM6EX: 3 = struct TSM6EX(bool);
         /// TSM comparator on
-        ESITSM6_ESICA: 4 = struct ESITSM6_ESICA(bool);
+        TSM6CA: 4 = struct TSM6CA(bool);
         /// High-frequency clock on
-        ESITSM6_ESICLKON: 5 = struct ESITSM6_ESICLKON(bool);
+        TSM6CLKON: 5 = struct TSM6CLKON(bool);
         /// Internal output latches enabled
-        ESITSM6_ESIRSON: 6 = struct ESITSM6_ESIRSON(bool);
+        TSM6RSON: 6 = struct TSM6RSON(bool);
         /// TSM test cycle control
-        ESITSM6_ESITESTS1: 7 = struct ESITSM6_ESITESTS1(bool);
+        TSM6TESTS1: 7 = struct TSM6TESTS1(bool);
         /// TSM DAC on
-        ESITSM6_ESIDAC: 8 = struct ESITSM6_ESIDAC(bool);
+        TSM6DAC: 8 = struct TSM6DAC(bool);
         /// This bit indicates the end of the TSM sequence
-        ESITSM6_ESISTOP: 9 = struct ESITSM6_ESISTOP(bool);
+        TSM6STOP: 9 = struct TSM6STOP(bool);
         /// This bit selects the clock source for the TSM
-        ESITSM6_ESICLK: 10 = struct ESITSM6_ESICLK(bool);
+        TSM6CLK: 10 = struct TSM6CLK(bool);
         /// These bits together with the ESICLK bit configure the duration of this state
-        ESITSM6_ESIREPEAT: 11..15 = enum ESITSM6_ESIREPEAT {
+        TSM6REPEAT: 11..15 = enum TSM6REPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 7
-    rw ESITSM7 @ 0x6e: u16 = 0_0 {
+    rw TSM7 @ 0x6e: u16 = 0_0 {
         /// Input channel select
-        ESITSM7_ESICH: 0..1 = enum ESITSM7_ESICH {
+        TSM7CH: 0..1 = enum TSM7CH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
-        ESITSM7_ESILCEN: 2 = struct ESITSM7_ESILCEN(bool);
+        TSM7LCEN: 2 = struct TSM7LCEN(bool);
         /// Excitation and sample-and-hold
-        ESITSM7_ESIEX: 3 = struct ESITSM7_ESIEX(bool);
+        TSM7EX: 3 = struct TSM7EX(bool);
         /// TSM comparator on
-        ESITSM7_ESICA: 4 = struct ESITSM7_ESICA(bool);
+        TSM7CA: 4 = struct TSM7CA(bool);
         /// High-frequency clock on
-        ESITSM7_ESICLKON: 5 = struct ESITSM7_ESICLKON(bool);
+        TSM7CLKON: 5 = struct TSM7CLKON(bool);
         /// Internal output latches enabled
-        ESITSM7_ESIRSON: 6 = struct ESITSM7_ESIRSON(bool);
+        TSM7RSON: 6 = struct TSM7RSON(bool);
         /// TSM test cycle control
-        ESITSM7_ESITESTS1: 7 = struct ESITSM7_ESITESTS1(bool);
+        TSM7TESTS1: 7 = struct TSM7TESTS1(bool);
         /// TSM DAC on
-        ESITSM7_ESIDAC: 8 = struct ESITSM7_ESIDAC(bool);
+        TSM7DAC: 8 = struct TSM7DAC(bool);
         /// This bit indicates the end of the TSM sequence
-        ESITSM7_ESISTOP: 9 = struct ESITSM7_ESISTOP(bool);
+        TSM7STOP: 9 = struct TSM7STOP(bool);
         /// This bit selects the clock source for the TSM
-        ESITSM7_ESICLK: 10 = struct ESITSM7_ESICLK(bool);
+        TSM7CLK: 10 = struct TSM7CLK(bool);
         /// These bits together with the ESICLK bit configure the duration of this state
-        ESITSM7_ESIREPEAT: 11..15 = enum ESITSM7_ESIREPEAT {
+        TSM7REPEAT: 11..15 = enum TSM7REPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 8
-    rw ESITSM8 @ 0x70: u16 = 0_0 {
+    rw TSM8 @ 0x70: u16 = 0_0 {
         /// Input channel select
-        ESITSM8_ESICH: 0..1 = enum ESITSM8_ESICH {
+        TSM8CH: 0..1 = enum TSM8CH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
-        ESITSM8_ESILCEN: 2 = struct ESITSM8_ESILCEN(bool);
+        TSM8LCEN: 2 = struct TSM8LCEN(bool);
         /// Excitation and sample-and-hold
-        ESITSM8_ESIEX: 3 = struct ESITSM8_ESIEX(bool);
+        TSM8EX: 3 = struct TSM8EX(bool);
         /// TSM comparator on
-        ESITSM8_ESICA: 4 = struct ESITSM8_ESICA(bool);
+        TSM8CA: 4 = struct TSM8CA(bool);
         /// High-frequency clock on
-        ESITSM8_ESICLKON: 5 = struct ESITSM8_ESICLKON(bool);
+        TSM8CLKON: 5 = struct TSM8CLKON(bool);
         /// Internal output latches enabled
-        ESITSM8_ESIRSON: 6 = struct ESITSM8_ESIRSON(bool);
+        TSM8RSON: 6 = struct TSM8RSON(bool);
         /// TSM test cycle control
-        ESITSM8_ESITESTS1: 7 = struct ESITSM8_ESITESTS1(bool);
+        TSM8TESTS1: 7 = struct TSM8TESTS1(bool);
         /// TSM DAC on
-        ESITSM8_ESIDAC: 8 = struct ESITSM8_ESIDAC(bool);
+        TSM8DAC: 8 = struct TSM8DAC(bool);
         /// This bit indicates the end of the TSM sequence
-        ESITSM8_ESISTOP: 9 = struct ESITSM8_ESISTOP(bool);
+        TSM8STOP: 9 = struct TSM8STOP(bool);
         /// This bit selects the clock source for the TSM
-        ESITSM8_ESICLK: 10 = struct ESITSM8_ESICLK(bool);
+        TSM8CLK: 10 = struct TSM8CLK(bool);
         /// These bits together with the ESICLK bit configure the duration of this state
-        ESITSM8_ESIREPEAT: 11..15 = enum ESITSM8_ESIREPEAT {
+        TSM8REPEAT: 11..15 = enum TSM8REPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 9
-    rw ESITSM9 @ 0x72: u16 = 0_0 {
+    rw TSM9 @ 0x72: u16 = 0_0 {
         /// Input channel select
-        ESITSM9_ESICH: 0..1 = enum ESITSM9_ESICH {
+        TSM9CH: 0..1 = enum TSM9CH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
-        ESITSM9_ESILCEN: 2 = struct ESITSM9_ESILCEN(bool);
+        TSM9LCEN: 2 = struct TSM9LCEN(bool);
         /// Excitation and sample-and-hold
-        ESITSM9_ESIEX: 3 = struct ESITSM9_ESIEX(bool);
+        TSM9EX: 3 = struct TSM9EX(bool);
         /// TSM comparator on
-        ESITSM9_ESICA: 4 = struct ESITSM9_ESICA(bool);
+        TSM9CA: 4 = struct TSM9CA(bool);
         /// High-frequency clock on
-        ESITSM9_ESICLKON: 5 = struct ESITSM9_ESICLKON(bool);
+        TSM9CLKON: 5 = struct TSM9CLKON(bool);
         /// Internal output latches enabled
-        ESITSM9_ESIRSON: 6 = struct ESITSM9_ESIRSON(bool);
+        TSM9RSON: 6 = struct TSM9RSON(bool);
         /// TSM test cycle control
-        ESITSM9_ESITESTS1: 7 = struct ESITSM9_ESITESTS1(bool);
+        TSM9TESTS1: 7 = struct TSM9TESTS1(bool);
         /// TSM DAC on
-        ESITSM9_ESIDAC: 8 = struct ESITSM9_ESIDAC(bool);
+        TSM9DAC: 8 = struct TSM9DAC(bool);
         /// This bit indicates the end of the TSM sequence
-        ESITSM9_ESISTOP: 9 = struct ESITSM9_ESISTOP(bool);
+        TSM9STOP: 9 = struct TSM9STOP(bool);
         /// This bit selects the clock source for the TSM
-        ESITSM9_ESICLK: 10 = struct ESITSM9_ESICLK(bool);
+        TSM9CLK: 10 = struct TSM9CLK(bool);
         /// These bits together with the ESICLK bit configure the duration of this state
-        ESITSM9_ESIREPEAT: 11..15 = enum ESITSM9_ESIREPEAT {
+        TSM9REPEAT: 11..15 = enum TSM9REPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 10
-    rw ESITSM10 @ 0x74: u16 = 0_0 {
+    rw TSM10 @ 0x74: u16 = 0_0 {
         /// Input channel select
         ESITSM10_ESICH: 0..1 = enum ESITSM10_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM10_ESILCEN: 2 = struct ESITSM10_ESILCEN(bool);
@@ -1538,83 +1538,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM10_ESIREPEAT: 11..15 = enum ESITSM10_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 11
-    rw ESITSM11 @ 0x76: u16 = 0_0 {
+    rw TSM11 @ 0x76: u16 = 0_0 {
         /// Input channel select
         ESITSM11_ESICH: 0..1 = enum ESITSM11_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM11_ESILCEN: 2 = struct ESITSM11_ESILCEN(bool);
@@ -1637,83 +1637,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM11_ESIREPEAT: 11..15 = enum ESITSM11_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 12
-    rw ESITSM12 @ 0x78: u16 = 0_0 {
+    rw TSM12 @ 0x78: u16 = 0_0 {
         /// Input channel select
         ESITSM12_ESICH: 0..1 = enum ESITSM12_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM12_ESILCEN: 2 = struct ESITSM12_ESILCEN(bool);
@@ -1736,83 +1736,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM12_ESIREPEAT: 11..15 = enum ESITSM12_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 13
-    rw ESITSM13 @ 0x7a: u16 = 0_0 {
+    rw TSM13 @ 0x7a: u16 = 0_0 {
         /// Input channel select
         ESITSM13_ESICH: 0..1 = enum ESITSM13_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM13_ESILCEN: 2 = struct ESITSM13_ESILCEN(bool);
@@ -1835,83 +1835,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM13_ESIREPEAT: 11..15 = enum ESITSM13_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 14
-    rw ESITSM14 @ 0x7c: u16 = 0_0 {
+    rw TSM14 @ 0x7c: u16 = 0_0 {
         /// Input channel select
         ESITSM14_ESICH: 0..1 = enum ESITSM14_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM14_ESILCEN: 2 = struct ESITSM14_ESILCEN(bool);
@@ -1934,83 +1934,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM14_ESIREPEAT: 11..15 = enum ESITSM14_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 15
-    rw ESITSM15 @ 0x7e: u16 = 0_0 {
+    rw TSM15 @ 0x7e: u16 = 0_0 {
         /// Input channel select
         ESITSM15_ESICH: 0..1 = enum ESITSM15_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM15_ESILCEN: 2 = struct ESITSM15_ESILCEN(bool);
@@ -2033,83 +2033,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM15_ESIREPEAT: 11..15 = enum ESITSM15_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 16
-    rw ESITSM16 @ 0x80: u16 = 0_0 {
+    rw TSM16 @ 0x80: u16 = 0_0 {
         /// Input channel select
         ESITSM16_ESICH: 0..1 = enum ESITSM16_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM16_ESILCEN: 2 = struct ESITSM16_ESILCEN(bool);
@@ -2132,83 +2132,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM16_ESIREPEAT: 11..15 = enum ESITSM16_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 17
-    rw ESITSM17 @ 0x82: u16 = 0_0 {
+    rw TSM17 @ 0x82: u16 = 0_0 {
         /// Input channel select
         ESITSM17_ESICH: 0..1 = enum ESITSM17_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM17_ESILCEN: 2 = struct ESITSM17_ESILCEN(bool);
@@ -2231,83 +2231,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM17_ESIREPEAT: 11..15 = enum ESITSM17_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 18
-    rw ESITSM18 @ 0x84: u16 = 0_0 {
+    rw TSM18 @ 0x84: u16 = 0_0 {
         /// Input channel select
         ESITSM18_ESICH: 0..1 = enum ESITSM18_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM18_ESILCEN: 2 = struct ESITSM18_ESILCEN(bool);
@@ -2330,83 +2330,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM18_ESIREPEAT: 11..15 = enum ESITSM18_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 19
-    rw ESITSM19 @ 0x86: u16 = 0_0 {
+    rw TSM19 @ 0x86: u16 = 0_0 {
         /// Input channel select
         ESITSM19_ESICH: 0..1 = enum ESITSM19_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM19_ESILCEN: 2 = struct ESITSM19_ESILCEN(bool);
@@ -2429,83 +2429,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM19_ESIREPEAT: 11..15 = enum ESITSM19_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 20
-    rw ESITSM20 @ 0x88: u16 = 0_0 {
+    rw TSM20 @ 0x88: u16 = 0_0 {
         /// Input channel select
         ESITSM20_ESICH: 0..1 = enum ESITSM20_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM20_ESILCEN: 2 = struct ESITSM20_ESILCEN(bool);
@@ -2528,83 +2528,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM20_ESIREPEAT: 11..15 = enum ESITSM20_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 21
-    rw ESITSM21 @ 0x8a: u16 = 0_0 {
+    rw TSM21 @ 0x8a: u16 = 0_0 {
         /// Input channel select
         ESITSM21_ESICH: 0..1 = enum ESITSM21_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM21_ESILCEN: 2 = struct ESITSM21_ESILCEN(bool);
@@ -2627,83 +2627,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM21_ESIREPEAT: 11..15 = enum ESITSM21_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 22
-    rw ESITSM22 @ 0x8c: u16 = 0_0 {
+    rw TSM22 @ 0x8c: u16 = 0_0 {
         /// Input channel select
         ESITSM22_ESICH: 0..1 = enum ESITSM22_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM22_ESILCEN: 2 = struct ESITSM22_ESILCEN(bool);
@@ -2726,83 +2726,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM22_ESIREPEAT: 11..15 = enum ESITSM22_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 23
-    rw ESITSM23 @ 0x8e: u16 = 0_0 {
+    rw TSM23 @ 0x8e: u16 = 0_0 {
         /// Input channel select
         ESITSM23_ESICH: 0..1 = enum ESITSM23_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM23_ESILCEN: 2 = struct ESITSM23_ESILCEN(bool);
@@ -2825,83 +2825,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM23_ESIREPEAT: 11..15 = enum ESITSM23_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 24
-    rw ESITSM24 @ 0x90: u16 = 0_0 {
+    rw TSM24 @ 0x90: u16 = 0_0 {
         /// Input channel select
         ESITSM24_ESICH: 0..1 = enum ESITSM24_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM24_ESILCEN: 2 = struct ESITSM24_ESILCEN(bool);
@@ -2924,83 +2924,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM24_ESIREPEAT: 11..15 = enum ESITSM24_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 25
-    rw ESITSM25 @ 0x92: u16 = 0_0 {
+    rw TSM25 @ 0x92: u16 = 0_0 {
         /// Input channel select
         ESITSM25_ESICH: 0..1 = enum ESITSM25_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM25_ESILCEN: 2 = struct ESITSM25_ESILCEN(bool);
@@ -3023,83 +3023,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM25_ESIREPEAT: 11..15 = enum ESITSM25_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 26
-    rw ESITSM26 @ 0x94: u16 = 0_0 {
+    rw TSM26 @ 0x94: u16 = 0_0 {
         /// Input channel select
         ESITSM26_ESICH: 0..1 = enum ESITSM26_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM26_ESILCEN: 2 = struct ESITSM26_ESILCEN(bool);
@@ -3122,83 +3122,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM26_ESIREPEAT: 11..15 = enum ESITSM26_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 27
-    rw ESITSM27 @ 0x96: u16 = 0_0 {
+    rw TSM27 @ 0x96: u16 = 0_0 {
         /// Input channel select
         ESITSM27_ESICH: 0..1 = enum ESITSM27_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM27_ESILCEN: 2 = struct ESITSM27_ESILCEN(bool);
@@ -3221,83 +3221,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM27_ESIREPEAT: 11..15 = enum ESITSM27_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 28
-    rw ESITSM28 @ 0x98: u16 = 0_0 {
+    rw TSM28 @ 0x98: u16 = 0_0 {
         /// Input channel select
         ESITSM28_ESICH: 0..1 = enum ESITSM28_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM28_ESILCEN: 2 = struct ESITSM28_ESILCEN(bool);
@@ -3320,83 +3320,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM28_ESIREPEAT: 11..15 = enum ESITSM28_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 29
-    rw ESITSM29 @ 0x9a: u16 = 0_0 {
+    rw TSM29 @ 0x9a: u16 = 0_0 {
         /// Input channel select
         ESITSM29_ESICH: 0..1 = enum ESITSM29_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM29_ESILCEN: 2 = struct ESITSM29_ESILCEN(bool);
@@ -3419,83 +3419,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM29_ESIREPEAT: 11..15 = enum ESITSM29_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 30
-    rw ESITSM30 @ 0x9c: u16 = 0_0 {
+    rw TSM30 @ 0x9c: u16 = 0_0 {
         /// Input channel select
         ESITSM30_ESICH: 0..1 = enum ESITSM30_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM30_ESILCEN: 2 = struct ESITSM30_ESILCEN(bool);
@@ -3518,83 +3518,83 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM30_ESIREPEAT: 11..15 = enum ESITSM30_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
     /// ESI TSM 31
-    rw ESITSM31 @ 0x9e: u16 = 0_0 {
+    rw TSM31 @ 0x9e: u16 = 0_0 {
         /// Input channel select
         ESITSM31_ESICH: 0..1 = enum ESITSM31_ESICH {
             /// Input channel select: ESICH0
-            ESICH_0 = 0b00,
+            CH_0 = 0b00,
             /// Input channel select: ESICH1
-            ESICH_1 = 0b01,
+            CH_1 = 0b01,
             /// Input channel select: ESICH2
-            ESICH_2 = 0b10,
+            CH_2 = 0b10,
             /// Input channel select: ESICH3
-            ESICH_3 = 0b11,
+            CH_3 = 0b11,
         }
         /// LC enable
         ESITSM31_ESILCEN: 2 = struct ESITSM31_ESILCEN(bool);
@@ -3617,69 +3617,69 @@ utils::periph! {
         /// These bits together with the ESICLK bit configure the duration of this state
         ESITSM31_ESIREPEAT: 11..15 = enum ESITSM31_ESIREPEAT {
             /// These bits configure the duration of this state
-            ESIREPEAT_0 = 0b00000,
+            REPEAT_0 = 0b00000,
             /// ESIREPEATx selects the number of clock cycles for this state. The number of clock cycles = ESIREPEATx + 1
-            ESIREPEAT_1 = 0b00001,
+            REPEAT_1 = 0b00001,
             /// ESIREPEAT_2
-            ESIREPEAT_2 = 0b00010,
+            REPEAT_2 = 0b00010,
             /// ESIREPEAT_3
-            ESIREPEAT_3 = 0b00011,
+            REPEAT_3 = 0b00011,
             /// ESIREPEAT_4
-            ESIREPEAT_4 = 0b00100,
+            REPEAT_4 = 0b00100,
             /// ESIREPEAT_5
-            ESIREPEAT_5 = 0b00101,
+            REPEAT_5 = 0b00101,
             /// ESIREPEAT_6
-            ESIREPEAT_6 = 0b00110,
+            REPEAT_6 = 0b00110,
             /// ESIREPEAT_7
-            ESIREPEAT_7 = 0b00111,
+            REPEAT_7 = 0b00111,
             /// ESIREPEAT_8
-            ESIREPEAT_8 = 0b01000,
+            REPEAT_8 = 0b01000,
             /// ESIREPEAT_9
-            ESIREPEAT_9 = 0b01001,
+            REPEAT_9 = 0b01001,
             /// ESIREPEAT_10
-            ESIREPEAT_10 = 0b01010,
+            REPEAT_10 = 0b01010,
             /// ESIREPEAT_11
-            ESIREPEAT_11 = 0b01011,
+            REPEAT_11 = 0b01011,
             /// ESIREPEAT_12
-            ESIREPEAT_12 = 0b01100,
+            REPEAT_12 = 0b01100,
             /// ESIREPEAT_13
-            ESIREPEAT_13 = 0b01101,
+            REPEAT_13 = 0b01101,
             /// ESIREPEAT_14
-            ESIREPEAT_14 = 0b01110,
+            REPEAT_14 = 0b01110,
             /// ESIREPEAT_15
-            ESIREPEAT_15 = 0b01111,
+            REPEAT_15 = 0b01111,
             /// ESIREPEAT_16
-            ESIREPEAT_16 = 0b10000,
+            REPEAT_16 = 0b10000,
             /// ESIREPEAT_17
-            ESIREPEAT_17 = 0b10001,
+            REPEAT_17 = 0b10001,
             /// ESIREPEAT_18
-            ESIREPEAT_18 = 0b10010,
+            REPEAT_18 = 0b10010,
             /// ESIREPEAT_19
-            ESIREPEAT_19 = 0b10011,
+            REPEAT_19 = 0b10011,
             /// ESIREPEAT_20
-            ESIREPEAT_20 = 0b10100,
+            REPEAT_20 = 0b10100,
             /// ESIREPEAT_21
-            ESIREPEAT_21 = 0b10101,
+            REPEAT_21 = 0b10101,
             /// ESIREPEAT_22
-            ESIREPEAT_22 = 0b10110,
+            REPEAT_22 = 0b10110,
             /// ESIREPEAT_23
-            ESIREPEAT_23 = 0b10111,
+            REPEAT_23 = 0b10111,
             /// ESIREPEAT_24
-            ESIREPEAT_24 = 0b11000,
+            REPEAT_24 = 0b11000,
             /// ESIREPEAT_25
-            ESIREPEAT_25 = 0b11001,
+            REPEAT_25 = 0b11001,
             /// ESIREPEAT_26
-            ESIREPEAT_26 = 0b11010,
+            REPEAT_26 = 0b11010,
             /// ESIREPEAT_27
-            ESIREPEAT_27 = 0b11011,
+            REPEAT_27 = 0b11011,
             /// ESIREPEAT_28
-            ESIREPEAT_28 = 0b11100,
+            REPEAT_28 = 0b11100,
             /// ESIREPEAT_29
-            ESIREPEAT_29 = 0b11101,
+            REPEAT_29 = 0b11101,
             /// ESIREPEAT_30
-            ESIREPEAT_30 = 0b11110,
+            REPEAT_30 = 0b11110,
             /// ESIREPEAT_31
-            ESIREPEAT_31 = 0b11111,
+            REPEAT_31 = 0b11111,
         }
     }
 }

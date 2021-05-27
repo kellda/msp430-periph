@@ -4,189 +4,189 @@ utils::periph! {
     /// SD16
     SD16;
     /// SD16 Input Control Register Channel 0
-    rw SD16INCTL0 @ 0x00: u8 = 0_0 {
+    rw INCTL0 @ 0x00: u8 = 0_0 {
         /// SD16 Input Channel select 0
-        SD16INCTL0_SD16INCH: 0..2 = enum SD16INCTL0_SD16INCH {
+        IN0INCH: 0..2 = enum IN0INCH {
             /// SD16 Input Channel select input
-            SD16INCH_0 = 0b000,
+            INCH_0 = 0b000,
             /// SD16 Input Channel select input
-            SD16INCH_1 = 0b001,
+            INCH_1 = 0b001,
             /// SD16 Input Channel select input
-            SD16INCH_2 = 0b010,
+            INCH_2 = 0b010,
             /// SD16 Input Channel select input
-            SD16INCH_3 = 0b011,
+            INCH_3 = 0b011,
             /// SD16 Input Channel select input
-            SD16INCH_4 = 0b100,
+            INCH_4 = 0b100,
             /// SD16 Input Channel select input
-            SD16INCH_5 = 0b101,
+            INCH_5 = 0b101,
             /// SD16 Input Channel select Temp
-            SD16INCH_6 = 0b110,
+            INCH_6 = 0b110,
             /// SD16 Input Channel select Offset
-            SD16INCH_7 = 0b111,
+            INCH_7 = 0b111,
         }
         /// SD16 Input Pre-Amplifier Gain Select 0
-        SD16INCTL0_SD16GAIN0: 3 = struct SD16INCTL0_SD16GAIN0(bool);
+        IN0GAIN0: 3 = struct IN0GAIN0(bool);
         /// SD16 Input Pre-Amplifier Gain Select 1
-        SD16INCTL0_SD16GAIN1: 4 = struct SD16INCTL0_SD16GAIN1(bool);
+        IN0GAIN1: 4 = struct IN0GAIN1(bool);
         /// SD16 Input Pre-Amplifier Gain Select 2
-        SD16INCTL0_SD16GAIN2: 5 = struct SD16INCTL0_SD16GAIN2(bool);
+        IN0GAIN2: 5 = struct IN0GAIN2(bool);
         /// SD16 Interrupt Delay after 1.Conversion 0
-        SD16INCTL0_SD16INTDLY: 6..7 = enum SD16INCTL0_SD16INTDLY {
+        IN0INTDLY: 6..7 = enum IN0INTDLY {
             /// SD16 Interrupt Delay: Int. after 4.Conversion
-            SD16INTDLY_0 = 0b00,
+            INTDLY_0 = 0b00,
             /// SD16 Interrupt Delay: Int. after 3.Conversion
-            SD16INTDLY_1 = 0b01,
+            INTDLY_1 = 0b01,
             /// SD16 Interrupt Delay: Int. after 2.Conversion
-            SD16INTDLY_2 = 0b10,
+            INTDLY_2 = 0b10,
             /// SD16 Interrupt Delay: Int. after 1.Conversion
-            SD16INTDLY_3 = 0b11,
+            INTDLY_3 = 0b11,
         }
     }
     /// SD16 Input Control Register Channel 1
-    rw SD16INCTL1 @ 0x01: u8 = 0_0 {
+    rw INCTL1 @ 0x01: u8 = 0_0 {
         /// SD16 Input Channel select 0
-        SD16INCTL1_SD16INCH: 0..2 = enum SD16INCTL1_SD16INCH {
+        IN1INCH: 0..2 = enum IN1INCH {
             /// SD16 Input Channel select input
-            SD16INCH_0 = 0b000,
+            INCH_0 = 0b000,
             /// SD16 Input Channel select input
-            SD16INCH_1 = 0b001,
+            INCH_1 = 0b001,
             /// SD16 Input Channel select input
-            SD16INCH_2 = 0b010,
+            INCH_2 = 0b010,
             /// SD16 Input Channel select input
-            SD16INCH_3 = 0b011,
+            INCH_3 = 0b011,
             /// SD16 Input Channel select input
-            SD16INCH_4 = 0b100,
+            INCH_4 = 0b100,
             /// SD16 Input Channel select input
-            SD16INCH_5 = 0b101,
+            INCH_5 = 0b101,
             /// SD16 Input Channel select Temp
-            SD16INCH_6 = 0b110,
+            INCH_6 = 0b110,
             /// SD16 Input Channel select Offset
-            SD16INCH_7 = 0b111,
+            INCH_7 = 0b111,
         }
         /// SD16 Input Pre-Amplifier Gain Select 0
-        SD16INCTL1_SD16GAIN0: 3 = struct SD16INCTL1_SD16GAIN0(bool);
+        IN1GAIN0: 3 = struct IN1GAIN0(bool);
         /// SD16 Input Pre-Amplifier Gain Select 1
-        SD16INCTL1_SD16GAIN1: 4 = struct SD16INCTL1_SD16GAIN1(bool);
+        IN1GAIN1: 4 = struct IN1GAIN1(bool);
         /// SD16 Input Pre-Amplifier Gain Select 2
-        SD16INCTL1_SD16GAIN2: 5 = struct SD16INCTL1_SD16GAIN2(bool);
+        IN1GAIN2: 5 = struct IN1GAIN2(bool);
         /// SD16 Interrupt Delay after 1.Conversion 0
-        SD16INCTL1_SD16INTDLY: 6..7 = enum SD16INCTL1_SD16INTDLY {
+        IN1INTDLY: 6..7 = enum IN1INTDLY {
             /// SD16 Interrupt Delay: Int. after 4.Conversion
-            SD16INTDLY_0 = 0b00,
+            INTDLY_0 = 0b00,
             /// SD16 Interrupt Delay: Int. after 3.Conversion
-            SD16INTDLY_1 = 0b01,
+            INTDLY_1 = 0b01,
             /// SD16 Interrupt Delay: Int. after 2.Conversion
-            SD16INTDLY_2 = 0b10,
+            INTDLY_2 = 0b10,
             /// SD16 Interrupt Delay: Int. after 1.Conversion
-            SD16INTDLY_3 = 0b11,
+            INTDLY_3 = 0b11,
         }
     }
     /// SD16 Preload Register Channel 0
-    rw SD16PRE0 @ 0x08: u8 = 0_0 {
+    rw PRE0 @ 0x08: u8 = 0_0 {
         /// SD16 Preload Register Channel 0
-        SD16PRE0: 0..7 = struct SD16PRE0Field(u8);
+        PRE0: 0..7 = struct PRE0Field(u8);
     }
     /// SD16 Preload Register Channel 1
-    rw SD16PRE1 @ 0x09: u8 = 0_0 {
+    rw PRE1 @ 0x09: u8 = 0_0 {
         /// SD16 Preload Register Channel 1
-        SD16PRE1: 0..7 = struct SD16PRE1Field(u8);
+        PRE1: 0..7 = struct PRE1Field(u8);
     }
     /// Sigma Delta ADC 16 Control Register
-    rw SD16CTL @ 0x50: u16 = 0_0 {
+    rw CTL @ 0x50: u16 = 0_0 {
         /// SD16 Overflow Interupt Enable
-        SD16OVIE: 1 = struct SD16OVIE(bool);
+        OVIE: 1 = struct OVIE(bool);
         /// SD16 Switch internal Reference on
-        SD16REFON: 2 = struct SD16REFON(bool);
+        REFON: 2 = struct REFON(bool);
         /// SD16 Switch Vmid Buffer on
-        SD16VMIDON: 3 = struct SD16VMIDON(bool);
+        VMIDON: 3 = struct VMIDON(bool);
         /// SD16 Clock Source Select 0
-        SD16SSEL: 4..5 = enum SD16SSEL {
+        SSEL: 4..5 = enum SSEL {
             /// SD16 Clock Source Select MCLK
-            SD16SSEL_0 = 0b00,
+            SSEL_0 = 0b00,
             /// SD16 Clock Source Select SMCLK
-            SD16SSEL_1 = 0b01,
+            SSEL_1 = 0b01,
             /// SD16 Clock Source Select ACLK
-            SD16SSEL_2 = 0b10,
+            SSEL_2 = 0b10,
             /// SD16 Clock Source Select TACLK
-            SD16SSEL_3 = 0b11,
+            SSEL_3 = 0b11,
         }
         /// SD16 Clock Divider Select 0
-        SD16DIV: 6..7 = enum SD16DIV {
+        DIV: 6..7 = enum DIV {
             /// SD16 Clock Divider Select /1
-            SD16DIV_0 = 0b00,
+            DIV_0 = 0b00,
             /// SD16 Clock Divider Select /2
-            SD16DIV_1 = 0b01,
+            DIV_1 = 0b01,
             /// SD16 Clock Divider Select /4
-            SD16DIV_2 = 0b10,
+            DIV_2 = 0b10,
             /// SD16 Clock Divider Select /8
-            SD16DIV_3 = 0b11,
+            DIV_3 = 0b11,
         }
         /// SD16 Low Power Mode Enable
-        SD16LP: 8 = struct SD16LP(bool);
+        LP: 8 = struct LP(bool);
     }
     /// SD16 Channel 0 Control Register
-    rw SD16CCTL0 @ 0x52: u16 = 0_0 {
+    rw CCTL0 @ 0x52: u16 = 0_0 {
         /// SD16 Grouping of Channels: 0:Off/1:On
-        SD16CCTL0_SD16GRP: 0 = struct SD16CCTL0_SD16GRP(bool);
+        C0GRP: 0 = struct C0GRP(bool);
         /// SD16 Start Conversion
-        SD16CCTL0_SD16SC: 1 = struct SD16CCTL0_SD16SC(bool);
+        C0SC: 1 = struct C0SC(bool);
         /// SD16 Channel x Interrupt Flag
-        SD16CCTL0_SD16IFG: 2 = struct SD16CCTL0_SD16IFG(bool);
+        C0IFG: 2 = struct C0IFG(bool);
         /// SD16 Channel x Interrupt Enable
-        SD16CCTL0_SD16IE: 3 = struct SD16CCTL0_SD16IE(bool);
+        C0IE: 3 = struct C0IE(bool);
         /// SD16 Channel x Data Format: 0:Unipolar/1:Bipolar
-        SD16CCTL0_SD16DF: 4 = struct SD16CCTL0_SD16DF(bool);
+        C0DF: 4 = struct C0DF(bool);
         /// SD16 Channel x Overflow Interrupt Flag
-        SD16CCTL0_SD16OVIFG: 5 = struct SD16CCTL0_SD16OVIFG(bool);
+        C0OVIFG: 5 = struct C0OVIFG(bool);
         /// SD16 Channel x Access LSB of ADC
-        SD16CCTL0_SD16LSBACC: 6 = struct SD16CCTL0_SD16LSBACC(bool);
+        C0LSBACC: 6 = struct C0LSBACC(bool);
         /// SD16 Channel x Toggle LSB Output of ADC
-        SD16CCTL0_SD16LSBTOG: 7 = struct SD16CCTL0_SD16LSBTOG(bool);
+        C0LSBTOG: 7 = struct C0LSBTOG(bool);
         /// SD16 Channel x OverSampling Ratio 0
-        SD16CCTL0_SD16OSR0: 8 = struct SD16CCTL0_SD16OSR0(bool);
+        C0OSR0: 8 = struct C0OSR0(bool);
         /// SD16 Channel x OverSampling Ratio 1
-        SD16CCTL0_SD16OSR1: 9 = struct SD16CCTL0_SD16OSR1(bool);
+        C0OSR1: 9 = struct C0OSR1(bool);
         /// SD16 Channel x Single Conversion On/Off
-        SD16CCTL0_SD16SNGL: 10 = struct SD16CCTL0_SD16SNGL(bool);
+        C0SNGL: 10 = struct C0SNGL(bool);
     }
     /// SD16 Channel 1 Control Register
-    rw SD16CCTL1 @ 0x54: u16 = 0_0 {
+    rw CCTL1 @ 0x54: u16 = 0_0 {
         /// SD16 Grouping of Channels: 0:Off/1:On
-        SD16CCTL1_SD16GRP: 0 = struct SD16CCTL1_SD16GRP(bool);
+        C1GRP: 0 = struct C1GRP(bool);
         /// SD16 Start Conversion
-        SD16CCTL1_SD16SC: 1 = struct SD16CCTL1_SD16SC(bool);
+        C1SC: 1 = struct C1SC(bool);
         /// SD16 Channel x Interrupt Flag
-        SD16CCTL1_SD16IFG: 2 = struct SD16CCTL1_SD16IFG(bool);
+        C1IFG: 2 = struct C1IFG(bool);
         /// SD16 Channel x Interrupt Enable
-        SD16CCTL1_SD16IE: 3 = struct SD16CCTL1_SD16IE(bool);
+        C1IE: 3 = struct C1IE(bool);
         /// SD16 Channel x Data Format: 0:Unipolar/1:Bipolar
-        SD16CCTL1_SD16DF: 4 = struct SD16CCTL1_SD16DF(bool);
+        C1DF: 4 = struct C1DF(bool);
         /// SD16 Channel x Overflow Interrupt Flag
-        SD16CCTL1_SD16OVIFG: 5 = struct SD16CCTL1_SD16OVIFG(bool);
+        C1OVIFG: 5 = struct C1OVIFG(bool);
         /// SD16 Channel x Access LSB of ADC
-        SD16CCTL1_SD16LSBACC: 6 = struct SD16CCTL1_SD16LSBACC(bool);
+        C1LSBACC: 6 = struct C1LSBACC(bool);
         /// SD16 Channel x Toggle LSB Output of ADC
-        SD16CCTL1_SD16LSBTOG: 7 = struct SD16CCTL1_SD16LSBTOG(bool);
+        C1LSBTOG: 7 = struct C1LSBTOG(bool);
         /// SD16 Channel x OverSampling Ratio 0
-        SD16CCTL1_SD16OSR0: 8 = struct SD16CCTL1_SD16OSR0(bool);
+        C1OSR0: 8 = struct C1OSR0(bool);
         /// SD16 Channel x OverSampling Ratio 1
-        SD16CCTL1_SD16OSR1: 9 = struct SD16CCTL1_SD16OSR1(bool);
+        C1OSR1: 9 = struct C1OSR1(bool);
         /// SD16 Channel x Single Conversion On/Off
-        SD16CCTL1_SD16SNGL: 10 = struct SD16CCTL1_SD16SNGL(bool);
+        C1SNGL: 10 = struct C1SNGL(bool);
     }
     /// SD16 Interrupt Vector Register
-    rw SD16IV @ 0x60: u16 = 0_0 {
+    rw IV @ 0x60: u16 = 0_0 {
         /// SD16 Interrupt Vector Register
-        SD16IV: 0..15 = struct SD16IVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
     /// SD16 Channel 0 Conversion Memory
-    rw SD16MEM0 @ 0x62: u16 = 0_0 {
+    rw MEM0 @ 0x62: u16 = 0_0 {
         /// SD16 Channel 0 Conversion Memory
-        SD16MEM0: 0..15 = struct SD16MEM0Field(u16);
+        MEM0: 0..15 = struct MEM0Field(u16);
     }
     /// SD16 Channel 1 Conversion Memory
-    rw SD16MEM1 @ 0x64: u16 = 0_0 {
+    rw MEM1 @ 0x64: u16 = 0_0 {
         /// SD16 Channel 1 Conversion Memory
-        SD16MEM1: 0..15 = struct SD16MEM1Field(u16);
+        MEM1: 0..15 = struct MEM1Field(u16);
     }
 }

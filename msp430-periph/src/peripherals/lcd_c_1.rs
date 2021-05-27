@@ -4,186 +4,186 @@ utils::periph! {
     /// LCD_C
     LCD_C;
     /// LCD_C Control Register 0
-    rw LCDCCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// LCD_C LCD On
-        LCDON: 0 = struct LCDON(bool);
+        ON: 0 = struct ON(bool);
         /// LCD_C Low Power Waveform
-        LCDLP: 1 = struct LCDLP(bool);
+        LP: 1 = struct LP(bool);
         /// LCD_C LCD Segments On
-        LCDSON: 2 = struct LCDSON(bool);
+        SON: 2 = struct SON(bool);
         /// LCD_C Mux Rate Bit: 0
-        LCDMX0: 3 = struct LCDMX0(bool);
+        MX0: 3 = struct MX0(bool);
         /// LCD_C Mux Rate Bit: 1
-        LCDMX1: 4 = struct LCDMX1(bool);
+        MX1: 4 = struct MX1(bool);
         /// LCD_C Mux Rate Bit: 2
-        LCDMX2: 5 = struct LCDMX2(bool);
+        MX2: 5 = struct MX2(bool);
         /// LCD_C Clock Select
-        LCDSSEL: 7 = struct LCDSSEL(bool);
+        SSEL: 7 = struct SSEL(bool);
         /// LCD_C LCD frequency pre-scaler Bit: 0
-        LCDPRE: 8..10 = enum LCDPRE {
+        PRE: 8..10 = enum PRE {
             /// LCD_C LCD frequency pre-scaler: /1
-            LCDPRE_0 = 0b000,
+            PRE_0 = 0b000,
             /// LCD_C LCD frequency pre-scaler: /2
-            LCDPRE_1 = 0b001,
+            PRE_1 = 0b001,
             /// LCD_C LCD frequency pre-scaler: /4
-            LCDPRE_2 = 0b010,
+            PRE_2 = 0b010,
             /// LCD_C LCD frequency pre-scaler: /8
-            LCDPRE_3 = 0b011,
+            PRE_3 = 0b011,
             /// LCD_C LCD frequency pre-scaler: /16
-            LCDPRE_4 = 0b100,
+            PRE_4 = 0b100,
             /// LCD_C LCD frequency pre-scaler: /32
-            LCDPRE_5 = 0b101,
+            PRE_5 = 0b101,
         }
         /// LCD_C LCD frequency divider Bit: 0
-        LCDDIV: 11..15 = enum LCDDIV {
+        DIV: 11..15 = enum DIV {
             /// LCD_C LCD frequency divider: /1
-            LCDDIV_0 = 0b00000,
+            DIV_0 = 0b00000,
             /// LCD_C LCD frequency divider: /2
-            LCDDIV_1 = 0b00001,
+            DIV_1 = 0b00001,
             /// LCD_C LCD frequency divider: /3
-            LCDDIV_2 = 0b00010,
+            DIV_2 = 0b00010,
             /// LCD_C LCD frequency divider: /4
-            LCDDIV_3 = 0b00011,
+            DIV_3 = 0b00011,
             /// LCD_C LCD frequency divider: /5
-            LCDDIV_4 = 0b00100,
+            DIV_4 = 0b00100,
             /// LCD_C LCD frequency divider: /6
-            LCDDIV_5 = 0b00101,
+            DIV_5 = 0b00101,
             /// LCD_C LCD frequency divider: /7
-            LCDDIV_6 = 0b00110,
+            DIV_6 = 0b00110,
             /// LCD_C LCD frequency divider: /8
-            LCDDIV_7 = 0b00111,
+            DIV_7 = 0b00111,
             /// LCD_C LCD frequency divider: /9
-            LCDDIV_8 = 0b01000,
+            DIV_8 = 0b01000,
             /// LCD_C LCD frequency divider: /10
-            LCDDIV_9 = 0b01001,
+            DIV_9 = 0b01001,
             /// LCD_C LCD frequency divider: /11
-            LCDDIV_10 = 0b01010,
+            DIV_10 = 0b01010,
             /// LCD_C LCD frequency divider: /12
-            LCDDIV_11 = 0b01011,
+            DIV_11 = 0b01011,
             /// LCD_C LCD frequency divider: /13
-            LCDDIV_12 = 0b01100,
+            DIV_12 = 0b01100,
             /// LCD_C LCD frequency divider: /14
-            LCDDIV_13 = 0b01101,
+            DIV_13 = 0b01101,
             /// LCD_C LCD frequency divider: /15
-            LCDDIV_14 = 0b01110,
+            DIV_14 = 0b01110,
             /// LCD_C LCD frequency divider: /16
-            LCDDIV_15 = 0b01111,
+            DIV_15 = 0b01111,
             /// LCD_C LCD frequency divider: /17
-            LCDDIV_16 = 0b10000,
+            DIV_16 = 0b10000,
             /// LCD_C LCD frequency divider: /18
-            LCDDIV_17 = 0b10001,
+            DIV_17 = 0b10001,
             /// LCD_C LCD frequency divider: /19
-            LCDDIV_18 = 0b10010,
+            DIV_18 = 0b10010,
             /// LCD_C LCD frequency divider: /20
-            LCDDIV_19 = 0b10011,
+            DIV_19 = 0b10011,
             /// LCD_C LCD frequency divider: /21
-            LCDDIV_20 = 0b10100,
+            DIV_20 = 0b10100,
             /// LCD_C LCD frequency divider: /22
-            LCDDIV_21 = 0b10101,
+            DIV_21 = 0b10101,
             /// LCD_C LCD frequency divider: /23
-            LCDDIV_22 = 0b10110,
+            DIV_22 = 0b10110,
             /// LCD_C LCD frequency divider: /24
-            LCDDIV_23 = 0b10111,
+            DIV_23 = 0b10111,
             /// LCD_C LCD frequency divider: /25
-            LCDDIV_24 = 0b11000,
+            DIV_24 = 0b11000,
             /// LCD_C LCD frequency divider: /26
-            LCDDIV_25 = 0b11001,
+            DIV_25 = 0b11001,
             /// LCD_C LCD frequency divider: /27
-            LCDDIV_26 = 0b11010,
+            DIV_26 = 0b11010,
             /// LCD_C LCD frequency divider: /28
-            LCDDIV_27 = 0b11011,
+            DIV_27 = 0b11011,
             /// LCD_C LCD frequency divider: /29
-            LCDDIV_28 = 0b11100,
+            DIV_28 = 0b11100,
             /// LCD_C LCD frequency divider: /30
-            LCDDIV_29 = 0b11101,
+            DIV_29 = 0b11101,
             /// LCD_C LCD frequency divider: /31
-            LCDDIV_30 = 0b11110,
+            DIV_30 = 0b11110,
             /// LCD_C LCD frequency divider: /32
-            LCDDIV_31 = 0b11111,
+            DIV_31 = 0b11111,
         }
     }
     /// LCD_C Control Register 1
-    rw LCDCCTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// LCD_C LCD frame interrupt flag
-        LCDFRMIFG: 0 = struct LCDFRMIFG(bool);
+        FRMIFG: 0 = struct FRMIFG(bool);
         /// LCD_C LCD blinking off interrupt flag
-        LCDBLKOFFIFG: 1 = struct LCDBLKOFFIFG(bool);
+        BLKOFFIFG: 1 = struct BLKOFFIFG(bool);
         /// LCD_C LCD blinking on interrupt flag
-        LCDBLKONIFG: 2 = struct LCDBLKONIFG(bool);
+        BLKONIFG: 2 = struct BLKONIFG(bool);
         /// LCD_C No cpacitance connected interrupt flag
-        LCDNOCAPIFG: 3 = struct LCDNOCAPIFG(bool);
+        NOCAPIFG: 3 = struct NOCAPIFG(bool);
         /// LCD_C LCD frame interrupt enable
-        LCDFRMIE: 8 = struct LCDFRMIE(bool);
+        FRMIE: 8 = struct FRMIE(bool);
         /// LCD_C LCD blinking off interrupt flag
-        LCDBLKOFFIE: 9 = struct LCDBLKOFFIE(bool);
+        BLKOFFIE: 9 = struct BLKOFFIE(bool);
         /// LCD_C LCD blinking on interrupt flag
-        LCDBLKONIE: 10 = struct LCDBLKONIE(bool);
+        BLKONIE: 10 = struct BLKONIE(bool);
         /// LCD_C No cpacitance connected interrupt enable
-        LCDNOCAPIE: 11 = struct LCDNOCAPIE(bool);
+        NOCAPIE: 11 = struct NOCAPIE(bool);
     }
     /// LCD_C blinking control register
-    rw LCDCBLKCTL @ 0x04: u16 = 0_0 {
+    rw BLKCTL @ 0x04: u16 = 0_0 {
         /// LCD_C Blinking mode Bit: 0
-        LCDBLKMOD: 0..1 = enum LCDBLKMOD {
+        BLKMOD: 0..1 = enum BLKMOD {
             /// LCD_C Blinking mode: Off
-            LCDBLKMOD_0 = 0b00,
+            BLKMOD_0 = 0b00,
             /// LCD_C Blinking mode: Individual
-            LCDBLKMOD_1 = 0b01,
+            BLKMOD_1 = 0b01,
             /// LCD_C Blinking mode: All
-            LCDBLKMOD_2 = 0b10,
+            BLKMOD_2 = 0b10,
             /// LCD_C Blinking mode: Switching
-            LCDBLKMOD_3 = 0b11,
+            BLKMOD_3 = 0b11,
         }
         /// LCD_C Clock pre-scaler for blinking frequency Bit: 0
-        LCDBLKPRE: 2..4 = enum LCDBLKPRE {
+        BLKPRE: 2..4 = enum BLKPRE {
             /// LCD_C Clock pre-scaler for blinking frequency: 0
-            LCDBLKPRE_0 = 0b000,
+            BLKPRE_0 = 0b000,
             /// LCD_C Clock pre-scaler for blinking frequency: 1
-            LCDBLKPRE_1 = 0b001,
+            BLKPRE_1 = 0b001,
             /// LCD_C Clock pre-scaler for blinking frequency: 2
-            LCDBLKPRE_2 = 0b010,
+            BLKPRE_2 = 0b010,
             /// LCD_C Clock pre-scaler for blinking frequency: 3
-            LCDBLKPRE_3 = 0b011,
+            BLKPRE_3 = 0b011,
             /// LCD_C Clock pre-scaler for blinking frequency: 4
-            LCDBLKPRE_4 = 0b100,
+            BLKPRE_4 = 0b100,
             /// LCD_C Clock pre-scaler for blinking frequency: 5
-            LCDBLKPRE_5 = 0b101,
+            BLKPRE_5 = 0b101,
             /// LCD_C Clock pre-scaler for blinking frequency: 6
-            LCDBLKPRE_6 = 0b110,
+            BLKPRE_6 = 0b110,
             /// LCD_C Clock pre-scaler for blinking frequency: 7
-            LCDBLKPRE_7 = 0b111,
+            BLKPRE_7 = 0b111,
         }
         /// LCD_C Clock divider for blinking frequency Bit: 0
-        LCDBLKDIV: 5..7 = enum LCDBLKDIV {
+        BLKDIV: 5..7 = enum BLKDIV {
             /// LCD_C Clock divider for blinking frequency: 0
-            LCDBLKDIV_0 = 0b000,
+            BLKDIV_0 = 0b000,
             /// LCD_C Clock divider for blinking frequency: 1
-            LCDBLKDIV_1 = 0b001,
+            BLKDIV_1 = 0b001,
             /// LCD_C Clock divider for blinking frequency: 2
-            LCDBLKDIV_2 = 0b010,
+            BLKDIV_2 = 0b010,
             /// LCD_C Clock divider for blinking frequency: 3
-            LCDBLKDIV_3 = 0b011,
+            BLKDIV_3 = 0b011,
             /// LCD_C Clock divider for blinking frequency: 4
-            LCDBLKDIV_4 = 0b100,
+            BLKDIV_4 = 0b100,
             /// LCD_C Clock divider for blinking frequency: 5
-            LCDBLKDIV_5 = 0b101,
+            BLKDIV_5 = 0b101,
             /// LCD_C Clock divider for blinking frequency: 6
-            LCDBLKDIV_6 = 0b110,
+            BLKDIV_6 = 0b110,
             /// LCD_C Clock divider for blinking frequency: 7
-            LCDBLKDIV_7 = 0b111,
+            BLKDIV_7 = 0b111,
         }
     }
     /// LCD_C memory control register
-    rw LCDCMEMCTL @ 0x06: u16 = 0_0 {
+    rw MEMCTL @ 0x06: u16 = 0_0 {
         /// LCD_C LCD memory registers for display
-        LCDDISP: 0 = struct LCDDISP(bool);
+        DISP: 0 = struct DISP(bool);
         /// LCD_C Clear LCD memory
-        LCDCLRM: 1 = struct LCDCLRM(bool);
+        CLRM: 1 = struct CLRM(bool);
         /// LCD_C Clear LCD blinking memory
-        LCDCLRBM: 2 = struct LCDCLRBM(bool);
+        CLRBM: 2 = struct CLRBM(bool);
     }
     /// LCD_C Voltage Control Register
-    rw LCDCVCTL @ 0x08: u16 = 0_0 {
+    rw VCTL @ 0x08: u16 = 0_0 {
         /// Selects 1/2 bias.
         LCD2B: 0 = struct LCD2B(bool);
         /// Selects reference voltage for regulated charge pump: 0
@@ -198,15 +198,15 @@ utils::periph! {
             VLCDREF_3 = 0b11,
         }
         /// LCD Voltage Charge Pump Enable.
-        LCDCPEN: 3 = struct LCDCPEN(bool);
+        CPEN: 3 = struct CPEN(bool);
         /// Select external source for VLCD.
         VLCDEXT: 4 = struct VLCDEXT(bool);
         /// V2 - V4 voltage select.
-        LCDEXTBIAS: 5 = struct LCDEXTBIAS(bool);
+        EXTBIAS: 5 = struct EXTBIAS(bool);
         /// Selects external connections for LCD mid voltages.
         R03EXT: 6 = struct R03EXT(bool);
         /// Selects external connection for lowest LCD voltage.
-        LCDREXT: 7 = struct LCDREXT(bool);
+        REXT: 7 = struct REXT(bool);
         /// VLCD select: 0
         VLCD: 9..14 = enum VLCD {
             /// Charge pump disabled
@@ -244,434 +244,434 @@ utils::periph! {
         }
     }
     /// LCD_C Port Control Register 0
-    rw LCDCPCTL0 @ 0x0a: u16 = 0_0 {
+    rw PCTL0 @ 0x0a: u16 = 0_0 {
         /// LCD Segment  0 enable.
-        LCDS0: 0 = struct LCDS0(bool);
+        S0: 0 = struct S0(bool);
         /// LCD Segment  1 enable.
-        LCDS1: 1 = struct LCDS1(bool);
+        S1: 1 = struct S1(bool);
         /// LCD Segment  2 enable.
-        LCDS2: 2 = struct LCDS2(bool);
+        S2: 2 = struct S2(bool);
         /// LCD Segment  3 enable.
-        LCDS3: 3 = struct LCDS3(bool);
+        S3: 3 = struct S3(bool);
         /// LCD Segment  4 enable.
-        LCDS4: 4 = struct LCDS4(bool);
+        S4: 4 = struct S4(bool);
         /// LCD Segment  5 enable.
-        LCDS5: 5 = struct LCDS5(bool);
+        S5: 5 = struct S5(bool);
         /// LCD Segment  6 enable.
-        LCDS6: 6 = struct LCDS6(bool);
+        S6: 6 = struct S6(bool);
         /// LCD Segment  7 enable.
-        LCDS7: 7 = struct LCDS7(bool);
+        S7: 7 = struct S7(bool);
         /// LCD Segment  8 enable.
-        LCDS8: 8 = struct LCDS8(bool);
+        S8: 8 = struct S8(bool);
         /// LCD Segment  9 enable.
-        LCDS9: 9 = struct LCDS9(bool);
+        S9: 9 = struct S9(bool);
         /// LCD Segment 10 enable.
-        LCDS10: 10 = struct LCDS10(bool);
+        S10: 10 = struct S10(bool);
         /// LCD Segment 11 enable.
-        LCDS11: 11 = struct LCDS11(bool);
+        S11: 11 = struct S11(bool);
         /// LCD Segment 12 enable.
-        LCDS12: 12 = struct LCDS12(bool);
+        S12: 12 = struct S12(bool);
         /// LCD Segment 13 enable.
-        LCDS13: 13 = struct LCDS13(bool);
+        S13: 13 = struct S13(bool);
         /// LCD Segment 14 enable.
-        LCDS14: 14 = struct LCDS14(bool);
+        S14: 14 = struct S14(bool);
         /// LCD Segment 15 enable.
-        LCDS15: 15 = struct LCDS15(bool);
+        S15: 15 = struct S15(bool);
     }
     /// LCD_C Port Control Register 1
-    rw LCDCPCTL1 @ 0x0c: u16 = 0_0 {
+    rw PCTL1 @ 0x0c: u16 = 0_0 {
         /// LCD Segment 16 enable.
-        LCDS16: 0 = struct LCDS16(bool);
+        S16: 0 = struct S16(bool);
         /// LCD Segment 17 enable.
-        LCDS17: 1 = struct LCDS17(bool);
+        S17: 1 = struct S17(bool);
         /// LCD Segment 18 enable.
-        LCDS18: 2 = struct LCDS18(bool);
+        S18: 2 = struct S18(bool);
         /// LCD Segment 19 enable.
-        LCDS19: 3 = struct LCDS19(bool);
+        S19: 3 = struct S19(bool);
         /// LCD Segment 20 enable.
-        LCDS20: 4 = struct LCDS20(bool);
+        S20: 4 = struct S20(bool);
         /// LCD Segment 21 enable.
-        LCDS21: 5 = struct LCDS21(bool);
+        S21: 5 = struct S21(bool);
         /// LCD Segment 22 enable.
-        LCDS22: 6 = struct LCDS22(bool);
+        S22: 6 = struct S22(bool);
         /// LCD Segment 23 enable.
-        LCDS23: 7 = struct LCDS23(bool);
+        S23: 7 = struct S23(bool);
         /// LCD Segment 24 enable.
-        LCDS24: 8 = struct LCDS24(bool);
+        S24: 8 = struct S24(bool);
         /// LCD Segment 25 enable.
-        LCDS25: 9 = struct LCDS25(bool);
+        S25: 9 = struct S25(bool);
         /// LCD Segment 26 enable.
-        LCDS26: 10 = struct LCDS26(bool);
+        S26: 10 = struct S26(bool);
         /// LCD Segment 27 enable.
-        LCDS27: 11 = struct LCDS27(bool);
+        S27: 11 = struct S27(bool);
         /// LCD Segment 28 enable.
-        LCDS28: 12 = struct LCDS28(bool);
+        S28: 12 = struct S28(bool);
         /// LCD Segment 29 enable.
-        LCDS29: 13 = struct LCDS29(bool);
+        S29: 13 = struct S29(bool);
         /// LCD Segment 30 enable.
-        LCDS30: 14 = struct LCDS30(bool);
+        S30: 14 = struct S30(bool);
         /// LCD Segment 31 enable.
-        LCDS31: 15 = struct LCDS31(bool);
+        S31: 15 = struct S31(bool);
     }
     /// LCD_C Port Control Register 2
-    rw LCDCPCTL2 @ 0x0e: u16 = 0_0 {
+    rw PCTL2 @ 0x0e: u16 = 0_0 {
         /// LCD Segment 32 enable.
-        LCDS32: 0 = struct LCDS32(bool);
+        S32: 0 = struct S32(bool);
         /// LCD Segment 33 enable.
-        LCDS33: 1 = struct LCDS33(bool);
+        S33: 1 = struct S33(bool);
         /// LCD Segment 34 enable.
-        LCDS34: 2 = struct LCDS34(bool);
+        S34: 2 = struct S34(bool);
         /// LCD Segment 35 enable.
-        LCDS35: 3 = struct LCDS35(bool);
+        S35: 3 = struct S35(bool);
         /// LCD Segment 36 enable.
-        LCDS36: 4 = struct LCDS36(bool);
+        S36: 4 = struct S36(bool);
         /// LCD Segment 37 enable.
-        LCDS37: 5 = struct LCDS37(bool);
+        S37: 5 = struct S37(bool);
         /// LCD Segment 38 enable.
-        LCDS38: 6 = struct LCDS38(bool);
+        S38: 6 = struct S38(bool);
         /// LCD Segment 39 enable.
-        LCDS39: 7 = struct LCDS39(bool);
+        S39: 7 = struct S39(bool);
         /// LCD Segment 40 enable.
-        LCDS40: 8 = struct LCDS40(bool);
+        S40: 8 = struct S40(bool);
         /// LCD Segment 41 enable.
-        LCDS41: 9 = struct LCDS41(bool);
+        S41: 9 = struct S41(bool);
         /// LCD Segment 42 enable.
-        LCDS42: 10 = struct LCDS42(bool);
+        S42: 10 = struct S42(bool);
         /// LCD Segment 43 enable.
-        LCDS43: 11 = struct LCDS43(bool);
+        S43: 11 = struct S43(bool);
         /// LCD Segment 44 enable.
-        LCDS44: 12 = struct LCDS44(bool);
+        S44: 12 = struct S44(bool);
         /// LCD Segment 45 enable.
-        LCDS45: 13 = struct LCDS45(bool);
+        S45: 13 = struct S45(bool);
         /// LCD Segment 46 enable.
-        LCDS46: 14 = struct LCDS46(bool);
+        S46: 14 = struct S46(bool);
         /// LCD Segment 47 enable.
-        LCDS47: 15 = struct LCDS47(bool);
+        S47: 15 = struct S47(bool);
     }
     /// LCD_C Charge Pump Control Register 3
-    rw LCDCCPCTL @ 0x12: u16 = 0_0 {
+    rw CPCTL @ 0x12: u16 = 0_0 {
         /// LCD charge pump disable
-        LCDCPDIS0: 0 = struct LCDCPDIS0(bool);
+        CPDIS0: 0 = struct CPDIS0(bool);
         /// LCD charge pump disable
-        LCDCPDIS1: 1 = struct LCDCPDIS1(bool);
+        CPDIS1: 1 = struct CPDIS1(bool);
         /// LCD charge pump disable
-        LCDCPDIS2: 2 = struct LCDCPDIS2(bool);
+        CPDIS2: 2 = struct CPDIS2(bool);
         /// LCD charge pump disable
-        LCDCPDIS3: 3 = struct LCDCPDIS3(bool);
+        CPDIS3: 3 = struct CPDIS3(bool);
         /// LCD charge pump disable
-        LCDCPDIS4: 4 = struct LCDCPDIS4(bool);
+        CPDIS4: 4 = struct CPDIS4(bool);
         /// LCD charge pump disable
-        LCDCPDIS5: 5 = struct LCDCPDIS5(bool);
+        CPDIS5: 5 = struct CPDIS5(bool);
         /// LCD charge pump disable
-        LCDCPDIS6: 6 = struct LCDCPDIS6(bool);
+        CPDIS6: 6 = struct CPDIS6(bool);
         /// LCD charge pump disable
-        LCDCPDIS7: 7 = struct LCDCPDIS7(bool);
+        CPDIS7: 7 = struct CPDIS7(bool);
         /// LCD charge pump clock synchronization
-        LCDCPCLKSYNC: 15 = struct LCDCPCLKSYNC(bool);
+        CPCLKSYNC: 15 = struct CPCLKSYNC(bool);
     }
     /// LCD_C Interrupt Vector Register
-    rw LCDCIV @ 0x1e: u16 = 0_0 {
+    rw IV @ 0x1e: u16 = 0_0 {
         /// LCD_C Interrupt Vector Register
-        LCDCIV: 0..15 = struct LCDCIVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
     /// LCD Memory 1
-    rw LCDM1 @ 0x20: u8 = 0_0 {
+    rw M1 @ 0x20: u8 = 0_0 {
         /// LCD Memory 1
-        LCDM1: 0..7 = struct LCDM1Field(u8);
+        M1: 0..7 = struct M1Field(u8);
     }
     /// LCD Memory 2
-    rw LCDM2 @ 0x21: u8 = 0_0 {
+    rw M2 @ 0x21: u8 = 0_0 {
         /// LCD Memory 2
-        LCDM2: 0..7 = struct LCDM2Field(u8);
+        M2: 0..7 = struct M2Field(u8);
     }
     /// LCD Memory 3
-    rw LCDM3 @ 0x22: u8 = 0_0 {
+    rw M3 @ 0x22: u8 = 0_0 {
         /// LCD Memory 3
-        LCDM3: 0..7 = struct LCDM3Field(u8);
+        M3: 0..7 = struct M3Field(u8);
     }
     /// LCD Memory 4
-    rw LCDM4 @ 0x23: u8 = 0_0 {
+    rw M4 @ 0x23: u8 = 0_0 {
         /// LCD Memory 4
-        LCDM4: 0..7 = struct LCDM4Field(u8);
+        M4: 0..7 = struct M4Field(u8);
     }
     /// LCD Memory 5
-    rw LCDM5 @ 0x24: u8 = 0_0 {
+    rw M5 @ 0x24: u8 = 0_0 {
         /// LCD Memory 5
-        LCDM5: 0..7 = struct LCDM5Field(u8);
+        M5: 0..7 = struct M5Field(u8);
     }
     /// LCD Memory 6
-    rw LCDM6 @ 0x25: u8 = 0_0 {
+    rw M6 @ 0x25: u8 = 0_0 {
         /// LCD Memory 6
-        LCDM6: 0..7 = struct LCDM6Field(u8);
+        M6: 0..7 = struct M6Field(u8);
     }
     /// LCD Memory 7
-    rw LCDM7 @ 0x26: u8 = 0_0 {
+    rw M7 @ 0x26: u8 = 0_0 {
         /// LCD Memory 7
-        LCDM7: 0..7 = struct LCDM7Field(u8);
+        M7: 0..7 = struct M7Field(u8);
     }
     /// LCD Memory 8
-    rw LCDM8 @ 0x27: u8 = 0_0 {
+    rw M8 @ 0x27: u8 = 0_0 {
         /// LCD Memory 8
-        LCDM8: 0..7 = struct LCDM8Field(u8);
+        M8: 0..7 = struct M8Field(u8);
     }
     /// LCD Memory 9
-    rw LCDM9 @ 0x28: u8 = 0_0 {
+    rw M9 @ 0x28: u8 = 0_0 {
         /// LCD Memory 9
-        LCDM9: 0..7 = struct LCDM9Field(u8);
+        M9: 0..7 = struct M9Field(u8);
     }
     /// LCD Memory 10
-    rw LCDM10 @ 0x29: u8 = 0_0 {
+    rw M10 @ 0x29: u8 = 0_0 {
         /// LCD Memory 10
-        LCDM10: 0..7 = struct LCDM10Field(u8);
+        M10: 0..7 = struct M10Field(u8);
     }
     /// LCD Memory 11
-    rw LCDM11 @ 0x2a: u8 = 0_0 {
+    rw M11 @ 0x2a: u8 = 0_0 {
         /// LCD Memory 11
-        LCDM11: 0..7 = struct LCDM11Field(u8);
+        M11: 0..7 = struct M11Field(u8);
     }
     /// LCD Memory 12
-    rw LCDM12 @ 0x2b: u8 = 0_0 {
+    rw M12 @ 0x2b: u8 = 0_0 {
         /// LCD Memory 12
-        LCDM12: 0..7 = struct LCDM12Field(u8);
+        M12: 0..7 = struct M12Field(u8);
     }
     /// LCD Memory 13
-    rw LCDM13 @ 0x2c: u8 = 0_0 {
+    rw M13 @ 0x2c: u8 = 0_0 {
         /// LCD Memory 13
-        LCDM13: 0..7 = struct LCDM13Field(u8);
+        M13: 0..7 = struct M13Field(u8);
     }
     /// LCD Memory 14
-    rw LCDM14 @ 0x2d: u8 = 0_0 {
+    rw M14 @ 0x2d: u8 = 0_0 {
         /// LCD Memory 14
-        LCDM14: 0..7 = struct LCDM14Field(u8);
+        M14: 0..7 = struct M14Field(u8);
     }
     /// LCD Memory 15
-    rw LCDM15 @ 0x2e: u8 = 0_0 {
+    rw M15 @ 0x2e: u8 = 0_0 {
         /// LCD Memory 15
-        LCDM15: 0..7 = struct LCDM15Field(u8);
+        M15: 0..7 = struct M15Field(u8);
     }
     /// LCD Memory 16
-    rw LCDM16 @ 0x2f: u8 = 0_0 {
+    rw M16 @ 0x2f: u8 = 0_0 {
         /// LCD Memory 16
-        LCDM16: 0..7 = struct LCDM16Field(u8);
+        M16: 0..7 = struct M16Field(u8);
     }
     /// LCD Memory 17
-    rw LCDM17 @ 0x30: u8 = 0_0 {
+    rw M17 @ 0x30: u8 = 0_0 {
         /// LCD Memory 17
-        LCDM17: 0..7 = struct LCDM17Field(u8);
+        M17: 0..7 = struct M17Field(u8);
     }
     /// LCD Memory 18
-    rw LCDM18 @ 0x31: u8 = 0_0 {
+    rw M18 @ 0x31: u8 = 0_0 {
         /// LCD Memory 18
-        LCDM18: 0..7 = struct LCDM18Field(u8);
+        M18: 0..7 = struct M18Field(u8);
     }
     /// LCD Memory 19
-    rw LCDM19 @ 0x32: u8 = 0_0 {
+    rw M19 @ 0x32: u8 = 0_0 {
         /// LCD Memory 19
-        LCDM19: 0..7 = struct LCDM19Field(u8);
+        M19: 0..7 = struct M19Field(u8);
     }
     /// LCD Memory 20
-    rw LCDM20 @ 0x33: u8 = 0_0 {
+    rw M20 @ 0x33: u8 = 0_0 {
         /// LCD Memory 20
-        LCDM20: 0..7 = struct LCDM20Field(u8);
+        M20: 0..7 = struct M20Field(u8);
     }
     /// LCD Memory 21
-    rw LCDM21 @ 0x34: u8 = 0_0 {
+    rw M21 @ 0x34: u8 = 0_0 {
         /// LCD Memory 21
-        LCDM21: 0..7 = struct LCDM21Field(u8);
+        M21: 0..7 = struct M21Field(u8);
     }
     /// LCD Memory 22
-    rw LCDM22 @ 0x35: u8 = 0_0 {
+    rw M22 @ 0x35: u8 = 0_0 {
         /// LCD Memory 22
-        LCDM22: 0..7 = struct LCDM22Field(u8);
+        M22: 0..7 = struct M22Field(u8);
     }
     /// LCD Memory 23
-    rw LCDM23 @ 0x36: u8 = 0_0 {
+    rw M23 @ 0x36: u8 = 0_0 {
         /// LCD Memory 23
-        LCDM23: 0..7 = struct LCDM23Field(u8);
+        M23: 0..7 = struct M23Field(u8);
     }
     /// LCD Memory 24
-    rw LCDM24 @ 0x37: u8 = 0_0 {
+    rw M24 @ 0x37: u8 = 0_0 {
         /// LCD Memory 24
-        LCDM24: 0..7 = struct LCDM24Field(u8);
+        M24: 0..7 = struct M24Field(u8);
     }
     /// LCD Memory 25
-    rw LCDM25 @ 0x38: u8 = 0_0 {
+    rw M25 @ 0x38: u8 = 0_0 {
         /// LCD Memory 25
-        LCDM25: 0..7 = struct LCDM25Field(u8);
+        M25: 0..7 = struct M25Field(u8);
     }
     /// LCD Memory 26
-    rw LCDM26 @ 0x39: u8 = 0_0 {
+    rw M26 @ 0x39: u8 = 0_0 {
         /// LCD Memory 26
-        LCDM26: 0..7 = struct LCDM26Field(u8);
+        M26: 0..7 = struct M26Field(u8);
     }
     /// LCD Memory 27
-    rw LCDM27 @ 0x3a: u8 = 0_0 {
+    rw M27 @ 0x3a: u8 = 0_0 {
         /// LCD Memory 27
-        LCDM27: 0..7 = struct LCDM27Field(u8);
+        M27: 0..7 = struct M27Field(u8);
     }
     /// LCD Memory 28
-    rw LCDM28 @ 0x3b: u8 = 0_0 {
+    rw M28 @ 0x3b: u8 = 0_0 {
         /// LCD Memory 28
-        LCDM28: 0..7 = struct LCDM28Field(u8);
+        M28: 0..7 = struct M28Field(u8);
     }
     /// LCD Memory 29
-    rw LCDM29 @ 0x3c: u8 = 0_0 {
+    rw M29 @ 0x3c: u8 = 0_0 {
         /// LCD Memory 29
-        LCDM29: 0..7 = struct LCDM29Field(u8);
+        M29: 0..7 = struct M29Field(u8);
     }
     /// LCD Memory 30
-    rw LCDM30 @ 0x3d: u8 = 0_0 {
+    rw M30 @ 0x3d: u8 = 0_0 {
         /// LCD Memory 30
-        LCDM30: 0..7 = struct LCDM30Field(u8);
+        M30: 0..7 = struct M30Field(u8);
     }
     /// LCD Memory 31
-    rw LCDM31 @ 0x3e: u8 = 0_0 {
+    rw M31 @ 0x3e: u8 = 0_0 {
         /// LCD Memory 31
-        LCDM31: 0..7 = struct LCDM31Field(u8);
+        M31: 0..7 = struct M31Field(u8);
     }
     /// LCD Memory 32
-    rw LCDM32 @ 0x3f: u8 = 0_0 {
+    rw M32 @ 0x3f: u8 = 0_0 {
         /// LCD Memory 32
-        LCDM32: 0..7 = struct LCDM32Field(u8);
+        M32: 0..7 = struct M32Field(u8);
     }
     /// LCD Memory 33
-    rw LCDM33 @ 0x40: u8 = 0_0 {
+    rw M33 @ 0x40: u8 = 0_0 {
         /// LCD Memory 33
-        LCDM33: 0..7 = struct LCDM33Field(u8);
+        M33: 0..7 = struct M33Field(u8);
     }
     /// LCD Memory 34
-    rw LCDM34 @ 0x41: u8 = 0_0 {
+    rw M34 @ 0x41: u8 = 0_0 {
         /// LCD Memory 34
-        LCDM34: 0..7 = struct LCDM34Field(u8);
+        M34: 0..7 = struct M34Field(u8);
     }
     /// LCD Memory 35
-    rw LCDM35 @ 0x42: u8 = 0_0 {
+    rw M35 @ 0x42: u8 = 0_0 {
         /// LCD Memory 35
-        LCDM35: 0..7 = struct LCDM35Field(u8);
+        M35: 0..7 = struct M35Field(u8);
     }
     /// LCD Memory 36
-    rw LCDM36 @ 0x43: u8 = 0_0 {
+    rw M36 @ 0x43: u8 = 0_0 {
         /// LCD Memory 36
-        LCDM36: 0..7 = struct LCDM36Field(u8);
+        M36: 0..7 = struct M36Field(u8);
     }
     /// LCD Memory 37
-    rw LCDM37 @ 0x44: u8 = 0_0 {
+    rw M37 @ 0x44: u8 = 0_0 {
         /// LCD Memory 37
-        LCDM37: 0..7 = struct LCDM37Field(u8);
+        M37: 0..7 = struct M37Field(u8);
     }
     /// LCD Memory 38
-    rw LCDM38 @ 0x45: u8 = 0_0 {
+    rw M38 @ 0x45: u8 = 0_0 {
         /// LCD Memory 38
-        LCDM38: 0..7 = struct LCDM38Field(u8);
+        M38: 0..7 = struct M38Field(u8);
     }
     /// LCD Memory 39
-    rw LCDM39 @ 0x46: u8 = 0_0 {
+    rw M39 @ 0x46: u8 = 0_0 {
         /// LCD Memory 39
-        LCDM39: 0..7 = struct LCDM39Field(u8);
+        M39: 0..7 = struct M39Field(u8);
     }
     /// LCD Memory 40
-    rw LCDM40 @ 0x47: u8 = 0_0 {
+    rw M40 @ 0x47: u8 = 0_0 {
         /// LCD Memory 40
-        LCDM40: 0..7 = struct LCDM40Field(u8);
+        M40: 0..7 = struct M40Field(u8);
     }
     /// LCD Blinking Memory 1
-    rw LCDBM1 @ 0x40: u8 = 0_0 {
+    rw BM1 @ 0x40: u8 = 0_0 {
         /// LCD Blinking Memory 1
-        LCDBM1: 0..7 = struct LCDBM1Field(u8);
+        BM1: 0..7 = struct BM1Field(u8);
     }
     /// LCD Blinking Memory 2
-    rw LCDBM2 @ 0x41: u8 = 0_0 {
+    rw BM2 @ 0x41: u8 = 0_0 {
         /// LCD Blinking Memory 2
-        LCDBM2: 0..7 = struct LCDBM2Field(u8);
+        BM2: 0..7 = struct BM2Field(u8);
     }
     /// LCD Blinking Memory 3
-    rw LCDBM3 @ 0x42: u8 = 0_0 {
+    rw BM3 @ 0x42: u8 = 0_0 {
         /// LCD Blinking Memory 3
-        LCDBM3: 0..7 = struct LCDBM3Field(u8);
+        BM3: 0..7 = struct BM3Field(u8);
     }
     /// LCD Blinking Memory 4
-    rw LCDBM4 @ 0x43: u8 = 0_0 {
+    rw BM4 @ 0x43: u8 = 0_0 {
         /// LCD Blinking Memory 4
-        LCDBM4: 0..7 = struct LCDBM4Field(u8);
+        BM4: 0..7 = struct BM4Field(u8);
     }
     /// LCD Blinking Memory 5
-    rw LCDBM5 @ 0x44: u8 = 0_0 {
+    rw BM5 @ 0x44: u8 = 0_0 {
         /// LCD Blinking Memory 5
-        LCDBM5: 0..7 = struct LCDBM5Field(u8);
+        BM5: 0..7 = struct BM5Field(u8);
     }
     /// LCD Blinking Memory 6
-    rw LCDBM6 @ 0x45: u8 = 0_0 {
+    rw BM6 @ 0x45: u8 = 0_0 {
         /// LCD Blinking Memory 6
-        LCDBM6: 0..7 = struct LCDBM6Field(u8);
+        BM6: 0..7 = struct BM6Field(u8);
     }
     /// LCD Blinking Memory 7
-    rw LCDBM7 @ 0x46: u8 = 0_0 {
+    rw BM7 @ 0x46: u8 = 0_0 {
         /// LCD Blinking Memory 7
-        LCDBM7: 0..7 = struct LCDBM7Field(u8);
+        BM7: 0..7 = struct BM7Field(u8);
     }
     /// LCD Blinking Memory 8
-    rw LCDBM8 @ 0x47: u8 = 0_0 {
+    rw BM8 @ 0x47: u8 = 0_0 {
         /// LCD Blinking Memory 8
-        LCDBM8: 0..7 = struct LCDBM8Field(u8);
+        BM8: 0..7 = struct BM8Field(u8);
     }
     /// LCD Blinking Memory 9
-    rw LCDBM9 @ 0x48: u8 = 0_0 {
+    rw BM9 @ 0x48: u8 = 0_0 {
         /// LCD Blinking Memory 9
-        LCDBM9: 0..7 = struct LCDBM9Field(u8);
+        BM9: 0..7 = struct BM9Field(u8);
     }
     /// LCD Blinking Memory 10
-    rw LCDBM10 @ 0x49: u8 = 0_0 {
+    rw BM10 @ 0x49: u8 = 0_0 {
         /// LCD Blinking Memory 10
-        LCDBM10: 0..7 = struct LCDBM10Field(u8);
+        BM10: 0..7 = struct BM10Field(u8);
     }
     /// LCD Blinking Memory 11
-    rw LCDBM11 @ 0x4a: u8 = 0_0 {
+    rw BM11 @ 0x4a: u8 = 0_0 {
         /// LCD Blinking Memory 11
-        LCDBM11: 0..7 = struct LCDBM11Field(u8);
+        BM11: 0..7 = struct BM11Field(u8);
     }
     /// LCD Blinking Memory 12
-    rw LCDBM12 @ 0x4b: u8 = 0_0 {
+    rw BM12 @ 0x4b: u8 = 0_0 {
         /// LCD Blinking Memory 12
-        LCDBM12: 0..7 = struct LCDBM12Field(u8);
+        BM12: 0..7 = struct BM12Field(u8);
     }
     /// LCD Blinking Memory 13
-    rw LCDBM13 @ 0x4c: u8 = 0_0 {
+    rw BM13 @ 0x4c: u8 = 0_0 {
         /// LCD Blinking Memory 13
-        LCDBM13: 0..7 = struct LCDBM13Field(u8);
+        BM13: 0..7 = struct BM13Field(u8);
     }
     /// LCD Blinking Memory 14
-    rw LCDBM14 @ 0x4d: u8 = 0_0 {
+    rw BM14 @ 0x4d: u8 = 0_0 {
         /// LCD Blinking Memory 14
-        LCDBM14: 0..7 = struct LCDBM14Field(u8);
+        BM14: 0..7 = struct BM14Field(u8);
     }
     /// LCD Blinking Memory 15
-    rw LCDBM15 @ 0x4e: u8 = 0_0 {
+    rw BM15 @ 0x4e: u8 = 0_0 {
         /// LCD Blinking Memory 15
-        LCDBM15: 0..7 = struct LCDBM15Field(u8);
+        BM15: 0..7 = struct BM15Field(u8);
     }
     /// LCD Blinking Memory 16
-    rw LCDBM16 @ 0x4f: u8 = 0_0 {
+    rw BM16 @ 0x4f: u8 = 0_0 {
         /// LCD Blinking Memory 16
-        LCDBM16: 0..7 = struct LCDBM16Field(u8);
+        BM16: 0..7 = struct BM16Field(u8);
     }
     /// LCD Blinking Memory 17
-    rw LCDBM17 @ 0x50: u8 = 0_0 {
+    rw BM17 @ 0x50: u8 = 0_0 {
         /// LCD Blinking Memory 17
-        LCDBM17: 0..7 = struct LCDBM17Field(u8);
+        BM17: 0..7 = struct BM17Field(u8);
     }
     /// LCD Blinking Memory 18
-    rw LCDBM18 @ 0x51: u8 = 0_0 {
+    rw BM18 @ 0x51: u8 = 0_0 {
         /// LCD Blinking Memory 18
-        LCDBM18: 0..7 = struct LCDBM18Field(u8);
+        BM18: 0..7 = struct BM18Field(u8);
     }
     /// LCD Blinking Memory 19
-    rw LCDBM19 @ 0x52: u8 = 0_0 {
+    rw BM19 @ 0x52: u8 = 0_0 {
         /// LCD Blinking Memory 19
-        LCDBM19: 0..7 = struct LCDBM19Field(u8);
+        BM19: 0..7 = struct BM19Field(u8);
     }
     /// LCD Blinking Memory 20
-    rw LCDBM20 @ 0x53: u8 = 0_0 {
+    rw BM20 @ 0x53: u8 = 0_0 {
         /// LCD Blinking Memory 20
-        LCDBM20: 0..7 = struct LCDBM20Field(u8);
+        BM20: 0..7 = struct BM20Field(u8);
     }
 }

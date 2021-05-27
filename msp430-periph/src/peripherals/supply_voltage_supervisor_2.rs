@@ -4,7 +4,7 @@ utils::periph! {
     /// Supply Voltage Supervisor
     SupplyVoltageSupervisor;
     /// SVS Control
-    rw SVSCTL @ 0x00: u8 = 0_0 {
+    rw CTL @ 0x00: u8 = 0_0 {
         /// SVS Flag
         SVSFG: 0 = struct SVSFG(bool);
         /// SVS output (read only)

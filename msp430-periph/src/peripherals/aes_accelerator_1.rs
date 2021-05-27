@@ -4,75 +4,75 @@ utils::periph! {
     /// AES Accelerator
     AESAccelerator;
     /// AES accelerator control register 0
-    rw AESACTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// AES Operation Bit: 0
-        AESOP: 0..1 = enum AESOP {
+        OP: 0..1 = enum OP {
             /// AES Operation: Encrypt
-            AESOP_0 = 0b00,
+            OP_0 = 0b00,
             /// AES Operation: Decrypt (same Key)
-            AESOP_1 = 0b01,
+            OP_1 = 0b01,
             /// AES Operation: Generate first round Key
-            AESOP_2 = 0b10,
+            OP_2 = 0b10,
             /// AES Operation: Decrypt (first round Key)
-            AESOP_3 = 0b11,
+            OP_3 = 0b11,
         }
         /// AES Software Reset
-        AESSWRST: 7 = struct AESSWRST(bool);
+        SWRST: 7 = struct SWRST(bool);
         /// AES ready interrupt flag
-        AESRDYIFG: 8 = struct AESRDYIFG(bool);
+        RDYIFG: 8 = struct RDYIFG(bool);
         /// AES Error Flag
-        AESERRFG: 11 = struct AESERRFG(bool);
+        ERRFG: 11 = struct ERRFG(bool);
         /// AES ready interrupt enable
-        AESRDYIE: 12 = struct AESRDYIE(bool);
+        RDYIE: 12 = struct RDYIE(bool);
     }
     /// AES accelerator status register
-    rw AESASTAT @ 0x04: u16 = 0_0 {
+    rw STAT @ 0x04: u16 = 0_0 {
         /// AES Busy
-        AESBUSY: 0 = struct AESBUSY(bool);
+        BUSY: 0 = struct BUSY(bool);
         /// AES All 16 bytes written to AESAKEY
-        AESKEYWR: 1 = struct AESKEYWR(bool);
+        KEYWR: 1 = struct KEYWR(bool);
         /// AES All 16 bytes written to AESADIN
-        AESDINWR: 2 = struct AESDINWR(bool);
+        DINWR: 2 = struct DINWR(bool);
         /// AES All 16 bytes read from AESADOUT
-        AESDOUTRD: 3 = struct AESDOUTRD(bool);
+        DOUTRD: 3 = struct DOUTRD(bool);
         /// AES Bytes written via AESAKEY Bit: 0
-        AESKEYCNT0: 4 = struct AESKEYCNT0(bool);
+        KEYCNT0: 4 = struct KEYCNT0(bool);
         /// AES Bytes written via AESAKEY Bit: 1
-        AESKEYCNT1: 5 = struct AESKEYCNT1(bool);
+        KEYCNT1: 5 = struct KEYCNT1(bool);
         /// AES Bytes written via AESAKEY Bit: 2
-        AESKEYCNT2: 6 = struct AESKEYCNT2(bool);
+        KEYCNT2: 6 = struct KEYCNT2(bool);
         /// AES Bytes written via AESAKEY Bit: 3
-        AESKEYCNT3: 7 = struct AESKEYCNT3(bool);
+        KEYCNT3: 7 = struct KEYCNT3(bool);
         /// AES Bytes written via AESADIN Bit: 0
-        AESDINCNT0: 8 = struct AESDINCNT0(bool);
+        DINCNT0: 8 = struct DINCNT0(bool);
         /// AES Bytes written via AESADIN Bit: 1
-        AESDINCNT1: 9 = struct AESDINCNT1(bool);
+        DINCNT1: 9 = struct DINCNT1(bool);
         /// AES Bytes written via AESADIN Bit: 2
-        AESDINCNT2: 10 = struct AESDINCNT2(bool);
+        DINCNT2: 10 = struct DINCNT2(bool);
         /// AES Bytes written via AESADIN Bit: 3
-        AESDINCNT3: 11 = struct AESDINCNT3(bool);
+        DINCNT3: 11 = struct DINCNT3(bool);
         /// AES Bytes read via AESADOUT Bit: 0
-        AESDOUTCNT0: 12 = struct AESDOUTCNT0(bool);
+        DOUTCNT0: 12 = struct DOUTCNT0(bool);
         /// AES Bytes read via AESADOUT Bit: 1
-        AESDOUTCNT1: 13 = struct AESDOUTCNT1(bool);
+        DOUTCNT1: 13 = struct DOUTCNT1(bool);
         /// AES Bytes read via AESADOUT Bit: 2
-        AESDOUTCNT2: 14 = struct AESDOUTCNT2(bool);
+        DOUTCNT2: 14 = struct DOUTCNT2(bool);
         /// AES Bytes read via AESADOUT Bit: 3
-        AESDOUTCNT3: 15 = struct AESDOUTCNT3(bool);
+        DOUTCNT3: 15 = struct DOUTCNT3(bool);
     }
     /// AES accelerator key register
-    rw AESAKEY @ 0x06: u16 = 0_0 {
+    rw KEY @ 0x06: u16 = 0_0 {
         /// AES accelerator key register
-        AESAKEY: 0..15 = struct AESAKEYField(u16);
+        KEY: 0..15 = struct KEYField(u16);
     }
     /// AES accelerator data in register
-    rw AESADIN @ 0x08: u16 = 0_0 {
+    rw DIN @ 0x08: u16 = 0_0 {
         /// AES accelerator data in register
-        AESADIN: 0..15 = struct AESADINField(u16);
+        DIN: 0..15 = struct DINField(u16);
     }
     /// AES accelerator data out register
-    rw AESADOUT @ 0x0a: u16 = 0_0 {
+    rw DOUT @ 0x0a: u16 = 0_0 {
         /// AES accelerator data out register
-        AESADOUT: 0..15 = struct AESADOUTField(u16);
+        DOUT: 0..15 = struct DOUTField(u16);
     }
 }

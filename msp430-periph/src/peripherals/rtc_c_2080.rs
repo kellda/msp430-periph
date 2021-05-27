@@ -4,30 +4,30 @@ utils::periph! {
     /// RTC_C
     RTC_C;
     /// RTCCTL0 Register
-    rw RTCCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// Real-time clock ready interrupt flag
-        RTCRDYIFG: 0 = struct RTCRDYIFG(bool);
+        RDYIFG: 0 = struct RDYIFG(bool);
         /// Real-time clock alarm interrupt flag
-        RTCAIFG: 1 = struct RTCAIFG(bool);
+        AIFG: 1 = struct AIFG(bool);
         /// Real-time clock time event interrupt flag
-        RTCTEVIFG: 2 = struct RTCTEVIFG(bool);
+        TEVIFG: 2 = struct TEVIFG(bool);
         /// 32-kHz crystal oscillator fault interrupt flag
-        RTCOFIFG: 3 = struct RTCOFIFG(bool);
+        OFIFG: 3 = struct OFIFG(bool);
         /// Real-time clock ready interrupt enable
-        RTCRDYIE: 4 = struct RTCRDYIE(bool);
+        RDYIE: 4 = struct RDYIE(bool);
         /// Real-time clock alarm interrupt enable
-        RTCAIE: 5 = struct RTCAIE(bool);
+        AIE: 5 = struct AIE(bool);
         /// Real-time clock time event interrupt enable
-        RTCTEVIE: 6 = struct RTCTEVIE(bool);
+        TEVIE: 6 = struct TEVIE(bool);
         /// 32-kHz crystal oscillator fault interrupt enable
-        RTCOFIE: 7 = struct RTCOFIE(bool);
+        OFIE: 7 = struct OFIE(bool);
         /// Real-time clock key
-        RTCKEY: 8..15 = struct RTCKEY(u16);
+        KEY: 8..15 = struct KEY(u16);
     }
     /// RTCCTL13 Register
-    rw RTCCTL13 @ 0x02: u16 = 0_0 {
+    rw CTL13 @ 0x02: u16 = 0_0 {
         /// Real-time clock time event
-        RTCTEV: 0..1 = enum RTCTEV {
+        TEV: 0..1 = enum TEV {
             /// Minute changed
             MIN = 0b00,
             /// Hour changed
@@ -38,7 +38,7 @@ utils::periph! {
             _1200 = 0b11,
         }
         /// Real-time clock source select
-        RTCSSEL: 2..3 = enum RTCSSEL {
+        SSEL: 2..3 = enum SSEL {
             /// 32-kHz crystal oscillator clock
             LFXT = 0b00,
             /// 32-kHz crystal oscillator clock
@@ -49,33 +49,33 @@ utils::periph! {
             RT1PS1 = 0b11,
         }
         /// Real-time clock ready
-        RTCRDY: 4 = enum RTCRDY {
+        RDY: 4 = enum RDY {
             /// RTC time values in transition
-            RTCRDY_0 = 0b0,
+            RDY_0 = 0b0,
             /// RTC time values safe for reading. This bit indicates when the real-time clock time values are safe for reading.
-            RTCRDY_1 = 0b1,
+            RDY_1 = 0b1,
         }
         /// RTCMODE
-        RTCMODE: 5 = enum RTCMODE {
+        MODE: 5 = enum MODE {
             /// Calendar mode. Always reads a value of 1.
-            RTCMODE_1 = 0b1,
+            MODE_1 = 0b1,
         }
         /// Real-time clock hold
-        RTCHOLD: 6 = enum RTCHOLD {
+        HOLD: 6 = enum HOLD {
             /// Real-time clock is operational
-            RTCHOLD_0 = 0b0,
+            HOLD_0 = 0b0,
             /// When set, the calendar is stopped as well as the prescale counters, RT0PS and RT1PS are don't care
-            RTCHOLD_1 = 0b1,
+            HOLD_1 = 0b1,
         }
         /// Real-time clock BCD select
-        RTCBCD: 7 = enum RTCBCD {
+        BCD: 7 = enum BCD {
             /// Binary (hexadecimal) code selected
             HEX = 0b0,
             /// Binary coded decimal (BCD) code selected
             BCD = 0b1,
         }
         /// Real-time clock calibration frequency
-        RTCCALF: 8..9 = enum RTCCALF {
+        CALF: 8..9 = enum CALF {
             /// No frequency output to RTCCLK pin
             NONE = 0b00,
             /// 512 Hz
@@ -86,12 +86,12 @@ utils::periph! {
             _1 = 0b11,
         }
     }
-    /// RTCOCAL Register
-    rw RTCOCAL @ 0x04: u16 = 0_0 {
+    /// OCAL Register
+    rw OCAL @ 0x04: u16 = 0_0 {
         /// Real-time clock offset error calibration
-        RTCOCAL: 0..7 = struct RTCOCALField(u16);
+        OCAL: 0..7 = struct OCALField(u16);
         /// Real-time clock offset error calibration sign
-        RTCOCALS: 15 = enum RTCOCALS {
+        OCALS: 15 = enum OCALS {
             /// Down calibration. Frequency adjusted down.
             DOWN = 0b0,
             /// Up calibration. Frequency adjusted up.
@@ -99,20 +99,20 @@ utils::periph! {
         }
     }
     /// RTCTCMP Register
-    rw RTCTCMP @ 0x06: u16 = 0_0 {
+    rw TCMP @ 0x06: u16 = 0_0 {
         /// Real-time clock temperature compensation
-        RTCTCMP: 0..7 = struct RTCTCMPField(u16);
+        TCMP: 0..7 = struct TCMPField(u16);
         /// Real-time clock temperature compensation write OK
-        RTCTCOK: 13 = enum RTCTCOK {
+        TCOK: 13 = enum TCOK {
             /// Write to RTCTCMPx is unsuccessful
-            RTCTCOK_0 = 0b0,
+            TCOK_0 = 0b0,
             /// Write to RTCTCMPx is successful
-            RTCTCOK_1 = 0b1,
+            TCOK_1 = 0b1,
         }
         /// Real-time clock temperature compensation ready
-        RTCTCRDY: 14 = struct RTCTCRDY(bool);
+        TCRDY: 14 = struct TCRDY(bool);
         /// Real-time clock temperature compensation sign
-        RTCTCMPS: 15 = enum RTCTCMPS {
+        TCMPS: 15 = enum TCMPS {
             /// Down calibration. Frequency adjusted down
             DOWN = 0b0,
             /// Up calibration. Frequency adjusted up
@@ -120,7 +120,7 @@ utils::periph! {
         }
     }
     /// Real-Time Clock Prescale Timer 0 Control Register
-    rw RTCPS0CTL @ 0x08: u16 = 0_0 {
+    rw PS0CTL @ 0x08: u16 = 0_0 {
         /// Prescale timer 0 interrupt flag
         RT0PSIFG: 0 = enum RT0PSIFG {
             /// No time event occurred
@@ -182,7 +182,7 @@ utils::periph! {
         }
     }
     /// Real-Time Clock Prescale Timer 1 Control Register
-    rw RTCPS1CTL @ 0x0a: u16 = 0_0 {
+    rw PS1CTL @ 0x0a: u16 = 0_0 {
         /// Prescale timer 1 interrupt flag
         RT1PSIFG: 0 = enum RT1PSIFG {
             /// No time event occurred
@@ -255,24 +255,24 @@ utils::periph! {
         }
     }
     /// Real-Time Clock Prescale Timer Counter Register
-    rw RTCPS @ 0x0c: u16 = 0_0 {
+    rw PS @ 0x0c: u16 = 0_0 {
         /// Real-Time Clock Prescale Timer Counter Register
-        RTCPS: 0..15 = struct RTCPSField(u16);
+        PS: 0..15 = struct PSField(u16);
     }
     /// Real-Time Clock Interrupt Vector Register
-    r RTCIV @ 0x0e: u16 = 0_0 {
+    r IV @ 0x0e: u16 = 0_0 {
         /// Real-time clock interrupt vector value
-        RTCIV: 0..15 = enum RTCIVField {
+        IV: 0..15 = enum IVField {
             /// No interrupt pending
             NONE = 0b0000000000000000,
             /// Interrupt Source: RTC oscillator failure; Interrupt Flag: RTCOFIFG; Interrupt Priority: Highest
-            RTCOFIFG = 0b0000000000000010,
+            OFIFG = 0b0000000000000010,
             /// Interrupt Source: RTC ready; Interrupt Flag: RTCRDYIFG
-            RTCRDYIFG = 0b0000000000000100,
+            RDYIFG = 0b0000000000000100,
             /// Interrupt Source: RTC interval timer; Interrupt Flag: RTCTEVIFG
-            RTCTEVIFG = 0b0000000000000110,
+            TEVIFG = 0b0000000000000110,
             /// Interrupt Source: RTC user alarm; Interrupt Flag: RTCAIFG
-            RTCAIFG = 0b0000000000001000,
+            AIFG = 0b0000000000001000,
             /// Interrupt Source: RTC prescaler 0; Interrupt Flag: RT0PSIFG
             RT0PSIFG = 0b0000000000001010,
             /// Interrupt Source: RTC prescaler 1; Interrupt Flag: RT1PSIFG
@@ -280,58 +280,58 @@ utils::periph! {
         }
     }
     /// RTCTIM0 Register  Hexadecimal Format
-    rw RTCTIM0 @ 0x10: u16 = 0_0 {
+    rw TIM0 @ 0x10: u16 = 0_0 {
         /// Seconds (0 to 59)
         SECONDS: 0..5 = struct SECONDS(u16);
         /// Minutes (0 to 59)
         MINUTES: 8..13 = struct MINUTES(u16);
     }
     /// Real-Time Clock Seconds, Minutes Register - BCD Format
-    rw RTCTIM0_BCD @ 0x10: u16 = 0_0 {
+    rw TIM0_BCD @ 0x10: u16 = 0_0 {
         /// Seconds  low digit (0 to 9)
         SECONDSLOWDIGIT: 0..3 = struct SECONDSLOWDIGIT(u16);
         /// Seconds  high digit (0 to 5)
         SECONDSHIGHDIGIT: 4..6 = struct SECONDSHIGHDIGIT(u16);
         /// Minutes  low digit (0 to 9)
-        RTCTIM0_BCD_MINUTESLOWDIGIT: 8..11 = struct RTCTIM0_BCD_MINUTESLOWDIGIT(u16);
+        TIM0_BCD_MINUTESLOWDIGIT: 8..11 = struct TIM0_BCD_MINUTESLOWDIGIT(u16);
         /// Minutes  high digit (0 to 5)
-        RTCTIM0_BCD_MINUTESHIGHDIGIT: 12..14 = struct RTCTIM0_BCD_MINUTESHIGHDIGIT(u16);
+        TIM0_BCD_MINUTESHIGHDIGIT: 12..14 = struct TIM0_BCD_MINUTESHIGHDIGIT(u16);
     }
     /// Real-Time Clock Counter 1 and 2  Register  Counter Mode
-    rw RTCCNT12 @ 0x10: u16 = 0_0 {
+    rw CNT12 @ 0x10: u16 = 0_0 {
         /// Real-Time Clock Counter 1 and 2  Register  Counter Mode
-        RTCCNT12: 0..15 = struct RTCCNT12Field(u16);
+        CNT12: 0..15 = struct CNT12Field(u16);
     }
     /// Real-Time Clock Hour, Day of Week
-    rw RTCTIM1 @ 0x12: u16 = 0_0 {
+    rw TIM1 @ 0x12: u16 = 0_0 {
         /// Hours (0 to 23)
         HOURS: 0..4 = struct HOURS(u16);
         /// Day of week (0 to 6)
-        RTCTIM1_DAYOFWEEK: 8..10 = struct RTCTIM1_DAYOFWEEK(u16);
+        TIM1_DAYOFWEEK: 8..10 = struct TIM1_DAYOFWEEK(u16);
     }
     /// Real-Time Clock Hour, Day of Week - BCD Format
-    rw RTCTIM1_BCD @ 0x12: u16 = 0_0 {
+    rw TIM1_BCD @ 0x12: u16 = 0_0 {
         /// Hours  low digit (0 to 9)
-        RTCTIM1_BCD_HOURSLOWDIGIT: 0..3 = struct RTCTIM1_BCD_HOURSLOWDIGIT(u16);
+        TIM1_BCD_HOURSLOWDIGIT: 0..3 = struct TIM1_BCD_HOURSLOWDIGIT(u16);
         /// Hours  high digit (0 to 2)
-        RTCTIM1_BCD_HOURSHIGHDIGIT: 4..5 = struct RTCTIM1_BCD_HOURSHIGHDIGIT(u16);
+        TIM1_BCD_HOURSHIGHDIGIT: 4..5 = struct TIM1_BCD_HOURSHIGHDIGIT(u16);
         /// Day of week (0 to 6)
-        RTCTIM1_BCD_DAYOFWEEK: 8..10 = struct RTCTIM1_BCD_DAYOFWEEK(u16);
+        TIM1_BCD_DAYOFWEEK: 8..10 = struct TIM1_BCD_DAYOFWEEK(u16);
     }
     /// Real-Time Clock Counter 3 and 4  Register  Counter Mode
-    rw RTCCNT34 @ 0x12: u16 = 0_0 {
+    rw CNT34 @ 0x12: u16 = 0_0 {
         /// Real-Time Clock Counter 3 and 4  Register  Counter Mode
-        RTCCNT34: 0..15 = struct RTCCNT34Field(u16);
+        CNT34: 0..15 = struct CNT34Field(u16);
     }
     /// RTCDATE - Hexadecimal Format
-    rw RTCDATE @ 0x14: u16 = 0_0 {
+    rw DATE @ 0x14: u16 = 0_0 {
         /// Day of month (1 to 28, 29, 30, 31)
-        RTCDATE_DAY: 0..4 = struct RTCDATE_DAY(u16);
+        DATE_DAY: 0..4 = struct DATE_DAY(u16);
         /// Month (1 to 12)
         MONTH: 8..11 = struct MONTH(u16);
     }
     /// Real-Time Clock Date - BCD Format
-    rw RTCDATE_BCD @ 0x14: u16 = 0_0 {
+    rw DATE_BCD @ 0x14: u16 = 0_0 {
         /// Day of month  low digit (0 to 9)
         DAYLOWDIGIT: 0..3 = struct DAYLOWDIGIT(u16);
         /// Day of month  high digit (0 to 3)
@@ -341,17 +341,17 @@ utils::periph! {
         /// Month  high digit (0 or 1)
         MONTHHIGHDIGIT: 12 = struct MONTHHIGHDIGIT(bool);
     }
-    /// RTCYEAR Register  Hexadecimal Format
-    rw RTCYEAR @ 0x16: u16 = 0_0 {
+    /// YEAR Register  Hexadecimal Format
+    rw YEAR @ 0x16: u16 = 0_0 {
         /// Year  low byte. Valid values for Year are 0 to 4095.
         YEARLOWBYTE: 0..7 = struct YEARLOWBYTE(u16);
         /// Year  high byte. Valid values for Year are 0 to 4095.
         YEARHIGHBYTE: 8..11 = struct YEARHIGHBYTE(u16);
     }
     /// Real-Time Clock Year Register - BCD Format
-    rw RTCYEAR_BCD @ 0x16: u16 = 0_0 {
+    rw YEAR_BCD @ 0x16: u16 = 0_0 {
         /// Year  lowest digit (0 to 9)
-        YEAR: 0..3 = struct YEAR(u16);
+        YEAR: 0..3 = struct YEARField(u16);
         /// Decade (0 to 9)
         DECADE: 4..7 = struct DECADE(u16);
         /// Century  low digit (0 to 9)
@@ -359,55 +359,55 @@ utils::periph! {
         /// Century  high digit (0 to 4)
         CENTURYHIGHDIGIT: 12..14 = struct CENTURYHIGHDIGIT(u16);
     }
-    /// RTCMINHR - Hexadecimal Format
-    rw RTCAMINHR @ 0x18: u16 = 0_0 {
+    /// MINHR - Hexadecimal Format
+    rw AMINHR @ 0x18: u16 = 0_0 {
         /// Minutes (0 to 59)
         MIN: 0..5 = struct MIN(u16);
         /// Alarm enable
-        RTCAMINHR_MINAE: 7 = struct RTCAMINHR_MINAE(bool);
+        AMINHR_MINAE: 7 = struct AMINHR_MINAE(bool);
         /// Hours (0 to 23)
         HOUR: 8..12 = struct HOUR(u16);
         /// Alarm enable
-        RTCAMINHR_HOURAE: 15 = struct RTCAMINHR_HOURAE(bool);
+        AMINHR_HOURAE: 15 = struct AMINHR_HOURAE(bool);
     }
     /// Real-Time Clock Minutes, Hour Alarm - BCD Format
-    rw RTCAMINHR_BCD @ 0x18: u16 = 0_0 {
+    rw AMINHR_BCD @ 0x18: u16 = 0_0 {
         /// Minutes  low digit (0 to 9)
-        RTCAMINHR_BCD_MINUTESLOWDIGIT: 0..3 = struct RTCAMINHR_BCD_MINUTESLOWDIGIT(u16);
+        AMINHR_BCD_MINUTESLOWDIGIT: 0..3 = struct AMINHR_BCD_MINUTESLOWDIGIT(u16);
         /// Minutes  high digit (0 to 5)
-        RTCAMINHR_BCD_MINUTESHIGHDIGIT: 4..6 = struct RTCAMINHR_BCD_MINUTESHIGHDIGIT(u16);
+        AMINHR_BCD_MINUTESHIGHDIGIT: 4..6 = struct AMINHR_BCD_MINUTESHIGHDIGIT(u16);
         /// Alarm enable
-        RTCAMINHR_BCD_MINAE: 7 = struct RTCAMINHR_BCD_MINAE(bool);
+        AMINHR_BCD_MINAE: 7 = struct AMINHR_BCD_MINAE(bool);
         /// Hours  low digit (0 to 9)
-        RTCAMINHR_BCD_HOURSLOWDIGIT: 8..11 = struct RTCAMINHR_BCD_HOURSLOWDIGIT(u16);
+        AMINHR_BCD_HOURSLOWDIGIT: 8..11 = struct AMINHR_BCD_HOURSLOWDIGIT(u16);
         /// Hours  high digit (0 to 2)
-        RTCAMINHR_BCD_HOURSHIGHDIGIT: 12..13 = struct RTCAMINHR_BCD_HOURSHIGHDIGIT(u16);
+        AMINHR_BCD_HOURSHIGHDIGIT: 12..13 = struct AMINHR_BCD_HOURSHIGHDIGIT(u16);
         /// Alarm enable
-        RTCAMINHR_BCD_HOURAE: 15 = struct RTCAMINHR_BCD_HOURAE(bool);
+        AMINHR_BCD_HOURAE: 15 = struct AMINHR_BCD_HOURAE(bool);
     }
-    /// RTCADOWDAY - Hexadecimal Format
-    rw RTCADOWDAY @ 0x1a: u16 = 0_0 {
+    /// ADOWDAY - Hexadecimal Format
+    rw ADOWDAY @ 0x1a: u16 = 0_0 {
         /// Day of week (0 to 6)
-        RTCADOWDAY_DOW: 0..2 = struct RTCADOWDAY_DOW(u16);
+        ADOWDAY_DOW: 0..2 = struct ADOWDAY_DOW(u16);
         /// Alarm enable
-        RTCADOWDAY_DOWAE: 7 = struct RTCADOWDAY_DOWAE(bool);
+        ADOWDAY_DOWAE: 7 = struct ADOWDAY_DOWAE(bool);
         /// Day of month (1 to 28, 29, 30, 31)
-        RTCADOWDAY_DAY: 8..12 = struct RTCADOWDAY_DAY(u16);
+        ADOWDAY_DAY: 8..12 = struct ADOWDAY_DAY(u16);
         /// Alarm enable
-        RTCADOWDAY_DAYAE: 15 = struct RTCADOWDAY_DAYAE(bool);
+        ADOWDAY_DAYAE: 15 = struct ADOWDAY_DAYAE(bool);
     }
     /// Real-Time Clock Day of Week, Day of Month Alarm - BCD Format
-    rw RTCADOWDAY_BCD @ 0x1a: u16 = 0_0 {
+    rw ADOWDAY_BCD @ 0x1a: u16 = 0_0 {
         /// Day of week (0 to 6)
-        RTCADOWDAY_BCD_DOW: 0..2 = struct RTCADOWDAY_BCD_DOW(u16);
+        ADOWDAY_BCD_DOW: 0..2 = struct ADOWDAY_BCD_DOW(u16);
         /// Alarm enable
-        RTCADOWDAY_BCD_DOWAE: 7 = struct RTCADOWDAY_BCD_DOWAE(bool);
+        ADOWDAY_BCD_DOWAE: 7 = struct ADOWDAY_BCD_DOWAE(bool);
         /// Day of month  low digit (0 to 9)
         DAY_LD: 8..11 = struct DAY_LD(u16);
         /// Day of month  high digit (0 to 3)
         DAY_HD: 12..13 = struct DAY_HD(u16);
         /// Alarm enable
-        RTCADOWDAY_BCD_DAYAE: 15 = struct RTCADOWDAY_BCD_DAYAE(bool);
+        ADOWDAY_BCD_DAYAE: 15 = struct ADOWDAY_BCD_DAYAE(bool);
     }
     /// Binary-to-BCD Conversion Register
     rw BIN2BCD @ 0x1c: u16 = 0_0 {
@@ -430,23 +430,23 @@ utils::periph! {
         RT1PS: 0..7 = struct RT1PSField(u8);
     }
     /// The RTCCNT1 register is the count of RTCCNT1
-    rw RTCCNT1 @ 0x10: u8 = 0_0 {
+    rw CNT1 @ 0x10: u8 = 0_0 {
         /// The RTCCNT1 register is the count of RTCCNT1
-        RTCCNT1: 0..7 = struct RTCCNT1Field(u8);
+        CNT1: 0..7 = struct CNT1Field(u8);
     }
     /// The RTCCNT2 register is the count of RTCCNT2
-    rw RTCCNT2 @ 0x11: u8 = 0_0 {
+    rw CNT2 @ 0x11: u8 = 0_0 {
         /// The RTCCNT2 register is the count of RTCCNT2
-        RTCCNT2: 0..7 = struct RTCCNT2Field(u8);
+        CNT2: 0..7 = struct CNT2Field(u8);
     }
     /// The RTCCNT3 register is the count of RTCCNT3
-    rw RTCCNT3 @ 0x12: u8 = 0_0 {
+    rw CNT3 @ 0x12: u8 = 0_0 {
         /// The RTCCNT3 register is the count of RTCCNT3
-        RTCCNT3: 0..7 = struct RTCCNT3Field(u8);
+        CNT3: 0..7 = struct CNT3Field(u8);
     }
     /// The RTCCNT4 register is the count of RTCCNT4
-    rw RTCCNT4 @ 0x13: u8 = 0_0 {
+    rw CNT4 @ 0x13: u8 = 0_0 {
         /// The RTCCNT4 register is the count of RTCCNT4
-        RTCCNT4: 0..7 = struct RTCCNT4Field(u8);
+        CNT4: 0..7 = struct CNT4Field(u8);
     }
 }

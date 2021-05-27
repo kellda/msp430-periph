@@ -4,212 +4,212 @@ utils::periph! {
     /// MPU
     MPU;
     /// Memory Protection Unit Control 0
-    rw MPUCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// MPU Enable
-        MPUENA: 0 = enum MPUENA {
+        ENA: 0 = enum ENA {
             /// Disabled
             DISABLE = 0b0,
             /// Enabled
             ENABLE = 0b1,
         }
         /// MPU Lock
-        MPULOCK: 1 = enum MPULOCK {
+        LOCK: 1 = enum LOCK {
             /// Open
             OPEN = 0b0,
             /// Locked
             LOCK = 0b1,
         }
         /// Enable NMI Event if a Segment violation
-        MPUSEGIE: 4 = enum MPUSEGIE {
+        SEGIE: 4 = enum SEGIE {
             /// Segment violation interrupt disabled
             DISABLE = 0b0,
             /// Segment violation interrupt enabled
             ENABLE = 0b1,
         }
         /// MPU Password
-        MPUPW: 8..15 = struct MPUPW(u16);
+        PW: 8..15 = struct PW(u16);
     }
     /// Memory Protection Unit Control 1
-    rw MPUCTL1 @ 0x02: u16 = 0_0 {
+    rw CTL1 @ 0x02: u16 = 0_0 {
         /// Main Memory Segment 1 Violation Interrupt Flag
-        MPUSEG1IFG: 0 = enum MPUSEG1IFG {
+        SEG1IFG: 0 = enum SEG1IFG {
             /// No interrupt pending
-            MPUSEG1IFG_0 = 0b0,
+            SEG1IFG_0 = 0b0,
             /// Interrupt pending
-            MPUSEG1IFG_1 = 0b1,
+            SEG1IFG_1 = 0b1,
         }
         /// Main Memory Segment 2 Violation Interrupt Flag
-        MPUSEG2IFG: 1 = enum MPUSEG2IFG {
+        SEG2IFG: 1 = enum SEG2IFG {
             /// No interrupt pending
-            MPUSEG2IFG_0 = 0b0,
+            SEG2IFG_0 = 0b0,
             /// Interrupt pending
-            MPUSEG2IFG_1 = 0b1,
+            SEG2IFG_1 = 0b1,
         }
         /// Main Memory Segment 3 Violation Interrupt Flag
-        MPUSEG3IFG: 2 = enum MPUSEG3IFG {
+        SEG3IFG: 2 = enum SEG3IFG {
             /// No interrupt pending
-            MPUSEG1IFG_0 = 0b0,
+            SEG1IFG_0 = 0b0,
             /// Interrupt pending
-            MPUSEG1IFG_1 = 0b1,
+            SEG1IFG_1 = 0b1,
         }
         /// User Information Memory Violation Interrupt Flag
-        MPUSEGIIFG: 3 = enum MPUSEGIIFG {
+        SEGIIFG: 3 = enum SEGIIFG {
             /// No interrupt pending
-            MPUSEGIIFG_0 = 0b0,
+            SEGIIFG_0 = 0b0,
             /// Interrupt pending
-            MPUSEGIIFG_1 = 0b1,
+            SEGIIFG_1 = 0b1,
         }
         /// IP Encapsulation Access Violation Interrupt Flag
-        MPUSEGIPIFG: 4 = enum MPUSEGIPIFG {
+        SEGIPIFG: 4 = enum SEGIPIFG {
             /// No interrupt pending
-            MPUSEG1IFG_0 = 0b0,
+            SEG1IFG_0 = 0b0,
             /// Interrupt pending
-            MPUSEG1IFG_1 = 0b1,
+            SEG1IFG_1 = 0b1,
         }
     }
     /// Memory Protection Unit Segmentation Border 2 Register
-    rw MPUSEGB2 @ 0x04: u16 = 0_0 {
+    rw SEGB2 @ 0x04: u16 = 0_0 {
         /// Memory Protection Unit Segmentation Border 2 Register
-        MPUSEGB2: 0..15 = struct MPUSEGB2Field(u16);
+        SEGB2: 0..15 = struct SEGB2Field(u16);
     }
     /// Memory Protection Unit Segmentation Border 1 Register
-    rw MPUSEGB1 @ 0x06: u16 = 0_0 {
+    rw SEGB1 @ 0x06: u16 = 0_0 {
         /// Memory Protection Unit Segmentation Border 1 Register
-        MPUSEGB1: 0..15 = struct MPUSEGB1Field(u16);
+        SEGB1: 0..15 = struct SEGB1Field(u16);
     }
     /// Memory Protection Unit Segmentation Access Management Register
-    rw MPUSAM @ 0x08: u16 = 0_0 {
+    rw SAM @ 0x08: u16 = 0_0 {
         /// MPU Main Memory Segment 1 Read Enable
-        MPUSEG1RE: 0 = enum MPUSEG1RE {
+        SEG1RE: 0 = enum SEG1RE {
             /// Read on Main Memory Segment 1 causes a violation if MPUSEG1WE = MPUSEG1XE = 0
             DISABLE = 0b0,
             /// Read on Main Memory Segment 1 is allowed
             ENABLE = 0b1,
         }
         /// MPU Main Memory Segment 1 Write Enable
-        MPUSEG1WE: 1 = enum MPUSEG1WE {
+        SEG1WE: 1 = enum SEG1WE {
             /// Write on Main Memory Segment 1 causes a violation
             DISABLE = 0b0,
             /// Write on Main Memory Segment 1 is allowed
             ENABLE = 0b1,
         }
         /// MPU Main Memory Segment 1 Execute Enable
-        MPUSEG1XE: 2 = enum MPUSEG1XE {
+        SEG1XE: 2 = enum SEG1XE {
             /// Execute code on Main Memory Segment 1 causes a violation
             DISABLE = 0b0,
             /// Execute code on Main Memory Segment 1 is allowed
             ENABLE = 0b1,
         }
         /// MPU Main Memory Segment 1 Violation Select
-        MPUSEG1VS: 3 = enum MPUSEG1VS {
+        SEG1VS: 3 = enum SEG1VS {
             /// Violation in Main Memory Segment 1 asserts the MPUSEG1IFG bit and executes a SNMI if enabled by MPUSEGIE = 1
-            MPUSEG1VS_0 = 0b0,
+            SEG1VS_0 = 0b0,
             /// Violation in Main Memory Segment 1 asserts the MPUSEG1IFG bit and executes a PUC
-            MPUSEG1VS_1 = 0b1,
+            SEG1VS_1 = 0b1,
         }
         /// MPU Main Memory Segment 2 Read Enable
-        MPUSEG2RE: 4 = enum MPUSEG2RE {
+        SEG2RE: 4 = enum SEG2RE {
             /// Read on Main Memory Segment 2 causes a violation if MPUSEG2WE = MPUSEG2XE = 0
             DISABLE = 0b0,
             /// Read on Main Memory Segment 2 is allowed
             ENABLE = 0b1,
         }
         /// MPU Main Memory Segment 2 Write Enable
-        MPUSEG2WE: 5 = enum MPUSEG2WE {
+        SEG2WE: 5 = enum SEG2WE {
             /// Write on Main Memory Segment 2 causes a violation
             DISABLE = 0b0,
             /// Write on Main Memory Segment 2 is allowed
             ENABLE = 0b1,
         }
         /// MPU Main Memory Segment 2 Execute Enable
-        MPUSEG2XE: 6 = enum MPUSEG2XE {
+        SEG2XE: 6 = enum SEG2XE {
             /// Execute code on Main Memory Segment 2 causes a violation
             DISABLE = 0b0,
             /// Execute code on Main Memory Segment 2 is allowed
             ENABLE = 0b1,
         }
         /// MPU Main Memory Segment 2 Violation Select
-        MPUSEG2VS: 7 = enum MPUSEG2VS {
+        SEG2VS: 7 = enum SEG2VS {
             /// Violation in Main Memory Segment 2 asserts the MPUSEG2IFG bit and executes a SNMI if enabled by MPUSEGIE = 1
-            MPUSEG2VS_0 = 0b0,
+            SEG2VS_0 = 0b0,
             /// Violation in Main Memory Segment 2 asserts the MPUSEG2IFG bit and executes a PUC
-            MPUSEG2VS_1 = 0b1,
+            SEG2VS_1 = 0b1,
         }
         /// MPU Main Memory Segment 3 Read Enable
-        MPUSEG3RE: 8 = enum MPUSEG3RE {
+        SEG3RE: 8 = enum SEG3RE {
             /// Read on Main Memory Segment 3 causes a violation if MPUSEG3WE = MPUSEG3XE = 0
             DISABLE = 0b0,
             /// Read on Main Memory Segment 3 is allowed
             ENABLE = 0b1,
         }
         /// MPU Main Memory Segment 3 Write Enable
-        MPUSEG3WE: 9 = enum MPUSEG3WE {
+        SEG3WE: 9 = enum SEG3WE {
             /// Write on Main Memory Segment 3 causes a violation
             DISABLE = 0b0,
             /// Write on Main Memory Segment 3 is allowed
             ENABLE = 0b1,
         }
         /// MPU Main Memory Segment 3 Execute Enable
-        MPUSEG3XE: 10 = enum MPUSEG3XE {
+        SEG3XE: 10 = enum SEG3XE {
             /// Execute code on Main Memory Segment 3 causes a violation
             DISABLE = 0b0,
             /// Execute code on Main Memory Segment 3 is allowed
             ENABLE = 0b1,
         }
         /// MPU Main Memory Segment 3 Violation Select
-        MPUSEG3VS: 11 = enum MPUSEG3VS {
+        SEG3VS: 11 = enum SEG3VS {
             /// Violation in Main Memory Segment 3 asserts the MPUSEG3IFG bit and executes a SNMI if enabled by MPUSEGIE = 1
-            MPUSEG3VS_0 = 0b0,
+            SEG3VS_0 = 0b0,
             /// Violation in Main Memory Segment 3 asserts the MPUSEG3IFG bit and executes a PUC
-            MPUSEG3VS_1 = 0b1,
+            SEG3VS_1 = 0b1,
         }
         /// MPU User Information Memory Segment Read Enable
-        MPUSEGIRE: 12 = enum MPUSEGIRE {
+        SEGIRE: 12 = enum SEGIRE {
             /// Read on User Information Memory causes a violation if MPUSEGIWE=MPUSEGIXE=0
             DISABLE = 0b0,
             /// Read on User Information Memory is allowed
             ENABLE = 0b1,
         }
         /// MPU User Information Memory Segment Write Enable.
-        MPUSEGIWE: 13 = enum MPUSEGIWE {
+        SEGIWE: 13 = enum SEGIWE {
             /// Write on User Information Memory causes a violation
             DISABLE = 0b0,
             /// Write on User Information Memory is allowed
             ENABLE = 0b1,
         }
         /// MPU User Information Memory Segment Execute Enable
-        MPUSEGIXE: 14 = enum MPUSEGIXE {
+        SEGIXE: 14 = enum SEGIXE {
             /// Execute code on User Information Memory causes a violation
             DISABLE = 0b0,
             /// Execute code on User Information Memory is allowed
             ENABLE = 0b1,
         }
         /// MPU User Information Memory Segment Violation Select
-        MPUSEGIVS: 15 = enum MPUSEGIVS {
+        SEGIVS: 15 = enum SEGIVS {
             /// Violation in User Information Memory asserts the MPUSEGIIFG bit and executes a SNMI if enabled by MPUSEGIE =1
-            MPUSEGIVS_0 = 0b0,
+            SEGIVS_0 = 0b0,
             /// Violation in User Information Memory asserts the MPUSEGIIFG bit and executes a PUC
-            MPUSEGIVS_1 = 0b1,
+            SEGIVS_1 = 0b1,
         }
     }
     /// Memory Protection Unit IP Control 0 Register
-    rw MPUIPC0 @ 0x0a: u16 = 0_0 {
+    rw IPC0 @ 0x0a: u16 = 0_0 {
         /// MPU IP Encapsulation segment Violation Select
-        MPUIPVS: 5 = enum MPUIPVS {
+        IPVS: 5 = enum IPVS {
             /// Violation in Main Memory Segment 1 asserts the MPUSEGPIFG bit and executes a SNMI if enabled by MPUSEGIE = 1
-            MPUIPVS_0 = 0b0,
+            IPVS_0 = 0b0,
             /// Violation in Main Memory Segment 1 asserts the MPUSEGPIFG bit and executes a PUC
-            MPUIPVS_1 = 0b1,
+            IPVS_1 = 0b1,
         }
         /// MPU IP Encapsulation Enable
-        MPUIPENA: 6 = enum MPUIPENA {
+        IPENA: 6 = enum IPENA {
             /// Disabled
             DISABLE = 0b0,
             /// Enabled
             ENABLE = 0b1,
         }
         /// MPU IP Encapsulation Lock
-        MPUIPLOCK: 7 = enum MPUIPLOCK {
+        IPLOCK: 7 = enum IPLOCK {
             /// Open
             OPEN = 0b0,
             /// Locked
@@ -217,13 +217,13 @@ utils::periph! {
         }
     }
     /// Memory Protection Unit IP Encapsulation Segment Border 2 Register
-    rw MPUIPSEGB2 @ 0x0c: u16 = 0_0 {
+    rw IPSEGB2 @ 0x0c: u16 = 0_0 {
         /// Memory Protection Unit IP Encapsulation Segment Border 2 Register
-        MPUIPSEGB2: 0..15 = struct MPUIPSEGB2Field(u16);
+        IPSEGB2: 0..15 = struct IPSEGB2Field(u16);
     }
     /// Memory Protection Unit IP Encapsulation Segment Border 1 Register
-    rw MPUIPSEGB1 @ 0x0e: u16 = 0_0 {
+    rw IPSEGB1 @ 0x0e: u16 = 0_0 {
         /// Memory Protection Unit IP Encapsulation Segment Border 1 Register
-        MPUIPSEGB1: 0..15 = struct MPUIPSEGB1Field(u16);
+        IPSEGB1: 0..15 = struct IPSEGB1Field(u16);
     }
 }

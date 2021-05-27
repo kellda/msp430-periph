@@ -4,128 +4,128 @@ utils::periph! {
     /// Timer_Event_Control
     Timer_Event_Control;
     /// Timer Event Control External Control 0
-    rw TECXCTL0 @ 0x00: u16 = 0_0 {
+    rw XCTL0 @ 0x00: u16 = 0_0 {
         /// TEV Ext. fault signal hold for CE0
-        TECXFLTHLD0: 0 = struct TECXFLTHLD0(bool);
+        XFLTHLD0: 0 = struct XFLTHLD0(bool);
         /// TEV Ext. fault signal hold for CE1
-        TECXFLTHLD1: 1 = struct TECXFLTHLD1(bool);
+        XFLTHLD1: 1 = struct XFLTHLD1(bool);
         /// TEV Ext. fault signal hold for CE2
-        TECXFLTHLD2: 2 = struct TECXFLTHLD2(bool);
+        XFLTHLD2: 2 = struct XFLTHLD2(bool);
         /// TEV Ext. fault signal hold for CE3
-        TECXFLTHLD3: 3 = struct TECXFLTHLD3(bool);
+        XFLTHLD3: 3 = struct XFLTHLD3(bool);
         /// TEV Ext. fault signal hold for CE4
-        TECXFLTHLD4: 4 = struct TECXFLTHLD4(bool);
+        XFLTHLD4: 4 = struct XFLTHLD4(bool);
         /// TEV Ext. fault signal hold for CE5
-        TECXFLTHLD5: 5 = struct TECXFLTHLD5(bool);
+        XFLTHLD5: 5 = struct XFLTHLD5(bool);
         /// TEV Ext. fault signal hold for CE6
-        TECXFLTHLD6: 6 = struct TECXFLTHLD6(bool);
+        XFLTHLD6: 6 = struct XFLTHLD6(bool);
         /// TEV Ext. fault signal enable for CE0
-        TECXFLTEN0: 8 = struct TECXFLTEN0(bool);
+        XFLTEN0: 8 = struct XFLTEN0(bool);
         /// TEV Ext. fault signal enable for CE1
-        TECXFLTEN1: 9 = struct TECXFLTEN1(bool);
+        XFLTEN1: 9 = struct XFLTEN1(bool);
         /// TEV Ext. fault signal enable for CE2
-        TECXFLTEN2: 10 = struct TECXFLTEN2(bool);
+        XFLTEN2: 10 = struct XFLTEN2(bool);
         /// TEV Ext. fault signal enable for CE3
-        TECXFLTEN3: 11 = struct TECXFLTEN3(bool);
+        XFLTEN3: 11 = struct XFLTEN3(bool);
         /// TEV Ext. fault signal enable for CE4
-        TECXFLTEN4: 12 = struct TECXFLTEN4(bool);
+        XFLTEN4: 12 = struct XFLTEN4(bool);
         /// TEV Ext. fault signal enable for CE5
-        TECXFLTEN5: 13 = struct TECXFLTEN5(bool);
+        XFLTEN5: 13 = struct XFLTEN5(bool);
         /// TEV Ext. fault signal enable for CE6
-        TECXFLTEN6: 14 = struct TECXFLTEN6(bool);
+        XFLTEN6: 14 = struct XFLTEN6(bool);
     }
     /// Timer Event Control External Control 1
-    rw TECXCTL1 @ 0x02: u16 = 0_0 {
+    rw XCTL1 @ 0x02: u16 = 0_0 {
         /// TEV Polarity Bit of ext. fault 0
-        TECXFLTPOL0: 0 = struct TECXFLTPOL0(bool);
+        XFLTPOL0: 0 = struct XFLTPOL0(bool);
         /// TEV Polarity Bit of ext. fault 1
-        TECXFLTPOL1: 1 = struct TECXFLTPOL1(bool);
+        XFLTPOL1: 1 = struct XFLTPOL1(bool);
         /// TEV Polarity Bit of ext. fault 2
-        TECXFLTPOL2: 2 = struct TECXFLTPOL2(bool);
+        XFLTPOL2: 2 = struct XFLTPOL2(bool);
         /// TEV Polarity Bit of ext. fault 3
-        TECXFLTPOL3: 3 = struct TECXFLTPOL3(bool);
+        XFLTPOL3: 3 = struct XFLTPOL3(bool);
         /// TEV Polarity Bit of ext. fault 4
-        TECXFLTPOL4: 4 = struct TECXFLTPOL4(bool);
+        XFLTPOL4: 4 = struct XFLTPOL4(bool);
         /// TEV Polarity Bit of ext. fault 5
-        TECXFLTPOL5: 5 = struct TECXFLTPOL5(bool);
+        XFLTPOL5: 5 = struct XFLTPOL5(bool);
         /// TEV Polarity Bit of ext. fault 6
-        TECXFLTPOL6: 6 = struct TECXFLTPOL6(bool);
+        XFLTPOL6: 6 = struct XFLTPOL6(bool);
         /// TEV Signal Type of Ext. fault 0
-        TECXFLTLVS0: 8 = struct TECXFLTLVS0(bool);
+        XFLTLVS0: 8 = struct XFLTLVS0(bool);
         /// TEV Signal Type of Ext. fault 1
-        TECXFLTLVS1: 9 = struct TECXFLTLVS1(bool);
+        XFLTLVS1: 9 = struct XFLTLVS1(bool);
         /// TEV Signal Type of Ext. fault 2
-        TECXFLTLVS2: 10 = struct TECXFLTLVS2(bool);
+        XFLTLVS2: 10 = struct XFLTLVS2(bool);
         /// TEV Signal Type of Ext. fault 3
-        TECXFLTLVS3: 11 = struct TECXFLTLVS3(bool);
+        XFLTLVS3: 11 = struct XFLTLVS3(bool);
         /// TEV Signal Type of Ext. fault 4
-        TECXFLTLVS4: 12 = struct TECXFLTLVS4(bool);
+        XFLTLVS4: 12 = struct XFLTLVS4(bool);
         /// TEV Signal Type of Ext. fault 5
-        TECXFLTLVS5: 13 = struct TECXFLTLVS5(bool);
+        XFLTLVS5: 13 = struct XFLTLVS5(bool);
         /// TEV Signal Type of Ext. fault 6
-        TECXFLTLVS6: 14 = struct TECXFLTLVS6(bool);
+        XFLTLVS6: 14 = struct XFLTLVS6(bool);
     }
     /// Timer Event Control External Control 2
-    rw TECXCTL2 @ 0x04: u16 = 0_0 {
+    rw XCTL2 @ 0x04: u16 = 0_0 {
         /// TEV Aux. Clock Select Bit: 0
-        TECCLKSEL: 0..1 = enum TECCLKSEL {
+        CLKSEL: 0..1 = enum CLKSEL {
             /// TEV Aux. Clock Select: CLK0
-            TECCLKSEL_0 = 0b00,
+            CLKSEL_0 = 0b00,
             /// TEV Aux. Clock Select: CLK1
-            TECCLKSEL_1 = 0b01,
+            CLKSEL_1 = 0b01,
             /// TEV Aux. Clock Select: CLK2
-            TECCLKSEL_2 = 0b10,
+            CLKSEL_2 = 0b10,
             /// TEV Aux. Clock Select: CLK3
-            TECCLKSEL_3 = 0b11,
+            CLKSEL_3 = 0b11,
         }
         /// TEV Auxilary clear signal control
-        TECAXCLREN: 2 = struct TECAXCLREN(bool);
+        AXCLREN: 2 = struct AXCLREN(bool);
         /// TEV Ext. clear signal control
-        TECEXCLREN: 3 = struct TECEXCLREN(bool);
+        EXCLREN: 3 = struct EXCLREN(bool);
         /// TEV External clear signal hold bit
-        TECEXCLRHLD: 4 = struct TECEXCLRHLD(bool);
+        EXCLRHLD: 4 = struct EXCLRHLD(bool);
         /// TEV Polarity Bit of ext. clear
-        TECEXCLRPOL: 5 = struct TECEXCLRPOL(bool);
+        EXCLRPOL: 5 = struct EXCLRPOL(bool);
         /// TEV Signal Type of Ext. clear
-        TECEXCLRLVS: 6 = struct TECEXCLRLVS(bool);
+        EXCLRLVS: 6 = struct EXCLRLVS(bool);
     }
     /// Timer Event Control Status
-    rw TECSTA @ 0x06: u16 = 0_0 {
+    rw STA @ 0x06: u16 = 0_0 {
         /// TEV External fault status flag for CE0
-        TECXFLT0STA: 0 = struct TECXFLT0STA(bool);
+        XFLT0STA: 0 = struct XFLT0STA(bool);
         /// TEV External fault status flag for CE1
-        TECXFLT1STA: 1 = struct TECXFLT1STA(bool);
+        XFLT1STA: 1 = struct XFLT1STA(bool);
         /// TEV External fault status flag for CE2
-        TECXFLT2STA: 2 = struct TECXFLT2STA(bool);
+        XFLT2STA: 2 = struct XFLT2STA(bool);
         /// TEV External fault status flag for CE3
-        TECXFLT3STA: 3 = struct TECXFLT3STA(bool);
+        XFLT3STA: 3 = struct XFLT3STA(bool);
         /// TEV External fault status flag for CE4
-        TECXFLT4STA: 4 = struct TECXFLT4STA(bool);
+        XFLT4STA: 4 = struct XFLT4STA(bool);
         /// TEV External fault status flag for CE5
-        TECXFLT5STA: 5 = struct TECXFLT5STA(bool);
+        XFLT5STA: 5 = struct XFLT5STA(bool);
         /// TEV External fault status flag for CE6
-        TECXFLT6STA: 6 = struct TECXFLT6STA(bool);
-        /// TEC External clear status flag
-        TECXCLRSTA: 8 = struct TECXCLRSTA(bool);
+        XFLT6STA: 6 = struct XFLT6STA(bool);
+        ///  External clear status flag
+        XCLRSTA: 8 = struct XCLRSTA(bool);
     }
     /// Timer Event Control External Interrupt
-    rw TECXINT @ 0x08: u16 = 0_0 {
+    rw XINT @ 0x08: u16 = 0_0 {
         /// TEC Aux. Clear Interrupt Flag
-        TECAXCLRIFG: 0 = struct TECAXCLRIFG(bool);
+        AXCLRIFG: 0 = struct AXCLRIFG(bool);
         /// TEC External Clear Interrupt Flag
-        TECEXCLRIFG: 1 = struct TECEXCLRIFG(bool);
+        EXCLRIFG: 1 = struct EXCLRIFG(bool);
         /// TEC External Fault Interrupt Flag
-        TECXFLTIFG: 2 = struct TECXFLTIFG(bool);
+        XFLTIFG: 2 = struct XFLTIFG(bool);
         /// TEC Aux. Clear Interrupt Enable
-        TECAXCLRIE: 8 = struct TECAXCLRIE(bool);
+        AXCLRIE: 8 = struct AXCLRIE(bool);
         /// TEC External Clear Interrupt Enable
-        TECEXCLRIE: 9 = struct TECEXCLRIE(bool);
+        EXCLRIE: 9 = struct EXCLRIE(bool);
         /// TEC External Fault Interrupt Enable
-        TECXFLTIE: 10 = struct TECXFLTIE(bool);
+        XFLTIE: 10 = struct XFLTIE(bool);
     }
     /// Timer Event Control Interrupt Vector
-    rw TECIV @ 0x0a: u16 = 0_0 {
+    rw IV @ 0x0a: u16 = 0_0 {
         /// Timer Event Control Interrupt Vector
-        TECIV: 0..15 = struct TECIVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
 }

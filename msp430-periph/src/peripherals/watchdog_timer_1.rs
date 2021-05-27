@@ -4,22 +4,22 @@ utils::periph! {
     /// Watchdog Timer
     WatchdogTimer;
     /// Watchdog Timer Control
-    rw WDTCTL @ 0x00: u16 = 0_0 {
+    rw CTL @ 0x00: u16 = 0_0 {
         /// WDTIS0
-        WDTIS0: 0 = struct WDTIS0(bool);
+        IS0: 0 = struct IS0(bool);
         /// WDTIS1
-        WDTIS1: 1 = struct WDTIS1(bool);
+        IS1: 1 = struct IS1(bool);
         /// WDTSSEL
-        WDTSSEL: 2 = struct WDTSSEL(bool);
+        SSEL: 2 = struct SSEL(bool);
         /// WDTCNTCL
-        WDTCNTCL: 3 = struct WDTCNTCL(bool);
+        CNTCL: 3 = struct CNTCL(bool);
         /// WDTTMSEL
-        WDTTMSEL: 4 = struct WDTTMSEL(bool);
+        TMSEL: 4 = struct TMSEL(bool);
         /// WDTNMI
-        WDTNMI: 5 = struct WDTNMI(bool);
+        NMI: 5 = struct NMI(bool);
         /// WDTNMIES
-        WDTNMIES: 6 = struct WDTNMIES(bool);
+        NMIES: 6 = struct NMIES(bool);
         /// WDTHOLD
-        WDTHOLD: 7 = struct WDTHOLD(bool);
+        HOLD: 7 = struct HOLD(bool);
     }
 }

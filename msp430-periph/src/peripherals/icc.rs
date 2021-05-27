@@ -4,7 +4,7 @@ utils::periph! {
     /// ICC
     ICC;
     /// ICCSC
-    rw ICCSC @ 0x00: u16 = 0_0 {
+    rw SC @ 0x00: u16 = 0_0 {
         /// Current Interrupt Compare Mask of virtual stack specifies the current ICM at the top of virtual stack If ICM[1:0] is less than the priority level (ILSRx[1:0]) of the new interrupt, the corresponding source is sent to the CPU. Note that the ICMC is the element stack that the stack pointer is pointing to.
         ICMC: 0..1 = struct ICMC(u16);
         /// Virtual stack full flag This bit indicates whether or not the virtual stack is full. It is automatically updated when the stack is pushed or popped.
@@ -30,7 +30,7 @@ utils::periph! {
         }
     }
     /// ICCMVS
-    r ICCMVS @ 0x02: u16 = 0_0 {
+    r MVS @ 0x02: u16 = 0_0 {
         /// Interrupt compare mask virtual stack position 0 This field is the virtual stack register for ICM0.
         ICM0: 0..1 = struct ICM0(u16);
         /// Interrupt compare mask virtual stack position 1 This field is the virtual stack register for ICM1.
@@ -54,7 +54,7 @@ utils::periph! {
         ICM2: 4..5 = struct ICM2(u16);
     }
     /// ICCILSR0
-    rw ICCILSR0 @ 0x04: u16 = 0_0 {
+    rw ILSR_0 @ 0x04: u16 = 0_0 {
         /// Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRx bit.
         ILSR0: 0..1 = struct ILSR0(u16);
         /// Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRx bit.
@@ -73,7 +73,7 @@ utils::periph! {
         ILSR7: 14..15 = struct ILSR7(u16);
     }
     /// ICCILSR1
-    rw ICCILSR1 @ 0x06: u16 = 0_0 {
+    rw ILSR_1 @ 0x06: u16 = 0_0 {
         /// Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit.
         ILSR8: 0..1 = struct ILSR8(u16);
         /// Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit.
@@ -92,7 +92,7 @@ utils::periph! {
         ILSR15: 14..15 = struct ILSR15(u16);
     }
     /// ICCILSR2
-    rw ICCILSR2 @ 0x08: u16 = 0_0 {
+    rw ILSR_2 @ 0x08: u16 = 0_0 {
         /// Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit.
         ILSR16: 0..1 = struct ILSR16(u16);
         /// Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit
@@ -111,7 +111,7 @@ utils::periph! {
         ILSR23: 14..15 = struct ILSR23(u16);
     }
     /// ICCILSR3
-    rw ICCILSR3 @ 0x0a: u16 = 0_0 {
+    rw ILSR_3 @ 0x0a: u16 = 0_0 {
         /// Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit.
         ILSR24: 0..1 = struct ILSR24(u16);
         /// Sets the interrupt level for this interrupt source. Maskable interrupt sources only. See the device-specific data sheet to determine the interrupt source for each ILSRxx bit.

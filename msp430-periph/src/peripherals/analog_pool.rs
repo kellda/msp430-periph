@@ -4,7 +4,7 @@ utils::periph! {
     /// Analog Pool
     AnalogPool;
     /// A-POOL Configuration Register
-    rw APCNF @ 0x00: u16 = 0_0 {
+    rw CNF @ 0x00: u16 = 0_0 {
         /// A-POOL TimerA0 trigger enable
         TA0EN: 0 = struct TA0EN(bool);
         /// A-POOL TimerA1 trigger enable
@@ -49,7 +49,7 @@ utils::periph! {
         VREFEN: 14 = struct VREFEN(bool);
     }
     /// A-POOL Control Register 1
-    rw APCTL @ 0x02: u16 = 0_0 {
+    rw CTL @ 0x02: u16 = 0_0 {
         /// A-POOL Output driver enable
         ODEN: 0 = struct ODEN(bool);
         /// A-POOL Output swap
@@ -59,23 +59,23 @@ utils::periph! {
         /// A-POOL Slope select of converter
         SLOPE: 3 = struct SLOPE(bool);
         /// A-POOL Neg. Channel Input Select 0
-        APNSEL: 4..7 = enum APNSEL {
+        NSEL: 4..7 = enum NSEL {
             /// A-POOL V- terminal Input Select: Channel 0
-            APNSEL_0 = 0b0000,
+            NSEL_0 = 0b0000,
             /// A-POOL V- terminal Input Select: Channel 1
-            APNSEL_1 = 0b0001,
+            NSEL_1 = 0b0001,
             /// A-POOL V- terminal Input Select: Channel 2
-            APNSEL_2 = 0b0010,
+            NSEL_2 = 0b0010,
             /// A-POOL V- terminal Input Select: Channel 3
-            APNSEL_3 = 0b0011,
+            NSEL_3 = 0b0011,
             /// A-POOL V- terminal Input Select: Channel 4
-            APNSEL_4 = 0b0100,
+            NSEL_4 = 0b0100,
             /// A-POOL V- terminal Input Select: Channel 5
-            APNSEL_5 = 0b0101,
+            NSEL_5 = 0b0101,
             /// A-POOL V- terminal Input Select: Channel 6
-            APNSEL_6 = 0b0110,
+            NSEL_6 = 0b0110,
             /// A-POOL V- terminal Input Select: Channel 7
-            APNSEL_7 = 0b0111,
+            NSEL_7 = 0b0111,
         }
         /// A-POOL Converteral Input Select: Channel 7
         RUNSTOP: 8 = struct RUNSTOP(bool);
@@ -86,29 +86,29 @@ utils::periph! {
         /// A-POOL Timer based conversion stop enable for TimerA0
         TBSTP: 11 = struct TBSTP(bool);
         /// A-POOL Pos. Channel Input Select 0
-        APPSEL: 12..15 = enum APPSEL {
+        PSEL: 12..15 = enum PSEL {
             /// A-POOL V+ Terminal Input Select: Channel 0
-            APPSEL_0 = 0b0000,
+            PSEL_0 = 0b0000,
             /// A-POOL V+ Terminal Input Select: Channel 1
-            APPSEL_1 = 0b0001,
+            PSEL_1 = 0b0001,
             /// A-POOL V+ Terminal Input Select: Channel 2
-            APPSEL_2 = 0b0010,
+            PSEL_2 = 0b0010,
             /// A-POOL V+ Terminal Input Select: Channel 3
-            APPSEL_3 = 0b0011,
+            PSEL_3 = 0b0011,
             /// A-POOL V+ Terminal Input Select: Channel 4
-            APPSEL_4 = 0b0100,
+            PSEL_4 = 0b0100,
             /// A-POOL V+ Terminal Input Select: Channel 5
-            APPSEL_5 = 0b0101,
+            PSEL_5 = 0b0101,
             /// A-POOL V+ Terminal Input Select: Channel 6
-            APPSEL_6 = 0b0110,
+            PSEL_6 = 0b0110,
             /// A-POOL V+ Terminal Input Select: Channel 7
-            APPSEL_7 = 0b0111,
+            PSEL_7 = 0b0111,
             /// A-POOL V+ Terminal Input Select: Channel 8
-            APPSEL_8 = 0b1000,
+            PSEL_8 = 0b1000,
         }
     }
     /// A-POOL Operation Mode Register 2
-    rw APOMR @ 0x04: u16 = 0_0 {
+    rw OMR @ 0x04: u16 = 0_0 {
         /// A-POOL Prescaler Control Bit: 0
         CLKDIV: 0..2 = enum CLKDIV {
             /// A-POOL Prescaler Control 0 : /1
@@ -136,7 +136,7 @@ utils::periph! {
         SVMINH: 11 = struct SVMINH(bool);
     }
     /// A-POOL Voltage Divider Register 3
-    rw APVDIV @ 0x06: u16 = 0_0 {
+    rw VDIV @ 0x06: u16 = 0_0 {
         /// A-POOL Analog channel #0 voltage divider control
         A0DIV: 0 = struct A0DIV(bool);
         /// A-POOL Analog channel #1 voltage divider control
@@ -180,7 +180,7 @@ utils::periph! {
         }
     }
     /// A-POOL trimming register
-    rw APTRIM @ 0x08: u16 = 0_0 {
+    rw TRIM @ 0x08: u16 = 0_0 {
         /// A-POOL Register bank used for the reference trimming
         REFTSEL: 0 = struct REFTSEL(bool);
         /// A-POOL Reference trimming bit: 0
@@ -204,27 +204,27 @@ utils::periph! {
         }
     }
     /// A-POOL Integer Conversion Register
-    rw APINT @ 0x10: u16 = 0_0 {
+    rw INT @ 0x10: u16 = 0_0 {
         /// A-POOL Integer Conversion Register
-        APINT: 0..15 = struct APINTField(u16);
+        INT: 0..15 = struct INTField(u16);
     }
     /// A-POOL Integer Conversion Buffer Register
-    rw APINTB @ 0x12: u16 = 0_0 {
+    rw INTB @ 0x12: u16 = 0_0 {
         /// A-POOL Integer Conversion Buffer Register
-        APINTB: 0..15 = struct APINTBField(u16);
+        INTB: 0..15 = struct INTBField(u16);
     }
     /// A-POOL Fractional Conversion Register
-    rw APFRACT @ 0x14: u16 = 0_0 {
+    rw FRACT @ 0x14: u16 = 0_0 {
         /// A-POOL Fractional Conversion Register
-        APFRACT: 0..15 = struct APFRACTField(u16);
+        FRACT: 0..15 = struct FRACTField(u16);
     }
     /// A-POOL Fractional Conversion Buffer Register
-    rw APFRACTB @ 0x16: u16 = 0_0 {
+    rw FRACTB @ 0x16: u16 = 0_0 {
         /// A-POOL Fractional Conversion Buffer Register
-        APFRACTB: 0..15 = struct APFRACTBField(u16);
+        FRACTB: 0..15 = struct FRACTBField(u16);
     }
     /// A-POOL Interrupt Flag Register
-    rw APIFG @ 0x1a: u16 = 0_0 {
+    rw IFG @ 0x1a: u16 = 0_0 {
         /// A-POOL End of conversion interrupt flag
         EOCIFG: 0 = struct EOCIFG(bool);
         /// A-POOL Comparator falling edge interrupt flag
@@ -235,7 +235,7 @@ utils::periph! {
         REFOKIFG: 3 = struct REFOKIFG(bool);
     }
     /// A-POOL Interrupt Enable Register
-    rw APIE @ 0x1c: u16 = 0_0 {
+    rw IE @ 0x1c: u16 = 0_0 {
         /// A-POOL End of conversion interrupt enable
         EOCIE: 0 = struct EOCIE(bool);
         /// A-POOL Comparator falling edge interrupt enable
@@ -246,8 +246,8 @@ utils::periph! {
         REFIKIE: 3 = struct REFIKIE(bool);
     }
     /// A-POOL Interrupt Vector Word
-    rw APIV @ 0x1e: u16 = 0_0 {
+    rw IV @ 0x1e: u16 = 0_0 {
         /// A-POOL Interrupt Vector Word
-        APIV: 0..15 = struct APIVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
 }

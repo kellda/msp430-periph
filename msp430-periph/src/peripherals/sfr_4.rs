@@ -4,7 +4,7 @@ utils::periph! {
     /// SFR
     SFR;
     /// Interrupt Enable
-    rw SFRIE1 @ 0x00: u16 = 0_0 {
+    rw IE1 @ 0x00: u16 = 0_0 {
         /// Watchdog timer interrupt enable
         WDTIE: 0 = enum WDTIE {
             /// Interrupts disabled
@@ -49,7 +49,7 @@ utils::periph! {
         }
     }
     /// Interrupt Flag
-    rw SFRIFG1 @ 0x02: u16 = 0_0 {
+    rw IFG1 @ 0x02: u16 = 0_0 {
         /// Oscillator fault interrupt flag
         OFIFG: 1 = enum OFIFG {
             /// No interrupt pending
@@ -94,7 +94,7 @@ utils::periph! {
         }
     }
     /// Reset Pin Control
-    rw SFRRPCR @ 0x04: u16 = 0_0 {
+    rw RPCR @ 0x04: u16 = 0_0 {
         /// NMI select
         SYSNMI: 0 = enum SYSNMI {
             /// Reset function

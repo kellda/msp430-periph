@@ -4,180 +4,180 @@ utils::periph! {
     /// USCI_B  I2C Mode
     USCI_B_I2C;
     /// USCI B Control Word Register 0
-    rw UCBCTLW0 @ 0x00: u16 = 0_0 {
+    rw CTLW0 @ 0x00: u16 = 0_0 {
         /// USCI B Control Word Register 0
-        UCBCTLW0: 0..15 = struct UCBCTLW0Field(u16);
+        CTLW0: 0..15 = struct CTLW0Field(u16);
     }
     /// USCI B Control Register 0
-    rw UCBCTL0 @ 0x01: u8 = 0_0 {
+    rw CTL0 @ 0x01: u8 = 0_0 {
         /// Sync-Mode  0:UART-Mode / 1:SPI-Mode
-        UCSYNC: 0 = struct UCSYNC(bool);
+        SYNC: 0 = struct SYNC(bool);
         /// Sync. Mode: USCI Mode 1
-        UCMODE: 1..2 = enum UCMODE {
+        MODE: 1..2 = enum MODE {
             /// Sync. Mode: USCI Mode: 0
-            UCMODE_0 = 0b00,
+            MODE_0 = 0b00,
             /// Sync. Mode: USCI Mode: 1
-            UCMODE_1 = 0b01,
+            MODE_1 = 0b01,
             /// Sync. Mode: USCI Mode: 2
-            UCMODE_2 = 0b10,
+            MODE_2 = 0b10,
             /// Sync. Mode: USCI Mode: 3
-            UCMODE_3 = 0b11,
+            MODE_3 = 0b11,
         }
         /// Sync. Mode: Master Select
-        UCMST: 3 = struct UCMST(bool);
+        MST: 3 = struct MST(bool);
         /// Multi-Master Environment
-        UCMM: 5 = struct UCMM(bool);
+        MM: 5 = struct MM(bool);
         /// 10-bit Slave Address Mode
-        UCSLA10: 6 = struct UCSLA10(bool);
+        SLA10: 6 = struct SLA10(bool);
         /// 10-bit Address Mode
-        UCA10: 7 = struct UCA10(bool);
+        A10: 7 = struct A10(bool);
     }
     /// USCI B Control Register 1
-    rw UCBCTL1 @ 0x00: u8 = 0_0 {
+    rw CTL1 @ 0x00: u8 = 0_0 {
         /// USCI Software Reset
-        UCSWRST: 0 = struct UCSWRST(bool);
+        SWRST: 0 = struct SWRST(bool);
         /// Transmit START
-        UCTXSTT: 1 = struct UCTXSTT(bool);
+        TXSTT: 1 = struct TXSTT(bool);
         /// Transmit STOP
-        UCTXSTP: 2 = struct UCTXSTP(bool);
+        TXSTP: 2 = struct TXSTP(bool);
         /// Transmit NACK
-        UCTXNACK: 3 = struct UCTXNACK(bool);
+        TXNACK: 3 = struct TXNACK(bool);
         /// Transmit/Receive Select/Flag
-        UCTR: 4 = struct UCTR(bool);
+        TR: 4 = struct TR(bool);
         /// USCI 1 Clock Source Select 1
-        UCSSEL: 6..7 = enum UCSSEL {
+        SSEL: 6..7 = enum SSEL {
             /// USCI 0 Clock Source: 0
-            UCSSEL_0 = 0b00,
+            SSEL_0 = 0b00,
             /// USCI 0 Clock Source: 1
-            UCSSEL_1 = 0b01,
+            SSEL_1 = 0b01,
             /// USCI 0 Clock Source: 2
-            UCSSEL_2 = 0b10,
+            SSEL_2 = 0b10,
             /// USCI 0 Clock Source: 3
-            UCSSEL_3 = 0b11,
+            SSEL_3 = 0b11,
         }
     }
     /// USCI B Baud Word Rate 0
-    rw UCBBRW @ 0x06: u16 = 0_0 {
+    rw BRW @ 0x06: u16 = 0_0 {
         /// USCI B Baud Word Rate 0
-        UCBBRW: 0..15 = struct UCBBRWField(u16);
+        BRW: 0..15 = struct BRWField(u16);
     }
     /// USCI B Baud Rate 0
-    rw UCBBR0 @ 0x06: u8 = 0_0 {
+    rw BR0 @ 0x06: u8 = 0_0 {
         /// USCI B Baud Rate 0
-        UCBBR0: 0..7 = struct UCBBR0Field(u8);
+        BR0: 0..7 = struct BR0Field(u8);
     }
     /// USCI B Baud Rate 1
-    rw UCBBR1 @ 0x07: u8 = 0_0 {
+    rw BR1 @ 0x07: u8 = 0_0 {
         /// USCI B Baud Rate 1
-        UCBBR1: 0..7 = struct UCBBR1Field(u8);
+        BR1: 0..7 = struct BR1Field(u8);
     }
     /// USCI B Status Register
-    rw UCBSTAT @ 0x0a: u8 = 0_0 {
+    rw STAT @ 0x0a: u8 = 0_0 {
         /// Bus Busy Flag
-        UCBBUSY: 4 = struct UCBBUSY(bool);
+        BUSY: 4 = struct BUSY(bool);
         /// General Call address received Flag
-        UCGC: 5 = struct UCGC(bool);
+        GC: 5 = struct GC(bool);
         /// SCL low
-        UCSCLLOW: 6 = struct UCSCLLOW(bool);
+        SCLLOW: 6 = struct SCLLOW(bool);
         /// USCI Listen mode
-        UCLISTEN: 7 = struct UCLISTEN(bool);
+        LISTEN: 7 = struct LISTEN(bool);
     }
     /// USCI B Receive Buffer
-    rw UCBRXBUF @ 0x0c: u8 = 0_0 {
+    rw RXBUF @ 0x0c: u8 = 0_0 {
         /// USCI B Receive Buffer
-        UCBRXBUF: 0..7 = struct UCBRXBUFField(u8);
+        RXBUF: 0..7 = struct RXBUFField(u8);
     }
     /// USCI B Transmit Buffer
-    rw UCBTXBUF @ 0x0e: u8 = 0_0 {
+    rw TXBUF @ 0x0e: u8 = 0_0 {
         /// USCI B Transmit Buffer
-        UCBTXBUF: 0..7 = struct UCBTXBUFField(u8);
+        TXBUF: 0..7 = struct TXBUFField(u8);
     }
     /// USCI B I2C Own Address
-    rw UCBI2COA @ 0x10: u16 = 0_0 {
+    rw I2COA @ 0x10: u16 = 0_0 {
         /// I2C Own Address 0
-        UCOA0: 0 = struct UCOA0(bool);
+        OA0: 0 = struct OA0(bool);
         /// I2C Own Address 1
-        UCOA1: 1 = struct UCOA1(bool);
+        OA1: 1 = struct OA1(bool);
         /// I2C Own Address 2
-        UCOA2: 2 = struct UCOA2(bool);
+        OA2: 2 = struct OA2(bool);
         /// I2C Own Address 3
-        UCOA3: 3 = struct UCOA3(bool);
+        OA3: 3 = struct OA3(bool);
         /// I2C Own Address 4
-        UCOA4: 4 = struct UCOA4(bool);
+        OA4: 4 = struct OA4(bool);
         /// I2C Own Address 5
-        UCOA5: 5 = struct UCOA5(bool);
+        OA5: 5 = struct OA5(bool);
         /// I2C Own Address 6
-        UCOA6: 6 = struct UCOA6(bool);
+        OA6: 6 = struct OA6(bool);
         /// I2C Own Address 7
-        UCOA7: 7 = struct UCOA7(bool);
+        OA7: 7 = struct OA7(bool);
         /// I2C Own Address 8
-        UCOA8: 8 = struct UCOA8(bool);
+        OA8: 8 = struct OA8(bool);
         /// I2C Own Address 9
-        UCOA9: 9 = struct UCOA9(bool);
+        OA9: 9 = struct OA9(bool);
         /// I2C General Call enable
-        UCGCEN: 15 = struct UCGCEN(bool);
+        GCEN: 15 = struct GCEN(bool);
     }
     /// USCI B I2C Slave Address
-    rw UCBI2CSA @ 0x12: u16 = 0_0 {
+    rw I2CSA @ 0x12: u16 = 0_0 {
         /// I2C Slave Address 0
-        UCSA0: 0 = struct UCSA0(bool);
+        SA0: 0 = struct SA0(bool);
         /// I2C Slave Address 1
-        UCSA1: 1 = struct UCSA1(bool);
+        SA1: 1 = struct SA1(bool);
         /// I2C Slave Address 2
-        UCSA2: 2 = struct UCSA2(bool);
+        SA2: 2 = struct SA2(bool);
         /// I2C Slave Address 3
-        UCSA3: 3 = struct UCSA3(bool);
+        SA3: 3 = struct SA3(bool);
         /// I2C Slave Address 4
-        UCSA4: 4 = struct UCSA4(bool);
+        SA4: 4 = struct SA4(bool);
         /// I2C Slave Address 5
-        UCSA5: 5 = struct UCSA5(bool);
+        SA5: 5 = struct SA5(bool);
         /// I2C Slave Address 6
-        UCSA6: 6 = struct UCSA6(bool);
+        SA6: 6 = struct SA6(bool);
         /// I2C Slave Address 7
-        UCSA7: 7 = struct UCSA7(bool);
+        SA7: 7 = struct SA7(bool);
         /// I2C Slave Address 8
-        UCSA8: 8 = struct UCSA8(bool);
+        SA8: 8 = struct SA8(bool);
         /// I2C Slave Address 9
-        UCSA9: 9 = struct UCSA9(bool);
+        SA9: 9 = struct SA9(bool);
     }
     /// USCI B Interrupt Enable Register
-    rw UCBICTL @ 0x1c: u16 = 0_0 {
+    rw ICTL @ 0x1c: u16 = 0_0 {
         /// USCI B Interrupt Enable Register
-        UCBICTL: 0..15 = struct UCBICTLField(u16);
+        ICTL: 0..15 = struct ICTLField(u16);
     }
     /// USCI B Interrupt Enable Register
-    rw UCBIE @ 0x1c: u8 = 0_0 {
+    rw IE @ 0x1c: u8 = 0_0 {
         /// USCI Receive Interrupt Enable
-        UCRXIE: 0 = struct UCRXIE(bool);
+        RXIE: 0 = struct RXIE(bool);
         /// USCI Transmit Interrupt Enable
-        UCTXIE: 1 = struct UCTXIE(bool);
+        TXIE: 1 = struct TXIE(bool);
         /// START Condition interrupt enable
-        UCSTTIE: 2 = struct UCSTTIE(bool);
+        STTIE: 2 = struct STTIE(bool);
         /// STOP Condition interrupt enable
-        UCSTPIE: 3 = struct UCSTPIE(bool);
+        STPIE: 3 = struct STPIE(bool);
         /// Arbitration Lost interrupt enable
-        UCALIE: 4 = struct UCALIE(bool);
+        ALIE: 4 = struct ALIE(bool);
         /// NACK Condition interrupt enable
-        UCNACKIE: 5 = struct UCNACKIE(bool);
+        NACKIE: 5 = struct NACKIE(bool);
     }
     /// USCI B Interrupt Flags Register
-    rw UCBIFG @ 0x1d: u8 = 0_0 {
+    rw IFG @ 0x1d: u8 = 0_0 {
         /// USCI Receive Interrupt Flag
-        UCRXIFG: 0 = struct UCRXIFG(bool);
+        RXIFG: 0 = struct RXIFG(bool);
         /// USCI Transmit Interrupt Flag
-        UCTXIFG: 1 = struct UCTXIFG(bool);
+        TXIFG: 1 = struct TXIFG(bool);
         /// START Condition interrupt Flag
-        UCSTTIFG: 2 = struct UCSTTIFG(bool);
+        STTIFG: 2 = struct STTIFG(bool);
         /// STOP Condition interrupt Flag
-        UCSTPIFG: 3 = struct UCSTPIFG(bool);
+        STPIFG: 3 = struct STPIFG(bool);
         /// Arbitration Lost interrupt Flag
-        UCALIFG: 4 = struct UCALIFG(bool);
+        ALIFG: 4 = struct ALIFG(bool);
         /// NAK Condition interrupt Flag
-        UCNACKIFG: 5 = struct UCNACKIFG(bool);
+        NACKIFG: 5 = struct NACKIFG(bool);
     }
     /// USCI B Interrupt Vector Register
-    rw UCBIV @ 0x1e: u16 = 0_0 {
+    rw IV @ 0x1e: u16 = 0_0 {
         /// USCI B Interrupt Vector Register
-        UCBIV: 0..15 = struct UCBIVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
 }

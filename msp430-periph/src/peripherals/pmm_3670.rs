@@ -4,27 +4,27 @@ utils::periph! {
     /// PMM
     PMM;
     /// PMM control register 0
-    rw PMMCTL0 @ 0x00: u16 = 0_0 {
+    rw CTL0 @ 0x00: u16 = 0_0 {
         /// Software brownout reset.
-        PMMSWBOR: 2 = enum PMMSWBOR {
+        SWBOR: 2 = enum SWBOR {
             /// Normal operation
-            PMMSWBOR_0 = 0b0,
+            SWBOR_0 = 0b0,
             /// Set to 1 to trigger a BOR
-            PMMSWBOR_1 = 0b1,
+            SWBOR_1 = 0b1,
         }
         /// Software POR.
-        PMMSWPOR: 3 = enum PMMSWPOR {
+        SWPOR: 3 = enum SWPOR {
             /// Normal operation
-            PMMSWPOR_0 = 0b0,
+            SWPOR_0 = 0b0,
             /// Set to 1 to trigger a POR
-            PMMSWPOR_1 = 0b1,
+            SWPOR_1 = 0b1,
         }
         /// Regulator off
-        PMMREGOFF: 4 = enum PMMREGOFF {
+        REGOFF: 4 = enum REGOFF {
             /// Regulator remains on when going into LPM3 or LPM4
-            PMMREGOFF_0 = 0b0,
+            REGOFF_0 = 0b0,
             /// Regulator is turned off when going to LPM3 or LPM4. System enters LPM3.5 or LPM4.5, respectively.
-            PMMREGOFF_1 = 0b1,
+            REGOFF_1 = 0b1,
         }
         /// High-side SVS enable.
         SVSHE: 6 = enum SVSHE {
@@ -34,30 +34,30 @@ utils::periph! {
             SVSHE_1 = 0b1,
         }
         /// PMM password.
-        PMMPW: 8..15 = struct PMMPW(u16);
+        PW: 8..15 = struct PW(u16);
     }
     /// PMM interrupt flag register
-    rw PMMIFG @ 0x0a: u16 = 0_0 {
+    rw IFG @ 0x0a: u16 = 0_0 {
         /// PMM software brownout reset interrupt flag.
-        PMMBORIFG: 8 = enum PMMBORIFG {
+        BORIFG: 8 = enum BORIFG {
             /// Reset not due to PMMSWBOR
-            PMMBORIFG_0 = 0b0,
+            BORIFG_0 = 0b0,
             /// Reset due to PMMSWBOR
-            PMMBORIFG_1 = 0b1,
+            BORIFG_1 = 0b1,
         }
         /// PMM reset pin interrupt flag.
-        PMMRSTIFG: 9 = enum PMMRSTIFG {
+        RSTIFG: 9 = enum RSTIFG {
             /// Reset not due to reset pin
-            PMMBORIFG_0 = 0b0,
+            BORIFG_0 = 0b0,
             /// Reset due to reset pin
-            PMMBORIFG_1 = 0b1,
+            BORIFG_1 = 0b1,
         }
         /// PMM software POR interrupt flag.
-        PMMPORIFG: 10 = enum PMMPORIFG {
+        PORIFG: 10 = enum PORIFG {
             /// Reset not due to PMMSWPOR
-            PMMBORIFG_0 = 0b0,
+            BORIFG_0 = 0b0,
             /// Reset due to PMMSWPOR
-            PMMBORIFG_1 = 0b1,
+            BORIFG_1 = 0b1,
         }
         /// High-side SVS interrupt flag.
         SVSHIFG: 13 = enum SVSHIFG {
@@ -67,11 +67,11 @@ utils::periph! {
             SVSHIFG_1 = 0b1,
         }
         /// LPMx.5 flag.
-        PMMLPM5IFG: 15 = enum PMMLPM5IFG {
+        LPM5IFG: 15 = enum LPM5IFG {
             /// Reset not due to wake-up from LPMx.5
-            PMMLPM5IFG_0 = 0b0,
+            LPM5IFG_0 = 0b0,
             /// Reset due to wake-up from LPMx.5
-            PMMLPM5IFG_1 = 0b1,
+            LPM5IFG_1 = 0b1,
         }
     }
     /// Power mode 5 control register 0

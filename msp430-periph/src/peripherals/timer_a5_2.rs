@@ -4,18 +4,18 @@ utils::periph! {
     /// Timer A5
     TimerA5;
     /// Timer A5 Interrupt Vector Word
-    rw TAIV @ 0x00: u16 = 0_0 {
+    rw IV @ 0x00: u16 = 0_0 {
         /// Timer A5 Interrupt Vector Word
-        TAIV: 0..15 = struct TAIVField(u16);
+        IV: 0..15 = struct IVField(u16);
     }
     /// Timer A5 Control
-    rw TACTL @ 0x62: u16 = 0_0 {
+    rw CTL @ 0x62: u16 = 0_0 {
         /// Timer A counter interrupt flag
-        TAIFG: 0 = struct TAIFG(bool);
+        IFG: 0 = struct IFG(bool);
         /// Timer A counter interrupt enable
-        TAIE: 1 = struct TAIE(bool);
+        IE: 1 = struct IE(bool);
         /// Timer A counter clear
-        TACLR: 2 = struct TACLR(bool);
+        CLR: 2 = struct CLR(bool);
         /// Timer A mode control 1
         MC: 4..5 = enum MC {
             /// Timer A mode control: 0 - Stop
@@ -39,31 +39,31 @@ utils::periph! {
             ID_3 = 0b11,
         }
         /// Timer A clock source select 1
-        TASSEL: 8..9 = enum TASSEL {
+        SSEL: 8..9 = enum SSEL {
             /// Timer A clock source select: 0 - TACLK
-            TASSEL_0 = 0b00,
+            SSEL_0 = 0b00,
             /// Timer A clock source select: 1 - ACLK
-            TASSEL_1 = 0b01,
+            SSEL_1 = 0b01,
             /// Timer A clock source select: 2 - SMCLK
-            TASSEL_2 = 0b10,
+            SSEL_2 = 0b10,
             /// Timer A clock source select: 3 - INCLK
-            TASSEL_3 = 0b11,
+            SSEL_3 = 0b11,
         }
     }
     /// Timer A5 Capture/Compare Control 0
-    rw TACCTL0 @ 0x64: u16 = 0_0 {
+    rw CCTL0 @ 0x64: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TACCTL0_CCIFG: 0 = struct TACCTL0_CCIFG(bool);
+        C0CCIFG: 0 = struct C0CCIFG(bool);
         /// Capture/compare overflow flag
-        TACCTL0_COV: 1 = struct TACCTL0_COV(bool);
+        C0COV: 1 = struct C0COV(bool);
         /// PWM Output signal if output mode 0
-        TACCTL0_OUT: 2 = struct TACCTL0_OUT(bool);
+        C0OUT: 2 = struct C0OUT(bool);
         /// Capture input signal (read)
-        TACCTL0_CCI: 3 = struct TACCTL0_CCI(bool);
+        C0CCI: 3 = struct C0CCI(bool);
         /// Capture/compare interrupt enable
-        TACCTL0_CCIE: 4 = struct TACCTL0_CCIE(bool);
+        C0CCIE: 4 = struct C0CCIE(bool);
         /// Output mode 2
-        TACCTL0_OUTMOD: 5..7 = enum TACCTL0_OUTMOD {
+        C0OUTMOD: 5..7 = enum C0OUTMOD {
             /// PWM output mode: 0 - output only
             OUTMOD_0 = 0b000,
             /// PWM output mode: 1 - set
@@ -82,13 +82,13 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode: 1 /Compare mode : 0
-        TACCTL0_CAP: 8 = struct TACCTL0_CAP(bool);
+        C0CAP: 8 = struct C0CAP(bool);
         /// Latched capture signal (read)
-        TACCTL0_SCCI: 10 = struct TACCTL0_SCCI(bool);
+        C0SCCI: 10 = struct C0SCCI(bool);
         /// Capture sychronize
-        TACCTL0_SCS: 11 = struct TACCTL0_SCS(bool);
+        C0SCS: 11 = struct C0SCS(bool);
         /// Capture input select 1
-        TACCTL0_CCIS: 12..13 = enum TACCTL0_CCIS {
+        C0CCIS: 12..13 = enum C0CCIS {
             /// Capture input select: 0 - CCIxA
             CCIS_0 = 0b00,
             /// Capture input select: 1 - CCIxB
@@ -99,7 +99,7 @@ utils::periph! {
             CCIS_3 = 0b11,
         }
         /// Capture mode 1
-        TACCTL0_CM: 14..15 = enum TACCTL0_CM {
+        C0CM: 14..15 = enum C0CM {
             /// Capture mode: 0 - disabled
             CM_0 = 0b00,
             /// Capture mode: 1 - pos. edge
@@ -111,19 +111,19 @@ utils::periph! {
         }
     }
     /// Timer A5 Capture/Compare Control 1
-    rw TACCTL1 @ 0x66: u16 = 0_0 {
+    rw CCTL1 @ 0x66: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TACCTL1_CCIFG: 0 = struct TACCTL1_CCIFG(bool);
+        C1CCIFG: 0 = struct C1CCIFG(bool);
         /// Capture/compare overflow flag
-        TACCTL1_COV: 1 = struct TACCTL1_COV(bool);
+        C1COV: 1 = struct C1COV(bool);
         /// PWM Output signal if output mode 0
-        TACCTL1_OUT: 2 = struct TACCTL1_OUT(bool);
+        C1OUT: 2 = struct C1OUT(bool);
         /// Capture input signal (read)
-        TACCTL1_CCI: 3 = struct TACCTL1_CCI(bool);
+        C1CCI: 3 = struct C1CCI(bool);
         /// Capture/compare interrupt enable
-        TACCTL1_CCIE: 4 = struct TACCTL1_CCIE(bool);
+        C1CCIE: 4 = struct C1CCIE(bool);
         /// Output mode 2
-        TACCTL1_OUTMOD: 5..7 = enum TACCTL1_OUTMOD {
+        C1OUTMOD: 5..7 = enum C1OUTMOD {
             /// PWM output mode: 0 - output only
             OUTMOD_0 = 0b000,
             /// PWM output mode: 1 - set
@@ -142,13 +142,13 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode: 1 /Compare mode : 0
-        TACCTL1_CAP: 8 = struct TACCTL1_CAP(bool);
+        C1CAP: 8 = struct C1CAP(bool);
         /// Latched capture signal (read)
-        TACCTL1_SCCI: 10 = struct TACCTL1_SCCI(bool);
+        C1SCCI: 10 = struct C1SCCI(bool);
         /// Capture sychronize
-        TACCTL1_SCS: 11 = struct TACCTL1_SCS(bool);
+        C1SCS: 11 = struct C1SCS(bool);
         /// Capture input select 1
-        TACCTL1_CCIS: 12..13 = enum TACCTL1_CCIS {
+        C1CCIS: 12..13 = enum C1CCIS {
             /// Capture input select: 0 - CCIxA
             CCIS_0 = 0b00,
             /// Capture input select: 1 - CCIxB
@@ -159,7 +159,7 @@ utils::periph! {
             CCIS_3 = 0b11,
         }
         /// Capture mode 1
-        TACCTL1_CM: 14..15 = enum TACCTL1_CM {
+        C1CM: 14..15 = enum C1CM {
             /// Capture mode: 0 - disabled
             CM_0 = 0b00,
             /// Capture mode: 1 - pos. edge
@@ -171,19 +171,19 @@ utils::periph! {
         }
     }
     /// Timer A5 Capture/Compare Control 2
-    rw TACCTL2 @ 0x68: u16 = 0_0 {
+    rw CCTL2 @ 0x68: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TACCTL2_CCIFG: 0 = struct TACCTL2_CCIFG(bool);
+        C2CCIFG: 0 = struct C2CCIFG(bool);
         /// Capture/compare overflow flag
-        TACCTL2_COV: 1 = struct TACCTL2_COV(bool);
+        C2COV: 1 = struct C2COV(bool);
         /// PWM Output signal if output mode 0
-        TACCTL2_OUT: 2 = struct TACCTL2_OUT(bool);
+        C2OUT: 2 = struct C2OUT(bool);
         /// Capture input signal (read)
-        TACCTL2_CCI: 3 = struct TACCTL2_CCI(bool);
+        C2CCI: 3 = struct C2CCI(bool);
         /// Capture/compare interrupt enable
-        TACCTL2_CCIE: 4 = struct TACCTL2_CCIE(bool);
+        C2CCIE: 4 = struct C2CCIE(bool);
         /// Output mode 2
-        TACCTL2_OUTMOD: 5..7 = enum TACCTL2_OUTMOD {
+        C2OUTMOD: 5..7 = enum C2OUTMOD {
             /// PWM output mode: 0 - output only
             OUTMOD_0 = 0b000,
             /// PWM output mode: 1 - set
@@ -202,13 +202,13 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode: 1 /Compare mode : 0
-        TACCTL2_CAP: 8 = struct TACCTL2_CAP(bool);
+        C2CAP: 8 = struct C2CAP(bool);
         /// Latched capture signal (read)
-        TACCTL2_SCCI: 10 = struct TACCTL2_SCCI(bool);
+        C2SCCI: 10 = struct C2SCCI(bool);
         /// Capture sychronize
-        TACCTL2_SCS: 11 = struct TACCTL2_SCS(bool);
+        C2SCS: 11 = struct C2SCS(bool);
         /// Capture input select 1
-        TACCTL2_CCIS: 12..13 = enum TACCTL2_CCIS {
+        C2CCIS: 12..13 = enum C2CCIS {
             /// Capture input select: 0 - CCIxA
             CCIS_0 = 0b00,
             /// Capture input select: 1 - CCIxB
@@ -219,7 +219,7 @@ utils::periph! {
             CCIS_3 = 0b11,
         }
         /// Capture mode 1
-        TACCTL2_CM: 14..15 = enum TACCTL2_CM {
+        C2CM: 14..15 = enum C2CM {
             /// Capture mode: 0 - disabled
             CM_0 = 0b00,
             /// Capture mode: 1 - pos. edge
@@ -231,19 +231,19 @@ utils::periph! {
         }
     }
     /// Timer A5 Capture/Compare Control 3
-    rw TACCTL3 @ 0x6a: u16 = 0_0 {
+    rw CCTL3 @ 0x6a: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TACCTL3_CCIFG: 0 = struct TACCTL3_CCIFG(bool);
+        C3CCIFG: 0 = struct C3CCIFG(bool);
         /// Capture/compare overflow flag
-        TACCTL3_COV: 1 = struct TACCTL3_COV(bool);
+        C3COV: 1 = struct C3COV(bool);
         /// PWM Output signal if output mode 0
-        TACCTL3_OUT: 2 = struct TACCTL3_OUT(bool);
+        C3OUT: 2 = struct C3OUT(bool);
         /// Capture input signal (read)
-        TACCTL3_CCI: 3 = struct TACCTL3_CCI(bool);
+        C3CCI: 3 = struct C3CCI(bool);
         /// Capture/compare interrupt enable
-        TACCTL3_CCIE: 4 = struct TACCTL3_CCIE(bool);
+        C3CCIE: 4 = struct C3CCIE(bool);
         /// Output mode 2
-        TACCTL3_OUTMOD: 5..7 = enum TACCTL3_OUTMOD {
+        C3OUTMOD: 5..7 = enum C3OUTMOD {
             /// PWM output mode: 0 - output only
             OUTMOD_0 = 0b000,
             /// PWM output mode: 1 - set
@@ -262,13 +262,13 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode: 1 /Compare mode : 0
-        TACCTL3_CAP: 8 = struct TACCTL3_CAP(bool);
+        C3CAP: 8 = struct C3CAP(bool);
         /// Latched capture signal (read)
-        TACCTL3_SCCI: 10 = struct TACCTL3_SCCI(bool);
+        C3SCCI: 10 = struct C3SCCI(bool);
         /// Capture sychronize
-        TACCTL3_SCS: 11 = struct TACCTL3_SCS(bool);
+        C3SCS: 11 = struct C3SCS(bool);
         /// Capture input select 1
-        TACCTL3_CCIS: 12..13 = enum TACCTL3_CCIS {
+        C3CCIS: 12..13 = enum C3CCIS {
             /// Capture input select: 0 - CCIxA
             CCIS_0 = 0b00,
             /// Capture input select: 1 - CCIxB
@@ -279,7 +279,7 @@ utils::periph! {
             CCIS_3 = 0b11,
         }
         /// Capture mode 1
-        TACCTL3_CM: 14..15 = enum TACCTL3_CM {
+        C3CM: 14..15 = enum C3CM {
             /// Capture mode: 0 - disabled
             CM_0 = 0b00,
             /// Capture mode: 1 - pos. edge
@@ -291,19 +291,19 @@ utils::periph! {
         }
     }
     /// Timer A5 Capture/Compare Control 4
-    rw TACCTL4 @ 0x6c: u16 = 0_0 {
+    rw CCTL4 @ 0x6c: u16 = 0_0 {
         /// Capture/compare interrupt flag
-        TACCTL4_CCIFG: 0 = struct TACCTL4_CCIFG(bool);
+        C4CCIFG: 0 = struct C4CCIFG(bool);
         /// Capture/compare overflow flag
-        TACCTL4_COV: 1 = struct TACCTL4_COV(bool);
+        C4COV: 1 = struct C4COV(bool);
         /// PWM Output signal if output mode 0
-        TACCTL4_OUT: 2 = struct TACCTL4_OUT(bool);
+        C4OUT: 2 = struct C4OUT(bool);
         /// Capture input signal (read)
-        TACCTL4_CCI: 3 = struct TACCTL4_CCI(bool);
+        C4CCI: 3 = struct C4CCI(bool);
         /// Capture/compare interrupt enable
-        TACCTL4_CCIE: 4 = struct TACCTL4_CCIE(bool);
+        C4CCIE: 4 = struct C4CCIE(bool);
         /// Output mode 2
-        TACCTL4_OUTMOD: 5..7 = enum TACCTL4_OUTMOD {
+        C4OUTMOD: 5..7 = enum C4OUTMOD {
             /// PWM output mode: 0 - output only
             OUTMOD_0 = 0b000,
             /// PWM output mode: 1 - set
@@ -322,13 +322,13 @@ utils::periph! {
             OUTMOD_7 = 0b111,
         }
         /// Capture mode: 1 /Compare mode : 0
-        TACCTL4_CAP: 8 = struct TACCTL4_CAP(bool);
+        C4CAP: 8 = struct C4CAP(bool);
         /// Latched capture signal (read)
-        TACCTL4_SCCI: 10 = struct TACCTL4_SCCI(bool);
+        C4SCCI: 10 = struct C4SCCI(bool);
         /// Capture sychronize
-        TACCTL4_SCS: 11 = struct TACCTL4_SCS(bool);
+        C4SCS: 11 = struct C4SCS(bool);
         /// Capture input select 1
-        TACCTL4_CCIS: 12..13 = enum TACCTL4_CCIS {
+        C4CCIS: 12..13 = enum C4CCIS {
             /// Capture input select: 0 - CCIxA
             CCIS_0 = 0b00,
             /// Capture input select: 1 - CCIxB
@@ -339,7 +339,7 @@ utils::periph! {
             CCIS_3 = 0b11,
         }
         /// Capture mode 1
-        TACCTL4_CM: 14..15 = enum TACCTL4_CM {
+        C4CM: 14..15 = enum C4CM {
             /// Capture mode: 0 - disabled
             CM_0 = 0b00,
             /// Capture mode: 1 - pos. edge
@@ -351,33 +351,33 @@ utils::periph! {
         }
     }
     /// Timer A5 Counter Register
-    rw TAR @ 0x72: u16 = 0_0 {
+    rw R @ 0x72: u16 = 0_0 {
         /// Timer A5 Counter Register
-        TAR: 0..15 = struct TARField(u16);
+        R: 0..15 = struct RField(u16);
     }
     /// Timer A5 Capture/Compare 0
-    rw TACCR0 @ 0x74: u16 = 0_0 {
+    rw CCR0 @ 0x74: u16 = 0_0 {
         /// Timer A5 Capture/Compare 0
-        TACCR0: 0..15 = struct TACCR0Field(u16);
+        CCR0: 0..15 = struct CCR0Field(u16);
     }
     /// Timer A5 Capture/Compare 1
-    rw TACCR1 @ 0x76: u16 = 0_0 {
+    rw CCR1 @ 0x76: u16 = 0_0 {
         /// Timer A5 Capture/Compare 1
-        TACCR1: 0..15 = struct TACCR1Field(u16);
+        CCR1: 0..15 = struct CCR1Field(u16);
     }
     /// Timer A5 Capture/Compare 2
-    rw TACCR2 @ 0x78: u16 = 0_0 {
+    rw CCR2 @ 0x78: u16 = 0_0 {
         /// Timer A5 Capture/Compare 2
-        TACCR2: 0..15 = struct TACCR2Field(u16);
+        CCR2: 0..15 = struct CCR2Field(u16);
     }
     /// Timer A5 Capture/Compare 3
-    rw TACCR3 @ 0x7a: u16 = 0_0 {
+    rw CCR3 @ 0x7a: u16 = 0_0 {
         /// Timer A5 Capture/Compare 3
-        TACCR3: 0..15 = struct TACCR3Field(u16);
+        CCR3: 0..15 = struct CCR3Field(u16);
     }
     /// Timer A5 Capture/Compare 4
-    rw TACCR4 @ 0x7c: u16 = 0_0 {
+    rw CCR4 @ 0x7c: u16 = 0_0 {
         /// Timer A5 Capture/Compare 4
-        TACCR4: 0..15 = struct TACCR4Field(u16);
+        CCR4: 0..15 = struct CCR4Field(u16);
     }
 }
