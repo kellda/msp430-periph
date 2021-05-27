@@ -1,6 +1,6 @@
 [package]
 name = "msp430-periph"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["kellda <damikefr@gmail.com>"]
 edition = "2018"
 description = "Peripheral definition for all MSP430s"
@@ -10,7 +10,7 @@ keywords = ["peripheral", "register", "registers", "msp430", "ti"]
 categories = ["hardware-support", "embedded", "no-std"]
 
 [dependencies]
-utils = { version = "0.0.3", package = "peripherals" }
+utils = { version = "0.1.0", package = "peripherals" }
 msp430-rt = { version = "0.2.4", optional = true }
 
 [features]
@@ -18,7 +18,7 @@ default = []
 rt = ["msp430-rt/device"]
 
 # Peripheral feature flags
-_8bit_timer_counter_1 = []
+timer_counter = []
 adc10_2 = []
 adc10_3 = []
 adc10_ab = []
@@ -362,7 +362,7 @@ periph-all = [
     "usb_control", "tlv_calibration_data_2", "portw_2", "usci_b_i2c_4", "eusci_b", "lea", "flash_6", "portw_3", "tb_3", "adc_1", "portw_5i", "portw_1", "portb_6",
     "supply_voltage_supervisor_2", "special_function_4", "usci_a_uart_1", "operational_amplifier_4", "portw_1", "comparator_a_1", "ramctl_1", "port_mapping", "portb_3",
     "usci_a_spi_3", "csys_2", "sd16_a3_1", "portb_5", "special_function_16", "timer_b3_1", "saph_a", "calibration_data_3", "port_j_5", "portb_5",
-    "aes_accelerator_1", "port_5_1", "cs_4", "fram_2", "special_function_15", "sd16_a6_1", "dma_8", "backup_memory", "_8bit_timer_counter_1", "dma_9", "timer_a2_1", "port_j_1",
+    "aes_accelerator_1", "port_5_1", "cs_4", "fram_2", "special_function_15", "sd16_a6_1", "dma_8", "backup_memory", "timer_counter", "dma_9", "timer_a2_1", "port_j_1",
     "csys_1", "shared_reference_2", "cc1101", "port_1_2", "port_12_1", "dma_10", "sac_1", "sfr_3", "dma_17", "portb_6i1", "portb_6i2",
     "rtc_ce_2", "portb_3i1", "portb_3i1", "pmm_3", "adc10_ab", "crc32_2", "sac_3", "usci_b_spi_2", "ucs_1",
     "portw_3", "usci_b_spi_3", "usci_b_i2c_2", "sd16_a1_3", "dac12_4", "ta_3", "usci_b_i2c_4", "usci_b_spi_2", "portb_3i2", "sd16_a1_1", "portb_4i1", "portb_4i2",
@@ -640,48 +640,48 @@ msp430c1351-all = [
 msp430c311s = []
 msp430c311s-all = [
    "msp430c311s",
- "special_function_3", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
+ "special_function_3", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
 ]
 msp430c312 = []
 msp430c312-all = [
    "msp430c312",
- "special_function_3", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
+ "special_function_3", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
 ]
 msp430c313 = []
 msp430c313-all = [
    "msp430c313",
- "special_function_3", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
+ "special_function_3", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
 ]
 msp430c314 = []
 msp430c314-all = [
    "msp430c314",
- "special_function_3", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
+ "special_function_3", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
 ]
 msp430c315 = []
 msp430c315-all = [
    "msp430c315",
- "special_function_3", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
+ "special_function_3", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
 ]
 msp430c323 = []
 msp430c323-all = [
    "msp430c323",
- "special_function_4", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "adc_1", "watchdog_timer_1",
+ "special_function_4", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "adc_1", "watchdog_timer_1",
 ]
 msp430c325 = []
 msp430c325-all = [
    "msp430c325",
- "special_function_4", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "adc_1", "watchdog_timer_1",
+ "special_function_4", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "adc_1", "watchdog_timer_1",
 ]
 msp430c336 = []
 msp430c336-all = [
    "msp430c336",
- "special_function_5", "port_0_1", "port_x_1", "port_12_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "usart",
+ "special_function_5", "port_0_1", "port_x_1", "port_12_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "usart",
     "watchdog_timer_1", "timer_a5_3", "multiplier",
 ]
 msp430c337 = []
 msp430c337-all = [
    "msp430c337",
- "special_function_5", "port_0_1", "port_x_1", "port_12_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "usart",
+ "special_function_5", "port_0_1", "port_x_1", "port_12_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "usart",
     "watchdog_timer_1", "timer_a5_3", "multiplier",
 ]
 msp430c412 = []
@@ -732,22 +732,22 @@ msp430e112-all = [
 msp430e313 = []
 msp430e313-all = [
    "msp430e313",
- "special_function_3", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
+ "special_function_3", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
 ]
 msp430e315 = []
 msp430e315-all = [
    "msp430e315",
- "special_function_3", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
+ "special_function_3", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
 ]
 msp430e325 = []
 msp430e325-all = [
    "msp430e325",
- "special_function_4", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "adc_1", "watchdog_timer_1",
+ "special_function_4", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "adc_1", "watchdog_timer_1",
 ]
 msp430e337 = []
 msp430e337-all = [
    "msp430e337",
- "special_function_5", "port_0_1", "port_x_1", "port_12_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "usart",
+ "special_function_5", "port_0_1", "port_x_1", "port_12_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "usart",
     "watchdog_timer_1", "timer_a5_3", "multiplier",
 ]
 msp430f110 = []
@@ -5059,27 +5059,27 @@ msp430p112-all = [
 msp430p313 = []
 msp430p313-all = [
    "msp430p313",
- "special_function_3", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
+ "special_function_3", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
 ]
 msp430p315 = []
 msp430p315-all = [
    "msp430p315",
- "special_function_3", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
+ "special_function_3", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
 ]
 msp430p315s = []
 msp430p315s-all = [
    "msp430p315s",
- "special_function_3", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
+ "special_function_3", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "watchdog_timer_1",
 ]
 msp430p325 = []
 msp430p325-all = [
    "msp430p325",
- "special_function_4", "port_0_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "adc_1", "watchdog_timer_1",
+ "special_function_4", "port_0_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "adc_1", "watchdog_timer_1",
 ]
 msp430p337 = []
 msp430p337-all = [
    "msp430p337",
- "special_function_5", "port_0_1", "port_x_1", "port_12_1", "lcd_1", "basic_timer", "_8bit_timer_counter_1", "timer_port", "system_clock_2", "eprom", "usart",
+ "special_function_5", "port_0_1", "port_x_1", "port_12_1", "lcd_1", "basic_timer", "timer_counter", "timer_port", "system_clock_2", "eprom", "usart",
     "watchdog_timer_1", "timer_a5_3", "multiplier",
 ]
 msp430sl5438a = []
