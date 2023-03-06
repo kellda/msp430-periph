@@ -18,15 +18,15 @@ dependencies = [
 
 [[package]]
 name = "paste"
-version = "1.0.5"
+version = "1.0.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "acbf547ad0c65e31259204bd90935776d1c693cec2f4ff7abb7a1bbbd40dfe58"
+checksum = "9f746c4065a8fa3fe23974dd82f15431cc8d40779821001404d10d2e79ca7d79"
 
 [[package]]
 name = "peripherals"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "39b6b790ca8436f13781997e1f3e303c537d047b9e95f21f769d1cda735c8646"
+checksum = "219f5767aba82b2c0e02ea8cad0b13365ac745d582b56208ee27e72c954d105e"
 dependencies = [
  "paste",
 ]

@@ -1,4 +1,4 @@
-use std::{array::IntoIter, env, fs, path::PathBuf};
+use std::{env, fs, path::PathBuf};
 
 fn main() {
     if env::var_os("CARGO_FEATURE_RT").is_none() {
@@ -7,13 +7,13 @@ fn main() {
     }
     let mut devices = DEVICES
         .iter()
-        .filter(|d| env::var_os(&format!("CARGO_FEATURE_{}", d.to_uppercase())).is_some());
+        .filter(|d| env::var_os(format!("CARGO_FEATURE_{}", d.to_uppercase())).is_some());
     let device = match (devices.next(), devices.next()) {
         (None, _) => panic!(r#""rt" feature selected with no device feature"#),
         (Some(d), None) => d,
         (Some(d1), Some(d2)) => panic!(
             r#""rt" feature selected with multiple device features: {:?}"#,
-            IntoIter::new([d1, d2]).chain(devices).collect::<Vec<_>>()
+            [d1, d2].into_iter().chain(devices).collect::<Vec<_>>()
         ),
     };
 

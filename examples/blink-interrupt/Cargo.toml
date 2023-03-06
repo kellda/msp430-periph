@@ -1,13 +1,16 @@
 [package]
 name = "blink-interrupt"
 version = "0.1.0"
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-msp430 = "0.2.2"
-msp430-rt = "0.2.4"
-panic-msp430 = "0.2.0"
-msp430-periph = { path = "../../msp430-periph", features = [ "msp430fr5969-all", "rt" ] }
+msp430 = "0.4.1"
+msp430-rt = "0.4.0"
+panic-msp430 = "0.4.0"
+msp430-periph = { path = "../../msp430-periph", features = [
+    "msp430fr5969-all",
+    "rt",
+] }
 
 [profile.release]
 opt-level = "s"
