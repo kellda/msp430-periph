@@ -8,7 +8,7 @@ Add this crate to your dependencies:
 
 ```
 [dependencies.msp430-periph]
-version = "0.0.4"
+version = "0.0.5"
 ```
 
 Then add the features you need, e.g.

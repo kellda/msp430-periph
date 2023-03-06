@@ -9,7 +9,7 @@
 //!
 //! ```
 //! [dependencies.msp430-periph]
-//! version = "0.0.3"
+//! version = "0.0.5"
 //! features = [
 //!     # your microcontroller
 //!     "msp430fr5969",
@@ -25,7 +25,7 @@
 //!
 //! ```
 //! [dependencies]
-//! msp430-periph = { version = "0.0.3", features = [ "msp430fr5969-all" ] }
+//! msp430-periph = { version = "0.0.5", features = [ "msp430fr5969-all" ] }
 //! ```
 //!
 //! To use with the `msp430-rt` runtime, also enable the `rt` feature. No `memory.x` files are needed.

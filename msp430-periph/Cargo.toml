@@ -1,6 +1,6 @@
 [package]
 name = "msp430-periph"
-version = "0.0.4"
+version = "0.0.5"
 authors = ["kellda <damikefr@gmail.com>"]
 edition = "2021"
 description = "Peripheral definition for all MSP430s"
