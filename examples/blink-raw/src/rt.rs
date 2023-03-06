@@ -1,3 +1,4 @@
+use core::arch::global_asm;
 use core::panic::PanicInfo;
 
 // This is our initialisation code. We will make so that it is the very first thing that will run
@@ -19,10 +20,6 @@ extern "msp430-interrupt" {
     // The above initialisation code
     fn _start() -> !;
 }
-
-
-#[link_section = ".start"]
-// The main function. It will be called from assembly, so it needs to be `extern`. It also never returns.
 
 // This prevents `__RESET_VECTOR` from being optimised out
 #[used]

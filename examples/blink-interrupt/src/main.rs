@@ -3,7 +3,6 @@
 #![feature(abi_msp430_interrupt)]
 
 use core::cell::RefCell;
-use msp430::interrupt as mspint;
 use msp430_rt::entry;
 use panic_msp430 as _;
 
@@ -15,8 +14,8 @@ use msp430_periph::peripherals::{
 };
 use msp430_periph::utils::Value;
 
-static PERIPHERALS: mspint::Mutex<RefCell<Option<MSP430FR5969>>> =
-    mspint::Mutex::new(RefCell::new(None));
+static PERIPHERALS: msp430::interrupt::Mutex<RefCell<Option<MSP430FR5969>>> =
+    msp430::interrupt::Mutex::new(RefCell::new(None));
 
 #[entry]
 fn main(cs: CriticalSection) -> ! {
@@ -53,17 +52,17 @@ fn main(cs: CriticalSection) -> ! {
     p.timer0_a3.cctl1.modify(timer0::C1CCIE(true));
 
     // Share peripherals with the interrupt
-    *PERIPHERALS.borrow(&cs).borrow_mut() = Some(p);
+    *PERIPHERALS.borrow(cs).borrow_mut() = Some(p);
 
     // Enable interrupts
-    msp430::interrupt::enable_cs(cs);
+    unsafe { msp430::interrupt::enable() };
 
     loop {}
 }
 
 #[interrupt]
 fn TIMER0_A1(cs: CriticalSection) {
-    let mut p = PERIPHERALS.borrow(&cs).borrow_mut();
+    let mut p = PERIPHERALS.borrow(cs).borrow_mut();
     let p = p.as_mut().unwrap();
 
     // Clear interrupt flag

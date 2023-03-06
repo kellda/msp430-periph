@@ -6,8 +6,7 @@
 
 // Things that are not yet stable but that we need to write this program
 #![feature(abi_msp430_interrupt)]
-#![feature(global_asm)]
-#![feature(llvm_asm)]
+#![feature(asm_experimental_arch)]
 
 // Our runtime is in this module
 mod rt;
@@ -46,7 +45,7 @@ extern "C" fn main() -> ! {
         while i < 10_000u16 {
             i += 1;
             // This prevents the loop from being optimised
-            unsafe { llvm_asm!("") };
+            unsafe { core::arch::asm!("") };
         }
 
         // Toggle outputs
